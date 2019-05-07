@@ -10,6 +10,7 @@
 	icon = 'icons/mob/vore_shadekin.dmi'
 	icon_state = "map_example"
 	icon_living = "map_example"
+	icon_rest = "white_rest"
 	faction = "shadekin"
 	ui_icons = 'icons/mob/shadekin_hud.dmi'
 	mob_class = MOB_CLASS_HUMANOID
@@ -281,7 +282,7 @@
 		switch(eye_state)
 			//Blue has constant, steady (slow) regen and ignores darkness.
 			if(BLUE_EYES)
-				dark_gains = 0.5
+				dark_gains = 1
 			//Red has extremely tiny energy buildup in dark, none in light, and hunts for energy.
 			if(RED_EYES)
 				if(darkness >= 0.75)
