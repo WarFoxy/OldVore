@@ -141,7 +141,7 @@
 		else
 			dat += text("<A href='?src=\ref[];login=1'>{Log In}</A>", src)
 	dat = jointext(dat,null)
-	user << browse(text("<HEAD><TITLE>Medical Records</TITLE></HEAD><TT>[]</TT>", dat), "window=med_rec")
+	user << browse(text("<HEAD><TITLE>Medical Records</TITLE></HEAD><TT>[]</TT>", sanitize_local(dat, SANITIZE_BROWSER)), "window=med_rec")
 	onclose(user, "med_rec")
 	return
 
@@ -510,6 +510,7 @@
 					else
 						P.info += "<B>Medical Record Lost!</B><BR>"
 					P.info += "</TT>"
+					P.info = sanitize_local(P.info, SANITIZE_BROWSER)
 					src.printing = null
 
 	src.add_fingerprint(usr)

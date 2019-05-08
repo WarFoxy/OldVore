@@ -202,7 +202,7 @@
 				else
 		else
 			dat += text("<A href='?src=\ref[];choice=Log In'>{Log In}</A>", src)
-	user << browse(text("<HEAD><TITLE>Security Records</TITLE></HEAD><TT>[]</TT>", dat), "window=secure_rec;size=600x400")
+	user << browse(text("<HEAD><TITLE>Security Records</TITLE></HEAD><TT>[]</TT>", sanitize_local(dat, SANITIZE_BROWSER)), "window=secure_rec;size=600x400")
 	onclose(user, "secure_rec")
 	return
 
@@ -368,6 +368,7 @@ What a mess.*/
 					else
 						P.info += "<B>Security Record Lost!</B><BR>"
 					P.info += "</TT>"
+					P.info = sanitize_local(P.info, SANITIZE_BROWSER)
 					printing = null
 					updateUsrDialog()
 //RECORD DELETE
