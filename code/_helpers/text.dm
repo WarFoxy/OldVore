@@ -220,7 +220,15 @@
 
 //Returns a string with the first element of the string capitalized.
 /proc/capitalize(var/t as text)
-	return uppertext(copytext(t, 1, 2)) + copytext(t, 2)
+	var/s = 2
+	if(copytext(t,1,2) == ";")
+		s += 1
+	else if(copytext(t,1,2) == ":")
+		if(copytext(t,3,4) == " ")
+			s+=3
+		else
+			s+=2
+	return upperrustext(copytext(t, 1, s)) + copytext(t, s)
 
 //This proc strips html properly, remove < > and all text between
 //for complete text sanitizing should be used sanitize()
