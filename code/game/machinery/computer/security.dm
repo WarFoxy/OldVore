@@ -458,31 +458,31 @@ What a mess.*/
 							active1.fields["age"] = t1
 					if("mi_crim")
 						if (istype(active2, /datum/data/record))
-							var/t1 = sanitize(input("Please input minor disabilities list:", "Secure. records", active2.fields["mi_crim"], null)  as text)
+							var/t1 = sanitize(input("Please input minor disabilities list:", "Secure. records", lhtml_decode(active2.fields["mi_crim"], SANITIZE_TEMP), null)  as text)
 							if (!t1 || active2 != a2)
 								return
 							active2.fields["mi_crim"] = t1
 					if("mi_crim_d")
 						if (istype(active2, /datum/data/record))
-							var/t1 = sanitize(input("Please summarize minor dis.:", "Secure. records", active2.fields["mi_crim_d"], null)  as message)
+							var/t1 = sanitize(input("Please summarize minor dis.:", "Secure. records", lhtml_decode(active2.fields["mi_crim_d"], SANITIZE_TEMP), null)  as message)
 							if (!t1 || active2 != a2)
 								return
 							active2.fields["mi_crim_d"] = t1
 					if("ma_crim")
 						if (istype(active2, /datum/data/record))
-							var/t1 = sanitize(input("Please input major diabilities list:", "Secure. records", active2.fields["ma_crim"], null)  as text)
+							var/t1 = sanitize(input("Please input major diabilities list:", "Secure. records", lhtml_decode(active2.fields["ma_crim"], SANITIZE_TEMP), null)  as text)
 							if (!t1 || active2 != a2)
 								return
 							active2.fields["ma_crim"] = t1
 					if("ma_crim_d")
 						if (istype(active2, /datum/data/record))
-							var/t1 = sanitize(input("Please summarize major dis.:", "Secure. records", active2.fields["ma_crim_d"], null)  as message)
+							var/t1 = sanitize(input("Please summarize major dis.:", "Secure. records", lhtml_decode(active2.fields["ma_crim_d"], SANITIZE_TEMP), null)  as message)
 							if (!t1 || active2 != a2)
 								return
 							active2.fields["ma_crim_d"] = t1
 					if("notes")
 						if (istype(active2, /datum/data/record))
-							var/t1 = sanitize(input("Please summarize notes:", "Secure. records", html_decode(active2.fields["notes"]), null)  as message, extra = 0, max_length = MAX_RECORD_LENGTH)
+							var/t1 = sanitize(input("Please summarize notes:", "Secure. records", lhtml_decode(active2.fields["notes"], SANITIZE_TEMP), null)  as message, extra = 0)
 							if (!t1 || active2 != a2)
 								return
 							active2.fields["notes"] = t1

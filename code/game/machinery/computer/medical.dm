@@ -267,55 +267,55 @@
 							src.active1.fields["age"] = t1
 					if("mi_dis")
 						if (istype(src.active2, /datum/data/record))
-							var/t1 = sanitize(input("Please input minor disabilities list:", "Med. records", src.active2.fields["mi_dis"], null)  as text)
+							var/t1 = sanitize(input("Please input minor disabilities list:", "Med. records", lhtml_decode(src.active2.fields["mi_dis"], SANITIZE_TEMP), null)  as text)
 							if ((!( t1 ) || !( src.authenticated ) || usr.stat || usr.restrained() || (!in_range(src, usr) && (!istype(usr, /mob/living/silicon))) || src.active2 != a2))
 								return
 							src.active2.fields["mi_dis"] = t1
 					if("mi_dis_d")
 						if (istype(src.active2, /datum/data/record))
-							var/t1 = sanitize(input("Please summarize minor dis.:", "Med. records", src.active2.fields["mi_dis_d"], null)  as message)
+							var/t1 = sanitize(input("Please summarize minor dis.:", "Med. records", lhtml_decode(src.active2.fields["mi_dis_d"], SANITIZE_TEMP), null)  as message)
 							if ((!( t1 ) || !( src.authenticated ) || usr.stat || usr.restrained() || (!in_range(src, usr) && (!istype(usr, /mob/living/silicon))) || src.active2 != a2))
 								return
 							src.active2.fields["mi_dis_d"] = t1
 					if("ma_dis")
 						if (istype(src.active2, /datum/data/record))
-							var/t1 = sanitize(input("Please input major diabilities list:", "Med. records", src.active2.fields["ma_dis"], null)  as text)
+							var/t1 = sanitize(input("Please input major diabilities list:", "Med. records", lhtml_decode(src.active2.fields["ma_dis"], SANITIZE_TEMP), null)  as text)
 							if ((!( t1 ) || !( src.authenticated ) || usr.stat || usr.restrained() || (!in_range(src, usr) && (!istype(usr, /mob/living/silicon))) || src.active2 != a2))
 								return
 							src.active2.fields["ma_dis"] = t1
 					if("ma_dis_d")
 						if (istype(src.active2, /datum/data/record))
-							var/t1 = sanitize(input("Please summarize major dis.:", "Med. records", src.active2.fields["ma_dis_d"], null)  as message)
+							var/t1 = sanitize(input("Please summarize major dis.:", "Med. records", lhtml_decode(src.active2.fields["ma_dis_d"], SANITIZE_TEMP), null)  as message)
 							if ((!( t1 ) || !( src.authenticated ) || usr.stat || usr.restrained() || (!in_range(src, usr) && (!istype(usr, /mob/living/silicon))) || src.active2 != a2))
 								return
 							src.active2.fields["ma_dis_d"] = t1
 					if("alg")
 						if (istype(src.active2, /datum/data/record))
-							var/t1 = sanitize(input("Please state allergies:", "Med. records", src.active2.fields["alg"], null)  as text)
+							var/t1 = sanitize(input("Please state allergies:", "Med. records", lhtml_decode(src.active2.fields["alg"], SANITIZE_TEMP), null)  as text)
 							if ((!( t1 ) || !( src.authenticated ) || usr.stat || usr.restrained() || (!in_range(src, usr) && (!istype(usr, /mob/living/silicon))) || src.active2 != a2))
 								return
 							src.active2.fields["alg"] = t1
 					if("alg_d")
 						if (istype(src.active2, /datum/data/record))
-							var/t1 = sanitize(input("Please summarize allergies:", "Med. records", src.active2.fields["alg_d"], null)  as message)
+							var/t1 = sanitize(input("Please summarize allergies:", "Med. records", lhtml_decode(src.active2.fields["alg_d"], SANITIZE_TEMP), null)  as message)
 							if ((!( t1 ) || !( src.authenticated ) || usr.stat || usr.restrained() || (!in_range(src, usr) && (!istype(usr, /mob/living/silicon))) || src.active2 != a2))
 								return
 							src.active2.fields["alg_d"] = t1
 					if("cdi")
 						if (istype(src.active2, /datum/data/record))
-							var/t1 = sanitize(input("Please state diseases:", "Med. records", src.active2.fields["cdi"], null)  as text)
+							var/t1 = sanitize(input("Please state diseases:", "Med. records", lhtml_decode(src.active2.fields["cdi"], SANITIZE_TEMP), null)  as text)
 							if ((!( t1 ) || !( src.authenticated ) || usr.stat || usr.restrained() || (!in_range(src, usr) && (!istype(usr, /mob/living/silicon))) || src.active2 != a2))
 								return
 							src.active2.fields["cdi"] = t1
 					if("cdi_d")
 						if (istype(src.active2, /datum/data/record))
-							var/t1 = sanitize(input("Please summarize diseases:", "Med. records", src.active2.fields["cdi_d"], null)  as message)
+							var/t1 = sanitize(input("Please summarize diseases:", "Med. records", lhtml_decode(src.active2.fields["cdi_d"], SANITIZE_TEMP), null)  as message)
 							if ((!( t1 ) || !( src.authenticated ) || usr.stat || usr.restrained() || (!in_range(src, usr) && (!istype(usr, /mob/living/silicon))) || src.active2 != a2))
 								return
 							src.active2.fields["cdi_d"] = t1
 					if("notes")
 						if (istype(src.active2, /datum/data/record))
-							var/t1 = sanitize(input("Please summarize notes:", "Med. records", html_decode(src.active2.fields["notes"]), null)  as message, extra = 0, max_length = MAX_RECORD_LENGTH)
+							var/t1 = sanitize(input("Please summarize notes:", "Med. records", lhtml_decode(src.active2.fields["notes"], SANITIZE_TEMP), null)  as message, extra = 0)
 							if ((!( t1 ) || !( src.authenticated ) || usr.stat || usr.restrained() || (!in_range(src, usr) && (!istype(usr, /mob/living/silicon))) || src.active2 != a2))
 								return
 							src.active2.fields["notes"] = t1
@@ -337,14 +337,14 @@
 					if("vir_name")
 						var/datum/data/record/v = locate(href_list["edit_vir"])
 						if (v)
-							var/t1 = sanitize(input("Please input pathogen name:", "VirusDB", v.fields["name"], null)  as text)
+							var/t1 = sanitize(input("Please input pathogen name:", "VirusDB", lhtml_decode(v.fields["name"], SANITIZE_TEMP), null)  as text)
 							if ((!( t1 ) || !( src.authenticated ) || usr.stat || usr.restrained() || (!in_range(src, usr) && (!istype(usr, /mob/living/silicon))) || src.active1 != a1))
 								return
 							v.fields["name"] = t1
 					if("vir_desc")
 						var/datum/data/record/v = locate(href_list["edit_vir"])
 						if (v)
-							var/t1 = sanitize(input("Please input information about pathogen:", "VirusDB", v.fields["description"], null)  as message)
+							var/t1 = sanitize(input("Please input information about pathogen:", "VirusDB", lhtml_decode(v.fields["description"], SANITIZE_TEMP), null)  as message)
 							if ((!( t1 ) || !( src.authenticated ) || usr.stat || usr.restrained() || (!in_range(src, usr) && (!istype(usr, /mob/living/silicon))) || src.active1 != a1))
 								return
 							v.fields["description"] = t1

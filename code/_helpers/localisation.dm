@@ -53,16 +53,16 @@ var/global/list/localisation = list()
 	I dunno, should every call be replaced, because maybe there some calls that isn`t used with users input.
 */
 
-/proc/lhtml_encode(var/text)
+/proc/lhtml_encode(var/text, var/mode = SANITIZE_CHAT)
 	text = sanitize_local(text, SANITIZE_TEMP)
 	text = html_encode(text)
-	text = sanitize_local(text)
+	text = sanitize_local(text, mode)
 	return text
 
-/proc/lhtml_decode(var/text)
+/proc/lhtml_decode(var/text, var/mode = SANITIZE_CHAT)
 	text = sanitize_local(text, SANITIZE_TEMP)
 	text = html_decode(text)
-	text = sanitize_local(text)
+	text = sanitize_local(text, mode)
 	return text
 
 /proc/upperrustext(text as text)

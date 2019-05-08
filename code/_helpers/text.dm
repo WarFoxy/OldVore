@@ -293,13 +293,13 @@ proc/TextPreview(var/string,var/len=40)
 		if(!lentext(string))
 			return "\[...\]"
 		else
-			return string
+			return sanitize_local(string, SANITIZE_BROWSER)
 	else
 		return "[copytext_preserve_html(string, 1, 37)]..."
 
 //alternative copytext() for encoded text, doesn't break html entities (&#34; and other)
 /proc/copytext_preserve_html(var/text, var/first, var/last)
-	return html_encode(copytext(html_decode(text), first, last))
+	return lhtml_encode(copytext(lhtml_decode(text, SANITIZE_TEMP), first, last), SANITIZE_BROWSER)
 
 //For generating neat chat tag-images
 //The icon var could be local in the proc, but it's a waste of resources
