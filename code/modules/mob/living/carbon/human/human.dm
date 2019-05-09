@@ -632,11 +632,11 @@
 				src << browse(null, "window=flavor_changes")
 				return
 			if("general")
-				var/msg = sanitize(input(usr,"Update the general description of your character. This will be shown regardless of clothing.","Flavor Text",html_decode(flavor_texts[href_list["flavor_change"]])) as message, extra = 0)	//VOREStation Edit: separating out OOC notes
+				var/msg = sanitize(input(usr,"Update the general description of your character. This will be shown regardless of clothing.","Flavor Text",lhtml_decode(flavor_texts[href_list["flavor_change"]], SANITIZE_TEMP)) as message, extra = 0)	//VOREStation Edit: separating out OOC notes
 				flavor_texts[href_list["flavor_change"]] = msg
 				return
 			else
-				var/msg = sanitize(input(usr,"Update the flavor text for your [href_list["flavor_change"]].","Flavor Text",html_decode(flavor_texts[href_list["flavor_change"]])) as message, extra = 0)
+				var/msg = sanitize(input(usr,"Update the flavor text for your [href_list["flavor_change"]].","Flavor Text",lhtml_decode(flavor_texts[href_list["flavor_change"]], SANITIZE_TEMP)) as message, extra = 0)
 				flavor_texts[href_list["flavor_change"]] = msg
 				set_flavor()
 				return
