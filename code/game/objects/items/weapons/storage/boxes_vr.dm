@@ -46,3 +46,25 @@
 		/obj/item/clothing/mask/breath,
 		/obj/item/weapon/tank/emergency/oxygen/double
 	)
+
+/obj/item/weapon/storage/secure/briefcase/trashmoney
+	starts_with = list(/obj/item/weapon/spacecash/c200 = 10)
+
+/obj/item/weapon/storage/box/debugmaterials
+	name = "box of materials"
+	desc = "A box full of materials."
+	starts_with = list(
+		/obj/item/stack/material/steel{amount = 50},
+		/obj/item/stack/material/plasteel{amount = 50},
+		/obj/item/stack/material/glass{amount = 50},
+		/obj/item/stack/material/silver{amount = 50},
+		/obj/item/stack/material/gold{amount = 50},
+		/obj/item/stack/material/phoron{amount = 50},
+		/obj/item/stack/material/uranium{amount = 50},
+		/obj/item/stack/material/diamond{amount = 50},
+		/obj/item/stack/material/osmium{amount = 50},
+		/obj/item/stack/material/tritium{amount = 50},
+		/obj/item/stack/material/deuterium{amount = 50},
+		/obj/item/stack/material/lead{amount = 50},
+		/obj/item/stack/material/platinum{amount = 50}
+	)
