@@ -373,7 +373,7 @@
 		)
 
 /datum/species/shapeshifter/promethean
-	spawn_flags = SPECIES_CAN_JOIN
+	spawn_flags = SPECIES_CAN_JOIN | SPECIES_IS_WHITELISTED
 
 /datum/species/human
 	color_mult = 1
@@ -432,6 +432,3 @@ datum/species/harpy
 		"You feel uncomfortably warm.",
 		"Your overheated skin itches."
 		)
-
-/datum/species/human/vatgrown
-	spawn_flags = SPECIES_IS_RESTRICTED
