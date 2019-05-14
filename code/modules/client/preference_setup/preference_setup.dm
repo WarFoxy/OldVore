@@ -299,9 +299,9 @@
 	var/FBP_type = get_FBP_type()
 	switch(FBP_type)
 		if(PREF_FBP_CYBORG)
-			return S.max_age + 20
+			return S.max_age + 300
 		if(PREF_FBP_POSI)
-			return 220
+			return 300
 		if(PREF_FBP_SOFTWARE)
-			return 150
+			return 300
 	return S.max_age // welp
