@@ -351,3 +351,6 @@ var/global/list/##LIST_NAME = list();\
 #define RAD_LEVEL_MODERATE 10
 #define RAD_LEVEL_HIGH 25
 #define RAD_LEVEL_VERY_HIGH 50
+
+//Preference save/load cooldown. This is in deciseconds.
+#define PREF_SAVELOAD_COOLDOWN 2 //Should be sufficiently hard to achieve without a broken mouse or autoclicker while still fulfilling its intended goal.
