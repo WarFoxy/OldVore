@@ -25,7 +25,7 @@
 	speech_sounds = list('sound/voice/shriek1.ogg')
 	speech_chance = 20
 
-	scream_verb = "shrieks"
+	scream_verb = "визжит"
 	male_scream_sound = 'sound/voice/shriek1.ogg'
 	female_scream_sound = 'sound/voice/shriek1.ogg'
 	male_cough_sounds = list('sound/voice/shriekcough.ogg')
