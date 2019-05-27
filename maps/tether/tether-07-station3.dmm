@@ -2420,17 +2420,9 @@
 /turf/simulated/floor/tiled,
 /area/security/hallway)
 "dY" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/structure/table/rack/shelf,
-/obj/item/weapon/tank/oxygen,
-/obj/item/device/suit_cooling_unit,
-/obj/item/clothing/head/helmet/space/void/pilot,
-/obj/item/clothing/shoes/magboots,
-/obj/item/clothing/suit/space/void/pilot,
-/obj/item/clothing/head/helmet/space/void/pilot,
-/turf/simulated/shuttle/floor/black,
+/obj/structure/shuttle/engine/propulsion,
+/turf/simulated/floor/reinforced,
+/turf/simulated/shuttle/plating/airless/carry,
 /area/shuttle/excursion/tether)
 "dZ" = (
 /obj/item/device/radio/intercom{
@@ -21061,7 +21053,8 @@
 /obj/item/device/radio/intercom{
 	dir = 1;
 	name = "Station Intercom (General)";
-	pixel_y = 24
+	pixel_x = -10;
+	pixel_y = -10
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/surgery)
@@ -23742,7 +23735,8 @@
 /obj/item/device/radio/intercom{
 	dir = 1;
 	name = "Station Intercom (General)";
-	pixel_y = 24
+	pixel_x = -10;
+	pixel_y = -10
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/surgery2)
@@ -28316,11 +28310,6 @@
 	},
 /turf/simulated/floor/carpet,
 /area/security/breakroom)
-"SD" = (
-/obj/structure/shuttle/engine/propulsion,
-/turf/simulated/floor/reinforced,
-/turf/simulated/shuttle/plating/airless/carry,
-/area/shuttle/excursion/tether)
 "SE" = (
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 8
@@ -39735,7 +39724,7 @@ it
 di
 di
 dy
-SD
+dY
 cK
 cK
 ms
@@ -39877,7 +39866,7 @@ iK
 jY
 kn
 di
-SD
+dY
 cK
 cK
 ms
@@ -40008,7 +39997,7 @@ cE
 cK
 di
 dy
-dY
+ec
 di
 eO
 eR
@@ -40019,7 +40008,7 @@ iK
 jY
 kn
 di
-SD
+dY
 cK
 cK
 ms
@@ -40871,7 +40860,7 @@ eb
 ka
 ky
 di
-SD
+dY
 cK
 cK
 ms
@@ -41013,7 +41002,7 @@ jf
 kj
 kQ
 di
-SD
+dY
 cK
 cK
 ms
@@ -41155,7 +41144,7 @@ jr
 kk
 kR
 dy
-SD
+dY
 cK
 cK
 ms
