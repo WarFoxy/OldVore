@@ -18208,16 +18208,12 @@
 /turf/simulated/wall,
 /area/mine/explored/upper_level)
 "BL" = (
-/obj/machinery/door/airlock/glass_external{
-	frequency = 1380;
-	icon_state = "door_locked";
-	id_tag = "large_escape_pod_1_berth_hatch";
-	locked = 1;
-	name = "Large Escape Pod 1"
+/obj/item/device/radio/intercom{
+	dir = 2;
+	pixel_y = -24
 	},
-/obj/machinery/door/firedoor/glass,
-/turf/simulated/floor,
-/area/hallway/secondary/escape/medical_escape_pod_hallway)
+/turf/simulated/floor/wood,
+/area/bridge/meeting_room)
 "BM" = (
 /obj/machinery/door/firedoor/glass,
 /obj/machinery/door/airlock/medical{
@@ -19742,6 +19738,17 @@
 /turf/simulated/floor/tiled,
 /area/hallway/station/starboard)
 "EA" = (
+/obj/machinery/door/airlock/glass_external{
+	frequency = 1380;
+	icon_state = "door_closed";
+	id_tag = "large_escape_pod_1_berth_hatch";
+	locked = 0;
+	name = "Large Escape Pod 1"
+	},
+/obj/machinery/door/firedoor/glass,
+/turf/simulated/floor,
+/area/hallway/secondary/escape/medical_escape_pod_hallway)
+"EB" = (
 /obj/structure/shuttle/engine/propulsion{
 	dir = 8;
 	icon_state = "propulsion_l"
@@ -19751,19 +19758,9 @@
 /area/shuttle/large_escape_pod1/station{
 	base_turf = /turf/simulated/mineral/floor/vacuum
 	})
-"EB" = (
-/obj/structure/shuttle/engine/propulsion{
-	dir = 8
-	},
-/turf/space,
-/turf/simulated/shuttle/plating/airless/carry,
-/area/shuttle/large_escape_pod1/station{
-	base_turf = /turf/simulated/mineral/floor/vacuum
-	})
 "EC" = (
 /obj/structure/shuttle/engine/propulsion{
-	dir = 8;
-	icon_state = "propulsion_r"
+	dir = 8
 	},
 /turf/space,
 /turf/simulated/shuttle/plating/airless/carry,
@@ -19778,6 +19775,16 @@
 /obj/random/maintenance/clean,
 /turf/simulated/floor,
 /area/maintenance/station/sec_lower)
+"EE" = (
+/obj/structure/shuttle/engine/propulsion{
+	dir = 8;
+	icon_state = "propulsion_r"
+	},
+/turf/space,
+/turf/simulated/shuttle/plating/airless/carry,
+/area/shuttle/large_escape_pod1/station{
+	base_turf = /turf/simulated/mineral/floor/vacuum
+	})
 "EH" = (
 /obj/random/junk,
 /obj/effect/floor_decal/techfloor{
@@ -32548,11 +32555,11 @@ AN
 Ci
 Bw
 yY
-EA
-EB
-EB
 EB
 EC
+EC
+EC
+EE
 yY
 ac
 ac
@@ -33257,7 +33264,7 @@ An
 AP
 AP
 Bx
-BL
+EA
 BX
 Cs
 Ct
@@ -33399,7 +33406,7 @@ AE
 AQ
 Bf
 By
-BL
+EA
 BX
 Ct
 Ct
@@ -35522,7 +35529,7 @@ xM
 yq
 yR
 zc
-wV
+BL
 wo
 ac
 ac

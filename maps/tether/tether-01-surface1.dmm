@@ -6005,6 +6005,19 @@
 	},
 /turf/simulated/floor/tiled,
 /area/rnd/hallway)
+"aki" = (
+/obj/machinery/door/airlock/engineering{
+	name = "Mining Substation";
+	req_one_access = list(11,24)
+	},
+/obj/machinery/door/firedoor/glass,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor,
+/area/maintenance/substation/mining)
 "akj" = (
 /obj/structure/catwalk,
 /obj/effect/decal/cleanable/dirt,
@@ -6014,6 +6027,28 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/lower/trash_pit)
+"akk" = (
+/obj/machinery/door/firedoor/glass,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
+	},
+/obj/machinery/door/airlock/engineering{
+	name = "Mining Substation";
+	req_one_access = list(11,24)
+	},
+/turf/simulated/floor,
+/area/maintenance/substation/mining)
+"akl" = (
+/obj/machinery/access_button/airlock_interior{
+	master_tag = "rnd_s_airlock";
+	pixel_x = -10;
+	pixel_y = 0
+	},
+/turf/simulated/wall,
+/area/rnd/hallway)
 "akm" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/full,
@@ -6046,6 +6081,17 @@
 "ako" = (
 /turf/simulated/floor/tiled,
 /area/hallway/lower/first_west)
+"akp" = (
+/obj/machinery/door/firedoor/glass,
+/obj/machinery/door/airlock/glass_external{
+	frequency = 1379;
+	icon_state = "door_locked";
+	id_tag = "rnd_s_airlock_inner";
+	locked = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden,
+/turf/simulated/floor/tiled/steel_grid,
+/area/rnd/external)
 "akq" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/full,
@@ -6064,6 +6110,14 @@
 	dir = 8
 	},
 /area/hallway/lower/first_west)
+"aks" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/random/action_figure,
+/obj/random/action_figure,
+/obj/random/action_figure,
+/obj/item/weapon/dildo,
+/turf/simulated/floor/plating,
+/area/maintenance/lower/atmos)
 "akt" = (
 /turf/simulated/wall,
 /area/storage/art)
@@ -6486,19 +6540,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/lower/first_west)
-"alH" = (
-/obj/machinery/door/airlock/engineering{
-	name = "Mining Substation";
-	req_one_access = list(11,24,47)
-	},
-/obj/machinery/door/firedoor/glass,
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor,
-/area/maintenance/substation/mining)
 "alI" = (
 /obj/effect/floor_decal/rust,
 /obj/structure/table/rack,
@@ -7636,20 +7677,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/crew_quarters/locker)
-"apj" = (
-/obj/machinery/door/firedoor/glass,
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8";
-	pixel_x = 0
-	},
-/obj/machinery/door/airlock/engineering{
-	name = "Mining Substation";
-	req_one_access = list(11,24,47)
-	},
-/turf/simulated/floor,
-/area/maintenance/substation/mining)
 "apk" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
@@ -21279,22 +21306,6 @@
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/rnd/external)
-"bMo" = (
-/obj/machinery/door/firedoor/glass,
-/obj/machinery/access_button/airlock_interior{
-	master_tag = "rnd_s_airlock";
-	pixel_x = 25;
-	pixel_y = 24
-	},
-/obj/machinery/door/airlock/glass_external{
-	frequency = 1379;
-	icon_state = "door_locked";
-	id_tag = "rnd_s_airlock_inner";
-	locked = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden,
-/turf/simulated/floor/tiled/steel_grid,
-/area/rnd/external)
 "bMK" = (
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/lightgrey/border,
@@ -30498,13 +30509,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/engineering/atmos/processing)
-"spi" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/random/action_figure,
-/obj/random/action_figure,
-/obj/random/action_figure,
-/turf/simulated/floor/plating,
-/area/maintenance/lower/atmos)
 "spN" = (
 /obj/random/junk,
 /obj/effect/decal/cleanable/dirt,
@@ -38046,7 +38050,7 @@ aFN
 aGk
 bIb
 aGQ
-bMo
+akp
 bON
 bQV
 bSK
@@ -38187,7 +38191,7 @@ atG
 atG
 atG
 bHW
-atG
+akl
 aHh
 bOL
 bQU
@@ -42827,9 +42831,9 @@ abT
 aaS
 abT
 akz
-alH
+aki
 aex
-apj
+akk
 akz
 abT
 abT
@@ -47018,7 +47022,7 @@ rEC
 chO
 cje
 azI
-spi
+aks
 qKd
 xFo
 vhW
