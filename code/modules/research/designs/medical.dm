@@ -128,10 +128,29 @@
 	name = "improved health analyzer"
 	desc = "A prototype version of the regular health analyzer, able to distinguish the location of more serious injuries as well as accurately determine radiation levels."
 	id = "improved_analyzer"
-	req_tech = list(TECH_MAGNET = 5, TECH_BIO = 6)
-	materials = list(DEFAULT_WALL_MATERIAL = 2000, "glass" = 1000, "silver" = 1000, "gold" = 1500)
+	req_tech = list(TECH_MAGNET = 4, TECH_BIO = 2)
+	materials = list(DEFAULT_WALL_MATERIAL = 2000, "glass" = 1000, "silver" = 500, "gold" = 500)
 	build_path = /obj/item/device/healthanalyzer/improved
 	sort_string = "MBBAG"
+
+/datum/design/item/medical/advanced_analyzer
+	name = "advanced health analyzer"
+	desc = "An even more advanced handheld health scanner, complete with a full biosign monitor and on-board radiation and neurological analysis suites."
+	id = "advanced_analyzer"
+	req_tech = list(TECH_MAGNET = 5, TECH_BIO = 3)
+	materials = list(DEFAULT_WALL_MATERIAL = 2000, "glass" = 1000, "silver" = 750, "gold" = 1000)
+	build_path = /obj/item/device/healthanalyzer/advanced
+	sort_string = "MBBAH"
+
+/datum/design/item/medical/phasic_analyzer
+	name = "phasic health analyzer"
+	desc = "Possibly the most advanced health analyzer to ever have existed, utilising bluespace technology to determine almost everything worth knowing about a patient."
+	id = "phasic_analyzer"
+	req_tech = list(TECH_MAGNET = 6, TECH_BIO = 4)
+	materials = list(DEFAULT_WALL_MATERIAL = 2000, "glass" = 1000, "silver" = 1000, "gold" = 1500)
+	build_path = /obj/item/device/healthanalyzer/phasic
+	sort_string = "MBBAI"
+
 
 /datum/design/item/implant
 	materials = list(DEFAULT_WALL_MATERIAL = 50, "glass" = 50)

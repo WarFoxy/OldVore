@@ -1887,7 +1887,9 @@
 "eh" = (
 /obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/toy/figure/ninja,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /turf/simulated/floor,
 /area/maintenance/lower/north)
 "ei" = (
@@ -2040,7 +2042,12 @@
 "eB" = (
 /obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/remains/human,
+/obj/item/toy/figure/ninja,
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
 /turf/simulated/floor,
 /area/maintenance/lower/north)
 "eC" = (
@@ -2188,7 +2195,9 @@
 "eU" = (
 /obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/weapon/pen/crayon/red,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
 /turf/simulated/floor,
 /area/maintenance/lower/north)
 "eV" = (
@@ -4823,21 +4832,13 @@
 /turf/simulated/floor/tiled,
 /area/rnd/rdoffice)
 "kr" = (
-/obj/structure/railing{
-	dir = 8
-	},
-/obj/effect/floor_decal/techfloor{
-	dir = 4
-	},
+/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/visible/black{
-	dir = 1
+/obj/structure/cable{
+	icon_state = "1-4"
 	},
-/obj/effect/floor_decal/industrial/danger{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/techfloor,
-/area/maintenance/asmaint2)
+/turf/simulated/floor,
+/area/maintenance/lower/north)
 "ks" = (
 /turf/simulated/wall/r_wall,
 /area/server)
@@ -5971,17 +5972,21 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/lower/bar)
 "mE" = (
-/obj/structure/railing{
-	dir = 8
-	},
-/obj/effect/floor_decal/techfloor{
-	dir = 4
-	},
-/obj/structure/railing,
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/rust,
-/turf/simulated/floor/tiled/techfloor,
-/area/maintenance/asmaint2)
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8";
+	pixel_x = 0
+	},
+/turf/simulated/floor,
+/area/maintenance/lower/north)
 "mF" = (
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1;
@@ -6361,13 +6366,16 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/asmaint2)
 "ni" = (
-/obj/effect/floor_decal/techfloor{
-	dir = 4
-	},
-/obj/structure/catwalk,
+/obj/effect/floor_decal/rust,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/techfloor,
-/area/maintenance/asmaint2)
+/obj/effect/decal/remains/human,
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor,
+/area/maintenance/lower/north)
 "nj" = (
 /obj/structure/railing{
 	dir = 1
@@ -6658,19 +6666,15 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/bar)
 "nO" = (
-/obj/structure/railing{
-	dir = 8
-	},
-/obj/effect/floor_decal/techfloor{
-	dir = 4
-	},
-/obj/structure/railing{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/rust,
-/turf/simulated/floor/tiled/techfloor,
-/area/maintenance/asmaint2)
+/obj/effect/decal/cleanable/dirt,
+/obj/item/weapon/pen/crayon/red,
+/obj/structure/cable{
+	icon_state = "0-4";
+	d2 = 4
+	},
+/turf/simulated/floor,
+/area/maintenance/lower/north)
 "nP" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -10033,6 +10037,45 @@
 	},
 /turf/simulated/floor/tiled,
 /area/engineering/atmos/monitoring)
+"tO" = (
+/obj/effect/floor_decal/rust,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/simulated/floor,
+/area/maintenance/lower/north)
+"tP" = (
+/obj/effect/floor_decal/rust,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable{
+	icon_state = "16-0"
+	},
+/turf/simulated/floor,
+/area/maintenance/lower/north)
+"tQ" = (
+/obj/effect/floor_decal/techfloor{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/danger{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/maintenance/asmaint2)
+"tR" = (
+/obj/effect/floor_decal/techfloor{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/maintenance/asmaint2)
 "tS" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
@@ -10072,6 +10115,14 @@
 	},
 /turf/simulated/floor/tiled,
 /area/engineering/lower/atmos_lockers)
+"tU" = (
+/obj/structure/closet/crate,
+/obj/random/contraband,
+/obj/item/stack/material/diamond,
+/obj/item/stack/material/uranium,
+/obj/item/stack/material/phoron,
+/turf/simulated/floor/wood,
+/area/maintenance/lower/atmos)
 "tV" = (
 /turf/simulated/floor/tiled/monotile,
 /area/engineering/atmos)
@@ -17808,11 +17859,6 @@
 /obj/random/medical/lite,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/atmos)
-"VD" = (
-/obj/structure/closet/crate,
-/obj/random/contraband,
-/turf/simulated/floor/wood,
-/area/maintenance/lower/atmos)
 "VE" = (
 /obj/structure/cable{
 	d2 = 2;
@@ -24954,15 +25000,15 @@ ac
 ac
 kb
 kb
-kr
+tQ
 pc
 kV
 lh
 lB
 kV
-mE
-ni
-nO
+vU
+tR
+vU
 oj
 kV
 kV
@@ -26779,9 +26825,9 @@ cW
 cW
 cW
 dx
-dx
-dx
-eU
+eh
+kr
+nO
 dx
 cW
 cW
@@ -26921,9 +26967,9 @@ ap
 cW
 dw
 dR
-eh
-dx
-dx
+eB
+mE
+tO
 dx
 cW
 cW
@@ -27063,9 +27109,9 @@ cW
 cW
 dx
 dx
-dx
-eB
-dx
+eU
+ni
+tP
 dx
 cW
 cW
@@ -30113,7 +30159,7 @@ LQ
 VA
 RF
 VA
-VD
+tU
 Mk
 Ob
 Ne

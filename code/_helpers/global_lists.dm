@@ -195,6 +195,11 @@ var/global/list/string_slot_flags = list(
 		var/datum/poster/P = new T
 		poster_designs += P
 
+	paths = typesof(/datum/letter) - /datum/letter
+	for(var/T in paths)
+		var/datum/letter/L = new T
+		localisation += L
+
 	return 1
 
 /* // Uncomment to debug chemical reaction list.

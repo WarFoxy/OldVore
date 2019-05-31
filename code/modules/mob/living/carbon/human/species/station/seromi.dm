@@ -12,8 +12,8 @@
 	name_language = LANGUAGE_SCHECHI
 	species_language = LANGUAGE_SCHECHI
 
-	min_age = 12
-	max_age = 45
+	min_age = 1
+	max_age = 999
 
 	economic_modifier = 6
 
@@ -42,6 +42,7 @@
 
 	fire_icon_state = "generic" // Humanoid is too big for them and spriting a new one is really annoying.
 
+	darksight = 4
 	slowdown = -1
 	snow_movement = -2	// Ignores light snow
 	item_slowdown_mod = 2	// Tiny birds don't like heavy things
