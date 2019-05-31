@@ -35,8 +35,8 @@
 		/mob/living/proc/start_wings_hovering) //Xenochimera get all the special verbs since they can't select traits.
 
 	virus_immune = 1 // They practically ARE one.
-	min_age = 18
-	max_age = 80
+	min_age = 1
+	max_age = 999
 
 	blurb = "Some amalgamation of different species from across the universe,with extremely unstable DNA, making them unfit for regular cloners. \
 	Widely known for their voracious nature and violent tendencies when stressed or left unfed for long periods of time. \
@@ -334,8 +334,8 @@
 	inherent_verbs = list(
 		/mob/proc/weaveWebBindings)
 
-	min_age = 18
-	max_age = 80
+	min_age = 1
+	max_age = 999
 
 	blurb = "Vasilissans are a tall, lanky, spider like people. \
 	Each having four eyes, an extra four, large legs sprouting from their back, and a chitinous plating on their body, and the ability to spit webs \
