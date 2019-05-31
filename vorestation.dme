@@ -1657,7 +1657,6 @@
 #include "code\modules\clothing\spacesuits\void\wizard.dm"
 #include "code\modules\clothing\spacesuits\void\zaddat.dm"
 #include "code\modules\clothing\suits\armor.dm"
-#include "code\modules\clothing\suits\armor_ruvr.dm"
 #include "code\modules\clothing\suits\armor_vr.dm"
 #include "code\modules\clothing\suits\bio.dm"
 #include "code\modules\clothing\suits\bio_vr.dm"
