@@ -32,7 +32,8 @@
 	var/tail_animation										// If set, the icon to obtain tail animation states from.
 	var/tail_hair
 
-	var/icon_scale = 1										// Makes the icon larger/smaller.
+	var/icon_scale_x = 1										// Makes the icon wider/thinner.
+	var/icon_scale_y = 1										// Makes the icon taller/shorter.
 
 	var/race_key = 0										// Used for mob icon cache string.
 	var/icon/icon_template									// Used for mob icon generation for non-32x32 species.
@@ -47,8 +48,8 @@
 
 	var/taste_sensitivity = TASTE_NORMAL					// How sensitive the species is to minute tastes.
 
-	var/min_age = 17
-	var/max_age = 70
+	var/min_age = 1
+	var/max_age = 999
 
 	// Language/culture vars.
 	var/default_language = LANGUAGE_GALCOM					// Default language is used when 'say' is used without modifiers.

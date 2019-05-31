@@ -10115,6 +10115,14 @@
 	},
 /turf/simulated/floor/tiled,
 /area/engineering/lower/atmos_lockers)
+"tU" = (
+/obj/structure/closet/crate,
+/obj/random/contraband,
+/obj/item/stack/material/diamond,
+/obj/item/stack/material/uranium,
+/obj/item/stack/material/phoron,
+/turf/simulated/floor/wood,
+/area/maintenance/lower/atmos)
 "tV" = (
 /turf/simulated/floor/tiled/monotile,
 /area/engineering/atmos)
@@ -17850,11 +17858,6 @@
 /obj/structure/table/steel,
 /obj/random/medical/lite,
 /turf/simulated/floor/tiled/techfloor,
-/area/maintenance/lower/atmos)
-"VD" = (
-/obj/structure/closet/crate,
-/obj/random/contraband,
-/turf/simulated/floor/wood,
 /area/maintenance/lower/atmos)
 "VE" = (
 /obj/structure/cable{
@@ -30156,7 +30159,7 @@ LQ
 VA
 RF
 VA
-VD
+tU
 Mk
 Ob
 Ne

@@ -12111,8 +12111,17 @@
 /area/rnd/research)
 "uY" = (
 /obj/structure/grille,
-/obj/structure/window/reinforced/full,
 /obj/machinery/door/firedoor,
+/obj/structure/window/reinforced/polarized/full{
+	id = "rnd"
+	},
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id = "RND_lock";
+	name = "RnD Lockdown";
+	opacity = 0
+	},
 /turf/simulated/floor/plating,
 /area/rnd/research)
 "uZ" = (
@@ -12562,6 +12571,19 @@
 /obj/effect/floor_decal/corner/mauve/border{
 	dir = 4
 	},
+/obj/machinery/button/windowtint{
+	id = "rnd";
+	pixel_x = -10;
+	pixel_y = -1
+	},
+/obj/machinery/button/remote/blast_door{
+	id = "RND_lock";
+	name = "RND Lockdown";
+	pixel_x = 0;
+	pixel_y = -10;
+	req_access = list(30);
+	req_one_access = list(30)
+	},
 /turf/simulated/floor/tiled,
 /area/rnd/research)
 "vR" = (
@@ -12995,6 +13017,13 @@
 	req_access = list(7);
 	req_one_access = list(47)
 	},
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id = "RND_lock";
+	name = "RnD Lockdown";
+	opacity = 0
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/rnd/research)
 "wz" = (
@@ -13122,6 +13151,13 @@
 	name = "Research and Development";
 	req_access = list(7)
 	},
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id = "RND_lock";
+	name = "RnD Lockdown";
+	opacity = 0
+	},
 /turf/simulated/floor/tiled,
 /area/rnd/research)
 "wF" = (
@@ -13178,9 +13214,6 @@
 /turf/simulated/wall,
 /area/maintenance/lower/atrium)
 "wK" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
@@ -13197,6 +13230,12 @@
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals4{
 	dir = 6
+	},
+/obj/structure/disposalpipe/sortjunction{
+	dir = 4;
+	icon_state = "pipe-j1s";
+	name = "RnD";
+	sortType = "Robotics"
 	},
 /turf/simulated/floor/tiled,
 /area/rnd/research)
@@ -13468,6 +13507,9 @@
 	},
 /obj/effect/floor_decal/corner/mauve/bordercorner2{
 	dir = 8
+	},
+/obj/structure/disposalpipe/trunk{
+	dir = 1
 	},
 /turf/simulated/floor/tiled,
 /area/rnd/research)
@@ -14205,6 +14247,13 @@
 /obj/machinery/door/airlock/glass_research{
 	name = "Research and Development";
 	req_access = list(7)
+	},
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id = "RND_lock";
+	name = "RnD Lockdown";
+	opacity = 0
 	},
 /turf/simulated/floor/tiled,
 /area/rnd/research)

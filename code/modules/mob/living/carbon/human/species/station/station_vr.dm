@@ -351,7 +351,7 @@
 
 /datum/species/diona
 	spawn_flags = SPECIES_CAN_JOIN | SPECIES_IS_WHITELISTED
-	min_age = 18
+	min_age = 1
 
 /datum/species/teshari
 	mob_size = MOB_SMALL
@@ -359,7 +359,7 @@
 	icobase = 'icons/mob/human_races/r_seromi_vr.dmi'
 	deform = 'icons/mob/human_races/r_seromi_vr.dmi'
 	color_mult = 1
-	min_age = 18
+	min_age = 12
 	push_flags = ~HEAVY //Allows them to use micro step code.
 	swap_flags = ~HEAVY
 	gluttonous = 0
@@ -386,7 +386,7 @@
 /datum/species/vox
 	gluttonous = 0
 	spawn_flags = SPECIES_CAN_JOIN | SPECIES_IS_WHITELISTED
-	min_age = 18
+	min_age = 10
 	icobase = 'icons/mob/human_races/r_vox_old.dmi'
 	deform = 'icons/mob/human_races/r_def_vox_old.dmi'
 	inherent_verbs = list(/mob/living/proc/shred_limb, /mob/living/proc/eat_trash)
@@ -408,7 +408,7 @@ datum/species/harpy
 	color_mult = 1
 	inherent_verbs = list(/mob/living/proc/flying_toggle,/mob/living/proc/start_wings_hovering)
 
-	min_age = 18
+	min_age = 16
 	max_age = 80
 
 	blurb = "An Avian species, coming from a distant planet, the Rapalas are the very proud race.\
