@@ -42,9 +42,9 @@
 	taser_kill = FALSE
 	water_resist = 0 // Slimes are very weak to water.
 
-	melee_damage_lower = 10
-	melee_damage_upper = 15
-	base_attack_cooldown = 10 // One attack a second.
+	melee_damage_lower = 1
+	melee_damage_upper = 7
+	base_attack_cooldown = 20 // One attack a second.
 	attack_sound = 'sound/weapons/bite.ogg'
 	attacktext = list("glomped")
 	speak_emote = list("chirps")
