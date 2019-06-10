@@ -48,6 +48,9 @@ var/list/department_radio_keys = list(
 	  ":ö" = "whisper",		".ö" = "whisper",
 	  ":å" = "Mercenary",	".å" = "Mercenary",
 	  ":ã" = "Supply",		".ã" = "Supply",
+	  ":ì" = "Service",		".ì" = "Service",
+	  ":ç" = "AI Private",	".ç" = "AI Private",
+	  ":í" = "Explorer",	".í" = "Explorer",
 )
 
 
