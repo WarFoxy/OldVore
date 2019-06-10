@@ -3523,6 +3523,10 @@
 /area/tether/surfacebase/north_staires_two)
 "hI" = (
 /obj/machinery/door/airlock/maintenance/common,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/techfloor,
 /area/tether/surfacebase/atrium_two)
 "hJ" = (
