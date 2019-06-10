@@ -105,7 +105,7 @@ var/const/SAR 				=(1<<14)
 	idtype = /obj/item/weapon/card/id/medical/sar
 	economic_modifier = 7
 	minimal_player_age = 3
-	access = list(access_medical, access_medical_equip, access_morgue, access_surgery, access_chemistry, access_eva, access_maint_tunnels, access_external_airlocks)
+	access = list(access_medical, access_medical_equip, access_morgue, access_surgery, access_chemistry, access_eva, access_explorer, access_maint_tunnels, access_external_airlocks)
 	minimal_access = list(access_medical, access_medical_equip, access_morgue)
 	outfit_type = /decl/hierarchy/outfit/job/medical/sar
 
