@@ -240,9 +240,9 @@
 	var/multiorgasms = 0
 	var/lastmoan
 
-mob/living/carbon/human/proc/cum(mob/living/carbon/human/H as mob, mob/living/carbon/human/P as mob, var/hole = "floor")
-	var/message = ""
+/mob/living/carbon/human/proc/cum(mob/living/carbon/human/H as mob, mob/living/carbon/human/P as mob, var/hole = "floor")
 	var/ya = "&#255;"
+	var/message = ""
 	var/turf/T
 
 	if (H.gender == MALE)
@@ -260,10 +260,33 @@ mob/living/carbon/human/proc/cum(mob/living/carbon/human/H as mob, mob/living/ca
 			else
 				C.blood_DNA[source.data["blood_DNA"]] = "O+"
 
-		else
-			message = pick("извиваетс[ya] в приступе оргазма", "прикрывает глаза и мелко дрожит", "содрагаетс[ya], а затем резко расслабл[ya]етс[ya]", "замирает, закатив глаза")
+		if (H.species.genitals)
+			if (hole == "mouth")
+				message = pick("кончает [P] в рот.", "кончает [P] в глотку.", "заполн[ya]ет рот [P] семенем.", "брызгает спермой в рот [P].", "спускает на [ya]зычок [P].")
+				var/datum/reagents/holder = new
+				var/amt = rand(20,30)
+				holder.add_reagent("semen", amt)
+				holder.trans_to_mob(P, amt, CHEM_INGEST)
 
-		playsound(loc, "honk/sound/interactions/final_m[rand(1, 5)].ogg", 70, 1, frequency = get_age_pitch())
+			else if (hole == "vagina")
+				message = pick("кончает в [P]", "спускает в киску [P]", "заполняет влагалище [P] спермой.", "резко выт[ya]гивает член из [P], а затем спускает на пол.", "проникает в [P] последний раз, затем содрагаетс[ya]. Сперма медленно вытекает из щели [P].")
+
+			else if (hole == "anus")
+				message = pick("кончает [P] в зад.", "заполняет задницу [P] спермой.", "спускает семенную жидкость в прямую кишку [P].", "выдергивает член из [P], а затем обильно кончает на [P.identifying_gender == MALE ? "его" : "её"] попку.", "выт[ya]гивает член из задницы [P] и сразу же спускает на пол.")
+
+			else if (hole == "floor")
+				message = "кончает на пол!"
+
+			else if (hole == "cumhand")
+				message = pick("кончает [P] в руку.", "кончает в сжатый кулачок [P].", "разбрызгивает сем[ya], пачка[ya] ладошку и пальцы [P].", "стрел[ya]ет тугой струёй малафьи, зал[ya]пыва[ya] руку [P].")
+
+			else if (hole == "rub")
+				message = pick("кончает себе на живот.", "целитс[ya] на живот [P], стрел[ya]ет тугой струёй малафьи, но промахиваетс[ya].", "разбрызгивает сем[ya] по пузику [P].", "заполн[ya]ет внешнюю часть вагины [P] тёплой спермой.")
+
+		else
+			message = pick("кончает!", "оргазмирует!")
+
+		playsound(loc, "honk/sound/interactions/final_m[rand(1, 5)].ogg", 70, 1, 0)
 
 		H.visible_message("<B>[H] [message]</B>")
 		if (istype(P.loc, /obj/structure/closet))
@@ -276,14 +299,16 @@ mob/living/carbon/human/proc/cum(mob/living/carbon/human/H as mob, mob/living/ca
 		H.visible_message("<B>[H] [message].</B>")
 		if (istype(P.loc, /obj/structure/closet))
 			P.visible_message("<B>[H] [message].</B>")
-		playsound(loc, "honk/sound/interactions/final_f[rand(1, 3)].ogg", 90, 1, frequency = get_age_pitch())
+		playsound(loc, "honk/sound/interactions/final_f[rand(1, 3)].ogg", 90, 1, 0)
 		var/delta = pick(20, 30, 40, 50)
 		src.lust -= delta
 
 	H.druggy = 60
 	H.multiorgasms += 1
-	H.erpcooldown = 0
-	H.lust = 0
+	H.erpcooldown = rand(200, 450)
+	if (H.multiorgasms > H.potenzia / 3)
+		H.druggy = 300
+		H.erpcooldown = 600
 
 mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/carbon/human/P as mob, var/hole)
 	var/ya = "&#255;"
@@ -310,6 +335,7 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 			if (prob(5) && P.stat != DEAD)
 				H.visible_message("<font color=purple><B>[H] [message]</B></font>")
 				P.lust += 10
+				P.moan()
 			else
 				H.visible_message("<font color=purple>[H] [message]</font>")
 			if (istype(P.loc, /obj/structure/closet))
@@ -341,6 +367,7 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 			if (prob(5) && P.stat != DEAD)
 				H.visible_message("<font color=purple><B>[H] [message]</B></font>")
 				H.lust += 10
+				H.moan()
 			else
 				H.visible_message("<font color=purple>[H] [message]</font>")
 			if (istype(P.loc, /obj/structure/closet))
@@ -349,7 +376,6 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 				H.lust += 10
 				if (H.lust >= H.resistenza)
 					H.cum(H, P)
-					timeofact = world.time
 					message = pick("Вы чувствуете, как вагинальные мышцы [H] начинают резко сокращатьс[ya].", "Вы чувствуете, как в ваш рот попадает некоторое количество э[ya]кул[ya]та [H] в процессе оргазма.", "Вы чувствуете, как влажна[ya] киска [H] резко сжимаетс[ya] на вашем лице.", "Вы чувствуете, как всё внутри [H] сжимаетс[ya], а её клитор начинает пульсировать.", "Вы чувствуете, как [H] кончает вам на лицо струйкой э[ya]кул[ya]та, оргазмиру[ya].")
 					to_chat(P, message)
 				else
@@ -373,6 +399,7 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 			if (prob(5) && P.stat != DEAD)
 				H.visible_message("<font color=purple><B>[H] [message]</B></font>")
 				H.lust += 10
+				H.moan()
 			else
 				H.visible_message("<font color=purple>[H] [message]</font>")
 			if (istype(P.loc, /obj/structure/closet))
@@ -381,7 +408,6 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 				H.lust += 10
 				if (H.lust >= H.resistenza)
 					H.cum(H, P)
-					timeofact = world.time
 					message = pick("Вы чувствуете, как вагинальные мышцы [P] начинают резко сокращатьс[ya].", "Вы чувствуете, как в ваш рот попадает некоторое количество э[ya]кул[ya]та [P] в процессе оргазма.", "Вы чувствуете, как влажна[ya] киска [P] резко сжимает ваш [ya]зычок внутри себ[ya].", "Вы чувствуете, как всё внутри [P] сжимаетс[ya], а её клитор начинает пульсировать.", "Вы чувствуете, как [P] кончает вам в рот струйкой э[ya]кул[ya]та, оргазмиру[ya].")
 					to_chat(P, message)
 			else
@@ -406,6 +432,7 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 			if (prob(5) && P.stat != DEAD)
 				H.visible_message("<font color=purple><B>[H] [message]</B></font>")
 				P.lust += 8
+				P.moan()
 			else
 				H.visible_message("<font color=purple>[H] [message]</font>")
 			if (istype(P.loc, /obj/structure/closet))
@@ -423,16 +450,15 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 
 		if("jerk")
 
-			message = pick("плюёт на инструмент [P] и стимулирует его возвратно-поступательными движени[ya]ми.", "дрочит орган [P] в быстром темпе.", "медленно ласкает член [P] пальчиками.", "надрачивает [P] кулачком.", "дрочит член [P], заключив его в колечко из двух пальцев.", "медленно стимулирует орган [P].", "дрочит [P], обхватив его член рукой.", "надрачивает член [P].", "поглаживает головку члена [P] большим пальцем.", "дёргает половой орган [P].", "передёргивает [P].", "дрочит [P].")
-
+			message = pick("стимулирует инструмент [P] возвратно-поступательными движени[ya]ми.", "дрочит орган [P] в быстром темпе.", "медленно ласкает член [P] пальчиками.", "надрачивает [P] кулачком.", "дрочит член [P], заключив его в колечко из двух пальцев.", "медленно стимулирует орган [P].", "дрочит [P], обхватив его член рукой.", "надрачивает член [P].", "поглаживает головку члена [P] большим пальцем.", "дёргает половой орган [P].", "передёргивает [P].", "дрочит [P].")
 			if (H.lastfucked != P || H.lfhole != hole)
 				message = pick("м[ya]гко обхватывает член [P] рукой.", "берёт член [P] в руку.", "начинает надрачивать [P].")
 				H.lastfucked = P
 				H.lfhole = hole
-
 			if (prob(5) && P.stat != DEAD)
 				H.visible_message("<font color=purple><B>[H] [message]</B></font>")
 				P.lust += 5
+				P.moan()
 			else
 				H.visible_message("<font color=purple>[H] [message]</font>")
 			if (istype(P.loc, /obj/structure/closet))
@@ -440,13 +466,7 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 			if (P.stat != DEAD && P.stat != UNCONSCIOUS)
 				P.lust += 5
 				if (P.lust >= P.resistenza)
-					P.cum(P, H)
-					timeofact = world.time
-					message = pick("кончает [H] в руку.", "кончает в сжатый кулачок [H].", "разбрызгивает сем[ya], пачка[ya] ладошку и пальцы [H].", "кончает на пол.", "стрел[ya]ет тугой струёй малафьи, зал[ya]пыва[ya] [H].")
-					P.visible_message("<B>[P]</B> [message]")
-					playsound(loc, "honk/sound/interactions/final_m[rand(1, 5)].ogg", 70, 1, frequency = get_age_pitch())
-					P.lust = 0
-					P.druggy = 60
+					P.cum(P, H, "cumhand")
 				else
 					P.moan()
 			playsound(loc, "honk/sound/interactions/champ_fingering.ogg", 50, 1, -1)
@@ -474,7 +494,7 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 						H.lfhole = hole
 
 				if("Tajara", "Vulpkanin", "Flatland Zorren", "Highlander Zorren")
-					message = pick("вылизывает член [P].", "обводит своим шершавым [ya]зычком вокруг члена [P].", "проталкивает член [P] себе в пасть, стара[ya]сь не зацепить его зубами.", "стимулирует член [P] [ya]зыком.")
+					message = pick("вылизывает член [P].", "обводит своим [ya]зычком вокруг члена [P].", "проталкивает член [P] себе в пасть, стара[ya]сь не зацепить его зубами.", "стимулирует член [P] [ya]зыком.")
 					if (prob(35))
 						message = pick("вылизывает орган [P], прикрыв глаза от удовольстви[ya].", "постанывает, прикрыв глаза, не вынима[ya] член [P] из пасти.", "ласкает член [P] [ya]зычком, придержива[ya] его рукой.", "облизывает член [P] по всей длине.", "погружает член [P] все глубже себе в пасть.", "кончиком [ya]зыка облизывает головку члена [P].", "плюёт на кончик члена [P] и проталкивает его себе в глотку.", "вылизывает леденец [P].", "двигает головой взад-вперёд, стимулиру[ya] член [P].", "тщательно вылизывает член [P].", "зажмурившись, полностью заглатывает малыша [P].", "ласкает член [P], помога[ya] себе руками.")
 					if (H.lastfucked != P || H.lfhole != hole)
@@ -511,6 +531,7 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 			if (prob(5) && P.stat != DEAD)
 				H.visible_message("<font color=purple><B>[H] [message]</B></font>")
 				P.lust += 10
+				P.moan()
 			else
 				H.visible_message("<font color=purple>[H] [message]</font>")
 			if (istype(P.loc, /obj/structure/closet))
@@ -519,12 +540,8 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 				P.lust += 10
 				if (P.lust >= P.resistenza)
 					P.cum(P, H, "mouth")
-					timeofact = world.time
-					message = pick("кончает [H] в рот.", "целитс[ya] в лицо [H], стрел[ya]ет тугой струёй малафьи, но промахиваетс[ya].", "разбрызгивает сем[ya] на лицо [H].", "кончает на пол.", "спускает на [ya]зычок [H].")
-					P.visible_message("<B>[P]</B> [message]")
-					playsound(loc, "honk/sound/interactions/final_m[rand(1, 5)].ogg", 70, 1, frequency = get_age_pitch())
-					P.lust = 0
-					P.druggy = 60
+				else
+					P.moan()
 			playsound(loc, "honk/sound/interactions/bj[rand(1, 11)].ogg", 50, 1, -1)
 			H.do_fucking_animation(P)
 			if (prob(P.potenzia))
@@ -554,6 +571,7 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 			if (prob(5) && P.stat != DEAD)
 				H.visible_message("<font color=purple><B>[H] [message]</B></font>")
 				P.lust += H.potenzia * 2
+				P.moan()
 			else
 				H.visible_message("<font color=purple>[H] [message]</font>")
 			if (istype(P.loc, /obj/structure/closet))
@@ -562,13 +580,8 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 			H.lust += 10
 			if (H.lust >= H.resistenza)
 				H.cum(H, P, "vagina")
-				timeofact = world.time
-				message = pick("кончает в [P]", "резко выт[ya]гивает член из [P], а затем спускает на пол.", "проникает в [P] последний раз, затем содрагаетс[ya]. Сперма медленно вытекает из щели [P].")
-				H.visible_message("<B>[H]</B> [message]")
-				playsound(loc, "honk/sound/interactions/final_m[rand(1, 5)].ogg", 70, 1, frequency = get_age_pitch())
-				H.lust = 0
-				H.druggy = 30
-				P.lust += 5
+			else
+				H.moan()
 
 			if (P.stat != DEAD && P.stat != UNCONSCIOUS)
 				P.lust += H.potenzia * 0.5
@@ -606,21 +619,18 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 			if (prob(5) && P.stat != DEAD)
 				H.visible_message("<font color=purple><B>[H] [message]</B></font>")
 				P.lust += H.potenzia * 2
+				P.moan()
 			else
 				H.visible_message("<font color=purple>[H] [message]</font>")
 			if (istype(P.loc, /obj/structure/closet))
 				P.visible_message("<font color=purple>[H] [message]</font>")
 				playsound(P.loc.loc, 'sound/effects/clang.ogg', 50, 0, 0)
 			H.lust += 12
+
 			if (H.lust >= H.resistenza)
 				H.cum(H, P, "anus")
-				timeofact = world.time
-				message = pick("кончает [P] в зад.", "выдергивает член из [P], а затем обильно кончает на [P.identifying_gender == MALE ? "его" : "её"] попку.", "выт[ya]гивает член из задницы [P] и сразу же спускает на пол.")
-				H.visible_message("<B>[H]</B> [message]")
-				playsound(loc, "honk/sound/interactions/final_m[rand(1, 5)].ogg", 70, 1, frequency = get_age_pitch())
-				H.lust = 0
-				H.druggy = 30
-				P.lust += 5
+			else
+				H.moan()
 
 			if (P.stat != DEAD && P.stat != UNCONSCIOUS)
 				if (H.potenzia > 13)
@@ -658,6 +668,7 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 			if (prob(5) && H.stat != DEAD)
 				H.visible_message("<font color=purple><B>[H][message]</B></font>")
 				H.lust += 15
+				H.moan()
 			else
 				H.visible_message("<font color=purple>[H][message]</font>")
 			if (istype(P.loc, /obj/structure/closet))
@@ -666,12 +677,8 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 			H.lust += 15
 			if (H.lust >= H.resistenza)
 				H.cum(H, P, "mouth")
-				timeofact = world.time
-				message = pick("кончает [P] в рот.", "целитс[ya] в лицо [P], стрел[ya]ет тугой струёй малафьи, но промахиваетс[ya].", "разбрызгивает сем[ya] на лицо [P].", "кончает на пол.", "спускает на [ya]зычок [P].")
-				H.visible_message("<B>[H]</B> [message]")
-				playsound(loc, "honk/sound/interactions/final_m[rand(1, 5)].ogg", 70, 1, frequency = get_age_pitch())
-				H.lust = 0
-				H.druggy = 30
+			else
+				H.moan()
 
 			H.do_fucking_animation(P)
 			playsound(loc, "honk/sound/interactions/oral[rand(1, 2)].ogg", 70, 1, -1)
@@ -698,6 +705,7 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 			if (prob(5) && P.stat != DEAD)
 				H.visible_message("<font color=purple><B>[H] [message].</B></font>")
 				P.lust += H.potenzia * 2
+				P.moan()
 			else
 				H.visible_message("<font color=purple>[H] [message].</font>")
 			if (istype(P.loc, /obj/structure/closet))
@@ -706,7 +714,6 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 			H.lust += P.potenzia
 			if (H.lust >= H.resistenza)
 				H.cum(H, P)
-				H.lust = 0
 				message = pick("Вы чувствуете, как вагинальные мышцы [H] начинают резко сокращатьс[ya] вокруг вашего инструмента.", "Вы чувствуете, как ребристые стенки [H] крепко сжимают ваш напр[ya]жённый член.", "Вы чувствуете, как влажна[ya] киска [H] резко сжимает ваш член внутри себ[ya].", "Вы чувствуете, что вашему прибору становитс[ya] тесно внутри гор[ya]чей писечки [H].", "Вы чувствуете, как мышцы внутри разгор[ya]чённой вагины [H] сильно сжимаютс[ya] несколько раз, приближа[ya] вас к оргазму.")
 				to_chat(P, message)
 				P.lust += 15
@@ -716,12 +723,6 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 				P.lust += H.potenzia
 				if (P.lust >= P.resistenza)
 					P.cum(P, H, "vagina")
-					timeofact = world.time
-					message = pick("кончает в [H]", "резко выт[ya]гивает член из [H], а затем спускает на пол.", "проникает в [H] последний раз, затем содрагаетс[ya]. Сперма медленно вытекает из щели [H].")
-					P.visible_message("<B>[P]</B> [message]")
-					playsound(loc, "honk/sound/interactions/final_m[rand(1, 5)].ogg", 70, 1, frequency = get_age_pitch())
-					P.lust = 0
-					P.druggy = 30
 				else
 					P.moan()
 			H.do_fucking_animation(P)
@@ -751,19 +752,12 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 			H.lust += 9
 			if (H.lust >= H.resistenza)
 				H.cum(H, P)
-				H.lust = 0
 			else
 				H.moan()
 			if (P.stat != DEAD && P.stat != UNCONSCIOUS)
 				P.lust += 10
 				if (P.lust >= P.resistenza)
-					P.cum(P, H, "vagina")
-					timeofact = world.time
-					message = pick("кончает себе на живот.", "целитс[ya] на живот [H], стрел[ya]ет тугой струёй малафьи, но промахиваетс[ya].", "разбрызгивает сем[ya] по пузику [H].", "заполн[ya]ет внешнюю часть вагины [H] гор[ya]чей спермой.")
-					P.visible_message("<B>[P]</B> [message]")
-					playsound(loc, "honk/sound/interactions/final_m[rand(1, 5)].ogg", 70, 1, frequency = get_age_pitch())
-					P.lust = 0
-					P.druggy = 30
+					P.cum(P, H, "rub")
 				else
 					P.moan()
 			H.do_fucking_animation(P)
@@ -881,7 +875,7 @@ mob/living/carbon/human/proc/handle_lust()
 
 /obj/item/weapon/dildo
 	name = "dildo"
-	desc = "Hm-m-m, deal thow"
+	desc = "Hmmm, deal throw"
 	icon = 'honk/icons/obj/items/dildo.dmi'
 	icon_state = "dildo"
 	item_state = "c_tube"
@@ -891,10 +885,9 @@ mob/living/carbon/human/proc/handle_lust()
 	throw_speed = 3
 	throw_range = 15
 	attack_verb = list("slammed", "bashed", "whipped")
-	var/hole = "vagina" //or "anus"
-	var/rus_name = "дилдо"
-	var/ya = "&#255;"
+	var/hole = "vagina"
 	var/pleasure = 10
+	var/ya = "&#255;"
 
 /obj/item/weapon/dildo/attack(mob/living/carbon/human/M, mob/living/carbon/human/user)
 	var/hasvagina = (M.gender == FEMALE && M.species.genitals && M.species.name != "Unathi" && M.species.name != "Stok")
@@ -902,11 +895,11 @@ mob/living/carbon/human/proc/handle_lust()
 	var/message = ""
 
 	if(istype(M, /mob/living/carbon/human) && user.zone_sel.selecting == "groin" && M.is_nude())
-		if (hole == "vagina" && hasvagina)
+		if (hole == "vagina" && hasvagina && M.erpcooldown == 0)
 			if (user == M)
-				message = pick("удовлетвор[ya]ет себ[ya] с помощью [rus_name]", "заталкивает в себ[ya] [rus_name]", "погружает [rus_name] в свое лоно")
+				message = pick("удовлетвор[ya]ет себ[ya] с помощью дилдо", "заталкивает в себ[ya] дилдо", "погружает дилдо в своё лоно")
 			else
-				message = pick("удовлетвор[ya]ет [M] с помощью [rus_name]", "заталкивает в [M] [rus_name]", "погружает [rus_name] в лоно [M]")
+				message = pick("удовлетвор[ya]ет [M] с помощью дилдо", "заталкивает в [M] дилдо", "погружает дилдо в лоно [M]")
 
 			if (prob(5) && M.stat != DEAD && M.stat != UNCONSCIOUS)
 				user.visible_message("<font color=purple><B>[user] [message].</B></font>")
@@ -924,11 +917,11 @@ mob/living/carbon/human/proc/handle_lust()
 			user.do_fucking_animation(M)
 			playsound(loc, "honk/sound/interactions/bang[rand(4, 6)].ogg", 70, 1, -1)
 
-		else if (hole == "anus" && hasanus)
+		else if (hole == "anus" && hasanus && M.erpcooldown == 0)
 			if (user == M)
-				message = pick("удовлетвор[ya]ет себ[ya] анально с помощью [rus_name]", "заталкивает [rus_name] себе в анус", "чистит свой дымоход, использу[ya] [rus_name]")
+				message = pick("удовлетвор[ya]ет себ[ya] анально с помощью дилдо", "заталкивает дилдо себе в анус", "чистит свой дымоход, использу[ya] дилдо")
 			else
-				message = pick("удовлетвор[ya]ет [M] анально с помощью [rus_name]", "заталкивает [rus_name] [M] в анус", "чистит дымоход [M], использу[ya] [rus_name]")
+				message = pick("удовлетвор[ya]ет [M] анально с помощью дилдо", "заталкивает дилдо [M] в анус", "чистит дымоход [M], использу[ya] дилдо")
 
 			if (prob(5) && M.stat != DEAD && M.stat != UNCONSCIOUS)
 				user.visible_message("<font color=purple><B>[user] [message].</B></font>")
@@ -956,4 +949,25 @@ mob/living/carbon/human/proc/handle_lust()
 		hole = "anus"
 	else
 		hole = "vagina"
-	to_chat(user, "<span class='warning'>Hm-m-m. Maybe we should put it in [hole]?!</span>")
+	user << "<span class='warning'>Hmmm. Maybe we should put it in [hole]?!</span>"
+
+
+//SEMEN
+
+/datum/reagent/semen
+	name = "semen"
+	id = "semen"
+	description = "Where you found this is your own business."
+	reagent_state = LIQUID
+	color = "#AAAAAA77"
+	taste_description = "salt"
+	taste_mult = 2
+	var/nutriment_factor = 0.5
+	glass_icon_state = "glass_white"
+	glass_name = "glass of cream"
+	glass_desc = "Smells suspicious."
+
+/datum/reagent/semen/touch_turf(var/turf/T)
+	src = null
+	if(!istype(T, /turf/space))
+		new /obj/effect/decal/cleanable/cum(T)
