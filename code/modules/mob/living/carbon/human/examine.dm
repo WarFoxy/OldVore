@@ -272,13 +272,13 @@
 		msg += "[T.He] [T.is] wearing \icon[wear_id] \a [wear_id].<br>"
 
 	//genitals
-	if(is_nude() && gender == MALE && species.genitals && species.get_bodytype() == SPECIES_HUMAN)
+	if(is_nude() && gender == MALE && species.genitals && species.get_bodytype() == SPECIES_HUMAN && potenzia > -1)
 		msg += "<B>[T.He] [T.has] a normal penis!</B><br>"
-	else if(is_nude() && gender == MALE && species.genitals && species.get_bodytype() == SPECIES_TAJ)
+	else if(is_nude() && gender == MALE && species.genitals && species.get_bodytype() == SPECIES_TAJ && potenzia > -1)
 		msg += "<B>[T.He] [T.has] a barbed penis!</B><br>"
-	else if(is_nude() && gender == MALE && species.genitals && (species.get_bodytype() == SPECIES_ZORREN_HIGH || species.get_bodytype() == SPECIES_ZORREN_FLAT || species.get_bodytype() == SPECIES_VULPKANIN))
+	else if(is_nude() && gender == MALE && species.genitals && (species.get_bodytype() == SPECIES_ZORREN_HIGH || species.get_bodytype() == SPECIES_ZORREN_FLAT || species.get_bodytype() == SPECIES_VULPKANIN) && potenzia > -1)
 		msg += "<B>[T.He] [T.has] a knotted penis!</B><br>"
-	else if(is_nude() && gender == MALE && species.genitals && species.get_bodytype() == SPECIES_UNATHI)
+	else if(is_nude() && gender == MALE && species.genitals && species.get_bodytype() == SPECIES_UNATHI && potenzia > -1)
 		msg += "<B>[T.He] [T.has] a bifurcated penis!</B><br>"
 	else if(is_nude() && species.genitals && species.get_bodytype() == SPECIES_TESHARI)
 		msg += "<B>[T.He] [T.has] a cloaca!</B><br>"
