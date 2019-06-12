@@ -282,7 +282,7 @@
 		msg += "<B>[T.He] [T.has] a bifurcated penis!</B><br>"
 	else if(is_nude() && species.genitals && species.get_bodytype() == SPECIES_TESHARI)
 		msg += "<B>[T.He] [T.has] a cloaca!</B><br>"
-	else if(is_nude() && gender == MALE && species.genitals)
+	else if(is_nude() && gender == MALE && species.genitals && potenzia > -1)
 		msg += "<B>[T.He] [T.has] a penis!</B><br>"
 	else if(is_nude() && gender == FEMALE && species.genitals)
 		msg += "<B>[T.He] [T.has] a vagina!</B><br>"

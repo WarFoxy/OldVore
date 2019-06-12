@@ -660,7 +660,7 @@
 		else if (href_list["interaction"] == "pet")
 			if (!hashands)
 				to_chat(H, "<span class='warning'>Вы не можете этого сделать. У вас нет рук!</span>")
-			else if ((!istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc))
+			else if ((Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc))
 				H.visible_message("<B>[H]</B> [pick("гладит", "чешет шёрстку")] <B>[P]</B>.")
 				if (istype(P.loc, /obj/structure/closet))
 					P.visible_message("<B>[H]</B> [pick("гладит", "чешет шёрстку")] <B>[P]</B>.")

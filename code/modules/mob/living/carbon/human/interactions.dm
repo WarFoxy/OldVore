@@ -269,10 +269,10 @@
 				holder.trans_to_mob(P, amt, CHEM_INGEST)
 
 			else if (hole == "vagina")
-				message = pick("кончает в [P]", "спускает в киску [P]", "заполняет влагалище [P] спермой.", "резко выт[ya]гивает член из [P], а затем спускает на пол.", "проникает в [P] последний раз, затем содрагаетс[ya]. Сперма медленно вытекает из щели [P].")
+				message = pick("кончает в [P]", "спускает в киску [P]", "заполн[ya]ет влагалище [P] спермой.", "резко выт[ya]гивает член из [P], а затем спускает на пол.", "проникает в [P] последний раз, затем содрагаетс[ya]. Сперма медленно вытекает из щели [P].")
 
 			else if (hole == "anus")
-				message = pick("кончает [P] в зад.", "заполняет задницу [P] спермой.", "спускает семенную жидкость в прямую кишку [P].", "выдергивает член из [P], а затем обильно кончает на [P.identifying_gender == MALE ? "его" : "её"] попку.", "выт[ya]гивает член из задницы [P] и сразу же спускает на пол.")
+				message = pick("кончает [P] в зад.", "заполн[ya]ет задницу [P] спермой.", "спускает семенную жидкость в пр[ya]мую кишку [P].", "выдергивает член из [P], а затем обильно кончает на [P.identifying_gender == MALE ? "его" : "её"] попку.", "выт[ya]гивает член из задницы [P] и сразу же спускает на пол.")
 
 			else if (hole == "floor")
 				message = "кончает на пол!"
@@ -384,8 +384,8 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 			H.do_fucking_animation(P)
 			playsound(loc, "honk/sound/interactions/champ_fingering.ogg", 50, 1, -1)
 			if(P.a_intent == I_HURT)
-				H.adjustBruteLoss(5)
-				retaliation_message = pick("сильно кусает [H] за ногу.", "сжимает зубы между ног [H].", "злобно смотрит из-под колен [H], скаля окровавленные зубы.", "изо всех сил пытается вырваться из-под ног [H].")
+				H.adjustBruteLossByPart(5, BP_GROIN)
+				retaliation_message = pick("сильно кусает [H] за ногу.", "сжимает зубы между ног [H].", "злобно смотрит из-под колен [H], скал[ya] окровавленные зубы.", "изо всех сил пытаетс[ya] вырватьс[ya] из-под ног [H].")
 				H.visible_message("<font color=red>[P] [retaliation_message]</font>")
 
 		if("forcelick")
@@ -420,8 +420,8 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 			H.do_fucking_animation(P)
 			playsound(loc, "honk/sound/interactions/bj[rand(1, 11)].ogg", 50, 1, -1)
 			if(P.a_intent == I_HURT)
-				H.adjustBruteLoss(5)
-				retaliation_message = pick("яростно кусает [H] за ноги.", "сжимает зубами киску [H].", "выглядит очень недовольным свои нахождением здесь.", "изо всех сил пытается вырваться из-под бёдер [H].")
+				H.adjustBruteLossByPart(5, BP_GROIN)
+				retaliation_message = pick("[ya]ростно кусает [H] за ноги.", "сжимает зубами киску [H].", "выгл[ya]дит очень недовольным своим нахождением здесь.", "изо всех сил пытаетс[ya] вырватьс[ya] из-под бёдер [H].")
 				H.visible_message("<font color=red>[P] [retaliation_message]</font>")
 
 		if("fingering")
@@ -699,12 +699,12 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 				if (istype(P.loc, /obj/structure/closet))
 					P.visible_message("<B>[P]</B> [pick("давитс[ya] инструментом <B>[H]</B>", "задыхаетс[ya]", "корчитс[ya] в рвотном позыве")].")
 			if (P.a_intent == I_HURT)
-				H.adjustBruteLoss(5)
-				retaliation_message = pick("сильно кусает член [H].", "сжимает зубами член [H], пока не начинает течь кровь.", "злобно смотрит из-под колен [H], скаля окровавленные зубы.", "изо всех сил пытается вырваться из-под ног [H].")
+				H.adjustBruteLossByPart(5, BP_GROIN)
+				retaliation_message = pick("сильно кусает член [H].", "сжимает зубами член [H], пока не начинает течь кровь.", "злобно смотрит из-под колен [H], скал[ya] окровавленные зубы.", "изо всех сил пытаетс[ya] вырватьс[ya] из-под ног [H].")
 				H.visible_message("<font color=red>[P] [retaliation_message]</font>")
 				if (prob(5))
-					H.adjustBruteLoss(20)
-					retaliation_message = pick("сжимает зубами член [H], а затем отрывает его, пачкаясь в крови!", "прикусывает член [H] и не отпускает, пока он не отрывается!", "откусывает член партнёра полностью в попытках вырваться!")
+					H.adjustBruteLossByPart(20, BP_GROIN)
+					retaliation_message = pick("сжимает зубами член [H], а затем отрывает его, пачка[ya]сь в крови!", "прикусывает член [H] и не отпускает, пока он не отрываетс[ya]!", "откусывает член партнёра полностью в попытках вырватьс[ya]!")
 					H.visible_message("<font color=red><b>[P] [retaliation_message]</font></b>")
 					H.potenzia = -1
 
@@ -824,7 +824,7 @@ mob/living/carbon/human/proc/moan()
 					var/message = pick("довольно стрекочет", "извиваетс[ya] от удовольстви[ya]")
 					H.visible_message("<B>[H]</B> [message].")
 	else if (prob(H.lust / H.resistenza * 65))
-		var/message = pick("тихо стонет", "постанывает в тишине", "закатывает глаза от удовольствия")
+		var/message = pick("тихо стонет", "постанывает в тишине", "закатывает глаза от удовольстви[ya]")
 		H.visible_message("<B>[H]</B> [message].")
 
 mob/living/carbon/human/proc/handle_lust()
