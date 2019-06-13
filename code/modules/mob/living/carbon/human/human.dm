@@ -661,9 +661,15 @@
 			if (!hashands)
 				to_chat(H, "<span class='warning'>Вы не можете этого сделать. У вас нет рук!</span>")
 			else if ((Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc))
-				H.visible_message("<B>[H]</B> [pick("гладит", "чешет шёрстку")] <B>[P]</B>.")
+				if (P != H)
+					H.visible_message("<B>[H]</B> [pick("гладит", "чешет шёрстку")] <B>[P]</B>.")
+				else
+					H.visible_message("<B>[H]</B> [pick("гладит себ[ya]", "гладит своё тело")].")
 				if (istype(P.loc, /obj/structure/closet))
-					P.visible_message("<B>[H]</B> [pick("гладит", "чешет шёрстку")] <B>[P]</B>.")
+					if (P != H)
+						P.visible_message("<B>[H]</B> [pick("гладит", "чешет шёрстку")] <B>[P]</B>.")
+					else
+						P.visible_message("<B>[H]</B> [pick("гладит себ[ya]", "гладит своё тело")].")
 				H.attack_log += text("\[[time_stamp()]\] <font color='red'>peted [P.name] ([P.ckey])</font>")
 				P.attack_log += text("\[[time_stamp()]\] <font color='orange'>was peted by [H.name] ([H.ckey])</font>")
 			else
@@ -716,9 +722,15 @@
 			if (!hashands)
 				to_chat(H, "<span class='warning'>Вы не можете этого сделать. У вас нет рук!</span>")
 			else if ((Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc))
-				H.visible_message("<B>[H]</B> обнимает <B>[P]</B>.")
+				if (P != H)
+					H.visible_message("<B>[H]</B> обнимает <B>[P]</B>.")
+				else
+					H.visible_message("<B>[H]</B> обнимает <B>себ[ya]</B>.")
 				if (istype(P.loc, /obj/structure/closet))
-					P.visible_message("<B>[H]</B> обнимает <B>[P]</B>.")
+					if (P != H)
+						P.visible_message("<B>[H]</B> обнимает <B>[P]</B>.")
+					else
+						P.visible_message("<B>[H]</B> обнимает <B>себ[ya]</B>.")
 				playsound(loc, 'honk/sound/interactions/hug.ogg', 50, 1, -1)
 				H.attack_log += text("\[[time_stamp()]\] <font color='red'>huged [P.name] ([P.ckey])</font>")
 				P.attack_log += text("\[[time_stamp()]\] <font color='orange'>was hugged by [H.name] ([H.ckey])</font>")
@@ -729,9 +741,15 @@
 			if (!hashands)
 				to_chat(H, "<span class='warning'>Вы не можете этого сделать. У вас нет рук!</span>")
 			else if ((Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc))
-				H.visible_message("<B>[H]</B> похлопывает <B>[P]</B> по плечу.")
+				if (P != H)
+					H.visible_message("<B>[H]</B> похлопывает <B>[P]</B> по плечу.")
+				else
+					H.visible_message("<B>[H]</B> похлопывает <B>себ[ya]</B> по плечу.")
 				if (istype(P.loc, /obj/structure/closet))
-					P.visible_message("<B>[H]</B> похлопывает <B>[P]</B> по плечу.")
+					if (P != H)
+						P.visible_message("<B>[H]</B> похлопывает <B>[P]</B> по плечу.")
+					else
+						P.visible_message("<B>[H]</B> похлопывает <B>себ[ya]</B> по плечу.")
 				H.attack_log += text("\[[time_stamp()]\] <font color='red'>cheered [P.name] ([P.ckey])</font>")
 				P.attack_log += text("\[[time_stamp()]\] <font color='orange'>was cheered by [H.name] ([H.ckey])</font>")
 			else
@@ -773,9 +791,15 @@
 			if (!hashands)
 				to_chat(H, "<span class='warning'>Вы не можете этого сделать. У вас нет рук!</span>")
 			else if ((Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc))
-				H.visible_message("<span class='danger'>[H] дает [P] пощечину!</span>")
+				if (P != H)
+					H.visible_message("<span class='danger'>[H] дает [P] пощечину!</span>")
+				else
+					H.visible_message("<span class='danger'>[H] дает себе пощечину!</span>")
 				if (istype(P.loc, /obj/structure/closet))
-					P.visible_message("<span class='danger'>[H] дает [P] пощечину!</span>")
+					if (P != H)
+						P.visible_message("<span class='danger'>[H] дает [P] пощечину!</span>")
+					else
+						P.visible_message("<span class='danger'>[H] дает себе пощечину!</span>")
 				playsound(loc, 'honk/sound/interactions/slap.ogg', 50, 1, -1)
 				H.attack_log += text("\[[time_stamp()]\] <font color='red'>slapped [P.name] ([P.ckey])</font>")
 				P.attack_log += text("\[[time_stamp()]\] <font color='orange'>was slapped by [H.name] ([H.ckey])</font>")
@@ -797,9 +821,15 @@
 			if (!hashands)
 				to_chat(H, "<span class='warning'>Вы не можете этого сделать. У вас нет рук!</span>")
 			else if ((Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc))
-				H.visible_message("<span class='danger'>[H] дает [P] подзатыльник!</span>")
+				if (P != H)
+					H.visible_message("<span class='danger'>[H] дает [P] подзатыльник!</span>")
+				else
+					H.visible_message("<span class='danger'>[H] дает себе подзатыльник!</span>")
 				if (istype(P.loc, /obj/structure/closet))
-					P.visible_message("<span class='danger'>[H] дает [P] подзатыльник!</span>")
+					if (P != H)
+						P.visible_message("<span class='danger'>[H] дает [P] подзатыльник!</span>")
+					else
+						P.visible_message("<span class='danger'>[H] дает себе подзатыльник!</span>")
 				playsound(loc, 'sound/weapons/throwtap.ogg', 50, 1, -1)
 				H.attack_log += text("\[[time_stamp()]\] <font color='red'>knocked [P.name] ([P.ckey])</font>")
 				P.attack_log += text("\[[time_stamp()]\] <font color='orange'>was knocked by [H.name] ([H.ckey])</font>")
@@ -843,9 +873,15 @@
 			if (!hashands)
 				to_chat(H, "<span class='warning'>Вы не можете этого сделать. У вас нет рук!</span>")
 			else if (((Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc)) && hasanus_p)
-				H.visible_message("<span class='danger'>[H] шлепает [P] по заднице!</span>")
+				if (P != H)
+					H.visible_message("<span class='danger'>[H] шлепает [P] по заднице!</span>")
+				else
+					H.visible_message("<span class='danger'>[H] шлепает себ[ya] по заднице!</span>")
 				if (istype(P.loc, /obj/structure/closet))
-					P.visible_message("<span class='danger'>[H] шлепает [P] по заднице!</span>")
+					if (P != H)
+						P.visible_message("<span class='danger'>[H] шлепает [P] по заднице!</span>")
+					else
+						P.visible_message("<span class='danger'>[H] шлепает себ[ya] по заднице!</span>")
 				playsound(loc, 'honk/sound/interactions/slap.ogg', 50, 1, -1)
 				H.attack_log += text("\[[time_stamp()]\] <font color='red'>ass-slapped [P.name] ([P.ckey])</font>")
 				P.attack_log += text("\[[time_stamp()]\] <font color='orange'>was ass-slapped by [H.name] ([H.ckey])</font>")
@@ -901,7 +937,10 @@
 
 		else if (href_list["interaction"] == "fingering")
 			if(((Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc)) && isnude_p && hashands && hasvagina_p && P.species.name != "Teshari")
-				H.fuck(H, P, "fingering")
+				if (P == H && H.erpcooldown != 0)
+					to_chat(H, "<span class='warning'>Вы всё ещё устали с прошлого раза. Нужно подождать [DisplayTimeText(H.erpcooldown * 20, TRUE)], перед тем как продолжить!</span>")
+				else
+					H.fuck(H, P, "fingering")
 			else
 				to_chat(H, "<span class='warning'>Вы слишком далеко или что-то мешает вам это сделать.</span>")
 
@@ -910,7 +949,10 @@
 				if (P.erpcooldown == 0)
 					H.fuck(H, P, "jerk")
 				else
-					to_chat(H, "<span class='warning'>[P.identifying_gender==FEMALE ? "Она" : "Он"] всё ещё [P.identifying_gender==FEMALE ? "устала" : "устал"] с прошлого раза. Нужно подождать [DisplayTimeText(P.erpcooldown * 20, TRUE)], перед тем как продолжить!</span>")
+					if (P == H)
+						to_chat(H, "<span class='warning'>Вы всё ещё устали с прошлого раза. Нужно подождать [DisplayTimeText(H.erpcooldown * 20, TRUE)], перед тем как продолжить!</span>")
+					else
+						to_chat(H, "<span class='warning'>[P.identifying_gender==FEMALE ? "Она" : "Он"] всё ещё [P.identifying_gender==FEMALE ? "устала" : "устал"] с прошлого раза. Нужно подождать [DisplayTimeText(P.erpcooldown * 20, TRUE)], перед тем как продолжить!</span>")
 			else
 				to_chat(H, "<span class='warning'>Вы слишком далеко или что-то мешает вам это сделать.</span>")
 
