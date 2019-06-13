@@ -223,6 +223,8 @@
 				dat += {"Х <A href='?src=\ref[src];interaction=facesitting'><font color=purple>—есть на лицо</font></A><BR>"}
 			if (mouthfree_p && (Adjacent(P) || (usr.loc == H.partner.loc)))
 				dat += {"Х <A href='?src=\ref[src];interaction=forcelick'><font color=purple>«аставить отлизывать</font></A><BR>"}
+			if ((usr.loc == H.partner.loc) && hasvagina_p)
+				dat += {"Х <A href='?src=\ref[src];interaction=tribadism'><font color=purple>“рибадизм</font></A><BR>"}
 
 	var/datum/browser/popup = new(usr, "interactions", "Interactions", 340, 480)
 	popup.set_content(dat)
@@ -762,6 +764,7 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 			if (prob(5) && P.stat != DEAD)
 				H.visible_message("<font color=purple><B>[H] [message].</B></font>")
 				P.lust += H.potenzia * 2
+				H.moan()
 			else
 				H.visible_message("<font color=purple>[H] [message].</font>")
 			if (istype(P.loc, /obj/structure/closet))
@@ -776,6 +779,34 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 				P.lust += 10
 				if (P.lust >= P.resistenza)
 					P.cum(P, H, "rub")
+				else
+					P.moan()
+			H.do_fucking_animation(P)
+			playsound(loc, "honk/sound/interactions/champ_fingering.ogg", 50, 1, -1)
+
+		if("tribadism")
+
+			message = pick("трЄтс[ya] своей киской о половые губы [P]", "надавливает киской на вагину [P]", "трЄтс[ya] о киску [P]", "трахает [P], заставл[ya][ya] их киски теретьс[ya] друг о друга")
+
+			if (H.lastfucked != P || H.lfhole != hole)
+				message = pick("прижимает свою киску к киске [P]")
+				H.lastfucked = P
+				H.lfhole = hole
+				H.visible_message("<font color=purple>[H] [message].</font>")
+			else
+				H.visible_message("<font color=purple>[H] [message].</font>")
+			if (istype(P.loc, /obj/structure/closet))
+				P.visible_message("<font color=purple>[H] [message].</font>")
+				playsound(P.loc.loc, 'sound/effects/clang.ogg', 50, 0, 0)
+			H.lust += 9
+			if (H.lust >= H.resistenza)
+				H.cum(H, P)
+			else
+				H.moan()
+			if (P.stat != DEAD && P.stat != UNCONSCIOUS)
+				P.lust += 9
+				if (P.lust >= P.resistenza)
+					P.cum(P, H)
 				else
 					P.moan()
 			H.do_fucking_animation(P)

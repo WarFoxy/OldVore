@@ -977,6 +977,15 @@
 			else
 				to_chat(H, "<span class='warning'>Вы слишком далеко или что-то мешает вам это сделать.</span>")
 
+		else if (href_list["interaction"] == "tribadism")
+			if (H.loc == P.loc && isnude && isnude_p && hasvagina_p && hasvagina && H.species.name != "Teshari")
+				if (H.erpcooldown == 0)
+					H.fuck(H, P, "tribadism")
+				else
+					to_chat(H, "<span class='warning'>Вы всё ещё устали с прошлого раза. Нужно подождать [DisplayTimeText(H.erpcooldown * 20, TRUE)], перед тем как продолжить!</span>")
+			else
+				to_chat(H, "<span class='warning'>Вы слишком далеко или что-то мешает вам это сделать.</span>")
+
 	if (href_list["lookitem"])
 		var/obj/item/I = locate(href_list["lookitem"])
 		src.examinate(I)
