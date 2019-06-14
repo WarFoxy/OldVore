@@ -549,3 +549,6 @@ Drinks Data
 
 /datum/reagent/drink/mojito
 	glass_icon_state = "mojito"
+
+/datum/reagent/drink/sexonthebeach
+	glass_icon_state = "sexonthebeach"
