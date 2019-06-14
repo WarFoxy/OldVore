@@ -624,7 +624,7 @@
 	color = "#E2A55F"
 
 	glass_name = "apple juice"
-	glass_desc = "An earth favorite."
+	glass_desc = "An Earth favorite."
 
 /datum/reagent/drink/juice/lime
 	name = "Lime Juice"
@@ -786,6 +786,7 @@
 
 	glass_name = "cup of tea"
 	glass_desc = "Tasty black tea, it has antioxidants, it's good for you!"
+	glass_special = list(DRINK_VAPOR)
 
 	cup_icon_state = "cup_tea"
 	cup_name = "cup of tea"
@@ -800,18 +801,18 @@
 /datum/reagent/drink/tea/icetea
 	name = "Iced Tea"
 	id = "icetea"
-	description = "No relation to a certain rap artist/ actor."
+	description = "No relation to a certain rap artist/actor."
 	taste_description = "sweet tea"
 	color = "#AC7F24" // rgb: 16, 64, 56
 	adj_temp = -5
 
 	glass_name = "iced tea"
-	glass_desc = "No relation to a certain rap artist/ actor."
+	glass_desc = "No relation to a certain rap artist/actor."
 	glass_special = list(DRINK_ICE)
 
 	cup_icon_state = "cup_tea"
 	cup_name = "cup of iced tea"
-	cup_desc = "No relation to a certain rap artist/ actor."
+	cup_desc = "No relation to a certain rap artist/actor."
 
 /datum/reagent/drink/tea/icetea/affect_ingest(var/mob/living/carbon/M, var/alien, var/removed)
 	..()
@@ -840,6 +841,7 @@
 
 	glass_name = "mint tea"
 	glass_desc = "A tasty mixture of mint and tea. It's apparently good for you!"
+	glass_special = list(DRINK_VAPOR)
 
 	cup_name = "cup of mint tea"
 	cup_desc = "A tasty mixture of mint and tea. It's apparently good for you!"
@@ -853,6 +855,7 @@
 
 	glass_name = "lemon tea"
 	glass_desc = "A tasty mixture of lemon and tea. It's apparently good for you!"
+	glass_special = list(DRINK_VAPOR)
 
 	cup_name = "cup of lemon tea"
 	cup_desc = "A tasty mixture of lemon and tea. It's apparently good for you!"
@@ -866,6 +869,7 @@
 
 	glass_name = "lime tea"
 	glass_desc = "A tasty mixture of lime and tea. It's apparently good for you!"
+	glass_special = list(DRINK_VAPOR)
 
 	cup_name = "cup of lime tea"
 	cup_desc = "A tasty mixture of lime and tea. It's apparently good for you!"
@@ -879,6 +883,7 @@
 
 	glass_name = "orange tea"
 	glass_desc = "A tasty mixture of orange and tea. It's apparently good for you!"
+	glass_special = list(DRINK_VAPOR)
 
 	cup_name = "cup of orange tea"
 	cup_desc = "A tasty mixture of orange and tea. It's apparently good for you!"
@@ -892,6 +897,7 @@
 
 	glass_name = "berry tea"
 	glass_desc = "A tasty mixture of berries and tea. It's apparently good for you!"
+	glass_special = list(DRINK_VAPOR)
 
 	cup_name = "cup of berry tea"
 	cup_desc = "A tasty mixture of berries and tea. It's apparently good for you!"
@@ -915,6 +921,7 @@
 
 	glass_name = "coffee"
 	glass_desc = "Don't drop it, or you'll send scalding liquid and glass shards everywhere."
+	glass_special = list(DRINK_VAPOR)
 
 
 /datum/reagent/drink/coffee/affect_ingest(var/mob/living/carbon/M, var/alien, var/removed)
@@ -981,7 +988,7 @@
 
 	glass_desc = "A nice and refreshing beverage while you are reading."
 	glass_name = "soy latte"
-	glass_desc = "A nice and refrshing beverage while you are reading."
+	glass_special = list(DRINK_VAPOR)
 
 	cup_icon_state = "cup_latte"
 	cup_name = "cup of soy latte"
@@ -1001,6 +1008,7 @@
 
 	glass_name = "cafe latte"
 	glass_desc = "A nice, strong and refreshing beverage while you are reading."
+	glass_special = list(DRINK_VAPOR)
 
 	cup_icon_state = "cup_latte"
 	cup_name = "cup of cafe latte"
@@ -1022,6 +1030,7 @@
 
 	glass_name = "hot chocolate"
 	glass_desc = "Made with love! And cocoa beans."
+	glass_special = list(DRINK_VAPOR)
 
 	cup_icon_state = "cup_coco"
 	cup_name = "cup of hot chocolate"
@@ -1102,6 +1111,7 @@
 
 	glass_name = "Brown Star"
 	glass_desc = "It's not what it sounds like..."
+	glass_special = list(DRINK_FIZZ)
 
 /datum/reagent/drink/milkshake
 	name = "Milkshake"
@@ -1113,6 +1123,7 @@
 
 	glass_name = "milkshake"
 	glass_desc = "Glorious brainfreezing mixture."
+	glass_special = list(DRINK_ICE)
 
 /datum/reagent/milkshake/affect_ingest(var/mob/living/carbon/M, var/alien, var/removed)
 	..()
@@ -1145,6 +1156,7 @@
 
 	glass_name = "Chocolate Milkshake"
 	glass_desc = "A refreshing chocolate milkshake, just like mom used to make."
+	glass_special = list(DRINK_ICE)
 
 /datum/reagent/drink/milkshake/berryshake
 	name = "Berry Milkshake"
@@ -1156,6 +1168,7 @@
 
 	glass_name = "Berry Milkshake"
 	glass_desc = "A refreshing berry milkshake, just like mom used to make."
+	glass_special = list(DRINK_ICE)
 
 /datum/reagent/drink/milkshake/coffeeshake
 	name = "Coffee Milkshake"
@@ -1171,6 +1184,7 @@
 
 	glass_name = "Coffee Milkshake"
 	glass_desc = "An energizing coffee milkshake, perfect for hot days at work.."
+	glass_special = list(DRINK_ICE)
 
 /datum/reagent/drink/milkshake/coffeeshake/overdose(var/mob/living/carbon/M, var/alien)
 	M.make_jittery(5)
@@ -1744,7 +1758,7 @@
 /datum/reagent/ethanol/sake
 	name = "Sake"
 	id = "sake"
-	description = "Anime's favorite drink."
+	description = "favorite drink of the Japanese, straight from Neo-Kyoto."
 	taste_description = "dry alcohol"
 	color = "#DDDDDD"
 	strength = 25
@@ -1842,6 +1856,7 @@
 
 	glass_name = "champagne"
 	glass_desc = "An even classier looking drink."
+	glass_special = list(DRINK_FIZZ)
 
 
 /datum/reagent/ethanol/cider
@@ -1927,6 +1942,7 @@
 
 	glass_name = "Anti-freeze"
 	glass_desc = "The ultimate refreshment."
+	glass_special = list(DRINK_ICE)
 
 /datum/reagent/ethanol/atomicbomb
 	name = "Atomic Bomb"
@@ -2139,6 +2155,7 @@
 
 	glass_name = "gin fizz"
 	glass_desc = "Refreshingly lemony, deliciously dry."
+	glass_special = list(DRINK_FIZZ)
 
 /datum/reagent/ethanol/grog
 	name = "Grog"
@@ -2163,6 +2180,7 @@
 
 	glass_name = "Erika Surprise"
 	glass_desc = "The surprise is, it's green!"
+	glass_special = list(DRINK_ICE)
 
 /datum/reagent/ethanol/gargle_blaster
 	name = "Pan-Galactic Gargle Blaster"
@@ -2488,6 +2506,7 @@
 
 	glass_name = "Sui Dream"
 	glass_desc = "A froofy, fruity, and sweet mixed drink. Understanding the name only brings shame."
+	glass_special = list(DRINK_FIZZ)
 
 /datum/reagent/ethanol/syndicatebomb
 	name = "Syndicate Bomb"
@@ -2503,7 +2522,7 @@
 /datum/reagent/ethanol/tequilla_sunrise
 	name = "Tequila Sunrise"
 	id = "tequillasunrise"
-	description = "Tequila and orange juice. Much like a Screwdriver, only Mexican~."
+	description = "Tequila and orange juice. Much like a Screwdriver, only Mexican."
 	taste_description = "oranges"
 	color = "#FFE48C"
 	strength = 25
@@ -2583,6 +2602,7 @@
 
 	glass_name = "whiskey cola"
 	glass_desc = "An innocent-looking mixture of cola and Whiskey. Delicious."
+	glass_special = list(DRINK_FIZZ)
 
 
 /datum/reagent/ethanol/whiskeysoda
@@ -2680,7 +2700,7 @@
 /datum/reagent/ethanol/saketini
 	name = "Saketini"
 	id = "saketini"
-	description = "For when you're too weeb for a real martini."
+	description = "For when you're too asian for a real martini." //RU Vorestation edit: anime joke was ok, but weeb is too cringe, replaced weeb with asian
 	taste_description = "dry alcohol"
 	color = "#0064C8"
 	strength = 15
@@ -2776,6 +2796,7 @@
 
 	glass_name = "Spacer's Brew"
 	glass_desc = "Ethanol and orange soda. A common emergency drink on frontier colonies."
+	glass_special = list(DRINK_FIZZ)
 
 /datum/reagent/ethanol/binmanbliss
 	name = "Binman Bliss"
@@ -3068,26 +3089,26 @@
 	glass_desc = "Minty and refreshing, perfect for a hot day."
 
 /datum/reagent/ethanol/godsake
-	name = "Gods Sake"
+	name = "Kami Sake"
 	id = "godsake"
-	description = "Anime's favorite drink."
-	taste_description = "the power of god and anime"
+	description = "Favorite drink of your local Shinto priest."
+	taste_description = "the power of god and a hint of xenophobia"
 	color = "#DDDDDD"
 	strength = 25
 
-	glass_name = "God's Sake"
-	glass_desc = "A glass of sake."
+	glass_name = "Kami Sake"
+	glass_desc = "A glass of sake infused with something."
 
 /datum/reagent/ethanol/godka
 	name = "Godka"
 	id = "godka"
-	description = "Number one drink AND fueling choice for Russians multiverse-wide."
-	taste_description = "russian steel and a hint of grain"
+	description = "Number one drink AND fueling choice for Russians multiverse-wide. Infused with power of Father, Son and Holy Spirit."
+	taste_description = "russian steel and a hint of annexation"
 	color = "#0064C8"
 	strength = 50
 
 	glass_name = "Godka"
-	glass_desc = "The glass is barely able to contain the wodka. Xynta."
+	glass_desc = "The glass is barely able to contain the vodka. Xynta."
 	glass_special = list(DRINK_FIZZ)
 
 /datum/reagent/ethanol/godka/affect_ingest(var/mob/living/carbon/M, var/alien, var/removed)
@@ -3208,3 +3229,4 @@
 
 	glass_name = "fusionnaire"
 	glass_desc = "A relatively new cocktail, mostly served in the bars of NanoTrasen owned stations."
+	glass_special = list(DRINK_ICE)

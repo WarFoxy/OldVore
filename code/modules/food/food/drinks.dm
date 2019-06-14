@@ -239,10 +239,11 @@
 
 /obj/item/weapon/reagent_containers/food/drinks/shaker
 	name = "shaker"
-	desc = "A metal shaker to mix drinks in."
+	desc = "A three piece Cobbler-style shaker. Used to mix, cool, and strain drinks." //RU Vorestation edit: Stole desc from bay
 	icon_state = "shaker"
 	amount_per_transfer_from_this = 10
 	volume = 120
+	possible_transfer_amounts = list(5,10,15,25,30,60) //RU Vorestation edit: Fucking finally added
 	center_of_mass = list("x"=17, "y"=10)
 
 /obj/item/weapon/reagent_containers/food/drinks/shaker/on_reagent_change()
@@ -253,7 +254,7 @@
 	desc = "An elegant teapot. It simply oozes class."
 	icon_state = "teapot"
 	item_state = "teapot"
-	amount_per_transfer_from_this = 10
+	amount_per_transfer_from_this = list(5,10) //RU Vorestation edit: altered aptft
 	volume = 120
 	center_of_mass = list("x"=17, "y"=7)
 
@@ -300,14 +301,3 @@
 	icon_state = "vacuumflask"
 	volume = 60
 	center_of_mass = list("x"=15, "y"=4)
-
-/obj/item/weapon/reagent_containers/food/drinks/britcup
-	name = "cup"
-	desc = "A cup with the British flag emblazoned on it."
-	icon_state = "britcup"
-	volume = 30
-	center_of_mass = list("x"=15, "y"=13)
-
-/obj/item/weapon/reagent_containers/food/drinks/britcup/on_reagent_change()
-	..()
-
