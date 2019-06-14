@@ -63,6 +63,6 @@
 	color = "#F36F00"
 	strength = 20
 
-	glass_name = "sex on the beach"
+	glass_name = "Sex on the Beach"
 	glass_desc = "Lewd!"
 	glass_special = list(DRINK_ICE)

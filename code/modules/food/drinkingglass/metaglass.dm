@@ -547,8 +547,8 @@ Drinks Data
 	glass_icon_state = "eggnog"
 	glass_center_of_mass = list("x"=16, "y"=8)
 
-/datum/reagent/drink/mojito
+/datum/reagent/ethanol/mojito
 	glass_icon_state = "mojito"
 
-/datum/reagent/drink/sexonthebeach
+/datum/reagent/ethanol/sexonthebeach
 	glass_icon_state = "sexonthebeach"
