@@ -5404,6 +5404,10 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
 	},
+/obj/item/weapon/gun/projectile/sec/flash,
+/obj/item/weapon/gun/projectile/sec/flash,
+/obj/item/weapon/gun/projectile/sec/flash,
+/obj/item/weapon/gun/projectile/sec/flash,
 /turf/simulated/floor/tiled/dark,
 /area/security/armory/blue)
 "iM" = (
@@ -5681,6 +5685,10 @@
 	pixel_x = 32;
 	pixel_y = -9
 	},
+/obj/item/ammo_magazine/m45/flash,
+/obj/item/ammo_magazine/m45/flash,
+/obj/item/ammo_magazine/m45/flash,
+/obj/item/ammo_magazine/m45/flash,
 /turf/simulated/floor/tiled/dark,
 /area/security/armory/blue)
 "jj" = (
@@ -12871,19 +12879,7 @@
 /turf/simulated/floor/tiled,
 /area/security/hallway)
 "uf" = (
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 6
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 6
-	},
-/obj/structure/catwalk,
-/obj/structure/disposalpipe/segment,
+/obj/item/ammo_magazine/m45/flash,
 /turf/simulated/floor,
 /area/maintenance/station/elevator)
 "ug" = (
@@ -20816,23 +20812,15 @@
 /turf/simulated/wall,
 /area/maintenance/security_starboard)
 "GU" = (
-/obj/structure/table/glass,
-/obj/item/device/radio{
-	pixel_x = -4;
-	pixel_y = 4
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/corner/red/border,
+/obj/machinery/computer/guestpass{
+	dir = 1;
+	icon_state = "guest";
+	pixel_y = -28
 	},
-/obj/item/device/radio{
-	pixel_x = 4;
-	pixel_y = -4
-	},
-/obj/effect/floor_decal/borderfloorwhite{
-	dir = 8
-	},
-/obj/effect/floor_decal/corner/paleblue/border{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/white,
-/area/medical/reception)
+/turf/simulated/floor/tiled,
+/area/security/hallway)
 "GV" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
@@ -23423,8 +23411,14 @@
 /turf/simulated/floor,
 /area/maintenance/station/medbay)
 "KZ" = (
-/obj/structure/bed/chair/office/light{
-	dir = 4
+/obj/structure/table/glass,
+/obj/item/device/radio{
+	pixel_x = -4;
+	pixel_y = 4
+	},
+/obj/item/device/radio{
+	pixel_x = 4;
+	pixel_y = -4
 	},
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 8
@@ -23432,16 +23426,13 @@
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 8
 	},
-/obj/effect/landmark/start{
-	name = "Geneticist"
-	},
 /obj/machinery/computer/guestpass{
 	dir = 4;
 	pixel_x = -28;
 	pixel_y = 0
 	},
 /turf/simulated/floor/tiled/white,
-/area/medical/resleeving)
+/area/medical/reception)
 "La" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
@@ -28316,6 +28307,21 @@
 	},
 /turf/simulated/floor/carpet,
 /area/security/breakroom)
+"SD" = (
+/obj/structure/bed/chair/office/light{
+	dir = 4
+	},
+/obj/effect/floor_decal/borderfloorwhite{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 8
+	},
+/obj/effect/landmark/start{
+	name = "Geneticist"
+	},
+/turf/simulated/floor/tiled/white,
+/area/medical/resleeving)
 "SE" = (
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 8
@@ -34659,7 +34665,7 @@ Ix
 Ja
 JR
 Kw
-KZ
+SD
 LF
 Me
 My
@@ -35931,7 +35937,7 @@ DM
 FS
 FT
 Gl
-GU
+KZ
 nf
 Iy
 Ji
@@ -36199,7 +36205,7 @@ qN
 rx
 lw
 td
-pG
+GU
 mH
 uP
 wm
