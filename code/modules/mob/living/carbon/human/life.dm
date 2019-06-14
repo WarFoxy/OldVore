@@ -958,6 +958,8 @@
 			silent = 0
 			return 1
 
+		handle_lust() //decreases player's lust, working as erp cooldown
+
 		//UNCONSCIOUS. NO-ONE IS HOME
 		if((getOxyLoss() > (species.total_health/2)) || (health <= config.health_threshold_crit))
 			Paralyse(3)

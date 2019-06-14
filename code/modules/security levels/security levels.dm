@@ -81,10 +81,10 @@
 				FA.display_alert(newlevel)
 				FA.mode = 3
 
-		if(level >= SEC_LEVEL_RED)
+		/*if(level >= SEC_LEVEL_RED)
 			atc.reroute_traffic(yes = 1) // Tell them fuck off we're busy.
 		else
-			atc.reroute_traffic(yes = 0)
+			atc.reroute_traffic(yes = 0)*/
 		admin_chat_message(message = "Security level is now: [uppertext(get_security_level())]", color = "#CC2222") //VOREStation Add
 
 /proc/get_security_level()
