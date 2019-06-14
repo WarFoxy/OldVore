@@ -33,7 +33,7 @@
 	glass_type = /obj/item/weapon/reagent_containers/food/drinks/glass2/rocks
 
 /obj/item/weapon/storage/box/glasses/shake
-	name = "box of milkshake glasses"
+	name = "box of sherry glasses" //RU Vorestation edit: milkshake glass => sherry glass
 	glass_type = /obj/item/weapon/reagent_containers/food/drinks/glass2/shake
 
 /obj/item/weapon/storage/box/glasses/cocktail
