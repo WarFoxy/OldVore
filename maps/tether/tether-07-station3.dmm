@@ -12879,7 +12879,19 @@
 /turf/simulated/floor/tiled,
 /area/security/hallway)
 "uf" = (
-/obj/item/ammo_magazine/m45/flash,
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 6
+	},
+/obj/structure/disposalpipe/segment,
+/obj/structure/catwalk,
 /turf/simulated/floor,
 /area/maintenance/station/elevator)
 "ug" = (
