@@ -313,8 +313,8 @@
 	icon_state = "cognacbottle"
 	center_of_mass = list("x"=16, "y"=6)
 
-/obj/item/weapon/reagent_containers/food/drinks/bottle/cognac/Initialize()
-	. = ..()
+/obj/item/weapon/reagent_containers/food/drinks/bottle/congac/Initialize()
+	..()
 	reagents.add_reagent("cognac", 100)
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/wine
@@ -404,7 +404,7 @@
 	center_of_mass = list("x"=16, "y"=4)
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/pwine/Initialize()
-	. = ..()
+	..()
 	reagents.add_reagent("pwine", 100)
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/redeemersbrew
@@ -530,6 +530,7 @@
 /obj/item/weapon/reagent_containers/food/drinks/bottle/small/ale/Initialize()
 	. = ..()
 	reagents.add_reagent("ale", 30)
+//Small bottles end
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/sake
 	name = "Mono-No-Aware Luxury Sake"
@@ -548,7 +549,7 @@
 	center_of_mass = list("x"=16, "y"=3)
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/champagne/Initialize()
-	. = ..()
+	..()
 	reagents.add_reagent("champagne", 100)
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/peppermintschnapps

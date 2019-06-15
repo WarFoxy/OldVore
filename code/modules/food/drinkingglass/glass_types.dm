@@ -85,11 +85,11 @@
 	rim_pos = list(25, 12, 21)
 	matter = list("glass" = 50)
 
-//RU Vorestation edit: stole all those below from bay, adapting them to our code
+//RU Vorestation edit: stole all those below from bay, adapted them to our code
 /obj/item/weapon/reagent_containers/food/drinks/glass2/carafe
-	name = "pitcher"
-	desc = "A handled glass pitcher."
-	base_name = "pitcher"
+	name = "carafe"
+	desc = "A handled glass carafe."
+	base_name = "carafe"
 	base_icon = "carafe"
 	filling_states = list(10,20,30,40,50,60,70,80,90,100)
 	volume = 120
@@ -98,11 +98,20 @@
 	center_of_mass = list("x"=16, "y"=7)
 	matter = list("glass" = 150)
 
+/obj/item/weapon/reagent_containers/food/drinks/glass2/pitcher
+	name = "insulated pitcher"
+	desc = "A stainless steel insulated pitcher. Everyone's best friend in the morning."
+	base_name = "pitcher"
+	base_icon = "pitcher"
+	filling_states = list(15,30,50,70,85,100)
+	volume = 120
+	possible_transfer_amounts = list(5,10,15,30,60,120)
+	rim_pos = null
+	center_of_mass = list("x"=16, "y"=9)
+
 /obj/item/weapon/reagent_containers/food/drinks/glass2/coffeecup
 	name = "coffee cup"
 	desc = "A plain white coffee cup."
-	icon_state = "coffeecup"
-	item_state = "coffee"
 	volume = 30
 	center_of_mass = list("x"=15, "y"=13)
 	filling_states = list(40,80,100)
@@ -114,62 +123,62 @@
 /obj/item/weapon/reagent_containers/food/drinks/glass2/coffeecup/black
 	name = "black coffee cup"
 	desc = "A sleek black coffee cup."
-	icon_state = "coffeecup_black"
 	base_name = "black cup"
+	base_icon = "coffeecup_black"
 
 /obj/item/weapon/reagent_containers/food/drinks/glass2/coffeecup/green
 	name = "green coffee cup"
 	desc = "A pale green and pink coffee cup."
-	icon_state = "coffeecup_green"
 	base_name = "green cup"
+	base_icon = "coffeecup_green"
 
 /obj/item/weapon/reagent_containers/food/drinks/glass2/coffeecup/heart
 	name = "heart coffee cup"
 	desc = "A white coffee cup, it prominently features a red heart."
-	icon_state = "coffeecup_heart"
 	base_name = "heart cup"
+	base_icon = "coffeecup_heart"
 
 /obj/item/weapon/reagent_containers/food/drinks/glass2/coffeecup/NT
 	name = "\improper NT coffee cup"
 	desc = "A red NanoTrasen coffee cup."
-	icon_state = "coffeecup_NT"
 	base_name = "\improper NT cup"
+	base_icon = "coffeecup_NT"
 
 /obj/item/weapon/reagent_containers/food/drinks/glass2/coffeecup/one
 	name = "#1 coffee cup"
 	desc = "A white coffee cup, prominently featuring a #1."
-	icon_state = "coffeecup_one"
 	base_name = "#1 cup"
+	base_icon = "coffeecup_one"
 
 /obj/item/weapon/reagent_containers/food/drinks/glass2/coffeecup/rainbow
 	name = "rainbow coffee cup"
 	desc = "A rainbow coffee cup. The colors are almost as blinding as a welder."
-	icon_state = "coffeecup_rainbow"
 	base_name = "rainbow cup"
+	base_icon = "coffeecup_rainbow"
 
 /obj/item/weapon/reagent_containers/food/drinks/glass2/coffeecup/metal
 	name = "metal coffee cup"
 	desc = "A metal coffee cup. You're not sure which metal."
-	icon_state = "coffeecup_metal"
 	base_name = "metal cup"
+	base_icon = "coffeecup_metal"
 
 /obj/item/weapon/reagent_containers/food/drinks/glass2/coffeecup/pawn
 	name = "pawn coffee cup"
 	desc = "A black coffee cup adorned with the image of a red chess pawn."
-	icon_state = "coffeecup_pawn"
 	base_name = "pawn cup"
+	base_icon = "coffeecup_pawn"
 
 /obj/item/weapon/reagent_containers/food/drinks/glass2/coffeecup/diona
 	name = "diona nymph coffee cup"
 	desc = "A green coffee cup featuring the image of a diona nymph."
-	icon_state = "coffeecup_diona"
 	base_name = "diona cup"
+	base_icon = "coffeecup_diona"
 
 /obj/item/weapon/reagent_containers/food/drinks/glass2/coffeecup/britcup
 	name = "british coffee cup"
 	desc = "A coffee cup with the British flag emblazoned on it."
-	icon_state = "coffeecup_brit"
 	base_name = "british cup"
+	base_icon = "coffeecup_brit"
 
 /obj/item/weapon/reagent_containers/food/drinks/glass2/coffeecup/tall
 	name = "tall coffee cup"
@@ -184,8 +193,6 @@
 /obj/item/weapon/reagent_containers/food/drinks/glass2/coffeecup/teacup
 	name = "teacup"
 	desc = "A plain white porcelain teacup."
-	icon_state = "teacup"
-	item_state = "coffee"
 	volume = 20
 	center_of_mass = list("x"=15, "y"=13)
 	filling_states = list(100)

@@ -232,29 +232,17 @@
 	else
 		return ..()
 
-//////////////////////////drinkingglass and shaker//
+//////////////////////////drinkingglass// //RU Vorestation edit: shaker moved to shaker.dm in same folder because it has it's own code for shaking now
 //Note by Darem: This code handles the mixing of drinks. New drinks go in three places: In Chemistry-Reagents.dm (for the drink
 //	itself), in Chemistry-Recipes.dm (for the reaction that changes the components into the drink), and here (for the drinking glass
 //	icon states.
-
-/obj/item/weapon/reagent_containers/food/drinks/shaker
-	name = "shaker"
-	desc = "A three piece Cobbler-style shaker. Used to mix, cool, and strain drinks." //RU Vorestation edit: Stole desc from bay
-	icon_state = "shaker"
-	amount_per_transfer_from_this = 10
-	volume = 120
-	possible_transfer_amounts = list(5,10,15,25,30,60) //RU Vorestation edit: Fucking finally added
-	center_of_mass = list("x"=17, "y"=10)
-
-/obj/item/weapon/reagent_containers/food/drinks/shaker/on_reagent_change()
-	..()
 
 /obj/item/weapon/reagent_containers/food/drinks/teapot
 	name = "teapot"
 	desc = "An elegant teapot. It simply oozes class."
 	icon_state = "teapot"
 	item_state = "teapot"
-	amount_per_transfer_from_this = list(5,10) //RU Vorestation edit: altered aptft
+	amount_per_transfer_from_this = list(5,10) //RU Vorestation edit: altered this to be 5 and 10, not only 10
 	volume = 120
 	center_of_mass = list("x"=17, "y"=7)
 
