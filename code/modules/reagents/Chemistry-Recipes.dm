@@ -2169,7 +2169,7 @@
 	name = "Negroni"
 	id = "negroni"
 	result = "negroni"
-	required_reagents = list("gin" = 1, "bitters" = 1, "vermouth" = 1)
+	required_reagents = list("martini" = 2, "bitters" = 1) //RU Vorestation edit: Replaced 1 gin and 1 vermouth with 2 martini, it basically fixes recipe, because gin + vermouth = martini
 	result_amount = 3
 
 /datum/chemical_reaction/drinks/cloverclub
