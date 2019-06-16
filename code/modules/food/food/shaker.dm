@@ -10,19 +10,19 @@
 
 /obj/item/weapon/reagent_containers/food/drinks/shaker/attack_self(mob/user as mob)
 	if(user.a_intent == I_HELP)
-		user.visible_message("<span class='green'>\The [user] умело встряхивает \the [src] briskly in one hand, with supreme confidence and competence.</span>", "<span class='rose'>You shake \the [src] briskly with one hand.</span>")
+		user.visible_message("<span class='rose'>[user] встряхивает шейкер.</span>")
 		mix()
 		return
 	if(user.a_intent == I_GRAB)
-		user.visible_message("<span class='yellow'>\The [user] shakes \the [src] briskly, with some skill.</span>", "<span class='rose'>You shake \the [src] briskly, with some skill.</span>")
+		user.visible_message("<span class='rose'>[user] подбрасывает шейкер в воздух. Вау!</span>")
 		mix()
 		return
 	if(user.a_intent == I_DISARM)
-		user.visible_message("<span class='blue'>\The [user] shakes \the [src] casually.</span>", "<span class='rose'>You shake \the [src] casually.</span>")
+		user.visible_message("<span class='rose'>[user] ловко встряхивает шейкер одной рукой. Ого!</span>")
 		mix()
 		return
 	if(user.a_intent == I_HURT)
-		user.visible_message("<span class='red'>\The [user] shakes \the [src] violently!</span>", "<span class='rose'>You shake \the [src] violently!</span>")
+		user.visible_message("<span class='rose'>[user] хорошенько взбалтывает содержимое шейкера.</span>")
 		mix()
 		return
 
