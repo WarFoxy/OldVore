@@ -22,3 +22,10 @@
 				icon_state = icon_closed
 		else
 			icon_state = icon_opened
+
+/obj/structure/closet/secure_closet/bar/shotgun
+	name = "shotgun closet"
+
+	starts_with = list(
+		/obj/item/weapon/gun/projectile/shotgun/doublebarrel,
+		/obj/item/weapon/storage/box/beanbags)

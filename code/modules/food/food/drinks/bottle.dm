@@ -239,7 +239,7 @@
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/bottleofnothing
 	name = "Bottle of Nothing"
-	desc = "A bottle filled with nothing"
+	desc = "A bottle filled with nothing."
 	icon_state = "bottleofnothing"
 	center_of_mass = list("x"=17, "y"=5)
 
@@ -384,7 +384,7 @@
 	center_of_mass = list("x"=16, "y"=6)
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/space_up/Initialize()
-	..()
+	. = ..()
 	reagents.add_reagent("space_up", 100)
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/space_mountain_wind
@@ -530,6 +530,7 @@
 /obj/item/weapon/reagent_containers/food/drinks/bottle/small/ale/Initialize()
 	. = ..()
 	reagents.add_reagent("ale", 30)
+//Small bottles end
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/sake
 	name = "Mono-No-Aware Luxury Sake"
