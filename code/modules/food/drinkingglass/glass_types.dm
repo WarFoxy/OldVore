@@ -115,6 +115,7 @@
 	volume = 30
 	center_of_mass = list("x"=15, "y"=13)
 	filling_states = list(40,80,100)
+	possible_transfer_amounts = list(5,10,15,30)
 	base_name = "cup"
 	base_icon = "coffeecup"
 	rim_pos = list(22, 12, 20)
@@ -187,6 +188,7 @@
 	volume = 60
 	center_of_mass = list("x"=15, "y"=19)
 	filling_states = list(50,70,90,100)
+	possible_transfer_amounts = list(5,10,15,30,60)
 	base_name = "tall cup"
 	base_icon = "coffeecup_tall"
 
@@ -196,5 +198,6 @@
 	volume = 20
 	center_of_mass = list("x"=15, "y"=13)
 	filling_states = list(100)
+	possible_transfer_amounts = list(5,10,15,20)
 	base_name = "teacup"
 	base_icon = "teacup"
