@@ -128,13 +128,6 @@
 	required_reagents = list("whiskey" = 1, "protein" = 1)
 	result_amount = 2
 
-/datum/chemical_reaction/drinks/sexonthebeach //RU Vorestation addition
-	name = "Sex on the Beach"
-	id = "sexonthebeach"
-	result = "sexonthebeach"
-	required_reagents = list("schnapps_pea" = 1, "vodka" = 2, "orangejuice" = 2, "grenadine" = 1)
-	result_amount = 6
-
 ///////////////////////////////
 //SLIME CORES BELOW HERE///////
 ///////////////////////////////

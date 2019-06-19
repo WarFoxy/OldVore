@@ -232,17 +232,28 @@
 	else
 		return ..()
 
-//////////////////////////drinkingglass// //RU Vorestation edit: shaker moved to shaker.dm in same folder because it has it's own code for shaking now
+//////////////////////////drinkingglass and shaker//
 //Note by Darem: This code handles the mixing of drinks. New drinks go in three places: In Chemistry-Reagents.dm (for the drink
 //	itself), in Chemistry-Recipes.dm (for the reaction that changes the components into the drink), and here (for the drinking glass
 //	icon states.
+
+/obj/item/weapon/reagent_containers/food/drinks/shaker
+	name = "shaker"
+	desc = "A metal shaker to mix drinks in."
+	icon_state = "shaker"
+	amount_per_transfer_from_this = 10
+	volume = 120
+	center_of_mass = list("x"=17, "y"=10)
+
+/obj/item/weapon/reagent_containers/food/drinks/shaker/on_reagent_change()
+	..()
 
 /obj/item/weapon/reagent_containers/food/drinks/teapot
 	name = "teapot"
 	desc = "An elegant teapot. It simply oozes class."
 	icon_state = "teapot"
 	item_state = "teapot"
-	amount_per_transfer_from_this = list(5,10) //RU Vorestation edit: altered this to be 5 and 10, not only 10
+	amount_per_transfer_from_this = 10
 	volume = 120
 	center_of_mass = list("x"=17, "y"=7)
 
@@ -289,3 +300,14 @@
 	icon_state = "vacuumflask"
 	volume = 60
 	center_of_mass = list("x"=15, "y"=4)
+
+/obj/item/weapon/reagent_containers/food/drinks/britcup
+	name = "cup"
+	desc = "A cup with the British flag emblazoned on it."
+	icon_state = "britcup"
+	volume = 30
+	center_of_mass = list("x"=15, "y"=13)
+
+/obj/item/weapon/reagent_containers/food/drinks/britcup/on_reagent_change()
+	..()
+

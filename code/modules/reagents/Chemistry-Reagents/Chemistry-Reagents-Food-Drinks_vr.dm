@@ -6,7 +6,7 @@
 	M.overeatduration = 0
 	if(M.nutrition < 0)
 		M.nutrition = 0
-
+		
 /datum/reagent/ethanol/deathbell
 	name = "Deathbell"
 	id = "deathbell"
@@ -20,7 +20,7 @@
 
 	glass_name = "Deathbell"
 	glass_desc = "The perfect blend of the most alcoholic things a bartender can get their hands on."
-
+	
 /datum/reagent/ethanol/deathbell/affect_ingest(var/mob/living/carbon/M, var/alien, var/removed)
 	..()
 
@@ -54,15 +54,3 @@
 				H.feral = 0
 				H << "<span class='info'>Your mind starts to clear, soothed into a state of clarity as your senses return.</span>"
 				log_and_message_admins("is no longer feral.", H)
-
-/datum/reagent/ethanol/sexonthebeach //RU Vorestation addition
-	name = "Sex on the Beach"
-	id = "sexonthebeach"
-	description = "Famous long drink cocktail from twenty first century which became an immortal classic by now. Often enjoyed on various tropical resorts."
-	taste_description = "fruity grains with a slight hint of lewdness"
-	color = "#F36F00"
-	strength = 20
-
-	glass_name = "Sex on the Beach"
-	glass_desc = "Lewd!"
-	glass_special = list(DRINK_ICE)
