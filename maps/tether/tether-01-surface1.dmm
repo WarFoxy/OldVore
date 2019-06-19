@@ -519,12 +519,12 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/tether/surfacebase/mining_main/refinery)
 "abf" = (
+/obj/structure/catwalk,
+/obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/airlock/maintenance/common{
 	name = "Trash Pit Access";
-	req_one_access = list(26,48)
+	req_one_access = newlist()
 	},
-/obj/structure/catwalk,
-/obj/machinery/door/firedoor/glass,
 /turf/simulated/floor/plating,
 /area/maintenance/lower/trash_pit)
 "abg" = (
@@ -2445,15 +2445,14 @@
 /turf/simulated/floor/plating,
 /area/maintenance/lower/trash_pit)
 "aej" = (
-/obj/structure/cable{
-	icon_state = "1-2"
+/obj/machinery/door/airlock/maintenance/common{
+	name = "Trash Pit Access";
+	req_one_access = newlist()
 	},
-/obj/machinery/door/airlock/maintenance/engi{
-	name = "Atmospherics Substation"
-	},
+/obj/structure/catwalk,
 /obj/machinery/door/firedoor/glass,
 /turf/simulated/floor/plating,
-/area/maintenance/substation/surface_atmos)
+/area/maintenance/lower/trash_pit)
 "aek" = (
 /obj/effect/floor_decal/techfloor,
 /obj/structure/railing{
@@ -4993,15 +4992,17 @@
 /turf/simulated/floor/plating,
 /area/storage/surface_eva)
 "aiB" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/structure/catwalk,
-/obj/machinery/door/airlock/maintenance/engi{
-	name = "Atmospherics";
-	req_access = list(24)
+/obj/item/device/radio/intercom{
+	broadcasting = 0;
+	dir = 8;
+	listening = 0;
+	name = "Common Channel";
+	pixel_x = -21;
+	pixel_y = 0
 	},
-/obj/machinery/door/firedoor/glass,
-/turf/simulated/floor/plating,
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/pipedispenser,
+/turf/simulated/floor/tiled,
 /area/engineering/atmos)
 "aiC" = (
 /obj/structure/catwalk,
@@ -5989,15 +5990,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/lower/research)
-"akj" = (
-/obj/structure/catwalk,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/airlock/maintenance/common{
-	name = "Trash Pit Access";
-	req_one_access = list(48)
-	},
-/turf/simulated/floor/plating,
-/area/maintenance/lower/trash_pit)
 "akk" = (
 /obj/structure/catwalk,
 /obj/effect/decal/cleanable/dirt,
@@ -6009,19 +6001,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/lower/research)
-"akl" = (
-/obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/door/airlock/atmos{
-	name = "Atmospherics Substation";
-	req_access = list(24)
-	},
-/obj/machinery/door/firedoor/glass,
-/turf/simulated/floor/plating,
-/area/engineering/atmos)
 "akm" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/full,
@@ -14078,6 +14057,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating,
 /area/maintenance/substation/surface_atmos)
+"aFZ" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/maintenance/engi{
+	name = "Atmospherics Substation"
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/substation/surface_atmos)
 "aGb" = (
 /obj/structure/railing{
 	dir = 1
@@ -14460,19 +14448,6 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/techmaint,
-/area/engineering/atmos)
-"aHp" = (
-/obj/item/device/radio/intercom{
-	broadcasting = 1;
-	dir = 8;
-	listening = 1;
-	name = "Common Channel";
-	pixel_x = -21;
-	pixel_y = 0
-	},
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/pipedispenser,
-/turf/simulated/floor/tiled,
 /area/engineering/atmos)
 "aHv" = (
 /obj/structure/table/standard,
@@ -28497,6 +28472,18 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/techmaint,
 /area/engineering/atmos)
+"lUR" = (
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/atmos{
+	name = "Atmospherics Substation";
+	req_access = list(24)
+	},
+/turf/simulated/floor/plating,
+/area/engineering/atmos)
 "lVl" = (
 /obj/structure/railing{
 	icon_state = "railing0";
@@ -31926,6 +31913,16 @@
 	},
 /turf/simulated/floor/plating,
 /area/crew_quarters/sleep/maintDorm1)
+"xJz" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/catwalk,
+/obj/machinery/door/airlock/maintenance/engi{
+	name = "Atmospherics";
+	req_access = list(24)
+	},
+/turf/simulated/floor/plating,
+/area/engineering/atmos)
 "xKT" = (
 /obj/machinery/atmospherics/binary/pump{
 	dir = 8
@@ -41520,7 +41517,7 @@ tkX
 nOV
 bEX
 aGZ
-aHp
+aiB
 aHM
 mwy
 aIk
@@ -42083,10 +42080,10 @@ aah
 aah
 aEU
 bzG
-aej
+aFZ
 aFY
 laN
-akl
+lUR
 lSd
 gts
 bPw
@@ -43220,7 +43217,7 @@ aDJ
 aDL
 akk
 jso
-aiB
+xJz
 xoJ
 xXP
 qDb
@@ -47293,7 +47290,7 @@ aaU
 abH
 abH
 abH
-akj
+abf
 abH
 abH
 afQ
@@ -47308,7 +47305,7 @@ ajl
 aka
 ajl
 ajl
-abf
+aej
 alY
 amR
 alr

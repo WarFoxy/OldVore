@@ -3527,7 +3527,6 @@
 	icon_state = "1-2"
 	},
 /obj/structure/disposalpipe/segment,
-/obj/machinery/door/firedoor/glass,
 /turf/simulated/floor/tiled/techfloor,
 /area/tether/surfacebase/atrium_two)
 "hJ" = (
@@ -4752,18 +4751,21 @@
 /turf/simulated/floor/tiled,
 /area/rnd/rdoffice)
 "kr" = (
-/obj/effect/floor_decal/industrial/warning{
+/obj/structure/railing{
 	dir = 8
 	},
-/obj/structure/disposalpipe/segment,
-/obj/structure/cable,
-/obj/machinery/power/apc{
-	dir = 4;
-	name = "east bump";
-	pixel_x = 28
+/obj/effect/floor_decal/techfloor{
+	dir = 4
 	},
-/turf/simulated/floor/tiled,
-/area/tether/surfacebase/fish_farm)
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/danger{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/maintenance/asmaint2)
 "ks" = (
 /turf/simulated/wall/r_wall,
 /area/server)
@@ -7371,19 +7373,30 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/server)
 "pc" = (
-/obj/effect/floor_decal/industrial/warning{
+/obj/structure/railing{
 	dir = 8
 	},
-/obj/machinery/disposal,
 /obj/machinery/light{
 	dir = 4;
-	icon_state = "tube1"
+	icon_state = "tube1";
+	pixel_x = 0
 	},
-/obj/structure/disposalpipe/trunk{
+/obj/effect/floor_decal/techfloor{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/visible/black{
 	dir = 1
 	},
-/turf/simulated/floor/tiled,
-/area/tether/surfacebase/fish_farm)
+/obj/random/tool,
+/obj/effect/floor_decal/industrial/danger/corner{
+	dir = 4
+	},
+/obj/structure/sign/warning/caution{
+	pixel_x = 32
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/maintenance/asmaint2)
 "pd" = (
 /obj/structure/table/steel,
 /obj/effect/floor_decal/techfloor,
@@ -9972,7 +9985,13 @@
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/fish_farm)
 "tR" = (
-/obj/machinery/vending/fishing,
+/obj/structure/table/rack,
+/obj/item/weapon/reagent_containers/food/snacks/candy,
+/obj/item/weapon/reagent_containers/food/snacks/candy,
+/obj/item/weapon/reagent_containers/food/snacks/candy,
+/obj/item/weapon/reagent_containers/food/snacks/candy,
+/obj/item/weapon/reagent_containers/food/snacks/candy,
+/obj/item/weapon/reagent_containers/food/snacks/candy,
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/fish_farm)
 "tS" = (
@@ -10875,13 +10894,16 @@
 /turf/simulated/floor/tiled,
 /area/engineering/lower/atmos_lockers)
 "vA" = (
-/obj/machinery/door/airlock/maintenance/common,
 /obj/effect/floor_decal/industrial/warning{
-	icon_state = "warning";
-	dir = 1
+	dir = 8
 	},
-/obj/machinery/door/firedoor/glass,
-/turf/simulated/floor/plating,
+/obj/machinery/power/apc{
+	dir = 4;
+	name = "east bump";
+	pixel_x = 28
+	},
+/obj/structure/cable,
+/turf/simulated/floor/tiled,
 /area/tether/surfacebase/fish_farm)
 "vB" = (
 /obj/machinery/light/small,
@@ -11139,18 +11161,13 @@
 /turf/simulated/wall,
 /area/engineering/lower/atmos_lockers)
 "wd" = (
-/obj/effect/floor_decal/techfloor{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/visible/black{
+/obj/machinery/door/airlock/maintenance/common,
+/obj/effect/floor_decal/industrial/warning{
+	icon_state = "warning";
 	dir = 1
 	},
-/obj/effect/floor_decal/industrial/danger{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/techfloor,
-/area/maintenance/asmaint2)
+/turf/simulated/floor/plating,
+/area/tether/surfacebase/fish_farm)
 "we" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -11291,6 +11308,9 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/lower/rnd)
+"wo" = (
+/turf/simulated/floor/plating,
+/area/tether/surfacebase/fish_farm)
 "wp" = (
 /obj/machinery/door/airlock/maintenance/engi{
 	name = "Pump Station"
@@ -11450,35 +11470,20 @@
 "wE" = (
 /obj/machinery/light{
 	dir = 4;
-	icon_state = "tube1";
-	pixel_x = 0
+	icon_state = "tube1"
 	},
-/obj/effect/floor_decal/techfloor{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/visible/black{
-	dir = 1
-	},
-/obj/random/tool,
-/obj/effect/floor_decal/industrial/danger/corner{
-	dir = 4
-	},
-/obj/structure/sign/warning/caution{
-	pixel_x = 32
-	},
-/turf/simulated/floor/tiled/techfloor,
-/area/maintenance/asmaint2)
-"wF" = (
-/obj/effect/floor_decal/techfloor{
+/obj/effect/floor_decal/industrial/warning{
 	dir = 8
 	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/visible/purple{
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/disposal,
+/obj/structure/disposalpipe/trunk{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/techfloor,
-/area/maintenance/asmaint2)
+/turf/simulated/floor/tiled,
+/area/tether/surfacebase/fish_farm)
 "wG" = (
 /obj/structure/cable/cyan{
 	d1 = 2;
@@ -25158,7 +25163,7 @@ kb
 kb
 kp
 kI
-wF
+kT
 lg
 kT
 kT
@@ -25582,8 +25587,8 @@ ac
 ac
 kb
 kb
-wd
-wE
+kr
+pc
 kV
 lh
 lB
@@ -25722,7 +25727,7 @@ hs
 hD
 ac
 ac
-jy
+kb
 ka
 cM
 ka
@@ -25864,7 +25869,7 @@ ww
 ul
 ho
 ho
-jy
+ho
 bz
 cp
 il
@@ -26006,7 +26011,7 @@ tQ
 um
 vO
 ho
-jy
+ho
 jy
 il
 jy
@@ -26148,7 +26153,7 @@ vp
 vp
 hq
 ho
-jy
+ho
 bz
 il
 jy
@@ -26289,8 +26294,8 @@ hq
 hq
 hq
 vW
-vA
-jx
+wd
+wo
 bz
 il
 jy
@@ -26432,7 +26437,7 @@ hq
 hq
 hq
 ho
-jy
+ho
 bz
 il
 cF
@@ -26574,7 +26579,7 @@ hq
 hq
 ho
 ho
-jy
+ho
 jy
 cq
 cF
@@ -26716,7 +26721,7 @@ hq
 vB
 ho
 ho
-ii
+hD
 il
 il
 cF
@@ -27284,7 +27289,7 @@ hr
 hq
 hq
 ho
-ii
+hD
 ii
 cE
 cF
@@ -27426,7 +27431,7 @@ hr
 hq
 vB
 ho
-ii
+hD
 ii
 ns
 kL
@@ -27568,7 +27573,7 @@ hr
 hq
 hq
 ho
-ii
+hD
 ii
 il
 il
@@ -27710,7 +27715,7 @@ hq
 hq
 ho
 ho
-ii
+hD
 ke
 il
 il
@@ -27851,8 +27856,8 @@ hq
 hq
 hq
 ho
-jy
-ii
+ho
+hD
 kf
 ku
 il
@@ -27993,8 +27998,8 @@ tO
 tO
 hq
 ho
-jy
-ii
+ho
+hD
 ii
 kv
 jN
@@ -28131,12 +28136,12 @@ ux
 uM
 uZ
 vj
-kr
-pc
+wE
+vA
 ho
 ho
-jy
-ii
+ho
+hD
 ii
 kw
 jx
@@ -28276,9 +28281,9 @@ vq
 hD
 hD
 hD
-ii
-ii
-ii
+hD
+hD
+hD
 ii
 kx
 jx
