@@ -43,3 +43,9 @@
 	name = "drone identification card"
 	desc = "A card issued by the EIO, indicating that the owner is a Drone Intelligence. Drones are mandated to carry this card within SolGov space, by law."
 	icon_state = "permit_drone"
+
+/obj/item/clothing/accessory/permit/nudity
+	name = "public nudity permit"
+	desc = "This permit entitles the bearer to conduct their duties without, or partially without a uniform. Normally issued to furred crewmembers or those with nothing to hide."
+	icon = 'icons/obj/card.dmi'
+	icon_state = "guest"

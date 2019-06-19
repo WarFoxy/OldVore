@@ -1,5 +1,5 @@
 //Cactus, Speedbird, Dynasty, oh my
-
+/*
 var/datum/lore/atc_controller/atc = new/datum/lore/atc_controller
 
 /datum/lore/atc_controller
@@ -127,3 +127,4 @@ var/datum/lore/atc_controller/atc = new/datum/lore/atc_controller
 	//Ship sends response to ATC
 	msg(full_closure,"[prefix] [shipname]")
 	return
+*/

@@ -25,6 +25,8 @@
 	var/g_wing = 30		// Wing color
 	var/b_wing = 30		// Wing color
 	var/dress_mob = TRUE
+	var/potenzia = 10 //dicks
+	var/resistenza = 200 //you think you can resist?
 
 // Definition of the stuff for Ears
 /datum/category_item/player_setup_item/vore/ears
@@ -50,6 +52,8 @@
 	S["r_wing"]			>> pref.r_wing
 	S["g_wing"]			>> pref.g_wing
 	S["b_wing"]			>> pref.b_wing
+	S["potenzia"]					>> pref.potenzia
+	S["resistenza"]					>> pref.resistenza
 
 /datum/category_item/player_setup_item/vore/ears/save_character(var/savefile/S)
 	S["ear_style"]		<< pref.ear_style
@@ -70,6 +74,8 @@
 	S["r_wing"]			<< pref.r_wing
 	S["g_wing"]			<< pref.g_wing
 	S["b_wing"]			<< pref.b_wing
+	S["potenzia"]					<< pref.potenzia
+	S["resistenza"]					<< pref.resistenza
 
 /datum/category_item/player_setup_item/vore/ears/sanitize_character()
 	pref.r_ears		= sanitize_integer(pref.r_ears, 0, 255, initial(pref.r_ears))
@@ -87,6 +93,8 @@
 	pref.r_wing		= sanitize_integer(pref.r_wing, 0, 255, initial(pref.r_wing))
 	pref.g_wing		= sanitize_integer(pref.g_wing, 0, 255, initial(pref.g_wing))
 	pref.b_wing		= sanitize_integer(pref.b_wing, 0, 255, initial(pref.b_wing))
+	pref.potenzia		= sanitize_integer(pref.potenzia, 5, 30, initial(pref.potenzia))
+	pref.resistenza		= sanitize_integer(pref.resistenza, 10, 600, initial(pref.resistenza))
 	if(pref.ear_style)
 		pref.ear_style	= sanitize_inlist(pref.ear_style, ear_styles_list, initial(pref.ear_style))
 	if(pref.tail_style)
@@ -113,7 +121,8 @@
 	character.r_wing			= pref.r_wing
 	character.b_wing			= pref.b_wing
 	character.g_wing			= pref.g_wing
-
+	character.potenzia			= pref.potenzia
+	character.resistenza			= pref.resistenza
 
 
 /datum/category_item/player_setup_item/vore/ears/content(var/mob/user)
@@ -151,6 +160,10 @@
 		tail_display = "REQUIRES UPDATE"
 	. += "<b>Tail</b><br>"
 	. += " Style: <a href='?src=\ref[src];tail_style=1'>[tail_display]</a><br>"
+	. += "<b>Sexual</b><br>"
+	if (pref.biological_gender == MALE)
+		. += "Potenzia: <a href='?src=\ref[src];potenzia=1'>[pref.potenzia]</a><br>"
+	. += "Resistenza: <a href='?src=\ref[src];resistenza=1'>[pref.resistenza]</a><br>"
 
 	if(tail_styles_list[pref.tail_style])
 		var/datum/sprite_accessory/tail/T = tail_styles_list[pref.tail_style]
@@ -224,6 +237,28 @@
 			pref.tail_style = pretty_tail_styles[new_tail_style]
 
 		return TOPIC_REFRESH_UPDATE_PREVIEW
+
+	else if(href_list["potenzia"])
+		var/new_potenzia = input(user, "Choose your character's potenzia, ranging from 5 to 30.\n\
+			This setting determines how quickly you can satisfy your partners during the act. Enter the correct value in centimeters.", "Set Potenzia") as num|null
+		if (!ISINRANGE(new_potenzia,5,30))
+			pref.potenzia = 10
+			user << "<span class='notice'>Invalid potenzia.</span>"
+			return TOPIC_REFRESH
+		else if(new_potenzia)
+			pref.potenzia = new_potenzia
+			return TOPIC_REFRESH
+
+	else if(href_list["resistenza"])
+		var/new_resistenza = input(user, "Choose your character's resistenza, ranging from 10 to 600.\n\
+			This setting determines how long your character can act. Please, enter the correct value (average one is 200).", "Set Resistenza") as num|null
+		if (!ISINRANGE(new_resistenza,10,600))
+			pref.resistenza = 200
+			user << "<span class='notice'>Invalid resistenza.</span>"
+			return TOPIC_REFRESH
+		else if(new_resistenza)
+			pref.resistenza = new_resistenza
+			return TOPIC_REFRESH
 
 	else if(href_list["tail_color"])
 		var/new_tailc = input(user, "Choose your character's tail/taur colour:", "Character Preference",

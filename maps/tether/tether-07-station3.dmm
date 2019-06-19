@@ -2420,18 +2420,39 @@
 /turf/simulated/floor/tiled,
 /area/security/hallway)
 "dY" = (
-/obj/machinery/light{
-	dir = 1
+/obj/effect/landmark/start{
+	name = "AI"
 	},
-/obj/structure/table/rack/shelf,
-/obj/item/weapon/tank/oxygen,
-/obj/item/device/suit_cooling_unit,
-/obj/item/clothing/head/helmet/space/void/pilot,
-/obj/item/clothing/shoes/magboots,
-/obj/item/clothing/suit/space/void/pilot,
-/obj/item/clothing/head/helmet/space/void/pilot,
-/turf/simulated/shuttle/floor/black,
-/area/shuttle/excursion/tether)
+/obj/machinery/requests_console{
+	department = "AI";
+	departmentType = 5;
+	pixel_x = 30;
+	pixel_y = 32
+	},
+/obj/machinery/newscaster/security_unit{
+	pixel_x = -32;
+	pixel_y = 32
+	},
+/obj/item/device/radio/intercom/locked/ai_private{
+	dir = 4;
+	icon_state = "intercom";
+	pixel_x = 32
+	},
+/obj/item/device/radio/intercom{
+	broadcasting = 0;
+	dir = 8;
+	listening = 0;
+	name = "Common Channel";
+	pixel_x = -21;
+	pixel_y = 0
+	},
+/obj/item/device/radio/intercom{
+	dir = 1;
+	name = "Station Intercom (General)";
+	pixel_y = 21
+	},
+/turf/simulated/floor/bluegrid,
+/area/ai)
 "dZ" = (
 /obj/item/device/radio/intercom{
 	pixel_y = -24
@@ -5383,6 +5404,10 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
 	},
+/obj/item/weapon/gun/projectile/sec/flash,
+/obj/item/weapon/gun/projectile/sec/flash,
+/obj/item/weapon/gun/projectile/sec/flash,
+/obj/item/weapon/gun/projectile/sec/flash,
 /turf/simulated/floor/tiled/dark,
 /area/security/armory/blue)
 "iM" = (
@@ -5660,6 +5685,10 @@
 	pixel_x = 32;
 	pixel_y = -9
 	},
+/obj/item/ammo_magazine/m45/flash,
+/obj/item/ammo_magazine/m45/flash,
+/obj/item/ammo_magazine/m45/flash,
+/obj/item/ammo_magazine/m45/flash,
 /turf/simulated/floor/tiled/dark,
 /area/security/armory/blue)
 "jj" = (
@@ -6307,39 +6336,10 @@
 /turf/simulated/floor/bluegrid,
 /area/ai)
 "km" = (
-/obj/effect/landmark/start{
-	name = "AI"
-	},
-/obj/machinery/requests_console{
-	department = "AI";
-	departmentType = 5;
-	pixel_x = 30;
-	pixel_y = 32
-	},
-/obj/machinery/newscaster/security_unit{
-	pixel_x = -32;
-	pixel_y = 32
-	},
-/obj/item/device/radio/intercom/locked/ai_private{
-	dir = 4;
-	icon_state = "intercom";
-	pixel_x = 32
-	},
-/obj/item/device/radio/intercom{
-	broadcasting = 1;
-	dir = 8;
-	listening = 1;
-	name = "Common Channel";
-	pixel_x = -21;
-	pixel_y = 0
-	},
-/obj/item/device/radio/intercom{
-	dir = 1;
-	name = "Station Intercom (General)";
-	pixel_y = 21
-	},
-/turf/simulated/floor/bluegrid,
-/area/ai)
+/obj/structure/shuttle/engine/propulsion,
+/turf/simulated/floor/reinforced,
+/turf/simulated/shuttle/plating/airless/carry,
+/area/shuttle/excursion/tether)
 "kn" = (
 /obj/machinery/portable_atmospherics/powered/scrubber/huge/stationary/tram{
 	name = "\improper Shuttle Scrubber"
@@ -12884,14 +12884,14 @@
 	d2 = 4;
 	icon_state = "2-4"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 6
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
 	},
-/obj/structure/catwalk,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 6
+	},
 /obj/structure/disposalpipe/segment,
+/obj/structure/catwalk,
 /turf/simulated/floor,
 /area/maintenance/station/elevator)
 "ug" = (
@@ -20636,6 +20636,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/door/airlock/multi_tile/glass{
+	id_tag = "MedbayPsych";
 	name = "Treatment Centre";
 	req_access = list(5)
 	},
@@ -20823,23 +20824,15 @@
 /turf/simulated/wall,
 /area/maintenance/security_starboard)
 "GU" = (
-/obj/structure/table/glass,
-/obj/item/device/radio{
-	pixel_x = -4;
-	pixel_y = 4
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/corner/red/border,
+/obj/machinery/computer/guestpass{
+	dir = 1;
+	icon_state = "guest";
+	pixel_y = -28
 	},
-/obj/item/device/radio{
-	pixel_x = 4;
-	pixel_y = -4
-	},
-/obj/effect/floor_decal/borderfloorwhite{
-	dir = 8
-	},
-/obj/effect/floor_decal/corner/paleblue/border{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/white,
-/area/medical/reception)
+/turf/simulated/floor/tiled,
+/area/security/hallway)
 "GV" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
@@ -20985,6 +20978,13 @@
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals6{
 	dir = 4
+	},
+/obj/machinery/button/remote/airlock{
+	desc = "A remote control switch for the medbay foyer.";
+	id = "MedbayPsych";
+	name = "Medbay Doors Control";
+	pixel_x = 26;
+	pixel_y = 26
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/surgery_hallway)
@@ -23423,8 +23423,14 @@
 /turf/simulated/floor,
 /area/maintenance/station/medbay)
 "KZ" = (
-/obj/structure/bed/chair/office/light{
-	dir = 4
+/obj/structure/table/glass,
+/obj/item/device/radio{
+	pixel_x = -4;
+	pixel_y = 4
+	},
+/obj/item/device/radio{
+	pixel_x = 4;
+	pixel_y = -4
 	},
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 8
@@ -23432,16 +23438,13 @@
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 8
 	},
-/obj/effect/landmark/start{
-	name = "Geneticist"
-	},
 /obj/machinery/computer/guestpass{
 	dir = 4;
 	pixel_x = -28;
 	pixel_y = 0
 	},
 /turf/simulated/floor/tiled/white,
-/area/medical/resleeving)
+/area/medical/reception)
 "La" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 1
@@ -28317,10 +28320,20 @@
 /turf/simulated/floor/carpet,
 /area/security/breakroom)
 "SD" = (
-/obj/structure/shuttle/engine/propulsion,
-/turf/simulated/floor/reinforced,
-/turf/simulated/shuttle/plating/airless/carry,
-/area/shuttle/excursion/tether)
+/obj/structure/bed/chair/office/light{
+	dir = 4
+	},
+/obj/effect/floor_decal/borderfloorwhite{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/paleblue/border{
+	dir = 8
+	},
+/obj/effect/landmark/start{
+	name = "Geneticist"
+	},
+/turf/simulated/floor/tiled/white,
+/area/medical/resleeving)
 "SE" = (
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 8
@@ -34664,7 +34677,7 @@ Ix
 Ja
 JR
 Kw
-KZ
+SD
 LF
 Me
 My
@@ -35936,7 +35949,7 @@ DM
 FS
 FT
 Gl
-GU
+KZ
 nf
 Iy
 Ji
@@ -36204,7 +36217,7 @@ qN
 rx
 lw
 td
-pG
+GU
 mH
 uP
 wm
@@ -39735,7 +39748,7 @@ it
 di
 di
 dy
-SD
+km
 cK
 cK
 ms
@@ -39877,7 +39890,7 @@ iK
 jY
 kn
 di
-SD
+km
 cK
 cK
 ms
@@ -40008,7 +40021,7 @@ cE
 cK
 di
 dy
-dY
+ec
 di
 eO
 eR
@@ -40019,7 +40032,7 @@ iK
 jY
 kn
 di
-SD
+km
 cK
 cK
 ms
@@ -40871,7 +40884,7 @@ eb
 ka
 ky
 di
-SD
+km
 cK
 cK
 ms
@@ -41013,7 +41026,7 @@ jf
 kj
 kQ
 di
-SD
+km
 cK
 cK
 ms
@@ -41155,7 +41168,7 @@ jr
 kk
 kR
 dy
-SD
+km
 cK
 cK
 ms
@@ -42998,7 +43011,7 @@ eI
 fy
 ic
 jD
-km
+dY
 ll
 jD
 lO

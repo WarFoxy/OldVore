@@ -4,3 +4,6 @@
 	diethylamine	spawn_reagent = "diethylamine"
 	plantbgone		spawn_reagent = "plantbgone"
 	mutagen			spawn_reagent = "mutagen"
+
+	//Interactions
+	semen			spawn_reagent = "semen"

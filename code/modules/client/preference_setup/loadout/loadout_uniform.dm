@@ -428,7 +428,7 @@
 /datum/gear/uniform/pcrc
 	display_name = "uniform, PCRC (Security)"
 	path = /obj/item/clothing/under/pcrc
-	allowed_roles = list("Security Officer","Head of Security","Warden")
+	allowed_roles = list("Head of Security", "Warden", "Detective", "Security Officer")
 
 /datum/gear/uniform/brandsuit/grayson
 	display_name = "outfit, grayson"

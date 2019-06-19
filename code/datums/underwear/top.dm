@@ -50,14 +50,17 @@
 /datum/category_item/underwear/top/fishnet_base
 	name = "Fishnet top"
 	icon_state = "fishnet_body"
+	has_color = TRUE
 
 /datum/category_item/underwear/top/fishnet_sleeves
 	name = "Fishnet with sleeves"
 	icon_state = "fishnet_sleeves"
+	has_color = TRUE
 
 /datum/category_item/underwear/top/fishnet_gloves
 	name = "Fishnet with gloves"
 	icon_state = "fishnet_gloves"
+	has_color = TRUE
 
 /datum/category_item/underwear/top/striped_bra
 	name = "Striped Bra"

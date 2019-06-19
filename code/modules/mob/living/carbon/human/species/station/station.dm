@@ -15,8 +15,8 @@
 	name_language = null // Use the first-name last-name generator rather than a language scrambler
 	assisted_langs = list(LANGUAGE_EAL, LANGUAGE_SKRELLIAN, LANGUAGE_SKRELLIANFAR, LANGUAGE_ROOTLOCAL, LANGUAGE_ROOTGLOBAL, LANGUAGE_VOX)
 
-	min_age = 17
-	max_age = 130
+	min_age = 1
+	max_age = 999
 
 	economic_modifier = 10
 
@@ -58,8 +58,8 @@
 	species_language = LANGUAGE_UNATHI
 	health_hud_intensity = 2.5
 
-	min_age = 32
-	max_age = 260
+	min_age = 1
+	max_age = 999
 
 	economic_modifier = 7
 
@@ -170,8 +170,8 @@
 	species_language = LANGUAGE_SIIK
 	health_hud_intensity = 2.5
 
-	min_age = 17
-	max_age = 80
+	min_age = 1
+	max_age = 999
 
 	economic_modifier = 7
 
@@ -257,8 +257,8 @@
 
 	water_movement = -3
 
-	min_age = 19
-	max_age = 130
+	min_age = 1
+	max_age = 999
 
 	economic_modifier = 12
 
@@ -337,8 +337,8 @@
 
 	economic_modifier = 3
 
-	min_age = 16
-	max_age = 90
+	min_age = 1
+	max_age = 999
 
 	blurb = "The Zaddat are an Unathi client race only recently introduced to SolGov space. Having evolved on \
 	the high-pressure and post-apocalyptic world of Xohok, Zaddat require an environmental suit called a Shroud \
@@ -446,7 +446,7 @@
 	secondary_langs = list(LANGUAGE_ROOTGLOBAL)
 	assisted_langs = list(LANGUAGE_VOX)	// Diona are weird, let's just assume they can use basically any language.
 	min_age = 1
-	max_age = 300
+	max_age = 999
 
 	economic_modifier = 4
 

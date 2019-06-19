@@ -32,3 +32,8 @@
 	name = "magazine (.44 rubber)"
 	path =/obj/item/ammo_magazine/m44/rubber
 	hidden = 1
+
+/datum/category_item/autolathe/arms/helmet
+	name = "security helmet"
+	path =/obj/item/clothing/head/helmet
+	hidden = 1
