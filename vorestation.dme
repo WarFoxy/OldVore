@@ -3206,4 +3206,9 @@
 #include "maps\submaps\surface_submaps\wilderness\wilderness_areas.dm"
 #include "maps\tether\tether.dm"
 #include "maps\~map_system\maps.dm"
+#include "updates\camping\Camping.dm"
+#include "updates\camping\mre.dm"
+#include "updates\deadspace\necro.dm"
+#include "updates\fluff\ruvorefluff.dm"
+#include "updates\instruments\instruments.dm"
 // END_INCLUDE
