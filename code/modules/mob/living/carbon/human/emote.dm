@@ -46,28 +46,28 @@
 			if(!M)
 				param = null
 
-			var/display_msg = "гудит."
+			var/display_msg = "гудит"
 			var/use_sound = 'sound/machines/twobeep.ogg'
 			if(act == "buzz")
-				display_msg = "жужжит."
+				display_msg = "жужжит"
 				use_sound = 'sound/machines/buzz-sigh.ogg'
 			else if(act == "ping")
-				display_msg = "звенит."
+				display_msg = "звенит"
 				use_sound = 'sound/machines/ping.ogg'
 			else if(act == "yes" || act == "ye")
-				display_msg = "издаёт утвердительный сигнал."
+				display_msg = "издаёт утвердительный сигнал"
 				use_sound = 'sound/machines/synth_yes.ogg'
 			else if(act == "no")
-				display_msg = "издаёт отрицательный сигнал."
+				display_msg = "издаёт отрицательный сигнал"
 				use_sound = 'sound/machines/synth_no.ogg'
 			else if(act == "rcough")
-				display_msg = "имитирует кашель."
+				display_msg = "имитирует кашель"
 				if(get_gender() == FEMALE)
 					use_sound = pick('sound/effects/mob_effects/f_machine_cougha.ogg','sound/effects/mob_effects/f_machine_coughb.ogg')
 				else
 					use_sound = pick('sound/effects/mob_effects/m_machine_cougha.ogg','sound/effects/mob_effects/m_machine_coughb.ogg', 'sound/effects/mob_effects/m_machine_coughc.ogg')
 			else if(act == "rsneeze")
-				display_msg = "имитирует чихание."
+				display_msg = "имитирует чихание"
 				if(get_gender() == FEMALE)
 					use_sound = 'sound/effects/mob_effects/machine_sneeze.ogg'
 				else
