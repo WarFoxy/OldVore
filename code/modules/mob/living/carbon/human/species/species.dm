@@ -48,8 +48,8 @@
 
 	var/taste_sensitivity = TASTE_NORMAL					// How sensitive the species is to minute tastes.
 
-	var/min_age = 17
-	var/max_age = 70
+	var/min_age = 1
+	var/max_age = 999
 
 	// Language/culture vars.
 	var/default_language = LANGUAGE_GALCOM					// Default language is used when 'say' is used without modifiers.
@@ -66,7 +66,7 @@
 	var/list/assisted_langs = list(LANGUAGE_EAL, LANGUAGE_SKRELLIAN, LANGUAGE_SKRELLIANFAR, LANGUAGE_ROOTLOCAL, LANGUAGE_ROOTGLOBAL, LANGUAGE_VOX) //VOREStation Edit
 
 	//Soundy emotey things.
-	var/scream_verb = "screams"
+	var/scream_verb = "кричит"
 	var/male_scream_sound		//= 'sound/goonstation/voice/male_scream.ogg' Removed due to licensing, replace!
 	var/female_scream_sound		//= 'sound/goonstation/voice/female_scream.ogg' Removed due to licensing, replace!
 	var/male_cough_sounds = list('sound/effects/mob_effects/m_cougha.ogg','sound/effects/mob_effects/m_coughb.ogg', 'sound/effects/mob_effects/m_coughc.ogg')
@@ -215,6 +215,9 @@
 		BP_R_FOOT = list("path" = /obj/item/organ/external/foot/right)
 		)
 
+	var/list/proc/species_genitals = list()
+	var/genitals = 1
+	var/anus = 1
 	var/list/genders = list(MALE, FEMALE)
 	var/ambiguous_genders = FALSE // If true, people examining a member of this species whom are not also the same species will see them as gender neutral.	Because aliens.
 

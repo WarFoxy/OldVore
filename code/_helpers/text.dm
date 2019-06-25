@@ -23,12 +23,14 @@
  */
 
 //Used for preprocessing entered text
-/proc/sanitize(var/input, var/max_length = MAX_MESSAGE_LEN, var/encode = 1, var/trim = 1, var/extra = 1)
+/proc/sanitize(var/input, var/max_length = MAX_MESSAGE_LEN, var/encode = 1, var/trim = 1, var/extra = 1, var/mode = SANITIZE_CHAT)
 	if(!input)
 		return
 
 	if(max_length)
 		input = copytext(input,1,max_length)
+
+	input = sanitize_local(input, mode)
 
 	if(extra)
 		input = replace_characters(input, list("\n"=" ","\t"=" "))
@@ -38,7 +40,7 @@
 		//In addition to processing html, html_encode removes byond formatting codes like "\ red", "\ i" and other.
 		//It is important to avoid double-encode text, it can "break" quotes and some other characters.
 		//Also, keep in mind that escaped characters don't work in the interface (window titles, lower left corner of the main window, etc.)
-		input = html_encode(input)
+		input = lhtml_encode(input)
 	else
 		//If not need encode text, simply remove < and >
 		//note: we can also remove here byond formatting codes: 0xFF + next byte
@@ -137,7 +139,7 @@
 
 //Old variant. Haven't dared to replace in some places.
 /proc/sanitize_old(var/t,var/list/repl_chars = list("\n"="#","\t"="#"))
-	return html_encode(replace_characters(t,repl_chars))
+	return lhtml_encode(replace_characters(t,repl_chars))
 
 /*
  * Text searches
@@ -218,7 +220,15 @@
 
 //Returns a string with the first element of the string capitalized.
 /proc/capitalize(var/t as text)
-	return uppertext(copytext(t, 1, 2)) + copytext(t, 2)
+	var/s = 2
+	if(copytext(t,1,2) == ";")
+		s += 1
+	else if(copytext(t,1,2) == ":")
+		if(copytext(t,3,4) == " ")
+			s+=3
+		else
+			s+=2
+	return upperrustext(copytext(t, 1, s)) + copytext(t, s)
 
 //This proc strips html properly, remove < > and all text between
 //for complete text sanitizing should be used sanitize()
@@ -291,13 +301,13 @@ proc/TextPreview(var/string,var/len=40)
 		if(!lentext(string))
 			return "\[...\]"
 		else
-			return string
+			return sanitize_local(string, SANITIZE_BROWSER)
 	else
-		return "[copytext_preserve_html(string, 1, 37)]..."
+		return sanitize_local("[copytext_preserve_html(string, 1, 37)]...", SANITIZE_BROWSER)
 
 //alternative copytext() for encoded text, doesn't break html entities (&#34; and other)
 /proc/copytext_preserve_html(var/text, var/first, var/last)
-	return html_encode(copytext(html_decode(text), first, last))
+	return lhtml_encode(copytext(lhtml_decode(text, SANITIZE_TEMP), first, last), SANITIZE_CHAT)
 
 //For generating neat chat tag-images
 //The icon var could be local in the proc, but it's a waste of resources

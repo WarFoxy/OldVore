@@ -1,23 +1,24 @@
 /mob/living/carbon/human/proc/handle_emote_vr(var/act,var/m_type=1,var/message = null)
+	var/ya = "&#255;"
 
 	switch(act)
 		if ("vwag")
 			if(toggle_tail_vr(message = 1))
 				m_type = 1
-				message = "[wagging ? "starts" : "stops"] wagging their tail."
+				message = "[wagging ? "начинает" : "прекращает"] вил[ya]ть хвостом."
 			else
 				return 1
 		if ("vflap")
 			if(toggle_wing_vr(message = 1))
 				m_type = 1
-				message = "[flapping ? "starts" : "stops"] flapping their wings."
+				message = "[flapping ? "начинает" : "прекращает"] махать крыль[ya]ми."
 			else
 				return 1
 		if ("mlem")
-			message = "mlems [get_visible_gender() == MALE ? "his" : get_visible_gender() == FEMALE ? "her" : "their"] tongue up over [get_visible_gender() == MALE ? "his" : get_visible_gender() == FEMALE ? "her" : "their"] nose. Mlem."
+			message = "[get_visible_gender() == MALE ? "лизнул" : get_visible_gender() == FEMALE ? "лизнула" : "лизнуло"] кончик своего носа [ya]зыком. Лизь."
 			m_type = 1
 		if ("awoo")
-			message = "awoos loudly. AwoooOOOOoooo!"
+			message = "громко воет. АвуууУУУууу!"
 			m_type = 2
 		if ("nsay")
 			nsay()
@@ -44,7 +45,7 @@
 				return 1
 			else
 				src.SpinAnimation(7,1)
-				message = "does a flip!"
+				message = "делает сальто!"
 				m_type = 1
 
 				if(prob(danger))
@@ -54,7 +55,7 @@
 						if(isSynthetic())
 							src.Weaken(5)
 							E.droplimb(1,DROPLIMB_EDGE)
-							message += " <span class='danger'>And loses a limb!</span>"
+							message += " <span class='danger'>И тер[ya]ет конечность!</span>"
 							log_and_message_admins("lost their [breaking] with *flip, ahahah.", src)
 						else
 							src.Weaken(5)
@@ -62,7 +63,7 @@
 								E.droplimb(0,DROPLIMB_BLUNT)
 							else
 								E.fracture()
-							message += " <span class='danger'>And breaks something!</span>"
+							message += " <span class='danger'>И ломает себе что-то!</span>"
 							log_and_message_admins("broke their [breaking] with *flip, ahahah.", src)
 
 	if (message)

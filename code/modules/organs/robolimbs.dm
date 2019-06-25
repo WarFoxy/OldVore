@@ -214,7 +214,7 @@ var/const/standard_monitor_styles = "blank=ipc_blank;\
 /datum/robolimb/veymed
 	company = "Vey-Med"
 	desc = "This high quality limb is nearly indistinguishable from an organic one."
-	icon = 'icons/mob/human_races/cyberlimbs/veymed/veymed_main_vr.dmi' //Vorestation edit, fixing the color application
+	icon = 'icons/mob/human_races/cyberlimbs/veymed/veymed_main.dmi' //Vorestation edit, fixing the color application
 	unavailable_to_build = 1
 	lifelike = 1
 	skin_tone = 1

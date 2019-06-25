@@ -1,5 +1,6 @@
 /mob/living/silicon/robot/emote(var/act,var/m_type=1,var/message = null)
 	var/param = null
+	var/ya = "&#255;"
 	if (findtext(act, "-", 1, null))
 		var/t1 = findtext(act, "-", 1, null)
 		param = copytext(act, t1 + 1, length(act) + 1)
@@ -36,9 +37,9 @@
 					param = null
 
 				if (param)
-					message = "salutes to [param]."
+					message = "отдаЄт честь [param]."
 				else
-					message = "salutes."
+					message = "отдаЄт честь."
 			m_type = 1
 		if ("bow")
 			if (!src.buckled)
@@ -52,39 +53,39 @@
 					param = null
 
 				if (param)
-					message = "bows to [param]."
+					message = "клан[ya]етс[ya] [param]."
 				else
-					message = "bows."
+					message = "клан[ya]етс[ya]."
 			m_type = 1
 
 		if ("clap")
 			if (!src.restrained())
-				message = "claps."
+				message = "апплодирует."
 				m_type = 2
 		if ("flap")
 			if (!src.restrained())
-				message = "flaps its wings."
+				message = "машет крыль[ya]ми."
 				m_type = 2
 
 		if ("aflap")
 			if (!src.restrained())
-				message = "flaps its wings ANGRILY!"
+				message = "ј√–≈——»¬Ќќ машет крыль[ya]ми!"
 				m_type = 2
 
 		if ("twitch")
-			message = "twitches."
+			message = "дЄргаетс[ya]."
 			m_type = 1
 
 		if ("twitch_v")
-			message = "twitches violently."
+			message = "резко дЄргаетс[ya]."
 			m_type = 1
 
 		if ("nod")
-			message = "nods."
+			message = "кивает."
 			m_type = 1
 
 		if ("deathgasp")
-			message = "shudders violently for a moment, then becomes motionless, its eyes slowly darkening."
+			message = "на мгновение резко вздрагивает, затем замирает. ¬изор перестаЄт светитьс[ya]."
 			m_type = 1
 
 		if ("glare")
@@ -98,9 +99,9 @@
 				param = null
 
 			if (param)
-				message = "glares at [param]."
+				message = "злобно смотрит на [param]."
 			else
-				message = "glares."
+				message = "злобно смотрит на что-то."
 
 		if ("stare")
 			var/M = null
@@ -113,9 +114,9 @@
 				param = null
 
 			if (param)
-				message = "stares at [param]."
+				message = "п[ya]литс[ya] на [param]."
 			else
-				message = "stares."
+				message = "пристально смотрит на что-то."
 
 		if ("look")
 			var/M = null
@@ -129,9 +130,9 @@
 				param = null
 
 			if (param)
-				message = "looks at [param]."
+				message = "смотрит на [param]."
 			else
-				message = "looks."
+				message = "смотрит на что-то."
 			m_type = 1
 
 		if("beep")
@@ -145,9 +146,9 @@
 				param = null
 
 			if (param)
-				message = "beeps at [param]."
+				message = "гудит на [param]."
 			else
-				message = "beeps."
+				message = "гудит."
 			playsound(src.loc, 'sound/machines/twobeep.ogg', 50, 0)
 			m_type = 1
 
@@ -162,9 +163,9 @@
 				param = null
 
 			if (param)
-				message = "pings at [param]."
+				message = "звенит на [param]."
 			else
-				message = "pings."
+				message = "звенит."
 			playsound(src.loc, 'sound/machines/ping.ogg', 50, 0)
 			m_type = 1
 
@@ -179,9 +180,9 @@
 				param = null
 
 			if (param)
-				message = "buzzes at [param]."
+				message = "жужжит на [param]."
 			else
-				message = "buzzes."
+				message = "жужжит."
 			playsound(src.loc, 'sound/machines/buzz-sigh.ogg', 50, 0)
 			m_type = 1
 
@@ -196,9 +197,9 @@
 				param = null
 
 			if (param)
-				message = "emits an affirmative blip at [param]."
+				message = "отвечает [param] утвердительным сигналом."
 			else
-				message = "emits an affirmative blip."
+				message = "издаЄт утвердительный сигнал."
 			playsound(src.loc, 'sound/machines/synth_yes.ogg', 50, 0)
 			m_type = 1
 
@@ -213,15 +214,15 @@
 				param = null
 
 			if (param)
-				message = "emits a negative blip at [param]."
+				message = "отвечает [param] отрицательным сигналом."
 			else
-				message = "emits a negative blip."
+				message = "издаЄт отрицательный сигнал."
 			playsound(src.loc, 'sound/machines/synth_no.ogg', 50, 0)
 			m_type = 1
 
 		if("law")
 			if (istype(module,/obj/item/weapon/robot_module/robot/security) || istype(module,/obj/item/weapon/robot_module/robot/knine)) //VOREStation Add - K9
-				message = "shows its legal authorization barcode."
+				message = "показывает свой штрих-код авторизации."
 
 				playsound(src.loc, 'sound/voice/biamthelaw.ogg', 50, 0)
 				m_type = 2

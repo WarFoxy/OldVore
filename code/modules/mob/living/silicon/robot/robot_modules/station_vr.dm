@@ -154,7 +154,7 @@
 	src.modules += new /obj/item/weapon/dogborg/pounce(src) //Pounce
 	src.emag 	 = new /obj/item/weapon/gun/energy/laser/mounted(src) //Emag. Not a big problem.
 
-	var/datum/matter_synth/water = new /datum/matter_synth(500) //Starts full and has a max of 500
+	var/datum/matter_synth/water = new /datum/matter_synth(1000) //Starts full and has a max of 500
 	water.name = "Water reserves"
 	water.recharge_rate = 0
 	R.water_res = water
@@ -223,7 +223,7 @@
 	src.modules += new /obj/item/weapon/shockpaddles/robot/hound(src) //Paws of life
 	src.emag 	 = new /obj/item/weapon/dogborg/pounce(src) //Pounce
 
-	var/datum/matter_synth/water = new /datum/matter_synth(500)
+	var/datum/matter_synth/water = new /datum/matter_synth(1000)
 	water.name = "Water reserves"
 	water.recharge_rate = 0
 	R.water_res = water
@@ -273,7 +273,7 @@
 	src.modules += new /obj/item/weapon/dogborg/swordtail(src)
 	src.emag     = new /obj/item/weapon/gun/energy/laser/mounted(src)
 
-	var/datum/matter_synth/water = new /datum/matter_synth(500)
+	var/datum/matter_synth/water = new /datum/matter_synth(1000)
 	water.name = "Water reserves"
 	water.recharge_rate = 0
 	R.water_res = water
@@ -318,15 +318,15 @@
 	//Starts empty. Can only recharge with recycled material.
 	var/datum/matter_synth/metal = new /datum/matter_synth/metal()
 	metal.name = "Steel reserves"
-	metal.recharge_rate = 0
+	metal.recharge_rate = 100
 	metal.max_energy = 50000
 	metal.energy = 0
 	var/datum/matter_synth/glass = new /datum/matter_synth/glass()
 	glass.name = "Glass reserves"
-	glass.recharge_rate = 0
+	glass.recharge_rate = 100
 	glass.max_energy = 50000
 	glass.energy = 0
-	var/datum/matter_synth/water = new /datum/matter_synth(500)
+	var/datum/matter_synth/water = new /datum/matter_synth(1000)
 	water.name = "Water reserves"
 	water.recharge_rate = 0
 	R.water_res = water
@@ -399,7 +399,7 @@
 	src.modules += new /obj/item/weapon/storage/part_replacer(src)
 	src.emag = new /obj/item/weapon/hand_tele(src)
 
-	var/datum/matter_synth/water = new /datum/matter_synth(500)
+	var/datum/matter_synth/water = new /datum/matter_synth(1000)
 	water.name = "Water reserves"
 	water.recharge_rate = 0
 	R.water_res = water
@@ -457,25 +457,25 @@
 	//Painfully slow charger regen but high capacity. Also starts with low amount.
 	var/datum/matter_synth/metal = new /datum/matter_synth/metal()
 	metal.name = "Steel reserves"
-	metal.recharge_rate = 100
+	metal.recharge_rate = 500
 	metal.max_energy = 50000
 	metal.energy = 10000
 	var/datum/matter_synth/glass = new /datum/matter_synth/glass()
 	glass.name = "Glass reserves"
-	glass.recharge_rate = 100
+	glass.recharge_rate = 500
 	glass.max_energy = 50000
 	glass.energy = 10000
 	var/datum/matter_synth/wood = new /datum/matter_synth/wood()
 	wood.name = "Wood reserves"
-	wood.recharge_rate = 100
+	wood.recharge_rate = 500
 	wood.max_energy = 50000
 	wood.energy = 10000
 	var/datum/matter_synth/plastic = new /datum/matter_synth/plastic()
 	plastic.name = "Plastic reserves"
-	plastic.recharge_rate = 100
+	plastic.recharge_rate = 500
 	plastic.max_energy = 50000
 	plastic.energy = 10000
-	var/datum/matter_synth/water = new /datum/matter_synth(500)
+	var/datum/matter_synth/water = new /datum/matter_synth(1000)
 	water.name = "Water reserves"
 	water.recharge_rate = 0
 	R.water_res = water

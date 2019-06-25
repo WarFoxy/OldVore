@@ -317,7 +317,7 @@
 	set src in usr
 	if(usr != src)
 		usr << "No."
-	var/msg = sanitize(input(usr,"Set the flavor text in your 'examine' verb.","Flavor Text",html_decode(flavor_text)) as message|null, extra = 0)	//VOREStation Edit: separating out OOC notes
+	var/msg = sanitize(input(usr,"Set the flavor text in your 'examine' verb.","Flavor Text",lhtml_decode(flavor_text, SANITIZE_TEMP)) as message|null, extra = 0)	//VOREStation Edit: separating out OOC notes
 
 	if(msg != null)
 		flavor_text = msg
@@ -519,7 +519,7 @@
 		src << browse(null, t1)
 
 	if(href_list["flavor_more"])
-		usr << browse(text("<HTML><HEAD><TITLE>[]</TITLE></HEAD><BODY><TT>[]</TT></BODY></HTML>", name, replacetext(flavor_text, "\n", "<BR>")), text("window=[];size=500x200", name))
+		usr << browse(sanitize_local(text("<HTML><HEAD><TITLE>[]</TITLE></HEAD><BODY><TT>[]</TT></BODY></HTML>", name, replacetext(flavor_text, "\n", "<BR>")), SANITIZE_BROWSER), text("window=[];size=500x200", name))
 		onclose(usr, "[name]")
 	if(href_list["flavor_change"])
 		update_flavor_text()

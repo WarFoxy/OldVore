@@ -397,7 +397,7 @@
 			usr << "<span class='info'>There isn't enough space left on \the [src] to write anything.</span>"
 			return
 
-		var/t =  sanitize(input("Enter what you want to write:", "Write", null, null) as message, free_space, extra = 0)
+		var/t =  sanitize(input("Enter what you want to write:", "Write", null, null) as message, free_space, extra = 0, mode = SANITIZE_TEMP)
 
 		if(!t)
 			return
@@ -440,7 +440,7 @@
 		//t = html_encode(t)
 		t = replacetext(t, "\n", "<BR>")
 		t = parsepencode(t, i, usr, iscrayon) // Encode everything from pencode to html
-
+		t = sanitize_local(t, SANITIZE_BROWSER)
 
 		if(fields > 50)//large amount of fields creates a heavy load on the server, see updateinfolinks() and addtofield()
 			usr << "<span class='warning'>Too many fields. Sorry, you can't do this.</span>"

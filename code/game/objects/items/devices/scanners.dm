@@ -275,21 +275,21 @@ HALOGEN COUNTER	- Radcount on mobs
 	name = "improved health analyzer"
 	desc = "A miracle of medical technology, this handheld scanner can produce an accurate and specific report of a patient's biosigns."
 	advscan = 1
-	origin_tech = list(TECH_MAGNET = 5, TECH_BIO = 6)
+	origin_tech = list(TECH_MAGNET = 4, TECH_BIO = 2)
 	icon_state = "health1"
 
 /obj/item/device/healthanalyzer/advanced //reports all of the above, as well as radiation severity and minor brain damage
 	name = "advanced health analyzer"
 	desc = "An even more advanced handheld health scanner, complete with a full biosign monitor and on-board radiation and neurological analysis suites."
 	advscan = 2
-	origin_tech = list(TECH_MAGNET = 6, TECH_BIO = 7)
+	origin_tech = list(TECH_MAGNET = 5, TECH_BIO = 3)
 	icon_state = "health2"
 
 /obj/item/device/healthanalyzer/phasic //reports all of the above, as well as name and quantity of nonmed reagents in stomach
 	name = "phasic health analyzer"
 	desc = "Possibly the most advanced health analyzer to ever have existed, utilising bluespace technology to determine almost everything worth knowing about a patient."
 	advscan = 3
-	origin_tech = list(TECH_MAGNET = 7, TECH_BIO = 8)
+	origin_tech = list(TECH_MAGNET = 6, TECH_BIO = 4)
 	icon_state = "health3"
 
 /obj/item/device/analyzer

@@ -853,3 +853,13 @@ var/global/list/light_type_cache = list()
 	icon = 'icons/obj/lighting.dmi'
 	icon_state = "lampshade"
 	w_class = ITEMSIZE_TINY
+
+//ruvr edit - multitool recolor
+/obj/item/weapon/light/attackby(obj/item/W, mob/user)
+	..()
+	if(istype(W, /obj/item/device/multitool/) )//Urist edit: Recolorable lights.
+		var/new_colour = input(usr, "Choose a colour.", "[src]", brightness_color) as color|null
+		if(new_colour && new_colour != brightness_color)
+			brightness_color = new_colour
+			to_chat(usr, "<span class='notice'>You grant \the [src]<font color='[brightness_color]'> a new colour</font>.</span>")
+			update_icon()

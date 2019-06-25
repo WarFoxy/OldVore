@@ -42,16 +42,19 @@
 
 /datum/species/unathi
 	autohiss_basic_map = list(
-			"s" = list("ss", "sss", "ssss")
+			"s" = list("ss", "sss", "ssss"),
+			"ñ" = list("ññ", "ñññ", "ññññ")
 		)
 	autohiss_extra_map = list(
-			"x" = list("ks", "kss", "ksss")
+			"x" = list("ks", "kss", "ksss"),
+			"ø" = list("õñ", "õññ", "õñññ")
 		)
 	autohiss_exempt = list(LANGUAGE_UNATHI)
 
 /datum/species/tajaran
 	autohiss_basic_map = list(
-			"r" = list("rr", "rrr", "rrrr")
+			"r" = list("rr", "rrr", "rrrr"),
+			"ð" = list("ðð", "ððð", "ðððð")
 		)
 	autohiss_exempt = list(LANGUAGE_SIIK,LANGUAGE_AKHANI)
 
@@ -84,10 +87,10 @@
 			. += message
 			break
 		. += copytext(message, 1, min_index)
-		if(copytext(message, min_index, min_index+1) == uppertext(min_char))
+		if(copytext(message, min_index, min_index+1) == upperrustext(min_char))
 			switch(text2ascii(message, min_index+1))
 				if(65 to 90) // A-Z, uppercase; uppercase R/S followed by another uppercase letter, uppercase the entire replacement string
-					. += uppertext(pick(map[min_char]))
+					. += upperrustext(pick(map[min_char]))
 				else
 					. += capitalize(pick(map[min_char]))
 		else

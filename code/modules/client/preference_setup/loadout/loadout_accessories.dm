@@ -277,3 +277,7 @@
 /datum/gear/accessory/cowledvest
 	display_name = "cowled vest"
 	path = /obj/item/clothing/accessory/cowledvest
+
+/datum/gear/accessory/permit/nudity
+	display_name = "accessory nudity permit"
+	path = /obj/item/clothing/accessory/permit/nudity

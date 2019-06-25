@@ -356,3 +356,7 @@ var/global/list/##LIST_NAME = list();\
 #define MOUSE_OPACITY_TRANSPARENT 0
 #define MOUSE_OPACITY_ICON 1
 #define MOUSE_OPACITY_OPAQUE 2
+
+//Preference save/load cooldown. This is in deciseconds.
+#define PREF_SAVELOAD_COOLDOWN 2 //Should be sufficiently hard to achieve without a broken mouse or autoclicker while still fulfilling its intended goal.
+
