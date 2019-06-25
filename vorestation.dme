@@ -3211,4 +3211,5 @@
 #include "updates\deadspace\necro.dm"
 #include "updates\fluff\ruvorefluff.dm"
 #include "updates\instruments\instruments.dm"
+#include "updates\WarFoxy\WFuniform.dm"
 // END_INCLUDE
