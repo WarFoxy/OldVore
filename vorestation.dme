@@ -368,6 +368,7 @@
 #include "code\datums\supplypacks\medical.dm"
 #include "code\datums\supplypacks\medical_vr.dm"
 #include "code\datums\supplypacks\misc.dm"
+#include "code\datums\supplypacks\misc_ruvr.dm"
 #include "code\datums\supplypacks\misc_vr.dm"
 #include "code\datums\supplypacks\munitions.dm"
 #include "code\datums\supplypacks\munitions_vr.dm"
@@ -3213,5 +3214,9 @@
 #include "updates\deadspace\necro.dm"
 #include "updates\fluff\ruvorefluff.dm"
 #include "updates\instruments\instruments.dm"
+#include "updates\warfoxy\beakers.dm"
+#include "updates\warfoxy\earrings.dm"
+#include "updates\warfoxy\lavalamps.dm"
+#include "updates\warfoxy\sofa.dm"
 #include "updates\warfoxy\wfuniform.dm"
 // END_INCLUDE
