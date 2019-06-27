@@ -58,7 +58,7 @@
 
 	//Must be done now, otherwise ZAS zones and lighting overlays need to be recreated.
 	createRandomZlevel()
-	
+
 	processScheduler = new
 	master_controller = new /datum/controller/game_controller()
 
@@ -402,6 +402,7 @@ var/world_topic_spam_protect_time = world.timeofday
 				C << link("byond://[config.server]")
 
 	log_world("World rebooted at [time_stamp()]")
+	reboot_updating()
 	..()
 
 /hook/startup/proc/loadMode()
