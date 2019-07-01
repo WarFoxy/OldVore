@@ -6163,7 +6163,7 @@
 	name = "Engineering Workshop";
 	req_one_access = list(14,24)
 	},
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled,
 /area/engineering/locker_room)
 "jd" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -19799,12 +19799,8 @@
 /turf/simulated/floor,
 /area/maintenance/station/sec_lower)
 "EE" = (
-/obj/item/device/radio/intercom{
-	dir = 2;
-	pixel_y = -24
-	},
-/turf/simulated/floor/wood,
-/area/bridge/meeting_room)
+/turf/simulated/floor/tiled,
+/area/tether/elevator)
 "EF" = (
 /obj/structure/shuttle/engine/propulsion{
 	dir = 8;
@@ -31724,7 +31720,7 @@ fu
 fu
 fu
 fu
-fq
+EE
 oS
 kj
 eN
@@ -35578,7 +35574,7 @@ xM
 yq
 yR
 zc
-EE
+wV
 wo
 ac
 ac
