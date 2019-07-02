@@ -11,7 +11,7 @@
 	description_antag = "Some fishing rods can be utilized as long-range, sharp weapons, though their pseudo ranged ability comes at the cost of slow speed."
 	icon_state = "fishing_rod"
 	item_state = "fishing_rod"
-	force_divisor = 0.25
+	force_divisor = 0.05
 	throwforce = 7
 	sharp = TRUE
 	attack_verb = list("whipped", "battered", "slapped", "fished", "hooked")
