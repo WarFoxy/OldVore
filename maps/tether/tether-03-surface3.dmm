@@ -4960,7 +4960,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/turf/simulated/floor/plating,
+/turf/simulated/floor/tiled,
 /area/crew_quarters/recreation_area_restroom)
 "iI" = (
 /obj/structure/sink{
@@ -20513,10 +20513,15 @@
 /turf/simulated/floor/tiled,
 /area/hallway/lower/third_south)
 "HE" = (
-/obj/structure/shuttle/engine/propulsion,
-/turf/simulated/floor/reinforced,
-/turf/simulated/shuttle/plating/carry,
-/area/shuttle/tether/surface)
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/chem_master/condimaster,
+/turf/simulated/floor/wood,
+/area/tether/surfacebase/bar_backroom)
 "HF" = (
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 1
@@ -20527,6 +20532,11 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/shuttle_pad)
+"HG" = (
+/obj/structure/shuttle/engine/propulsion,
+/turf/simulated/floor/reinforced,
+/turf/simulated/shuttle/plating/carry,
+/area/shuttle/tether/surface)
 "HH" = (
 /obj/structure/disposalpipe/segment,
 /obj/effect/floor_decal/borderfloor{
@@ -22682,15 +22692,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/lower/third_south)
-"Xq" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/turf/simulated/floor/wood,
-/area/tether/surfacebase/bar_backroom)
 "Xr" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -36971,7 +36972,7 @@ Jr
 Js
 Wh
 JE
-HE
+HG
 IY
 bg
 RO
@@ -37113,7 +37114,7 @@ Js
 Js
 Jz
 JE
-HE
+HG
 IY
 bg
 RO
@@ -37255,7 +37256,7 @@ Jt
 Js
 Jz
 JE
-HE
+HG
 IY
 bg
 RO
@@ -38239,7 +38240,7 @@ FI
 Qr
 Ha
 RB
-Xq
+HE
 MF
 NM
 RB
