@@ -132,7 +132,8 @@
 		/obj/item/weapon/surgical/surgicaldrill,
 		/obj/item/weapon/surgical/bonegel,
 		/obj/item/weapon/surgical/FixOVein,
-		/obj/item/weapon/surgical/bone_clamp, //RUVORE Add
+		/obj/item/weapon/surgical/bone_clamp, //RUVORE Add 1
+		/obj/item/weapon/surgical/scalpel/manager, //2
 		/obj/item/stack/medical/advanced/bruise_pack,
 		/obj/item/stack/nanopaste,
 		///obj/item/device/healthanalyzer/advanced, //VOREStation Removal,
