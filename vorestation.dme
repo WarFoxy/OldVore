@@ -3223,6 +3223,7 @@
 #include "updates\lowe\ruvr_areas.dm"
 #include "updates\warfoxy\beakers.dm"
 #include "updates\warfoxy\earrings.dm"
+#include "updates\warfoxy\hair.dm"
 #include "updates\warfoxy\lavalamps.dm"
 #include "updates\warfoxy\sofa.dm"
 #include "updates\warfoxy\wfuniform.dm"

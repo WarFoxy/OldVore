@@ -3,31 +3,28 @@
 ///////////////
 /obj/item/clothing/under/f13
 	icon = 'updates/fluff/ruvorefluff.dmi'
-	sprite_sheets = list(
-		SPECIES_HUMAN = 'updates/fluff/ruvorefluff.dmi')
+	icon_override = 'updates/fluff/ruvorefluff.dmi'
+	species_restricted = list("Human", "Promethean")
 
 /obj/item/clothing/suit/f13
 	icon = 'updates/fluff/ruvorefluff.dmi'
-	sprite_sheets = list(
-		SPECIES_HUMAN = 'updates/fluff/f13suits.dmi')
+	icon_override = 'updates/fluff/ruvorefluff.dmi'
+	species_restricted = list("Human", "Promethean")
 
 /obj/item/clothing/under/f13/vault113
 	name = "Vault 113 jumpsuit"
 	desc = "TAKE ME HOME, COUNTRY ROADS"
 	icon_state = "f13suit"
-	species_restricted = list(SPECIES_HUMAN)
 
 /obj/item/clothing/under/f13/schmidt
 	name = "Spring clothing"
 	desc = "Old fashion. Cool."
 	icon_state = "schmidt"
-	species_restricted = list(SPECIES_HUMAN)
 
 /obj/item/clothing/under/f13/andropov
 	name = "Russian Mafia suit"
 	desc = "Profession? Mafioznik!."
 	icon_state = "andropov"
-	species_restricted = list(SPECIES_HUMAN)
 
 /obj/item/clothing/under/f13/police
 	name = "Retro Police suit"

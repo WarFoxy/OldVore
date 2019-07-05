@@ -2420,10 +2420,30 @@
 /turf/simulated/floor/tiled,
 /area/security/hallway)
 "dY" = (
-/obj/structure/shuttle/engine/propulsion,
-/turf/simulated/floor/reinforced,
-/turf/simulated/shuttle/plating/airless/carry,
-/area/shuttle/excursion/tether)
+/obj/effect/floor_decal/borderfloorblack{
+	dir = 6
+	},
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 6
+	},
+/obj/effect/floor_decal/borderfloorblack/corner2{
+	dir = 6
+	},
+/obj/effect/floor_decal/corner/blue/bordercorner2{
+	dir = 6
+	},
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/table/rack/shelf/steel,
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 1
+	},
+/obj/item/weapon/gun/projectile/sec/flash,
+/obj/item/weapon/gun/projectile/sec/flash,
+/turf/simulated/floor/tiled/dark,
+/area/security/armory/blue)
 "dZ" = (
 /obj/item/device/radio/intercom{
 	pixel_y = -24
@@ -5362,25 +5382,37 @@
 /area/shuttle/excursion/tether)
 "iL" = (
 /obj/effect/floor_decal/borderfloorblack{
-	dir = 6
-	},
-/obj/effect/floor_decal/corner/blue/border{
-	dir = 6
-	},
-/obj/effect/floor_decal/borderfloorblack/corner2{
-	dir = 6
-	},
-/obj/effect/floor_decal/corner/blue/bordercorner2{
-	dir = 6
-	},
-/obj/structure/window/reinforced,
-/obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/structure/table/rack/shelf/steel,
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 1
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 4
 	},
+/obj/structure/table/steel,
+/obj/item/ammo_magazine/m45/rubber{
+	pixel_x = 0;
+	pixel_y = 9
+	},
+/obj/item/ammo_magazine/m45/rubber{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/obj/item/ammo_magazine/m45/rubber{
+	pixel_x = 0;
+	pixel_y = -3
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 10
+	},
+/obj/machinery/recharger/wallcharger{
+	pixel_x = 32;
+	pixel_y = 2
+	},
+/obj/machinery/recharger/wallcharger{
+	pixel_x = 32;
+	pixel_y = -9
+	},
+/obj/item/ammo_magazine/m45/flash,
+/obj/item/ammo_magazine/m45/flash,
 /turf/simulated/floor/tiled/dark,
 /area/security/armory/blue)
 "iM" = (
@@ -5628,38 +5660,10 @@
 /turf/simulated/floor/tiled,
 /area/security/briefing_room)
 "ji" = (
-/obj/effect/floor_decal/borderfloorblack{
-	dir = 4
-	},
-/obj/effect/floor_decal/corner/blue/border{
-	dir = 4
-	},
-/obj/structure/table/steel,
-/obj/item/ammo_magazine/m45/rubber{
-	pixel_x = 0;
-	pixel_y = 9
-	},
-/obj/item/ammo_magazine/m45/rubber{
-	pixel_x = 3;
-	pixel_y = 3
-	},
-/obj/item/ammo_magazine/m45/rubber{
-	pixel_x = 0;
-	pixel_y = -3
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 10
-	},
-/obj/machinery/recharger/wallcharger{
-	pixel_x = 32;
-	pixel_y = 2
-	},
-/obj/machinery/recharger/wallcharger{
-	pixel_x = 32;
-	pixel_y = -9
-	},
-/turf/simulated/floor/tiled/dark,
-/area/security/armory/blue)
+/obj/structure/shuttle/engine/propulsion,
+/turf/simulated/floor/reinforced,
+/turf/simulated/shuttle/plating/airless/carry,
+/area/shuttle/excursion/tether)
 "jj" = (
 /obj/effect/floor_decal/borderfloor{
 	pixel_y = 16
@@ -20656,6 +20660,11 @@
 	pixel_x = 26;
 	pixel_y = 26
 	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled/white,
 /area/medical/surgery_hallway)
 "GB" = (
@@ -33774,7 +33783,7 @@ ao
 ao
 if
 iv
-iL
+dY
 jg
 jg
 QU
@@ -34202,7 +34211,7 @@ ii
 bd
 iN
 jc
-ji
+iL
 jv
 kd
 jS
@@ -39744,7 +39753,7 @@ it
 di
 di
 dy
-dY
+ji
 cK
 cK
 ms
@@ -39886,7 +39895,7 @@ iK
 jY
 kn
 di
-dY
+ji
 cK
 cK
 ms
@@ -40028,7 +40037,7 @@ iK
 jY
 kn
 di
-dY
+ji
 cK
 cK
 ms
@@ -40880,7 +40889,7 @@ eb
 ka
 ky
 di
-dY
+ji
 cK
 cK
 ms
@@ -41022,7 +41031,7 @@ jf
 kj
 kQ
 di
-dY
+ji
 cK
 cK
 ms
@@ -41164,7 +41173,7 @@ jr
 kk
 kR
 dy
-dY
+ji
 cK
 cK
 ms

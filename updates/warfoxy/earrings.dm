@@ -2,11 +2,10 @@
 /obj/item/clothing/ears/earring
 	name = "earring"
 	desc = "An earring of some kind."
-	icon = 'updates/warfoxy/earrings.dmi'
+	icon = 'updates/warfoxy/items.dmi'
 	gender = PLURAL
-	sprite_sheets = list(
-		SPECIES_HUMAN = 'updates/warfoxy/earringsmob.dmi')
-	species_restricted = list(SPECIES_HUMAN)
+	icon_override = 'updates/warfoxy/mobsprites.dmi'
+	species_restricted = list("Human", "Promethean")
 
 /obj/item/clothing/ears/earring/stud
 	name = "pearl stud earrings"
