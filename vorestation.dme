@@ -3227,5 +3227,6 @@
 #include "updates\warfoxy\lavalamps.dm"
 #include "updates\warfoxy\nanosuit.dm"
 #include "updates\warfoxy\sofa.dm"
+#include "updates\warfoxy\tesharirig.dm"
 #include "updates\warfoxy\wfuniform.dm"
 // END_INCLUDE
