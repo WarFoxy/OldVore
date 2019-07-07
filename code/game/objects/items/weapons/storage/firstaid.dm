@@ -71,7 +71,7 @@
 	name = "oxygen deprivation first aid kit"
 	desc = "A box full of oxygen goodies."
 	icon_state = "o2"
-	item_state_slots = list(slot_r_hand_str = "firstaid-o2", slot_l_hand_str = "firstaid-o2") 
+	item_state_slots = list(slot_r_hand_str = "firstaid-o2", slot_l_hand_str = "firstaid-o2")
 	starts_with = list(
 		/obj/item/weapon/reagent_containers/pill/dexalin,
 		/obj/item/weapon/reagent_containers/pill/dexalin,
@@ -132,6 +132,8 @@
 		/obj/item/weapon/surgical/surgicaldrill,
 		/obj/item/weapon/surgical/bonegel,
 		/obj/item/weapon/surgical/FixOVein,
+		/obj/item/weapon/surgical/bone_clamp, //RUVORE Add 1
+		/obj/item/weapon/surgical/scalpel/manager, //2
 		/obj/item/stack/medical/advanced/bruise_pack,
 		/obj/item/stack/nanopaste,
 		///obj/item/device/healthanalyzer/advanced, //VOREStation Removal,
