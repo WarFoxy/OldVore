@@ -5,6 +5,7 @@
 	icon = 'updates/warfoxy/nanosuit/backitem.dmi'
 	mob_icon  = 'updates/warfoxy/nanosuit/back.dmi'
 	icon_state = "nanosuit"
+	w_class = ITEMSIZE_TINY
 	armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 100, rad = 100)
 	slowdown = 0
 	offline_slowdown = 0
