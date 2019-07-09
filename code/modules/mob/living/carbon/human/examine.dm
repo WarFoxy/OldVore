@@ -296,7 +296,7 @@
 
 	//arousal
 	if(gender == MALE && species.genitals && (arousal > low_arousal) && (wear_suit || w_uniform) && species.get_bodytype() != SPECIES_TESHARI)
-		msg += "<B>[T.He] looks somewhat aroused at his groin...</B><br>"
+		msg += "<B>[T.He] looks somewhat aroused at [T.his] groin...</B><br>"
 	if(Adjacent(user) && gender == FEMALE && species.genitals && (arousal > low_arousal) && (wear_suit || w_uniform) && species.get_bodytype() != SPECIES_TESHARI)
 		msg += "<B>[T.He] smells of [T.his] arousal.</B><br>"
 
