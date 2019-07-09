@@ -27,6 +27,8 @@
 	var/dress_mob = TRUE
 	var/potenzia = 10 //dicks
 	var/resistenza = 200 //you think you can resist?
+	var/low_arousal = 0
+	var/med_arousal = 0
 
 // Definition of the stuff for Ears
 /datum/category_item/player_setup_item/vore/ears
@@ -123,6 +125,8 @@
 	character.g_wing			= pref.g_wing
 	character.potenzia			= pref.potenzia
 	character.resistenza			= pref.resistenza
+	character.low_arousal			= pref.resistenza / 3
+	character.med_arousal			= pref.resistenza * 2 / 3
 
 
 /datum/category_item/player_setup_item/vore/ears/content(var/mob/user)

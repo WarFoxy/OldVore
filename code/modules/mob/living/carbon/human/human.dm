@@ -52,10 +52,12 @@
 		dna.real_name = real_name
 		sync_organ_dna()
 //interactions
-	potenzia = (prob(80) ? rand(9, 14) : pick(rand(5, 13), rand(15, 20)))//Interactions
+	potenzia = (prob(80) ? rand(9, 14) : pick(rand(5, 13), rand(15, 20)))
 	if (prob(2)) // "30 cm penetrator"
 		potenzia = rand(25,30)
 	resistenza = (prob(80) ? rand(150, 300) : pick(rand(10, 100), rand(350,600)))
+	low_arousal = resistenza / 3
+	med_arousal = resistenza * 2 / 3
 //interactions end
 /mob/living/carbon/human/Destroy()
 	human_mob_list -= src
@@ -684,16 +686,16 @@
 			if (!mouthfree && !mouthfree_p)
 				to_chat(H, "<span class='warning'>„то-то мешает вам это сделать.</span>")
 			else if ((Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc))
-				if (H.lust == 0)
+				if (H.arousal == 0)
 					H.visible_message("<B>[H]</B> целует <B>[P]</B>.")
 					if (istype(P.loc, /obj/structure/closet))
 						P.visible_message("<B>[H]</B> целует <B>[P]</B>.")
-					if (H.lust < 5)
-						H.lust = 5
 				else
 					H.visible_message("<B>[H]</B> страстно целует <B>[P]</B>.")
 					if (istype(P.loc, /obj/structure/closet))
 						P.visible_message("<B>[H]</B> страстно целует <B>[P]</B>.")
+				H.arousal += 10
+				P.arousal += 10
 			else if(mouthfree)
 				H.visible_message("<B>[H]</B> посылает <B>[P]</B> воздушный поцелуй.")
 			H.attack_log += text("\[[time_stamp()]\] <font color='red'>kissed [P.name] ([P.ckey])</font>")
@@ -703,16 +705,16 @@
 			if (!mouthfree && !mouthfree_p)
 				to_chat(H, "<span class='warning'>„то-то мешает вам это сделать.</span>")
 			else if ((Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc))
-				if (H.lust == 0)
+				if (H.arousal == 0)
 					H.visible_message("<B>[H]</B> [H.identifying_gender == FEMALE ? "лизнула" : "лизнул"] <B>[P]</B> в щеку.")
 					if (istype(P.loc, /obj/structure/closet))
 						P.visible_message("<B>[H]</B> [H.identifying_gender == FEMALE ? "лизнула" : "лизнул"] <B>[P]</B> в щеку.")
-					if (H.lust < 5)
-						H.lust = 5
 				else
 					H.visible_message("<B>[H]</B> особо тщательно [H.identifying_gender == FEMALE ? "лизнула" : "лизнул"] <B>[P]</B>.")
 					if (istype(P.loc, /obj/structure/closet))
 						P.visible_message("<B>[H]</B> особо тщательно [H.identifying_gender == FEMALE ? "лизнула" : "лизнул"] <B>[P]</B>.")
+				H.arousal += 10
+				P.arousal += 10
 				H.attack_log += text("\[[time_stamp()]\] <font color='red'>licked [P.name] ([P.ckey])</font>")
 				P.attack_log += text("\[[time_stamp()]\] <font color='orange'>was licked by [H.name] ([H.ckey])</font>")
 			else

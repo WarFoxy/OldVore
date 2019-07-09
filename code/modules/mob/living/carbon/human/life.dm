@@ -959,6 +959,7 @@
 			return 1
 
 		handle_lust() //decreases player's lust, working as erp cooldown
+		handle_arousal() //decreases player's lust, working as erp cooldown
 
 		//UNCONSCIOUS. NO-ONE IS HOME
 		if((getOxyLoss() > (species.total_health/2)) || (health <= config.health_threshold_crit))
