@@ -695,7 +695,8 @@
 					if (istype(P.loc, /obj/structure/closet))
 						P.visible_message("<B>[H]</B> страстно целует <B>[P]</B>.")
 				H.arousal += 10
-				P.arousal += 10
+				if (P.stat != DEAD && P.stat != UNCONSCIOUS)
+					P.arousal += 10
 			else if(mouthfree)
 				H.visible_message("<B>[H]</B> посылает <B>[P]</B> воздушный поцелуй.")
 			H.attack_log += text("\[[time_stamp()]\] <font color='red'>kissed [P.name] ([P.ckey])</font>")
@@ -714,7 +715,8 @@
 					if (istype(P.loc, /obj/structure/closet))
 						P.visible_message("<B>[H]</B> особо тщательно [H.identifying_gender == FEMALE ? "лизнула" : "лизнул"] <B>[P]</B>.")
 				H.arousal += 10
-				P.arousal += 10
+				if (P.stat != DEAD && P.stat != UNCONSCIOUS)
+					P.arousal += 10
 				H.attack_log += text("\[[time_stamp()]\] <font color='red'>licked [P.name] ([P.ckey])</font>")
 				P.attack_log += text("\[[time_stamp()]\] <font color='orange'>was licked by [H.name] ([H.ckey])</font>")
 			else
@@ -1027,6 +1029,15 @@
 					H.fuck(H, P, "tribadism")
 				else
 					to_chat(H, "<span class='warning'>Вы всё ещё устали с прошлого раза. Нужно подождать [DisplayTimeText(H.erpcooldown * 20, TRUE)], перед тем как продолжить!</span>")
+			else
+				to_chat(H, "<span class='warning'>Вы слишком далеко или что-то мешает вам это сделать.</span>")
+
+		else if (href_list["interaction"] == "petting")
+			if (Adjacent(P) && !isnude_p && (hasvagina_p || haspenis_p) && hashands && H.species.name != "Teshari")
+				if (P.erpcooldown == 0)
+					H.fuck(H, P, "petting")
+				else
+					to_chat(H, "<span class='warning'>[P.identifying_gender==FEMALE ? "Она" : "Он"] всё ещё [P.identifying_gender==FEMALE ? "устала" : "устал"] с прошлого раза. Нужно подождать [DisplayTimeText(P.erpcooldown * 20, TRUE)], перед тем как продолжить!</span>")
 			else
 				to_chat(H, "<span class='warning'>Вы слишком далеко или что-то мешает вам это сделать.</span>")
 

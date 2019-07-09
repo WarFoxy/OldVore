@@ -208,6 +208,8 @@
 					dat +=  {"• <A href='?src=\ref[src];interaction=pet'>Погладить.</A><BR>"}
 			if (P == H)
 				dat +=  {"• <A href='?src=\ref[src];interaction=pet'>Погладить себ[ya].</A><BR>"}
+			if ((haspenis_p || hasvagina_p) && !isnude_p && P.species.name != "Teshari")
+				dat += {"• <A href='?src=\ref[src];interaction=petting'><font color=purple>Потрогать пах</font></A><BR>"}
 			dat +=  {"• <A href='?src=\ref[src];interaction=knock'><font color=red>Дать подзатыльник.</font></A><BR>"}
 		if (P != H)
 			dat +=  {"• <A href='?src=\ref[src];interaction=fuckyou'><font color=red>Показать средний палец.</font></A><BR>"}
@@ -934,6 +936,41 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 			H.do_fucking_animation(P)
 			playsound(loc, "honk/sound/interactions/champ_fingering.ogg", 50, 1, -1)
 
+		if("petting")
+			if (P != H)
+				switch(P.gender)
+					if("male")
+						message = pick("поглаживает пах [P] через одежду.", "поглаживает пах [P] через одежду, заставл[ya][ya] его твердеть.", "гладит инструмент [P] через одежду.", "стимулирует член [P] рукой через одежду.")
+					if("female")
+						message = pick("поглаживает промежность [P] через одежду.", "гладит промежность [P] через одежду, провод[ya] между ног пальцами.", "гладит киску [P] через одежду.", "ласкает [P] между ног через одежду.")
+				H.arousal += 10
+			else
+				switch(H.gender)
+					if("male")
+						message = pick("поглаживает свой пах через одежду.", "поглаживает свой пах через одежду, заставл[ya][ya] его твердеть.", "гладит свой инструмент через одежду.", "стимулирует свой член рукой через одежду.")
+					if("female")
+						message = pick("поглаживает свою промежность через одежду.", "гладит свою промежность через одежду, провод[ya] между ног пальцами.", "гладит свою киску через одежду.", "ласкает себ[ya] между ног через одежду.")
+
+			if (H.lastfucked != P || H.lfhole != hole)
+				H.lastfucked = P
+				H.lfhole = hole
+
+			if (prob(5) && P.stat != DEAD)
+				H.visible_message("<font color=purple><B>[H] [message]</B></font>")
+				if(P.lust < (P.resistenza / 2))
+					P.lust += 5
+				P.arousal += 10
+				P.moan()
+			else
+				H.visible_message("<font color=purple>[H] [message]</font>")
+			if (istype(P.loc, /obj/structure/closet))
+				P.visible_message("<font color=purple>[H] [message]</font>")
+			if (P.stat != DEAD && P.stat != UNCONSCIOUS)
+				if(P.lust < (P.resistenza / 2))
+					P.lust += 5
+				P.arousal += 10
+				P.moan()
+
 mob/living/carbon/human/proc/moan()
 	var/ya = "&#255;"
 	var/mob/living/carbon/human/H = src
@@ -1220,9 +1257,9 @@ proc/flube_splatter(var/target,var/datum/reagent/f_lube/source,var/large)
 	var/obj/effect/decal/cleanable/f_lube/B
 	var/decal_type = /obj/effect/decal/cleanable/f_lube/splatter
 	var/turf/T = get_turf(target)
-	var/synth = 0
 
 	if(istype(source,/mob/living/carbon/human))
+		var/synth = 0
 		var/mob/living/carbon/human/M = source
 		if(M.isSynthetic()) synth = 1
 
