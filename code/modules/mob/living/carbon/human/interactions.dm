@@ -1060,8 +1060,6 @@ mob/living/carbon/human/proc/handle_arousal(var/mob/living/carbon/human/H)
 
 	if(erpcooldown > 0)
 		arousal -= 20
-	else
-		arousal -= 2
 	if(arousal < 0)
 		arousal = 0
 	if(arousal > resistenza)
@@ -1070,6 +1068,7 @@ mob/living/carbon/human/proc/handle_arousal(var/mob/living/carbon/human/H)
 	if((arousal > 1) && (arousal <= low_arousal))
 		if(prob(5))
 			to_chat(src, "<i>Вы чувствуете себ[ya] немного [identifying_gender==FEMALE ? "возбуждённой" : "возбуждённым"].</i>")
+		arousal -= 2
 	else if((arousal > low_arousal) && (arousal <= med_arousal))
 		if(prob(10))
 			if(gender == MALE && species.name != "Teshari")
@@ -1085,6 +1084,7 @@ mob/living/carbon/human/proc/handle_arousal(var/mob/living/carbon/human/H)
 					flube_splatter(src,H,0)
 			if(species.name == "Teshari")
 				to_chat(src, "<span class='danger'>Вы чувствуете среднее возбуждение.</span>")
+		arousal -= 1
 	else if(arousal > med_arousal)
 		if(prob(30))
 			if(gender == MALE && species.name != "Teshari")
@@ -1100,6 +1100,7 @@ mob/living/carbon/human/proc/handle_arousal(var/mob/living/carbon/human/H)
 					flube_splatter(src,H,0)
 			if(species.name == "Teshari")
 				to_chat(src, "<span class='danger'>Вы чувствуете сильное возбуждение!</span>")
+		arousal -= 0.5
 
 /obj/item/weapon/enlarger
 	name = "penis enlarger"
@@ -1269,7 +1270,7 @@ proc/flube_splatter(var/target,var/datum/reagent/f_lube/source,var/large)
 	for(var/obj/effect/decal/cleanable/f_lube/drip/drop in T)
 		drips |= drop.drips
 		qdel(drop)
-	if(!large && drips.len < 3)
+	if(!large && drips.len < 5)
 		decal_type = /obj/effect/decal/cleanable/f_lube/drip
 
 	// Find a blood decal or create a new one.
