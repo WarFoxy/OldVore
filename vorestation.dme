@@ -3224,6 +3224,7 @@
 #include "updates\warfoxy\beakers.dm"
 #include "updates\warfoxy\earrings.dm"
 #include "updates\warfoxy\hair.dm"
+#include "updates\warfoxy\haydee.dm"
 #include "updates\warfoxy\lavalamps.dm"
 #include "updates\warfoxy\nanosuit.dm"
 #include "updates\warfoxy\sofa.dm"
