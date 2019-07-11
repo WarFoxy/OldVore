@@ -4,7 +4,7 @@
 	icon = 'updates/warfoxy/items.dmi'
 	icon_state = "wfdress"
 	icon_override = 'updates/warfoxy/mobsprites.dmi'
-	species_restricted = list("Human", "Promethean")
+	species_restricted = list("Human", "Promethean", "Alraune")
 
 /datum/category_item/underwear/bottom/stars
 	name = "Stars Bottoms"

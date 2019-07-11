@@ -1363,9 +1363,7 @@ default behaviour is:
 		BRAIN:<a href='?_src_=vars;mobToDamage=\ref[src];adjustDamage=brain'>[getBrainLoss()]</a>
 		</font>
 		"}
-
-//ruvr
-//adds a verb to IC that lets you change your sayverbs
+//VOREStation edit, allows for custom say verbs
 /mob/living/verb/customsay()
 	set category = "IC"
 	set name = "Customise Say Verbs"
@@ -1391,4 +1389,4 @@ default behaviour is:
 			custom_exclaim =  sanitize(input(usr, "This word or phrase will appear instead of 'exclaims', 'shouts' or 'yells': [src] exclaims, \"Hi!\"", "Custom Exclaim", null)  as text)
 		else
 			return
-	//ruvr end
+//VOREStation edit ends

@@ -5,6 +5,7 @@
 	icon = 'updates/warfoxy/nanosuit/backitem.dmi'
 	mob_icon  = 'updates/warfoxy/nanosuit/back.dmi'
 	icon_state = "nanosuit"
+	w_class = ITEMSIZE_TINY
 	armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 100, rad = 100)
 	slowdown = 0
 	offline_slowdown = 0
@@ -30,21 +31,26 @@
 	icon_override = 'updates/warfoxy/nanosuit/back.dmi'
 
 /obj/item/clothing/head/helmet/space/rig/nanosuit
+	name = "nanosuit helmet"
 	icon = 'updates/warfoxy/nanosuit/helmitem.dmi'
 	camera_networks = list()
 	icon_override = 'updates/warfoxy/nanosuit/helm.dmi'
 
 /obj/item/clothing/suit/space/nanosuit
+	name = "nanosuit"
+	slowdown = 0
 	flags_inv = null //HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT|HIDETAIL|HIDETIE|HIDEHOLSTER
 	icon = 'updates/warfoxy/nanosuit/chestitem.dmi'
 	icon_override = 'updates/warfoxy/nanosuit/chest.dmi'
 
 /obj/item/clothing/gloves/gauntlets/rig/nanosuit
+	name = "nanosuit gauntlets"
 	icon = 'updates/warfoxy/nanosuit/gloveitem.dmi'
 	siemens_coefficient = 0
 	icon_override = 'updates/warfoxy/nanosuit/glove.dmi'
 
 /obj/item/clothing/shoes/nanosuit
+	name = "nanosuit shoes"
 	icon = 'updates/warfoxy/nanosuit/bootitem.dmi'
 	icon_override = 'updates/warfoxy/nanosuit/boot.dmi'
 
