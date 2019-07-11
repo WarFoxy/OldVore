@@ -1259,11 +1259,6 @@ proc/flube_splatter(var/target,var/datum/reagent/f_lube/source,var/large)
 	var/decal_type = /obj/effect/decal/cleanable/f_lube/splatter
 	var/turf/T = get_turf(target)
 
-	if(istype(source,/mob/living/carbon/human))
-		var/synth = 0
-		var/mob/living/carbon/human/M = source
-		if(M.isSynthetic()) synth = 1
-
 	// Are we dripping or splattering?
 	var/list/drips = list()
 	// Only a certain number of drips (or one large splatter) can be on a given turf.
