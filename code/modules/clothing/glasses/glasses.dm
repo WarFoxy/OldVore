@@ -72,6 +72,8 @@ BLIND     // can't see anything
 	toggleable = 1
 	vision_flags = SEE_TURFS
 	enables_planes = list(VIS_FULLBRIGHT, VIS_MESONS)
+	item_flags = AIRTIGHT
+	body_parts_covered = EYES
 
 /obj/item/clothing/glasses/meson/New()
 	..()
@@ -191,6 +193,8 @@ BLIND     // can't see anything
 	action_button_name = "Toggle Goggles"
 	vision_flags = SEE_OBJS
 	enables_planes = list(VIS_FULLBRIGHT)
+	item_flags = AIRTIGHT
+	body_parts_covered = EYES
 
 /obj/item/clothing/glasses/material/New()
 	..()
@@ -254,6 +258,7 @@ BLIND     // can't see anything
 	name = "prescription rimless glasses"
 	desc = "Sleek modern glasses with a single sculpted lens."
 	icon_state = "glasses_rimless"
+	prescription = 1
 
 /obj/item/clothing/glasses/rimless
 	name = "rimless glasses"
