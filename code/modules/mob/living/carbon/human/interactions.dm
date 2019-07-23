@@ -180,10 +180,7 @@
 
 	if (P != H)
 		dat +=  {"Х <A href='?src=\ref[src];interaction=bow'>ќтвесить поклон.</A><BR>"}
-	//if (Adjacent(P))
-	//	dat +=  {"Х <A href='?src=\ref[src];interaction=handshake'>ѕоприветствовать.</A><BR>"}
-	//else
-	//	dat +=  {"Х <A href='?src=\ref[src];interaction=wave'>ѕоприветствовать.</A><BR>"}
+		dat +=  {"Х <A href='?src=\ref[src];interaction=wave'>ѕоприветствовать.</A><BR>"}
 	if (hashands)
 		dat +=  {"<font size=3><B>–уки:</B></font><BR>"}
 		if (Adjacent(P))
@@ -266,6 +263,7 @@
 	var/resistenza = 200
 	var/lust = 0
 	var/erpcooldown = 0
+	var/interactcooldown = 0
 	var/multiorgasms = 0
 	var/lastmoan
 	var/arousal = 0
@@ -1028,6 +1026,9 @@ mob/living/carbon/human/proc/handle_lust()
 		erpcooldown -= 1
 	if (erpcooldown < 0)
 		erpcooldown = 0
+	interactcooldown -= 1
+	if (interactcooldown < 0)
+		interactcooldown = 0
 
 /mob/living/carbon/human/proc/do_fucking_animation(mob/living/carbon/human/P)
 	var/pixel_x_diff = 0
@@ -1056,8 +1057,6 @@ mob/living/carbon/human/proc/handle_lust()
 	animate(pixel_x = initial(pixel_x), pixel_y = final_pixel_y, time = 2)
 
 mob/living/carbon/human/proc/handle_arousal(var/mob/living/carbon/human/H)
-	var/ya = "&#255;"
-
 	if(erpcooldown > 0)
 		arousal -= 20
 	if(arousal < 0)
@@ -1066,40 +1065,10 @@ mob/living/carbon/human/proc/handle_arousal(var/mob/living/carbon/human/H)
 		arousal = resistenza
 
 	if((arousal > 1) && (arousal <= low_arousal))
-		if(prob(5))
-			to_chat(src, "<i>¬ы чувствуете себ[ya] немного [identifying_gender==FEMALE ? "возбуждЄнной" : "возбуждЄнным"].</i>")
 		arousal -= 2
 	else if((arousal > low_arousal) && (arousal <= med_arousal))
-		if(prob(10))
-			if(gender == MALE && species.name != "Teshari")
-				if(wear_suit || w_uniform)
-					to_chat(src, "<span class='danger'>¬ы чувствуете среднее возбуждение, и одежда теснит ваш прибор. Ёто, должно быть, заметно!</span>")
-				else
-					to_chat(src, "<span class='danger'>¬ы чувствуете среднее возбуждение, и ваш прибор находитс[ya] в сто[ya]чем положении.</span>")
-			if(gender == FEMALE && species.name != "Teshari")
-				if(wear_suit || w_uniform)
-					to_chat(src, "<span class='danger'>¬ы чувствуете среднее возбуждение, и ваша одежда немного мокнет в области промежности.</span>")
-				else
-					to_chat(src, "<span class='danger'>¬ы чувствуете среднее возбуждение, ваш естественный лубрикант начинает капать на пол под вами...</span>")
-					flube_splatter(src,H,0)
-			if(species.name == "Teshari")
-				to_chat(src, "<span class='danger'>¬ы чувствуете среднее возбуждение.</span>")
 		arousal -= 1
 	else if(arousal > med_arousal)
-		if(prob(30))
-			if(gender == MALE && species.name != "Teshari")
-				if(wear_suit || w_uniform)
-					to_chat(src, "<span class='danger'>¬ы чувствуете сильное возбуждение, и одежда становитс[ya] очень тесной в районе паха!</span>")
-				else
-					to_chat(src, "<span class='danger'>¬ы чувствуете сильное возбуждение, и ваш прибор стоит колом!</span>")
-			if(gender == FEMALE && species.name != "Teshari")
-				if(wear_suit || w_uniform)
-					to_chat(src, "<span class='danger'>¬ы чувствуете сильное возбуждение, и ваша одежда промокает под зуд[ya]щей промежностью!</span>")
-				else
-					to_chat(src, "<span class='danger'>¬ы чувствуете сильное возбуждение, соки обильно стекают с вашей киски на пол!</span>")
-					flube_splatter(src,H,0)
-			if(species.name == "Teshari")
-				to_chat(src, "<span class='danger'>¬ы чувствуете сильное возбуждение!</span>")
 		arousal -= 0.5
 
 /obj/item/weapon/enlarger
@@ -1258,11 +1227,6 @@ proc/flube_splatter(var/target,var/datum/reagent/f_lube/source,var/large)
 	var/obj/effect/decal/cleanable/f_lube/B
 	var/decal_type = /obj/effect/decal/cleanable/f_lube/splatter
 	var/turf/T = get_turf(target)
-
-	if(istype(source,/mob/living/carbon/human))
-		var/synth = 0
-		var/mob/living/carbon/human/M = source
-		if(M.isSynthetic()) synth = 1
 
 	// Are we dripping or splattering?
 	var/list/drips = list()
