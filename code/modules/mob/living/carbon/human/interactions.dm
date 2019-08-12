@@ -14,18 +14,9 @@
 /mob/proc/make_interaction()
 	return
 
-//Distant interactions
-/mob/living/carbon/human/verb/interact(mob/M as mob)
-	set name = "Interact"
-	set category = "IC"
-
-	if (istype(M, /mob/living/carbon/human) && usr != M)
-		partner = M
-		make_interaction(machine)
-
-//Masturbation and interactions on yourself
+//Interact with yourself and others (2 in 1)
 /mob/living/carbon/human/verb/selfinteract(mob/user as mob)
-	set name = "Self-Interact"
+	set name = "Interact"
 	set category = "IC"
 	partner = user
 	make_interaction(machine)
