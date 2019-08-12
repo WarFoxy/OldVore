@@ -104,7 +104,7 @@
 	anus = 1
 
 /datum/species/nevrean
-	genitals = 0
+	genitals = 1
 	anus = 1
 
 /datum/species/hi_zoxxen
