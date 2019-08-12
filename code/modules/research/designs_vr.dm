@@ -340,12 +340,12 @@
 	name = "Experimental energy shield"
 	id = "eshield"
 	req_tech = list(TECH_COMBAT = 6, TECH_MAGNET = 4, TECH_ENGINEERING = 5, TECH_ILLEGAL = 4, TECH_ARCANE = 1) //Note2: Same rule as energy blade
-	materials = listlist(MAT_PLASTEEL = 3500, "glass" = 1000, MAT_LEAD = 2250, MAT_METALHYDROGEN = 500)
+	materials = list(DEFAULT_WALL_MATERIAL = 500, "glass" = 1250, "gold" = 2500, "uranium" = 1500, "diamond" = 3000)
 	build_path = /obj/item/weapon/shield/energy
 
 /datum/design/item/weapon/sniperrifle
 	name = "Prototype marksman energy rifle"
 	id = "sniperrifle"
 	req_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 5, TECH_POWER = 5, TECH_ILLEGAL = 7, TECH_ARCANE = 1) // Note3: Why blades and eshields arcane, so why not marksman too?
-	materials = list(DEFAULT_WALL_MATERIAL = 5000, "glass" = 1250, "gold" = 3000, "uranium" = 3000, diamond" = 5000)
+	materials = list(DEFAULT_WALL_MATERIAL = 5000, "glass" = 1250, "gold" = 3000, "uranium" = 3000, "diamond" = 5000)
 	build_path = /obj/item/weapon/gun/energy/sniperrifle
