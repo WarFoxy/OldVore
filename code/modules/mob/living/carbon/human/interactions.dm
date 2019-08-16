@@ -1059,8 +1059,14 @@ mob/living/carbon/human/proc/handle_arousal(var/mob/living/carbon/human/H)
 		arousal -= 2
 	else if((arousal > low_arousal) && (arousal <= med_arousal))
 		arousal -= 1
+		if(prob(10))
+			if(gender == FEMALE && species.name != "Teshari" && !(wear_suit || w_uniform))
+				flube_splatter(src,H,0)
 	else if(arousal > med_arousal)
 		arousal -= 0.5
+		if(prob(30))
+			if(gender == FEMALE && species.name != "Teshari" && !(wear_suit || w_uniform))
+				flube_splatter(src,H,0)
 
 /obj/item/weapon/enlarger
 	name = "penis enlarger"
