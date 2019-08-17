@@ -420,6 +420,9 @@
 	R.water_res = water
 	synths += water
 
+	var/datum/matter_synth/wire = new /datum/matter_synth/wire()
+	synths += wire
+
 	var/obj/item/device/dogborg/tongue/T = new /obj/item/device/dogborg/tongue(src)
 	T.water = water
 	src.modules += T
@@ -427,6 +430,10 @@
 	var/obj/item/device/dogborg/sleeper/compactor/analyzer/B = new /obj/item/device/dogborg/sleeper/compactor/analyzer(src)
 	B.water = water
 	src.modules += B
+
+	var/obj/item/stack/cable_coil/cyborg/C = new /obj/item/stack/cable_coil/cyborg(src)
+	C.synths = list(wire)
+	src.modules += C
 
 	R.icon 		 = 'icons/mob/widerobot_vr.dmi'
 	R.hands.icon = 'icons/mob/screen1_robot_vr.dmi'
