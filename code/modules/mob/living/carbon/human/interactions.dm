@@ -559,7 +559,7 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 
 			if (prob(5) && P.stat != DEAD)
 				H.visible_message("<font color=purple><B>[H] [message]</B></font>")
-				P.lust += 5
+				P.lust += 8
 				P.arousal += 10
 				P.moan()
 			else
@@ -567,7 +567,7 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 			if (istype(P.loc, /obj/structure/closet))
 				P.visible_message("<font color=purple>[H] [message]</font>")
 			if (P.stat != DEAD && P.stat != UNCONSCIOUS)
-				P.lust += 5
+				P.lust += 8
 				P.arousal += 10
 				if (P.lust >= P.resistenza)
 					P.cum(P, H, "cumhand")
