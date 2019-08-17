@@ -91,6 +91,27 @@
 
 	custom_items["jazzxl"] = L
 
+///IWuna///
+
+	L = list()
+
+	current_data = new()
+	current_data.character_name = "Michail Andropov"
+	current_data.item_path = /obj/item/clothing/under/f13/schmidt
+	L |= current_data
+
+	current_data = new()
+	current_data.character_name = "Michail Andropov"
+	current_data.item_path = /obj/item/clothing/under/f13/andropov
+	L |= current_data
+
+	current_data = new()
+	current_data.character_name = "Michail Andropov"
+	current_data.item_path = /obj/item/device/pda/f13
+	L |= current_data
+
+	custom_items["iwuna"] = L
+
 	return 1
 
 //gets the relevant list for the key from the listlist if it exists, check to make sure they are meant to have it and then calls the giving function
