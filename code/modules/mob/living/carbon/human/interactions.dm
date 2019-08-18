@@ -14,18 +14,9 @@
 /mob/proc/make_interaction()
 	return
 
-//Distant interactions
-/mob/living/carbon/human/verb/interact(mob/M as mob)
-	set name = "Interact"
-	set category = "IC"
-
-	if (istype(M, /mob/living/carbon/human) && usr != M)
-		partner = M
-		make_interaction(machine)
-
-//Masturbation and interactions on yourself
+//Interact with yourself and others (2 in 1)
 /mob/living/carbon/human/verb/selfinteract(mob/user as mob)
-	set name = "Self-Interact"
+	set name = "Interact"
 	set category = "IC"
 	partner = user
 	make_interaction(machine)
@@ -113,7 +104,7 @@
 	anus = 1
 
 /datum/species/nevrean
-	genitals = 0
+	genitals = 1
 	anus = 1
 
 /datum/species/hi_zoxxen
@@ -568,7 +559,7 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 
 			if (prob(5) && P.stat != DEAD)
 				H.visible_message("<font color=purple><B>[H] [message]</B></font>")
-				P.lust += 5
+				P.lust += 8
 				P.arousal += 10
 				P.moan()
 			else
@@ -576,7 +567,7 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 			if (istype(P.loc, /obj/structure/closet))
 				P.visible_message("<font color=purple>[H] [message]</font>")
 			if (P.stat != DEAD && P.stat != UNCONSCIOUS)
-				P.lust += 5
+				P.lust += 8
 				P.arousal += 10
 				if (P.lust >= P.resistenza)
 					P.cum(P, H, "cumhand")
@@ -1068,8 +1059,14 @@ mob/living/carbon/human/proc/handle_arousal(var/mob/living/carbon/human/H)
 		arousal -= 2
 	else if((arousal > low_arousal) && (arousal <= med_arousal))
 		arousal -= 1
+		if(prob(10))
+			if(gender == FEMALE && species.name != "Teshari" && !(wear_suit || w_uniform))
+				flube_splatter(src,H,0)
 	else if(arousal > med_arousal)
 		arousal -= 0.5
+		if(prob(30))
+			if(gender == FEMALE && species.name != "Teshari" && !(wear_suit || w_uniform))
+				flube_splatter(src,H,0)
 
 /obj/item/weapon/enlarger
 	name = "penis enlarger"
