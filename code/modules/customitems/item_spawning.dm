@@ -112,6 +112,17 @@
 
 	custom_items["iwuna"] = L
 
+///Lady Rainicorn///
+
+	L = list()
+
+	current_data = new()
+	current_data.character_name = "Sophie Werner"
+	current_data.item_path = /obj/item/weapon/flame/lighter/zippo/royal
+	L |= current_data
+
+	custom_items["ladyrainicorn"] = L
+
 	return 1
 
 //gets the relevant list for the key from the listlist if it exists, check to make sure they are meant to have it and then calls the giving function
