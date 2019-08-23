@@ -47,6 +47,7 @@
 	name = "\improper PipBoy 3000"
 	desc = "A portable microcomputer by Vault-Tec. Functionality determined by a preprogrammed ROM cartridge."
 	icon = 'updates/fluff/ruvorefluff.dmi'
+	icon_state = "regular"
 	default_cartridge = /obj/item/weapon/cartridge/captain
 	detonate = 0
 	ttone = "bzzz"
