@@ -110,6 +110,11 @@
 	current_data.item_path = /obj/item/device/neuralcleaner
 	L |= current_data
 
+	current_data = new()
+	current_data.character_name = "Michail Andropov"
+	current_data.item_path = /obj/item/weapon/stamp/solgov/mib
+	L |= current_data
+
 	custom_items["iwuna"] = L
 
 ///Lady Rainicorn///
