@@ -128,6 +128,17 @@
 
 	custom_items["ladyrainicorn"] = L
 
+///Yarinevar///
+
+	L = list()
+
+	current_data = new()
+	current_data.character_name = "Amy May"
+	current_data.item_path = /obj/item/clothing/accessory/badge/mib
+	L |= current_data
+
+	custom_items["yarinevar"] = L
+
 	return 1
 
 //gets the relevant list for the key from the listlist if it exists, check to make sure they are meant to have it and then calls the giving function
