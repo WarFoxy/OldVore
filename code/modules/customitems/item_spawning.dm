@@ -96,18 +96,18 @@
 	L = list()
 
 	current_data = new()
-	current_data.character_name = "Michail Andropov"
+	current_data.character_name = "Hans Schmidt"
 	current_data.item_path = /obj/item/clothing/under/f13/schmidt
 	L |= current_data
 
 	current_data = new()
 	current_data.character_name = "Michail Andropov"
-	current_data.item_path = /obj/item/clothing/under/f13/andropov
+	current_data.item_path = /obj/item/clothing/accessory/badge/mib
 	L |= current_data
 
 	current_data = new()
 	current_data.character_name = "Michail Andropov"
-	current_data.item_path = /obj/item/device/pda/f13
+	current_data.item_path = /obj/item/device/neuralcleaner
 	L |= current_data
 
 	custom_items["iwuna"] = L
