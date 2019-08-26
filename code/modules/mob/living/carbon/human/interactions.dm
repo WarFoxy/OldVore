@@ -190,13 +190,13 @@
 					dat += {"• <A href='?src=\ref[src];interaction=fingering'><font color=purple>Просунуть пальчик...</font></A><BR>"}
 				if (haspenis_p)
 					dat += {"• <A href='?src=\ref[src];interaction=jerk'><font color=purple>Подрочить</font></A><BR>"}
-			if (((P.species.name == "Tajara") || (P.species.name == "Vulpkanin") || (P.species.name == "Flatland Zorren") || (P.species.name == "Highlander Zorren") || (P.species.name == "Sergal")) && (P != H))
+			if ((P.species.get_bodytype() == SPECIES_TAJ || P.species.get_bodytype() == SPECIES_VULPKANIN || P.species.get_bodytype() == SPECIES_ZORREN_HIGH || P.species.get_bodytype() == SPECIES_ZORREN_FLAT || P.species.get_bodytype() == SPECIES_SERGAL) && (P != H))
 				dat +=  {"• <A href='?src=\ref[src];interaction=pull'><font color=red>Дёрнуть за хвост!</font></A><BR>"}
 				if(P.can_inject(H, 1))
 					dat +=  {"• <A href='?src=\ref[src];interaction=pet'>Погладить.</A><BR>"}
 			if (P == H)
 				dat +=  {"• <A href='?src=\ref[src];interaction=pet'>Погладить себ[ya].</A><BR>"}
-			if ((haspenis_p || hasvagina_p) && !isnude_p && P.species.name != "Teshari")
+			if ((haspenis_p || hasvagina_p) && !isnude_p && P.species.name != "Teshari" && P.can_inject(H, 1))
 				dat += {"• <A href='?src=\ref[src];interaction=petting'><font color=purple>Потрогать пах</font></A><BR>"}
 			dat +=  {"• <A href='?src=\ref[src];interaction=knock'><font color=red>Дать подзатыльник.</font></A><BR>"}
 		if (P != H)
@@ -355,11 +355,7 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 
 			message = pick("вылизывает [P].", "отлизывает [P].")
 			if (prob(35))
-				switch(P.species.name)
-					if("Human", "Vatborn", "Custom Species", "Rapala", "Vasilissan", "Akula", "Promethean", "Unathi")
-						message = pick("вылизывает [P].", "полирует промежность [P] [ya]зыком.", "отлизывает [P].", "ласкает [P] [ya]зычком.", "погружает свой [ya]зык в [P]", "играетс[ya] с [P] [ya]зычком", "медленно проводит [ya]зыком вдоль промежности [P]")
-					if("Tajara", "Vulpkanin", "Flatland Zorren", "Highlander Zorren", "Sergal")
-						message = pick("вылизывает [P].", "полирует промежность [P] [ya]зыком.", "отлизывает [P].", "ласкает [P] [ya]зычком.", "погружает свой [ya]зык в [P]", "играетс[ya] с [P] [ya]зычком", "медленно проводит [ya]зыком вдоль промежности [P]")
+				message = pick("вылизывает [P].", "полирует промежность [P] [ya]зыком.", "отлизывает [P].", "ласкает [P] [ya]зычком.", "погружает свой [ya]зык в [P]", "играетс[ya] с [P] [ya]зычком", "медленно проводит [ya]зыком вдоль промежности [P]")
 
 			if (H.lastfucked != P || H.lfhole != hole)
 				H.lastfucked = P
@@ -444,7 +440,8 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 			H.do_fucking_animation(P)
 			playsound(loc, "honk/sound/interactions/champ_fingering.ogg", 50, 1, -1)
 			if(P.a_intent == I_HURT)
-				H.adjustBruteLossByPart(5, BP_GROIN)
+				H.apply_damage(5, BRUTE, BP_GROIN)
+				blood_splatter(src,H,0)
 				retaliation_message = pick("сильно кусает [H] за ногу.", "сжимает зубы между ног [H].", "злобно смотрит из-под колен [H], скал[ya] окровавленные зубы.", "изо всех сил пытаетс[ya] вырватьс[ya] из-под ног [H].")
 				H.visible_message("<font color=red>[P] [retaliation_message]</font>")
 
@@ -493,7 +490,8 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 			H.do_fucking_animation(P)
 			playsound(loc, "honk/sound/interactions/bj[rand(1, 11)].ogg", 50, 1, -1)
 			if(P.a_intent == I_HURT)
-				H.adjustBruteLossByPart(5, BP_GROIN)
+				H.apply_damage(5, BRUTE, BP_GROIN)
+				blood_splatter(src,H,0)
 				retaliation_message = pick("[ya]ростно кусает [H] за ноги.", "сжимает зубами киску [H].", "выгл[ya]дит очень недовольным своим нахождением здесь.", "изо всех сил пытаетс[ya] вырватьс[ya] из-под бёдер [H].")
 				H.visible_message("<font color=red>[P] [retaliation_message]</font>")
 
@@ -582,7 +580,7 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 				if("Human", "Skrell", "Vatborn", "Custom Species", "Rapala", "Vasilissan")
 					message = pick("отсасывает [P].", "сосет член [P].", "стимулирует член [P] [ya]зыком.")
 					if (prob(35))
-						message = pick("целует орган [P], прикрыв глаза от удовольстви[ya].", "постанывает, прикрыв глаза, не вынима[ya] член [P] изо рта.", "ласкает член [P] [ya]зычком, придержива[ya] его рукой.", "облизывает член [P] по всей длине.", "погружает член [P] все глубже себе в рот.", "кончиком [ya]зыка облизывает головку члена [P].", "плюёт на кончик члена [P] и снова берёт его в рот.", "сосёт леденец [P].", "двигает головой взад-вперёд, стимулиру[ya] член [P].", "тщательно вылизывает член [P].", "зажмурившись, полностью заглатывает малыша [P].", "ласкает член [P], помога[ya] себе руками.")
+						message = pick("целует орган [P], прикрыв глаза от удовольстви[ya].", "постанывает, прикрыв глаза, не вынима[ya] член [P] изо рта.", "ласкает член [P] [ya]зычком, придержива[ya] его рукой.", "облизывает член [P] по всей длине.", "погружает член [P] все глубже себе в рот.", "кончиком [ya]зыка облизывает головку члена [P].", "сосёт леденец [P].", "двигает головой взад-вперёд, стимулиру[ya] член [P].", "тщательно вылизывает член [P].", "зажмурившись, полностью заглатывает малыша [P].", "ласкает член [P], помога[ya] себе руками.")
 					if (H.lastfucked != P || H.lfhole != hole)
 						message = pick("м[ya]гко обхватывает член [P] губами.", "приступает сосать член [P].")
 						H.lastfucked = P
@@ -591,7 +589,7 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 				if("Unathi", "Akula", "Sergal", "Teshari")
 					message = pick("облизывает член [P].", "стимулирует орган [P] [ya]зыком.", "трёт член [P] о свой [ya]зык.", "проталкивает член [P] себе в пасть, стара[ya]сь не зацепить его зубами.", "стимулирует член [P] [ya]зыком.")
 					if (prob(35))
-						message = pick("облизывает орган [P], прикрыв глаза от удовольстви[ya].", "постанывает, прикрыв глаза, не вынима[ya] член [P] из пасти.", "ласкает член [P] [ya]зычком, придержива[ya] его рукой.", "облизывает член [P] по всей длине.", "погружает член [P] все глубже себе в пасть.", "кончиком [ya]зыка облизывает головку члена [P].", "плюёт на кончик члена [P] и проталкивает его себе в глотку.", "облизывает леденец [P].", "двигает головой взад-вперёд, стимулиру[ya] член [P].", "тщательно вылизывает член [P].", "зажмурившись, полностью заглатывает малыша [P].", "ласкает член [P], помога[ya] себе руками.")
+						message = pick("облизывает орган [P], прикрыв глаза от удовольстви[ya].", "постанывает, прикрыв глаза, не вынима[ya] член [P] из пасти.", "ласкает член [P] [ya]зычком, придержива[ya] его рукой.", "облизывает член [P] по всей длине.", "погружает член [P] все глубже себе в пасть.", "кончиком [ya]зыка облизывает головку члена [P].", "облизывает леденец [P].", "двигает головой взад-вперёд, стимулиру[ya] член [P].", "тщательно вылизывает член [P].", "зажмурившись, полностью заглатывает малыша [P].", "ласкает член [P], помога[ya] себе руками.")
 					if (H.lastfucked != P || H.lfhole != hole)
 						message = pick("кончиком [ya]зыка касаетс[ya] члена [P].", "приступает облизывать член [P].")
 						H.lastfucked = P
@@ -600,7 +598,7 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 				if("Tajara", "Vulpkanin", "Flatland Zorren", "Highlander Zorren")
 					message = pick("вылизывает член [P].", "обводит своим [ya]зычком вокруг члена [P].", "проталкивает член [P] себе в пасть, стара[ya]сь не зацепить его зубами.", "стимулирует член [P] [ya]зыком.")
 					if (prob(35))
-						message = pick("вылизывает орган [P], прикрыв глаза от удовольстви[ya].", "постанывает, прикрыв глаза, не вынима[ya] член [P] из пасти.", "ласкает член [P] [ya]зычком, придержива[ya] его рукой.", "облизывает член [P] по всей длине.", "погружает член [P] все глубже себе в пасть.", "кончиком [ya]зыка облизывает головку члена [P].", "плюёт на кончик члена [P] и проталкивает его себе в глотку.", "вылизывает леденец [P].", "двигает головой взад-вперёд, стимулиру[ya] член [P].", "тщательно вылизывает член [P].", "зажмурившись, полностью заглатывает малыша [P].", "ласкает член [P], помога[ya] себе руками.")
+						message = pick("вылизывает орган [P], прикрыв глаза от удовольстви[ya].", "постанывает, прикрыв глаза, не вынима[ya] член [P] из пасти.", "ласкает член [P] [ya]зычком, придержива[ya] его рукой.", "облизывает член [P] по всей длине.", "погружает член [P] все глубже себе в пасть.", "кончиком [ya]зыка облизывает головку члена [P].", "вылизывает леденец [P].", "двигает головой взад-вперёд, стимулиру[ya] член [P].", "тщательно вылизывает член [P].", "зажмурившись, полностью заглатывает малыша [P].", "ласкает член [P], помога[ya] себе руками.")
 					if (H.lastfucked != P || H.lfhole != hole)
 						message = pick("кончиком [ya]зыка касаетс[ya] члена [P].", "приступает вылизывать член [P].")
 						H.lastfucked = P
@@ -609,7 +607,7 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 				if("Vox", "Nevrean")
 					message = pick("облизывает член [P].", "стимулирует орган [P] [ya]зыком.", "трёт член [P] о свой [ya]зык.", "проталкивает член [P] себе в глотку, стара[ya]сь не зацепить его клювом.", "стимулирует член [P] [ya]зыком.")
 					if (prob(35))
-						message = pick("облизывает орган [P], прикрыв глаза от удовольстви[ya].", "постанывает, прикрыв глаза, не вынима[ya] член [P] из клюва.", "ласкает член [P] [ya]зычком, придержива[ya] его крылом.", "облизывает член [P] по всей длине.", "погружает член [P] все глубже себе в клюв.", "кончиком [ya]зыка облизывает головку члена [P].", "плюёт на кончик члена [P] и проталкивает его себе в глотку.", " облизывает леденец [P].", "двигает головой взад-вперёд, стимулиру[ya] член [P].", "тщательно вылизывает член [P].", "зажмурившись, полностью заглатывает малыша [P].", "ласкает член [P] [ya]зыком.")
+						message = pick("облизывает орган [P], прикрыв глаза от удовольстви[ya].", "постанывает, прикрыв глаза, не вынима[ya] член [P] из клюва.", "ласкает член [P] [ya]зычком, придержива[ya] его крылом.", "облизывает член [P] по всей длине.", "погружает член [P] все глубже себе в клюв.", "кончиком [ya]зыка облизывает головку члена [P].", " облизывает леденец [P].", "двигает головой взад-вперёд, стимулиру[ya] член [P].", "тщательно вылизывает член [P].", "зажмурившись, полностью заглатывает малыша [P].", "ласкает член [P] [ya]зыком.")
 					if (H.lastfucked != P || H.lfhole != hole)
 						message = pick("кончиком [ya]зыка касаетс[ya] члена [P].", "приступает облизывать член [P].")
 						H.lastfucked = P
@@ -661,14 +659,8 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 
 			message = pick("трахает [P].", "сношает [P].", "долбит [P].")
 			if (prob(35))
-				switch(P.species.name)
-					if("Human", "Skrell", "Vatborn", "Custom Species", "Rapala", "Vasilissan", "Unathi")
-						message = pick("грубо трахает [P].", "предаётс[ya] страстной любви с [P].", "резким движением погружаетс[ya] внутрь [P].", "движетс[ya] внутри [P].", "двигает тазом, засажива[ya] член в [P].", "стонет, навалива[ya]сь на [P].", "сильно прижимаетс[ya] пахом к [P].", "насаживает [P] на свой член.", "чувственно имеет [P].")
-					if("Tajara", "Vulpkanin", "Flatland Zorren", "Highlander Zorren")
-						message = pick("грубо трахает [P].", "предаётс[ya] страстной любви с [P].", "резким движением погружаетс[ya] внутрь [P].", "движетс[ya] внутри [P].", "двигает тазом, засажива[ya] член в [P].", "стонет, навалива[ya]сь на [P].", "сильно прижимаетс[ya] пахом к [P].", "насаживает [P] на свой член.", "чувственно имеет [P].")
-					if("Promethean")
-						message = pick("грубо трахает [P].", "предаётс[ya] страстной любви с [P].", "резким движением погружаетс[ya] внутрь [P].", "движетс[ya] внутри [P].", "двигает тазом, засажива[ya] член в [P].", "стонет, навалива[ya]сь на [P].", "сильно прижимаетс[ya] пахом к [P].", "насаживает [P] на свой член.", "чувственно имеет [P].")
-						playsound(loc, "honk/sound/interactions/champ[rand(1, 2)].ogg", 50, 1, -1)
+				message = pick("грубо трахает [P].", "предаётс[ya] страстной любви с [P].", "резким движением погружаетс[ya] внутрь [P].", "движетс[ya] внутри [P].", "двигает тазом, засажива[ya] член в [P].", "стонет, навалива[ya]сь на [P].", "сильно прижимаетс[ya] пахом к [P].", "насаживает [P] на свой член.", "чувственно имеет [P].")
+				playsound(loc, "honk/sound/interactions/champ[rand(1, 2)].ogg", 50, 1, -1)
 
 			if (H.lastfucked != P || H.lfhole != hole)
 				message = pick("всаживает свой член по самые [ya]йца в [P].", "вводит свой орган любви в лоно [P].", "погружает свой корень похоти внутрь [P].", "проникает в [P].")
@@ -806,11 +798,13 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 				if (istype(P.loc, /obj/structure/closet))
 					P.visible_message("<B>[P]</B> [pick("давитс[ya] инструментом <B>[H]</B>", "задыхаетс[ya]", "корчитс[ya] в рвотном позыве")].")
 			if (P.a_intent == I_HURT)
-				H.adjustBruteLossByPart(5, BP_GROIN)
+				H.apply_damage(5, BRUTE, BP_GROIN)
+				blood_splatter(src,H,0)
 				retaliation_message = pick("сильно кусает член [H].", "сжимает зубами член [H], пока не начинает течь кровь.", "злобно смотрит из-под колен [H], скал[ya] окровавленные зубы.", "изо всех сил пытаетс[ya] вырватьс[ya] из-под ног [H].")
 				H.visible_message("<font color=red>[P] [retaliation_message]</font>")
 				if (prob(5))
-					H.adjustBruteLossByPart(20, BP_GROIN)
+					H.apply_damage(20, BRUTE, BP_GROIN)
+					blood_splatter(src,H,1)
 					retaliation_message = pick("сжимает зубами член [H], а затем отрывает его, пачка[ya]сь в крови!", "прикусывает член [H] и не отпускает, пока он не отрываетс[ya]!", "откусывает член партнёра полностью в попытках вырватьс[ya]!")
 					H.visible_message("<font color=red><b>[P] [retaliation_message]</font></b>")
 					H.potenzia = -1
