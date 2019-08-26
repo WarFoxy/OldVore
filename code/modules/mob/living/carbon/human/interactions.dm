@@ -502,19 +502,18 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 			else
 				message = pick("вводит два пальца в свою вагину.", "трахает себ[ya] пальцами.")
 			if (prob(35))
-				switch(P.species.name)
-					if("Human", "Vatborn", "Custom Species", "Rapala", "Vasilissan", "Akula", "Promethean")
-						if (P != H)
-							message = pick("вводит два пальца в вагину [P].", "теребит горошину [P].", "тычет пальцами [P].", "ласкает [P] пальчиками.", "нежно поглаживает промежность [P].", "погружает пальцы глубоко в [P], ласка[ya] её изнутри.", "изучает глубины [P].")
-							H.arousal += 12
-						else
-							message = pick("вводит два пальца в свою вагину.", "теребит свою горошину.", "тычет в себ[ya] пальцами.", "ласкает себ[ya] пальчиками.", "нежно поглаживает свою промежность.", "погружает пальцы глубоко во влагалище, ласка[ya] себ[ya] изнутри.", "изучает свои глубины.")
-					if("Tajara", "Vulpkanin", "Flatland Zorren", "Highlander Zorren", "Sergal")
-						if (P != H)
-							message = pick("вводит два пальца в пушистую вагину [P].", "теребит горошину [P].", "тычет пальцами [P].", "ласкает [P] пальчиками.", "нежно поглаживает промежность [P].", "погружает пальцы глубоко в [P], ласка[ya] её изнутри.", "изучает глубины [P].")
-							H.arousal += 12
-						else
-							message = pick("вводит два пальца в свою пушистую вагину.", "теребит свою горошину.", "тычет в себ[ya] пальцами.", "ласкает себ[ya] пальчиками.", "нежно поглаживает свою промежность.", "погружает пальцы глубоко во влагалище, ласка[ya] себ[ya] изнутри.", "изучает свои глубины.")
+				if(P.species.get_bodytype() == SPECIES_HUMAN || P.species.get_bodytype() == SPECIES_HUMAN_VATBORN || P.species.get_bodytype() == SPECIES_RAPALA || P.species.get_bodytype() == SPECIES_VASILISSAN || P.species.get_bodytype() == SPECIES_AKULA || P.species.get_bodytype() == SPECIES_PROTEAN)
+					if (P != H)
+						message = pick("вводит два пальца в вагину [P].", "теребит горошину [P].", "тычет пальцами [P].", "ласкает [P] пальчиками.", "нежно поглаживает промежность [P].", "погружает пальцы глубоко в [P], ласка[ya] её изнутри.", "изучает глубины [P].")
+						H.arousal += 12
+					else
+						message = pick("вводит два пальца в свою вагину.", "теребит свою горошину.", "тычет в себ[ya] пальцами.", "ласкает себ[ya] пальчиками.", "нежно поглаживает свою промежность.", "погружает пальцы глубоко во влагалище, ласка[ya] себ[ya] изнутри.", "изучает свои глубины.")
+				if(P.species.get_bodytype() == SPECIES_TAJ || P.species.get_bodytype() == SPECIES_VULPKANIN || P.species.get_bodytype() == SPECIES_ZORREN_HIGH || P.species.get_bodytype() == SPECIES_ZORREN_FLAT || P.species.get_bodytype() == SPECIES_SERGAL)
+					if (P != H)
+						message = pick("вводит два пальца в пушистую вагину [P].", "теребит горошину [P].", "тычет пальцами [P].", "ласкает [P] пальчиками.", "нежно поглаживает промежность [P].", "погружает пальцы глубоко в [P], ласка[ya] её изнутри.", "изучает глубины [P].")
+						H.arousal += 12
+					else
+						message = pick("вводит два пальца в свою пушистую вагину.", "теребит свою горошину.", "тычет в себ[ya] пальцами.", "ласкает себ[ya] пальчиками.", "нежно поглаживает свою промежность.", "погружает пальцы глубоко во влагалище, ласка[ya] себ[ya] изнутри.", "изучает свои глубины.")
 
 			if (H.lastfucked != P || H.lfhole != hole)
 				H.lastfucked = P
@@ -576,57 +575,53 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 
 		if("blowjob")
 
-			switch(H.species.name)
-				if("Human", "Skrell", "Vatborn", "Custom Species", "Rapala", "Vasilissan")
-					message = pick("отсасывает [P].", "сосет член [P].", "стимулирует член [P] [ya]зыком.")
-					if (prob(35))
-						message = pick("целует орган [P], прикрыв глаза от удовольстви[ya].", "постанывает, прикрыв глаза, не вынима[ya] член [P] изо рта.", "ласкает член [P] [ya]зычком, придержива[ya] его рукой.", "облизывает член [P] по всей длине.", "погружает член [P] все глубже себе в рот.", "кончиком [ya]зыка облизывает головку члена [P].", "сосёт леденец [P].", "двигает головой взад-вперёд, стимулиру[ya] член [P].", "тщательно вылизывает член [P].", "зажмурившись, полностью заглатывает малыша [P].", "ласкает член [P], помога[ya] себе руками.")
-					if (H.lastfucked != P || H.lfhole != hole)
-						message = pick("м[ya]гко обхватывает член [P] губами.", "приступает сосать член [P].")
-						H.lastfucked = P
-						H.lfhole = hole
+			if(P.species.get_bodytype() == SPECIES_HUMAN || P.species.get_bodytype() == SPECIES_HUMAN_VATBORN || P.species.get_bodytype() == SPECIES_RAPALA || P.species.get_bodytype() == SPECIES_VASILISSAN || P.species.get_bodytype() == SPECIES_PROTEAN || P.species.get_bodytype() == SPECIES_SKRELL)
+				message = pick("отсасывает [P].", "сосет член [P].", "стимулирует член [P] [ya]зыком.")
+				if (prob(35))
+					message = pick("целует орган [P], прикрыв глаза от удовольстви[ya].", "постанывает, прикрыв глаза, не вынима[ya] член [P] изо рта.", "ласкает член [P] [ya]зычком, придержива[ya] его рукой.", "облизывает член [P] по всей длине.", "погружает член [P] все глубже себе в рот.", "кончиком [ya]зыка облизывает головку члена [P].", "сосёт леденец [P].", "двигает головой взад-вперёд, стимулиру[ya] член [P].", "тщательно вылизывает член [P].", "зажмурившись, полностью заглатывает малыша [P].", "ласкает член [P], помога[ya] себе руками.")
+				if (H.lastfucked != P || H.lfhole != hole)
+					message = pick("м[ya]гко обхватывает член [P] губами.", "приступает сосать член [P].")
+					H.lastfucked = P
+					H.lfhole = hole
 
-				if("Unathi", "Akula", "Sergal", "Teshari")
-					message = pick("облизывает член [P].", "стимулирует орган [P] [ya]зыком.", "трёт член [P] о свой [ya]зык.", "проталкивает член [P] себе в пасть, стара[ya]сь не зацепить его зубами.", "стимулирует член [P] [ya]зыком.")
-					if (prob(35))
-						message = pick("облизывает орган [P], прикрыв глаза от удовольстви[ya].", "постанывает, прикрыв глаза, не вынима[ya] член [P] из пасти.", "ласкает член [P] [ya]зычком, придержива[ya] его рукой.", "облизывает член [P] по всей длине.", "погружает член [P] все глубже себе в пасть.", "кончиком [ya]зыка облизывает головку члена [P].", "облизывает леденец [P].", "двигает головой взад-вперёд, стимулиру[ya] член [P].", "тщательно вылизывает член [P].", "зажмурившись, полностью заглатывает малыша [P].", "ласкает член [P], помога[ya] себе руками.")
-					if (H.lastfucked != P || H.lfhole != hole)
-						message = pick("кончиком [ya]зыка касаетс[ya] члена [P].", "приступает облизывать член [P].")
-						H.lastfucked = P
-						H.lfhole = hole
+			if(P.species.get_bodytype() == SPECIES_UNATHI || P.species.get_bodytype() == SPECIES_AKULA || P.species.get_bodytype() == SPECIES_SERGAL || P.species.get_bodytype() == SPECIES_TESHARI)
+				message = pick("облизывает член [P].", "стимулирует орган [P] [ya]зыком.", "трёт член [P] о свой [ya]зык.", "проталкивает член [P] себе в пасть, стара[ya]сь не зацепить его зубами.", "стимулирует член [P] [ya]зыком.")
+				if (prob(35))
+					message = pick("облизывает орган [P], прикрыв глаза от удовольстви[ya].", "постанывает, прикрыв глаза, не вынима[ya] член [P] из пасти.", "ласкает член [P] [ya]зычком, придержива[ya] его рукой.", "облизывает член [P] по всей длине.", "погружает член [P] все глубже себе в пасть.", "кончиком [ya]зыка облизывает головку члена [P].", "облизывает леденец [P].", "двигает головой взад-вперёд, стимулиру[ya] член [P].", "тщательно вылизывает член [P].", "зажмурившись, полностью заглатывает малыша [P].", "ласкает член [P], помога[ya] себе руками.")
+				if (H.lastfucked != P || H.lfhole != hole)
+					message = pick("кончиком [ya]зыка касаетс[ya] члена [P].", "приступает облизывать член [P].")
+					H.lastfucked = P
+					H.lfhole = hole
 
-				if("Tajara", "Vulpkanin", "Flatland Zorren", "Highlander Zorren")
-					message = pick("вылизывает член [P].", "обводит своим [ya]зычком вокруг члена [P].", "проталкивает член [P] себе в пасть, стара[ya]сь не зацепить его зубами.", "стимулирует член [P] [ya]зыком.")
-					if (prob(35))
-						message = pick("вылизывает орган [P], прикрыв глаза от удовольстви[ya].", "постанывает, прикрыв глаза, не вынима[ya] член [P] из пасти.", "ласкает член [P] [ya]зычком, придержива[ya] его рукой.", "облизывает член [P] по всей длине.", "погружает член [P] все глубже себе в пасть.", "кончиком [ya]зыка облизывает головку члена [P].", "вылизывает леденец [P].", "двигает головой взад-вперёд, стимулиру[ya] член [P].", "тщательно вылизывает член [P].", "зажмурившись, полностью заглатывает малыша [P].", "ласкает член [P], помога[ya] себе руками.")
-					if (H.lastfucked != P || H.lfhole != hole)
-						message = pick("кончиком [ya]зыка касаетс[ya] члена [P].", "приступает вылизывать член [P].")
-						H.lastfucked = P
-						H.lfhole = hole
+			if(P.species.get_bodytype() == SPECIES_TAJ || P.species.get_bodytype() == SPECIES_VULPKANIN || P.species.get_bodytype() == SPECIES_ZORREN_HIGH || P.species.get_bodytype() == SPECIES_ZORREN_FLAT)
+				message = pick("вылизывает член [P].", "обводит своим [ya]зычком вокруг члена [P].", "проталкивает член [P] себе в пасть, стара[ya]сь не зацепить его зубами.", "стимулирует член [P] [ya]зыком.")
+				if (prob(35))
+					message = pick("вылизывает орган [P], прикрыв глаза от удовольстви[ya].", "постанывает, прикрыв глаза, не вынима[ya] член [P] из пасти.", "ласкает член [P] [ya]зычком, придержива[ya] его рукой.", "облизывает член [P] по всей длине.", "погружает член [P] все глубже себе в пасть.", "кончиком [ya]зыка облизывает головку члена [P].", "вылизывает леденец [P].", "двигает головой взад-вперёд, стимулиру[ya] член [P].", "тщательно вылизывает член [P].", "зажмурившись, полностью заглатывает малыша [P].", "ласкает член [P], помога[ya] себе руками.")
+				if (H.lastfucked != P || H.lfhole != hole)
+					message = pick("кончиком [ya]зыка касаетс[ya] члена [P].", "приступает вылизывать член [P].")
+					H.lastfucked = P
+					H.lfhole = hole
 
-				if("Vox", "Nevrean")
-					message = pick("облизывает член [P].", "стимулирует орган [P] [ya]зыком.", "трёт член [P] о свой [ya]зык.", "проталкивает член [P] себе в глотку, стара[ya]сь не зацепить его клювом.", "стимулирует член [P] [ya]зыком.")
-					if (prob(35))
-						message = pick("облизывает орган [P], прикрыв глаза от удовольстви[ya].", "постанывает, прикрыв глаза, не вынима[ya] член [P] из клюва.", "ласкает член [P] [ya]зычком, придержива[ya] его крылом.", "облизывает член [P] по всей длине.", "погружает член [P] все глубже себе в клюв.", "кончиком [ya]зыка облизывает головку члена [P].", " облизывает леденец [P].", "двигает головой взад-вперёд, стимулиру[ya] член [P].", "тщательно вылизывает член [P].", "зажмурившись, полностью заглатывает малыша [P].", "ласкает член [P] [ya]зыком.")
-					if (H.lastfucked != P || H.lfhole != hole)
-						message = pick("кончиком [ya]зыка касаетс[ya] члена [P].", "приступает облизывать член [P].")
-						H.lastfucked = P
-						H.lfhole = hole
+			if(P.species.get_bodytype() == SPECIES_VOX || P.species.get_bodytype() == SPECIES_NEVREAN)
+				message = pick("облизывает член [P].", "стимулирует орган [P] [ya]зыком.", "трёт член [P] о свой [ya]зык.", "проталкивает член [P] себе в глотку, стара[ya]сь не зацепить его клювом.", "стимулирует член [P] [ya]зыком.")
+				if (prob(35))
+					message = pick("облизывает орган [P], прикрыв глаза от удовольстви[ya].", "постанывает, прикрыв глаза, не вынима[ya] член [P] из клюва.", "ласкает член [P] [ya]зычком, придержива[ya] его крылом.", "облизывает член [P] по всей длине.", "погружает член [P] все глубже себе в клюв.", "кончиком [ya]зыка облизывает головку члена [P].", " облизывает леденец [P].", "двигает головой взад-вперёд, стимулиру[ya] член [P].", "тщательно вылизывает член [P].", "зажмурившись, полностью заглатывает малыша [P].", "ласкает член [P] [ya]зыком.")
+				if (H.lastfucked != P || H.lfhole != hole)
+					message = pick("кончиком [ya]зыка касаетс[ya] члена [P].", "приступает облизывать член [P].")
+					H.lastfucked = P
+					H.lfhole = hole
 
-				if("Promethean")
-					message = pick("отсасывает [P].", "сосет член [P].", "стимулирует член [P] [ya]зыком.")
-					if (prob(35))
-						message = pick("смачно целует орган [P], прикрыв глаза от удовольстви[ya].", "постанывает, прикрыв глаза, не вынима[ya] член [P] изо рта.", "ласкает член [P] [ya]зычком, покрыва[ya] его в[ya]зкой слизью.", "облизывает член [P] по всей длине, оставл[ya][ya] след из слизи.", "погружает член [P] все глубже себе в рот.", "кончиком [ya]зыка облизывает головку члена [P].", "смачивает кончик члена [P] липкой слизью и снова берёт его в рот.", "сосет леденец [P].", "двигает головой взад-вперёд, стимулиру[ya] член [P].", "тщательно вылизывает член [P].", "зажмурившись, полностью заглатывает малыша [P].", "ласкает член [P], помога[ya] себе руками.")
-					if (H.lastfucked != P || H.lfhole != hole)
-						message = pick("м[ya]гко обхватывает член [P] губами, обволакива[ya] его слизью.", "приступает сосать член [P].")
-						H.lastfucked = P
-						H.lfhole = hole
+			if(P.species.get_bodytype() == SPECIES_PROMETHEAN)
+				message = pick("отсасывает [P].", "сосет член [P].", "стимулирует член [P] [ya]зыком.")
+				if (prob(35))
+					message = pick("смачно целует орган [P], прикрыв глаза от удовольстви[ya].", "постанывает, прикрыв глаза, не вынима[ya] член [P] изо рта.", "ласкает член [P] [ya]зычком, покрыва[ya] его в[ya]зкой слизью.", "облизывает член [P] по всей длине, оставл[ya][ya] след из слизи.", "погружает член [P] все глубже себе в рот.", "кончиком [ya]зыка облизывает головку члена [P].", "смачивает кончик члена [P] липкой слизью и снова берёт его в рот.", "сосет леденец [P].", "двигает головой взад-вперёд, стимулиру[ya] член [P].", "тщательно вылизывает член [P].", "зажмурившись, полностью заглатывает малыша [P].", "ласкает член [P], помога[ya] себе руками.")
+				if (H.lastfucked != P || H.lfhole != hole)
+					message = pick("м[ya]гко обхватывает член [P] губами, обволакива[ya] его слизью.", "приступает сосать член [P].")
+					H.lastfucked = P
+					H.lfhole = hole
 
-				if("Diona")
-					return
-
-				if("Machine")
-					return
+			if(P.species.get_bodytype() == SPECIES_DIONA)
+				return
 
 			H.arousal += 12
 			if (H.lust < 6)
@@ -700,18 +695,15 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 
 			message = pick("долбит [P] в очко.", "анально сношает [P].", "трахает [P] в анус.")
 			if (prob(35))
-				switch(P.species.name)
-					if("Human", "Vatborn", "Custom Species", "Rapala", "Vasilissan", "Akula")
-						message = pick("трахает [P] в задницу.", "всаживает член [P] в анальное кольцо по самые [ya]йца.", "месит глину в шахте [P].", "разрывает [P] очко бешеными фрикци[ya]ми.", "запускает своего шахтера в угольные шахты [P].")
-					if("Unathi")
-						message = pick("трахает [P] в клоаку.", "всаживает член [P] в анальное кольцо по самые [ya]йца.", "месит глину в шахте [P].", "разрывает [P] очко бешеными фрикци[ya]ми.", "запускает своего шахтера в угольные шахты [P].")
-					if("Tajara", "Vulpkanin", "Flatland Zorren", "Highlander Zorren", "Sergal")
-						message = pick("трахает [P] под хвост.", "всаживает член [P] в анальное кольцо по самые [ya]йца.", "долбит [P] под пушистый хвостик.", "месит глину в шахте [P].", "разрывает [P] очко бешеными фрикци[ya]ми.", "запускает своего шахтера в угольные шахты [P].")
-					if("Skrell", "Teshari", "Vox", "Nevrean")
-						message = pick("трахает [P] в клоаку.", "всаживает член [P] в анальное кольцо по самые [ya]йца.", "месит глину в шахте [P].", "разрывает [P] очко бешеными фрикци[ya]ми.", "запускает своего шахтера в угольные шахты [P].")
-					if("Promethean")
-						message = pick("трахает [P] в задницу.", "всаживает член [P] в анальное кольцо по самые [ya]йца, л[ya]па[ya]сь в в[ya]зкой слизи.", "раcт[ya]гивает [P] очко бешеными фрикци[ya]ми.")
-						playsound(loc, "honk/sound/interactions/champ[rand(1, 2)].ogg", 50, 1, -1)
+				if(P.species.get_bodytype() == SPECIES_HUMAN || P.species.get_bodytype() == SPECIES_HUMAN_VATBORN || P.species.get_bodytype() == SPECIES_RAPALA || P.species.get_bodytype() == SPECIES_VASILISSAN || P.species.get_bodytype() == SPECIES_PROTEAN || P.species.get_bodytype() == SPECIES_AKULA)
+					message = pick("трахает [P] в задницу.", "всаживает член [P] в анальное кольцо по самые [ya]йца.", "месит глину в шахте [P].", "разрывает [P] очко бешеными фрикци[ya]ми.", "запускает своего шахтера в угольные шахты [P].")
+				if(P.species.get_bodytype() == SPECIES_TAJ || P.species.get_bodytype() == SPECIES_VULPKANIN || P.species.get_bodytype() == SPECIES_ZORREN_HIGH || P.species.get_bodytype() == SPECIES_ZORREN_FLAT)
+					message = pick("трахает [P] под хвост.", "всаживает член [P] в анальное кольцо по самые [ya]йца.", "долбит [P] под пушистый хвостик.", "месит глину в шахте [P].", "разрывает [P] очко бешеными фрикци[ya]ми.", "запускает своего шахтера в угольные шахты [P].")
+				if(P.species.get_bodytype() == SPECIES_SKRELL || P.species.get_bodytype() == SPECIES_TESHARI || P.species.get_bodytype() == SPECIES_VOX || P.species.get_bodytype() == SPECIES_NEVREAN || P.species.get_bodytype() == SPECIES_UNATHI)
+					message = pick("трахает [P] в клоаку.", "всаживает член в клоаку [P] по самые [ya]йца.", "месит глину в шахте [P].", "разрывает клоаку [P] бешеными фрикци[ya]ми.", "запускает своего шахтера в угольные шахты [P].")
+				if(P.species.get_bodytype() == SPECIES_PROMETHEAN)
+					message = pick("трахает [P] в задницу.", "всаживает член [P] в анальное кольцо по самые [ya]йца, л[ya]па[ya]сь в в[ya]зкой слизи.", "раcт[ya]гивает [P] очко бешеными фрикци[ya]ми.")
+					playsound(loc, "honk/sound/interactions/champ[rand(1, 2)].ogg", 50, 1, -1)
 
 			if (H.lastfucked != P || H.lfhole != hole)
 				message = pick(" безжалостно прорывает анальное отверстие [P].", "всаживает член [P] в очко.")
@@ -753,17 +745,16 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 
 			message = pick(" трахает [P], засажива[ya] свой член [P.identifying_gender == FEMALE ? "ей" : "ему"] в глотку.", " орально сношает [P].")
 			if (prob(35))
-				switch(P.species.name)
-					if("Human", "Skrell", "Vatborn", "Custom Species", "Rapala", "Vasilissan")
-						message = pick(" опираетс[ya] на плечи [P], придержива[ya] [P.identifying_gender==FEMALE ? "её" : "его"] и засажива[ya] член всё сильнее и сильнее [P.identifying_gender==FEMALE ? "ей" : "ему"] в глотку.", " трахает [P] в рот.", " насаживает голову [P] на свой член.", " держит [P] за голову двум[ya] руками и совершает движени[ya] тазом.", " даёт пощёчины [P], продолжа[ya] ебать жертву в рот.", " безжастно пользуетс[ya] глоткой [P].", ", рыча сквозь зубы, нат[ya]гивает глотку [P] на своего малыша.")
-					if("Unathi", "Akula", "Sergal", "Teshari")
-						message = pick(" опираетс[ya] на плечи [P], придержива[ya] [P.identifying_gender==FEMALE ? "её" : "его"] и засажива[ya] член всё сильнее и сильнее [P.identifying_gender==FEMALE ? "ей" : "ему"] в глотку.", " трахает [P] в зубастую пасть.", " насаживает голову [P] на свой член.", " держит [P] за голову двум[ya] руками и совершает движени[ya] тазом.", " даёт пощёчины [P], продолжа[ya] ебать [P.identifying_gender == FEMALE ? "бедную [ya]щерку" : "бедного [ya]щера"] в пасть.", " безжастно пользуетс[ya] глоткой [P].", ", рыча сквозь зубы, нат[ya]гивает глотку [P] на своего малыша.")
-					if("Tajara", "Vulpkanin", "Flatland Zorren", "Highlander Zorren")
-						message = pick(" опираетс[ya] на плечи [P], придержива[ya] [P.identifying_gender==FEMALE ? "её" : "его"] и засажива[ya] член всё сильнее и сильнее [P.identifying_gender==FEMALE ? "ей" : "ему"] в глотку.", " трахает [P] в зубастую пасть.", " насаживает голову [P] на свой член.", " держит [P] за голову двум[ya] руками и совершает движени[ya] тазом.", " даёт пощёчины [P], продолжа[ya] ебать [P.identifying_gender == FEMALE ? "бедную кошечку" : "бедного котёнка"] в пасть.", " безжастно пользуетс[ya] глоткой [P].", ", рыча сквозь зубы, нат[ya]гивает глотку [P] на своего малыша.")
-					if("Vox", "Nevrean")
-						message = pick(" опираетс[ya] на плечи [P], придержива[ya] [P.identifying_gender==FEMALE ? "её" : "его"] и засажива[ya] член всё сильнее и сильнее [P.identifying_gender==FEMALE ? "ей" : "ему"] в глотку.", " трахает [P] пр[ya]мо в клюв.", " насаживает голову [P] на свой член, стара[ya]сь не порезатьс[ya] о выступы на клюве.", " держит [P] за голову двум[ya] руками и совершает движени[ya] тазом.", " сжимает перь[ya] на голове [P], продолжа[ya] ебать бедную птичку в рот.", " безжастно пользуетс[ya] глоткой [P].", ", рыча сквозь зубы, нат[ya]гивает глотку [P] на своего малыша.")
-					if("Promethean")
-						message = pick(" опираетс[ya] на желеобразные плечи [P], придержива[ya] [P.identifying_gender==FEMALE ? "её" : "его"] и засажива[ya] член всё сильнее и сильнее [P.identifying_gender==FEMALE ? "ей" : "ему"] в глотку.", " трахает [P] в рот, зал[ya]пыва[ya] свой член в липкой слизи.", " насаживает голову [P] на свой член.", " держит [P] за голову двум[ya] руками и совершает движени[ya] тазом.", " продолжает ебать [P.identifying_gender == FEMALE ? "бедную слизнедевку" : "бедного слизн[ya]"] в рот.", " безжастно пользуетс[ya] ротиком [P].", ", черезмерно увлекшись, тыкает членом мимо рта [P] и дрожит от внезапных ощущений.", " нещадно насилует глотку [P].")
+				if(P.species.get_bodytype() == SPECIES_HUMAN || P.species.get_bodytype() == SPECIES_HUMAN_VATBORN || P.species.get_bodytype() == SPECIES_RAPALA || P.species.get_bodytype() == SPECIES_VASILISSAN || P.species.get_bodytype() == SPECIES_PROTEAN || P.species.get_bodytype() == SPECIES_SKRELL)
+					message = pick(" опираетс[ya] на плечи [P], придержива[ya] [P.identifying_gender==FEMALE ? "её" : "его"] и засажива[ya] член всё сильнее и сильнее [P.identifying_gender==FEMALE ? "ей" : "ему"] в глотку.", " трахает [P] в рот.", " насаживает голову [P] на свой член.", " держит [P] за голову двум[ya] руками и совершает движени[ya] тазом.", " даёт пощёчины [P], продолжа[ya] ебать жертву в рот.", " безжастно пользуетс[ya] глоткой [P].", ", рыча сквозь зубы, нат[ya]гивает глотку [P] на своего малыша.")
+				if(P.species.get_bodytype() == SPECIES_UNATHI || P.species.get_bodytype() == SPECIES_AKULA || P.species.get_bodytype() == SPECIES_SERGAL || P.species.get_bodytype() == SPECIES_TESHARI)
+					message = pick(" опираетс[ya] на плечи [P], придержива[ya] [P.identifying_gender==FEMALE ? "её" : "его"] и засажива[ya] член всё сильнее и сильнее [P.identifying_gender==FEMALE ? "ей" : "ему"] в глотку.", " трахает [P] в зубастую пасть.", " насаживает голову [P] на свой член.", " держит [P] за голову двум[ya] руками и совершает движени[ya] тазом.", " даёт пощёчины [P], продолжа[ya] ебать [P.identifying_gender == FEMALE ? "бедную [ya]щерку" : "бедного [ya]щера"] в пасть.", " безжастно пользуетс[ya] глоткой [P].", ", рыча сквозь зубы, нат[ya]гивает глотку [P] на своего малыша.")
+				if(P.species.get_bodytype() == SPECIES_TAJ || P.species.get_bodytype() == SPECIES_VULPKANIN || P.species.get_bodytype() == SPECIES_ZORREN_HIGH || P.species.get_bodytype() == SPECIES_ZORREN_FLAT)
+					message = pick(" опираетс[ya] на плечи [P], придержива[ya] [P.identifying_gender==FEMALE ? "её" : "его"] и засажива[ya] член всё сильнее и сильнее [P.identifying_gender==FEMALE ? "ей" : "ему"] в глотку.", " трахает [P] в зубастую пасть.", " насаживает голову [P] на свой член.", " держит [P] за голову двум[ya] руками и совершает движени[ya] тазом.", " даёт пощёчины [P], продолжа[ya] ебать [P.identifying_gender == FEMALE ? "бедную кошечку" : "бедного котёнка"] в пасть.", " безжастно пользуетс[ya] глоткой [P].", ", рыча сквозь зубы, нат[ya]гивает глотку [P] на своего малыша.")
+				if(P.species.get_bodytype() == SPECIES_VOX || P.species.get_bodytype() == SPECIES_NEVREAN)
+					message = pick(" опираетс[ya] на плечи [P], придержива[ya] [P.identifying_gender==FEMALE ? "её" : "его"] и засажива[ya] член всё сильнее и сильнее [P.identifying_gender==FEMALE ? "ей" : "ему"] в глотку.", " трахает [P] пр[ya]мо в клюв.", " насаживает голову [P] на свой член, стара[ya]сь не порезатьс[ya] о выступы на клюве.", " держит [P] за голову двум[ya] руками и совершает движени[ya] тазом.", " сжимает перь[ya] на голове [P], продолжа[ya] ебать бедную птичку в рот.", " безжастно пользуетс[ya] глоткой [P].", ", рыча сквозь зубы, нат[ya]гивает глотку [P] на своего малыша.")
+				if(P.species.get_bodytype() == SPECIES_PROMETHEAN)
+					message = pick(" опираетс[ya] на желеобразные плечи [P], придержива[ya] [P.identifying_gender==FEMALE ? "её" : "его"] и засажива[ya] член всё сильнее и сильнее [P.identifying_gender==FEMALE ? "ей" : "ему"] в глотку.", " трахает [P] в рот, зал[ya]пыва[ya] свой член в липкой слизи.", " насаживает голову [P] на свой член.", " держит [P] за голову двум[ya] руками и совершает движени[ya] тазом.", " продолжает ебать [P.identifying_gender == FEMALE ? "бедную слизнедевку" : "бедного слизн[ya]"] в рот.", " безжастно пользуетс[ya] ротиком [P].", ", черезмерно увлекшись, тыкает членом мимо рта [P] и дрожит от внезапных ощущений.", " нещадно насилует глотку [P].")
 
 			if (H.lastfucked != P || H.lfhole != hole)
 				message = pick(" бесцеремонно проталкивает свой член [P] в глотку.")
@@ -792,11 +783,6 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 			playsound(loc, "honk/sound/interactions/oral[rand(1, 2)].ogg", 70, 1, -1)
 			if (P.species.name == "Promethean")
 				playsound(loc, "honk/sound/interactions/champ[rand(1, 2)].ogg", 50, 1, -1)
-			if (prob(H.potenzia))
-				P.oxyloss += 3
-				H.visible_message("<B>[P]</B> [pick("давитс[ya] инструментом <B>[H]</B>", "задыхаетс[ya]", "корчитс[ya] в рвотном позыве")].")
-				if (istype(P.loc, /obj/structure/closet))
-					P.visible_message("<B>[P]</B> [pick("давитс[ya] инструментом <B>[H]</B>", "задыхаетс[ya]", "корчитс[ya] в рвотном позыве")].")
 			if (P.a_intent == I_HURT)
 				H.apply_damage(5, BRUTE, BP_GROIN)
 				blood_splatter(src,H,0)
@@ -958,23 +944,22 @@ mob/living/carbon/human/proc/moan()
 	var/ya = "&#255;"
 	var/mob/living/carbon/human/H = src
 	if(!is_muzzled())
-		switch(species.name)
-			if("Human", "Skrell", "Vatborn", "Custom Species", "Rapala", "Vasilissan", "Akula", "Promethean", "Tajara", "Vulpkanin", "Sergal", "Flatland Zorren", "Highlander Zorren")
-				if (prob(H.lust / H.resistenza * 65))
-					var/message = pick("постанывает", "стонет от удовольстви[ya]", "закатывает глаза", "закусывает губу", "довольно облизываетс[ya]")
-					H.visible_message("<B>[H]</B> [message].")
-					var/g = H.gender == FEMALE ? "f" : "m"
-					var/moan = rand(1, 7)
-					if (moan == lastmoan)
-						moan--
-					if(!istype(loc, /obj/structure/closet))
-						playsound(loc, "honk/sound/interactions/moan_[g][moan].ogg", 70, 1, frequency = get_age_pitch())
-					else if (g == "f")
-						playsound(loc, "honk/sound/interactions/under_moan_f[rand(1, 4)].ogg", 70, 1, frequency = get_age_pitch())
-					lastmoan = moan
+		if(H.species.get_bodytype() == SPECIES_HUMAN || H.species.get_bodytype() == SPECIES_SKRELL || H.species.get_bodytype() == SPECIES_HUMAN_VATBORN || H.species.get_bodytype() == SPECIES_RAPALA || H.species.get_bodytype() == SPECIES_VASILISSAN || H.species.get_bodytype() == SPECIES_AKULA || H.species.get_bodytype() == SPECIES_PROMETHEAN || H.species.get_bodytype() == SPECIES_TAJ || H.species.get_bodytype() == SPECIES_VULPKANIN || H.species.get_bodytype() == SPECIES_SERGAL || H.species.get_bodytype() == SPECIES_ZORREN_HIGH || H.species.get_bodytype() == SPECIES_ZORREN_FLAT)
+			if (prob(H.lust / H.resistenza * 65))
+				var/message = pick("постанывает", "стонет от удовольстви[ya]", "закатывает глаза", "закусывает губу", "довольно облизываетс[ya]")
+				H.visible_message("<B>[H]</B> [message].")
+				var/g = H.gender == FEMALE ? "f" : "m"
+				var/moan = rand(1, 7)
+				if (moan == lastmoan)
+					moan--
+				if(!istype(loc, /obj/structure/closet))
+					playsound(loc, "honk/sound/interactions/moan_[g][moan].ogg", 70, 1, frequency = get_age_pitch())
+				else if (g == "f")
+					playsound(loc, "honk/sound/interactions/under_moan_f[rand(1, 4)].ogg", 70, 1, frequency = get_age_pitch())
+				lastmoan = moan
 
-					if (istype(H.head, /obj/item/clothing/head/kitty)  || istype(H.head, /obj/item/clothing/head/collectable/kitty))
-						playsound(loc, "honk/sound/interactions/purr_f[rand(1, 3)].ogg", 70, 1, 0)
+				if (istype(H.head, /obj/item/clothing/head/kitty)  || istype(H.head, /obj/item/clothing/head/collectable/kitty))
+					playsound(loc, "honk/sound/interactions/purr_f[rand(1, 3)].ogg", 70, 1, 0)
 /*
 			if("Tajara")
 				if (prob(H.lust / src.resistenza * 70))
@@ -987,15 +972,15 @@ mob/living/carbon/human/proc/moan()
 					var/message = pick("поскуливает", "поскуливает от удовольстви[ya]", "закатывает глаза", "довольно облизываетс[ya]")
 					H.visible_message("<B>[H]</B> [message].")
 */
-			if("Unathi")
-				if (prob(H.lust / H.resistenza * 65))
-					var/message = pick("довольно шипит", "извиваетс[ya] от удовольстви[ya]")
-					H.visible_message("<B>[H]</B> [message].")
+		if(H.species.get_bodytype() == SPECIES_UNATHI)
+			if (prob(H.lust / H.resistenza * 65))
+				var/message = pick("довольно шипит", "извиваетс[ya] от удовольстви[ya]")
+				H.visible_message("<B>[H]</B> [message].")
 
-			if("Teshari", "Vox", "Nevrean")
-				if (prob(H.lust / H.resistenza * 65))
-					var/message = pick("довольно стрекочет", "извиваетс[ya] от удовольстви[ya]")
-					H.visible_message("<B>[H]</B> [message].")
+		if(H.species.get_bodytype() == SPECIES_TESHARI || H.species.get_bodytype() == SPECIES_VOX || H.species.get_bodytype() == SPECIES_NEVREAN)
+			if (prob(H.lust / H.resistenza * 65))
+				var/message = pick("довольно стрекочет", "извиваетс[ya] от удовольстви[ya]")
+				H.visible_message("<B>[H]</B> [message].")
 	else if (prob(H.lust / H.resistenza * 65))
 		var/message = pick("тихо стонет", "постанывает в тишине", "закатывает глаза от удовольстви[ya]")
 		H.visible_message("<B>[H]</B> [message].")
