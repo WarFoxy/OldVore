@@ -32,6 +32,6 @@
 	name = "Experimental sequensor"
 	id = "emag"
 	req_tech = list(TECH_MAGNET = 5, TECH_DATA = 5, TECH_ILLEGAL = 7, TECH_ARCANE = 1)//Note: Why Cargo just can hack board with multitool and buy a lot of antag shit. Why science can't?
-	materials = list(DEFAULT_WALL_MATERIAL = 500, "glass" = 15000,"gold" = 16000, "diamond" = 26000)//This is kinda too OP to create this in a big industry-sizes.
+	materials = list(DEFAULT_WALL_MATERIAL = 500, "glass" = 15000, "gold" = 16000, "diamond" = 26000)//This is kinda too OP to create this in a big industry-sizes.
 	build_path = /obj/item/weapon/card/emag
 	sort_string = "VASDA"
