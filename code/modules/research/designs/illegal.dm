@@ -25,3 +25,13 @@
 	materials = list(MAT_PLASTEEL = 3500, "glass" = 1000, MAT_LEAD = 2250, MAT_METALHYDROGEN = 500)
 	build_path = /obj/item/weapon/melee/energy/sword/charge
 	sort_string = "VASCA"
+
+//RU-VORE Addition.
+
+/datum/design/item/weapon/emag
+	name = "Experimental sequensor"
+	id = "emag"
+	req_tech = list(TECH_MAGNET = 5, TECH_DATA = 5, TECH_ILLEGAL = 7)//Note: Why Cargo just can hack board with multitool and buy a lot of antag shit. Why science can't?
+	materials = list(DEFAULT_WALL_MATERIAL = 500, "glass" = 7500,"gold" = 7500, "diamond" = 10000)//This is kinda too OP to create this in a big industry-sizes.
+	build_path = /obj/item/weapon/card/emag
+	sort_string = "VASDA"
