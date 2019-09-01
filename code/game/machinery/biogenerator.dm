@@ -128,8 +128,8 @@
 					dat += "<A href='?src=\ref[src];action=create;item=leatherjacket;cost=500'>Leather Jacket</A> <FONT COLOR=blue>([round(500/build_eff)])</FONT><BR>"
 					dat += "<A href='?src=\ref[src];action=create;item=wintercoat;cost=500'>Winter Coat</A> <FONT COLOR=blue>([round(500/build_eff)])</FONT><BR>"
 					dat += "<A href='?src=\ref[src];action=create;item=algae;cost=400'>4 Algae Sheets</A> <FONT COLOR=blue>([round(400/build_eff)])</FONT><BR>" //VOREStation Edit - Algae for oxygen generator
-					//dat += "Other<BR>"
-					//dat += "<A href='?src=\ref[src];action=create;item=monkey;cost=500'>Monkey</A> <FONT COLOR=blue>(500)</FONT><BR>"
+					dat += "Other<BR>"
+					dat += "<A href='?src=\ref[src];action=create;item=money;cost=500'>Space Cash</A> <FONT COLOR=blue>(500)</FONT><BR>"
 				else
 					dat += "<BR><FONT COLOR=red>No beaker inside. Please insert a beaker.</FONT><BR>"
 			if("nopoints")
@@ -244,8 +244,6 @@
 			new/obj/item/weapon/storage/bag/cash(loc)
 		if("chembag")
 			new/obj/item/weapon/storage/bag/chemistry(loc)
-		if("monkey")
-			new/mob/living/carbon/human/monkey(loc)
 		if("workboots")
 			new/obj/item/clothing/shoes/boots/workboots(loc)
 		if("leathershoes")
@@ -256,6 +254,8 @@
 			new/obj/item/clothing/suit/leathercoat(loc)
 		if("leatherjacket")
 			new/obj/item/clothing/suit/storage/toggle/brown_jacket(loc)
+		if("money")
+			new/obj/item/weapon/spacecash/c200(loc) //(RU-VORE Edit)Also i'm kinda know why /monkey not work. This mob, not item. maybe monkey cube next time?
 		if("wintercoat")
 			new/obj/item/clothing/suit/storage/hooded/wintercoat(loc)
 		if("algae") //VOREStation Edit - Algae for oxygen generator
