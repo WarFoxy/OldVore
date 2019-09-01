@@ -211,6 +211,7 @@
 	name = "NIFSoft Disk (Compliance)"
 	desc = "Wow, adding laws to people? That seems illegal. It probably is. Okay, it really is."
 	stored = /datum/nifsoft/compliance
+	origin_tech = list(TECH_MATERIAL = 2, TECH_ILLEGAL = 3) //(RU-VORE Edit)Asked by a lot of people. Why this shit even exist?
 	var/laws
 
 /obj/item/weapon/disk/nifsoft/compliance/afterattack(var/A, mob/user, flag, params)
