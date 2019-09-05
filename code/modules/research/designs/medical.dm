@@ -161,7 +161,7 @@
 	build_path = /obj/item/weapon/surgical/FixOVein/clot
 	sort_string = "MBBAJ"
 
-/datum/design/item/medical/plasmasaw //Sadly not a chainsaw
+/datum/design/item/medical/plasmasaw
 	name = "Plasma Saw"
 	desc = "Perfect for cutting through ice."
 	id = "plasmasaw"
@@ -170,7 +170,7 @@
 	build_path = /obj/item/weapon/surgical/circular_saw/plasmasaw
 	sort_string = "MBBAK"
 
-/datum/design/item/medical/plasmasaw //Sadly not a chainsaw
+/datum/design/item/medical/picograsper //god's sake, wtf with my fails.
 	name = "Precision Grasper"
 	desc = "A thin rod with pico manipulators embedded in it allowing for fast and precise extraction. Looks like hemostat!"
 	id = "pico"
