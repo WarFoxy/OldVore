@@ -224,8 +224,10 @@
 			new_chemicals[healing_nanites] = "Restorative Nanites" //(RU-VORE)Let's masturbate.
 		if(man_rating >= 3) // Tier-4.
 			new_chemicals["osteodaxon"] = "Osteodaxon"
+			new_chemicals["myelamine"] = "Myelamine"
 		if(man_rating >= 2) // Tier 3.
 			new_chemicals["spaceacillin"] = "Spaceacillin"
+			new_chemicals["corophizine"] = "Corophizine"
 		if(man_rating >= 1) // Tier 2.
 			new_chemicals["carthatoline"] = "Carthatoline"
 
