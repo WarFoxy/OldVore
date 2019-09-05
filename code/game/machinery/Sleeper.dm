@@ -221,7 +221,7 @@
 		var/list/new_chemicals = list()
 
 		if(man_rating >= 4) // Tier-5.
-			new_chemicals[healing_nanites] = "Restorative Nanites" //(RU-VORE)Let's masturbate.
+			new_chemicals["healing_nanites"] = "Restorative Nanites" //(RU-VORE)Let's masturbate.
 		if(man_rating >= 3) // Tier-4.
 			new_chemicals["osteodaxon"] = "Osteodaxon"
 			new_chemicals["myelamine"] = "Myelamine"
