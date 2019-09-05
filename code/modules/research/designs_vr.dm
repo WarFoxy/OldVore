@@ -326,3 +326,26 @@
 	req_tech = list(TECH_BLUESPACE = 3, TECH_MATERIAL = 3, TECH_POWER = 2)
 	materials = list(DEFAULT_WALL_MATERIAL = 4000, "glass" = 4000)
 	build_path = /obj/item/borg/upgrade/sizeshift
+
+//RU-Vorestation stuff(Update "Upgraded Militia Science")
+
+/datum/design/item/weapon/xrayrifle
+	name = "Experimental X-ray rifle"
+	id = "xrayrifle"
+	req_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 5, TECH_MAGNET = 5, TECH_ILLEGAL = 5)
+	materials = list(DEFAULT_WALL_MATERIAL = 5000, "glass" = 1250, "gold" = 1250, "uranium" = 2500) //Note 1: Materials will be critically required to this prototypes. At least - balance.
+	build_path = /obj/item/weapon/gun/energy/xray
+
+/datum/design/item/weapon/eshield
+	name = "Experimental energy shield"
+	id = "eshield"
+	req_tech = list(TECH_COMBAT = 6, TECH_MAGNET = 4, TECH_ENGINEERING = 5, TECH_ILLEGAL = 4, TECH_ARCANE = 1) //Note2: Same rule as energy blade
+	materials = list(DEFAULT_WALL_MATERIAL = 500, "glass" = 1250, "gold" = 2500, "uranium" = 1500, "diamond" = 3000)
+	build_path = /obj/item/weapon/shield/energy
+
+/datum/design/item/weapon/sniperrifle
+	name = "Prototype marksman energy rifle"
+	id = "sniperrifle"
+	req_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 5, TECH_POWER = 5, TECH_ILLEGAL = 7, TECH_ARCANE = 1) // Note3: Why blades and eshields arcane, so why not marksman too?
+	materials = list(DEFAULT_WALL_MATERIAL = 5000, "glass" = 1250, "gold" = 3000, "uranium" = 3000, "diamond" = 5000)
+	build_path = /obj/item/weapon/gun/energy/sniperrifle

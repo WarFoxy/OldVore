@@ -184,6 +184,30 @@
 	throw_range = 5
 	attack_verb = list("attacked", "hit", "bludgeoned")
 
+// RU-Vore Additional Tools(Sledgehammer update)
+
+/obj/item/weapon/surgical/FixOVein/clot
+	name = "capillary laying operation tool" //For God's Sake
+	desc = "A canister like tool that stores synthetic vein."
+	icon = 'icons/obj/surgery_ruvore.dmi'
+	icon_state = "clot"
+	toolspeed = 0.5
+
+/obj/item/weapon/surgical/circular_saw/plasmasaw //Wut.
+	name = "plasma saw"
+	desc = "Perfect for cutting through ice."
+	icon = 'icons/obj/surgery_ruvore.dmi'
+	icon_state = "plasmasaw"
+	force = 20.0
+	toolspeed = 0.5
+
+/obj/item/weapon/surgical/hemostat/pico
+	name = "precision grasper"
+	desc = "A thin rod with pico manipulators embedded in it allowing for fast and precise extraction. Looks like hemostat!"
+	icon = 'icons/obj/surgery_ruvore.dmi'
+	icon_state = "pico_grasper"
+	toolspeed = 0.5
+
 // Cyborg Tools
 
 /obj/item/weapon/surgical/retractor/cyborg

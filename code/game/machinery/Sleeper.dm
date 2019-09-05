@@ -220,20 +220,16 @@
 
 		var/list/new_chemicals = list()
 
-		if(man_rating >= 4) // Alien tech.
-			var/reag_ID = pickweight(list(
-				"healing_nanites" = 10,
-				"shredding_nanites" = 5,
-				"irradiated_nanites" = 5,
-				"neurophage_nanites" = 2)
-				)
-			new_chemicals[reag_ID] = "Nanite"
-		if(man_rating >= 3) // Anomalous tech.
-			new_chemicals["immunosuprizine"] = "Immunosuprizine"
+		if(man_rating >= 4) // Tier-5.
+			new_chemicals["healing_nanites"] = "Restorative Nanites" //(RU-VORE)Let's masturbate.
+		if(man_rating >= 3) // Tier-4.
+			new_chemicals["osteodaxon"] = "Osteodaxon"
+			new_chemicals["myelamine"] = "Myelamine"
 		if(man_rating >= 2) // Tier 3.
 			new_chemicals["spaceacillin"] = "Spaceacillin"
+			new_chemicals["corophizine"] = "Corophizine"
 		if(man_rating >= 1) // Tier 2.
-			new_chemicals["leporazine"] = "Leporazine"
+			new_chemicals["carthatoline"] = "Carthatoline"
 
 		if(new_chemicals.len)
 			available_chemicals += new_chemicals
