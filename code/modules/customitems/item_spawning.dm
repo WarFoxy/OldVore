@@ -139,6 +139,27 @@
 
 	custom_items["yarinevar"] = L
 
+//Low3//
+
+	L = list()
+
+	current_data = new()
+	current_data.character_name = "Sonny Baker"
+	current_data.item_path = /obj/item/weapon/gun/projectile/sec/wood
+	L |= current_data
+
+	current_data = new()
+	current_data.character_name = "Sonny Baker"
+	current_data.item_path = /obj/item/clothing/accessory/permit/gun
+	L |= current_data
+
+	current_data = new()
+	current_data.character_name = "Sonny Baker"
+	current_data.item_path = /obj/item/clothing/accessory/holster/hip
+	L |= current_data
+
+	custom_items["low3"] = L
+
 	return 1
 
 //gets the relevant list for the key from the listlist if it exists, check to make sure they are meant to have it and then calls the giving function
