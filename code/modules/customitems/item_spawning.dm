@@ -96,21 +96,69 @@
 	L = list()
 
 	current_data = new()
-	current_data.character_name = "Michail Andropov"
+	current_data.character_name = "Hans Schmidt"
 	current_data.item_path = /obj/item/clothing/under/f13/schmidt
 	L |= current_data
 
 	current_data = new()
 	current_data.character_name = "Michail Andropov"
-	current_data.item_path = /obj/item/clothing/under/f13/andropov
+	current_data.item_path = /obj/item/clothing/accessory/badge/mib
 	L |= current_data
 
 	current_data = new()
 	current_data.character_name = "Michail Andropov"
-	current_data.item_path = /obj/item/device/pda/f13
+	current_data.item_path = /obj/item/device/neuralcleaner
+	L |= current_data
+
+	current_data = new()
+	current_data.character_name = "Michail Andropov"
+	current_data.item_path = /obj/item/weapon/stamp/solgov/mib
 	L |= current_data
 
 	custom_items["iwuna"] = L
+
+///Lady Rainicorn///
+
+	L = list()
+
+	current_data = new()
+	current_data.character_name = "Sophie Werner"
+	current_data.item_path = /obj/item/weapon/flame/lighter/zippo/royal
+	L |= current_data
+
+	custom_items["ladyrainicorn"] = L
+
+///Yarinevar///
+
+	L = list()
+
+	current_data = new()
+	current_data.character_name = "Amy May"
+	current_data.item_path = /obj/item/clothing/accessory/badge/mib
+	L |= current_data
+
+	custom_items["yarinevar"] = L
+
+//Low3//
+
+	L = list()
+
+	current_data = new()
+	current_data.character_name = "Sonny Baker"
+	current_data.item_path = /obj/item/weapon/gun/projectile/sec/wood
+	L |= current_data
+
+	current_data = new()
+	current_data.character_name = "Sonny Baker"
+	current_data.item_path = /obj/item/clothing/accessory/permit/gun
+	L |= current_data
+
+	current_data = new()
+	current_data.character_name = "Sonny Baker"
+	current_data.item_path = /obj/item/clothing/accessory/holster/hip
+	L |= current_data
+
+	custom_items["low3"] = L
 
 	return 1
 

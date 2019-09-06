@@ -151,6 +151,33 @@
 	build_path = /obj/item/device/healthanalyzer/phasic
 	sort_string = "MBBAI"
 
+//RU-VORE "Sledgehammer" update
+/datum/design/item/medical/clot
+	name = "Capillary Laying Operation Tool"
+	desc = "A canister like tool that stores synthetic vein."
+	id = "clot"
+	req_tech = list(TECH_BIO = 4, TECH_MATERIAL = 5, TECH_MAGNET = 5, TECH_DATA = 4)
+	materials = list(DEFAULT_WALL_MATERIAL = 2000, "glass" = 1000, "gold" = 1500)
+	build_path = /obj/item/weapon/surgical/FixOVein/clot
+	sort_string = "MBBAJ"
+
+/datum/design/item/medical/plasmasaw
+	name = "Plasma Saw"
+	desc = "Perfect for cutting through ice."
+	id = "plasmasaw"
+	req_tech = list(TECH_BIO = 4, TECH_MATERIAL = 5, TECH_MAGNET = 5, TECH_DATA = 4)
+	materials = list(DEFAULT_WALL_MATERIAL = 2000, "glass" = 1000, "silver" = 1000)
+	build_path = /obj/item/weapon/surgical/circular_saw/plasmasaw
+	sort_string = "MBBAK"
+
+/datum/design/item/medical/picograsper //god's sake, wtf with my fails.
+	name = "Precision Grasper"
+	desc = "A thin rod with pico manipulators embedded in it allowing for fast and precise extraction. Looks like hemostat!"
+	id = "pico"
+	req_tech = list(TECH_BIO = 4, TECH_MATERIAL = 5, TECH_MAGNET = 5, TECH_DATA = 4)
+	materials = list(DEFAULT_WALL_MATERIAL = 2000, "glass" = 1000)
+	build_path = /obj/item/weapon/surgical/hemostat/pico
+	sort_string = "MBBAL"
 
 /datum/design/item/implant
 	materials = list(DEFAULT_WALL_MATERIAL = 50, "glass" = 50)
