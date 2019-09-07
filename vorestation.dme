@@ -3264,6 +3264,7 @@
 #include "updates\deadspace\necro.dm"
 #include "updates\fireflashie\update_server.dm"
 #include "updates\fluff\ruvorefluff.dm"
+#include "updates\fucksadasdas\CustomShet.dm"
 #include "updates\instruments\instruments.dm"
 #include "updates\lowe\ruvr_areas.dm"
 #include "updates\warfoxy\beakers.dm"
