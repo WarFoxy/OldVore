@@ -272,20 +272,33 @@
 		msg += "[T.He] [T.is] wearing \icon[wear_id] \a [wear_id].<br>"
 
 	//genitals
+	var/m_aroused_msg
+	var/f_aroused_msg
+
+	if(arousal > low_arousal)
+		m_aroused_msg = ", which is aroused with [potenzia]cm of lenght"
+		f_aroused_msg = ", which looks somewhat wet"
+
 	if(is_nude() && gender == MALE && species.genitals && species.get_bodytype() == SPECIES_HUMAN && potenzia > -1)
-		msg += "<B>[T.He] [T.has] a normal penis!</B><br>"
+		msg += "<B>[T.He] [T.has] a normal penis[m_aroused_msg]!</B><br>"
 	else if(is_nude() && gender == MALE && species.genitals && species.get_bodytype() == SPECIES_TAJ && potenzia > -1)
-		msg += "<B>[T.He] [T.has] a barbed penis!</B><br>"
+		msg += "<B>[T.He] [T.has] a barbed penis[m_aroused_msg]!</B><br>"
 	else if(is_nude() && gender == MALE && species.genitals && (species.get_bodytype() == SPECIES_ZORREN_HIGH || species.get_bodytype() == SPECIES_ZORREN_FLAT || species.get_bodytype() == SPECIES_VULPKANIN) && potenzia > -1)
-		msg += "<B>[T.He] [T.has] a knotted penis!</B><br>"
+		msg += "<B>[T.He] [T.has] a knotted penis[m_aroused_msg]!</B><br>"
 	else if(is_nude() && gender == MALE && species.genitals && species.get_bodytype() == SPECIES_UNATHI && potenzia > -1)
-		msg += "<B>[T.He] [T.has] a bifurcated penis!</B><br>"
+		msg += "<B>[T.He] [T.has] a bifurcated penis[m_aroused_msg]!</B><br>"
 	else if(is_nude() && species.genitals && species.get_bodytype() == SPECIES_TESHARI)
 		msg += "<B>[T.He] [T.has] a cloaca!</B><br>"
 	else if(is_nude() && gender == MALE && species.genitals && potenzia > -1)
-		msg += "<B>[T.He] [T.has] a penis!</B><br>"
+		msg += "<B>[T.He] [T.has] a penis[m_aroused_msg]!</B><br>"
 	else if(is_nude() && gender == FEMALE && species.genitals)
-		msg += "<B>[T.He] [T.has] a vagina!</B><br>"
+		msg += "<B>[T.He] [T.has] a vagina[f_aroused_msg]!</B><br>"
+
+	//arousal
+	if(gender == MALE && species.genitals && (arousal > low_arousal) && (wear_suit || w_uniform) && species.get_bodytype() != SPECIES_TESHARI)
+		msg += "<B>[T.He] looks somewhat aroused at [T.his] groin...</B><br>"
+	if(Adjacent(user) && gender == FEMALE && species.genitals && (arousal > low_arousal) && (wear_suit || w_uniform) && species.get_bodytype() != SPECIES_TESHARI)
+		msg += "<B>[T.He] [identifying_gender == PLURAL ? "smell" : "smells"] of [T.his] arousal.</B><br>"
 
 	//Jitters
 	if(is_jittery)

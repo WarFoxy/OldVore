@@ -2420,30 +2420,18 @@
 /turf/simulated/floor/tiled,
 /area/security/hallway)
 "dY" = (
-/obj/effect/floor_decal/borderfloorblack{
-	dir = 6
-	},
-/obj/effect/floor_decal/corner/blue/border{
-	dir = 6
-	},
-/obj/effect/floor_decal/borderfloorblack/corner2{
-	dir = 6
-	},
-/obj/effect/floor_decal/corner/blue/bordercorner2{
-	dir = 6
-	},
-/obj/structure/window/reinforced,
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/structure/table/rack/shelf/steel,
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
+/obj/machinery/light{
 	dir = 1
 	},
-/obj/item/weapon/gun/projectile/sec/flash,
-/obj/item/weapon/gun/projectile/sec/flash,
-/turf/simulated/floor/tiled/dark,
-/area/security/armory/blue)
+/obj/structure/table/rack/shelf,
+/obj/item/weapon/tank/oxygen,
+/obj/item/device/suit_cooling_unit,
+/obj/item/clothing/head/helmet/space/void/pilot,
+/obj/item/clothing/shoes/magboots,
+/obj/item/clothing/suit/space/void/pilot,
+/obj/item/clothing/head/helmet/space/void/pilot,
+/turf/simulated/shuttle/floor/black,
+/area/shuttle/excursion/tether)
 "dZ" = (
 /obj/item/device/radio/intercom{
 	pixel_y = -24
@@ -5382,37 +5370,27 @@
 /area/shuttle/excursion/tether)
 "iL" = (
 /obj/effect/floor_decal/borderfloorblack{
-	dir = 4
+	dir = 6
 	},
 /obj/effect/floor_decal/corner/blue/border{
+	dir = 6
+	},
+/obj/effect/floor_decal/borderfloorblack/corner2{
+	dir = 6
+	},
+/obj/effect/floor_decal/corner/blue/bordercorner2{
+	dir = 6
+	},
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/structure/table/steel,
-/obj/item/ammo_magazine/m45/rubber{
-	pixel_x = 0;
-	pixel_y = 9
+/obj/structure/table/rack/shelf/steel,
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 1
 	},
-/obj/item/ammo_magazine/m45/rubber{
-	pixel_x = 3;
-	pixel_y = 3
-	},
-/obj/item/ammo_magazine/m45/rubber{
-	pixel_x = 0;
-	pixel_y = -3
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 10
-	},
-/obj/machinery/recharger/wallcharger{
-	pixel_x = 32;
-	pixel_y = 2
-	},
-/obj/machinery/recharger/wallcharger{
-	pixel_x = 32;
-	pixel_y = -9
-	},
-/obj/item/ammo_magazine/m45/flash,
-/obj/item/ammo_magazine/m45/flash,
+/obj/item/weapon/storage/box/trackimp,
+/obj/item/weapon/storage/box/trackimp,
 /turf/simulated/floor/tiled/dark,
 /area/security/armory/blue)
 "iM" = (
@@ -5660,10 +5638,38 @@
 /turf/simulated/floor/tiled,
 /area/security/briefing_room)
 "ji" = (
-/obj/structure/shuttle/engine/propulsion,
-/turf/simulated/floor/reinforced,
-/turf/simulated/shuttle/plating/airless/carry,
-/area/shuttle/excursion/tether)
+/obj/effect/floor_decal/borderfloorblack{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/blue/border{
+	dir = 4
+	},
+/obj/structure/table/steel,
+/obj/item/ammo_magazine/m45/rubber{
+	pixel_x = 0;
+	pixel_y = 9
+	},
+/obj/item/ammo_magazine/m45/rubber{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/obj/item/ammo_magazine/m45/rubber{
+	pixel_x = 0;
+	pixel_y = -3
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 10
+	},
+/obj/machinery/recharger/wallcharger{
+	pixel_x = 32;
+	pixel_y = 2
+	},
+/obj/machinery/recharger/wallcharger{
+	pixel_x = 32;
+	pixel_y = -9
+	},
+/turf/simulated/floor/tiled/dark,
+/area/security/armory/blue)
 "jj" = (
 /obj/effect/floor_decal/borderfloor{
 	pixel_y = 16
@@ -7757,12 +7763,12 @@
 /turf/simulated/floor/tiled/monotile,
 /area/tether/exploration)
 "mv" = (
-/obj/effect/floor_decal/techfloor{
-	dir = 9
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/machinery/alarm{
+	pixel_y = 22
 	},
-/obj/machinery/porta_turret/ai_defense,
-/turf/simulated/floor/bluegrid,
-/area/ai_core_foyer)
+/turf/simulated/floor/tiled,
+/area/security/hallwayaux)
 "mw" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 1
@@ -8420,9 +8426,9 @@
 /area/maintenance/cargo)
 "ny" = (
 /obj/effect/floor_decal/techfloor{
-	dir = 5
+	dir = 9
 	},
-/obj/machinery/porta_turret/ai_defense,
+/obj/machinery/porta_turret,
 /turf/simulated/floor/bluegrid,
 /area/ai_core_foyer)
 "nz" = (
@@ -11391,11 +11397,11 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 5
-	},
 /obj/machinery/computer/secure_data{
 	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 6
 	},
 /turf/simulated/floor/tiled/white,
 /area/security/forensics)
@@ -12850,36 +12856,10 @@
 /turf/simulated/floor/tiled,
 /area/security/hallway)
 "ue" = (
-/obj/effect/floor_decal/borderfloor{
-	dir = 4;
-	pixel_x = -16
-	},
-/obj/effect/floor_decal/corner/red/border{
-	dir = 4;
-	pixel_x = -16
-	},
-/obj/effect/floor_decal/corner/red{
-	icon_state = "corner_white";
-	dir = 6
-	},
-/obj/structure/table/steel,
-/obj/item/bodybag/cryobag{
-	pixel_x = 6
-	},
-/obj/item/weapon/storage/firstaid/regular{
-	pixel_x = 5;
-	pixel_y = 5
-	},
-/obj/machinery/recharger/wallcharger{
-	pixel_x = 32;
-	pixel_y = -9
-	},
-/obj/machinery/recharger/wallcharger{
-	pixel_x = 32;
-	pixel_y = 2
-	},
-/turf/simulated/floor/tiled,
-/area/security/hallway)
+/obj/structure/shuttle/engine/propulsion,
+/turf/simulated/floor/reinforced,
+/turf/simulated/shuttle/plating/airless/carry,
+/area/shuttle/excursion/tether)
 "uf" = (
 /obj/structure/cable{
 	d1 = 2;
@@ -16051,30 +16031,12 @@
 /turf/simulated/floor/tiled,
 /area/quartermaster/foyer)
 "yW" = (
-/obj/machinery/door/firedoor/glass,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/door/airlock/multi_tile/glass{
-	id_tag = "PsychwardFoyer";
-	name = "Treatment Centre";
-	req_access = list(5)
+/obj/effect/floor_decal/techfloor{
+	dir = 5
 	},
-/obj/machinery/door/blast/shutters{
-	density = 0;
-	dir = 2;
-	icon_state = "shutter0";
-	id = "medbayquar";
-	name = "Medbay Emergency Lockdown Shutters";
-	opacity = 0
-	},
-/obj/effect/floor_decal/steeldecal/steel_decals10{
-	dir = 8
-	},
-/obj/effect/floor_decal/steeldecal/steel_decals10{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/white,
-/area/medical/surgery_hallway)
+/obj/machinery/porta_turret,
+/turf/simulated/floor/bluegrid,
+/area/ai_core_foyer)
 "yX" = (
 /obj/structure/cable/green{
 	d2 = 4;
@@ -20653,17 +20615,26 @@
 /turf/simulated/floor/tiled/white,
 /area/medical/chemistry)
 "GA" = (
-/obj/machinery/button/remote/airlock{
-	desc = "A remote control switch for the psychward foyer.";
-	id = "PsychwardFoyer";
-	name = "Psychward Doors Control";
-	pixel_x = 26;
-	pixel_y = 26
+/obj/machinery/door/firedoor/glass,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/door/airlock/multi_tile/glass{
+	name = "Treatment Centre";
+	req_access = list(5)
 	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+/obj/machinery/door/blast/shutters{
+	density = 0;
+	dir = 2;
+	icon_state = "shutter0";
+	id = "medbayquar";
+	name = "Medbay Emergency Lockdown Shutters";
+	opacity = 0
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals10{
+	dir = 8
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals10{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/surgery_hallway)
@@ -20986,6 +20957,17 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/effect/floor_decal/steeldecal/steel_decals6{
 	dir = 1
+	},
+/turf/simulated/floor/tiled/white,
+/area/medical/surgery_hallway)
+"Hj" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals6{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/surgery_hallway)
@@ -28384,6 +28366,38 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled,
 /area/hallway/station/upper)
+"SJ" = (
+/obj/effect/floor_decal/borderfloor{
+	dir = 4;
+	pixel_x = -16
+	},
+/obj/effect/floor_decal/corner/red/border{
+	dir = 4;
+	pixel_x = -16
+	},
+/obj/effect/floor_decal/corner/red{
+	icon_state = "corner_white";
+	dir = 6
+	},
+/obj/structure/table/steel,
+/obj/item/bodybag/cryobag{
+	pixel_x = 6
+	},
+/obj/item/weapon/storage/firstaid/regular{
+	pixel_x = 5;
+	pixel_y = 5
+	},
+/obj/machinery/recharger/wallcharger{
+	pixel_x = 32;
+	pixel_y = -9
+	},
+/obj/machinery/recharger/wallcharger{
+	pixel_x = 32;
+	pixel_y = 2
+	},
+/obj/item/weapon/reagent_containers/spray/cleaner,
+/turf/simulated/floor/tiled,
+/area/security/hallway)
 "SK" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -33783,7 +33797,7 @@ ao
 ao
 if
 iv
-dY
+iL
 jg
 jg
 QU
@@ -34211,7 +34225,7 @@ ii
 bd
 iN
 jc
-iL
+ji
 jv
 kd
 jS
@@ -35206,7 +35220,7 @@ bq
 bq
 cd
 dI
-dp
+mv
 dM
 ej
 cP
@@ -37074,7 +37088,7 @@ mH
 rB
 mH
 tj
-ue
+SJ
 mH
 uP
 uP
@@ -38367,7 +38381,7 @@ Ds
 Ea
 EV
 FL
-yW
+GA
 Hi
 Ic
 EV
@@ -38510,7 +38524,7 @@ Eb
 EW
 FM
 GB
-GA
+Hj
 Id
 IH
 Jz
@@ -39753,7 +39767,7 @@ it
 di
 di
 dy
-ji
+ue
 cK
 cK
 ms
@@ -39895,7 +39909,7 @@ iK
 jY
 kn
 di
-ji
+ue
 cK
 cK
 ms
@@ -40026,7 +40040,7 @@ cE
 cK
 di
 dy
-ec
+dY
 di
 eO
 eR
@@ -40037,7 +40051,7 @@ iK
 jY
 kn
 di
-ji
+ue
 cK
 cK
 ms
@@ -40889,7 +40903,7 @@ eb
 ka
 ky
 di
-ji
+ue
 cK
 cK
 ms
@@ -41031,7 +41045,7 @@ jf
 kj
 kQ
 di
-ji
+ue
 cK
 cK
 ms
@@ -41173,7 +41187,7 @@ jr
 kk
 kR
 dy
-ji
+ue
 cK
 cK
 ms
@@ -42596,7 +42610,7 @@ jt
 js
 is
 fy
-mv
+ny
 nC
 OX
 VM
@@ -43448,7 +43462,7 @@ jt
 jQ
 is
 fy
-ny
+yW
 Ov
 PF
 VM
