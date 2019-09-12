@@ -33,7 +33,6 @@
 "aah" = (
 /obj/structure/closet/coffin,
 /obj/machinery/alarm{
-	frequency = 1441;
 	pixel_y = 22
 	},
 /turf/simulated/floor/tiled/dark,
@@ -1221,14 +1220,10 @@
 /turf/simulated/floor/tiled,
 /area/engineering/hallway)
 "acv" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/cap/visible/scrubbers{
 	dir = 4
 	},
-/obj/structure/cable/green{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor,
 /area/vacant/vacant_restaurant_lower)
 "acw" = (
@@ -6703,6 +6698,20 @@
 	name = "Holodeck Projector Floor"
 	},
 /area/holodeck/alphadeck)
+"amh" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/cap/visible/supply{
+	dir = 4
+	},
+/turf/simulated/floor,
+/area/vacant/vacant_restaurant_lower)
 "amj" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -10324,12 +10333,6 @@
 /turf/simulated/floor,
 /area/maintenance/station/bridge)
 "ayp" = (
-/turf/space,
-/area/shuttle/excursion/tether_dockarm)
-"ayq" = (
-/obj/effect/landmark{
-	name = "carpspawn"
-	},
 /turf/space,
 /area/shuttle/excursion/tether_dockarm)
 "ays" = (
@@ -17150,7 +17153,7 @@
 /turf/simulated/floor/carpet,
 /area/engineering/foyer)
 "bft" = (
-/obj/machinery/computer/atmos_alert{
+/obj/item/modular_computer/console/preset/command{
 	dir = 4
 	},
 /turf/simulated/floor/tiled,
@@ -22219,9 +22222,6 @@
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /turf/simulated/floor/tiled,
 /area/engineering/engine_eva)
-"cbM" = (
-/turf/simulated/mineral/vacuum,
-/area/space)
 "cbY" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
@@ -22325,6 +22325,10 @@
 	},
 /turf/simulated/floor/tiled,
 /area/bridge_hallway)
+"gkC" = (
+/obj/machinery/status_display,
+/turf/simulated/wall/r_wall,
+/area/bridge)
 "hPi" = (
 /obj/machinery/light/small,
 /turf/simulated/floor,
@@ -25443,10 +25447,10 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
-aaa
+ayp
+ayp
+ayp
+ayp
 aaa
 aaa
 aaa
@@ -25575,21 +25579,21 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+ayp
+ayp
+ayp
+ayp
+ayp
+ayp
+ayp
+ayp
+ayp
+ayp
+ayp
+ayp
+ayp
+ayp
+ayp
 aaa
 aaa
 aaa
@@ -25717,21 +25721,21 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+ayp
+ayp
+ayp
+ayp
+ayp
+ayp
+ayp
+ayp
+ayp
+ayp
+ayp
+ayp
+ayp
+ayp
+ayp
 aaa
 aaa
 aaa
@@ -25858,15 +25862,15 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+ayp
+ayp
+ayp
+ayp
+ayp
+ayp
+ayp
+ayp
+ayp
 ayp
 ayp
 ayp
@@ -26000,22 +26004,22 @@ aaa
 aaa
 aaa
 aaa
+ayp
+ayp
+ayp
+ayp
+ayp
+ayp
+ayp
+ayp
+ayp
+ayp
+ayp
+ayp
+ayp
+ayp
+ayp
 aaa
-aaa
-aaa
-ayp
-ayp
-ayp
-ayp
-ayp
-ayp
-ayp
-ayp
-ayp
-ayp
-ayp
-ayp
-ayp
 aaa
 aaa
 aaa
@@ -26141,9 +26145,6 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
 ayp
 ayp
 ayp
@@ -26157,7 +26158,10 @@ ayp
 ayp
 ayp
 ayp
-ayq
+ayp
+ayp
+ayp
+aab
 aaa
 aaa
 aaa
@@ -26283,9 +26287,9 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
+ayp
+ayp
+ayp
 ayp
 ayp
 ayp
@@ -26425,9 +26429,6 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
 ayp
 ayp
 ayp
@@ -26440,7 +26441,10 @@ ayp
 ayp
 ayp
 ayp
-aaa
+ayp
+ayp
+ayp
+ayp
 aaa
 aaa
 aaa
@@ -26567,9 +26571,6 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
 ayp
 ayp
 ayp
@@ -26582,7 +26583,10 @@ ayp
 ayp
 ayp
 ayp
-aaa
+ayp
+ayp
+ayp
+ayp
 aaa
 aaa
 aaa
@@ -26709,9 +26713,9 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
+ayp
+ayp
+ayp
 ayp
 ayp
 ayp
@@ -26850,10 +26854,10 @@ aac
 aac
 aac
 aac
-cbM
-cbM
-aaa
-aaa
+aac
+aac
+ayp
+ayp
 ayp
 ayp
 ayp
@@ -26994,8 +26998,8 @@ bYP
 bYP
 aac
 aac
-aac
-aaa
+ayp
+ayp
 ayp
 ayp
 ayp
@@ -27137,8 +27141,8 @@ bYP
 aac
 aac
 aac
-aaa
-aaa
+ayp
+ayp
 ayp
 ayp
 ayp
@@ -27279,14 +27283,14 @@ bYP
 aac
 aac
 aac
-aac
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+ayp
+ayp
+ayp
+ayp
+ayp
+ayp
+ayp
+ayp
 ayp
 ayp
 ayp
@@ -27428,13 +27432,13 @@ aac
 aac
 aaa
 aaa
-aaa
-aaa
+ayp
+ayp
 bGo
 bHt
 bJl
-aaa
-aaa
+ayp
+ayp
 aaa
 aaa
 aaa
@@ -28547,7 +28551,7 @@ aIO
 aVK
 alv
 bYk
-bYl
+acv
 bYj
 bYj
 bYj
@@ -28689,7 +28693,7 @@ aIO
 aVW
 alv
 bYm
-acv
+amh
 bYj
 bZz
 bYj
@@ -31535,7 +31539,7 @@ awy
 awy
 awy
 awy
-awy
+gkC
 awy
 awy
 awy
@@ -32955,7 +32959,7 @@ awA
 awE
 awE
 awy
-awy
+gkC
 boL
 awy
 bqR
@@ -37308,10 +37312,10 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
-aaa
+aaf
+aaf
+aaf
+aaf
 aaa
 aaa
 aaa
@@ -37440,21 +37444,21 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
 aaa
 aaa
 aaa
@@ -37582,14 +37586,14 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
 aaf
 aaf
 aaf
@@ -37723,9 +37727,9 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
+aaf
+aaf
+aaf
 aaf
 aaf
 aaf
@@ -37865,22 +37869,22 @@ aaa
 aaa
 aaa
 aaa
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
 aaa
-aaa
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
 aaa
 aaa
 aaa
@@ -38006,9 +38010,9 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
+aaf
+aaf
+aaf
 aaf
 aaf
 aaf
@@ -38148,9 +38152,6 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
 aaf
 aaf
 aaf
@@ -38163,7 +38164,10 @@ aaf
 aaf
 aaf
 aaf
-aaa
+aaf
+aaf
+aaf
+aaf
 aaa
 aaa
 aaa
@@ -38290,9 +38294,6 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
 aaf
 aaf
 aaf
@@ -38305,7 +38306,10 @@ aaf
 aaf
 aaf
 aaf
-aaa
+aaf
+aaf
+aaf
+aaf
 aaa
 aaa
 aaa
@@ -38432,9 +38436,9 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
+aaf
+aaf
+aaf
 aaf
 aaf
 aaf
@@ -38574,9 +38578,9 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
+aaf
+aaf
+aaf
 aaf
 aaf
 aaf
@@ -38717,22 +38721,22 @@ aaa
 aaa
 aaa
 aaa
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
 aaa
-aaa
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
-aaf
 aaa
 aaa
 aaa
@@ -38859,9 +38863,9 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
+aaf
+aaf
+aaf
 aaf
 aaf
 aaf
@@ -39002,14 +39006,14 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
 aaf
 aaf
 aaf
@@ -39144,21 +39148,21 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
+aaf
 aaa
 aaa
 aaa
@@ -39293,13 +39297,13 @@ aaa
 aaa
 aaa
 aaa
+aaf
+aaf
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
-aaa
+aaf
+aaf
 aaa
 aaa
 aaa

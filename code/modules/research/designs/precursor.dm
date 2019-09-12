@@ -67,6 +67,79 @@
 	build_path = /obj/random/janusmodule
 	sort_string = "PAJAA"
 
+//RU-VORE "Sledgehammer" Update
+/datum/design/item/precursor/scalpel
+	name = "Alien Scalpel"
+	desc = "A tool utilizing cutting edge modern technology, and ancient component designs."
+	id = "alienscalpel"
+	materials = list(MAT_PLASTEEL = 2000, MAT_VERDANTIUM = 3000, MAT_PLASTIC = 8000, MAT_DIAMOND = 2000)
+	req_tech = list(TECH_BIO = 5, TECH_MATERIAL = 5, TECH_BLUESPACE = 5, TECH_MAGNET = 6, TECH_PHORON = 3, TECH_ARCANE = 1, TECH_PRECURSOR = 1)
+	build_path = /obj/item/weapon/surgical/scalpel/alien
+	sort_string = "MBBAM"
+
+/datum/design/item/precursor/hemostat
+	name = "Alien Hemostat"
+	desc = "A tool utilizing cutting edge modern technology, and ancient component designs."
+	id = "alienhemostat"
+	materials = list(MAT_PLASTEEL = 2000, MAT_VERDANTIUM = 3000, MAT_PLASTIC = 8000, MAT_DIAMOND = 2000)
+	req_tech = list(TECH_BIO = 5, TECH_MATERIAL = 5, TECH_BLUESPACE = 5, TECH_MAGNET = 6, TECH_PHORON = 3, TECH_ARCANE = 1, TECH_PRECURSOR = 1)
+	build_path = /obj/item/weapon/surgical/hemostat/alien
+	sort_string = "MBBAN"
+
+/datum/design/item/precursor/retractor
+	name = "Alien Retractor"
+	desc = "A tool utilizing cutting edge modern technology, and ancient component designs."
+	id = "alienretractor"
+	materials = list(MAT_PLASTEEL = 2000, MAT_VERDANTIUM = 3000, MAT_PLASTIC = 8000, MAT_DIAMOND = 2000)
+	req_tech = list(TECH_BIO = 5, TECH_MATERIAL = 5, TECH_BLUESPACE = 5, TECH_MAGNET = 6, TECH_PHORON = 3, TECH_ARCANE = 1, TECH_PRECURSOR = 1)
+	build_path = /obj/item/weapon/surgical/retractor/alien
+	sort_string = "MBBAO"
+
+/datum/design/item/precursor/saw
+	name = "Alien Saw"
+	desc = "A tool utilizing cutting edge modern technology, and ancient component designs."
+	id = "aliencircularsaw"
+	materials = list(MAT_PLASTEEL = 2000, MAT_VERDANTIUM = 3000, MAT_PLASTIC = 8000, MAT_DIAMOND = 2000)
+	req_tech = list(TECH_BIO = 5, TECH_MATERIAL = 5, TECH_BLUESPACE = 5, TECH_MAGNET = 6, TECH_PHORON = 3, TECH_ARCANE = 1, TECH_PRECURSOR = 1)
+	build_path = /obj/item/weapon/surgical/circular_saw/alien
+	sort_string = "MBBAP"
+
+/datum/design/item/precursor/cautery
+	name = "Alien Cautery"
+	desc = "A tool utilizing cutting edge modern technology, and ancient component designs."
+	id = "aliencautery"
+	materials = list(MAT_PLASTEEL = 2000, MAT_VERDANTIUM = 3000, MAT_PLASTIC = 8000, MAT_DIAMOND = 2000)
+	req_tech = list(TECH_BIO = 5, TECH_MATERIAL = 5, TECH_BLUESPACE = 5, TECH_MAGNET = 6, TECH_PHORON = 3, TECH_ARCANE = 1, TECH_PRECURSOR = 1)
+	build_path = /obj/item/weapon/surgical/cautery/alien
+	sort_string = "MBBAQ"
+
+/datum/design/item/precursor/boneclamp
+	name = "Alien Clamp"
+	desc = "A tool utilizing cutting edge modern technology, and ancient component designs."
+	id = "alienboneclamp"
+	materials = list(MAT_PLASTEEL = 2000, MAT_VERDANTIUM = 3000, MAT_PLASTIC = 8000, MAT_DIAMOND = 2000)
+	req_tech = list(TECH_BIO = 5, TECH_MATERIAL = 5, TECH_BLUESPACE = 5, TECH_MAGNET = 6, TECH_PHORON = 3, TECH_ARCANE = 1, TECH_PRECURSOR = 1)
+	build_path = /obj/item/weapon/surgical/bone_clamp/alien
+	sort_string = "MBBAR"
+
+/datum/design/item/precursor/surgicaldrill
+	name = "Alien Drill"
+	desc = "A tool utilizing cutting edge modern technology, and ancient component designs."
+	id = "aliensurgicaldrill"
+	materials = list(MAT_PLASTEEL = 2000, MAT_VERDANTIUM = 3000, MAT_PLASTIC = 8000, MAT_DIAMOND = 2000)
+	req_tech = list(TECH_BIO = 5, TECH_MATERIAL = 5, TECH_BLUESPACE = 5, TECH_MAGNET = 6, TECH_PHORON = 3, TECH_ARCANE = 1, TECH_PRECURSOR = 1)
+	build_path = /obj/item/weapon/surgical/surgicaldrill/alien
+	sort_string = "MBBAS"
+
+/datum/design/item/precursor/fixovein
+	name = "Alien Vein Container"
+	desc = "A tool utilizing cutting edge modern technology, and ancient component designs."
+	id = "alienfixovein"
+	materials = list(MAT_PLASTEEL = 2000, MAT_VERDANTIUM = 3000, MAT_PLASTIC = 8000, MAT_DIAMOND = 2000)
+	req_tech = list(TECH_BIO = 5, TECH_MATERIAL = 5, TECH_BLUESPACE = 5, TECH_MAGNET = 6, TECH_PHORON = 3, TECH_ARCANE = 1, TECH_PRECURSOR = 1)
+	build_path = /obj/item/weapon/surgical/FixOVein/alien
+	sort_string = "MBBAT"
+
 /datum/design/item/anomaly/AssembleDesignName()
 	..()
 	name = "Anomalous prototype ([item_name])"
@@ -77,3 +150,12 @@
 			var/obj/item/I = build_path
 			desc = initial(I.desc)
 		..()
+
+/datum/design/item/anomaly/camotrap
+	name = "Chameleon Trap"
+	desc = "A self-miraging mechanical trap, capable of producing short bursts of electric current when triggered."
+	id = "hunt_trap"
+	materials = list(MAT_DURASTEEL = 3000, MAT_METALHYDROGEN = 1000, MAT_PHORON = 2000)
+	req_tech = list(TECH_MATERIAL = 4, TECH_BLUESPACE = 3, TECH_MAGNET = 4, TECH_PHORON = 2, TECH_ARCANE = 2)
+	build_path = /obj/item/weapon/beartrap/hunting
+	sort_string = "ARCAT"
