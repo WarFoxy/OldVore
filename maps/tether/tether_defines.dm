@@ -116,6 +116,8 @@
 							NETWORK_ALARM_FIRE
 							)
 
+	bot_patrolling = FALSE
+
 	allowed_spawns = list("Tram Station","Gateway","Cryogenic Storage","Cyborg Storage")
 	spawnpoint_died = /datum/spawnpoint/tram
 	spawnpoint_left = /datum/spawnpoint/tram
@@ -148,6 +150,23 @@
 		list("Debris Field - Z1 Space")
 		)
 
+	ai_shell_restricted = TRUE
+	ai_shell_allowed_levels = list(
+		Z_LEVEL_SURFACE_LOW,
+		Z_LEVEL_SURFACE_MID,
+		Z_LEVEL_SURFACE_HIGH,
+		Z_LEVEL_TRANSIT,
+		Z_LEVEL_SPACE_LOW,
+		Z_LEVEL_SPACE_MID,
+		Z_LEVEL_SPACE_HIGH,
+		Z_LEVEL_SURFACE_MINE,
+		Z_LEVEL_SOLARS,
+		Z_LEVEL_CENTCOM,
+		Z_LEVEL_MISC,
+		Z_LEVEL_SHIPS,
+		Z_LEVEL_BEACH
+		)
+
 	lateload_single_pick = null //Nothing right now.
 
 /datum/map/tether/perform_map_generation()
@@ -164,9 +183,9 @@
 /datum/map/tether/get_map_levels(var/srcz, var/long_range = TRUE)
 	if (long_range && (srcz in map_levels))
 		return map_levels
-	else if (srcz == Z_LEVEL_TRANSIT) //Z4
+	else if (srcz == Z_LEVEL_MISC || srcz == Z_LEVEL_SHIPS) //technical levels
 		return list() // Nothing on these z-levels- sensors won't show, and GPSes won't see each other.
-	else if (srcz >= Z_LEVEL_SURFACE_LOW && srcz <= Z_LEVEL_SOLARS) //Zs 1-3, 5-9
+	else if (srcz >= Z_LEVEL_SURFACE_LOW && srcz <= Z_LEVEL_SOLARS) //Zs 1-3, 5-9, Z4 will return same list, but is not included into it
 		return list(
 			Z_LEVEL_SURFACE_LOW,
 			Z_LEVEL_SURFACE_MID,
