@@ -26,7 +26,7 @@
 	var/b_wing = 30		// Wing color
 	var/dress_mob = TRUE
 	var/potenzia = 10 //dicks
-	var/resistenza = 200 //you think you can resist?
+	var/resistenza = 100 //you think you can resist? //UPD: default setting is now decreased from 200 to 100
 	var/low_arousal = 0
 	var/med_arousal = 0
 
