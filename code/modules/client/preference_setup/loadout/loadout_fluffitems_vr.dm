@@ -81,9 +81,3 @@
 	display_name = "hip holster"
 	ckeywhitelist = list("low3")
 	character_name = list("Sonny Baker")
-
-/datum/gear/fluff/ashtest
-	path = /obj/item/weapon/dildo
-	display_name = "My Best Friend"
-	ckeywhitelist = list("ashtonfox")
-	character_name = list("Gia Gordon")
