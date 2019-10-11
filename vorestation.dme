@@ -3322,6 +3322,8 @@
 #include "updates\fluff\ruvorefluff.dm"
 #include "updates\instruments\instruments.dm"
 #include "updates\lowe\ruvr_areas.dm"
+#include "updates\ren\hardbass.dm"
+#include "updates\ren\renfood.dm"
 #include "updates\warfoxy\beakers.dm"
 #include "updates\warfoxy\earrings.dm"
 #include "updates\warfoxy\hair.dm"
