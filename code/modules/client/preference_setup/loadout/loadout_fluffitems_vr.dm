@@ -105,7 +105,7 @@
 	path = /obj/item/clothing/shoes/hitops/squatter
 	display_name = "squatter shoes"
 	ckeywhitelist = list("renardqueenston")
-	character_name = list("Nadia Moskvina")
+	character_name = list("Ervein Neumann", "Nadia Moskvina")
 
 /datum/gear/fluff/ren_semki
 	path = /obj/item/weapon/reagent_containers/food/renfood/semki_pack
