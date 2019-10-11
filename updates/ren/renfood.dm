@@ -296,3 +296,7 @@
 	center_of_mass = list("x"=15, "y"=4)
 	nutriment_amt = 6
 	nutriment_desc = list("a normal cyka blyat food" = 6)
+
+/obj/item/weapon/reagent_containers/food/renfood/semki_pack/Initialize()
+	. = ..()
+	bitesize = 0.05 //очень много семок
