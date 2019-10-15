@@ -28,12 +28,12 @@
 	set desc = "Use this to get aroused just with your thoughts... do not abuse by the way. +10 per click."
 	var/ya = "&#255;"
 	if(gender != NEUTER && arousal <= med_arousal)
-		to_chat(src, "<span class='warning'>Вы занимаете свои мысли чем-то, что вас возбуждает...</span>")
+		to_chat(src, "<span class='warning'>Г‚Г» Г§Г Г­ГЁГ¬Г ГҐГІГҐ Г±ГўГ®ГЁ Г¬Г»Г±Г«ГЁ Г·ГҐГ¬-ГІГ®, Г·ГІГ® ГўГ Г± ГўГ®Г§ГЎГіГ¦Г¤Г ГҐГІ...</span>")
 		src.arousal += 10
 	else if(gender != NEUTER)
-		to_chat(src, "<span class='warning'>Вы уже слишком возбуждены, чтобы довольствоватьс[ya] только этим!</span>")
+		to_chat(src, "<span class='warning'>Г‚Г» ГіГ¦ГҐ Г±Г«ГЁГёГЄГ®Г¬ ГўГ®Г§ГЎГіГ¦Г¤ГҐГ­Г», Г·ГІГ®ГЎГ» Г¤Г®ГўГ®Г«ГјГ±ГІГўГ®ГўГ ГІГјГ±[ya] ГІГ®Г«ГјГЄГ® ГЅГІГЁГ¬!</span>")
 	else
-		to_chat(src, "<span class='warning'>У вас нет необходимых половых признаков! Как вы собрались это провернуть?</span>")
+		to_chat(src, "<span class='warning'>Г“ ГўГ Г± Г­ГҐГІ Г­ГҐГ®ГЎГµГ®Г¤ГЁГ¬Г»Гµ ГЇГ®Г«Г®ГўГ»Гµ ГЇГ°ГЁГ§Г­Г ГЄГ®Гў! ГЉГ ГЄ ГўГ» Г±Г®ГЎГ°Г Г«ГЁГ±Гј ГЅГІГ® ГЇГ°Г®ГўГҐГ°Г­ГіГІГј?</span>")
 
 /datum/species/human
 	genitals = 1
@@ -159,7 +159,7 @@
 	var/haspenis = ((H.gender == MALE && H.potenzia > -1 && H.species.genitals))
 	var/haspenis_p = ((P.gender == MALE && P.potenzia > -1 && P.species.genitals))
 	var/hasvagina = (H.gender == FEMALE && H.species.genitals && H.species.name != "Stok" && H.species.name != "Teshari")
-	var/hasvagina_p = (P.gender == FEMALE && P.species.genitals && P.species.name != "Stok" && H.species.name != "Teshari")
+	var/hasvagina_p = (P.gender == FEMALE && P.species.genitals && P.species.name != "Stok" && P.species.name != "Teshari")
 	var/hasanus_p = P.species.anus
 	var/hasanus = H.species.anus
 	var/isnude = H.is_nude()
@@ -172,81 +172,81 @@
 	var/ya = "&#1103;"
 
 	if (P != H)
-		dat +=  {"• <A href='?src=\ref[src];interaction=bow'>Отвесить поклон.</A><BR>"}
-		dat +=  {"• <A href='?src=\ref[src];interaction=wave'>Поприветствовать.</A><BR>"}
+		dat +=  {"вЂў <A href='?src=\ref[src];interaction=bow'>ГЋГІГўГҐГ±ГЁГІГј ГЇГ®ГЄГ«Г®Г­.</A><BR>"}
+		dat +=  {"вЂў <A href='?src=\ref[src];interaction=wave'>ГЏГ®ГЇГ°ГЁГўГҐГІГ±ГІГўГ®ГўГ ГІГј.</A><BR>"}
 	if (hashands)
-		dat +=  {"<font size=3><B>Руки:</B></font><BR>"}
+		dat +=  {"<font size=3><B>ГђГіГЄГЁ:</B></font><BR>"}
 		if (Adjacent(P))
 			if (P != H)
-				dat +=  {"• <A href='?src=\ref[src];interaction=handshake'>Пожать руку.</A><BR>"}
-				dat +=  {"• <A href='?src=\ref[src];interaction=five'>Дать п[ya]ть.</A><BR>"}
-			dat +=  {"• <A href='?src=\ref[src];interaction=hug'>Обнимашки!</A><BR>"}
-			dat +=  {"• <A href='?src=\ref[src];interaction=cheer'>Похлопать по плечу</A><BR>"}
+				dat +=  {"вЂў <A href='?src=\ref[src];interaction=handshake'>ГЏГ®Г¦Г ГІГј Г°ГіГЄГі.</A><BR>"}
+				dat +=  {"вЂў <A href='?src=\ref[src];interaction=five'>Г„Г ГІГј ГЇ[ya]ГІГј.</A><BR>"}
+			dat +=  {"вЂў <A href='?src=\ref[src];interaction=hug'>ГЋГЎГ­ГЁГ¬Г ГёГЄГЁ!</A><BR>"}
+			dat +=  {"вЂў <A href='?src=\ref[src];interaction=cheer'>ГЏГ®ГµГ«Г®ГЇГ ГІГј ГЇГ® ГЇГ«ГҐГ·Гі</A><BR>"}
 			if (hashands_p && (P != H))
-				dat +=  {"• <A href='?src=\ref[src];interaction=give'>Передать предмет.</A><BR>"}
-			dat +=  {"• <A href='?src=\ref[src];interaction=slap'><font color=red>Дать пощечину!</font></A><BR>"}
+				dat +=  {"вЂў <A href='?src=\ref[src];interaction=give'>ГЏГҐГ°ГҐГ¤Г ГІГј ГЇГ°ГҐГ¤Г¬ГҐГІ.</A><BR>"}
+			dat +=  {"вЂў <A href='?src=\ref[src];interaction=slap'><font color=red>Г„Г ГІГј ГЇГ®Г№ГҐГ·ГЁГ­Гі!</font></A><BR>"}
 			if (hasanus_p)
-				dat += {"• <A href='?src=\ref[src];interaction=assslap'>Шлепнуть по заднице</A><BR>"}
+				dat += {"вЂў <A href='?src=\ref[src];interaction=assslap'>ГГ«ГҐГЇГ­ГіГІГј ГЇГ® Г§Г Г¤Г­ГЁГ¶ГҐ</A><BR>"}
 			if (isnude_p)
 				if (hasvagina_p)
-					dat += {"• <A href='?src=\ref[src];interaction=fingering'><font color=purple>Просунуть пальчик...</font></A><BR>"}
+					dat += {"вЂў <A href='?src=\ref[src];interaction=fingering'><font color=purple>ГЏГ°Г®Г±ГіГ­ГіГІГј ГЇГ Г«ГјГ·ГЁГЄ...</font></A><BR>"}
 				if (haspenis_p)
-					dat += {"• <A href='?src=\ref[src];interaction=jerk'><font color=purple>Подрочить</font></A><BR>"}
+					dat += {"вЂў <A href='?src=\ref[src];interaction=jerk'><font color=purple>ГЏГ®Г¤Г°Г®Г·ГЁГІГј</font></A><BR>"}
 			if ((P.species.get_bodytype() == SPECIES_TAJ || P.species.get_bodytype() == SPECIES_VULPKANIN || P.species.get_bodytype() == SPECIES_ZORREN_HIGH || P.species.get_bodytype() == SPECIES_ZORREN_FLAT || P.species.get_bodytype() == SPECIES_SERGAL) && (P != H))
-				dat +=  {"• <A href='?src=\ref[src];interaction=pull'><font color=red>Дёрнуть за хвост!</font></A><BR>"}
+				dat +=  {"вЂў <A href='?src=\ref[src];interaction=pull'><font color=red>Г„ВёГ°Г­ГіГІГј Г§Г  ГµГўГ®Г±ГІ!</font></A><BR>"}
 				if(P.can_inject(H, 1))
-					dat +=  {"• <A href='?src=\ref[src];interaction=pet'>Погладить.</A><BR>"}
+					dat +=  {"вЂў <A href='?src=\ref[src];interaction=pet'>ГЏГ®ГЈГ«Г Г¤ГЁГІГј.</A><BR>"}
 			if (P == H)
-				dat +=  {"• <A href='?src=\ref[src];interaction=pet'>Погладить себ[ya].</A><BR>"}
+				dat +=  {"вЂў <A href='?src=\ref[src];interaction=pet'>ГЏГ®ГЈГ«Г Г¤ГЁГІГј Г±ГҐГЎ[ya].</A><BR>"}
 			if ((haspenis_p || hasvagina_p) && !isnude_p && P.species.name != "Teshari" && P.can_inject(H, 1))
-				dat += {"• <A href='?src=\ref[src];interaction=petting'><font color=purple>Потрогать пах</font></A><BR>"}
-			dat +=  {"• <A href='?src=\ref[src];interaction=knock'><font color=red>Дать подзатыльник.</font></A><BR>"}
+				dat += {"вЂў <A href='?src=\ref[src];interaction=petting'><font color=purple>ГЏГ®ГІГ°Г®ГЈГ ГІГј ГЇГ Гµ</font></A><BR>"}
+			dat +=  {"вЂў <A href='?src=\ref[src];interaction=knock'><font color=red>Г„Г ГІГј ГЇГ®Г¤Г§Г ГІГ»Г«ГјГ­ГЁГЄ.</font></A><BR>"}
 		if (P != H)
-			dat +=  {"• <A href='?src=\ref[src];interaction=fuckyou'><font color=red>Показать средний палец.</font></A><BR>"}
-			dat +=  {"• <A href='?src=\ref[src];interaction=threaten'><font color=red>Погрозить кулаком.</font></A><BR>"}
+			dat +=  {"вЂў <A href='?src=\ref[src];interaction=fuckyou'><font color=red>ГЏГ®ГЄГ Г§Г ГІГј Г±Г°ГҐГ¤Г­ГЁГ© ГЇГ Г«ГҐГ¶.</font></A><BR>"}
+			dat +=  {"вЂў <A href='?src=\ref[src];interaction=threaten'><font color=red>ГЏГ®ГЈГ°Г®Г§ГЁГІГј ГЄГіГ«Г ГЄГ®Г¬.</font></A><BR>"}
 
 	if (mouthfree && H.species.name != "Diona" && P != H)
-		dat += {"<font size=3><B>Лицо:</B></font><BR>"}
-		dat += {"• <A href='?src=\ref[src];interaction=kiss'>Поцеловать.</A><BR>"}
+		dat += {"<font size=3><B>Г‹ГЁГ¶Г®:</B></font><BR>"}
+		dat += {"вЂў <A href='?src=\ref[src];interaction=kiss'>ГЏГ®Г¶ГҐГ«Г®ГўГ ГІГј.</A><BR>"}
 		if (Adjacent(P))
 			if (mouthfree_p)
-				dat += {"• <A href='?src=\ref[src];interaction=lick'>Лизнуть в щеку.</A><BR>"}
+				dat += {"вЂў <A href='?src=\ref[src];interaction=lick'>Г‹ГЁГ§Г­ГіГІГј Гў Г№ГҐГЄГі.</A><BR>"}
 			if (isnude_p)
 				if (haspenis_p)
-					dat += {"• <A href='?src=\ref[src];interaction=blowjob'><font color=purple>Сделать минет.</font></A><BR>"}
+					dat += {"вЂў <A href='?src=\ref[src];interaction=blowjob'><font color=purple>Г‘Г¤ГҐГ«Г ГІГј Г¬ГЁГ­ГҐГІ.</font></A><BR>"}
 				if (hasvagina_p)
-					dat += {"• <A href='?src=\ref[src];interaction=vaglick'><font color=purple>Вылизать.</font></A><BR>"}
+					dat += {"вЂў <A href='?src=\ref[src];interaction=vaglick'><font color=purple>Г‚Г»Г«ГЁГ§Г ГІГј.</font></A><BR>"}
 				if (hasanus_p && P.species.name != "Diona")
-					dat += {"• <A href='?src=\ref[src];interaction=asslick'><font color=purple>Отполировать черный ход?!</font></A><BR>"}
-			dat +=  {"• <A href='?src=\ref[src];interaction=spit'><font color=red>Плюнуть.</font></A><BR>"}
-		dat +=  {"• <A href='?src=\ref[src];interaction=tongue'><font color=red>Показать [ya]зык.</font></A><BR>"}
+					dat += {"вЂў <A href='?src=\ref[src];interaction=asslick'><font color=purple>ГЋГІГЇГ®Г«ГЁГ°Г®ГўГ ГІГј Г·ГҐГ°Г­Г»Г© ГµГ®Г¤?!</font></A><BR>"}
+			dat +=  {"вЂў <A href='?src=\ref[src];interaction=spit'><font color=red>ГЏГ«ГѕГ­ГіГІГј.</font></A><BR>"}
+		dat +=  {"вЂў <A href='?src=\ref[src];interaction=tongue'><font color=red>ГЏГ®ГЄГ Г§Г ГІГј [ya]Г§Г»ГЄ.</font></A><BR>"}
 
 	if (Adjacent(P) && isnude && P.species.name != "Diona" && P != H)
 		if (haspenis && hashands)
-			dat += {"<font size=3><B>Член:</B></font><BR>"}
+			dat += {"<font size=3><B>Г—Г«ГҐГ­:</B></font><BR>"}
 			if (hasvagina_p && isnude_p && P.species.name != "Teshari")
-				dat += {"• <A href='?src=\ref[src];interaction=vaginal'><font color=purple>Трахнуть вагинально.</font></A><BR>"}
+				dat += {"вЂў <A href='?src=\ref[src];interaction=vaginal'><font color=purple>Г’Г°Г ГµГ­ГіГІГј ГўГ ГЈГЁГ­Г Г«ГјГ­Г®.</font></A><BR>"}
 			if (hasanus_p && isnude_p)
-				dat += {"• <A href='?src=\ref[src];interaction=anal'><font color=purple>Трахнуть анально.</font></A><BR>"}
+				dat += {"вЂў <A href='?src=\ref[src];interaction=anal'><font color=purple>Г’Г°Г ГµГ­ГіГІГј Г Г­Г Г«ГјГ­Г®.</font></A><BR>"}
 			if (mouthfree_p)
-				dat += {"• <A href='?src=\ref[src];interaction=oral'><font color=purple>Трахнуть орально.</font></A><BR>"}
+				dat += {"вЂў <A href='?src=\ref[src];interaction=oral'><font color=purple>Г’Г°Г ГµГ­ГіГІГј Г®Г°Г Г«ГјГ­Г®.</font></A><BR>"}
 	if (isnude && hashands && P != H)
 		if (hasvagina)
-			dat += {"<font size=3><B>Лоно:</B></font><BR>"}
+			dat += {"<font size=3><B>Г‹Г®Г­Г®:</B></font><BR>"}
 			if (isnude_p && haspenis_p && usr.loc == H.partner.loc)
-				dat += {"• <A href='?src=\ref[src];interaction=mount'><font color=purple>Оседлать</font></A><BR>"}
-				dat += {"• <A href='?src=\ref[src];interaction=rub'><font color=purple>Потеретьс[ya]</font></A><BR>"}
+				dat += {"вЂў <A href='?src=\ref[src];interaction=mount'><font color=purple>ГЋГ±ГҐГ¤Г«Г ГІГј</font></A><BR>"}
+				dat += {"вЂў <A href='?src=\ref[src];interaction=rub'><font color=purple>ГЏГ®ГІГҐГ°ГҐГІГјГ±[ya]</font></A><BR>"}
 			if (mouthfree_p && usr.loc == H.partner.loc)
-				dat += {"• <A href='?src=\ref[src];interaction=facesitting'><font color=purple>Сесть на лицо</font></A><BR>"}
+				dat += {"вЂў <A href='?src=\ref[src];interaction=facesitting'><font color=purple>Г‘ГҐГ±ГІГј Г­Г  Г«ГЁГ¶Г®</font></A><BR>"}
 			if (mouthfree_p && (Adjacent(P) || (usr.loc == H.partner.loc)))
-				dat += {"• <A href='?src=\ref[src];interaction=forcelick'><font color=purple>Заставить отлизывать</font></A><BR>"}
+				dat += {"вЂў <A href='?src=\ref[src];interaction=forcelick'><font color=purple>Г‡Г Г±ГІГ ГўГЁГІГј Г®ГІГ«ГЁГ§Г»ГўГ ГІГј</font></A><BR>"}
 			if ((usr.loc == H.partner.loc) && hasvagina_p)
-				dat += {"• <A href='?src=\ref[src];interaction=tribadism'><font color=purple>Трибадизм</font></A><BR>"}
+				dat += {"вЂў <A href='?src=\ref[src];interaction=tribadism'><font color=purple>Г’Г°ГЁГЎГ Г¤ГЁГ§Г¬</font></A><BR>"}
 	if (isnude && hashands && P.species.name != "Diona" && P != H)
 		if (hasanus && haspenis_p)
-			dat += {"<font size=3><B>Зад:</B></font><BR>"}
+			dat += {"<font size=3><B>Г‡Г Г¤:</B></font><BR>"}
 			if (isnude_p && usr.loc == H.partner.loc)
-				dat += {"• <A href='?src=\ref[src];interaction=assfuck'><font color=purple>Оседлать задом</font></A><BR>"}
+				dat += {"вЂў <A href='?src=\ref[src];interaction=assfuck'><font color=purple>ГЋГ±ГҐГ¤Г«Г ГІГј Г§Г Г¤Г®Г¬</font></A><BR>"}
 
 	var/datum/browser/popup = new(usr, "interactions", "Interactions", 340, 480)
 	popup.set_content(dat)
@@ -269,9 +269,9 @@
 	var/med_arousal = 0
 
 /*
-Запилить rub для рас, чтобы таяране тёрлись _пушистыми/волосатыми_ пёздами, чтобы тераши тёрлись перьями и прочее, а не обычными как сейчас. А шо, каво?
-Запилитть dickrub, чтобы каждый настоящий мужчина мог посоревноваться с другим настоящим мужчиной в своём мужыцком фехтовании.
-Запилить унатхам возможность трахаться сексом в эти, как их.. Хуйные отверстия "slit".
+Г‡Г ГЇГЁГ«ГЁГІГј rub Г¤Г«Гї Г°Г Г±, Г·ГІГ®ГЎГ» ГІГ ГїГ°Г Г­ГҐ ГІВёГ°Г«ГЁГ±Гј _ГЇГіГёГЁГ±ГІГ»Г¬ГЁ/ГўГ®Г«Г®Г±Г ГІГ»Г¬ГЁ_ ГЇВёГ§Г¤Г Г¬ГЁ, Г·ГІГ®ГЎГ» ГІГҐГ°Г ГёГЁ ГІВёГ°Г«ГЁГ±Гј ГЇГҐГ°ГјГїГ¬ГЁ ГЁ ГЇГ°Г®Г·ГҐГҐ, Г  Г­ГҐ Г®ГЎГ»Г·Г­Г»Г¬ГЁ ГЄГ ГЄ Г±ГҐГ©Г·Г Г±. ГЂ ГёГ®, ГЄГ ГўГ®?
+Г‡Г ГЇГЁГ«ГЁГІГІГј dickrub, Г·ГІГ®ГЎГ» ГЄГ Г¦Г¤Г»Г© Г­Г Г±ГІГ®ГїГ№ГЁГ© Г¬ГіГ¦Г·ГЁГ­Г  Г¬Г®ГЈ ГЇГ®Г±Г®Г°ГҐГўГ­Г®ГўГ ГІГјГ±Гї Г± Г¤Г°ГіГЈГЁГ¬ Г­Г Г±ГІГ®ГїГ№ГЁГ¬ Г¬ГіГ¦Г·ГЁГ­Г®Г© Гў Г±ГўГ®ВёГ¬ Г¬ГіГ¦Г»Г¶ГЄГ®Г¬ ГґГҐГµГІГ®ГўГ Г­ГЁГЁ.
+Г‡Г ГЇГЁГ«ГЁГІГј ГіГ­Г ГІГµГ Г¬ ГўГ®Г§Г¬Г®Г¦Г­Г®Г±ГІГј ГІГ°Г ГµГ ГІГјГ±Гї Г±ГҐГЄГ±Г®Г¬ Гў ГЅГІГЁ, ГЄГ ГЄ ГЁГµ.. Г•ГіГ©Г­Г»ГҐ Г®ГІГўГҐГ°Г±ГІГЁГї "slit".
 */
 /mob/living/carbon/human/proc/cum(mob/living/carbon/human/H as mob, mob/living/carbon/human/P as mob, var/hole = "floor")
 	var/ya = "&#255;"
@@ -299,43 +299,43 @@
 
 		if (H.species.genitals)
 			if (hole == "mouth")
-				message = pick("кончает [P] в рот.", "кончает [P] в глотку.", "заполн[ya]ет рот [P] семенем.", "брызгает спермой в рот [P].", "спускает на [ya]зычок [P].")
+				message = pick("ГЄГ®Г­Г·Г ГҐГІ [P] Гў Г°Г®ГІ.", "ГЄГ®Г­Г·Г ГҐГІ [P] Гў ГЈГ«Г®ГІГЄГі.", "Г§Г ГЇГ®Г«Г­[ya]ГҐГІ Г°Г®ГІ [P] Г±ГҐГ¬ГҐГ­ГҐГ¬.", "ГЎГ°Г»Г§ГЈГ ГҐГІ Г±ГЇГҐГ°Г¬Г®Г© Гў Г°Г®ГІ [P].", "Г±ГЇГіГ±ГЄГ ГҐГІ Г­Г  [ya]Г§Г»Г·Г®ГЄ [P].")
 				var/datum/reagents/holder = new
 				var/amt = rand(20,30)
 				holder.add_reagent("semen", amt)
 				holder.trans_to_mob(P, amt, CHEM_INGEST)
 
 			else if (hole == "vagina")
-				message = pick("кончает в [P]", "спускает в киску [P]", "заполн[ya]ет влагалище [P] спермой.", "резко выт[ya]гивает член из [P], а затем спускает на пол.", "проникает в [P] последний раз, затем содрагаетс[ya]. Сперма медленно вытекает из щели [P].")
+				message = pick("ГЄГ®Г­Г·Г ГҐГІ Гў [P]", "Г±ГЇГіГ±ГЄГ ГҐГІ Гў ГЄГЁГ±ГЄГі [P]", "Г§Г ГЇГ®Г«Г­[ya]ГҐГІ ГўГ«Г ГЈГ Г«ГЁГ№ГҐ [P] Г±ГЇГҐГ°Г¬Г®Г©.", "Г°ГҐГ§ГЄГ® ГўГ»ГІ[ya]ГЈГЁГўГ ГҐГІ Г·Г«ГҐГ­ ГЁГ§ [P], Г  Г§Г ГІГҐГ¬ Г±ГЇГіГ±ГЄГ ГҐГІ Г­Г  ГЇГ®Г«.", "ГЇГ°Г®Г­ГЁГЄГ ГҐГІ Гў [P] ГЇГ®Г±Г«ГҐГ¤Г­ГЁГ© Г°Г Г§, Г§Г ГІГҐГ¬ Г±Г®Г¤Г°Г ГЈГ ГҐГІГ±[ya]. Г‘ГЇГҐГ°Г¬Г  Г¬ГҐГ¤Г«ГҐГ­Г­Г® ГўГ»ГІГҐГЄГ ГҐГІ ГЁГ§ Г№ГҐГ«ГЁ [P].")
 
 			else if (hole == "anus")
-				message = pick("кончает [P] в зад.", "заполн[ya]ет задницу [P] спермой.", "спускает семенную жидкость в пр[ya]мую кишку [P].", "выдергивает член из [P], а затем обильно кончает на [P.identifying_gender == MALE ? "его" : "её"] попку.", "выт[ya]гивает член из задницы [P] и сразу же спускает на пол.")
+				message = pick("ГЄГ®Г­Г·Г ГҐГІ [P] Гў Г§Г Г¤.", "Г§Г ГЇГ®Г«Г­[ya]ГҐГІ Г§Г Г¤Г­ГЁГ¶Гі [P] Г±ГЇГҐГ°Г¬Г®Г©.", "Г±ГЇГіГ±ГЄГ ГҐГІ Г±ГҐГ¬ГҐГ­Г­ГіГѕ Г¦ГЁГ¤ГЄГ®Г±ГІГј Гў ГЇГ°[ya]Г¬ГіГѕ ГЄГЁГёГЄГі [P].", "ГўГ»Г¤ГҐГ°ГЈГЁГўГ ГҐГІ Г·Г«ГҐГ­ ГЁГ§ [P], Г  Г§Г ГІГҐГ¬ Г®ГЎГЁГ«ГјГ­Г® ГЄГ®Г­Г·Г ГҐГІ Г­Г  [P.identifying_gender == MALE ? "ГҐГЈГ®" : "ГҐВё"] ГЇГ®ГЇГЄГі.", "ГўГ»ГІ[ya]ГЈГЁГўГ ГҐГІ Г·Г«ГҐГ­ ГЁГ§ Г§Г Г¤Г­ГЁГ¶Г» [P] ГЁ Г±Г°Г Г§Гі Г¦ГҐ Г±ГЇГіГ±ГЄГ ГҐГІ Г­Г  ГЇГ®Г«.")
 
 			else if (hole == "floor")
-				message = pick("кончает на пол!", "кончает на своего партнёра!")
+				message = pick("ГЄГ®Г­Г·Г ГҐГІ Г­Г  ГЇГ®Г«!", "ГЄГ®Г­Г·Г ГҐГІ Г­Г  Г±ГўГ®ГҐГЈГ® ГЇГ Г°ГІГ­ВёГ°Г !")
 
 			else if (hole == "cumhand")
 				if (P != H)
-					message = pick("кончает [P] в руку.", "кончает в сжатый кулачок [P].", "разбрызгивает сем[ya], пачка[ya] ладошку и пальцы [P].", "стрел[ya]ет тугой струёй малафьи, зал[ya]пыва[ya] руку [P].")
+					message = pick("ГЄГ®Г­Г·Г ГҐГІ [P] Гў Г°ГіГЄГі.", "ГЄГ®Г­Г·Г ГҐГІ Гў Г±Г¦Г ГІГ»Г© ГЄГіГ«Г Г·Г®ГЄ [P].", "Г°Г Г§ГЎГ°Г»Г§ГЈГЁГўГ ГҐГІ Г±ГҐГ¬[ya], ГЇГ Г·ГЄГ [ya] Г«Г Г¤Г®ГёГЄГі ГЁ ГЇГ Г«ГјГ¶Г» [P].", "Г±ГІГ°ГҐГ«[ya]ГҐГІ ГІГіГЈГ®Г© Г±ГІГ°ГіВёГ© Г¬Г Г«Г ГґГјГЁ, Г§Г Г«[ya]ГЇГ»ГўГ [ya] Г°ГіГЄГі [P].")
 				else if (!R)
-					message = pick("кончает себе в руку.", "кончает в свой сжатый кулачок.", "разбрызгивает сем[ya], пачка[ya] свою ладошку и пальцы.", "стрел[ya]ет тугой струёй малафьи, зал[ya]пыва[ya] свою руку.")
+					message = pick("ГЄГ®Г­Г·Г ГҐГІ Г±ГҐГЎГҐ Гў Г°ГіГЄГі.", "ГЄГ®Г­Г·Г ГҐГІ Гў Г±ГўГ®Г© Г±Г¦Г ГІГ»Г© ГЄГіГ«Г Г·Г®ГЄ.", "Г°Г Г§ГЎГ°Г»Г§ГЈГЁГўГ ГҐГІ Г±ГҐГ¬[ya], ГЇГ Г·ГЄГ [ya] Г±ГўГ®Гѕ Г«Г Г¤Г®ГёГЄГі ГЁ ГЇГ Г«ГјГ¶Г».", "Г±ГІГ°ГҐГ«[ya]ГҐГІ ГІГіГЈГ®Г© Г±ГІГ°ГіВёГ© Г¬Г Г«Г ГґГјГЁ, Г§Г Г«[ya]ГЇГ»ГўГ [ya] Г±ГўГ®Гѕ Г°ГіГЄГі.")
 				else
-					message = pick("кончает в [R.name].", "опускаетс[ya] к полу и кончает в [R.name].", "заполн[ya]ет [R.name] образцом ДНК.", "поднес[ya] член к [R.name], кончает.")
+					message = pick("ГЄГ®Г­Г·Г ГҐГІ Гў [R.name].", "Г®ГЇГіГ±ГЄГ ГҐГІГ±[ya] ГЄ ГЇГ®Г«Гі ГЁ ГЄГ®Г­Г·Г ГҐГІ Гў [R.name].", "Г§Г ГЇГ®Г«Г­[ya]ГҐГІ [R.name] Г®ГЎГ°Г Г§Г¶Г®Г¬ Г„ГЌГЉ.", "ГЇГ®Г¤Г­ГҐГ±[ya] Г·Г«ГҐГ­ ГЄ [R.name], ГЄГ®Г­Г·Г ГҐГІ.")
 
 			else if (hole == "rub")
-				message = pick("кончает себе на живот.", "целитс[ya] на живот [P], стрел[ya]ет тугой струёй малафьи, но промахиваетс[ya].", "разбрызгивает сем[ya] по пузику [P].", "заполн[ya]ет внешнюю часть вагины [P] тёплой спермой.")
+				message = pick("ГЄГ®Г­Г·Г ГҐГІ Г±ГҐГЎГҐ Г­Г  Г¦ГЁГўГ®ГІ.", "Г¶ГҐГ«ГЁГІГ±[ya] Г­Г  Г¦ГЁГўГ®ГІ [P], Г±ГІГ°ГҐГ«[ya]ГҐГІ ГІГіГЈГ®Г© Г±ГІГ°ГіВёГ© Г¬Г Г«Г ГґГјГЁ, Г­Г® ГЇГ°Г®Г¬Г ГµГЁГўГ ГҐГІГ±[ya].", "Г°Г Г§ГЎГ°Г»Г§ГЈГЁГўГ ГҐГІ Г±ГҐГ¬[ya] ГЇГ® ГЇГіГ§ГЁГЄГі [P].", "Г§Г ГЇГ®Г«Г­[ya]ГҐГІ ГўГ­ГҐГёГ­ГѕГѕ Г·Г Г±ГІГј ГўГ ГЈГЁГ­Г» [P] ГІВёГЇГ«Г®Г© Г±ГЇГҐГ°Г¬Г®Г©.")
 
 /*			else if (hole == "assfuck")
-				message = pick("доводит [H] до предела и [H.identifying_gender == MALE ? "он" : "она"] кончает [H] в зад.", "доводит [H] до сем[ya]извержени[ya] заполн[ya]ет задницу [H] спермой.", "довед[ya] [H] до предела позвол[ya]ет [H.identifying_gender == MALE ? "ему" : "ей"] спустить семенную жидкость себе в пр[ya]мую кишку.", "в последний момент выт[ya]гивает член из задницы, из-за чего [H] обильно кончает на свой лобок.", "в последний момент выт[ya]гивает член из своей пр[ya]мой кишки, из-за чего [H] кончает на свой лобок", "в последний момент выт[ya]гивает член из своей пр[ya]мой кишки, из-за чего [H] обильно кончает на свой лобок", "в последний момент выт[ya]гивает член из своей пр[ya]мой кишки, из-за чего [H] кончает на [H.identifying_gender == MALE ? "его" : "её"] промежность")
+				message = pick("Г¤Г®ГўГ®Г¤ГЁГІ [H] Г¤Г® ГЇГ°ГҐГ¤ГҐГ«Г  ГЁ [H.identifying_gender == MALE ? "Г®Г­" : "Г®Г­Г "] ГЄГ®Г­Г·Г ГҐГІ [H] Гў Г§Г Г¤.", "Г¤Г®ГўГ®Г¤ГЁГІ [H] Г¤Г® Г±ГҐГ¬[ya]ГЁГ§ГўГҐГ°Г¦ГҐГ­ГЁ[ya] Г§Г ГЇГ®Г«Г­[ya]ГҐГІ Г§Г Г¤Г­ГЁГ¶Гі [H] Г±ГЇГҐГ°Г¬Г®Г©.", "Г¤Г®ГўГҐГ¤[ya] [H] Г¤Г® ГЇГ°ГҐГ¤ГҐГ«Г  ГЇГ®Г§ГўГ®Г«[ya]ГҐГІ [H.identifying_gender == MALE ? "ГҐГ¬Гі" : "ГҐГ©"] Г±ГЇГіГ±ГІГЁГІГј Г±ГҐГ¬ГҐГ­Г­ГіГѕ Г¦ГЁГ¤ГЄГ®Г±ГІГј Г±ГҐГЎГҐ Гў ГЇГ°[ya]Г¬ГіГѕ ГЄГЁГёГЄГі.", "Гў ГЇГ®Г±Г«ГҐГ¤Г­ГЁГ© Г¬Г®Г¬ГҐГ­ГІ ГўГ»ГІ[ya]ГЈГЁГўГ ГҐГІ Г·Г«ГҐГ­ ГЁГ§ Г§Г Г¤Г­ГЁГ¶Г», ГЁГ§-Г§Г  Г·ГҐГЈГ® [H] Г®ГЎГЁГ«ГјГ­Г® ГЄГ®Г­Г·Г ГҐГІ Г­Г  Г±ГўГ®Г© Г«Г®ГЎГ®ГЄ.", "Гў ГЇГ®Г±Г«ГҐГ¤Г­ГЁГ© Г¬Г®Г¬ГҐГ­ГІ ГўГ»ГІ[ya]ГЈГЁГўГ ГҐГІ Г·Г«ГҐГ­ ГЁГ§ Г±ГўГ®ГҐГ© ГЇГ°[ya]Г¬Г®Г© ГЄГЁГёГЄГЁ, ГЁГ§-Г§Г  Г·ГҐГЈГ® [H] ГЄГ®Г­Г·Г ГҐГІ Г­Г  Г±ГўГ®Г© Г«Г®ГЎГ®ГЄ", "Гў ГЇГ®Г±Г«ГҐГ¤Г­ГЁГ© Г¬Г®Г¬ГҐГ­ГІ ГўГ»ГІ[ya]ГЈГЁГўГ ГҐГІ Г·Г«ГҐГ­ ГЁГ§ Г±ГўГ®ГҐГ© ГЇГ°[ya]Г¬Г®Г© ГЄГЁГёГЄГЁ, ГЁГ§-Г§Г  Г·ГҐГЈГ® [H] Г®ГЎГЁГ«ГјГ­Г® ГЄГ®Г­Г·Г ГҐГІ Г­Г  Г±ГўГ®Г© Г«Г®ГЎГ®ГЄ", "Гў ГЇГ®Г±Г«ГҐГ¤Г­ГЁГ© Г¬Г®Г¬ГҐГ­ГІ ГўГ»ГІ[ya]ГЈГЁГўГ ГҐГІ Г·Г«ГҐГ­ ГЁГ§ Г±ГўГ®ГҐГ© ГЇГ°[ya]Г¬Г®Г© ГЄГЁГёГЄГЁ, ГЁГ§-Г§Г  Г·ГҐГЈГ® [H] ГЄГ®Г­Г·Г ГҐГІ Г­Г  [H.identifying_gender == MALE ? "ГҐГЈГ®" : "ГҐВё"] ГЇГ°Г®Г¬ГҐГ¦Г­Г®Г±ГІГј")
 
-Сюда впилить выдачу сообщения логичную для вышенаписанного, добавить ещё всяких сообщений.
+Г‘ГѕГ¤Г  ГўГЇГЁГ«ГЁГІГј ГўГ»Г¤Г Г·Гі Г±Г®Г®ГЎГ№ГҐГ­ГЁГї Г«Г®ГЈГЁГ·Г­ГіГѕ Г¤Г«Гї ГўГ»ГёГҐГ­Г ГЇГЁГ±Г Г­Г­Г®ГЈГ®, Г¤Г®ГЎГ ГўГЁГІГј ГҐГ№Вё ГўГ±ГїГЄГЁГµ Г±Г®Г®ГЎГ№ГҐГ­ГЁГ©.
 
 */
 			else if (hole == "assfuck")
-				message = pick("кончает [P] в задницу.", "извергает сем[ya] в пр[ya]мую кишку [P].", "спускает семенную жидкость в пр[ya]мую кишку [P].", "обильно спускает в [P]", "держа [P] за бёдра кончает [P.identifying_gender == MALE ? "ему" : "ей"] в задницу.", "извергает сем[ya] в пр[ya]мую кишку [P], держа [P.identifying_gender == MALE ? "того" : "ту"] за бёдра.", "спускает в пр[ya]мую кишку [P].", "обильно спускает в задницу [P]")
+				message = pick("ГЄГ®Г­Г·Г ГҐГІ [P] Гў Г§Г Г¤Г­ГЁГ¶Гі.", "ГЁГ§ГўГҐГ°ГЈГ ГҐГІ Г±ГҐГ¬[ya] Гў ГЇГ°[ya]Г¬ГіГѕ ГЄГЁГёГЄГі [P].", "Г±ГЇГіГ±ГЄГ ГҐГІ Г±ГҐГ¬ГҐГ­Г­ГіГѕ Г¦ГЁГ¤ГЄГ®Г±ГІГј Гў ГЇГ°[ya]Г¬ГіГѕ ГЄГЁГёГЄГі [P].", "Г®ГЎГЁГ«ГјГ­Г® Г±ГЇГіГ±ГЄГ ГҐГІ Гў [P]", "Г¤ГҐГ°Г¦Г  [P] Г§Г  ГЎВёГ¤Г°Г  ГЄГ®Г­Г·Г ГҐГІ [P.identifying_gender == MALE ? "ГҐГ¬Гі" : "ГҐГ©"] Гў Г§Г Г¤Г­ГЁГ¶Гі.", "ГЁГ§ГўГҐГ°ГЈГ ГҐГІ Г±ГҐГ¬[ya] Гў ГЇГ°[ya]Г¬ГіГѕ ГЄГЁГёГЄГі [P], Г¤ГҐГ°Г¦Г  [P.identifying_gender == MALE ? "ГІГ®ГЈГ®" : "ГІГі"] Г§Г  ГЎВёГ¤Г°Г .", "Г±ГЇГіГ±ГЄГ ГҐГІ Гў ГЇГ°[ya]Г¬ГіГѕ ГЄГЁГёГЄГі [P].", "Г®ГЎГЁГ«ГјГ­Г® Г±ГЇГіГ±ГЄГ ГҐГІ Гў Г§Г Г¤Г­ГЁГ¶Гі [P]")
 
 		else
-			message = pick("кончает!", "оргазмирует!")
+			message = pick("ГЄГ®Г­Г·Г ГҐГІ!", "Г®Г°ГЈГ Г§Г¬ГЁГ°ГіГҐГІ!")
 
 		playsound(loc, "honk/sound/interactions/final_m[rand(1, 5)].ogg", 70, 1, 0)
 
@@ -348,9 +348,9 @@
 	else
 		if(R && (P == H))
 			R.reagents.add_reagent("f_lube", rand(5, 15))
-			message = pick("извиваетс[ya] в приступе оргазма и заполн[ya]ет [R.name] своей смазкой", "прикрывает глаза и мелко дрожит. [R.name] наполн[ya]етс[ya] стекающими соками", "содрагаетс[ya], а затем резко расслабл[ya]етс[ya], заполнив [R.name] смазкой", "замирает, закатив глаза, и кончает в [R.name] смазкой")
+			message = pick("ГЁГ§ГўГЁГўГ ГҐГІГ±[ya] Гў ГЇГ°ГЁГ±ГІГіГЇГҐ Г®Г°ГЈГ Г§Г¬Г  ГЁ Г§Г ГЇГ®Г«Г­[ya]ГҐГІ [R.name] Г±ГўГ®ГҐГ© Г±Г¬Г Г§ГЄГ®Г©", "ГЇГ°ГЁГЄГ°Г»ГўГ ГҐГІ ГЈГ«Г Г§Г  ГЁ Г¬ГҐГ«ГЄГ® Г¤Г°Г®Г¦ГЁГІ. [R.name] Г­Г ГЇГ®Г«Г­[ya]ГҐГІГ±[ya] Г±ГІГҐГЄГ ГѕГ№ГЁГ¬ГЁ Г±Г®ГЄГ Г¬ГЁ", "Г±Г®Г¤Г°Г ГЈГ ГҐГІГ±[ya], Г  Г§Г ГІГҐГ¬ Г°ГҐГ§ГЄГ® Г°Г Г±Г±Г«Г ГЎГ«[ya]ГҐГІГ±[ya], Г§Г ГЇГ®Г«Г­ГЁГў [R.name] Г±Г¬Г Г§ГЄГ®Г©", "Г§Г Г¬ГЁГ°Г ГҐГІ, Г§Г ГЄГ ГІГЁГў ГЈГ«Г Г§Г , ГЁ ГЄГ®Г­Г·Г ГҐГІ Гў [R.name] Г±Г¬Г Г§ГЄГ®Г©")
 		else
-			message = pick("извиваетс[ya] в приступе оргазма", "прикрывает глаза и мелко дрожит", "содрагаетс[ya], а затем резко расслабл[ya]етс[ya]", "замирает, закатив глаза")
+			message = pick("ГЁГ§ГўГЁГўГ ГҐГІГ±[ya] Гў ГЇГ°ГЁГ±ГІГіГЇГҐ Г®Г°ГЈГ Г§Г¬Г ", "ГЇГ°ГЁГЄГ°Г»ГўГ ГҐГІ ГЈГ«Г Г§Г  ГЁ Г¬ГҐГ«ГЄГ® Г¤Г°Г®Г¦ГЁГІ", "Г±Г®Г¤Г°Г ГЈГ ГҐГІГ±[ya], Г  Г§Г ГІГҐГ¬ Г°ГҐГ§ГЄГ® Г°Г Г±Г±Г«Г ГЎГ«[ya]ГҐГІГ±[ya]", "Г§Г Г¬ГЁГ°Г ГҐГІ, Г§Г ГЄГ ГІГЁГў ГЈГ«Г Г§Г ")
 		H.visible_message("<B>[H] [message].</B>")
 		if (istype(P.loc, /obj/structure/closet))
 			P.visible_message("<B>[H] [message].</B>")
@@ -376,9 +376,9 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 
 		if("vaglick")
 
-			message = pick("вылизывает [P].", "отлизывает [P].")
+			message = pick("ГўГ»Г«ГЁГ§Г»ГўГ ГҐГІ [P].", "Г®ГІГ«ГЁГ§Г»ГўГ ГҐГІ [P].")
 			if (prob(35))
-				message = pick("вылизывает [P].", "полирует промежность [P] [ya]зыком.", "отлизывает [P].", "ласкает [P] [ya]зычком.", "погружает свой [ya]зык в [P]", "играетс[ya] с [P] [ya]зычком", "медленно проводит [ya]зыком вдоль промежности [P]")
+				message = pick("ГўГ»Г«ГЁГ§Г»ГўГ ГҐГІ [P].", "ГЇГ®Г«ГЁГ°ГіГҐГІ ГЇГ°Г®Г¬ГҐГ¦Г­Г®Г±ГІГј [P] [ya]Г§Г»ГЄГ®Г¬.", "Г®ГІГ«ГЁГ§Г»ГўГ ГҐГІ [P].", "Г«Г Г±ГЄГ ГҐГІ [P] [ya]Г§Г»Г·ГЄГ®Г¬.", "ГЇГ®ГЈГ°ГіГ¦Г ГҐГІ Г±ГўГ®Г© [ya]Г§Г»ГЄ Гў [P]", "ГЁГЈГ°Г ГҐГІГ±[ya] Г± [P] [ya]Г§Г»Г·ГЄГ®Г¬", "Г¬ГҐГ¤Г«ГҐГ­Г­Г® ГЇГ°Г®ГўГ®Г¤ГЁГІ [ya]Г§Г»ГЄГ®Г¬ ГўГ¤Г®Г«Гј ГЇГ°Г®Г¬ГҐГ¦Г­Г®Г±ГІГЁ [P]")
 
 			if (H.lastfucked != P || H.lfhole != hole)
 				H.lastfucked = P
@@ -396,7 +396,7 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 				var/amt = rand(1,5)
 				holder.add_reagent("f_lube", amt)
 				holder.trans_to_mob(H, amt, CHEM_INGEST)
-				retaliation_message = pick("сглатывает соки [P].", "сглатывает соки [P], попавшие [H.identifying_gender==FEMALE ? "ей" : "ему"] в рот.", "глотает смазку [P].", "собирает [ya]зыком нектар [P] и проглатывет его.")
+				retaliation_message = pick("Г±ГЈГ«Г ГІГ»ГўГ ГҐГІ Г±Г®ГЄГЁ [P].", "Г±ГЈГ«Г ГІГ»ГўГ ГҐГІ Г±Г®ГЄГЁ [P], ГЇГ®ГЇГ ГўГёГЁГҐ [H.identifying_gender==FEMALE ? "ГҐГ©" : "ГҐГ¬Гі"] Гў Г°Г®ГІ.", "ГЈГ«Г®ГІГ ГҐГІ Г±Г¬Г Г§ГЄГі [P].", "Г±Г®ГЎГЁГ°Г ГҐГІ [ya]Г§Г»ГЄГ®Г¬ Г­ГҐГЄГІГ Г° [P] ГЁ ГЇГ°Г®ГЈГ«Г ГІГ»ГўГҐГІ ГҐГЈГ®.")
 				H.visible_message("<B>[H]</B> [retaliation_message]")
 			else
 				H.visible_message("<font color=purple>[H] [message]</font>")
@@ -407,7 +407,7 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 				P.arousal += 20
 				if (P.lust >= P.resistenza)
 					P.cum(P, H)
-					message = pick("Вы чувствуете, как вагинальные мышцы [P] начинают резко сокращатьс[ya].", "Вы чувствуете, как в ваш рот попадает некоторое количество соков [P] в процессе оргазма.", "Вы чувствуете, как влажна[ya] киска [P] резко сжимает ваш [ya]зычок внутри себ[ya].", "Вы чувствуете, как всё внутри [P] сжимаетс[ya], а её клитор начинает пульсировать.", "Вы чувствуете, как [P] кончает вам в рот струйкой смазки, оргазмиру[ya].")
+					message = pick("Г‚Г» Г·ГіГўГ±ГІГўГіГҐГІГҐ, ГЄГ ГЄ ГўГ ГЈГЁГ­Г Г«ГјГ­Г»ГҐ Г¬Г»ГёГ¶Г» [P] Г­Г Г·ГЁГ­Г ГѕГІ Г°ГҐГ§ГЄГ® Г±Г®ГЄГ°Г Г№Г ГІГјГ±[ya].", "Г‚Г» Г·ГіГўГ±ГІГўГіГҐГІГҐ, ГЄГ ГЄ Гў ГўГ Гё Г°Г®ГІ ГЇГ®ГЇГ Г¤Г ГҐГІ Г­ГҐГЄГ®ГІГ®Г°Г®ГҐ ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г±Г®ГЄГ®Гў [P] Гў ГЇГ°Г®Г¶ГҐГ±Г±ГҐ Г®Г°ГЈГ Г§Г¬Г .", "Г‚Г» Г·ГіГўГ±ГІГўГіГҐГІГҐ, ГЄГ ГЄ ГўГ«Г Г¦Г­Г [ya] ГЄГЁГ±ГЄГ  [P] Г°ГҐГ§ГЄГ® Г±Г¦ГЁГ¬Г ГҐГІ ГўГ Гё [ya]Г§Г»Г·Г®ГЄ ГўГ­ГіГІГ°ГЁ Г±ГҐГЎ[ya].", "Г‚Г» Г·ГіГўГ±ГІГўГіГҐГІГҐ, ГЄГ ГЄ ГўГ±Вё ГўГ­ГіГІГ°ГЁ [P] Г±Г¦ГЁГ¬Г ГҐГІГ±[ya], Г  ГҐВё ГЄГ«ГЁГІГ®Г° Г­Г Г·ГЁГ­Г ГҐГІ ГЇГіГ«ГјГ±ГЁГ°Г®ГўГ ГІГј.", "Г‚Г» Г·ГіГўГ±ГІГўГіГҐГІГҐ, ГЄГ ГЄ [P] ГЄГ®Г­Г·Г ГҐГІ ГўГ Г¬ Гў Г°Г®ГІ Г±ГІГ°ГіГ©ГЄГ®Г© Г±Г¬Г Г§ГЄГЁ, Г®Г°ГЈГ Г§Г¬ГЁГ°Гі[ya].")
 					to_chat(H, message)
 					var/datum/reagents/holder = new
 					var/amt = rand(20,30)
@@ -421,9 +421,9 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 /* ASSLICK
 
 		if("asslick")
-			message = pick("вылизывает анус [P]", "тщательно полирует анальное колечко [P]")
+			message = pick("ГўГ»Г«ГЁГ§Г»ГўГ ГҐГІ Г Г­ГіГ± [P]", "ГІГ№Г ГІГҐГ«ГјГ­Г® ГЇГ®Г«ГЁГ°ГіГҐГІ Г Г­Г Г«ГјГ­Г®ГҐ ГЄГ®Г«ГҐГ·ГЄГ® [P]")
 			if (prob(35))
-				message = pick("трахает личико [P], провод[ya] по нему киской.", "полирует [ya]зык [P] своей промежностью, устроившись на [P.identifying_gender==FEMALE ? "её" : "его"] лице.", "засовывает нос [P] промеж половых губ и ёрзает на нём.", "крепко жмётс[ya] к лицу [P] промежностью, выгиба[ya] спину.", "насилует лицо [P] быстрыми движени[ya]ми таза.", "играетс[ya] с ротиком [P], елоз[ya] по нему влагалищем.", "медленно проводит промежностью по лицу [P].", "размазывает свои соки по физиономии [P] движени[ya]ми таза.")
+				message = pick("ГІГ°Г ГµГ ГҐГІ Г«ГЁГ·ГЁГЄГ® [P], ГЇГ°Г®ГўГ®Г¤[ya] ГЇГ® Г­ГҐГ¬Гі ГЄГЁГ±ГЄГ®Г©.", "ГЇГ®Г«ГЁГ°ГіГҐГІ [ya]Г§Г»ГЄ [P] Г±ГўГ®ГҐГ© ГЇГ°Г®Г¬ГҐГ¦Г­Г®Г±ГІГјГѕ, ГіГ±ГІГ°Г®ГЁГўГёГЁГ±Гј Г­Г  [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г«ГЁГ¶ГҐ.", "Г§Г Г±Г®ГўГ»ГўГ ГҐГІ Г­Г®Г± [P] ГЇГ°Г®Г¬ГҐГ¦ ГЇГ®Г«Г®ГўГ»Гµ ГЈГіГЎ ГЁ ВёГ°Г§Г ГҐГІ Г­Г  Г­ВёГ¬.", "ГЄГ°ГҐГЇГЄГ® Г¦Г¬ВёГІГ±[ya] ГЄ Г«ГЁГ¶Гі [P] ГЇГ°Г®Г¬ГҐГ¦Г­Г®Г±ГІГјГѕ, ГўГ»ГЈГЁГЎГ [ya] Г±ГЇГЁГ­Гі.", "Г­Г Г±ГЁГ«ГіГҐГІ Г«ГЁГ¶Г® [P] ГЎГ»Г±ГІГ°Г»Г¬ГЁ Г¤ГўГЁГ¦ГҐГ­ГЁ[ya]Г¬ГЁ ГІГ Г§Г .", "ГЁГЈГ°Г ГҐГІГ±[ya] Г± Г°Г®ГІГЁГЄГ®Г¬ [P], ГҐГ«Г®Г§[ya] ГЇГ® Г­ГҐГ¬Гі ГўГ«Г ГЈГ Г«ГЁГ№ГҐГ¬.", "Г¬ГҐГ¤Г«ГҐГ­Г­Г® ГЇГ°Г®ГўГ®Г¤ГЁГІ ГЇГ°Г®Г¬ГҐГ¦Г­Г®Г±ГІГјГѕ ГЇГ® Г«ГЁГ¶Гі [P].", "Г°Г Г§Г¬Г Г§Г»ГўГ ГҐГІ Г±ГўГ®ГЁ Г±Г®ГЄГЁ ГЇГ® ГґГЁГ§ГЁГ®Г­Г®Г¬ГЁГЁ [P] Г¤ГўГЁГ¦ГҐГ­ГЁ[ya]Г¬ГЁ ГІГ Г§Г .")
 
 			message = pick()
  */
@@ -431,12 +431,12 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 
 		if("facesitting")
 
-			message = pick("елозит вагиной по лицу [P].", "сношает лицо [P].")
+			message = pick("ГҐГ«Г®Г§ГЁГІ ГўГ ГЈГЁГ­Г®Г© ГЇГ® Г«ГЁГ¶Гі [P].", "Г±Г­Г®ГёГ ГҐГІ Г«ГЁГ¶Г® [P].")
 			if (prob(35))
-				message = pick("трахает личико [P], провод[ya] по нему киской.", "полирует [ya]зык [P] своей промежностью, устроившись на [P.identifying_gender==FEMALE ? "её" : "его"] лице.", "засовывает нос [P] промеж половых губ и ёрзает на нём.", "крепко жмётс[ya] к лицу [P] промежностью, выгиба[ya] спину.", "насилует лицо [P] быстрыми движени[ya]ми таза.", "играетс[ya] с ротиком [P], елоз[ya] по нему влагалищем.", "медленно проводит промежностью по лицу [P].", "размазывает свои соки по физиономии [P] движени[ya]ми таза.")
+				message = pick("ГІГ°Г ГµГ ГҐГІ Г«ГЁГ·ГЁГЄГ® [P], ГЇГ°Г®ГўГ®Г¤[ya] ГЇГ® Г­ГҐГ¬Гі ГЄГЁГ±ГЄГ®Г©.", "ГЇГ®Г«ГЁГ°ГіГҐГІ [ya]Г§Г»ГЄ [P] Г±ГўГ®ГҐГ© ГЇГ°Г®Г¬ГҐГ¦Г­Г®Г±ГІГјГѕ, ГіГ±ГІГ°Г®ГЁГўГёГЁГ±Гј Г­Г  [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г«ГЁГ¶ГҐ.", "Г§Г Г±Г®ГўГ»ГўГ ГҐГІ Г­Г®Г± [P] ГЇГ°Г®Г¬ГҐГ¦ ГЇГ®Г«Г®ГўГ»Гµ ГЈГіГЎ ГЁ ВёГ°Г§Г ГҐГІ Г­Г  Г­ВёГ¬.", "ГЄГ°ГҐГЇГЄГ® Г¦Г¬ВёГІГ±[ya] ГЄ Г«ГЁГ¶Гі [P] ГЇГ°Г®Г¬ГҐГ¦Г­Г®Г±ГІГјГѕ, ГўГ»ГЈГЁГЎГ [ya] Г±ГЇГЁГ­Гі.", "Г­Г Г±ГЁГ«ГіГҐГІ Г«ГЁГ¶Г® [P] ГЎГ»Г±ГІГ°Г»Г¬ГЁ Г¤ГўГЁГ¦ГҐГ­ГЁ[ya]Г¬ГЁ ГІГ Г§Г .", "ГЁГЈГ°Г ГҐГІГ±[ya] Г± Г°Г®ГІГЁГЄГ®Г¬ [P], ГҐГ«Г®Г§[ya] ГЇГ® Г­ГҐГ¬Гі ГўГ«Г ГЈГ Г«ГЁГ№ГҐГ¬.", "Г¬ГҐГ¤Г«ГҐГ­Г­Г® ГЇГ°Г®ГўГ®Г¤ГЁГІ ГЇГ°Г®Г¬ГҐГ¦Г­Г®Г±ГІГјГѕ ГЇГ® Г«ГЁГ¶Гі [P].", "Г°Г Г§Г¬Г Г§Г»ГўГ ГҐГІ Г±ГўГ®ГЁ Г±Г®ГЄГЁ ГЇГ® ГґГЁГ§ГЁГ®Г­Г®Г¬ГЁГЁ [P] Г¤ГўГЁГ¦ГҐГ­ГЁ[ya]Г¬ГЁ ГІГ Г§Г .")
 
 			if (H.lastfucked != P || H.lfhole != hole)
-				message = pick("м[ya]гко садитс[ya] [P] на лицо.", "грубо насаживаетс[ya] на лицо [P].", "садитс[ya] на лицо [P], упира[ya]сь горошинкой клитора [P.identifying_gender==FEMALE ? "ей" : "ему"] под нос.", "седлает лицо [P] своей влажной промежностью.")
+				message = pick("Г¬[ya]ГЈГЄГ® Г±Г Г¤ГЁГІГ±[ya] [P] Г­Г  Г«ГЁГ¶Г®.", "ГЈГ°ГіГЎГ® Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] Г­Г  Г«ГЁГ¶Г® [P].", "Г±Г Г¤ГЁГІГ±[ya] Г­Г  Г«ГЁГ¶Г® [P], ГіГЇГЁГ°Г [ya]Г±Гј ГЈГ®Г°Г®ГёГЁГ­ГЄГ®Г© ГЄГ«ГЁГІГ®Г°Г  [P.identifying_gender==FEMALE ? "ГҐГ©" : "ГҐГ¬Гі"] ГЇГ®Г¤ Г­Г®Г±.", "Г±ГҐГ¤Г«Г ГҐГІ Г«ГЁГ¶Г® [P] Г±ГўГ®ГҐГ© ГўГ«Г Г¦Г­Г®Г© ГЇГ°Г®Г¬ГҐГ¦Г­Г®Г±ГІГјГѕ.")
 				H.lastfucked = P
 				H.lfhole = hole
 
@@ -452,7 +452,7 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 				var/amt = rand(1,5)
 				holder.add_reagent("f_lube", amt)
 				holder.trans_to_mob(P, amt, CHEM_INGEST)
-				retaliation_message = pick("сглатывает соки [H].", "сглатывает соки [H], попавшие [P.identifying_gender==FEMALE ? "ей" : "ему"] в рот.", "глотает смазку [H].", "собирает [ya]зыком нектар [H] и проглатывет его.")
+				retaliation_message = pick("Г±ГЈГ«Г ГІГ»ГўГ ГҐГІ Г±Г®ГЄГЁ [H].", "Г±ГЈГ«Г ГІГ»ГўГ ГҐГІ Г±Г®ГЄГЁ [H], ГЇГ®ГЇГ ГўГёГЁГҐ [P.identifying_gender==FEMALE ? "ГҐГ©" : "ГҐГ¬Гі"] Гў Г°Г®ГІ.", "ГЈГ«Г®ГІГ ГҐГІ Г±Г¬Г Г§ГЄГі [H].", "Г±Г®ГЎГЁГ°Г ГҐГІ [ya]Г§Г»ГЄГ®Г¬ Г­ГҐГЄГІГ Г° [H] ГЁ ГЇГ°Г®ГЈГ«Г ГІГ»ГўГҐГІ ГҐГЈГ®.")
 				H.visible_message("<B>[P]</B> [retaliation_message]")
 			else
 				H.visible_message("<font color=purple>[H] [message]</font>")
@@ -463,7 +463,7 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 				H.arousal += 20
 				if (H.lust >= H.resistenza)
 					H.cum(H, P)
-					message = pick("Вы чувствуете, как вагинальные мышцы [H] начинают резко сокращатьс[ya].", "Вы чувствуете, как в ваш рот попадает некоторое количество э[ya]кул[ya]та [H] в процессе оргазма.", "Вы чувствуете, как влажна[ya] киска [H] резко сжимаетс[ya] на вашем лице.", "Вы чувствуете, как всё внутри [H] сжимаетс[ya], а её клитор начинает пульсировать.", "Вы чувствуете, как [H] кончает вам на лицо струйкой э[ya]кул[ya]та, оргазмиру[ya].")
+					message = pick("Г‚Г» Г·ГіГўГ±ГІГўГіГҐГІГҐ, ГЄГ ГЄ ГўГ ГЈГЁГ­Г Г«ГјГ­Г»ГҐ Г¬Г»ГёГ¶Г» [H] Г­Г Г·ГЁГ­Г ГѕГІ Г°ГҐГ§ГЄГ® Г±Г®ГЄГ°Г Г№Г ГІГјГ±[ya].", "Г‚Г» Г·ГіГўГ±ГІГўГіГҐГІГҐ, ГЄГ ГЄ Гў ГўГ Гё Г°Г®ГІ ГЇГ®ГЇГ Г¤Г ГҐГІ Г­ГҐГЄГ®ГІГ®Г°Г®ГҐ ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® ГЅ[ya]ГЄГіГ«[ya]ГІГ  [H] Гў ГЇГ°Г®Г¶ГҐГ±Г±ГҐ Г®Г°ГЈГ Г§Г¬Г .", "Г‚Г» Г·ГіГўГ±ГІГўГіГҐГІГҐ, ГЄГ ГЄ ГўГ«Г Г¦Г­Г [ya] ГЄГЁГ±ГЄГ  [H] Г°ГҐГ§ГЄГ® Г±Г¦ГЁГ¬Г ГҐГІГ±[ya] Г­Г  ГўГ ГёГҐГ¬ Г«ГЁГ¶ГҐ.", "Г‚Г» Г·ГіГўГ±ГІГўГіГҐГІГҐ, ГЄГ ГЄ ГўГ±Вё ГўГ­ГіГІГ°ГЁ [H] Г±Г¦ГЁГ¬Г ГҐГІГ±[ya], Г  ГҐВё ГЄГ«ГЁГІГ®Г° Г­Г Г·ГЁГ­Г ГҐГІ ГЇГіГ«ГјГ±ГЁГ°Г®ГўГ ГІГј.", "Г‚Г» Г·ГіГўГ±ГІГўГіГҐГІГҐ, ГЄГ ГЄ [H] ГЄГ®Г­Г·Г ГҐГІ ГўГ Г¬ Г­Г  Г«ГЁГ¶Г® Г±ГІГ°ГіГ©ГЄГ®Г© ГЅ[ya]ГЄГіГ«[ya]ГІГ , Г®Г°ГЈГ Г§Г¬ГЁГ°Гі[ya].")
 					to_chat(P, message)
 					var/datum/reagents/holder = new
 					var/amt = rand(20,30)
@@ -476,19 +476,19 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 			if(P.a_intent == I_HURT)
 				H.apply_damage(5, BRUTE, BP_GROIN)
 				blood_splatter(src,H,0)
-				retaliation_message = pick("сильно кусает [H] за ногу.", "сжимает зубы между ног [H].", "злобно смотрит из-под колен [H], скал[ya] окровавленные зубы.", "изо всех сил пытаетс[ya] вырватьс[ya] из-под ног [H].")
+				retaliation_message = pick("Г±ГЁГ«ГјГ­Г® ГЄГіГ±Г ГҐГІ [H] Г§Г  Г­Г®ГЈГі.", "Г±Г¦ГЁГ¬Г ГҐГІ Г§ГіГЎГ» Г¬ГҐГ¦Г¤Гі Г­Г®ГЈ [H].", "Г§Г«Г®ГЎГ­Г® Г±Г¬Г®ГІГ°ГЁГІ ГЁГ§-ГЇГ®Г¤ ГЄГ®Г«ГҐГ­ [H], Г±ГЄГ Г«[ya] Г®ГЄГ°Г®ГўГ ГўГ«ГҐГ­Г­Г»ГҐ Г§ГіГЎГ».", "ГЁГ§Г® ГўГ±ГҐГµ Г±ГЁГ« ГЇГ»ГІГ ГҐГІГ±[ya] ГўГ»Г°ГўГ ГІГјГ±[ya] ГЁГ§-ГЇГ®Г¤ Г­Г®ГЈ [H].")
 				H.visible_message("<font color=red>[P] [retaliation_message]</font>")
 
 /* FORCELICK */
 
 		if("forcelick")
 
-			message = pick("заставл[ya]ет [P] отлизывать.", "принуждает [P] вылизывать лоно.")
+			message = pick("Г§Г Г±ГІГ ГўГ«[ya]ГҐГІ [P] Г®ГІГ«ГЁГ§Г»ГўГ ГІГј.", "ГЇГ°ГЁГ­ГіГ¦Г¤Г ГҐГІ [P] ГўГ»Г«ГЁГ§Г»ГўГ ГІГј Г«Г®Г­Г®.")
 			if (prob(35))
-				message = pick("сильно прижимает голову [P] к себе.", "трахает рот и нос [P], работа[ya] тазом.", "насилует физиономию [P], вцепившись в [P.identifying_gender==FEMALE ? "её" : "его"] голову.", "задерживает голову [P] у своего влагалища, наслажда[ya]сь работой [ya]зыка.", "грубо сжимает пальцы на голове [P], когда [P.identifying_gender==FEMALE ? "её" : "его"] [ya]зык погружаетс[ya] глубже.")
+				message = pick("Г±ГЁГ«ГјГ­Г® ГЇГ°ГЁГ¦ГЁГ¬Г ГҐГІ ГЈГ®Г«Г®ГўГі [P] ГЄ Г±ГҐГЎГҐ.", "ГІГ°Г ГµГ ГҐГІ Г°Г®ГІ ГЁ Г­Г®Г± [P], Г°Г ГЎГ®ГІГ [ya] ГІГ Г§Г®Г¬.", "Г­Г Г±ГЁГ«ГіГҐГІ ГґГЁГ§ГЁГ®Г­Г®Г¬ГЁГѕ [P], ГўГ¶ГҐГЇГЁГўГёГЁГ±Гј Гў [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] ГЈГ®Г«Г®ГўГі.", "Г§Г Г¤ГҐГ°Г¦ГЁГўГ ГҐГІ ГЈГ®Г«Г®ГўГі [P] Гі Г±ГўГ®ГҐГЈГ® ГўГ«Г ГЈГ Г«ГЁГ№Г , Г­Г Г±Г«Г Г¦Г¤Г [ya]Г±Гј Г°Г ГЎГ®ГІГ®Г© [ya]Г§Г»ГЄГ .", "ГЈГ°ГіГЎГ® Г±Г¦ГЁГ¬Г ГҐГІ ГЇГ Г«ГјГ¶Г» Г­Г  ГЈГ®Г«Г®ГўГҐ [P], ГЄГ®ГЈГ¤Г  [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] [ya]Г§Г»ГЄ ГЇГ®ГЈГ°ГіГ¦Г ГҐГІГ±[ya] ГЈГ«ГіГЎГ¦ГҐ.")
 
 			if (H.lastfucked != P || H.lfhole != hole)
-				message = pick("м[ya]гко наклон[ya]ет [P] к своей писечке.", "грубо хватает голову [P] и прислон[ya]ет к своей промежности.", "наклон[ya]ет лицо [P], погружа[ya] [P.identifying_gender==FEMALE ? "её" : "его"] нос в свою мокренькую киску.", "прислон[ya]ет рот [P] к своей влажной промежности.")
+				message = pick("Г¬[ya]ГЈГЄГ® Г­Г ГЄГ«Г®Г­[ya]ГҐГІ [P] ГЄ Г±ГўГ®ГҐГ© ГЇГЁГ±ГҐГ·ГЄГҐ.", "ГЈГ°ГіГЎГ® ГµГўГ ГІГ ГҐГІ ГЈГ®Г«Г®ГўГі [P] ГЁ ГЇГ°ГЁГ±Г«Г®Г­[ya]ГҐГІ ГЄ Г±ГўГ®ГҐГ© ГЇГ°Г®Г¬ГҐГ¦Г­Г®Г±ГІГЁ.", "Г­Г ГЄГ«Г®Г­[ya]ГҐГІ Г«ГЁГ¶Г® [P], ГЇГ®ГЈГ°ГіГ¦Г [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г­Г®Г± Гў Г±ГўГ®Гѕ Г¬Г®ГЄГ°ГҐГ­ГјГЄГіГѕ ГЄГЁГ±ГЄГі.", "ГЇГ°ГЁГ±Г«Г®Г­[ya]ГҐГІ Г°Г®ГІ [P] ГЄ Г±ГўГ®ГҐГ© ГўГ«Г Г¦Г­Г®Г© ГЇГ°Г®Г¬ГҐГ¦Г­Г®Г±ГІГЁ.")
 				H.lastfucked = P
 				H.lfhole = hole
 
@@ -504,7 +504,7 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 				var/amt = rand(1,5)
 				holder.add_reagent("f_lube", amt)
 				holder.trans_to_mob(P, amt, CHEM_INGEST)
-				retaliation_message = pick("сглатывает соки [H].", "сглатывает соки [H], попавшие [P.identifying_gender==FEMALE ? "ей" : "ему"] в рот.", "глотает смазку [H].", "собирает [ya]зыком нектар [H] и проглатывет его.")
+				retaliation_message = pick("Г±ГЈГ«Г ГІГ»ГўГ ГҐГІ Г±Г®ГЄГЁ [H].", "Г±ГЈГ«Г ГІГ»ГўГ ГҐГІ Г±Г®ГЄГЁ [H], ГЇГ®ГЇГ ГўГёГЁГҐ [P.identifying_gender==FEMALE ? "ГҐГ©" : "ГҐГ¬Гі"] Гў Г°Г®ГІ.", "ГЈГ«Г®ГІГ ГҐГІ Г±Г¬Г Г§ГЄГі [H].", "Г±Г®ГЎГЁГ°Г ГҐГІ [ya]Г§Г»ГЄГ®Г¬ Г­ГҐГЄГІГ Г° [H] ГЁ ГЇГ°Г®ГЈГ«Г ГІГ»ГўГҐГІ ГҐГЈГ®.")
 				H.visible_message("<B>[P]</B> [retaliation_message]")
 			else
 				H.visible_message("<font color=purple>[H] [message]</font>")
@@ -515,7 +515,7 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 				H.arousal += 20
 				if (H.lust >= H.resistenza)
 					H.cum(H, P)
-					message = pick("Вы чувствуете, как вагинальные мышцы [H] начинают резко сокращатьс[ya].", "Вы чувствуете, как в ваш рот попадает некоторое количество э[ya]кул[ya]та [H] в процессе оргазма.", "Вы чувствуете, как влажна[ya] киска [H] резко сжимает ваш [ya]зычок внутри себ[ya].", "Вы чувствуете, как всё внутри [H] сжимаетс[ya], а [H.identifying_gender==FEMALE ? "её" : "его"] клитор начинает пульсировать.", "Вы чувствуете, как [H] кончает вам в рот струйкой э[ya]кул[ya]та, оргазмиру[ya].")
+					message = pick("Г‚Г» Г·ГіГўГ±ГІГўГіГҐГІГҐ, ГЄГ ГЄ ГўГ ГЈГЁГ­Г Г«ГјГ­Г»ГҐ Г¬Г»ГёГ¶Г» [H] Г­Г Г·ГЁГ­Г ГѕГІ Г°ГҐГ§ГЄГ® Г±Г®ГЄГ°Г Г№Г ГІГјГ±[ya].", "Г‚Г» Г·ГіГўГ±ГІГўГіГҐГІГҐ, ГЄГ ГЄ Гў ГўГ Гё Г°Г®ГІ ГЇГ®ГЇГ Г¤Г ГҐГІ Г­ГҐГЄГ®ГІГ®Г°Г®ГҐ ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® ГЅ[ya]ГЄГіГ«[ya]ГІГ  [H] Гў ГЇГ°Г®Г¶ГҐГ±Г±ГҐ Г®Г°ГЈГ Г§Г¬Г .", "Г‚Г» Г·ГіГўГ±ГІГўГіГҐГІГҐ, ГЄГ ГЄ ГўГ«Г Г¦Г­Г [ya] ГЄГЁГ±ГЄГ  [H] Г°ГҐГ§ГЄГ® Г±Г¦ГЁГ¬Г ГҐГІ ГўГ Гё [ya]Г§Г»Г·Г®ГЄ ГўГ­ГіГІГ°ГЁ Г±ГҐГЎ[ya].", "Г‚Г» Г·ГіГўГ±ГІГўГіГҐГІГҐ, ГЄГ ГЄ ГўГ±Вё ГўГ­ГіГІГ°ГЁ [H] Г±Г¦ГЁГ¬Г ГҐГІГ±[ya], Г  [H.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] ГЄГ«ГЁГІГ®Г° Г­Г Г·ГЁГ­Г ГҐГІ ГЇГіГ«ГјГ±ГЁГ°Г®ГўГ ГІГј.", "Г‚Г» Г·ГіГўГ±ГІГўГіГҐГІГҐ, ГЄГ ГЄ [H] ГЄГ®Г­Г·Г ГҐГІ ГўГ Г¬ Гў Г°Г®ГІ Г±ГІГ°ГіГ©ГЄГ®Г© ГЅ[ya]ГЄГіГ«[ya]ГІГ , Г®Г°ГЈГ Г§Г¬ГЁГ°Гі[ya].")
 					to_chat(P, message)
 					var/datum/reagents/holder = new
 					var/amt = rand(20,30)
@@ -528,30 +528,30 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 			if(P.a_intent == I_HURT)
 				H.apply_damage(5, BRUTE, BP_GROIN)
 				blood_splatter(src,H,0)
-				retaliation_message = pick("[ya]ростно кусает [H] за ноги.", "сжимает зубами киску [H].", "выгл[ya]дит очень [P.identifying_gender==FEMALE ? "недовольной" : "недовольным"] своим нахождением здесь.", "изо всех сил пытаетс[ya] вырватьс[ya] из-под бёдер [H].")
+				retaliation_message = pick("[ya]Г°Г®Г±ГІГ­Г® ГЄГіГ±Г ГҐГІ [H] Г§Г  Г­Г®ГЈГЁ.", "Г±Г¦ГЁГ¬Г ГҐГІ Г§ГіГЎГ Г¬ГЁ ГЄГЁГ±ГЄГі [H].", "ГўГ»ГЈГ«[ya]Г¤ГЁГІ Г®Г·ГҐГ­Гј [P.identifying_gender==FEMALE ? "Г­ГҐГ¤Г®ГўГ®Г«ГјГ­Г®Г©" : "Г­ГҐГ¤Г®ГўГ®Г«ГјГ­Г»Г¬"] Г±ГўГ®ГЁГ¬ Г­Г ГµГ®Г¦Г¤ГҐГ­ГЁГҐГ¬ Г§Г¤ГҐГ±Гј.", "ГЁГ§Г® ГўГ±ГҐГµ Г±ГЁГ« ГЇГ»ГІГ ГҐГІГ±[ya] ГўГ»Г°ГўГ ГІГјГ±[ya] ГЁГ§-ГЇГ®Г¤ ГЎВёГ¤ГҐГ° [H].")
 				H.visible_message("<font color=red>[P] [retaliation_message]</font>")
 
 /* FINGERING */
 
 		if("fingering")
 			if (P != H)
-				message = pick("вводит два пальца в вагину [P].", "трахает [P] пальцами.")
+				message = pick("ГўГўГ®Г¤ГЁГІ Г¤ГўГ  ГЇГ Г«ГјГ¶Г  Гў ГўГ ГЈГЁГ­Гі [P].", "ГІГ°Г ГµГ ГҐГІ [P] ГЇГ Г«ГјГ¶Г Г¬ГЁ.")
 				H.arousal += 12
 			else
-				message = pick("вводит два пальца в свою вагину.", "трахает себ[ya] пальцами.")
+				message = pick("ГўГўГ®Г¤ГЁГІ Г¤ГўГ  ГЇГ Г«ГјГ¶Г  Гў Г±ГўГ®Гѕ ГўГ ГЈГЁГ­Гі.", "ГІГ°Г ГµГ ГҐГІ Г±ГҐГЎ[ya] ГЇГ Г«ГјГ¶Г Г¬ГЁ.")
 			if (prob(35))
 				if(P.species.get_bodytype() == SPECIES_UNATHI || P.species.get_bodytype() == SPECIES_HUMAN || P.species.get_bodytype() == SPECIES_HUMAN_VATBORN || P.species.get_bodytype() == SPECIES_RAPALA || P.species.get_bodytype() == SPECIES_VASILISSAN || P.species.get_bodytype() == SPECIES_AKULA || P.species.get_bodytype() == SPECIES_PROTEAN)
 					if (P != H)
-						message = pick("вводит два пальца в вагину [P].", "теребит горошину [P].", "тычет пальцами [P].", "ласкает [P] пальчиками.", "нежно поглаживает промежность [P].", "погружает пальцы глубоко в [P], ласка[ya] [P.identifying_gender==FEMALE ? "её" : "его"] изнутри.", "изучает глубины [P].")
+						message = pick("ГўГўГ®Г¤ГЁГІ Г¤ГўГ  ГЇГ Г«ГјГ¶Г  Гў ГўГ ГЈГЁГ­Гі [P].", "ГІГҐГ°ГҐГЎГЁГІ ГЈГ®Г°Г®ГёГЁГ­Гі [P].", "ГІГ»Г·ГҐГІ ГЇГ Г«ГјГ¶Г Г¬ГЁ [P].", "Г«Г Г±ГЄГ ГҐГІ [P] ГЇГ Г«ГјГ·ГЁГЄГ Г¬ГЁ.", "Г­ГҐГ¦Г­Г® ГЇГ®ГЈГ«Г Г¦ГЁГўГ ГҐГІ ГЇГ°Г®Г¬ГҐГ¦Г­Г®Г±ГІГј [P].", "ГЇГ®ГЈГ°ГіГ¦Г ГҐГІ ГЇГ Г«ГјГ¶Г» ГЈГ«ГіГЎГ®ГЄГ® Гў [P], Г«Г Г±ГЄГ [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] ГЁГ§Г­ГіГІГ°ГЁ.", "ГЁГ§ГіГ·Г ГҐГІ ГЈГ«ГіГЎГЁГ­Г» [P].")
 						H.arousal += 12
 					else
-						message = pick("вводит два пальца в свою вагину.", "теребит свою горошину.", "тычет в себ[ya] пальцами.", "ласкает себ[ya] пальчиками.", "нежно поглаживает свою промежность.", "погружает пальцы глубоко во влагалище, ласка[ya] себ[ya] изнутри.", "изучает свои глубины.")
+						message = pick("ГўГўГ®Г¤ГЁГІ Г¤ГўГ  ГЇГ Г«ГјГ¶Г  Гў Г±ГўГ®Гѕ ГўГ ГЈГЁГ­Гі.", "ГІГҐГ°ГҐГЎГЁГІ Г±ГўГ®Гѕ ГЈГ®Г°Г®ГёГЁГ­Гі.", "ГІГ»Г·ГҐГІ Гў Г±ГҐГЎ[ya] ГЇГ Г«ГјГ¶Г Г¬ГЁ.", "Г«Г Г±ГЄГ ГҐГІ Г±ГҐГЎ[ya] ГЇГ Г«ГјГ·ГЁГЄГ Г¬ГЁ.", "Г­ГҐГ¦Г­Г® ГЇГ®ГЈГ«Г Г¦ГЁГўГ ГҐГІ Г±ГўГ®Гѕ ГЇГ°Г®Г¬ГҐГ¦Г­Г®Г±ГІГј.", "ГЇГ®ГЈГ°ГіГ¦Г ГҐГІ ГЇГ Г«ГјГ¶Г» ГЈГ«ГіГЎГ®ГЄГ® ГўГ® ГўГ«Г ГЈГ Г«ГЁГ№ГҐ, Г«Г Г±ГЄГ [ya] Г±ГҐГЎ[ya] ГЁГ§Г­ГіГІГ°ГЁ.", "ГЁГ§ГіГ·Г ГҐГІ Г±ГўГ®ГЁ ГЈГ«ГіГЎГЁГ­Г».")
 				if(P.species.get_bodytype() == SPECIES_TAJ || P.species.get_bodytype() == SPECIES_VULPKANIN || P.species.get_bodytype() == SPECIES_ZORREN_HIGH || P.species.get_bodytype() == SPECIES_ZORREN_FLAT || P.species.get_bodytype() == SPECIES_SERGAL)
 					if (P != H)
-						message = pick("вводит два пальца в пушистую вагину [P].", "теребит горошину [P].", "тычет пальцами [P].", "ласкает [P] пальчиками.", "нежно поглаживает пушистую промежность [P].", "погружает пальцы глубоко в [P], ласка[ya] [P.identifying_gender==FEMALE ? "её" : "его"] изнутри.", "изучает глубины [P].")
+						message = pick("ГўГўГ®Г¤ГЁГІ Г¤ГўГ  ГЇГ Г«ГјГ¶Г  Гў ГЇГіГёГЁГ±ГІГіГѕ ГўГ ГЈГЁГ­Гі [P].", "ГІГҐГ°ГҐГЎГЁГІ ГЈГ®Г°Г®ГёГЁГ­Гі [P].", "ГІГ»Г·ГҐГІ ГЇГ Г«ГјГ¶Г Г¬ГЁ [P].", "Г«Г Г±ГЄГ ГҐГІ [P] ГЇГ Г«ГјГ·ГЁГЄГ Г¬ГЁ.", "Г­ГҐГ¦Г­Г® ГЇГ®ГЈГ«Г Г¦ГЁГўГ ГҐГІ ГЇГіГёГЁГ±ГІГіГѕ ГЇГ°Г®Г¬ГҐГ¦Г­Г®Г±ГІГј [P].", "ГЇГ®ГЈГ°ГіГ¦Г ГҐГІ ГЇГ Г«ГјГ¶Г» ГЈГ«ГіГЎГ®ГЄГ® Гў [P], Г«Г Г±ГЄГ [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] ГЁГ§Г­ГіГІГ°ГЁ.", "ГЁГ§ГіГ·Г ГҐГІ ГЈГ«ГіГЎГЁГ­Г» [P].")
 						H.arousal += 12
 					else
-						message = pick("вводит два пальца в свою пушистую вагину.", "теребит свою горошину.", "тычет в себ[ya] пальцами.", "ласкает себ[ya] пальчиками.", "нежно поглаживает свою пушистую промежность.", "погружает пальцы глубоко во влагалище, ласка[ya] себ[ya] изнутри.", "изучает свои глубины.")
+						message = pick("ГўГўГ®Г¤ГЁГІ Г¤ГўГ  ГЇГ Г«ГјГ¶Г  Гў Г±ГўГ®Гѕ ГЇГіГёГЁГ±ГІГіГѕ ГўГ ГЈГЁГ­Гі.", "ГІГҐГ°ГҐГЎГЁГІ Г±ГўГ®Гѕ ГЈГ®Г°Г®ГёГЁГ­Гі.", "ГІГ»Г·ГҐГІ Гў Г±ГҐГЎ[ya] ГЇГ Г«ГјГ¶Г Г¬ГЁ.", "Г«Г Г±ГЄГ ГҐГІ Г±ГҐГЎ[ya] ГЇГ Г«ГјГ·ГЁГЄГ Г¬ГЁ.", "Г­ГҐГ¦Г­Г® ГЇГ®ГЈГ«Г Г¦ГЁГўГ ГҐГІ Г±ГўГ®Гѕ ГЇГіГёГЁГ±ГІГіГѕ ГЇГ°Г®Г¬ГҐГ¦Г­Г®Г±ГІГј.", "ГЇГ®ГЈГ°ГіГ¦Г ГҐГІ ГЇГ Г«ГјГ¶Г» ГЈГ«ГіГЎГ®ГЄГ® ГўГ® ГўГ«Г ГЈГ Г«ГЁГ№ГҐ, Г«Г Г±ГЄГ [ya] Г±ГҐГЎ[ya] ГЁГ§Г­ГіГІГ°ГЁ.", "ГЁГ§ГіГ·Г ГҐГІ Г±ГўГ®ГЁ ГЈГ«ГіГЎГЁГ­Г».")
 
 			if (H.lastfucked != P || H.lfhole != hole)
 				H.lastfucked = P
@@ -571,7 +571,7 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 				P.arousal += 16
 				if (P.lust >= P.resistenza)
 					P.cum(P, H)
-					message = pick("Вы чувствуете, как вагинальные мышцы [P] начинают резко сокращатьс[ya] вокруг ваших пальцев.", "Вы чувствуете, как ребристые стенки [P] крепко сжимают ваши промокшие пальцы.", "Вы чувствуете, как влажна[ya] киска [P] резко сжимает ваши пальцы внутри себ[ya].", "Вы чувствуете, что вашим пальцам становитс[ya] тесно внутри гор[ya]чей писечки [P].", "Вы чувствуете, как по внутренней стороне вашей ладони стекает тёпла[ya] струйка э[ya]кул[ya]та [P].")
+					message = pick("Г‚Г» Г·ГіГўГ±ГІГўГіГҐГІГҐ, ГЄГ ГЄ ГўГ ГЈГЁГ­Г Г«ГјГ­Г»ГҐ Г¬Г»ГёГ¶Г» [P] Г­Г Г·ГЁГ­Г ГѕГІ Г°ГҐГ§ГЄГ® Г±Г®ГЄГ°Г Г№Г ГІГјГ±[ya] ГўГ®ГЄГ°ГіГЈ ГўГ ГёГЁГµ ГЇГ Г«ГјГ¶ГҐГў.", "Г‚Г» Г·ГіГўГ±ГІГўГіГҐГІГҐ, ГЄГ ГЄ Г°ГҐГЎГ°ГЁГ±ГІГ»ГҐ Г±ГІГҐГ­ГЄГЁ [P] ГЄГ°ГҐГЇГЄГ® Г±Г¦ГЁГ¬Г ГѕГІ ГўГ ГёГЁ ГЇГ°Г®Г¬Г®ГЄГёГЁГҐ ГЇГ Г«ГјГ¶Г».", "Г‚Г» Г·ГіГўГ±ГІГўГіГҐГІГҐ, ГЄГ ГЄ ГўГ«Г Г¦Г­Г [ya] ГЄГЁГ±ГЄГ  [P] Г°ГҐГ§ГЄГ® Г±Г¦ГЁГ¬Г ГҐГІ ГўГ ГёГЁ ГЇГ Г«ГјГ¶Г» ГўГ­ГіГІГ°ГЁ Г±ГҐГЎ[ya].", "Г‚Г» Г·ГіГўГ±ГІГўГіГҐГІГҐ, Г·ГІГ® ГўГ ГёГЁГ¬ ГЇГ Г«ГјГ¶Г Г¬ Г±ГІГ Г­Г®ГўГЁГІГ±[ya] ГІГҐГ±Г­Г® ГўГ­ГіГІГ°ГЁ ГЈГ®Г°[ya]Г·ГҐГ© ГЇГЁГ±ГҐГ·ГЄГЁ [P].", "Г‚Г» Г·ГіГўГ±ГІГўГіГҐГІГҐ, ГЄГ ГЄ ГЇГ® ГўГ­ГіГІГ°ГҐГ­Г­ГҐГ© Г±ГІГ®Г°Г®Г­ГҐ ГўГ ГёГҐГ© Г«Г Г¤Г®Г­ГЁ Г±ГІГҐГЄГ ГҐГІ ГІВёГЇГ«Г [ya] Г±ГІГ°ГіГ©ГЄГ  ГЅ[ya]ГЄГіГ«[ya]ГІГ  [P].")
 					to_chat(H, message)
 				else
 					P.moan()
@@ -582,15 +582,15 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 
 		if("jerk")
 			if (P != H)
-				message = pick("стимулирует инструмент [P] возвратно-поступательными движени[ya]ми.", "дрочит орган [P] в быстром темпе.", "медленно ласкает член [P] пальчиками.", "надрачивает [P] кулачком.", "дрочит член [P], заключив его в колечко из двух пальцев.", "медленно стимулирует орган [P].", "дрочит [P], обхватив его член рукой.", "надрачивает член [P].", "поглаживает головку члена [P] большим пальцем.", "дёргает половой орган [P].", "передёргивает [P].", "дрочит [P].")
+				message = pick("Г±ГІГЁГ¬ГіГ«ГЁГ°ГіГҐГІ ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІ [P] ГўГ®Г§ГўГ°Г ГІГ­Г®-ГЇГ®Г±ГІГіГЇГ ГІГҐГ«ГјГ­Г»Г¬ГЁ Г¤ГўГЁГ¦ГҐГ­ГЁ[ya]Г¬ГЁ.", "Г¤Г°Г®Г·ГЁГІ Г®Г°ГЈГ Г­ [P] Гў ГЎГ»Г±ГІГ°Г®Г¬ ГІГҐГ¬ГЇГҐ.", "Г¬ГҐГ¤Г«ГҐГ­Г­Г® Г«Г Г±ГЄГ ГҐГІ Г·Г«ГҐГ­ [P] ГЇГ Г«ГјГ·ГЁГЄГ Г¬ГЁ.", "Г­Г Г¤Г°Г Г·ГЁГўГ ГҐГІ [P] ГЄГіГ«Г Г·ГЄГ®Г¬.", "Г¤Г°Г®Г·ГЁГІ Г·Г«ГҐГ­ [P], Г§Г ГЄГ«ГѕГ·ГЁГў ГҐГЈГ® Гў ГЄГ®Г«ГҐГ·ГЄГ® ГЁГ§ Г¤ГўГіГµ ГЇГ Г«ГјГ¶ГҐГў.", "Г¬ГҐГ¤Г«ГҐГ­Г­Г® Г±ГІГЁГ¬ГіГ«ГЁГ°ГіГҐГІ Г®Г°ГЈГ Г­ [P].", "Г¤Г°Г®Г·ГЁГІ [P], Г®ГЎГµГўГ ГІГЁГў ГҐГЈГ® Г·Г«ГҐГ­ Г°ГіГЄГ®Г©.", "Г­Г Г¤Г°Г Г·ГЁГўГ ГҐГІ Г·Г«ГҐГ­ [P].", "ГЇГ®ГЈГ«Г Г¦ГЁГўГ ГҐГІ ГЈГ®Г«Г®ГўГЄГі Г·Г«ГҐГ­Г  [P] ГЎГ®Г«ГјГёГЁГ¬ ГЇГ Г«ГјГ¶ГҐГ¬.", "Г¤ВёГ°ГЈГ ГҐГІ ГЇГ®Г«Г®ГўГ®Г© Г®Г°ГЈГ Г­ [P].", "ГЇГҐГ°ГҐГ¤ВёГ°ГЈГЁГўГ ГҐГІ [P].", "Г¤Г°Г®Г·ГЁГІ [P].")
 				H.arousal += 10
 			else
-				message = pick("стимулирует свой инструмент возвратно-поступательными движени[ya]ми.", "дрочит свой орган в быстром темпе.", "медленно ласкает свой член пальчиками.", "надрачивает себе кулачком.", "дрочит свой член, заключив его в колечко из двух пальцев.", "медленно стимулирует свой орган.", "дрочит себе, обхватив свой член рукой.", "надрачивает член [P.identifying_gender == MALE ? "самому" : "самой"] себе.", "поглаживает головку своего члена большим пальцем.", "дёргает свой половой орган.", "передёргивает себе.", "дрочит себе.")
+				message = pick("Г±ГІГЁГ¬ГіГ«ГЁГ°ГіГҐГІ Г±ГўГ®Г© ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІ ГўГ®Г§ГўГ°Г ГІГ­Г®-ГЇГ®Г±ГІГіГЇГ ГІГҐГ«ГјГ­Г»Г¬ГЁ Г¤ГўГЁГ¦ГҐГ­ГЁ[ya]Г¬ГЁ.", "Г¤Г°Г®Г·ГЁГІ Г±ГўГ®Г© Г®Г°ГЈГ Г­ Гў ГЎГ»Г±ГІГ°Г®Г¬ ГІГҐГ¬ГЇГҐ.", "Г¬ГҐГ¤Г«ГҐГ­Г­Г® Г«Г Г±ГЄГ ГҐГІ Г±ГўГ®Г© Г·Г«ГҐГ­ ГЇГ Г«ГјГ·ГЁГЄГ Г¬ГЁ.", "Г­Г Г¤Г°Г Г·ГЁГўГ ГҐГІ Г±ГҐГЎГҐ ГЄГіГ«Г Г·ГЄГ®Г¬.", "Г¤Г°Г®Г·ГЁГІ Г±ГўГ®Г© Г·Г«ГҐГ­, Г§Г ГЄГ«ГѕГ·ГЁГў ГҐГЈГ® Гў ГЄГ®Г«ГҐГ·ГЄГ® ГЁГ§ Г¤ГўГіГµ ГЇГ Г«ГјГ¶ГҐГў.", "Г¬ГҐГ¤Г«ГҐГ­Г­Г® Г±ГІГЁГ¬ГіГ«ГЁГ°ГіГҐГІ Г±ГўГ®Г© Г®Г°ГЈГ Г­.", "Г¤Г°Г®Г·ГЁГІ Г±ГҐГЎГҐ, Г®ГЎГµГўГ ГІГЁГў Г±ГўГ®Г© Г·Г«ГҐГ­ Г°ГіГЄГ®Г©.", "Г­Г Г¤Г°Г Г·ГЁГўГ ГҐГІ Г·Г«ГҐГ­ [P.identifying_gender == MALE ? "Г±Г Г¬Г®Г¬Гі" : "Г±Г Г¬Г®Г©"] Г±ГҐГЎГҐ.", "ГЇГ®ГЈГ«Г Г¦ГЁГўГ ГҐГІ ГЈГ®Г«Г®ГўГЄГі Г±ГўГ®ГҐГЈГ® Г·Г«ГҐГ­Г  ГЎГ®Г«ГјГёГЁГ¬ ГЇГ Г«ГјГ¶ГҐГ¬.", "Г¤ВёГ°ГЈГ ГҐГІ Г±ГўГ®Г© ГЇГ®Г«Г®ГўГ®Г© Г®Г°ГЈГ Г­.", "ГЇГҐГ°ГҐГ¤ВёГ°ГЈГЁГўГ ГҐГІ Г±ГҐГЎГҐ.", "Г¤Г°Г®Г·ГЁГІ Г±ГҐГЎГҐ.")
 			if (H.lastfucked != P || H.lfhole != hole)
 				if (P != H)
-					message = pick("м[ya]гко обхватывает член [P] рукой.", "берёт член [P] в руку.", "берёт орган [P] в руку и начинает надрачивать [P].")
+					message = pick("Г¬[ya]ГЈГЄГ® Г®ГЎГµГўГ ГІГ»ГўГ ГҐГІ Г·Г«ГҐГ­ [P] Г°ГіГЄГ®Г©.", "ГЎГҐГ°ВёГІ Г·Г«ГҐГ­ [P] Гў Г°ГіГЄГі.", "ГЎГҐГ°ВёГІ Г®Г°ГЈГ Г­ [P] Гў Г°ГіГЄГі ГЁ Г­Г Г·ГЁГ­Г ГҐГІ Г­Г Г¤Г°Г Г·ГЁГўГ ГІГј [P].")
 				else
-					message = pick("м[ya]гко обхватывает свой член рукой.", "берёт свой член в руку.", "берёт свой орган в руку и начинает надрачивать себе.")
+					message = pick("Г¬[ya]ГЈГЄГ® Г®ГЎГµГўГ ГІГ»ГўГ ГҐГІ Г±ГўГ®Г© Г·Г«ГҐГ­ Г°ГіГЄГ®Г©.", "ГЎГҐГ°ВёГІ Г±ГўГ®Г© Г·Г«ГҐГ­ Гў Г°ГіГЄГі.", "ГЎГҐГ°ВёГІ Г±ГўГ®Г© Г®Г°ГЈГ Г­ Гў Г°ГіГЄГі ГЁ Г­Г Г·ГЁГ­Г ГҐГІ Г­Г Г¤Г°Г Г·ГЁГўГ ГІГј Г±ГҐГЎГҐ.")
 				H.lastfucked = P
 				H.lfhole = hole
 
@@ -618,47 +618,47 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 		if("blowjob")
 
 			if(H.species.get_bodytype() == SPECIES_HUMAN || H.species.get_bodytype() == SPECIES_HUMAN_VATBORN || H.species.get_bodytype() == SPECIES_RAPALA || H.species.get_bodytype() == SPECIES_VASILISSAN || H.species.get_bodytype() == SPECIES_PROTEAN || H.species.get_bodytype() == SPECIES_SKRELL)
-				message = pick("отсасывает [P].", "сосет член [P].", "стимулирует член [P] [ya]зыком.")
+				message = pick("Г®ГІГ±Г Г±Г»ГўГ ГҐГІ [P].", "Г±Г®Г±ГҐГІ Г·Г«ГҐГ­ [P].", "Г±ГІГЁГ¬ГіГ«ГЁГ°ГіГҐГІ Г·Г«ГҐГ­ [P] [ya]Г§Г»ГЄГ®Г¬.")
 				if (prob(35))
-					message = pick("целует орган [P], прикрыв глаза от удовольстви[ya].", "постанывает, прикрыв глаза, не вынима[ya] член [P] изо рта.", "ласкает член [P] [ya]зычком, придержива[ya] его рукой.", "облизывает член [P] по всей длине.", "погружает член [P] все глубже себе в рот.", "кончиком [ya]зыка облизывает головку члена [P].", "сосёт леденец [P].", "двигает головой взад-вперёд, стимулиру[ya] член [P].", "тщательно вылизывает член [P].", "зажмурившись, полностью заглатывает малыша [P].", "ласкает член [P], помога[ya] себе руками.")
+					message = pick("Г¶ГҐГ«ГіГҐГІ Г®Г°ГЈГ Г­ [P], ГЇГ°ГЁГЄГ°Г»Гў ГЈГ«Г Г§Г  Г®ГІ ГіГ¤Г®ГўГ®Г«ГјГ±ГІГўГЁ[ya].", "ГЇГ®Г±ГІГ Г­Г»ГўГ ГҐГІ, ГЇГ°ГЁГЄГ°Г»Гў ГЈГ«Г Г§Г , Г­ГҐ ГўГ»Г­ГЁГ¬Г [ya] Г·Г«ГҐГ­ [P] ГЁГ§Г® Г°ГІГ .", "Г«Г Г±ГЄГ ГҐГІ Г·Г«ГҐГ­ [P] [ya]Г§Г»Г·ГЄГ®Г¬, ГЇГ°ГЁГ¤ГҐГ°Г¦ГЁГўГ [ya] ГҐГЈГ® Г°ГіГЄГ®Г©.", "Г®ГЎГ«ГЁГ§Г»ГўГ ГҐГІ Г·Г«ГҐГ­ [P] ГЇГ® ГўГ±ГҐГ© Г¤Г«ГЁГ­ГҐ.", "ГЇГ®ГЈГ°ГіГ¦Г ГҐГІ Г·Г«ГҐГ­ [P] ГўГ±ГҐ ГЈГ«ГіГЎГ¦ГҐ Г±ГҐГЎГҐ Гў Г°Г®ГІ.", "ГЄГ®Г­Г·ГЁГЄГ®Г¬ [ya]Г§Г»ГЄГ  Г®ГЎГ«ГЁГ§Г»ГўГ ГҐГІ ГЈГ®Г«Г®ГўГЄГі Г·Г«ГҐГ­Г  [P].", "Г±Г®Г±ВёГІ Г«ГҐГ¤ГҐГ­ГҐГ¶ [P].", "Г¤ГўГЁГЈГ ГҐГІ ГЈГ®Г«Г®ГўГ®Г© ГўГ§Г Г¤-ГўГЇГҐГ°ВёГ¤, Г±ГІГЁГ¬ГіГ«ГЁГ°Гі[ya] Г·Г«ГҐГ­ [P].", "ГІГ№Г ГІГҐГ«ГјГ­Г® ГўГ»Г«ГЁГ§Г»ГўГ ГҐГІ Г·Г«ГҐГ­ [P].", "Г§Г Г¦Г¬ГіГ°ГЁГўГёГЁГ±Гј, ГЇГ®Г«Г­Г®Г±ГІГјГѕ Г§Г ГЈГ«Г ГІГ»ГўГ ГҐГІ Г¬Г Г«Г»ГёГ  [P].", "Г«Г Г±ГЄГ ГҐГІ Г·Г«ГҐГ­ [P], ГЇГ®Г¬Г®ГЈГ [ya] Г±ГҐГЎГҐ Г°ГіГЄГ Г¬ГЁ.")
 				if (H.lastfucked != P || H.lfhole != hole)
-					message = pick("м[ya]гко обхватывает член [P] губами.", "приступает сосать член [P].")
+					message = pick("Г¬[ya]ГЈГЄГ® Г®ГЎГµГўГ ГІГ»ГўГ ГҐГІ Г·Г«ГҐГ­ [P] ГЈГіГЎГ Г¬ГЁ.", "ГЇГ°ГЁГ±ГІГіГЇГ ГҐГІ Г±Г®Г±Г ГІГј Г·Г«ГҐГ­ [P].")
 					H.lastfucked = P
 					H.lfhole = hole
 
 			if(H.species.get_bodytype() == SPECIES_UNATHI || H.species.get_bodytype() == SPECIES_AKULA || H.species.get_bodytype() == SPECIES_SERGAL || H.species.get_bodytype() == SPECIES_TESHARI)
-				message = pick("облизывает член [P].", "стимулирует орган [P] [ya]зыком.", "трёт член [P] о свой [ya]зык.", "проталкивает член [P] себе в пасть, стара[ya]сь не зацепить его зубами.", "стимулирует член [P] [ya]зыком.")
+				message = pick("Г®ГЎГ«ГЁГ§Г»ГўГ ГҐГІ Г·Г«ГҐГ­ [P].", "Г±ГІГЁГ¬ГіГ«ГЁГ°ГіГҐГІ Г®Г°ГЈГ Г­ [P] [ya]Г§Г»ГЄГ®Г¬.", "ГІГ°ВёГІ Г·Г«ГҐГ­ [P] Г® Г±ГўГ®Г© [ya]Г§Г»ГЄ.", "ГЇГ°Г®ГІГ Г«ГЄГЁГўГ ГҐГІ Г·Г«ГҐГ­ [P] Г±ГҐГЎГҐ Гў ГЇГ Г±ГІГј, Г±ГІГ Г°Г [ya]Г±Гј Г­ГҐ Г§Г Г¶ГҐГЇГЁГІГј ГҐГЈГ® Г§ГіГЎГ Г¬ГЁ.", "Г±ГІГЁГ¬ГіГ«ГЁГ°ГіГҐГІ Г·Г«ГҐГ­ [P] [ya]Г§Г»ГЄГ®Г¬.")
 				if (prob(35))
-					message = pick("облизывает орган [P], прикрыв глаза от удовольстви[ya].", "постанывает, прикрыв глаза, не вынима[ya] член [P] из пасти.", "ласкает член [P] [ya]зычком, придержива[ya] его рукой.", "облизывает член [P] по всей длине.", "погружает член [P] все глубже себе в пасть.", "кончиком [ya]зыка облизывает головку члена [P].", "облизывает леденец [P].", "двигает головой взад-вперёд, стимулиру[ya] член [P].", "тщательно вылизывает член [P].", "зажмурившись, полностью заглатывает малыша [P].", "ласкает член [P], помога[ya] себе руками.")
+					message = pick("Г®ГЎГ«ГЁГ§Г»ГўГ ГҐГІ Г®Г°ГЈГ Г­ [P], ГЇГ°ГЁГЄГ°Г»Гў ГЈГ«Г Г§Г  Г®ГІ ГіГ¤Г®ГўГ®Г«ГјГ±ГІГўГЁ[ya].", "ГЇГ®Г±ГІГ Г­Г»ГўГ ГҐГІ, ГЇГ°ГЁГЄГ°Г»Гў ГЈГ«Г Г§Г , Г­ГҐ ГўГ»Г­ГЁГ¬Г [ya] Г·Г«ГҐГ­ [P] ГЁГ§ ГЇГ Г±ГІГЁ.", "Г«Г Г±ГЄГ ГҐГІ Г·Г«ГҐГ­ [P] [ya]Г§Г»Г·ГЄГ®Г¬, ГЇГ°ГЁГ¤ГҐГ°Г¦ГЁГўГ [ya] ГҐГЈГ® Г°ГіГЄГ®Г©.", "Г®ГЎГ«ГЁГ§Г»ГўГ ГҐГІ Г·Г«ГҐГ­ [P] ГЇГ® ГўГ±ГҐГ© Г¤Г«ГЁГ­ГҐ.", "ГЇГ®ГЈГ°ГіГ¦Г ГҐГІ Г·Г«ГҐГ­ [P] ГўГ±ГҐ ГЈГ«ГіГЎГ¦ГҐ Г±ГҐГЎГҐ Гў ГЇГ Г±ГІГј.", "ГЄГ®Г­Г·ГЁГЄГ®Г¬ [ya]Г§Г»ГЄГ  Г®ГЎГ«ГЁГ§Г»ГўГ ГҐГІ ГЈГ®Г«Г®ГўГЄГі Г·Г«ГҐГ­Г  [P].", "Г®ГЎГ«ГЁГ§Г»ГўГ ГҐГІ Г«ГҐГ¤ГҐГ­ГҐГ¶ [P].", "Г¤ГўГЁГЈГ ГҐГІ ГЈГ®Г«Г®ГўГ®Г© ГўГ§Г Г¤-ГўГЇГҐГ°ВёГ¤, Г±ГІГЁГ¬ГіГ«ГЁГ°Гі[ya] Г·Г«ГҐГ­ [P].", "ГІГ№Г ГІГҐГ«ГјГ­Г® ГўГ»Г«ГЁГ§Г»ГўГ ГҐГІ Г·Г«ГҐГ­ [P].", "Г§Г Г¦Г¬ГіГ°ГЁГўГёГЁГ±Гј, ГЇГ®Г«Г­Г®Г±ГІГјГѕ Г§Г ГЈГ«Г ГІГ»ГўГ ГҐГІ Г¬Г Г«Г»ГёГ  [P].", "Г«Г Г±ГЄГ ГҐГІ Г·Г«ГҐГ­ [P], ГЇГ®Г¬Г®ГЈГ [ya] Г±ГҐГЎГҐ Г°ГіГЄГ Г¬ГЁ.")
 				if (H.lastfucked != P || H.lfhole != hole)
-					message = pick("кончиком [ya]зыка касаетс[ya] члена [P].", "приступает облизывать член [P].")
+					message = pick("ГЄГ®Г­Г·ГЁГЄГ®Г¬ [ya]Г§Г»ГЄГ  ГЄГ Г±Г ГҐГІГ±[ya] Г·Г«ГҐГ­Г  [P].", "ГЇГ°ГЁГ±ГІГіГЇГ ГҐГІ Г®ГЎГ«ГЁГ§Г»ГўГ ГІГј Г·Г«ГҐГ­ [P].")
 					H.lastfucked = P
 					H.lfhole = hole
 
 			if(H.species.get_bodytype() == SPECIES_TAJ || H.species.get_bodytype() == SPECIES_VULPKANIN || H.species.get_bodytype() == SPECIES_ZORREN_HIGH || H.species.get_bodytype() == SPECIES_ZORREN_FLAT)
-				message = pick("вылизывает член [P].", "обводит своим [ya]зычком вокруг члена [P].", "проталкивает член [P] себе в пасть, стара[ya]сь не зацепить его зубами.", "стимулирует член [P] [ya]зыком.")
+				message = pick("ГўГ»Г«ГЁГ§Г»ГўГ ГҐГІ Г·Г«ГҐГ­ [P].", "Г®ГЎГўГ®Г¤ГЁГІ Г±ГўГ®ГЁГ¬ [ya]Г§Г»Г·ГЄГ®Г¬ ГўГ®ГЄГ°ГіГЈ Г·Г«ГҐГ­Г  [P].", "ГЇГ°Г®ГІГ Г«ГЄГЁГўГ ГҐГІ Г·Г«ГҐГ­ [P] Г±ГҐГЎГҐ Гў ГЇГ Г±ГІГј, Г±ГІГ Г°Г [ya]Г±Гј Г­ГҐ Г§Г Г¶ГҐГЇГЁГІГј ГҐГЈГ® Г§ГіГЎГ Г¬ГЁ.", "Г±ГІГЁГ¬ГіГ«ГЁГ°ГіГҐГІ Г·Г«ГҐГ­ [P] [ya]Г§Г»ГЄГ®Г¬.")
 				if (prob(35))
-					message = pick("вылизывает орган [P], прикрыв глаза от удовольстви[ya].", "постанывает, прикрыв глаза, не вынима[ya] член [P] из пасти.", "ласкает член [P] [ya]зычком, придержива[ya] его рукой.", "облизывает член [P] по всей длине.", "погружает член [P] все глубже себе в пасть.", "кончиком [ya]зыка облизывает головку члена [P].", "вылизывает леденец [P].", "двигает головой взад-вперёд, стимулиру[ya] член [P].", "тщательно вылизывает член [P].", "зажмурившись, полностью заглатывает малыша [P].", "ласкает член [P], помога[ya] себе руками.")
+					message = pick("ГўГ»Г«ГЁГ§Г»ГўГ ГҐГІ Г®Г°ГЈГ Г­ [P], ГЇГ°ГЁГЄГ°Г»Гў ГЈГ«Г Г§Г  Г®ГІ ГіГ¤Г®ГўГ®Г«ГјГ±ГІГўГЁ[ya].", "ГЇГ®Г±ГІГ Г­Г»ГўГ ГҐГІ, ГЇГ°ГЁГЄГ°Г»Гў ГЈГ«Г Г§Г , Г­ГҐ ГўГ»Г­ГЁГ¬Г [ya] Г·Г«ГҐГ­ [P] ГЁГ§ ГЇГ Г±ГІГЁ.", "Г«Г Г±ГЄГ ГҐГІ Г·Г«ГҐГ­ [P] [ya]Г§Г»Г·ГЄГ®Г¬, ГЇГ°ГЁГ¤ГҐГ°Г¦ГЁГўГ [ya] ГҐГЈГ® Г°ГіГЄГ®Г©.", "Г®ГЎГ«ГЁГ§Г»ГўГ ГҐГІ Г·Г«ГҐГ­ [P] ГЇГ® ГўГ±ГҐГ© Г¤Г«ГЁГ­ГҐ.", "ГЇГ®ГЈГ°ГіГ¦Г ГҐГІ Г·Г«ГҐГ­ [P] ГўГ±ГҐ ГЈГ«ГіГЎГ¦ГҐ Г±ГҐГЎГҐ Гў ГЇГ Г±ГІГј.", "ГЄГ®Г­Г·ГЁГЄГ®Г¬ [ya]Г§Г»ГЄГ  Г®ГЎГ«ГЁГ§Г»ГўГ ГҐГІ ГЈГ®Г«Г®ГўГЄГі Г·Г«ГҐГ­Г  [P].", "ГўГ»Г«ГЁГ§Г»ГўГ ГҐГІ Г«ГҐГ¤ГҐГ­ГҐГ¶ [P].", "Г¤ГўГЁГЈГ ГҐГІ ГЈГ®Г«Г®ГўГ®Г© ГўГ§Г Г¤-ГўГЇГҐГ°ВёГ¤, Г±ГІГЁГ¬ГіГ«ГЁГ°Гі[ya] Г·Г«ГҐГ­ [P].", "ГІГ№Г ГІГҐГ«ГјГ­Г® ГўГ»Г«ГЁГ§Г»ГўГ ГҐГІ Г·Г«ГҐГ­ [P].", "Г§Г Г¦Г¬ГіГ°ГЁГўГёГЁГ±Гј, ГЇГ®Г«Г­Г®Г±ГІГјГѕ Г§Г ГЈГ«Г ГІГ»ГўГ ГҐГІ Г¬Г Г«Г»ГёГ  [P].", "Г«Г Г±ГЄГ ГҐГІ Г·Г«ГҐГ­ [P], ГЇГ®Г¬Г®ГЈГ [ya] Г±ГҐГЎГҐ Г°ГіГЄГ Г¬ГЁ.")
 				if (H.lastfucked != P || H.lfhole != hole)
-					message = pick("кончиком [ya]зыка касаетс[ya] члена [P].", "приступает вылизывать член [P].")
+					message = pick("ГЄГ®Г­Г·ГЁГЄГ®Г¬ [ya]Г§Г»ГЄГ  ГЄГ Г±Г ГҐГІГ±[ya] Г·Г«ГҐГ­Г  [P].", "ГЇГ°ГЁГ±ГІГіГЇГ ГҐГІ ГўГ»Г«ГЁГ§Г»ГўГ ГІГј Г·Г«ГҐГ­ [P].")
 					H.lastfucked = P
 					H.lfhole = hole
 
 			if(H.species.get_bodytype() == SPECIES_VOX || H.species.get_bodytype() == SPECIES_NEVREAN)
-				message = pick("облизывает член [P].", "стимулирует орган [P] [ya]зыком.", "трёт член [P] о свой [ya]зык.", "проталкивает член [P] себе в глотку, стара[ya]сь не зацепить его клювом.", "стимулирует член [P] [ya]зыком.")
+				message = pick("Г®ГЎГ«ГЁГ§Г»ГўГ ГҐГІ Г·Г«ГҐГ­ [P].", "Г±ГІГЁГ¬ГіГ«ГЁГ°ГіГҐГІ Г®Г°ГЈГ Г­ [P] [ya]Г§Г»ГЄГ®Г¬.", "ГІГ°ВёГІ Г·Г«ГҐГ­ [P] Г® Г±ГўГ®Г© [ya]Г§Г»ГЄ.", "ГЇГ°Г®ГІГ Г«ГЄГЁГўГ ГҐГІ Г·Г«ГҐГ­ [P] Г±ГҐГЎГҐ Гў ГЈГ«Г®ГІГЄГі, Г±ГІГ Г°Г [ya]Г±Гј Г­ГҐ Г§Г Г¶ГҐГЇГЁГІГј ГҐГЈГ® ГЄГ«ГѕГўГ®Г¬.", "Г±ГІГЁГ¬ГіГ«ГЁГ°ГіГҐГІ Г·Г«ГҐГ­ [P] [ya]Г§Г»ГЄГ®Г¬.")
 				if (prob(35))
-					message = pick("облизывает орган [P], прикрыв глаза от удовольстви[ya].", "постанывает, прикрыв глаза, не вынима[ya] член [P] из клюва.", "ласкает член [P] [ya]зычком, придержива[ya] его крылом.", "облизывает член [P] по всей длине.", "погружает член [P] все глубже себе в клюв.", "кончиком [ya]зыка облизывает головку члена [P].", " облизывает леденец [P].", "двигает головой взад-вперёд, стимулиру[ya] член [P].", "тщательно вылизывает член [P].", "зажмурившись, полностью заглатывает малыша [P].", "ласкает член [P] [ya]зыком.")
+					message = pick("Г®ГЎГ«ГЁГ§Г»ГўГ ГҐГІ Г®Г°ГЈГ Г­ [P], ГЇГ°ГЁГЄГ°Г»Гў ГЈГ«Г Г§Г  Г®ГІ ГіГ¤Г®ГўГ®Г«ГјГ±ГІГўГЁ[ya].", "ГЇГ®Г±ГІГ Г­Г»ГўГ ГҐГІ, ГЇГ°ГЁГЄГ°Г»Гў ГЈГ«Г Г§Г , Г­ГҐ ГўГ»Г­ГЁГ¬Г [ya] Г·Г«ГҐГ­ [P] ГЁГ§ ГЄГ«ГѕГўГ .", "Г«Г Г±ГЄГ ГҐГІ Г·Г«ГҐГ­ [P] [ya]Г§Г»Г·ГЄГ®Г¬, ГЇГ°ГЁГ¤ГҐГ°Г¦ГЁГўГ [ya] ГҐГЈГ® ГЄГ°Г»Г«Г®Г¬.", "Г®ГЎГ«ГЁГ§Г»ГўГ ГҐГІ Г·Г«ГҐГ­ [P] ГЇГ® ГўГ±ГҐГ© Г¤Г«ГЁГ­ГҐ.", "ГЇГ®ГЈГ°ГіГ¦Г ГҐГІ Г·Г«ГҐГ­ [P] ГўГ±ГҐ ГЈГ«ГіГЎГ¦ГҐ Г±ГҐГЎГҐ Гў ГЄГ«ГѕГў.", "ГЄГ®Г­Г·ГЁГЄГ®Г¬ [ya]Г§Г»ГЄГ  Г®ГЎГ«ГЁГ§Г»ГўГ ГҐГІ ГЈГ®Г«Г®ГўГЄГі Г·Г«ГҐГ­Г  [P].", " Г®ГЎГ«ГЁГ§Г»ГўГ ГҐГІ Г«ГҐГ¤ГҐГ­ГҐГ¶ [P].", "Г¤ГўГЁГЈГ ГҐГІ ГЈГ®Г«Г®ГўГ®Г© ГўГ§Г Г¤-ГўГЇГҐГ°ВёГ¤, Г±ГІГЁГ¬ГіГ«ГЁГ°Гі[ya] Г·Г«ГҐГ­ [P].", "ГІГ№Г ГІГҐГ«ГјГ­Г® ГўГ»Г«ГЁГ§Г»ГўГ ГҐГІ Г·Г«ГҐГ­ [P].", "Г§Г Г¦Г¬ГіГ°ГЁГўГёГЁГ±Гј, ГЇГ®Г«Г­Г®Г±ГІГјГѕ Г§Г ГЈГ«Г ГІГ»ГўГ ГҐГІ Г¬Г Г«Г»ГёГ  [P].", "Г«Г Г±ГЄГ ГҐГІ Г·Г«ГҐГ­ [P] [ya]Г§Г»ГЄГ®Г¬.")
 				if (H.lastfucked != P || H.lfhole != hole)
-					message = pick("кончиком [ya]зыка касаетс[ya] члена [P].", "приступает облизывать член [P].")
+					message = pick("ГЄГ®Г­Г·ГЁГЄГ®Г¬ [ya]Г§Г»ГЄГ  ГЄГ Г±Г ГҐГІГ±[ya] Г·Г«ГҐГ­Г  [P].", "ГЇГ°ГЁГ±ГІГіГЇГ ГҐГІ Г®ГЎГ«ГЁГ§Г»ГўГ ГІГј Г·Г«ГҐГ­ [P].")
 					H.lastfucked = P
 					H.lfhole = hole
 
 			if(H.species.get_bodytype() == SPECIES_PROMETHEAN)
-				message = pick("отсасывает [P].", "сосет член [P].", "стимулирует член [P] [ya]зыком.")
+				message = pick("Г®ГІГ±Г Г±Г»ГўГ ГҐГІ [P].", "Г±Г®Г±ГҐГІ Г·Г«ГҐГ­ [P].", "Г±ГІГЁГ¬ГіГ«ГЁГ°ГіГҐГІ Г·Г«ГҐГ­ [P] [ya]Г§Г»ГЄГ®Г¬.")
 				if (prob(35))
-					message = pick("смачно целует орган [P], прикрыв глаза от удовольстви[ya].", "постанывает, прикрыв глаза, не вынима[ya] член [P] изо рта.", "ласкает член [P] [ya]зычком, покрыва[ya] его в[ya]зкой слизью.", "облизывает член [P] по всей длине, оставл[ya][ya] след из слизи.", "погружает член [P] все глубже себе в рот.", "кончиком [ya]зыка облизывает головку члена [P].", "смачивает кончик члена [P] липкой слизью и снова берёт его в рот.", "сосет леденец [P].", "двигает головой взад-вперёд, стимулиру[ya] член [P].", "тщательно вылизывает член [P].", "зажмурившись, полностью заглатывает малыша [P].", "ласкает член [P], помога[ya] себе руками.")
+					message = pick("Г±Г¬Г Г·Г­Г® Г¶ГҐГ«ГіГҐГІ Г®Г°ГЈГ Г­ [P], ГЇГ°ГЁГЄГ°Г»Гў ГЈГ«Г Г§Г  Г®ГІ ГіГ¤Г®ГўГ®Г«ГјГ±ГІГўГЁ[ya].", "ГЇГ®Г±ГІГ Г­Г»ГўГ ГҐГІ, ГЇГ°ГЁГЄГ°Г»Гў ГЈГ«Г Г§Г , Г­ГҐ ГўГ»Г­ГЁГ¬Г [ya] Г·Г«ГҐГ­ [P] ГЁГ§Г® Г°ГІГ .", "Г«Г Г±ГЄГ ГҐГІ Г·Г«ГҐГ­ [P] [ya]Г§Г»Г·ГЄГ®Г¬, ГЇГ®ГЄГ°Г»ГўГ [ya] ГҐГЈГ® Гў[ya]Г§ГЄГ®Г© Г±Г«ГЁГ§ГјГѕ.", "Г®ГЎГ«ГЁГ§Г»ГўГ ГҐГІ Г·Г«ГҐГ­ [P] ГЇГ® ГўГ±ГҐГ© Г¤Г«ГЁГ­ГҐ, Г®Г±ГІГ ГўГ«[ya][ya] Г±Г«ГҐГ¤ ГЁГ§ Г±Г«ГЁГ§ГЁ.", "ГЇГ®ГЈГ°ГіГ¦Г ГҐГІ Г·Г«ГҐГ­ [P] ГўГ±ГҐ ГЈГ«ГіГЎГ¦ГҐ Г±ГҐГЎГҐ Гў Г°Г®ГІ.", "ГЄГ®Г­Г·ГЁГЄГ®Г¬ [ya]Г§Г»ГЄГ  Г®ГЎГ«ГЁГ§Г»ГўГ ГҐГІ ГЈГ®Г«Г®ГўГЄГі Г·Г«ГҐГ­Г  [P].", "Г±Г¬Г Г·ГЁГўГ ГҐГІ ГЄГ®Г­Г·ГЁГЄ Г·Г«ГҐГ­Г  [P] Г«ГЁГЇГЄГ®Г© Г±Г«ГЁГ§ГјГѕ ГЁ Г±Г­Г®ГўГ  ГЎГҐГ°ВёГІ ГҐГЈГ® Гў Г°Г®ГІ.", "Г±Г®Г±ГҐГІ Г«ГҐГ¤ГҐГ­ГҐГ¶ [P].", "Г¤ГўГЁГЈГ ГҐГІ ГЈГ®Г«Г®ГўГ®Г© ГўГ§Г Г¤-ГўГЇГҐГ°ВёГ¤, Г±ГІГЁГ¬ГіГ«ГЁГ°Гі[ya] Г·Г«ГҐГ­ [P].", "ГІГ№Г ГІГҐГ«ГјГ­Г® ГўГ»Г«ГЁГ§Г»ГўГ ГҐГІ Г·Г«ГҐГ­ [P].", "Г§Г Г¦Г¬ГіГ°ГЁГўГёГЁГ±Гј, ГЇГ®Г«Г­Г®Г±ГІГјГѕ Г§Г ГЈГ«Г ГІГ»ГўГ ГҐГІ Г¬Г Г«Г»ГёГ  [P].", "Г«Г Г±ГЄГ ГҐГІ Г·Г«ГҐГ­ [P], ГЇГ®Г¬Г®ГЈГ [ya] Г±ГҐГЎГҐ Г°ГіГЄГ Г¬ГЁ.")
 				if (H.lastfucked != P || H.lfhole != hole)
-					message = pick("м[ya]гко обхватывает член [P] губами, обволакива[ya] его слизью.", "приступает сосать член [P].")
+					message = pick("Г¬[ya]ГЈГЄГ® Г®ГЎГµГўГ ГІГ»ГўГ ГҐГІ Г·Г«ГҐГ­ [P] ГЈГіГЎГ Г¬ГЁ, Г®ГЎГўГ®Г«Г ГЄГЁГўГ [ya] ГҐГЈГ® Г±Г«ГЁГ§ГјГѕ.", "ГЇГ°ГЁГ±ГІГіГЇГ ГҐГІ Г±Г®Г±Г ГІГј Г·Г«ГҐГ­ [P].")
 					H.lastfucked = P
 					H.lfhole = hole
 
@@ -688,21 +688,21 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 			H.do_fucking_animation(P)
 			if (prob(P.potenzia))
 				H.oxyloss += 3
-				H.visible_message("<B>[H]</B> [pick("давитс[ya] инструментом <B>[P]</B>", "задыхаетс[ya]", "корчитс[ya] в рвотном позыве")].")
+				H.visible_message("<B>[H]</B> [pick("Г¤Г ГўГЁГІГ±[ya] ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГ®Г¬ <B>[P]</B>", "Г§Г Г¤Г»ГµГ ГҐГІГ±[ya]", "ГЄГ®Г°Г·ГЁГІГ±[ya] Гў Г°ГўГ®ГІГ­Г®Г¬ ГЇГ®Г§Г»ГўГҐ")].")
 				if (istype(P.loc, /obj/structure/closet))
-					P.visible_message("<B>[H]</B> [pick("давитс[ya] инструментом <B>[P]</B>", "задыхаетс[ya]", "корчитс[ya] в рвотном позыве")].")
+					P.visible_message("<B>[H]</B> [pick("Г¤Г ГўГЁГІГ±[ya] ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГ®Г¬ <B>[P]</B>", "Г§Г Г¤Г»ГµГ ГҐГІГ±[ya]", "ГЄГ®Г°Г·ГЁГІГ±[ya] Гў Г°ГўГ®ГІГ­Г®Г¬ ГЇГ®Г§Г»ГўГҐ")].")
 
 /* VAGINAL */
 
 		if("vaginal")
 
-			message = pick("трахает [P].", "сношает [P].", "долбит [P].")
+			message = pick("ГІГ°Г ГµГ ГҐГІ [P].", "Г±Г­Г®ГёГ ГҐГІ [P].", "Г¤Г®Г«ГЎГЁГІ [P].")
 			if (prob(35))
-				message = pick("грубо трахает [P].", "предаётс[ya] страстной любви с [P].", "резким движением погружаетс[ya] внутрь [P].", "движетс[ya] внутри [P].", "двигает тазом, засажива[ya] член в [P].", "стонет, навалива[ya]сь на [P].", "сильно прижимаетс[ya] пахом к [P].", "насаживает [P] на свой член.", "чувственно имеет [P].")
+				message = pick("ГЈГ°ГіГЎГ® ГІГ°Г ГµГ ГҐГІ [P].", "ГЇГ°ГҐГ¤Г ВёГІГ±[ya] Г±ГІГ°Г Г±ГІГ­Г®Г© Г«ГѕГЎГўГЁ Г± [P].", "Г°ГҐГ§ГЄГЁГ¬ Г¤ГўГЁГ¦ГҐГ­ГЁГҐГ¬ ГЇГ®ГЈГ°ГіГ¦Г ГҐГІГ±[ya] ГўГ­ГіГІГ°Гј [P].", "Г¤ГўГЁГ¦ГҐГІГ±[ya] ГўГ­ГіГІГ°ГЁ [P].", "Г¤ГўГЁГЈГ ГҐГІ ГІГ Г§Г®Г¬, Г§Г Г±Г Г¦ГЁГўГ [ya] Г·Г«ГҐГ­ Гў [P].", "Г±ГІГ®Г­ГҐГІ, Г­Г ГўГ Г«ГЁГўГ [ya]Г±Гј Г­Г  [P].", "Г±ГЁГ«ГјГ­Г® ГЇГ°ГЁГ¦ГЁГ¬Г ГҐГІГ±[ya] ГЇГ ГµГ®Г¬ ГЄ [P].", "Г­Г Г±Г Г¦ГЁГўГ ГҐГІ [P] Г­Г  Г±ГўГ®Г© Г·Г«ГҐГ­.", "Г·ГіГўГ±ГІГўГҐГ­Г­Г® ГЁГ¬ГҐГҐГІ [P].")
 				playsound(loc, "honk/sound/interactions/champ[rand(1, 2)].ogg", 50, 1, -1)
 
 			if (H.lastfucked != P || H.lfhole != hole)
-				message = pick("всаживает свой член по самые [ya]йца в [P].", "вводит свой орган любви в лоно [P].", "погружает свой корень похоти внутрь [P].", "проникает в [P].")
+				message = pick("ГўГ±Г Г¦ГЁГўГ ГҐГІ Г±ГўГ®Г© Г·Г«ГҐГ­ ГЇГ® Г±Г Г¬Г»ГҐ [ya]Г©Г¶Г  Гў [P].", "ГўГўГ®Г¤ГЁГІ Г±ГўГ®Г© Г®Г°ГЈГ Г­ Г«ГѕГЎГўГЁ Гў Г«Г®Г­Г® [P].", "ГЇГ®ГЈГ°ГіГ¦Г ГҐГІ Г±ГўГ®Г© ГЄГ®Г°ГҐГ­Гј ГЇГ®ГµГ®ГІГЁ ГўГ­ГіГІГ°Гј [P].", "ГЇГ°Г®Г­ГЁГЄГ ГҐГІ Гў [P].")
 				H.lastfucked = P
 				H.lfhole = hole
 
@@ -728,7 +728,7 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 				P.arousal += 20
 				if (P.lust >= P.resistenza)
 					P.cum(P, H)
-					message = pick("Вы чувствуете, как вагинальные мышцы [P] начинают резко сокращатьс[ya] вокруг вашего инструмента.", "Вы чувствуете, как ребристые стенки [P] крепко сжимают ваш напр[ya]жённый член.", "Вы чувствуете, как влажна[ya] киска [P] резко сжимает ваш член внутри себ[ya].", "Вы чувствуете, что вашему прибору становитс[ya] тесно внутри гор[ya]чей писечки [P].", "Вы чувствуете, как мышцы внутри разгор[ya]чённой вагины [P] сильно сжимаютс[ya] несколько раз, приближа[ya] вас к оргазму.")
+					message = pick("Г‚Г» Г·ГіГўГ±ГІГўГіГҐГІГҐ, ГЄГ ГЄ ГўГ ГЈГЁГ­Г Г«ГјГ­Г»ГҐ Г¬Г»ГёГ¶Г» [P] Г­Г Г·ГЁГ­Г ГѕГІ Г°ГҐГ§ГЄГ® Г±Г®ГЄГ°Г Г№Г ГІГјГ±[ya] ГўГ®ГЄГ°ГіГЈ ГўГ ГёГҐГЈГ® ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГ .", "Г‚Г» Г·ГіГўГ±ГІГўГіГҐГІГҐ, ГЄГ ГЄ Г°ГҐГЎГ°ГЁГ±ГІГ»ГҐ Г±ГІГҐГ­ГЄГЁ [P] ГЄГ°ГҐГЇГЄГ® Г±Г¦ГЁГ¬Г ГѕГІ ГўГ Гё Г­Г ГЇГ°[ya]Г¦ВёГ­Г­Г»Г© Г·Г«ГҐГ­.", "Г‚Г» Г·ГіГўГ±ГІГўГіГҐГІГҐ, ГЄГ ГЄ ГўГ«Г Г¦Г­Г [ya] ГЄГЁГ±ГЄГ  [P] Г°ГҐГ§ГЄГ® Г±Г¦ГЁГ¬Г ГҐГІ ГўГ Гё Г·Г«ГҐГ­ ГўГ­ГіГІГ°ГЁ Г±ГҐГЎ[ya].", "Г‚Г» Г·ГіГўГ±ГІГўГіГҐГІГҐ, Г·ГІГ® ГўГ ГёГҐГ¬Гі ГЇГ°ГЁГЎГ®Г°Гі Г±ГІГ Г­Г®ГўГЁГІГ±[ya] ГІГҐГ±Г­Г® ГўГ­ГіГІГ°ГЁ ГЈГ®Г°[ya]Г·ГҐГ© ГЇГЁГ±ГҐГ·ГЄГЁ [P].", "Г‚Г» Г·ГіГўГ±ГІГўГіГҐГІГҐ, ГЄГ ГЄ Г¬Г»ГёГ¶Г» ГўГ­ГіГІГ°ГЁ Г°Г Г§ГЈГ®Г°[ya]Г·ВёГ­Г­Г®Г© ГўГ ГЈГЁГ­Г» [P] Г±ГЁГ«ГјГ­Г® Г±Г¦ГЁГ¬Г ГѕГІГ±[ya] Г­ГҐГ±ГЄГ®Г«ГјГЄГ® Г°Г Г§, ГЇГ°ГЁГЎГ«ГЁГ¦Г [ya] ГўГ Г± ГЄ Г®Г°ГЈГ Г§Г¬Гі.")
 					to_chat(H, message)
 				else
 					P.moan()
@@ -739,22 +739,22 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 
 		if("anal")
 
-			message = pick("долбит [P] в очко.", "анально сношает [P].", "трахает [P] в анус.", "трахает [P] в пр[ya]мую кишку", "сношает [P] в анальное отверстие")
+			message = pick("Г¤Г®Г«ГЎГЁГІ [P] Гў Г®Г·ГЄГ®.", "Г Г­Г Г«ГјГ­Г® Г±Г­Г®ГёГ ГҐГІ [P].", "ГІГ°Г ГµГ ГҐГІ [P] Гў Г Г­ГіГ±.", "ГІГ°Г ГµГ ГҐГІ [P] Гў ГЇГ°[ya]Г¬ГіГѕ ГЄГЁГёГЄГі", "Г±Г­Г®ГёГ ГҐГІ [P] Гў Г Г­Г Г«ГјГ­Г®ГҐ Г®ГІГўГҐГ°Г±ГІГЁГҐ")
 			if (prob(35))
 				if(P.species.get_bodytype() == SPECIES_HUMAN || P.species.get_bodytype() == SPECIES_HUMAN_VATBORN || P.species.get_bodytype() == SPECIES_RAPALA || P.species.get_bodytype() == SPECIES_VASILISSAN || P.species.get_bodytype() == SPECIES_PROTEAN || P.species.get_bodytype() == SPECIES_AKULA)
-					message = pick("трахает [P] в задницу.", "трахает [P] в пр[ya]мую кишку", "всаживает член [P] в анальное кольцо по самые [ya]йца.", "месит глину в шахте [P].", "разрывает [P] очко бешеными фрикци[ya]ми.", "запускает своего шахтера в угольные шахты [P].")
+					message = pick("ГІГ°Г ГµГ ГҐГІ [P] Гў Г§Г Г¤Г­ГЁГ¶Гі.", "ГІГ°Г ГµГ ГҐГІ [P] Гў ГЇГ°[ya]Г¬ГіГѕ ГЄГЁГёГЄГі", "ГўГ±Г Г¦ГЁГўГ ГҐГІ Г·Г«ГҐГ­ [P] Гў Г Г­Г Г«ГјГ­Г®ГҐ ГЄГ®Г«ГјГ¶Г® ГЇГ® Г±Г Г¬Г»ГҐ [ya]Г©Г¶Г .", "Г¬ГҐГ±ГЁГІ ГЈГ«ГЁГ­Гі Гў ГёГ ГµГІГҐ [P].", "Г°Г Г§Г°Г»ГўГ ГҐГІ [P] Г®Г·ГЄГ® ГЎГҐГёГҐГ­Г»Г¬ГЁ ГґГ°ГЁГЄГ¶ГЁ[ya]Г¬ГЁ.", "Г§Г ГЇГіГ±ГЄГ ГҐГІ Г±ГўГ®ГҐГЈГ® ГёГ ГµГІГҐГ°Г  Гў ГіГЈГ®Г«ГјГ­Г»ГҐ ГёГ ГµГІГ» [P].")
 				if(P.species.get_bodytype() == SPECIES_TAJ || P.species.get_bodytype() == SPECIES_UNATHI || P.species.get_bodytype() == SPECIES_VULPKANIN || P.species.get_bodytype() == SPECIES_ZORREN_HIGH || P.species.get_bodytype() == SPECIES_ZORREN_FLAT)
-					message = pick("трахает [P] под хвост.", "чувственно сношает [P] под пушистый хвост", "сношает пушистыю задницу [P]", "трахает [P] в пр[ya]мую кишку", "всаживает член [P] в анальное кольцо под хвостом по самые [ya]йца.", "долбит [P] под пушистый хвостик.", "месит глину в шахте [P].", "разрывает [P] очко бешеными фрикци[ya]ми.", "запускает своего шахтера в угольные шахты [P].")
+					message = pick("ГІГ°Г ГµГ ГҐГІ [P] ГЇГ®Г¤ ГµГўГ®Г±ГІ.", "Г·ГіГўГ±ГІГўГҐГ­Г­Г® Г±Г­Г®ГёГ ГҐГІ [P] ГЇГ®Г¤ ГЇГіГёГЁГ±ГІГ»Г© ГµГўГ®Г±ГІ", "Г±Г­Г®ГёГ ГҐГІ ГЇГіГёГЁГ±ГІГ»Гѕ Г§Г Г¤Г­ГЁГ¶Гі [P]", "ГІГ°Г ГµГ ГҐГІ [P] Гў ГЇГ°[ya]Г¬ГіГѕ ГЄГЁГёГЄГі", "ГўГ±Г Г¦ГЁГўГ ГҐГІ Г·Г«ГҐГ­ [P] Гў Г Г­Г Г«ГјГ­Г®ГҐ ГЄГ®Г«ГјГ¶Г® ГЇГ®Г¤ ГµГўГ®Г±ГІГ®Г¬ ГЇГ® Г±Г Г¬Г»ГҐ [ya]Г©Г¶Г .", "Г¤Г®Г«ГЎГЁГІ [P] ГЇГ®Г¤ ГЇГіГёГЁГ±ГІГ»Г© ГµГўГ®Г±ГІГЁГЄ.", "Г¬ГҐГ±ГЁГІ ГЈГ«ГЁГ­Гі Гў ГёГ ГµГІГҐ [P].", "Г°Г Г§Г°Г»ГўГ ГҐГІ [P] Г®Г·ГЄГ® ГЎГҐГёГҐГ­Г»Г¬ГЁ ГґГ°ГЁГЄГ¶ГЁ[ya]Г¬ГЁ.", "Г§Г ГЇГіГ±ГЄГ ГҐГІ Г±ГўГ®ГҐГЈГ® ГёГ ГµГІГҐГ°Г  Гў ГіГЈГ®Г«ГјГ­Г»ГҐ ГёГ ГµГІГ» [P].")
 				if(P.species.get_bodytype() == SPECIES_UNATHI)
-					message = pick("трахает [P] под хвост.", "чувственно сношает [P] под хвост", "трахает [P] в пр[ya]мую кишку", "всаживает член [P] в анальное кольцо под хвостом по самые [ya]йца.", "долбит [P] под хвостик.", "месит глину в шахте [P].", "разрывает [P] очко бешеными фрикци[ya]ми.", "запускает своего шахтера в угольные шахты [P].")
+					message = pick("ГІГ°Г ГµГ ГҐГІ [P] ГЇГ®Г¤ ГµГўГ®Г±ГІ.", "Г·ГіГўГ±ГІГўГҐГ­Г­Г® Г±Г­Г®ГёГ ГҐГІ [P] ГЇГ®Г¤ ГµГўГ®Г±ГІ", "ГІГ°Г ГµГ ГҐГІ [P] Гў ГЇГ°[ya]Г¬ГіГѕ ГЄГЁГёГЄГі", "ГўГ±Г Г¦ГЁГўГ ГҐГІ Г·Г«ГҐГ­ [P] Гў Г Г­Г Г«ГјГ­Г®ГҐ ГЄГ®Г«ГјГ¶Г® ГЇГ®Г¤ ГµГўГ®Г±ГІГ®Г¬ ГЇГ® Г±Г Г¬Г»ГҐ [ya]Г©Г¶Г .", "Г¤Г®Г«ГЎГЁГІ [P] ГЇГ®Г¤ ГµГўГ®Г±ГІГЁГЄ.", "Г¬ГҐГ±ГЁГІ ГЈГ«ГЁГ­Гі Гў ГёГ ГµГІГҐ [P].", "Г°Г Г§Г°Г»ГўГ ГҐГІ [P] Г®Г·ГЄГ® ГЎГҐГёГҐГ­Г»Г¬ГЁ ГґГ°ГЁГЄГ¶ГЁ[ya]Г¬ГЁ.", "Г§Г ГЇГіГ±ГЄГ ГҐГІ Г±ГўГ®ГҐГЈГ® ГёГ ГµГІГҐГ°Г  Гў ГіГЈГ®Г«ГјГ­Г»ГҐ ГёГ ГµГІГ» [P].")
 				if(P.species.get_bodytype() == SPECIES_SKRELL || P.species.get_bodytype() == SPECIES_TESHARI || P.species.get_bodytype() == SPECIES_VOX || P.species.get_bodytype() == SPECIES_NEVREAN)
-					message = pick("трахает [P] в клоаку.", "всаживает член в клоаку [P] по самые [ya]йца.", "месит глину в шахте [P].", "разрывает клоаку [P] бешеными фрикци[ya]ми.", "запускает своего шахтера в угольные шахты [P].")
+					message = pick("ГІГ°Г ГµГ ГҐГІ [P] Гў ГЄГ«Г®Г ГЄГі.", "ГўГ±Г Г¦ГЁГўГ ГҐГІ Г·Г«ГҐГ­ Гў ГЄГ«Г®Г ГЄГі [P] ГЇГ® Г±Г Г¬Г»ГҐ [ya]Г©Г¶Г .", "Г¬ГҐГ±ГЁГІ ГЈГ«ГЁГ­Гі Гў ГёГ ГµГІГҐ [P].", "Г°Г Г§Г°Г»ГўГ ГҐГІ ГЄГ«Г®Г ГЄГі [P] ГЎГҐГёГҐГ­Г»Г¬ГЁ ГґГ°ГЁГЄГ¶ГЁ[ya]Г¬ГЁ.", "Г§Г ГЇГіГ±ГЄГ ГҐГІ Г±ГўГ®ГҐГЈГ® ГёГ ГµГІГҐГ°Г  Гў ГіГЈГ®Г«ГјГ­Г»ГҐ ГёГ ГµГІГ» [P].")
 				if(P.species.get_bodytype() == SPECIES_PROMETHEAN)
-					message = pick("трахает [P] в задницу.", "всаживает член [P] в анальное кольцо по самые [ya]йца, л[ya]па[ya]сь в в[ya]зкой слизи.", "раcт[ya]гивает [P] очко бешеными фрикци[ya]ми.")
+					message = pick("ГІГ°Г ГµГ ГҐГІ [P] Гў Г§Г Г¤Г­ГЁГ¶Гі.", "ГўГ±Г Г¦ГЁГўГ ГҐГІ Г·Г«ГҐГ­ [P] Гў Г Г­Г Г«ГјГ­Г®ГҐ ГЄГ®Г«ГјГ¶Г® ГЇГ® Г±Г Г¬Г»ГҐ [ya]Г©Г¶Г , Г«[ya]ГЇГ [ya]Г±Гј Гў Гў[ya]Г§ГЄГ®Г© Г±Г«ГЁГ§ГЁ.", "Г°Г cГІ[ya]ГЈГЁГўГ ГҐГІ [P] Г®Г·ГЄГ® ГЎГҐГёГҐГ­Г»Г¬ГЁ ГґГ°ГЁГЄГ¶ГЁ[ya]Г¬ГЁ.")
 					playsound(loc, "honk/sound/interactions/champ[rand(1, 2)].ogg", 50, 1, -1)
 
 			if (H.lastfucked != P || H.lfhole != hole)
-				message = pick("безжалостно прорывает анальное отверстие [P].", "всаживает член [P] в очко.", "проникает в анус [P]")
+				message = pick("ГЎГҐГ§Г¦Г Г«Г®Г±ГІГ­Г® ГЇГ°Г®Г°Г»ГўГ ГҐГІ Г Г­Г Г«ГјГ­Г®ГҐ Г®ГІГўГҐГ°Г±ГІГЁГҐ [P].", "ГўГ±Г Г¦ГЁГўГ ГҐГІ Г·Г«ГҐГ­ [P] Гў Г®Г·ГЄГ®.", "ГЇГ°Г®Г­ГЁГЄГ ГҐГІ Гў Г Г­ГіГ± [P]")
 				H.lastfucked = P
 				H.lfhole = hole
 
@@ -793,21 +793,21 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 
 		if("oral")
 
-			message = pick("трахает [P], засажива[ya] свой член [P.identifying_gender == FEMALE ? "ей" : "ему"] в глотку.", "орально сношает [P].")
+			message = pick("ГІГ°Г ГµГ ГҐГІ [P], Г§Г Г±Г Г¦ГЁГўГ [ya] Г±ГўГ®Г© Г·Г«ГҐГ­ [P.identifying_gender == FEMALE ? "ГҐГ©" : "ГҐГ¬Гі"] Гў ГЈГ«Г®ГІГЄГі.", "Г®Г°Г Г«ГјГ­Г® Г±Г­Г®ГёГ ГҐГІ [P].")
 			if (prob(35))
 				if(P.species.get_bodytype() == SPECIES_HUMAN || P.species.get_bodytype() == SPECIES_HUMAN_VATBORN || P.species.get_bodytype() == SPECIES_RAPALA || P.species.get_bodytype() == SPECIES_VASILISSAN || P.species.get_bodytype() == SPECIES_PROTEAN || P.species.get_bodytype() == SPECIES_SKRELL)
-					message = pick("опираетс[ya] на плечи [P], придержива[ya] [P.identifying_gender==FEMALE ? "её" : "его"] и засажива[ya] член всё сильнее и сильнее [P.identifying_gender==FEMALE ? "ей" : "ему"] в глотку.", "трахает [P] в рот.", "насаживает голову [P] на свой член.", "держит [P] за голову двум[ya] руками и совершает движени[ya] тазом.", "даёт пощёчины [P], продолжа[ya] ебать жертву в рот.", "даёт пощёчины [P], продолжа[ya] ебать [P.identifying_gender == FEMALE ? "девушку" : "парн[ya]"] в рот.", "безжастно пользуетс[ya] глоткой [P].", ", рыча сквозь зубы, нат[ya]гивает глотку [P] на своего малыша.", "нещадно насилует глотку [P].", ", черезмерно увлекшись, тыкает членом мимо рта [P], провод[ya] членом [P.identifying_gender == FEMALE ? "ей" : "ему"] по щеке.")
+					message = pick("Г®ГЇГЁГ°Г ГҐГІГ±[ya] Г­Г  ГЇГ«ГҐГ·ГЁ [P], ГЇГ°ГЁГ¤ГҐГ°Г¦ГЁГўГ [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] ГЁ Г§Г Г±Г Г¦ГЁГўГ [ya] Г·Г«ГҐГ­ ГўГ±Вё Г±ГЁГ«ГјГ­ГҐГҐ ГЁ Г±ГЁГ«ГјГ­ГҐГҐ [P.identifying_gender==FEMALE ? "ГҐГ©" : "ГҐГ¬Гі"] Гў ГЈГ«Г®ГІГЄГі.", "ГІГ°Г ГµГ ГҐГІ [P] Гў Г°Г®ГІ.", "Г­Г Г±Г Г¦ГЁГўГ ГҐГІ ГЈГ®Г«Г®ГўГі [P] Г­Г  Г±ГўГ®Г© Г·Г«ГҐГ­.", "Г¤ГҐГ°Г¦ГЁГІ [P] Г§Г  ГЈГ®Г«Г®ГўГі Г¤ГўГіГ¬[ya] Г°ГіГЄГ Г¬ГЁ ГЁ Г±Г®ГўГҐГ°ГёГ ГҐГІ Г¤ГўГЁГ¦ГҐГ­ГЁ[ya] ГІГ Г§Г®Г¬.", "Г¤Г ВёГІ ГЇГ®Г№ВёГ·ГЁГ­Г» [P], ГЇГ°Г®Г¤Г®Г«Г¦Г [ya] ГҐГЎГ ГІГј Г¦ГҐГ°ГІГўГі Гў Г°Г®ГІ.", "Г¤Г ВёГІ ГЇГ®Г№ВёГ·ГЁГ­Г» [P], ГЇГ°Г®Г¤Г®Г«Г¦Г [ya] ГҐГЎГ ГІГј [P.identifying_gender == FEMALE ? "Г¤ГҐГўГіГёГЄГі" : "ГЇГ Г°Г­[ya]"] Гў Г°Г®ГІ.", "ГЎГҐГ§Г¦Г Г±ГІГ­Г® ГЇГ®Г«ГјГ§ГіГҐГІГ±[ya] ГЈГ«Г®ГІГЄГ®Г© [P].", ", Г°Г»Г·Г  Г±ГЄГўГ®Г§Гј Г§ГіГЎГ», Г­Г ГІ[ya]ГЈГЁГўГ ГҐГІ ГЈГ«Г®ГІГЄГі [P] Г­Г  Г±ГўГ®ГҐГЈГ® Г¬Г Г«Г»ГёГ .", "Г­ГҐГ№Г Г¤Г­Г® Г­Г Г±ГЁГ«ГіГҐГІ ГЈГ«Г®ГІГЄГі [P].", ", Г·ГҐГ°ГҐГ§Г¬ГҐГ°Г­Г® ГіГўГ«ГҐГЄГёГЁГ±Гј, ГІГ»ГЄГ ГҐГІ Г·Г«ГҐГ­Г®Г¬ Г¬ГЁГ¬Г® Г°ГІГ  [P], ГЇГ°Г®ГўГ®Г¤[ya] Г·Г«ГҐГ­Г®Г¬ [P.identifying_gender == FEMALE ? "ГҐГ©" : "ГҐГ¬Гі"] ГЇГ® Г№ГҐГЄГҐ.")
 				if(P.species.get_bodytype() == SPECIES_UNATHI || P.species.get_bodytype() == SPECIES_AKULA || P.species.get_bodytype() == SPECIES_SERGAL || P.species.get_bodytype() == SPECIES_TESHARI)
-					message = pick("опираетс[ya] на плечи [P], придержива[ya] [P.identifying_gender==FEMALE ? "её" : "его"] и засажива[ya] член всё сильнее и сильнее [P.identifying_gender==FEMALE ? "ей" : "ему"] в глотку.", "трахает [P] в зубастую пасть.", "насаживает голову [P] на свой член.", "держит [P] за голову двум[ya] руками и совершает движени[ya] тазом.", "даёт пощёчины [P], продолжа[ya] ебать [P.identifying_gender == FEMALE ? "бедную [ya]щерку" : "бедного [ya]щера"] в пасть.", "безжастно пользуетс[ya] глоткой [P].", ", рыча сквозь зубы, нат[ya]гивает глотку [P] на своего малыша.", ", черезмерно увлекшись, тыкает членом мимо рта [P] и дрожит от прикосновени[ya] твёрдой чешуи.")
+					message = pick("Г®ГЇГЁГ°Г ГҐГІГ±[ya] Г­Г  ГЇГ«ГҐГ·ГЁ [P], ГЇГ°ГЁГ¤ГҐГ°Г¦ГЁГўГ [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] ГЁ Г§Г Г±Г Г¦ГЁГўГ [ya] Г·Г«ГҐГ­ ГўГ±Вё Г±ГЁГ«ГјГ­ГҐГҐ ГЁ Г±ГЁГ«ГјГ­ГҐГҐ [P.identifying_gender==FEMALE ? "ГҐГ©" : "ГҐГ¬Гі"] Гў ГЈГ«Г®ГІГЄГі.", "ГІГ°Г ГµГ ГҐГІ [P] Гў Г§ГіГЎГ Г±ГІГіГѕ ГЇГ Г±ГІГј.", "Г­Г Г±Г Г¦ГЁГўГ ГҐГІ ГЈГ®Г«Г®ГўГі [P] Г­Г  Г±ГўГ®Г© Г·Г«ГҐГ­.", "Г¤ГҐГ°Г¦ГЁГІ [P] Г§Г  ГЈГ®Г«Г®ГўГі Г¤ГўГіГ¬[ya] Г°ГіГЄГ Г¬ГЁ ГЁ Г±Г®ГўГҐГ°ГёГ ГҐГІ Г¤ГўГЁГ¦ГҐГ­ГЁ[ya] ГІГ Г§Г®Г¬.", "Г¤Г ВёГІ ГЇГ®Г№ВёГ·ГЁГ­Г» [P], ГЇГ°Г®Г¤Г®Г«Г¦Г [ya] ГҐГЎГ ГІГј [P.identifying_gender == FEMALE ? "ГЎГҐГ¤Г­ГіГѕ [ya]Г№ГҐГ°ГЄГі" : "ГЎГҐГ¤Г­Г®ГЈГ® [ya]Г№ГҐГ°Г "] Гў ГЇГ Г±ГІГј.", "ГЎГҐГ§Г¦Г Г±ГІГ­Г® ГЇГ®Г«ГјГ§ГіГҐГІГ±[ya] ГЈГ«Г®ГІГЄГ®Г© [P].", ", Г°Г»Г·Г  Г±ГЄГўГ®Г§Гј Г§ГіГЎГ», Г­Г ГІ[ya]ГЈГЁГўГ ГҐГІ ГЈГ«Г®ГІГЄГі [P] Г­Г  Г±ГўГ®ГҐГЈГ® Г¬Г Г«Г»ГёГ .", ", Г·ГҐГ°ГҐГ§Г¬ГҐГ°Г­Г® ГіГўГ«ГҐГЄГёГЁГ±Гј, ГІГ»ГЄГ ГҐГІ Г·Г«ГҐГ­Г®Г¬ Г¬ГЁГ¬Г® Г°ГІГ  [P] ГЁ Г¤Г°Г®Г¦ГЁГІ Г®ГІ ГЇГ°ГЁГЄГ®Г±Г­Г®ГўГҐГ­ГЁ[ya] ГІГўВёГ°Г¤Г®Г© Г·ГҐГёГіГЁ.")
 				if(P.species.get_bodytype() == SPECIES_TAJ || P.species.get_bodytype() == SPECIES_VULPKANIN || P.species.get_bodytype() == SPECIES_ZORREN_HIGH || P.species.get_bodytype() == SPECIES_ZORREN_FLAT)
-					message = pick("опираетс[ya] на плечи [P], придержива[ya] [P.identifying_gender==FEMALE ? "её" : "его"] и засажива[ya] член всё сильнее и сильнее [P.identifying_gender==FEMALE ? "ей" : "ему"] в глотку.", "трахает [P] в зубастую пасть.", "насаживает голову [P] на свой член.", "держит [P] за голову двум[ya] руками и совершает движени[ya] тазом.", "даёт пощёчины [P], продолжа[ya] ебать [P.identifying_gender == FEMALE ? "бедную кошечку" : "бедного котёнка"] в пасть.", "безжастно пользуетс[ya] глоткой [P].", ", рыча сквозь зубы, нат[ya]гивает глотку [P] на своего малыша.", ", черезмерно увлекшись, тыкает членом мимо рта [P] и дрожит от прикосновени[ya] шерсти.")
+					message = pick("Г®ГЇГЁГ°Г ГҐГІГ±[ya] Г­Г  ГЇГ«ГҐГ·ГЁ [P], ГЇГ°ГЁГ¤ГҐГ°Г¦ГЁГўГ [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] ГЁ Г§Г Г±Г Г¦ГЁГўГ [ya] Г·Г«ГҐГ­ ГўГ±Вё Г±ГЁГ«ГјГ­ГҐГҐ ГЁ Г±ГЁГ«ГјГ­ГҐГҐ [P.identifying_gender==FEMALE ? "ГҐГ©" : "ГҐГ¬Гі"] Гў ГЈГ«Г®ГІГЄГі.", "ГІГ°Г ГµГ ГҐГІ [P] Гў Г§ГіГЎГ Г±ГІГіГѕ ГЇГ Г±ГІГј.", "Г­Г Г±Г Г¦ГЁГўГ ГҐГІ ГЈГ®Г«Г®ГўГі [P] Г­Г  Г±ГўГ®Г© Г·Г«ГҐГ­.", "Г¤ГҐГ°Г¦ГЁГІ [P] Г§Г  ГЈГ®Г«Г®ГўГі Г¤ГўГіГ¬[ya] Г°ГіГЄГ Г¬ГЁ ГЁ Г±Г®ГўГҐГ°ГёГ ГҐГІ Г¤ГўГЁГ¦ГҐГ­ГЁ[ya] ГІГ Г§Г®Г¬.", "Г¤Г ВёГІ ГЇГ®Г№ВёГ·ГЁГ­Г» [P], ГЇГ°Г®Г¤Г®Г«Г¦Г [ya] ГҐГЎГ ГІГј [P.identifying_gender == FEMALE ? "ГЎГҐГ¤Г­ГіГѕ ГЄГ®ГёГҐГ·ГЄГі" : "ГЎГҐГ¤Г­Г®ГЈГ® ГЄГ®ГІВёГ­ГЄГ "] Гў ГЇГ Г±ГІГј.", "ГЎГҐГ§Г¦Г Г±ГІГ­Г® ГЇГ®Г«ГјГ§ГіГҐГІГ±[ya] ГЈГ«Г®ГІГЄГ®Г© [P].", ", Г°Г»Г·Г  Г±ГЄГўГ®Г§Гј Г§ГіГЎГ», Г­Г ГІ[ya]ГЈГЁГўГ ГҐГІ ГЈГ«Г®ГІГЄГі [P] Г­Г  Г±ГўГ®ГҐГЈГ® Г¬Г Г«Г»ГёГ .", ", Г·ГҐГ°ГҐГ§Г¬ГҐГ°Г­Г® ГіГўГ«ГҐГЄГёГЁГ±Гј, ГІГ»ГЄГ ГҐГІ Г·Г«ГҐГ­Г®Г¬ Г¬ГЁГ¬Г® Г°ГІГ  [P] ГЁ Г¤Г°Г®Г¦ГЁГІ Г®ГІ ГЇГ°ГЁГЄГ®Г±Г­Г®ГўГҐГ­ГЁ[ya] ГёГҐГ°Г±ГІГЁ.")
 				if(P.species.get_bodytype() == SPECIES_VOX || P.species.get_bodytype() == SPECIES_NEVREAN)
-					message = pick("опираетс[ya] на плечи [P], придержива[ya] [P.identifying_gender==FEMALE ? "её" : "его"] и засажива[ya] член всё сильнее и сильнее [P.identifying_gender==FEMALE ? "ей" : "ему"] в глотку.", "трахает [P] пр[ya]мо в клюв.", "насаживает голову [P] на свой член, стара[ya]сь не порезатьс[ya] о выступы на клюве.", "держит [P] за голову двум[ya] руками и совершает движени[ya] тазом.", "сжимает перь[ya] на голове [P], продолжа[ya] ебать бедную птичку в рот.", "безжастно пользуетс[ya] глоткой [P].", ", рыча сквозь зубы, нат[ya]гивает глотку [P] на своего малыша.", ", черезмерно увлекшись, тыкает членом мимо рта [P] и дрожит от внезапных ощущений.")
+					message = pick("Г®ГЇГЁГ°Г ГҐГІГ±[ya] Г­Г  ГЇГ«ГҐГ·ГЁ [P], ГЇГ°ГЁГ¤ГҐГ°Г¦ГЁГўГ [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] ГЁ Г§Г Г±Г Г¦ГЁГўГ [ya] Г·Г«ГҐГ­ ГўГ±Вё Г±ГЁГ«ГјГ­ГҐГҐ ГЁ Г±ГЁГ«ГјГ­ГҐГҐ [P.identifying_gender==FEMALE ? "ГҐГ©" : "ГҐГ¬Гі"] Гў ГЈГ«Г®ГІГЄГі.", "ГІГ°Г ГµГ ГҐГІ [P] ГЇГ°[ya]Г¬Г® Гў ГЄГ«ГѕГў.", "Г­Г Г±Г Г¦ГЁГўГ ГҐГІ ГЈГ®Г«Г®ГўГі [P] Г­Г  Г±ГўГ®Г© Г·Г«ГҐГ­, Г±ГІГ Г°Г [ya]Г±Гј Г­ГҐ ГЇГ®Г°ГҐГ§Г ГІГјГ±[ya] Г® ГўГ»Г±ГІГіГЇГ» Г­Г  ГЄГ«ГѕГўГҐ.", "Г¤ГҐГ°Г¦ГЁГІ [P] Г§Г  ГЈГ®Г«Г®ГўГі Г¤ГўГіГ¬[ya] Г°ГіГЄГ Г¬ГЁ ГЁ Г±Г®ГўГҐГ°ГёГ ГҐГІ Г¤ГўГЁГ¦ГҐГ­ГЁ[ya] ГІГ Г§Г®Г¬.", "Г±Г¦ГЁГ¬Г ГҐГІ ГЇГҐГ°Гј[ya] Г­Г  ГЈГ®Г«Г®ГўГҐ [P], ГЇГ°Г®Г¤Г®Г«Г¦Г [ya] ГҐГЎГ ГІГј ГЎГҐГ¤Г­ГіГѕ ГЇГІГЁГ·ГЄГі Гў Г°Г®ГІ.", "ГЎГҐГ§Г¦Г Г±ГІГ­Г® ГЇГ®Г«ГјГ§ГіГҐГІГ±[ya] ГЈГ«Г®ГІГЄГ®Г© [P].", ", Г°Г»Г·Г  Г±ГЄГўГ®Г§Гј Г§ГіГЎГ», Г­Г ГІ[ya]ГЈГЁГўГ ГҐГІ ГЈГ«Г®ГІГЄГі [P] Г­Г  Г±ГўГ®ГҐГЈГ® Г¬Г Г«Г»ГёГ .", ", Г·ГҐГ°ГҐГ§Г¬ГҐГ°Г­Г® ГіГўГ«ГҐГЄГёГЁГ±Гј, ГІГ»ГЄГ ГҐГІ Г·Г«ГҐГ­Г®Г¬ Г¬ГЁГ¬Г® Г°ГІГ  [P] ГЁ Г¤Г°Г®Г¦ГЁГІ Г®ГІ ГўГ­ГҐГ§Г ГЇГ­Г»Гµ Г®Г№ГіГ№ГҐГ­ГЁГ©.")
 				if(P.species.get_bodytype() == SPECIES_PROMETHEAN)
-					message = pick("опираетс[ya] на желеобразные плечи [P], придержива[ya] [P.identifying_gender==FEMALE ? "её" : "его"] и засажива[ya] член всё сильнее и сильнее [P.identifying_gender==FEMALE ? "ей" : "ему"] в глотку.", "трахает [P] в рот, зал[ya]пыва[ya] свой член в липкой слизи.", "насаживает голову [P] на свой член.", "держит [P] за голову двум[ya] руками и совершает движени[ya] тазом.", "продолжает ебать [P.identifying_gender == FEMALE ? "бедную слизнедевку" : "бедного слизн[ya]"] в рот.", "безжастно пользуетс[ya] ротиком [P].", ", черезмерно увлекшись, тыкает членом мимо рта [P] и дрожит от внезапных ощущений.", "нещадно насилует глотку [P].")
+					message = pick("Г®ГЇГЁГ°Г ГҐГІГ±[ya] Г­Г  Г¦ГҐГ«ГҐГ®ГЎГ°Г Г§Г­Г»ГҐ ГЇГ«ГҐГ·ГЁ [P], ГЇГ°ГЁГ¤ГҐГ°Г¦ГЁГўГ [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] ГЁ Г§Г Г±Г Г¦ГЁГўГ [ya] Г·Г«ГҐГ­ ГўГ±Вё Г±ГЁГ«ГјГ­ГҐГҐ ГЁ Г±ГЁГ«ГјГ­ГҐГҐ [P.identifying_gender==FEMALE ? "ГҐГ©" : "ГҐГ¬Гі"] Гў ГЈГ«Г®ГІГЄГі.", "ГІГ°Г ГµГ ГҐГІ [P] Гў Г°Г®ГІ, Г§Г Г«[ya]ГЇГ»ГўГ [ya] Г±ГўГ®Г© Г·Г«ГҐГ­ Гў Г«ГЁГЇГЄГ®Г© Г±Г«ГЁГ§ГЁ.", "Г­Г Г±Г Г¦ГЁГўГ ГҐГІ ГЈГ®Г«Г®ГўГі [P] Г­Г  Г±ГўГ®Г© Г·Г«ГҐГ­.", "Г¤ГҐГ°Г¦ГЁГІ [P] Г§Г  ГЈГ®Г«Г®ГўГі Г¤ГўГіГ¬[ya] Г°ГіГЄГ Г¬ГЁ ГЁ Г±Г®ГўГҐГ°ГёГ ГҐГІ Г¤ГўГЁГ¦ГҐГ­ГЁ[ya] ГІГ Г§Г®Г¬.", "ГЇГ°Г®Г¤Г®Г«Г¦Г ГҐГІ ГҐГЎГ ГІГј [P.identifying_gender == FEMALE ? "ГЎГҐГ¤Г­ГіГѕ Г±Г«ГЁГ§Г­ГҐГ¤ГҐГўГЄГі" : "ГЎГҐГ¤Г­Г®ГЈГ® Г±Г«ГЁГ§Г­[ya]"] Гў Г°Г®ГІ.", "ГЎГҐГ§Г¦Г Г±ГІГ­Г® ГЇГ®Г«ГјГ§ГіГҐГІГ±[ya] Г°Г®ГІГЁГЄГ®Г¬ [P].", ", Г·ГҐГ°ГҐГ§Г¬ГҐГ°Г­Г® ГіГўГ«ГҐГЄГёГЁГ±Гј, ГІГ»ГЄГ ГҐГІ Г·Г«ГҐГ­Г®Г¬ Г¬ГЁГ¬Г® Г°ГІГ  [P] ГЁ Г¤Г°Г®Г¦ГЁГІ Г®ГІ ГўГ­ГҐГ§Г ГЇГ­Г»Гµ Г®Г№ГіГ№ГҐГ­ГЁГ©.", "Г­ГҐГ№Г Г¤Г­Г® Г­Г Г±ГЁГ«ГіГҐГІ ГЈГ«Г®ГІГЄГі [P].")
 
 			if (H.lastfucked != P || H.lfhole != hole)
-				message = pick("бесцеремонно проталкивает свой член [P] в глотку.")
+				message = pick("ГЎГҐГ±Г¶ГҐГ°ГҐГ¬Г®Г­Г­Г® ГЇГ°Г®ГІГ Г«ГЄГЁГўГ ГҐГІ Г±ГўГ®Г© Г·Г«ГҐГ­ [P] Гў ГЈГ«Г®ГІГЄГі.")
 				H.lastfucked = P
 				H.lfhole = hole
 
@@ -836,92 +836,92 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 			if (P.a_intent == I_HURT)
 				H.apply_damage(5, BRUTE, BP_GROIN)
 				blood_splatter(src,H,0)
-				retaliation_message = pick("сильно кусает член [H].", "сжимает зубами член [H], пока не начинает течь кровь.", "злобно смотрит из-под колен [H], скал[ya] окровавленные зубы.", "изо всех сил пытаетс[ya] вырватьс[ya] из-под ног [H].")
+				retaliation_message = pick("Г±ГЁГ«ГјГ­Г® ГЄГіГ±Г ГҐГІ Г·Г«ГҐГ­ [H].", "Г±Г¦ГЁГ¬Г ГҐГІ Г§ГіГЎГ Г¬ГЁ Г·Г«ГҐГ­ [H], ГЇГ®ГЄГ  Г­ГҐ Г­Г Г·ГЁГ­Г ГҐГІ ГІГҐГ·Гј ГЄГ°Г®ГўГј.", "Г§Г«Г®ГЎГ­Г® Г±Г¬Г®ГІГ°ГЁГІ ГЁГ§-ГЇГ®Г¤ ГЄГ®Г«ГҐГ­ [H], Г±ГЄГ Г«[ya] Г®ГЄГ°Г®ГўГ ГўГ«ГҐГ­Г­Г»ГҐ Г§ГіГЎГ».", "ГЁГ§Г® ГўГ±ГҐГµ Г±ГЁГ« ГЇГ»ГІГ ГҐГІГ±[ya] ГўГ»Г°ГўГ ГІГјГ±[ya] ГЁГ§-ГЇГ®Г¤ Г­Г®ГЈ [H].")
 				H.visible_message("<font color=red>[P] [retaliation_message]</font>")
 				if (prob(5))
 					H.apply_damage(20, BRUTE, BP_GROIN)
 					blood_splatter(src,H,1)
-					retaliation_message = pick("сжимает зубами член [H], а затем отрывает его, пачка[ya]сь в крови!", "прикусывает член [H] и не отпускает, пока он не отрываетс[ya]!", "откусывает член партнёра полностью в попытках вырватьс[ya]!")
+					retaliation_message = pick("Г±Г¦ГЁГ¬Г ГҐГІ Г§ГіГЎГ Г¬ГЁ Г·Г«ГҐГ­ [H], Г  Г§Г ГІГҐГ¬ Г®ГІГ°Г»ГўГ ГҐГІ ГҐГЈГ®, ГЇГ Г·ГЄГ [ya]Г±Гј Гў ГЄГ°Г®ГўГЁ!", "ГЇГ°ГЁГЄГіГ±Г»ГўГ ГҐГІ Г·Г«ГҐГ­ [H] ГЁ Г­ГҐ Г®ГІГЇГіГ±ГЄГ ГҐГІ, ГЇГ®ГЄГ  Г®Г­ Г­ГҐ Г®ГІГ°Г»ГўГ ГҐГІГ±[ya]!", "Г®ГІГЄГіГ±Г»ГўГ ГҐГІ Г·Г«ГҐГ­ ГЇГ Г°ГІГ­ВёГ°Г  ГЇГ®Г«Г­Г®Г±ГІГјГѕ Гў ГЇГ®ГЇГ»ГІГЄГ Гµ ГўГ»Г°ГўГ ГІГјГ±[ya]!")
 					H.visible_message("<font color=red><b>[P] [retaliation_message]</font></b>")
 					H.potenzia = -1
 
 /*
-MOUNT REWORKED - допилить попарно реакции на взаимодействия рас друг с другом, учитывая в какой роли эта раса - в активной или пассивной.
+MOUNT REWORKED - Г¤Г®ГЇГЁГ«ГЁГІГј ГЇГ®ГЇГ Г°Г­Г® Г°ГҐГ ГЄГ¶ГЁГЁ Г­Г  ГўГ§Г ГЁГ¬Г®Г¤ГҐГ©Г±ГІГўГЁГї Г°Г Г± Г¤Г°ГіГЈ Г± Г¤Г°ГіГЈГ®Г¬, ГіГ·ГЁГІГ»ГўГ Гї Гў ГЄГ ГЄГ®Г© Г°Г®Г«ГЁ ГЅГІГ  Г°Г Г±Г  - Гў Г ГЄГІГЁГўГ­Г®Г© ГЁГ«ГЁ ГЇГ Г±Г±ГЁГўГ­Г®Г©.
 
-Кратко: думал сделать систему, которая выбирала бы сообщение не только зависимо от типа тела седлаемого партнёра, но и в зависимости от типа тела седлающего.
-Как я полагаю, для этого необходимо прописать попарно взаимодействия рас для каждой из категорий: не_пушистое, пушистое, пернатое, слизеподобное/нано-рой.
-Но к сожалению мои познания в коде малы и уместить это в меньшее кол-во строчек кода пока не могу, а тонну кода писать - уже написал.
+ГЉГ°Г ГІГЄГ®: Г¤ГіГ¬Г Г« Г±Г¤ГҐГ«Г ГІГј Г±ГЁГ±ГІГҐГ¬Гі, ГЄГ®ГІГ®Г°Г Гї ГўГ»ГЎГЁГ°Г Г«Г  ГЎГ» Г±Г®Г®ГЎГ№ГҐГ­ГЁГҐ Г­ГҐ ГІГ®Г«ГјГЄГ® Г§Г ГўГЁГ±ГЁГ¬Г® Г®ГІ ГІГЁГЇГ  ГІГҐГ«Г  Г±ГҐГ¤Г«Г ГҐГ¬Г®ГЈГ® ГЇГ Г°ГІГ­ВёГ°Г , Г­Г® ГЁ Гў Г§Г ГўГЁГ±ГЁГ¬Г®Г±ГІГЁ Г®ГІ ГІГЁГЇГ  ГІГҐГ«Г  Г±ГҐГ¤Г«Г ГѕГ№ГҐГЈГ®.
+ГЉГ ГЄ Гї ГЇГ®Г«Г ГЈГ Гѕ, Г¤Г«Гї ГЅГІГ®ГЈГ® Г­ГҐГ®ГЎГµГ®Г¤ГЁГ¬Г® ГЇГ°Г®ГЇГЁГ±Г ГІГј ГЇГ®ГЇГ Г°Г­Г® ГўГ§Г ГЁГ¬Г®Г¤ГҐГ©Г±ГІГўГЁГї Г°Г Г± Г¤Г«Гї ГЄГ Г¦Г¤Г®Г© ГЁГ§ ГЄГ ГІГҐГЈГ®Г°ГЁГ©: Г­ГҐ_ГЇГіГёГЁГ±ГІГ®ГҐ, ГЇГіГёГЁГ±ГІГ®ГҐ, ГЇГҐГ°Г­Г ГІГ®ГҐ, Г±Г«ГЁГ§ГҐГЇГ®Г¤Г®ГЎГ­Г®ГҐ/Г­Г Г­Г®-Г°Г®Г©.
+ГЌГ® ГЄ Г±Г®Г¦Г Г«ГҐГ­ГЁГѕ Г¬Г®ГЁ ГЇГ®Г§Г­Г Г­ГЁГї Гў ГЄГ®Г¤ГҐ Г¬Г Г«Г» ГЁ ГіГ¬ГҐГ±ГІГЁГІГј ГЅГІГ® Гў Г¬ГҐГ­ГјГёГҐГҐ ГЄГ®Г«-ГўГ® Г±ГІГ°Г®Г·ГҐГЄ ГЄГ®Г¤Г  ГЇГ®ГЄГ  Г­ГҐ Г¬Г®ГЈГі, Г  ГІГ®Г­Г­Гі ГЄГ®Г¤Г  ГЇГЁГ±Г ГІГј - ГіГ¦ГҐ Г­Г ГЇГЁГ±Г Г«.
 
-Да, пилить хохуя, если всё же пилить.
+Г„Г , ГЇГЁГ«ГЁГІГј ГµГ®ГµГіГї, ГҐГ±Г«ГЁ ГўГ±Вё Г¦ГҐ ГЇГЁГ«ГЁГІГј.
 
- UPD: В принципе можно было бы ввести переменные, обозначающие "категорию" расы и сделать универсальные сообщения...
-...в которых была бы проверка на категории шерсть/перья/латекс/итп и в зависимости от этого вставлялось бы нужное слово-описание.
+ UPD: Г‚ ГЇГ°ГЁГ­Г¶ГЁГЇГҐ Г¬Г®Г¦Г­Г® ГЎГ»Г«Г® ГЎГ» ГўГўГҐГ±ГІГЁ ГЇГҐГ°ГҐГ¬ГҐГ­Г­Г»ГҐ, Г®ГЎГ®Г§Г­Г Г·Г ГѕГ№ГЁГҐ "ГЄГ ГІГҐГЈГ®Г°ГЁГѕ" Г°Г Г±Г» ГЁ Г±Г¤ГҐГ«Г ГІГј ГіГ­ГЁГўГҐГ°Г±Г Г«ГјГ­Г»ГҐ Г±Г®Г®ГЎГ№ГҐГ­ГЁГї...
+...Гў ГЄГ®ГІГ®Г°Г»Гµ ГЎГ»Г«Г  ГЎГ» ГЇГ°Г®ГўГҐГ°ГЄГ  Г­Г  ГЄГ ГІГҐГЈГ®Г°ГЁГЁ ГёГҐГ°Г±ГІГј/ГЇГҐГ°ГјГї/Г«Г ГІГҐГЄГ±/ГЁГІГЇ ГЁ Гў Г§Г ГўГЁГ±ГЁГ¬Г®Г±ГІГЁ Г®ГІ ГЅГІГ®ГЈГ® ГўГ±ГІГ ГўГ«ГїГ«Г®Г±Гј ГЎГ» Г­ГіГ¦Г­Г®ГҐ Г±Г«Г®ГўГ®-Г®ГЇГЁГ±Г Г­ГЁГҐ.
  */
 
 		if ("mount")
 
 			if(P.species.get_bodytype() == SPECIES_HUMAN || P.species.get_bodytype() == SPECIES_TESHARI || P.species.get_bodytype() == SPECIES_HUMAN_VATBORN || P.species.get_bodytype() == SPECIES_RAPALA || P.species.get_bodytype() == SPECIES_VASILISSAN || P.species.get_bodytype() == SPECIES_PROTEAN || P.species.get_bodytype() == SPECIES_SKRELL)
-				message = pick("неумолимо скачет на члене [P]", "прыгает на инструменте [P]", "насаживаетс[ya] на [P]", "сношаетс[ya] с [P]", "прыгает на инструменте [P], сжима[ya] мышцы влагалища")
+				message = pick("Г­ГҐГіГ¬Г®Г«ГЁГ¬Г® Г±ГЄГ Г·ГҐГІ Г­Г  Г·Г«ГҐГ­ГҐ [P]", "ГЇГ°Г»ГЈГ ГҐГІ Г­Г  ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГҐ [P]", "Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] Г­Г  [P]", "Г±Г­Г®ГёГ ГҐГІГ±[ya] Г± [P]", "ГЇГ°Г»ГЈГ ГҐГІ Г­Г  ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГҐ [P], Г±Г¦ГЁГ¬Г [ya] Г¬Г»ГёГ¶Г» ГўГ«Г ГЈГ Г«ГЁГ№Г ")
 				if (prob(35))
-					message = pick("вгон[ya]ет интрумент [P] в своё влагалище по самые [ya]йца", "скачет на малыше [P], погружа[ya] его в своё лоно", "насаживаетс[ya] писечкой на ствол [P], ввод[ya] его в себ[ya] до упора", "прыгает на инструменте [P], сжима[ya] мышцы влагалища", "скачет на [P], погружа[ya] [P.identifying_gender==FEMALE ? "её" : "его"] орган в свою щель", "прыгает на [P], удар[ya][ya]сь о [P.identifying_gender==FEMALE ? "её" : "его"] тело", "скачет на члене, доставл[ya][ya] удовольствие себе и [P]", "[H.identifying_gender==FEMALE ? "упёрлась" : "упёрс[ya]"] тазом в [P] и елозит, держа [P.identifying_gender==FEMALE ? "её" : "его"] член внутри себ[ya]", "двигает тазом по-кругу, сид[ya] на инструменте [P], ласка[ya] его стенками влагалища", "вприпрыжку наваливаетс[ya] на [P], ласка[ya] [P.identifying_gender==FEMALE ? "её" : "его"] член пульсирующей киской", "набрасывает лоно на крючок [P], дав[ya] на него своим тазом", "двигаетс[ya] вверх-вниз, сид[ya] на зверьке [P]")
+					message = pick("ГўГЈГ®Г­[ya]ГҐГІ ГЁГ­ГІГ°ГіГ¬ГҐГ­ГІ [P] Гў Г±ГўГ®Вё ГўГ«Г ГЈГ Г«ГЁГ№ГҐ ГЇГ® Г±Г Г¬Г»ГҐ [ya]Г©Г¶Г ", "Г±ГЄГ Г·ГҐГІ Г­Г  Г¬Г Г«Г»ГёГҐ [P], ГЇГ®ГЈГ°ГіГ¦Г [ya] ГҐГЈГ® Гў Г±ГўГ®Вё Г«Г®Г­Г®", "Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] ГЇГЁГ±ГҐГ·ГЄГ®Г© Г­Г  Г±ГІГўГ®Г« [P], ГўГўГ®Г¤[ya] ГҐГЈГ® Гў Г±ГҐГЎ[ya] Г¤Г® ГіГЇГ®Г°Г ", "ГЇГ°Г»ГЈГ ГҐГІ Г­Г  ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГҐ [P], Г±Г¦ГЁГ¬Г [ya] Г¬Г»ГёГ¶Г» ГўГ«Г ГЈГ Г«ГЁГ№Г ", "Г±ГЄГ Г·ГҐГІ Г­Г  [P], ГЇГ®ГЈГ°ГіГ¦Г [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г®Г°ГЈГ Г­ Гў Г±ГўГ®Гѕ Г№ГҐГ«Гј", "ГЇГ°Г»ГЈГ ГҐГІ Г­Г  [P], ГіГ¤Г Г°[ya][ya]Г±Гј Г® [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] ГІГҐГ«Г®", "Г±ГЄГ Г·ГҐГІ Г­Г  Г·Г«ГҐГ­ГҐ, Г¤Г®Г±ГІГ ГўГ«[ya][ya] ГіГ¤Г®ГўГ®Г«ГјГ±ГІГўГЁГҐ Г±ГҐГЎГҐ ГЁ [P]", "[H.identifying_gender==FEMALE ? "ГіГЇВёГ°Г«Г Г±Гј" : "ГіГЇВёГ°Г±[ya]"] ГІГ Г§Г®Г¬ Гў [P] ГЁ ГҐГ«Г®Г§ГЁГІ, Г¤ГҐГ°Г¦Г  [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г·Г«ГҐГ­ ГўГ­ГіГІГ°ГЁ Г±ГҐГЎ[ya]", "Г¤ГўГЁГЈГ ГҐГІ ГІГ Г§Г®Г¬ ГЇГ®-ГЄГ°ГіГЈГі, Г±ГЁГ¤[ya] Г­Г  ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГҐ [P], Г«Г Г±ГЄГ [ya] ГҐГЈГ® Г±ГІГҐГ­ГЄГ Г¬ГЁ ГўГ«Г ГЈГ Г«ГЁГ№Г ", "ГўГЇГ°ГЁГЇГ°Г»Г¦ГЄГі Г­Г ГўГ Г«ГЁГўГ ГҐГІГ±[ya] Г­Г  [P], Г«Г Г±ГЄГ [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г·Г«ГҐГ­ ГЇГіГ«ГјГ±ГЁГ°ГіГѕГ№ГҐГ© ГЄГЁГ±ГЄГ®Г©", "Г­Г ГЎГ°Г Г±Г»ГўГ ГҐГІ Г«Г®Г­Г® Г­Г  ГЄГ°ГѕГ·Г®ГЄ [P], Г¤Г Гў[ya] Г­Г  Г­ГҐГЈГ® Г±ГўГ®ГЁГ¬ ГІГ Г§Г®Г¬", "Г¤ГўГЁГЈГ ГҐГІГ±[ya] ГўГўГҐГ°Гµ-ГўГ­ГЁГ§, Г±ГЁГ¤[ya] Г­Г  Г§ГўГҐГ°ГјГЄГҐ [P]")
 
 				if (H.lastfucked != P || H.lfhole != hole)
-					message = pick("медленно опускаетс[ya] на пенис [P]", "вводит член [P] в свою киску, направл[ya][ya] его рукой", "направл[ya]ет член [P] в свою влажную киску", "чувственно вводит орган [P] в свою мокрую писечку", "запускает зверька [P] в свою промежность")
+					message = pick("Г¬ГҐГ¤Г«ГҐГ­Г­Г® Г®ГЇГіГ±ГЄГ ГҐГІГ±[ya] Г­Г  ГЇГҐГ­ГЁГ± [P]", "ГўГўГ®Г¤ГЁГІ Г·Г«ГҐГ­ [P] Гў Г±ГўГ®Гѕ ГЄГЁГ±ГЄГі, Г­Г ГЇГ°Г ГўГ«[ya][ya] ГҐГЈГ® Г°ГіГЄГ®Г©", "Г­Г ГЇГ°Г ГўГ«[ya]ГҐГІ Г·Г«ГҐГ­ [P] Гў Г±ГўГ®Гѕ ГўГ«Г Г¦Г­ГіГѕ ГЄГЁГ±ГЄГі", "Г·ГіГўГ±ГІГўГҐГ­Г­Г® ГўГўГ®Г¤ГЁГІ Г®Г°ГЈГ Г­ [P] Гў Г±ГўГ®Гѕ Г¬Г®ГЄГ°ГіГѕ ГЇГЁГ±ГҐГ·ГЄГі", "Г§Г ГЇГіГ±ГЄГ ГҐГІ Г§ГўГҐГ°ГјГЄГ  [P] Гў Г±ГўГ®Гѕ ГЇГ°Г®Г¬ГҐГ¦Г­Г®Г±ГІГј")
 					H.lastfucked = P
 					H.lfhole = hole
 
 
 			if(P.species.get_bodytype() == SPECIES_TAJ)
-				message = pick("неумолимо скачет на шипастом члене [P]", "прыгает на инструменте [P]", "насаживаетс[ya] на [P]", "сношаетс[ya] с [P]", "прыгает на покрытом шипами инструменте [P]")
+				message = pick("Г­ГҐГіГ¬Г®Г«ГЁГ¬Г® Г±ГЄГ Г·ГҐГІ Г­Г  ГёГЁГЇГ Г±ГІГ®Г¬ Г·Г«ГҐГ­ГҐ [P]", "ГЇГ°Г»ГЈГ ГҐГІ Г­Г  ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГҐ [P]", "Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] Г­Г  [P]", "Г±Г­Г®ГёГ ГҐГІГ±[ya] Г± [P]", "ГЇГ°Г»ГЈГ ГҐГІ Г­Г  ГЇГ®ГЄГ°Г»ГІГ®Г¬ ГёГЁГЇГ Г¬ГЁ ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГҐ [P]")
 				if (prob(35))
-					message = pick("насаживаетс[ya] писечкой на шипастый ствол [P], ввод[ya] [P.identifying_gender==FEMALE ? "её" : "его"] орган в себ[ya] до упора", "вгон[ya]ет шипастый интрумент [P] в себ[ya] по самые [ya]йца", "скачет на покрытом шипиками малыше [P], погружа[ya] его в себ[ya]", "скачет на шипастом члене [P], погружа[ya] [P.identifying_gender==FEMALE ? "её" : "его"] орган в своё лоно", "скачет на [P], удар[ya][ya]сь о [P.identifying_gender==FEMALE ? "её" : "его"] тело", "скачет на покрытом шипами члене, доставл[ya][ya] удовольствие себе и [P]", "насаживаетс[ya] писечкой на шипастый ствол [P], ввод[ya] [P.identifying_gender==FEMALE ? "её" : "его"] орган в себ[ya] до упора", "[H.identifying_gender==FEMALE ? "упёрлась" : "упёрс[ya]"] тазом в [P] и елозит, держа [P.identifying_gender==FEMALE ? "её" : "его"] шипастый член внутри себ[ya]", "двигает тазом по-кругу, сид[ya] на шипастом инструменте [P], ласка[ya] его стенками влагалища", "вприпрыжку наваливаетс[ya] на [P], ласка[ya] [P.identifying_gender==FEMALE ? "её" : "его"] пульсирующей киской", "набрасывает лоно на крючок [P], дав[ya] на него своим тазом", "двигаетс[ya] вверх-вниз, сид[ya] на шипастом зверьке [P]")
+					message = pick("Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] ГЇГЁГ±ГҐГ·ГЄГ®Г© Г­Г  ГёГЁГЇГ Г±ГІГ»Г© Г±ГІГўГ®Г« [P], ГўГўГ®Г¤[ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г®Г°ГЈГ Г­ Гў Г±ГҐГЎ[ya] Г¤Г® ГіГЇГ®Г°Г ", "ГўГЈГ®Г­[ya]ГҐГІ ГёГЁГЇГ Г±ГІГ»Г© ГЁГ­ГІГ°ГіГ¬ГҐГ­ГІ [P] Гў Г±ГҐГЎ[ya] ГЇГ® Г±Г Г¬Г»ГҐ [ya]Г©Г¶Г ", "Г±ГЄГ Г·ГҐГІ Г­Г  ГЇГ®ГЄГ°Г»ГІГ®Г¬ ГёГЁГЇГЁГЄГ Г¬ГЁ Г¬Г Г«Г»ГёГҐ [P], ГЇГ®ГЈГ°ГіГ¦Г [ya] ГҐГЈГ® Гў Г±ГҐГЎ[ya]", "Г±ГЄГ Г·ГҐГІ Г­Г  ГёГЁГЇГ Г±ГІГ®Г¬ Г·Г«ГҐГ­ГҐ [P], ГЇГ®ГЈГ°ГіГ¦Г [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г®Г°ГЈГ Г­ Гў Г±ГўГ®Вё Г«Г®Г­Г®", "Г±ГЄГ Г·ГҐГІ Г­Г  [P], ГіГ¤Г Г°[ya][ya]Г±Гј Г® [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] ГІГҐГ«Г®", "Г±ГЄГ Г·ГҐГІ Г­Г  ГЇГ®ГЄГ°Г»ГІГ®Г¬ ГёГЁГЇГ Г¬ГЁ Г·Г«ГҐГ­ГҐ, Г¤Г®Г±ГІГ ГўГ«[ya][ya] ГіГ¤Г®ГўГ®Г«ГјГ±ГІГўГЁГҐ Г±ГҐГЎГҐ ГЁ [P]", "Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] ГЇГЁГ±ГҐГ·ГЄГ®Г© Г­Г  ГёГЁГЇГ Г±ГІГ»Г© Г±ГІГўГ®Г« [P], ГўГўГ®Г¤[ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г®Г°ГЈГ Г­ Гў Г±ГҐГЎ[ya] Г¤Г® ГіГЇГ®Г°Г ", "[H.identifying_gender==FEMALE ? "ГіГЇВёГ°Г«Г Г±Гј" : "ГіГЇВёГ°Г±[ya]"] ГІГ Г§Г®Г¬ Гў [P] ГЁ ГҐГ«Г®Г§ГЁГІ, Г¤ГҐГ°Г¦Г  [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] ГёГЁГЇГ Г±ГІГ»Г© Г·Г«ГҐГ­ ГўГ­ГіГІГ°ГЁ Г±ГҐГЎ[ya]", "Г¤ГўГЁГЈГ ГҐГІ ГІГ Г§Г®Г¬ ГЇГ®-ГЄГ°ГіГЈГі, Г±ГЁГ¤[ya] Г­Г  ГёГЁГЇГ Г±ГІГ®Г¬ ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГҐ [P], Г«Г Г±ГЄГ [ya] ГҐГЈГ® Г±ГІГҐГ­ГЄГ Г¬ГЁ ГўГ«Г ГЈГ Г«ГЁГ№Г ", "ГўГЇГ°ГЁГЇГ°Г»Г¦ГЄГі Г­Г ГўГ Г«ГЁГўГ ГҐГІГ±[ya] Г­Г  [P], Г«Г Г±ГЄГ [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] ГЇГіГ«ГјГ±ГЁГ°ГіГѕГ№ГҐГ© ГЄГЁГ±ГЄГ®Г©", "Г­Г ГЎГ°Г Г±Г»ГўГ ГҐГІ Г«Г®Г­Г® Г­Г  ГЄГ°ГѕГ·Г®ГЄ [P], Г¤Г Гў[ya] Г­Г  Г­ГҐГЈГ® Г±ГўГ®ГЁГ¬ ГІГ Г§Г®Г¬", "Г¤ГўГЁГЈГ ГҐГІГ±[ya] ГўГўГҐГ°Гµ-ГўГ­ГЁГ§, Г±ГЁГ¤[ya] Г­Г  ГёГЁГЇГ Г±ГІГ®Г¬ Г§ГўГҐГ°ГјГЄГҐ [P]")
 
 				if (H.lastfucked != P || H.lfhole != hole)
-					message = pick("медленно опускаетс[ya] на шипастый пенис [P]", "вводит покрытый шипами орган [P] в свою киску, направл[ya][ya] его рукой", "рукой направл[ya]ет член [P] в своё влагалище", "чувственно вводит шипастый ствол [P] в свою мокрую киску", "запускает шипастого зверька [P] в свою промежность")
+					message = pick("Г¬ГҐГ¤Г«ГҐГ­Г­Г® Г®ГЇГіГ±ГЄГ ГҐГІГ±[ya] Г­Г  ГёГЁГЇГ Г±ГІГ»Г© ГЇГҐГ­ГЁГ± [P]", "ГўГўГ®Г¤ГЁГІ ГЇГ®ГЄГ°Г»ГІГ»Г© ГёГЁГЇГ Г¬ГЁ Г®Г°ГЈГ Г­ [P] Гў Г±ГўГ®Гѕ ГЄГЁГ±ГЄГі, Г­Г ГЇГ°Г ГўГ«[ya][ya] ГҐГЈГ® Г°ГіГЄГ®Г©", "Г°ГіГЄГ®Г© Г­Г ГЇГ°Г ГўГ«[ya]ГҐГІ Г·Г«ГҐГ­ [P] Гў Г±ГўГ®Вё ГўГ«Г ГЈГ Г«ГЁГ№ГҐ", "Г·ГіГўГ±ГІГўГҐГ­Г­Г® ГўГўГ®Г¤ГЁГІ ГёГЁГЇГ Г±ГІГ»Г© Г±ГІГўГ®Г« [P] Гў Г±ГўГ®Гѕ Г¬Г®ГЄГ°ГіГѕ ГЄГЁГ±ГЄГі", "Г§Г ГЇГіГ±ГЄГ ГҐГІ ГёГЁГЇГ Г±ГІГ®ГЈГ® Г§ГўГҐГ°ГјГЄГ  [P] Гў Г±ГўГ®Гѕ ГЇГ°Г®Г¬ГҐГ¦Г­Г®Г±ГІГј")
 					H.lastfucked = P
 					H.lfhole = hole
 
 
 			if(P.species.get_bodytype() == SPECIES_VULPKANIN || P.species.get_bodytype() == SPECIES_ZORREN_HIGH || P.species.get_bodytype() == SPECIES_ZORREN_FLAT)
-				message = pick("неумолимо скачет на узловатом члене [P]", "прыгает на инструменте [P]", "сношаетс[ya] с [P]", "седлает тело [P] словно наездница", "скачет на [P], погружа[ya] [P.identifying_gender==FEMALE ? "её" : "его"] орган в себ[ya] до узла")
+				message = pick("Г­ГҐГіГ¬Г®Г«ГЁГ¬Г® Г±ГЄГ Г·ГҐГІ Г­Г  ГіГ§Г«Г®ГўГ ГІГ®Г¬ Г·Г«ГҐГ­ГҐ [P]", "ГЇГ°Г»ГЈГ ГҐГІ Г­Г  ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГҐ [P]", "Г±Г­Г®ГёГ ГҐГІГ±[ya] Г± [P]", "Г±ГҐГ¤Г«Г ГҐГІ ГІГҐГ«Г® [P] Г±Г«Г®ГўГ­Г® Г­Г ГҐГ§Г¤Г­ГЁГ¶Г ", "Г±ГЄГ Г·ГҐГІ Г­Г  [P], ГЇГ®ГЈГ°ГіГ¦Г [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г®Г°ГЈГ Г­ Гў Г±ГҐГЎ[ya] Г¤Г® ГіГ§Г«Г ")
 				if (prob(35))
-					message = pick("насаживаетс[ya] писечкой на узловатый ствол [P], ввод[ya] [P.identifying_gender==FEMALE ? "её" : "его"] орган в себ[ya] до упора", "насаживаетс[ya] на узел [P]", "вгон[ya]ет шипастый интрумент [P] в себ[ya] по самые [ya]йца", "прыгает на узловатом инструменте [P], сжав мышцы влагалища", "скачет на узловатом члене [P], погружа[ya] [P.identifying_gender==FEMALE ? "её" : "его"] орган в своё лоно", "насаживаетс[ya] на ствол [P] писечкой, ввод[ya] его в себ[ya] до узла", "насаживаетс[ya] на узловатый интрумент [P] по самые [ya]йца", "скачет на малыше [P], дав[ya] половыми губами на узел", "прыгает на [P], каса[ya]сь [P.identifying_gender==FEMALE ? "её" : "его"] узла клитором", "скачет, доставл[ya][ya] удовольствие себе и [P]", "[H.identifying_gender==FEMALE ? "упёрлась" : "упёрс[ya]"] тазом в [P] и елозит, держа [P.identifying_gender==FEMALE ? "её" : "его"] узел внутри себ[ya]", "двигает тазом по-кругу, сид[ya] на узловатом инструменте [P], ласка[ya] его стенками влагалища", "вприпрыжку наваливаетс[ya] на [P], ласка[ya] [P.identifying_gender==FEMALE ? "её" : "его"] член пульсирующей киской", "насаживаетс[ya] на узел[P], дав[ya] на него сверху", "двигаетс[ya] вверх-вниз, сид[ya] на члене [P]")
+					message = pick("Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] ГЇГЁГ±ГҐГ·ГЄГ®Г© Г­Г  ГіГ§Г«Г®ГўГ ГІГ»Г© Г±ГІГўГ®Г« [P], ГўГўГ®Г¤[ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г®Г°ГЈГ Г­ Гў Г±ГҐГЎ[ya] Г¤Г® ГіГЇГ®Г°Г ", "Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] Г­Г  ГіГ§ГҐГ« [P]", "ГўГЈГ®Г­[ya]ГҐГІ ГёГЁГЇГ Г±ГІГ»Г© ГЁГ­ГІГ°ГіГ¬ГҐГ­ГІ [P] Гў Г±ГҐГЎ[ya] ГЇГ® Г±Г Г¬Г»ГҐ [ya]Г©Г¶Г ", "ГЇГ°Г»ГЈГ ГҐГІ Г­Г  ГіГ§Г«Г®ГўГ ГІГ®Г¬ ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГҐ [P], Г±Г¦Г Гў Г¬Г»ГёГ¶Г» ГўГ«Г ГЈГ Г«ГЁГ№Г ", "Г±ГЄГ Г·ГҐГІ Г­Г  ГіГ§Г«Г®ГўГ ГІГ®Г¬ Г·Г«ГҐГ­ГҐ [P], ГЇГ®ГЈГ°ГіГ¦Г [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г®Г°ГЈГ Г­ Гў Г±ГўГ®Вё Г«Г®Г­Г®", "Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] Г­Г  Г±ГІГўГ®Г« [P] ГЇГЁГ±ГҐГ·ГЄГ®Г©, ГўГўГ®Г¤[ya] ГҐГЈГ® Гў Г±ГҐГЎ[ya] Г¤Г® ГіГ§Г«Г ", "Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] Г­Г  ГіГ§Г«Г®ГўГ ГІГ»Г© ГЁГ­ГІГ°ГіГ¬ГҐГ­ГІ [P] ГЇГ® Г±Г Г¬Г»ГҐ [ya]Г©Г¶Г ", "Г±ГЄГ Г·ГҐГІ Г­Г  Г¬Г Г«Г»ГёГҐ [P], Г¤Г Гў[ya] ГЇГ®Г«Г®ГўГ»Г¬ГЁ ГЈГіГЎГ Г¬ГЁ Г­Г  ГіГ§ГҐГ«", "ГЇГ°Г»ГЈГ ГҐГІ Г­Г  [P], ГЄГ Г±Г [ya]Г±Гј [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] ГіГ§Г«Г  ГЄГ«ГЁГІГ®Г°Г®Г¬", "Г±ГЄГ Г·ГҐГІ, Г¤Г®Г±ГІГ ГўГ«[ya][ya] ГіГ¤Г®ГўГ®Г«ГјГ±ГІГўГЁГҐ Г±ГҐГЎГҐ ГЁ [P]", "[H.identifying_gender==FEMALE ? "ГіГЇВёГ°Г«Г Г±Гј" : "ГіГЇВёГ°Г±[ya]"] ГІГ Г§Г®Г¬ Гў [P] ГЁ ГҐГ«Г®Г§ГЁГІ, Г¤ГҐГ°Г¦Г  [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] ГіГ§ГҐГ« ГўГ­ГіГІГ°ГЁ Г±ГҐГЎ[ya]", "Г¤ГўГЁГЈГ ГҐГІ ГІГ Г§Г®Г¬ ГЇГ®-ГЄГ°ГіГЈГі, Г±ГЁГ¤[ya] Г­Г  ГіГ§Г«Г®ГўГ ГІГ®Г¬ ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГҐ [P], Г«Г Г±ГЄГ [ya] ГҐГЈГ® Г±ГІГҐГ­ГЄГ Г¬ГЁ ГўГ«Г ГЈГ Г«ГЁГ№Г ", "ГўГЇГ°ГЁГЇГ°Г»Г¦ГЄГі Г­Г ГўГ Г«ГЁГўГ ГҐГІГ±[ya] Г­Г  [P], Г«Г Г±ГЄГ [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г·Г«ГҐГ­ ГЇГіГ«ГјГ±ГЁГ°ГіГѕГ№ГҐГ© ГЄГЁГ±ГЄГ®Г©", "Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] Г­Г  ГіГ§ГҐГ«[P], Г¤Г Гў[ya] Г­Г  Г­ГҐГЈГ® Г±ГўГҐГ°ГµГі", "Г¤ГўГЁГЈГ ГҐГІГ±[ya] ГўГўГҐГ°Гµ-ГўГ­ГЁГ§, Г±ГЁГ¤[ya] Г­Г  Г·Г«ГҐГ­ГҐ [P]")
 
 				if (H.lastfucked != P || H.lfhole != hole)
-					message = pick("медленно опускаетс[ya] на узловатый пенис [P], ввод[ya] его внутрь", "вводит узловатый орган [P] в свою киску, направл[ya][ya] его рукой", "рукой направл[ya]ет член [P] в своё влагалище", "осторожно вводит ствол [P] в своё нутро", "запускает узловатого зверька [P] в свою промежность")
+					message = pick("Г¬ГҐГ¤Г«ГҐГ­Г­Г® Г®ГЇГіГ±ГЄГ ГҐГІГ±[ya] Г­Г  ГіГ§Г«Г®ГўГ ГІГ»Г© ГЇГҐГ­ГЁГ± [P], ГўГўГ®Г¤[ya] ГҐГЈГ® ГўГ­ГіГІГ°Гј", "ГўГўГ®Г¤ГЁГІ ГіГ§Г«Г®ГўГ ГІГ»Г© Г®Г°ГЈГ Г­ [P] Гў Г±ГўГ®Гѕ ГЄГЁГ±ГЄГі, Г­Г ГЇГ°Г ГўГ«[ya][ya] ГҐГЈГ® Г°ГіГЄГ®Г©", "Г°ГіГЄГ®Г© Г­Г ГЇГ°Г ГўГ«[ya]ГҐГІ Г·Г«ГҐГ­ [P] Гў Г±ГўГ®Вё ГўГ«Г ГЈГ Г«ГЁГ№ГҐ", "Г®Г±ГІГ®Г°Г®Г¦Г­Г® ГўГўГ®Г¤ГЁГІ Г±ГІГўГ®Г« [P] Гў Г±ГўГ®Вё Г­ГіГІГ°Г®", "Г§Г ГЇГіГ±ГЄГ ГҐГІ ГіГ§Г«Г®ГўГ ГІГ®ГЈГ® Г§ГўГҐГ°ГјГЄГ  [P] Гў Г±ГўГ®Гѕ ГЇГ°Г®Г¬ГҐГ¦Г­Г®Г±ГІГј")
 					H.lastfucked = P
 					H.lfhole = hole
 
 
 			if(P.species.get_bodytype() == SPECIES_UNATHI)
-				message = pick("неумолимо скачет на члене [P]", "седлает тело [P], словно наездница", "насаживаетс[ya] на [P]", "сношаетс[ya] с [P]", "двигатетс[ya] вверх-вниз на одном из членов [P]", "скачет на малышах [P]")
+				message = pick("Г­ГҐГіГ¬Г®Г«ГЁГ¬Г® Г±ГЄГ Г·ГҐГІ Г­Г  Г·Г«ГҐГ­ГҐ [P]", "Г±ГҐГ¤Г«Г ГҐГІ ГІГҐГ«Г® [P], Г±Г«Г®ГўГ­Г® Г­Г ГҐГ§Г¤Г­ГЁГ¶Г ", "Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] Г­Г  [P]", "Г±Г­Г®ГёГ ГҐГІГ±[ya] Г± [P]", "Г¤ГўГЁГЈГ ГІГҐГІГ±[ya] ГўГўГҐГ°Гµ-ГўГ­ГЁГ§ Г­Г  Г®Г¤Г­Г®Г¬ ГЁГ§ Г·Г«ГҐГ­Г®Гў [P]", "Г±ГЄГ Г·ГҐГІ Г­Г  Г¬Г Г«Г»ГёГ Гµ [P]")
 				if (prob(35))
-					message = pick("насаживаетс[ya] писечкой на ствол [P], ввод[ya] [P.identifying_gender==FEMALE ? "её" : "его"] орган в себ[ya] до упора", "поочерёдно насаживаетс[ya] на члены [P]", "скачет на обоих отростках [P] сразу, погружа[ya] их в свою киску до упора", "насаживаетс[ya] писечкой на интрументы [P] по самые [ya]йца", "скачет на члене [P], погружа[ya] [P.identifying_gender==FEMALE ? "её" : "его"] орган в своё лоно", "садитс[ya] на [P], погружа[ya] оба члена в себ[ya] до упора и удар[ya][ya]сь о [P.identifying_gender==FEMALE ? "её" : "его"] тело", "скачет на члене, доставл[ya][ya] удовольствие себе и [P]", "[H.identifying_gender==FEMALE ? "упёрлась" : "упёрс[ya]"] тазом в [P] и елозит, держа [P.identifying_gender==FEMALE ? "её" : "его"] член внутри себ[ya]", "двигает тазом по-кругу, сид[ya] на инструменте [P], ласка[ya] его стенками влагалища", "вприпрыжку наваливаетс[ya] на [P], ласка[ya] [P.identifying_gender==FEMALE ? "её" : "его"] член пульсирующей киской", "набрасывает лоно на крючок [P], дав[ya] на него своим тазом", "двигаетс[ya] вверх-вниз, сид[ya] на двойном члене [P]", "насаживаетс[ya] на член [P], дав[ya] на него сверху")
+					message = pick("Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] ГЇГЁГ±ГҐГ·ГЄГ®Г© Г­Г  Г±ГІГўГ®Г« [P], ГўГўГ®Г¤[ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г®Г°ГЈГ Г­ Гў Г±ГҐГЎ[ya] Г¤Г® ГіГЇГ®Г°Г ", "ГЇГ®Г®Г·ГҐГ°ВёГ¤Г­Г® Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] Г­Г  Г·Г«ГҐГ­Г» [P]", "Г±ГЄГ Г·ГҐГІ Г­Г  Г®ГЎГ®ГЁГµ Г®ГІГ°Г®Г±ГІГЄГ Гµ [P] Г±Г°Г Г§Гі, ГЇГ®ГЈГ°ГіГ¦Г [ya] ГЁГµ Гў Г±ГўГ®Гѕ ГЄГЁГ±ГЄГі Г¤Г® ГіГЇГ®Г°Г ", "Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] ГЇГЁГ±ГҐГ·ГЄГ®Г© Г­Г  ГЁГ­ГІГ°ГіГ¬ГҐГ­ГІГ» [P] ГЇГ® Г±Г Г¬Г»ГҐ [ya]Г©Г¶Г ", "Г±ГЄГ Г·ГҐГІ Г­Г  Г·Г«ГҐГ­ГҐ [P], ГЇГ®ГЈГ°ГіГ¦Г [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г®Г°ГЈГ Г­ Гў Г±ГўГ®Вё Г«Г®Г­Г®", "Г±Г Г¤ГЁГІГ±[ya] Г­Г  [P], ГЇГ®ГЈГ°ГіГ¦Г [ya] Г®ГЎГ  Г·Г«ГҐГ­Г  Гў Г±ГҐГЎ[ya] Г¤Г® ГіГЇГ®Г°Г  ГЁ ГіГ¤Г Г°[ya][ya]Г±Гј Г® [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] ГІГҐГ«Г®", "Г±ГЄГ Г·ГҐГІ Г­Г  Г·Г«ГҐГ­ГҐ, Г¤Г®Г±ГІГ ГўГ«[ya][ya] ГіГ¤Г®ГўГ®Г«ГјГ±ГІГўГЁГҐ Г±ГҐГЎГҐ ГЁ [P]", "[H.identifying_gender==FEMALE ? "ГіГЇВёГ°Г«Г Г±Гј" : "ГіГЇВёГ°Г±[ya]"] ГІГ Г§Г®Г¬ Гў [P] ГЁ ГҐГ«Г®Г§ГЁГІ, Г¤ГҐГ°Г¦Г  [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г·Г«ГҐГ­ ГўГ­ГіГІГ°ГЁ Г±ГҐГЎ[ya]", "Г¤ГўГЁГЈГ ГҐГІ ГІГ Г§Г®Г¬ ГЇГ®-ГЄГ°ГіГЈГі, Г±ГЁГ¤[ya] Г­Г  ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГҐ [P], Г«Г Г±ГЄГ [ya] ГҐГЈГ® Г±ГІГҐГ­ГЄГ Г¬ГЁ ГўГ«Г ГЈГ Г«ГЁГ№Г ", "ГўГЇГ°ГЁГЇГ°Г»Г¦ГЄГі Г­Г ГўГ Г«ГЁГўГ ГҐГІГ±[ya] Г­Г  [P], Г«Г Г±ГЄГ [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г·Г«ГҐГ­ ГЇГіГ«ГјГ±ГЁГ°ГіГѕГ№ГҐГ© ГЄГЁГ±ГЄГ®Г©", "Г­Г ГЎГ°Г Г±Г»ГўГ ГҐГІ Г«Г®Г­Г® Г­Г  ГЄГ°ГѕГ·Г®ГЄ [P], Г¤Г Гў[ya] Г­Г  Г­ГҐГЈГ® Г±ГўГ®ГЁГ¬ ГІГ Г§Г®Г¬", "Г¤ГўГЁГЈГ ГҐГІГ±[ya] ГўГўГҐГ°Гµ-ГўГ­ГЁГ§, Г±ГЁГ¤[ya] Г­Г  Г¤ГўГ®Г©Г­Г®Г¬ Г·Г«ГҐГ­ГҐ [P]", "Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] Г­Г  Г·Г«ГҐГ­ [P], Г¤Г Гў[ya] Г­Г  Г­ГҐГЈГ® Г±ГўГҐГ°ГµГі")
 
 				if (H.lastfucked != P || H.lfhole != hole)
-					message = pick("медленно опускаетс[ya] на один из огранов [P]", "вводит один из органов [P] в свою киску, направл[ya][ya] его рукой", "направл[ya]ет один из членов [P] в свою шахту, помога[ya] себе рукой", "осторожно вводит ствол [P] в своё нутро", "запускает одного из зверьков [P] в свою промежность")
+					message = pick("Г¬ГҐГ¤Г«ГҐГ­Г­Г® Г®ГЇГіГ±ГЄГ ГҐГІГ±[ya] Г­Г  Г®Г¤ГЁГ­ ГЁГ§ Г®ГЈГ°Г Г­Г®Гў [P]", "ГўГўГ®Г¤ГЁГІ Г®Г¤ГЁГ­ ГЁГ§ Г®Г°ГЈГ Г­Г®Гў [P] Гў Г±ГўГ®Гѕ ГЄГЁГ±ГЄГі, Г­Г ГЇГ°Г ГўГ«[ya][ya] ГҐГЈГ® Г°ГіГЄГ®Г©", "Г­Г ГЇГ°Г ГўГ«[ya]ГҐГІ Г®Г¤ГЁГ­ ГЁГ§ Г·Г«ГҐГ­Г®Гў [P] Гў Г±ГўГ®Гѕ ГёГ ГµГІГі, ГЇГ®Г¬Г®ГЈГ [ya] Г±ГҐГЎГҐ Г°ГіГЄГ®Г©", "Г®Г±ГІГ®Г°Г®Г¦Г­Г® ГўГўГ®Г¤ГЁГІ Г±ГІГўГ®Г« [P] Гў Г±ГўГ®Вё Г­ГіГІГ°Г®", "Г§Г ГЇГіГ±ГЄГ ГҐГІ Г®Г¤Г­Г®ГЈГ® ГЁГ§ Г§ГўГҐГ°ГјГЄГ®Гў [P] Гў Г±ГўГ®Гѕ ГЇГ°Г®Г¬ГҐГ¦Г­Г®Г±ГІГј")
 					H.lastfucked = P
 					H.lfhole = hole
 
 
 			if(P.species.get_bodytype() == SPECIES_AKULA || P.species.get_bodytype() == SPECIES_SERGAL || P.species.get_bodytype() == SPECIES_VOX || P.species.get_bodytype() == SPECIES_NEVREAN)
-				message = pick("неумолимо скачет на члене [P]", "седлает тело [P], словно наездница", "скачет на члене [P]", "прыгает на инструменте [P]", "насаживаетс[ya] на [P]", "сношаетс[ya] с [P]")
+				message = pick("Г­ГҐГіГ¬Г®Г«ГЁГ¬Г® Г±ГЄГ Г·ГҐГІ Г­Г  Г·Г«ГҐГ­ГҐ [P]", "Г±ГҐГ¤Г«Г ГҐГІ ГІГҐГ«Г® [P], Г±Г«Г®ГўГ­Г® Г­Г ГҐГ§Г¤Г­ГЁГ¶Г ", "Г±ГЄГ Г·ГҐГІ Г­Г  Г·Г«ГҐГ­ГҐ [P]", "ГЇГ°Г»ГЈГ ГҐГІ Г­Г  ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГҐ [P]", "Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] Г­Г  [P]", "Г±Г­Г®ГёГ ГҐГІГ±[ya] Г± [P]")
 				if (prob(35))
-					message = pick("вгон[ya]ет интрумент [P] в своё влагалище по самые [ya]йца", "скачет на малыше [P], погружа[ya] его в своё лоно", "насаживаетс[ya] писечкой на ствол [P], ввод[ya] его в себ[ya] до упора", "прыгает на инструменте [P], сжима[ya] мышцы влагалища", "скачет на [P], погружа[ya] [P.identifying_gender==FEMALE ? "её" : "его"] орган в свою щель", "прыгает на [P], удар[ya][ya]сь о [P.identifying_gender==FEMALE ? "её" : "его"] тело", "скачет на члене, доставл[ya][ya] удовольствие себе и [P]", "[H.identifying_gender==FEMALE ? "упёрлась" : "упёрс[ya]"] тазом в [P] и елозит, держа [P.identifying_gender==FEMALE ? "её" : "его"] член внутри себ[ya]", "двигает тазом по-кругу, сид[ya] на инструменте [P], ласка[ya] его стенками влагалища", "вприпрыжку наваливаетс[ya] на [P], ласка[ya] [P.identifying_gender==FEMALE ? "её" : "его"] член пульсирующей киской", "набрасывает лоно на крючок [P], дав[ya] на него своим тазом", "двигаетс[ya] вверх-вниз, сид[ya] на зверьке [P]")
+					message = pick("ГўГЈГ®Г­[ya]ГҐГІ ГЁГ­ГІГ°ГіГ¬ГҐГ­ГІ [P] Гў Г±ГўГ®Вё ГўГ«Г ГЈГ Г«ГЁГ№ГҐ ГЇГ® Г±Г Г¬Г»ГҐ [ya]Г©Г¶Г ", "Г±ГЄГ Г·ГҐГІ Г­Г  Г¬Г Г«Г»ГёГҐ [P], ГЇГ®ГЈГ°ГіГ¦Г [ya] ГҐГЈГ® Гў Г±ГўГ®Вё Г«Г®Г­Г®", "Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] ГЇГЁГ±ГҐГ·ГЄГ®Г© Г­Г  Г±ГІГўГ®Г« [P], ГўГўГ®Г¤[ya] ГҐГЈГ® Гў Г±ГҐГЎ[ya] Г¤Г® ГіГЇГ®Г°Г ", "ГЇГ°Г»ГЈГ ГҐГІ Г­Г  ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГҐ [P], Г±Г¦ГЁГ¬Г [ya] Г¬Г»ГёГ¶Г» ГўГ«Г ГЈГ Г«ГЁГ№Г ", "Г±ГЄГ Г·ГҐГІ Г­Г  [P], ГЇГ®ГЈГ°ГіГ¦Г [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г®Г°ГЈГ Г­ Гў Г±ГўГ®Гѕ Г№ГҐГ«Гј", "ГЇГ°Г»ГЈГ ГҐГІ Г­Г  [P], ГіГ¤Г Г°[ya][ya]Г±Гј Г® [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] ГІГҐГ«Г®", "Г±ГЄГ Г·ГҐГІ Г­Г  Г·Г«ГҐГ­ГҐ, Г¤Г®Г±ГІГ ГўГ«[ya][ya] ГіГ¤Г®ГўГ®Г«ГјГ±ГІГўГЁГҐ Г±ГҐГЎГҐ ГЁ [P]", "[H.identifying_gender==FEMALE ? "ГіГЇВёГ°Г«Г Г±Гј" : "ГіГЇВёГ°Г±[ya]"] ГІГ Г§Г®Г¬ Гў [P] ГЁ ГҐГ«Г®Г§ГЁГІ, Г¤ГҐГ°Г¦Г  [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г·Г«ГҐГ­ ГўГ­ГіГІГ°ГЁ Г±ГҐГЎ[ya]", "Г¤ГўГЁГЈГ ГҐГІ ГІГ Г§Г®Г¬ ГЇГ®-ГЄГ°ГіГЈГі, Г±ГЁГ¤[ya] Г­Г  ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГҐ [P], Г«Г Г±ГЄГ [ya] ГҐГЈГ® Г±ГІГҐГ­ГЄГ Г¬ГЁ ГўГ«Г ГЈГ Г«ГЁГ№Г ", "ГўГЇГ°ГЁГЇГ°Г»Г¦ГЄГі Г­Г ГўГ Г«ГЁГўГ ГҐГІГ±[ya] Г­Г  [P], Г«Г Г±ГЄГ [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г·Г«ГҐГ­ ГЇГіГ«ГјГ±ГЁГ°ГіГѕГ№ГҐГ© ГЄГЁГ±ГЄГ®Г©", "Г­Г ГЎГ°Г Г±Г»ГўГ ГҐГІ Г«Г®Г­Г® Г­Г  ГЄГ°ГѕГ·Г®ГЄ [P], Г¤Г Гў[ya] Г­Г  Г­ГҐГЈГ® Г±ГўГ®ГЁГ¬ ГІГ Г§Г®Г¬", "Г¤ГўГЁГЈГ ГҐГІГ±[ya] ГўГўГҐГ°Гµ-ГўГ­ГЁГ§, Г±ГЁГ¤[ya] Г­Г  Г§ГўГҐГ°ГјГЄГҐ [P]")
 
 				if (H.lastfucked != P || H.lfhole != hole)
-					message = pick("медленно опускаетс[ya] на половой орган [P]", "вводит орган [P] в свою киску, направл[ya][ya] его рукой", "направл[ya]ет член [P] в свою влажную киску", "чувственно вводит орган [P] в свою мокрую писечку", "запускает зверька [P] в свою промежность")
+					message = pick("Г¬ГҐГ¤Г«ГҐГ­Г­Г® Г®ГЇГіГ±ГЄГ ГҐГІГ±[ya] Г­Г  ГЇГ®Г«Г®ГўГ®Г© Г®Г°ГЈГ Г­ [P]", "ГўГўГ®Г¤ГЁГІ Г®Г°ГЈГ Г­ [P] Гў Г±ГўГ®Гѕ ГЄГЁГ±ГЄГі, Г­Г ГЇГ°Г ГўГ«[ya][ya] ГҐГЈГ® Г°ГіГЄГ®Г©", "Г­Г ГЇГ°Г ГўГ«[ya]ГҐГІ Г·Г«ГҐГ­ [P] Гў Г±ГўГ®Гѕ ГўГ«Г Г¦Г­ГіГѕ ГЄГЁГ±ГЄГі", "Г·ГіГўГ±ГІГўГҐГ­Г­Г® ГўГўГ®Г¤ГЁГІ Г®Г°ГЈГ Г­ [P] Гў Г±ГўГ®Гѕ Г¬Г®ГЄГ°ГіГѕ ГЇГЁГ±ГҐГ·ГЄГі", "Г§Г ГЇГіГ±ГЄГ ГҐГІ Г§ГўГҐГ°ГјГЄГ  [P] Гў Г±ГўГ®Гѕ ГЇГ°Г®Г¬ГҐГ¦Г­Г®Г±ГІГј")
 					H.lastfucked = P
 					H.lfhole = hole
 
 
 			if(P.species.get_bodytype() == SPECIES_PROMETHEAN)
-				message = pick("седлает склизлое тело [P], словно наездница", "насаживаетс[ya] своим склизлым телом на податливый инструмент [P], сжима[ya] его", "насаживаетс[ya] на склизлый член [P], ввод[ya] [P.identifying_gender==FEMALE ? "её" : "его"] орган в себ[ya]")
+				message = pick("Г±ГҐГ¤Г«Г ГҐГІ Г±ГЄГ«ГЁГ§Г«Г®ГҐ ГІГҐГ«Г® [P], Г±Г«Г®ГўГ­Г® Г­Г ГҐГ§Г¤Г­ГЁГ¶Г ", "Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] Г±ГўГ®ГЁГ¬ Г±ГЄГ«ГЁГ§Г«Г»Г¬ ГІГҐГ«Г®Г¬ Г­Г  ГЇГ®Г¤Г ГІГ«ГЁГўГ»Г© ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІ [P], Г±Г¦ГЁГ¬Г [ya] ГҐГЈГ®", "Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] Г­Г  Г±ГЄГ«ГЁГ§Г«Г»Г© Г·Г«ГҐГ­ [P], ГўГўГ®Г¤[ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г®Г°ГЈГ Г­ Гў Г±ГҐГЎ[ya]")
 				if (prob(35))
-					message = pick("насаживаетс[ya] на склизлый интрумент [P] по самые [ya]йца", "неумолимо скачет на [P], погружа[ya] [P.identifying_gender==FEMALE ? "её" : "его"] склизлый орган в свеб[ya]", "скачет на малыше [P], погружа[ya] его в себ[ya]", "прыгает на [P], удар[ya][ya]сь о [P.identifying_gender==FEMALE ? "её" : "его"] тело", "скачет на члене, доставл[ya][ya] удовольствие себе и [P]", "[H.identifying_gender==FEMALE ? "упёрлась" : "упёрс[ya]"] тазом в [P] и елозит, держа [P.identifying_gender==FEMALE ? "её" : "его"] член внутри себ[ya]", "двигает тазом по-кругу, сид[ya] на инструменте [P], ласка[ya] его своим нутром", "вприпрыжку наваливаетс[ya] на [P], ласка[ya] [P.identifying_gender==FEMALE ? "её" : "его"] член своим нутром", "насаживаетс[ya] на ствол [P], дав[ya] на него своим нутром", "двигаетс[ya] вверх-вниз, сид[ya] на склизлом зверьке [P]", "насаживаетс[ya] на склизлый член [P], дав[ya] на него сверху")
+					message = pick("Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] Г­Г  Г±ГЄГ«ГЁГ§Г«Г»Г© ГЁГ­ГІГ°ГіГ¬ГҐГ­ГІ [P] ГЇГ® Г±Г Г¬Г»ГҐ [ya]Г©Г¶Г ", "Г­ГҐГіГ¬Г®Г«ГЁГ¬Г® Г±ГЄГ Г·ГҐГІ Г­Г  [P], ГЇГ®ГЈГ°ГіГ¦Г [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г±ГЄГ«ГЁГ§Г«Г»Г© Г®Г°ГЈГ Г­ Гў Г±ГўГҐГЎ[ya]", "Г±ГЄГ Г·ГҐГІ Г­Г  Г¬Г Г«Г»ГёГҐ [P], ГЇГ®ГЈГ°ГіГ¦Г [ya] ГҐГЈГ® Гў Г±ГҐГЎ[ya]", "ГЇГ°Г»ГЈГ ГҐГІ Г­Г  [P], ГіГ¤Г Г°[ya][ya]Г±Гј Г® [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] ГІГҐГ«Г®", "Г±ГЄГ Г·ГҐГІ Г­Г  Г·Г«ГҐГ­ГҐ, Г¤Г®Г±ГІГ ГўГ«[ya][ya] ГіГ¤Г®ГўГ®Г«ГјГ±ГІГўГЁГҐ Г±ГҐГЎГҐ ГЁ [P]", "[H.identifying_gender==FEMALE ? "ГіГЇВёГ°Г«Г Г±Гј" : "ГіГЇВёГ°Г±[ya]"] ГІГ Г§Г®Г¬ Гў [P] ГЁ ГҐГ«Г®Г§ГЁГІ, Г¤ГҐГ°Г¦Г  [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г·Г«ГҐГ­ ГўГ­ГіГІГ°ГЁ Г±ГҐГЎ[ya]", "Г¤ГўГЁГЈГ ГҐГІ ГІГ Г§Г®Г¬ ГЇГ®-ГЄГ°ГіГЈГі, Г±ГЁГ¤[ya] Г­Г  ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГҐ [P], Г«Г Г±ГЄГ [ya] ГҐГЈГ® Г±ГўГ®ГЁГ¬ Г­ГіГІГ°Г®Г¬", "ГўГЇГ°ГЁГЇГ°Г»Г¦ГЄГі Г­Г ГўГ Г«ГЁГўГ ГҐГІГ±[ya] Г­Г  [P], Г«Г Г±ГЄГ [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г·Г«ГҐГ­ Г±ГўГ®ГЁГ¬ Г­ГіГІГ°Г®Г¬", "Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] Г­Г  Г±ГІГўГ®Г« [P], Г¤Г Гў[ya] Г­Г  Г­ГҐГЈГ® Г±ГўГ®ГЁГ¬ Г­ГіГІГ°Г®Г¬", "Г¤ГўГЁГЈГ ГҐГІГ±[ya] ГўГўГҐГ°Гµ-ГўГ­ГЁГ§, Г±ГЁГ¤[ya] Г­Г  Г±ГЄГ«ГЁГ§Г«Г®Г¬ Г§ГўГҐГ°ГјГЄГҐ [P]", "Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] Г­Г  Г±ГЄГ«ГЁГ§Г«Г»Г© Г·Г«ГҐГ­ [P], Г¤Г Гў[ya] Г­Г  Г­ГҐГЈГ® Г±ГўГҐГ°ГµГі")
 
 				if (H.lastfucked != P || H.lfhole != hole)
-					message = pick("медленно опускаетс[ya] на склизлый половой орган [P]", "плавно вводит склизлый орган [P] внутрь себ[ya]", "вводит ствол [P] в своё нутро", "запускает склизлого зверька [P] в себ[ya]")
+					message = pick("Г¬ГҐГ¤Г«ГҐГ­Г­Г® Г®ГЇГіГ±ГЄГ ГҐГІГ±[ya] Г­Г  Г±ГЄГ«ГЁГ§Г«Г»Г© ГЇГ®Г«Г®ГўГ®Г© Г®Г°ГЈГ Г­ [P]", "ГЇГ«Г ГўГ­Г® ГўГўГ®Г¤ГЁГІ Г±ГЄГ«ГЁГ§Г«Г»Г© Г®Г°ГЈГ Г­ [P] ГўГ­ГіГІГ°Гј Г±ГҐГЎ[ya]", "ГўГўГ®Г¤ГЁГІ Г±ГІГўГ®Г« [P] Гў Г±ГўГ®Вё Г­ГіГІГ°Г®", "Г§Г ГЇГіГ±ГЄГ ГҐГІ Г±ГЄГ«ГЁГ§Г«Г®ГЈГ® Г§ГўГҐГ°ГјГЄГ  [P] Гў Г±ГҐГЎ[ya]")
 					H.lastfucked = P
 					H.lfhole = hole
 
@@ -944,7 +944,7 @@ MOUNT REWORKED - допилить попарно реакции на взаимодействия рас друг с другом, у
 			H.arousal += 30
 			if (H.lust >= H.resistenza)
 				H.cum(H, P)
-				message = pick("Вы чувствуете, как вагинальные мышцы [H] начинают резко сокращатьс[ya] вокруг вашего инструмента.", "Вы чувствуете, как ребристые стенки [H] крепко сжимают ваш напр[ya]жённый член.", "Вы чувствуете, как влажна[ya] киска [H] резко сжимает ваш член внутри себ[ya].", "Вы чувствуете, что вашему прибору становитс[ya] тесно внутри гор[ya]чей писечки [H].", "Вы чувствуете, как мышцы внутри разгор[ya]чённой вагины [H] сильно сжимаютс[ya] несколько раз, приближа[ya] вас к оргазму.")
+				message = pick("Г‚Г» Г·ГіГўГ±ГІГўГіГҐГІГҐ, ГЄГ ГЄ ГўГ ГЈГЁГ­Г Г«ГјГ­Г»ГҐ Г¬Г»ГёГ¶Г» [H] Г­Г Г·ГЁГ­Г ГѕГІ Г°ГҐГ§ГЄГ® Г±Г®ГЄГ°Г Г№Г ГІГјГ±[ya] ГўГ®ГЄГ°ГіГЈ ГўГ ГёГҐГЈГ® ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГ .", "Г‚Г» Г·ГіГўГ±ГІГўГіГҐГІГҐ, ГЄГ ГЄ Г°ГҐГЎГ°ГЁГ±ГІГ»ГҐ Г±ГІГҐГ­ГЄГЁ [H] ГЄГ°ГҐГЇГЄГ® Г±Г¦ГЁГ¬Г ГѕГІ ГўГ Гё Г­Г ГЇГ°[ya]Г¦ВёГ­Г­Г»Г© Г·Г«ГҐГ­.", "Г‚Г» Г·ГіГўГ±ГІГўГіГҐГІГҐ, ГЄГ ГЄ ГўГ«Г Г¦Г­Г [ya] ГЄГЁГ±ГЄГ  [H] Г°ГҐГ§ГЄГ® Г±Г¦ГЁГ¬Г ГҐГІ ГўГ Гё Г·Г«ГҐГ­ ГўГ­ГіГІГ°ГЁ Г±ГҐГЎ[ya].", "Г‚Г» Г·ГіГўГ±ГІГўГіГҐГІГҐ, Г·ГІГ® ГўГ ГёГҐГ¬Гі ГЇГ°ГЁГЎГ®Г°Гі Г±ГІГ Г­Г®ГўГЁГІГ±[ya] ГІГҐГ±Г­Г® ГўГ­ГіГІГ°ГЁ ГЈГ®Г°[ya]Г·ГҐГ© ГЇГЁГ±ГҐГ·ГЄГЁ [H].", "Г‚Г» Г·ГіГўГ±ГІГўГіГҐГІГҐ, ГЄГ ГЄ Г¬Г»ГёГ¶Г» ГўГ­ГіГІГ°ГЁ Г°Г Г§ГЈГ®Г°[ya]Г·ВёГ­Г­Г®Г© ГўГ ГЈГЁГ­Г» [H] Г±ГЁГ«ГјГ­Г® Г±Г¦ГЁГ¬Г ГѕГІГ±[ya] Г­ГҐГ±ГЄГ®Г«ГјГЄГ® Г°Г Г§, ГЇГ°ГЁГЎГ«ГЁГ¦Г [ya] ГўГ Г± ГЄ Г®Г°ГЈГ Г§Г¬Гі.")
 				to_chat(P, message)
 				P.lust += 15
 			else
@@ -964,12 +964,12 @@ MOUNT REWORKED - допилить попарно реакции на взаимодействия рас друг с другом, у
 
 		if("mount")
 
-			message = pick("скачет на члене [P]", "прыгает на инструменте [P]", "насаживаетс[ya] на [P]")
+			message = pick("Г±ГЄГ Г·ГҐГІ Г­Г  Г·Г«ГҐГ­ГҐ [P]", "ГЇГ°Г»ГЈГ ГҐГІ Г­Г  ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГҐ [P]", "Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] Г­Г  [P]")
 			if (prob(35))
-				message = pick("седлает тело [P], словно наездница", "скачет на малыше [P]", "прыгает на [P], удар[ya][ya]сь о его тело", "радостно подпрыгивает, доставл[ya][ya] удовольствие себе и [P]", "уперлась тазом в [P] и елозит, держа его член внутри", "двигает тазом по-кругу, сид[ya] на инструменте [P]", "вприпрыжку наваливаетс[ya] на [P], вз[ya]в внутрь его член", "набрасывает своё лоно на крючок [P], дав[ya] на него своим тазом", "впускает внутрь себ[ya] зверька [P]")
+				message = pick("Г±ГҐГ¤Г«Г ГҐГІ ГІГҐГ«Г® [P], Г±Г«Г®ГўГ­Г® Г­Г ГҐГ§Г¤Г­ГЁГ¶Г ", "Г±ГЄГ Г·ГҐГІ Г­Г  Г¬Г Г«Г»ГёГҐ [P]", "ГЇГ°Г»ГЈГ ГҐГІ Г­Г  [P], ГіГ¤Г Г°[ya][ya]Г±Гј Г® ГҐГЈГ® ГІГҐГ«Г®", "Г°Г Г¤Г®Г±ГІГ­Г® ГЇГ®Г¤ГЇГ°Г»ГЈГЁГўГ ГҐГІ, Г¤Г®Г±ГІГ ГўГ«[ya][ya] ГіГ¤Г®ГўГ®Г«ГјГ±ГІГўГЁГҐ Г±ГҐГЎГҐ ГЁ [P]", "ГіГЇГҐГ°Г«Г Г±Гј ГІГ Г§Г®Г¬ Гў [P] ГЁ ГҐГ«Г®Г§ГЁГІ, Г¤ГҐГ°Г¦Г  ГҐГЈГ® Г·Г«ГҐГ­ ГўГ­ГіГІГ°ГЁ", "Г¤ГўГЁГЈГ ГҐГІ ГІГ Г§Г®Г¬ ГЇГ®-ГЄГ°ГіГЈГі, Г±ГЁГ¤[ya] Г­Г  ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГҐ [P]", "ГўГЇГ°ГЁГЇГ°Г»Г¦ГЄГі Г­Г ГўГ Г«ГЁГўГ ГҐГІГ±[ya] Г­Г  [P], ГўГ§[ya]Гў ГўГ­ГіГІГ°Гј ГҐГЈГ® Г·Г«ГҐГ­", "Г­Г ГЎГ°Г Г±Г»ГўГ ГҐГІ Г±ГўГ®Вё Г«Г®Г­Г® Г­Г  ГЄГ°ГѕГ·Г®ГЄ [P], Г¤Г Гў[ya] Г­Г  Г­ГҐГЈГ® Г±ГўГ®ГЁГ¬ ГІГ Г§Г®Г¬", "ГўГЇГіГ±ГЄГ ГҐГІ ГўГ­ГіГІГ°Гј Г±ГҐГЎ[ya] Г§ГўГҐГ°ГјГЄГ  [P]")
 
 			if (H.lastfucked != P || H.lfhole != hole)
-				message = pick("осторожно насаживаетс[ya] на половой орган [P]", "направл[ya]ет член [P] в свою влажную киску, помога[ya] себе рукой", "медленно вводит в себ[ya] ствол [P]")
+				message = pick("Г®Г±ГІГ®Г°Г®Г¦Г­Г® Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] Г­Г  ГЇГ®Г«Г®ГўГ®Г© Г®Г°ГЈГ Г­ [P]", "Г­Г ГЇГ°Г ГўГ«[ya]ГҐГІ Г·Г«ГҐГ­ [P] Гў Г±ГўГ®Гѕ ГўГ«Г Г¦Г­ГіГѕ ГЄГЁГ±ГЄГі, ГЇГ®Г¬Г®ГЈГ [ya] Г±ГҐГЎГҐ Г°ГіГЄГ®Г©", "Г¬ГҐГ¤Г«ГҐГ­Г­Г® ГўГўГ®Г¤ГЁГІ Гў Г±ГҐГЎ[ya] Г±ГІГўГ®Г« [P]")
 				H.lastfucked = P
 				H.lfhole = hole
 
@@ -988,7 +988,7 @@ MOUNT REWORKED - допилить попарно реакции на взаимодействия рас друг с другом, у
 			H.arousal += 30
 			if (H.lust >= H.resistenza)
 				H.cum(H, P)
-				message = pick("Вы чувствуете, как вагинальные мышцы [H] начинают резко сокращатьс[ya] вокруг вашего инструмента.", "Вы чувствуете, как ребристые стенки [H] крепко сжимают ваш напр[ya]жённый член.", "Вы чувствуете, как влажна[ya] киска [H] резко сжимает ваш член внутри себ[ya].", "Вы чувствуете, что вашему прибору становитс[ya] тесно внутри гор[ya]чей писечки [H].", "Вы чувствуете, как мышцы внутри разгор[ya]чённой вагины [H] сильно сжимаютс[ya] несколько раз, приближа[ya] вас к оргазму.")
+				message = pick("Г‚Г» Г·ГіГўГ±ГІГўГіГҐГІГҐ, ГЄГ ГЄ ГўГ ГЈГЁГ­Г Г«ГјГ­Г»ГҐ Г¬Г»ГёГ¶Г» [H] Г­Г Г·ГЁГ­Г ГѕГІ Г°ГҐГ§ГЄГ® Г±Г®ГЄГ°Г Г№Г ГІГјГ±[ya] ГўГ®ГЄГ°ГіГЈ ГўГ ГёГҐГЈГ® ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГ .", "Г‚Г» Г·ГіГўГ±ГІГўГіГҐГІГҐ, ГЄГ ГЄ Г°ГҐГЎГ°ГЁГ±ГІГ»ГҐ Г±ГІГҐГ­ГЄГЁ [H] ГЄГ°ГҐГЇГЄГ® Г±Г¦ГЁГ¬Г ГѕГІ ГўГ Гё Г­Г ГЇГ°[ya]Г¦ВёГ­Г­Г»Г© Г·Г«ГҐГ­.", "Г‚Г» Г·ГіГўГ±ГІГўГіГҐГІГҐ, ГЄГ ГЄ ГўГ«Г Г¦Г­Г [ya] ГЄГЁГ±ГЄГ  [H] Г°ГҐГ§ГЄГ® Г±Г¦ГЁГ¬Г ГҐГІ ГўГ Гё Г·Г«ГҐГ­ ГўГ­ГіГІГ°ГЁ Г±ГҐГЎ[ya].", "Г‚Г» Г·ГіГўГ±ГІГўГіГҐГІГҐ, Г·ГІГ® ГўГ ГёГҐГ¬Гі ГЇГ°ГЁГЎГ®Г°Гі Г±ГІГ Г­Г®ГўГЁГІГ±[ya] ГІГҐГ±Г­Г® ГўГ­ГіГІГ°ГЁ ГЈГ®Г°[ya]Г·ГҐГ© ГЇГЁГ±ГҐГ·ГЄГЁ [H].", "Г‚Г» Г·ГіГўГ±ГІГўГіГҐГІГҐ, ГЄГ ГЄ Г¬Г»ГёГ¶Г» ГўГ­ГіГІГ°ГЁ Г°Г Г§ГЈГ®Г°[ya]Г·ВёГ­Г­Г®Г© ГўГ ГЈГЁГ­Г» [H] Г±ГЁГ«ГјГ­Г® Г±Г¦ГЁГ¬Г ГѕГІГ±[ya] Г­ГҐГ±ГЄГ®Г«ГјГЄГ® Г°Г Г§, ГЇГ°ГЁГЎГ«ГЁГ¦Г [ya] ГўГ Г± ГЄ Г®Г°ГЈГ Г§Г¬Гі.")
 				to_chat(P, message)
 				P.lust += 15
 			else
@@ -1011,12 +1011,12 @@ MOUNT REWORKED - допилить попарно реакции на взаимодействия рас друг с другом, у
 
 		if("rub")
 
-			message = pick("трётс[ya] о член [P]", "трётс[ya] об инструмент [P]", "стимулирует член [P] своей киской")
+			message = pick("ГІГ°ВёГІГ±[ya] Г® Г·Г«ГҐГ­ [P]", "ГІГ°ВёГІГ±[ya] Г®ГЎ ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІ [P]", "Г±ГІГЁГ¬ГіГ«ГЁГ°ГіГҐГІ Г·Г«ГҐГ­ [P] Г±ГўГ®ГҐГ© ГЄГЁГ±ГЄГ®Г©")
 			if (prob(35))
-				message = pick("елозит половыми губами по члену [P] в позе наездницы", "натирает малыша [P], крепко уперевшись тазом", "в ускоренном темпе совершает фрикции, натира[ya] клитор о член [P]", "трахает половой орган, прижатый к животу [P.identifying_gender==FEMALE ? "партнёрши" : "партнёра"], доставл[ya][ya] удовольствие себе и [P]", "уперлась тазом в [P] и елозит", "двигает тазом по-кругу, трением стимулиру[ya] инструмент [P]", "водит головкой члена [P] между половых губ, помога[ya] себе рукой", "трётс[ya] о крючок [P] на месте, дав[ya] на неё своим тазом", "стимулирует клитор о зверька [P]")
+				message = pick("ГҐГ«Г®Г§ГЁГІ ГЇГ®Г«Г®ГўГ»Г¬ГЁ ГЈГіГЎГ Г¬ГЁ ГЇГ® Г·Г«ГҐГ­Гі [P] Гў ГЇГ®Г§ГҐ Г­Г ГҐГ§Г¤Г­ГЁГ¶Г»", "Г­Г ГІГЁГ°Г ГҐГІ Г¬Г Г«Г»ГёГ  [P], ГЄГ°ГҐГЇГЄГ® ГіГЇГҐГ°ГҐГўГёГЁГ±Гј ГІГ Г§Г®Г¬", "Гў ГіГ±ГЄГ®Г°ГҐГ­Г­Г®Г¬ ГІГҐГ¬ГЇГҐ Г±Г®ГўГҐГ°ГёГ ГҐГІ ГґГ°ГЁГЄГ¶ГЁГЁ, Г­Г ГІГЁГ°Г [ya] ГЄГ«ГЁГІГ®Г° Г® Г·Г«ГҐГ­ [P]", "ГІГ°Г ГµГ ГҐГІ ГЇГ®Г«Г®ГўГ®Г© Г®Г°ГЈГ Г­, ГЇГ°ГЁГ¦Г ГІГ»Г© ГЄ Г¦ГЁГўГ®ГІГі [P.identifying_gender==FEMALE ? "ГЇГ Г°ГІГ­ВёГ°ГёГЁ" : "ГЇГ Г°ГІГ­ВёГ°Г "], Г¤Г®Г±ГІГ ГўГ«[ya][ya] ГіГ¤Г®ГўГ®Г«ГјГ±ГІГўГЁГҐ Г±ГҐГЎГҐ ГЁ [P]", "ГіГЇГҐГ°Г«Г Г±Гј ГІГ Г§Г®Г¬ Гў [P] ГЁ ГҐГ«Г®Г§ГЁГІ", "Г¤ГўГЁГЈГ ГҐГІ ГІГ Г§Г®Г¬ ГЇГ®-ГЄГ°ГіГЈГі, ГІГ°ГҐГ­ГЁГҐГ¬ Г±ГІГЁГ¬ГіГ«ГЁГ°Гі[ya] ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІ [P]", "ГўГ®Г¤ГЁГІ ГЈГ®Г«Г®ГўГЄГ®Г© Г·Г«ГҐГ­Г  [P] Г¬ГҐГ¦Г¤Гі ГЇГ®Г«Г®ГўГ»Гµ ГЈГіГЎ, ГЇГ®Г¬Г®ГЈГ [ya] Г±ГҐГЎГҐ Г°ГіГЄГ®Г©", "ГІГ°ВёГІГ±[ya] Г® ГЄГ°ГѕГ·Г®ГЄ [P] Г­Г  Г¬ГҐГ±ГІГҐ, Г¤Г Гў[ya] Г­Г  Г­ГҐВё Г±ГўГ®ГЁГ¬ ГІГ Г§Г®Г¬", "Г±ГІГЁГ¬ГіГ«ГЁГ°ГіГҐГІ ГЄГ«ГЁГІГ®Г° Г® Г§ГўГҐГ°ГјГЄГ  [P]")
 
 			if (H.lastfucked != P || H.lfhole != hole)
-				message = pick("осторожно садитс[ya] промежностью на половой орган, прижима[ya] его к животу [P]", "придерживает член [P] рукой в положении у живота [P.identifying_gender==FEMALE ? "партнёрши" : "партнёра"], после чего садитс[ya] влажной писечкой на ствол", "медленно садитс[ya] на [P] и зажимает [P.identifying_gender==FEMALE ? "её" : "его"] член между своих половых губ")
+				message = pick("Г®Г±ГІГ®Г°Г®Г¦Г­Г® Г±Г Г¤ГЁГІГ±[ya] ГЇГ°Г®Г¬ГҐГ¦Г­Г®Г±ГІГјГѕ Г­Г  ГЇГ®Г«Г®ГўГ®Г© Г®Г°ГЈГ Г­, ГЇГ°ГЁГ¦ГЁГ¬Г [ya] ГҐГЈГ® ГЄ Г¦ГЁГўГ®ГІГі [P]", "ГЇГ°ГЁГ¤ГҐГ°Г¦ГЁГўГ ГҐГІ Г·Г«ГҐГ­ [P] Г°ГіГЄГ®Г© Гў ГЇГ®Г«Г®Г¦ГҐГ­ГЁГЁ Гі Г¦ГЁГўГ®ГІГ  [P.identifying_gender==FEMALE ? "ГЇГ Г°ГІГ­ВёГ°ГёГЁ" : "ГЇГ Г°ГІГ­ВёГ°Г "], ГЇГ®Г±Г«ГҐ Г·ГҐГЈГ® Г±Г Г¤ГЁГІГ±[ya] ГўГ«Г Г¦Г­Г®Г© ГЇГЁГ±ГҐГ·ГЄГ®Г© Г­Г  Г±ГІГўГ®Г«", "Г¬ГҐГ¤Г«ГҐГ­Г­Г® Г±Г Г¤ГЁГІГ±[ya] Г­Г  [P] ГЁ Г§Г Г¦ГЁГ¬Г ГҐГІ [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г·Г«ГҐГ­ Г¬ГҐГ¦Г¤Гі Г±ГўГ®ГЁГµ ГЇГ®Г«Г®ГўГ»Гµ ГЈГіГЎ")
 				H.lastfucked = P
 				H.lfhole = hole
 
@@ -1050,10 +1050,10 @@ MOUNT REWORKED - допилить попарно реакции на взаимодействия рас друг с другом, у
 
 		if("tribadism")
 
-			message = pick("трётс[ya] своей киской о половые губы [P]", "надавливает киской на вагину [P]", "трётс[ya] о киску [P]", "трахает [P], заставл[ya][ya] их киски теретьс[ya] друг о друга")
+			message = pick("ГІГ°ВёГІГ±[ya] Г±ГўГ®ГҐГ© ГЄГЁГ±ГЄГ®Г© Г® ГЇГ®Г«Г®ГўГ»ГҐ ГЈГіГЎГ» [P]", "Г­Г Г¤Г ГўГ«ГЁГўГ ГҐГІ ГЄГЁГ±ГЄГ®Г© Г­Г  ГўГ ГЈГЁГ­Гі [P]", "ГІГ°ВёГІГ±[ya] Г® ГЄГЁГ±ГЄГі [P]", "ГІГ°Г ГµГ ГҐГІ [P], Г§Г Г±ГІГ ГўГ«[ya][ya] ГЁГµ ГЄГЁГ±ГЄГЁ ГІГҐГ°ГҐГІГјГ±[ya] Г¤Г°ГіГЈ Г® Г¤Г°ГіГЈГ ")
 
 			if (H.lastfucked != P || H.lfhole != hole)
-				message = pick("прижимает свою киску к киске [P]")
+				message = pick("ГЇГ°ГЁГ¦ГЁГ¬Г ГҐГІ Г±ГўГ®Гѕ ГЄГЁГ±ГЄГі ГЄ ГЄГЁГ±ГЄГҐ [P]")
 				H.lastfucked = P
 				H.lfhole = hole
 				H.visible_message("<font color=purple>[H] [message].</font>")
@@ -1086,12 +1086,12 @@ MOUNT REWORKED - допилить попарно реакции на взаимодействия рас друг с другом, у
 
 	// Basics + humans
 			if((P.species.get_bodytype() == SPECIES_HUMAN || P.species.get_bodytype() == SPECIES_HUMAN_VATBORN || P.species.get_bodytype() == SPECIES_RAPALA || P.species.get_bodytype() == SPECIES_VASILISSAN) && (H.species.get_bodytype() != SPECIES_TESHARI & H.species.get_bodytype() != SPECIES_PROMETHEAN))
-				message = pick("сношает себ[ya] в зад ограном [P], насажива[ya]сь на него", "чувственно сношает себ[ya] членом [P]", "прыгает задом на инструменте [P], сжав анальное колечко", "насаживаетс[ya] анусом на ствол [P], ввод[ya] [P.identifying_gender==FEMALE ? "её" : "его"] орган в пр[ya]мую кишку")
+				message = pick("Г±Г­Г®ГёГ ГҐГІ Г±ГҐГЎ[ya] Гў Г§Г Г¤ Г®ГЈГ°Г Г­Г®Г¬ [P], Г­Г Г±Г Г¦ГЁГўГ [ya]Г±Гј Г­Г  Г­ГҐГЈГ®", "Г·ГіГўГ±ГІГўГҐГ­Г­Г® Г±Г­Г®ГёГ ГҐГІ Г±ГҐГЎ[ya] Г·Г«ГҐГ­Г®Г¬ [P]", "ГЇГ°Г»ГЈГ ГҐГІ Г§Г Г¤Г®Г¬ Г­Г  ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГҐ [P], Г±Г¦Г Гў Г Г­Г Г«ГјГ­Г®ГҐ ГЄГ®Г«ГҐГ·ГЄГ®", "Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] Г Г­ГіГ±Г®Г¬ Г­Г  Г±ГІГўГ®Г« [P], ГўГўГ®Г¤[ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г®Г°ГЈГ Г­ Гў ГЇГ°[ya]Г¬ГіГѕ ГЄГЁГёГЄГі")
 				if (prob(35))
-					message = pick("вгон[ya]ет интрумент [P] в свой зад по самые [ya]йца", "неумолимо скачет на члене [P], погружа[ya] [P.identifying_gender==FEMALE ? "её" : "его"] орган в свой зад", "скачет на малыше [P], погружа[ya] его в свою кишку", "прыгает на члене [P], удар[ya][ya]сь о [P.identifying_gender==FEMALE ? "её" : "его"] тело", "скачет на члене, доставл[ya][ya] удовольствие себе и [P]", "[H.identifying_gender==FEMALE ? "упёрлась" : "упёрс[ya]"] тазом в [P] и елозит, держа [P.identifying_gender==FEMALE ? "её" : "его"] член внутри себ[ya]", "двигает тазом по-кругу, сид[ya] задом на инструменте [P], ласка[ya] его нутром", "вприпрыжку наваливаетс[ya] на [P], ввод[ya] [P.identifying_gender==FEMALE ? "её" : "его"] член в пр[ya]мую кишку до упора", "насаживаетс[ya] на пенис [P], дав[ya] на него своим тазом", "двигаетс[ya] вверх-вниз, сид[ya] задом на зверьке [P]")
+					message = pick("ГўГЈГ®Г­[ya]ГҐГІ ГЁГ­ГІГ°ГіГ¬ГҐГ­ГІ [P] Гў Г±ГўГ®Г© Г§Г Г¤ ГЇГ® Г±Г Г¬Г»ГҐ [ya]Г©Г¶Г ", "Г­ГҐГіГ¬Г®Г«ГЁГ¬Г® Г±ГЄГ Г·ГҐГІ Г­Г  Г·Г«ГҐГ­ГҐ [P], ГЇГ®ГЈГ°ГіГ¦Г [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г®Г°ГЈГ Г­ Гў Г±ГўГ®Г© Г§Г Г¤", "Г±ГЄГ Г·ГҐГІ Г­Г  Г¬Г Г«Г»ГёГҐ [P], ГЇГ®ГЈГ°ГіГ¦Г [ya] ГҐГЈГ® Гў Г±ГўГ®Гѕ ГЄГЁГёГЄГі", "ГЇГ°Г»ГЈГ ГҐГІ Г­Г  Г·Г«ГҐГ­ГҐ [P], ГіГ¤Г Г°[ya][ya]Г±Гј Г® [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] ГІГҐГ«Г®", "Г±ГЄГ Г·ГҐГІ Г­Г  Г·Г«ГҐГ­ГҐ, Г¤Г®Г±ГІГ ГўГ«[ya][ya] ГіГ¤Г®ГўГ®Г«ГјГ±ГІГўГЁГҐ Г±ГҐГЎГҐ ГЁ [P]", "[H.identifying_gender==FEMALE ? "ГіГЇВёГ°Г«Г Г±Гј" : "ГіГЇВёГ°Г±[ya]"] ГІГ Г§Г®Г¬ Гў [P] ГЁ ГҐГ«Г®Г§ГЁГІ, Г¤ГҐГ°Г¦Г  [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г·Г«ГҐГ­ ГўГ­ГіГІГ°ГЁ Г±ГҐГЎ[ya]", "Г¤ГўГЁГЈГ ГҐГІ ГІГ Г§Г®Г¬ ГЇГ®-ГЄГ°ГіГЈГі, Г±ГЁГ¤[ya] Г§Г Г¤Г®Г¬ Г­Г  ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГҐ [P], Г«Г Г±ГЄГ [ya] ГҐГЈГ® Г­ГіГІГ°Г®Г¬", "ГўГЇГ°ГЁГЇГ°Г»Г¦ГЄГі Г­Г ГўГ Г«ГЁГўГ ГҐГІГ±[ya] Г­Г  [P], ГўГўГ®Г¤[ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г·Г«ГҐГ­ Гў ГЇГ°[ya]Г¬ГіГѕ ГЄГЁГёГЄГі Г¤Г® ГіГЇГ®Г°Г ", "Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] Г­Г  ГЇГҐГ­ГЁГ± [P], Г¤Г Гў[ya] Г­Г  Г­ГҐГЈГ® Г±ГўГ®ГЁГ¬ ГІГ Г§Г®Г¬", "Г¤ГўГЁГЈГ ГҐГІГ±[ya] ГўГўГҐГ°Гµ-ГўГ­ГЁГ§, Г±ГЁГ¤[ya] Г§Г Г¤Г®Г¬ Г­Г  Г§ГўГҐГ°ГјГЄГҐ [P]")
 
 				if (H.lastfucked != P || H.lfhole != hole)
-					message = pick("медленно садитс[ya] задницей головку на гузнотёра [P], ввод[ya] её внутрь", "осторожно вводит головку органа [P] в свой задний проход", "направл[ya]ет головку члена [P] в свою попку, помога[ya] себе рукой", "осторожно вводит головку ствола [P] в свою пр[ya]мую кишку", "запускает головку зверька [P] в свою пр[ya]мую кишку", "запускает шахтёра [P] в свои угольные шахты")
+					message = pick("Г¬ГҐГ¤Г«ГҐГ­Г­Г® Г±Г Г¤ГЁГІГ±[ya] Г§Г Г¤Г­ГЁГ¶ГҐГ© ГЈГ®Г«Г®ГўГЄГі Г­Г  ГЈГіГ§Г­Г®ГІВёГ°Г  [P], ГўГўГ®Г¤[ya] ГҐВё ГўГ­ГіГІГ°Гј", "Г®Г±ГІГ®Г°Г®Г¦Г­Г® ГўГўГ®Г¤ГЁГІ ГЈГ®Г«Г®ГўГЄГі Г®Г°ГЈГ Г­Г  [P] Гў Г±ГўГ®Г© Г§Г Г¤Г­ГЁГ© ГЇГ°Г®ГµГ®Г¤", "Г­Г ГЇГ°Г ГўГ«[ya]ГҐГІ ГЈГ®Г«Г®ГўГЄГі Г·Г«ГҐГ­Г  [P] Гў Г±ГўГ®Гѕ ГЇГ®ГЇГЄГі, ГЇГ®Г¬Г®ГЈГ [ya] Г±ГҐГЎГҐ Г°ГіГЄГ®Г©", "Г®Г±ГІГ®Г°Г®Г¦Г­Г® ГўГўГ®Г¤ГЁГІ ГЈГ®Г«Г®ГўГЄГі Г±ГІГўГ®Г«Г  [P] Гў Г±ГўГ®Гѕ ГЇГ°[ya]Г¬ГіГѕ ГЄГЁГёГЄГі", "Г§Г ГЇГіГ±ГЄГ ГҐГІ ГЈГ®Г«Г®ГўГЄГі Г§ГўГҐГ°ГјГЄГ  [P] Гў Г±ГўГ®Гѕ ГЇГ°[ya]Г¬ГіГѕ ГЄГЁГёГЄГі", "Г§Г ГЇГіГ±ГЄГ ГҐГІ ГёГ ГµГІВёГ°Г  [P] Гў Г±ГўГ®ГЁ ГіГЈГ®Г«ГјГ­Г»ГҐ ГёГ ГµГІГ»")
 					H.lastfucked = P
 					H.lfhole = hole
 
@@ -1099,48 +1099,48 @@ MOUNT REWORKED - допилить попарно реакции на взаимодействия рас друг с другом, у
 	// Basics + taj
 
 			if(P.species.get_bodytype() == SPECIES_TAJ && H.species.get_bodytype() != SPECIES_TESHARI && H.species.get_bodytype() != SPECIES_PROMETHEAN)
-				message = pick("неумолимо скачет на шипастом члене [P], погружа[ya] его орган в свой зад", "чувственно сношает себ[ya] шипастым членом [P]", "прыгает задом на пупырчатом инструменте [P], сжав анальное колечко")
+				message = pick("Г­ГҐГіГ¬Г®Г«ГЁГ¬Г® Г±ГЄГ Г·ГҐГІ Г­Г  ГёГЁГЇГ Г±ГІГ®Г¬ Г·Г«ГҐГ­ГҐ [P], ГЇГ®ГЈГ°ГіГ¦Г [ya] ГҐГЈГ® Г®Г°ГЈГ Г­ Гў Г±ГўГ®Г© Г§Г Г¤", "Г·ГіГўГ±ГІГўГҐГ­Г­Г® Г±Г­Г®ГёГ ГҐГІ Г±ГҐГЎ[ya] ГёГЁГЇГ Г±ГІГ»Г¬ Г·Г«ГҐГ­Г®Г¬ [P]", "ГЇГ°Г»ГЈГ ГҐГІ Г§Г Г¤Г®Г¬ Г­Г  ГЇГіГЇГ»Г°Г·Г ГІГ®Г¬ ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГҐ [P], Г±Г¦Г Гў Г Г­Г Г«ГјГ­Г®ГҐ ГЄГ®Г«ГҐГ·ГЄГ®")
 				if (prob(35))
-					message = pick("насаживаетс[ya] анусом на шипастый ствол [P], ввод[ya] [P.identifying_gender==FEMALE ? "её" : "его"] орган в пр[ya]мую кишку до упора", "вгон[ya]ет шипастый интрумент [P] в свой зад по самые [ya]йца", "скачет на покрытом шипиками малыше [P], погружа[ya] его в себ[ya]", "скачет на члене [P], удар[ya][ya]сь о [P.identifying_gender==FEMALE ? "её" : "его"] тело", "скачет задницей на покрытом шипами члене, доставл[ya][ya] удовольствие себе и [P]", "[H.identifying_gender==FEMALE ? "упёрлась" : "упёрс[ya]"] тазом в [P] и елозит, держа [P.identifying_gender==FEMALE ? "её" : "его"] покрытый шипами пенис внутри себ[ya]", "двигает тазом по-кругу, сид[ya] задом на шипастом инструменте [P], ласка[ya] [P.identifying_gender==FEMALE ? "её" : "его"] член стенками пр[ya]мой кишки", "вприпрыжку наваливаетс[ya] на [P], погружа[ya] [P.identifying_gender==FEMALE ? "её" : "его"] покрытый шипами член в пр[ya]мую кишку до упора", "насаживаетс[ya] на шипастый пенис [P], дав[ya] на него своим тазом", "двигаетс[ya] вверх-вниз, сид[ya] задом на пушистом зверьке [P]")
+					message = pick("Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] Г Г­ГіГ±Г®Г¬ Г­Г  ГёГЁГЇГ Г±ГІГ»Г© Г±ГІГўГ®Г« [P], ГўГўГ®Г¤[ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г®Г°ГЈГ Г­ Гў ГЇГ°[ya]Г¬ГіГѕ ГЄГЁГёГЄГі Г¤Г® ГіГЇГ®Г°Г ", "ГўГЈГ®Г­[ya]ГҐГІ ГёГЁГЇГ Г±ГІГ»Г© ГЁГ­ГІГ°ГіГ¬ГҐГ­ГІ [P] Гў Г±ГўГ®Г© Г§Г Г¤ ГЇГ® Г±Г Г¬Г»ГҐ [ya]Г©Г¶Г ", "Г±ГЄГ Г·ГҐГІ Г­Г  ГЇГ®ГЄГ°Г»ГІГ®Г¬ ГёГЁГЇГЁГЄГ Г¬ГЁ Г¬Г Г«Г»ГёГҐ [P], ГЇГ®ГЈГ°ГіГ¦Г [ya] ГҐГЈГ® Гў Г±ГҐГЎ[ya]", "Г±ГЄГ Г·ГҐГІ Г­Г  Г·Г«ГҐГ­ГҐ [P], ГіГ¤Г Г°[ya][ya]Г±Гј Г® [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] ГІГҐГ«Г®", "Г±ГЄГ Г·ГҐГІ Г§Г Г¤Г­ГЁГ¶ГҐГ© Г­Г  ГЇГ®ГЄГ°Г»ГІГ®Г¬ ГёГЁГЇГ Г¬ГЁ Г·Г«ГҐГ­ГҐ, Г¤Г®Г±ГІГ ГўГ«[ya][ya] ГіГ¤Г®ГўГ®Г«ГјГ±ГІГўГЁГҐ Г±ГҐГЎГҐ ГЁ [P]", "[H.identifying_gender==FEMALE ? "ГіГЇВёГ°Г«Г Г±Гј" : "ГіГЇВёГ°Г±[ya]"] ГІГ Г§Г®Г¬ Гў [P] ГЁ ГҐГ«Г®Г§ГЁГІ, Г¤ГҐГ°Г¦Г  [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] ГЇГ®ГЄГ°Г»ГІГ»Г© ГёГЁГЇГ Г¬ГЁ ГЇГҐГ­ГЁГ± ГўГ­ГіГІГ°ГЁ Г±ГҐГЎ[ya]", "Г¤ГўГЁГЈГ ГҐГІ ГІГ Г§Г®Г¬ ГЇГ®-ГЄГ°ГіГЈГі, Г±ГЁГ¤[ya] Г§Г Г¤Г®Г¬ Г­Г  ГёГЁГЇГ Г±ГІГ®Г¬ ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГҐ [P], Г«Г Г±ГЄГ [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г·Г«ГҐГ­ Г±ГІГҐГ­ГЄГ Г¬ГЁ ГЇГ°[ya]Г¬Г®Г© ГЄГЁГёГЄГЁ", "ГўГЇГ°ГЁГЇГ°Г»Г¦ГЄГі Г­Г ГўГ Г«ГЁГўГ ГҐГІГ±[ya] Г­Г  [P], ГЇГ®ГЈГ°ГіГ¦Г [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] ГЇГ®ГЄГ°Г»ГІГ»Г© ГёГЁГЇГ Г¬ГЁ Г·Г«ГҐГ­ Гў ГЇГ°[ya]Г¬ГіГѕ ГЄГЁГёГЄГі Г¤Г® ГіГЇГ®Г°Г ", "Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] Г­Г  ГёГЁГЇГ Г±ГІГ»Г© ГЇГҐГ­ГЁГ± [P], Г¤Г Гў[ya] Г­Г  Г­ГҐГЈГ® Г±ГўГ®ГЁГ¬ ГІГ Г§Г®Г¬", "Г¤ГўГЁГЈГ ГҐГІГ±[ya] ГўГўГҐГ°Гµ-ГўГ­ГЁГ§, Г±ГЁГ¤[ya] Г§Г Г¤Г®Г¬ Г­Г  ГЇГіГёГЁГ±ГІГ®Г¬ Г§ГўГҐГ°ГјГЄГҐ [P]")
 
 				if (H.lastfucked != P || H.lfhole != hole)
-					message = pick("медленно садитс[ya] анусом на головку шипастого гузнотёра [P], ввод[ya] её внутрь", "осторожно вводит покрытую шипиками головку [P] в свой задний проход", "направл[ya]ет шипастую головку члена [P] в свою попку, помога[ya] себе рукой", "осторожно вводит шипастый ствол [P] в свою пр[ya]мую кишку", "запускает шипастого зверька [P] в свою пр[ya]мую кишку", "запускает колючего шахтёра [P] в свои угольные шахты")
+					message = pick("Г¬ГҐГ¤Г«ГҐГ­Г­Г® Г±Г Г¤ГЁГІГ±[ya] Г Г­ГіГ±Г®Г¬ Г­Г  ГЈГ®Г«Г®ГўГЄГі ГёГЁГЇГ Г±ГІГ®ГЈГ® ГЈГіГ§Г­Г®ГІВёГ°Г  [P], ГўГўГ®Г¤[ya] ГҐВё ГўГ­ГіГІГ°Гј", "Г®Г±ГІГ®Г°Г®Г¦Г­Г® ГўГўГ®Г¤ГЁГІ ГЇГ®ГЄГ°Г»ГІГіГѕ ГёГЁГЇГЁГЄГ Г¬ГЁ ГЈГ®Г«Г®ГўГЄГі [P] Гў Г±ГўГ®Г© Г§Г Г¤Г­ГЁГ© ГЇГ°Г®ГµГ®Г¤", "Г­Г ГЇГ°Г ГўГ«[ya]ГҐГІ ГёГЁГЇГ Г±ГІГіГѕ ГЈГ®Г«Г®ГўГЄГі Г·Г«ГҐГ­Г  [P] Гў Г±ГўГ®Гѕ ГЇГ®ГЇГЄГі, ГЇГ®Г¬Г®ГЈГ [ya] Г±ГҐГЎГҐ Г°ГіГЄГ®Г©", "Г®Г±ГІГ®Г°Г®Г¦Г­Г® ГўГўГ®Г¤ГЁГІ ГёГЁГЇГ Г±ГІГ»Г© Г±ГІГўГ®Г« [P] Гў Г±ГўГ®Гѕ ГЇГ°[ya]Г¬ГіГѕ ГЄГЁГёГЄГі", "Г§Г ГЇГіГ±ГЄГ ГҐГІ ГёГЁГЇГ Г±ГІГ®ГЈГ® Г§ГўГҐГ°ГјГЄГ  [P] Гў Г±ГўГ®Гѕ ГЇГ°[ya]Г¬ГіГѕ ГЄГЁГёГЄГі", "Г§Г ГЇГіГ±ГЄГ ГҐГІ ГЄГ®Г«ГѕГ·ГҐГЈГ® ГёГ ГµГІВёГ°Г  [P] Гў Г±ГўГ®ГЁ ГіГЈГ®Г«ГјГ­Г»ГҐ ГёГ ГµГІГ»")
 					H.lastfucked = P
 					H.lfhole = hole
 
 	// Basics + vulps
 
 			if(P.species.get_bodytype() == SPECIES_VULPKANIN || P.species.get_bodytype() == SPECIES_ZORREN_HIGH || P.species.get_bodytype() == SPECIES_ZORREN_FLAT && H.species.get_bodytype() != SPECIES_TESHARI && H.species.get_bodytype() != SPECIES_PROMETHEAN)
-				message = pick("сношает себ[ya] в зад ограном [P], насажива[ya]сь на него", "чувственно сношает себ[ya] узловатым членом [P]", "неумолимо скачет на члене [P], погружа[ya] [P.identifying_gender==FEMALE ? "её" : "его"] орган в свой зад до узла", "прыгает на узловатом инструменте [P], сжав анальное колечко", "насаживаетс[ya] анусом на ствол [P], ввод[ya] его в пр[ya]мую кишку")
+				message = pick("Г±Г­Г®ГёГ ГҐГІ Г±ГҐГЎ[ya] Гў Г§Г Г¤ Г®ГЈГ°Г Г­Г®Г¬ [P], Г­Г Г±Г Г¦ГЁГўГ [ya]Г±Гј Г­Г  Г­ГҐГЈГ®", "Г·ГіГўГ±ГІГўГҐГ­Г­Г® Г±Г­Г®ГёГ ГҐГІ Г±ГҐГЎ[ya] ГіГ§Г«Г®ГўГ ГІГ»Г¬ Г·Г«ГҐГ­Г®Г¬ [P]", "Г­ГҐГіГ¬Г®Г«ГЁГ¬Г® Г±ГЄГ Г·ГҐГІ Г­Г  Г·Г«ГҐГ­ГҐ [P], ГЇГ®ГЈГ°ГіГ¦Г [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г®Г°ГЈГ Г­ Гў Г±ГўГ®Г© Г§Г Г¤ Г¤Г® ГіГ§Г«Г ", "ГЇГ°Г»ГЈГ ГҐГІ Г­Г  ГіГ§Г«Г®ГўГ ГІГ®Г¬ ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГҐ [P], Г±Г¦Г Гў Г Г­Г Г«ГјГ­Г®ГҐ ГЄГ®Г«ГҐГ·ГЄГ®", "Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] Г Г­ГіГ±Г®Г¬ Г­Г  Г±ГІГўГ®Г« [P], ГўГўГ®Г¤[ya] ГҐГЈГ® Гў ГЇГ°[ya]Г¬ГіГѕ ГЄГЁГёГЄГі")
 				if (prob(35))
-					message = pick("насаживаетс[ya] задницей на оканчивающийс[ya] узлом интрумент [P] по самые [ya]йца", "скачет на малыше [P], погружа[ya] его в свой зад и дав[ya] анаьным колечком на узел", "скачет на узловатом члене [P], удар[ya][ya]сь о [P.identifying_gender==FEMALE ? "её" : "его"] тело", "прыгает на члене [P], каса[ya]сь [P.identifying_gender==FEMALE ? "её" : "его"] узла сфинктером", "скачет, доставл[ya][ya] удовольствие себе и [P]", "[H.identifying_gender==FEMALE ? "упёрлась" : "упёрс[ya]"] тазом в [P] и елозит, держа [P.identifying_gender==FEMALE ? "её" : "его"] узел внутри себ[ya]", "двигает тазом по-кругу, сид[ya] задом на инструменте [P], ласка[ya] [P.identifying_gender==FEMALE ? "её" : "его"] член стенками пр[ya]мой кишки", "наваливаетс[ya] на [P], погружа[ya] [P.identifying_gender==FEMALE ? "её" : "его"] узловатый член в пр[ya]мую кишку до упора", "вприпрыжку наваливаетс[ya] на [P], ласка[ya] [P.identifying_gender==FEMALE ? "её" : "его"] член пр[ya]мой кишкой", "садитс[ya] на узел [P], дав[ya] на него своим тазом", "двигаетс[ya] вверх-вниз, сид[ya] задом пушистом зверьке [P]")
+					message = pick("Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] Г§Г Г¤Г­ГЁГ¶ГҐГ© Г­Г  Г®ГЄГ Г­Г·ГЁГўГ ГѕГ№ГЁГ©Г±[ya] ГіГ§Г«Г®Г¬ ГЁГ­ГІГ°ГіГ¬ГҐГ­ГІ [P] ГЇГ® Г±Г Г¬Г»ГҐ [ya]Г©Г¶Г ", "Г±ГЄГ Г·ГҐГІ Г­Г  Г¬Г Г«Г»ГёГҐ [P], ГЇГ®ГЈГ°ГіГ¦Г [ya] ГҐГЈГ® Гў Г±ГўГ®Г© Г§Г Г¤ ГЁ Г¤Г Гў[ya] Г Г­Г ГјГ­Г»Г¬ ГЄГ®Г«ГҐГ·ГЄГ®Г¬ Г­Г  ГіГ§ГҐГ«", "Г±ГЄГ Г·ГҐГІ Г­Г  ГіГ§Г«Г®ГўГ ГІГ®Г¬ Г·Г«ГҐГ­ГҐ [P], ГіГ¤Г Г°[ya][ya]Г±Гј Г® [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] ГІГҐГ«Г®", "ГЇГ°Г»ГЈГ ГҐГІ Г­Г  Г·Г«ГҐГ­ГҐ [P], ГЄГ Г±Г [ya]Г±Гј [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] ГіГ§Г«Г  Г±ГґГЁГ­ГЄГІГҐГ°Г®Г¬", "Г±ГЄГ Г·ГҐГІ, Г¤Г®Г±ГІГ ГўГ«[ya][ya] ГіГ¤Г®ГўГ®Г«ГјГ±ГІГўГЁГҐ Г±ГҐГЎГҐ ГЁ [P]", "[H.identifying_gender==FEMALE ? "ГіГЇВёГ°Г«Г Г±Гј" : "ГіГЇВёГ°Г±[ya]"] ГІГ Г§Г®Г¬ Гў [P] ГЁ ГҐГ«Г®Г§ГЁГІ, Г¤ГҐГ°Г¦Г  [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] ГіГ§ГҐГ« ГўГ­ГіГІГ°ГЁ Г±ГҐГЎ[ya]", "Г¤ГўГЁГЈГ ГҐГІ ГІГ Г§Г®Г¬ ГЇГ®-ГЄГ°ГіГЈГі, Г±ГЁГ¤[ya] Г§Г Г¤Г®Г¬ Г­Г  ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГҐ [P], Г«Г Г±ГЄГ [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г·Г«ГҐГ­ Г±ГІГҐГ­ГЄГ Г¬ГЁ ГЇГ°[ya]Г¬Г®Г© ГЄГЁГёГЄГЁ", "Г­Г ГўГ Г«ГЁГўГ ГҐГІГ±[ya] Г­Г  [P], ГЇГ®ГЈГ°ГіГ¦Г [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] ГіГ§Г«Г®ГўГ ГІГ»Г© Г·Г«ГҐГ­ Гў ГЇГ°[ya]Г¬ГіГѕ ГЄГЁГёГЄГі Г¤Г® ГіГЇГ®Г°Г ", "ГўГЇГ°ГЁГЇГ°Г»Г¦ГЄГі Г­Г ГўГ Г«ГЁГўГ ГҐГІГ±[ya] Г­Г  [P], Г«Г Г±ГЄГ [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г·Г«ГҐГ­ ГЇГ°[ya]Г¬Г®Г© ГЄГЁГёГЄГ®Г©", "Г±Г Г¤ГЁГІГ±[ya] Г­Г  ГіГ§ГҐГ« [P], Г¤Г Гў[ya] Г­Г  Г­ГҐГЈГ® Г±ГўГ®ГЁГ¬ ГІГ Г§Г®Г¬", "Г¤ГўГЁГЈГ ГҐГІГ±[ya] ГўГўГҐГ°Гµ-ГўГ­ГЁГ§, Г±ГЁГ¤[ya] Г§Г Г¤Г®Г¬ ГЇГіГёГЁГ±ГІГ®Г¬ Г§ГўГҐГ°ГјГЄГҐ [P]")
 
 				if (H.lastfucked != P || H.lfhole != hole)
-					message = pick("медленно садитс[ya] анусом на кончик узловатого гузнотёра [P], ввод[ya] его внутрь", "осторожно вводит кончик узловатого органа [P] в свой задний проход", "направл[ya]ет узловатый член [P] в свою попку, помога[ya] себе рукой", "осторожно вводит ствол [P] в свою пр[ya]мую кишку до узла", "запускает узловатого зверька [P] в свою пр[ya]мую кишку", "запускает шахтёра [P] в свои угольные шахты")
+					message = pick("Г¬ГҐГ¤Г«ГҐГ­Г­Г® Г±Г Г¤ГЁГІГ±[ya] Г Г­ГіГ±Г®Г¬ Г­Г  ГЄГ®Г­Г·ГЁГЄ ГіГ§Г«Г®ГўГ ГІГ®ГЈГ® ГЈГіГ§Г­Г®ГІВёГ°Г  [P], ГўГўГ®Г¤[ya] ГҐГЈГ® ГўГ­ГіГІГ°Гј", "Г®Г±ГІГ®Г°Г®Г¦Г­Г® ГўГўГ®Г¤ГЁГІ ГЄГ®Г­Г·ГЁГЄ ГіГ§Г«Г®ГўГ ГІГ®ГЈГ® Г®Г°ГЈГ Г­Г  [P] Гў Г±ГўГ®Г© Г§Г Г¤Г­ГЁГ© ГЇГ°Г®ГµГ®Г¤", "Г­Г ГЇГ°Г ГўГ«[ya]ГҐГІ ГіГ§Г«Г®ГўГ ГІГ»Г© Г·Г«ГҐГ­ [P] Гў Г±ГўГ®Гѕ ГЇГ®ГЇГЄГі, ГЇГ®Г¬Г®ГЈГ [ya] Г±ГҐГЎГҐ Г°ГіГЄГ®Г©", "Г®Г±ГІГ®Г°Г®Г¦Г­Г® ГўГўГ®Г¤ГЁГІ Г±ГІГўГ®Г« [P] Гў Г±ГўГ®Гѕ ГЇГ°[ya]Г¬ГіГѕ ГЄГЁГёГЄГі Г¤Г® ГіГ§Г«Г ", "Г§Г ГЇГіГ±ГЄГ ГҐГІ ГіГ§Г«Г®ГўГ ГІГ®ГЈГ® Г§ГўГҐГ°ГјГЄГ  [P] Гў Г±ГўГ®Гѕ ГЇГ°[ya]Г¬ГіГѕ ГЄГЁГёГЄГі", "Г§Г ГЇГіГ±ГЄГ ГҐГІ ГёГ ГµГІВёГ°Г  [P] Гў Г±ГўГ®ГЁ ГіГЈГ®Г«ГјГ­Г»ГҐ ГёГ ГµГІГ»")
 					H.lastfucked = P
 					H.lfhole = hole
 
-	// Basics + unathi ------- сделать вариации и кнопки на 1 и 2 члена
+	// Basics + unathi ------- Г±Г¤ГҐГ«Г ГІГј ГўГ Г°ГЁГ Г¶ГЁГЁ ГЁ ГЄГ­Г®ГЇГЄГЁ Г­Г  1 ГЁ 2 Г·Г«ГҐГ­Г 
 
 			if(P.species.get_bodytype() == SPECIES_UNATHI && H.species.get_bodytype() != SPECIES_TESHARI && H.species.get_bodytype() != SPECIES_PROMETHEAN)
-				message = pick("сношает себ[ya] в зад ограном [P], насажива[ya]сь на него", "чувственно сношает себ[ya] одним из членов [P]", "неумолимо скачет на одном из членов [P], погружа[ya] его в свой зад, заставл[ya][ya] второй теретьс[ya] о спину", "скачет на одном из членов [P], погружа[ya] его в свой зад, заставл[ya][ya] второй теретьс[ya] о свою промежность", "двигатет задом вверх-вниз на одном из членов [P], сжав анальное колечко", "скачет на малыше [P], погружа[ya] его в свой зад")
+				message = pick("Г±Г­Г®ГёГ ГҐГІ Г±ГҐГЎ[ya] Гў Г§Г Г¤ Г®ГЈГ°Г Г­Г®Г¬ [P], Г­Г Г±Г Г¦ГЁГўГ [ya]Г±Гј Г­Г  Г­ГҐГЈГ®", "Г·ГіГўГ±ГІГўГҐГ­Г­Г® Г±Г­Г®ГёГ ГҐГІ Г±ГҐГЎ[ya] Г®Г¤Г­ГЁГ¬ ГЁГ§ Г·Г«ГҐГ­Г®Гў [P]", "Г­ГҐГіГ¬Г®Г«ГЁГ¬Г® Г±ГЄГ Г·ГҐГІ Г­Г  Г®Г¤Г­Г®Г¬ ГЁГ§ Г·Г«ГҐГ­Г®Гў [P], ГЇГ®ГЈГ°ГіГ¦Г [ya] ГҐГЈГ® Гў Г±ГўГ®Г© Г§Г Г¤, Г§Г Г±ГІГ ГўГ«[ya][ya] ГўГІГ®Г°Г®Г© ГІГҐГ°ГҐГІГјГ±[ya] Г® Г±ГЇГЁГ­Гі", "Г±ГЄГ Г·ГҐГІ Г­Г  Г®Г¤Г­Г®Г¬ ГЁГ§ Г·Г«ГҐГ­Г®Гў [P], ГЇГ®ГЈГ°ГіГ¦Г [ya] ГҐГЈГ® Гў Г±ГўГ®Г© Г§Г Г¤, Г§Г Г±ГІГ ГўГ«[ya][ya] ГўГІГ®Г°Г®Г© ГІГҐГ°ГҐГІГјГ±[ya] Г® Г±ГўГ®Гѕ ГЇГ°Г®Г¬ГҐГ¦Г­Г®Г±ГІГј", "Г¤ГўГЁГЈГ ГІГҐГІ Г§Г Г¤Г®Г¬ ГўГўГҐГ°Гµ-ГўГ­ГЁГ§ Г­Г  Г®Г¤Г­Г®Г¬ ГЁГ§ Г·Г«ГҐГ­Г®Гў [P], Г±Г¦Г Гў Г Г­Г Г«ГјГ­Г®ГҐ ГЄГ®Г«ГҐГ·ГЄГ®", "Г±ГЄГ Г·ГҐГІ Г­Г  Г¬Г Г«Г»ГёГҐ [P], ГЇГ®ГЈГ°ГіГ¦Г [ya] ГҐГЈГ® Гў Г±ГўГ®Г© Г§Г Г¤")
 				if (prob(35))
-					message = pick("поочерёдно насаживаетс[ya] анальным отверстием на члены [P], ввод[ya] их в пр[ya]мую кишку", "скачет на обоих отростках [P], погружа[ya] их в свой зад до упора", "насаживаетс[ya] на интрументы [P] задницей по самые [ya]йца", "прыгает на [P], погружа[ya] оба члена в пр[ya]мую кишку и удар[ya][ya]сь о [P.identifying_gender==FEMALE ? "её" : "его"] тело", "скачет на члене, доставл[ya][ya] удовольствие себе и [P]", "[H.identifying_gender==FEMALE ? "упёрлась" : "упёрс[ya]"] тазом в [P] и елозит, держа [P.identifying_gender==FEMALE ? "её" : "его"] член внутри себ[ya]", "двигает тазом по-кругу, сид[ya] задом на инструменте [P], ласка[ya] его нутром", "вприпрыжку наваливаетс[ya] на [P], ласка[ya] [P.identifying_gender==FEMALE ? "её" : "его"] член стенками пр[ya]мой кишки", "насаживаетс[ya] на пенис [P], дав[ya] на него своим тазом", "двигаетс[ya] вверх-вниз, сид[ya] погружа[ya] двойной член в свою кишку [P]")
+					message = pick("ГЇГ®Г®Г·ГҐГ°ВёГ¤Г­Г® Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] Г Г­Г Г«ГјГ­Г»Г¬ Г®ГІГўГҐГ°Г±ГІГЁГҐГ¬ Г­Г  Г·Г«ГҐГ­Г» [P], ГўГўГ®Г¤[ya] ГЁГµ Гў ГЇГ°[ya]Г¬ГіГѕ ГЄГЁГёГЄГі", "Г±ГЄГ Г·ГҐГІ Г­Г  Г®ГЎГ®ГЁГµ Г®ГІГ°Г®Г±ГІГЄГ Гµ [P], ГЇГ®ГЈГ°ГіГ¦Г [ya] ГЁГµ Гў Г±ГўГ®Г© Г§Г Г¤ Г¤Г® ГіГЇГ®Г°Г ", "Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] Г­Г  ГЁГ­ГІГ°ГіГ¬ГҐГ­ГІГ» [P] Г§Г Г¤Г­ГЁГ¶ГҐГ© ГЇГ® Г±Г Г¬Г»ГҐ [ya]Г©Г¶Г ", "ГЇГ°Г»ГЈГ ГҐГІ Г­Г  [P], ГЇГ®ГЈГ°ГіГ¦Г [ya] Г®ГЎГ  Г·Г«ГҐГ­Г  Гў ГЇГ°[ya]Г¬ГіГѕ ГЄГЁГёГЄГі ГЁ ГіГ¤Г Г°[ya][ya]Г±Гј Г® [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] ГІГҐГ«Г®", "Г±ГЄГ Г·ГҐГІ Г­Г  Г·Г«ГҐГ­ГҐ, Г¤Г®Г±ГІГ ГўГ«[ya][ya] ГіГ¤Г®ГўГ®Г«ГјГ±ГІГўГЁГҐ Г±ГҐГЎГҐ ГЁ [P]", "[H.identifying_gender==FEMALE ? "ГіГЇВёГ°Г«Г Г±Гј" : "ГіГЇВёГ°Г±[ya]"] ГІГ Г§Г®Г¬ Гў [P] ГЁ ГҐГ«Г®Г§ГЁГІ, Г¤ГҐГ°Г¦Г  [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г·Г«ГҐГ­ ГўГ­ГіГІГ°ГЁ Г±ГҐГЎ[ya]", "Г¤ГўГЁГЈГ ГҐГІ ГІГ Г§Г®Г¬ ГЇГ®-ГЄГ°ГіГЈГі, Г±ГЁГ¤[ya] Г§Г Г¤Г®Г¬ Г­Г  ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГҐ [P], Г«Г Г±ГЄГ [ya] ГҐГЈГ® Г­ГіГІГ°Г®Г¬", "ГўГЇГ°ГЁГЇГ°Г»Г¦ГЄГі Г­Г ГўГ Г«ГЁГўГ ГҐГІГ±[ya] Г­Г  [P], Г«Г Г±ГЄГ [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г·Г«ГҐГ­ Г±ГІГҐГ­ГЄГ Г¬ГЁ ГЇГ°[ya]Г¬Г®Г© ГЄГЁГёГЄГЁ", "Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] Г­Г  ГЇГҐГ­ГЁГ± [P], Г¤Г Гў[ya] Г­Г  Г­ГҐГЈГ® Г±ГўГ®ГЁГ¬ ГІГ Г§Г®Г¬", "Г¤ГўГЁГЈГ ГҐГІГ±[ya] ГўГўГҐГ°Гµ-ГўГ­ГЁГ§, Г±ГЁГ¤[ya] ГЇГ®ГЈГ°ГіГ¦Г [ya] Г¤ГўГ®Г©Г­Г®Г© Г·Г«ГҐГ­ Гў Г±ГўГ®Гѕ ГЄГЁГёГЄГі [P]")
 
 				if (H.lastfucked != P || H.lfhole != hole)
-					message = pick("медленно садитс[ya] анусом на одного из гузнотёров [P], ввод[ya] его внутрь", "осторожно вводит орган [P] в свой задний проход", "направл[ya]ет один из членов [P] в свою попку, помога[ya] себе рукой", "осторожно вводит ствол [P] в свою пр[ya]мую кишку", "запускает одного из зверьков [P] в свою пр[ya]мую кишку", "запускает зме[ya] [P] в свои угольные шахты")
+					message = pick("Г¬ГҐГ¤Г«ГҐГ­Г­Г® Г±Г Г¤ГЁГІГ±[ya] Г Г­ГіГ±Г®Г¬ Г­Г  Г®Г¤Г­Г®ГЈГ® ГЁГ§ ГЈГіГ§Г­Г®ГІВёГ°Г®Гў [P], ГўГўГ®Г¤[ya] ГҐГЈГ® ГўГ­ГіГІГ°Гј", "Г®Г±ГІГ®Г°Г®Г¦Г­Г® ГўГўГ®Г¤ГЁГІ Г®Г°ГЈГ Г­ [P] Гў Г±ГўГ®Г© Г§Г Г¤Г­ГЁГ© ГЇГ°Г®ГµГ®Г¤", "Г­Г ГЇГ°Г ГўГ«[ya]ГҐГІ Г®Г¤ГЁГ­ ГЁГ§ Г·Г«ГҐГ­Г®Гў [P] Гў Г±ГўГ®Гѕ ГЇГ®ГЇГЄГі, ГЇГ®Г¬Г®ГЈГ [ya] Г±ГҐГЎГҐ Г°ГіГЄГ®Г©", "Г®Г±ГІГ®Г°Г®Г¦Г­Г® ГўГўГ®Г¤ГЁГІ Г±ГІГўГ®Г« [P] Гў Г±ГўГ®Гѕ ГЇГ°[ya]Г¬ГіГѕ ГЄГЁГёГЄГі", "Г§Г ГЇГіГ±ГЄГ ГҐГІ Г®Г¤Г­Г®ГЈГ® ГЁГ§ Г§ГўГҐГ°ГјГЄГ®Гў [P] Гў Г±ГўГ®Гѕ ГЇГ°[ya]Г¬ГіГѕ ГЄГЁГёГЄГі", "Г§Г ГЇГіГ±ГЄГ ГҐГІ Г§Г¬ГҐ[ya] [P] Гў Г±ГўГ®ГЁ ГіГЈГ®Г«ГјГ­Г»ГҐ ГёГ ГµГІГ»")
 					H.lastfucked = P
 					H.lfhole = hole
 
 	// Basics + akula sergal vox
 
 			if(P.species.get_bodytype() == SPECIES_AKULA || P.species.get_bodytype() == SPECIES_SERGAL || P.species.get_bodytype() == SPECIES_VOX || P.species.get_bodytype() == SPECIES_NEVREAN && H.species.get_bodytype() != SPECIES_TESHARI && H.species.get_bodytype() != SPECIES_PROMETHEAN)
-				message = pick("сношает себ[ya] в зад ограном [P], насажива[ya]сь на него", "прыгает задом на инструменте [P], сжав анальное колечко", "чувственно сношает себ[ya] членом [P]", "насаживаетс[ya] анусом на ствол [P], ввод[ya] [P.identifying_gender==FEMALE ? "её" : "его"] орган в пр[ya]мую кишку")
+				message = pick("Г±Г­Г®ГёГ ГҐГІ Г±ГҐГЎ[ya] Гў Г§Г Г¤ Г®ГЈГ°Г Г­Г®Г¬ [P], Г­Г Г±Г Г¦ГЁГўГ [ya]Г±Гј Г­Г  Г­ГҐГЈГ®", "ГЇГ°Г»ГЈГ ГҐГІ Г§Г Г¤Г®Г¬ Г­Г  ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГҐ [P], Г±Г¦Г Гў Г Г­Г Г«ГјГ­Г®ГҐ ГЄГ®Г«ГҐГ·ГЄГ®", "Г·ГіГўГ±ГІГўГҐГ­Г­Г® Г±Г­Г®ГёГ ГҐГІ Г±ГҐГЎ[ya] Г·Г«ГҐГ­Г®Г¬ [P]", "Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] Г Г­ГіГ±Г®Г¬ Г­Г  Г±ГІГўГ®Г« [P], ГўГўГ®Г¤[ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г®Г°ГЈГ Г­ Гў ГЇГ°[ya]Г¬ГіГѕ ГЄГЁГёГЄГі")
 				if (prob(35))
-					message = pick("вгон[ya]ет интрумент [P] в свой зад по самые [ya]йца", "неумолимо скачет на члене [P], погружа[ya] [P.identifying_gender==FEMALE ? "её" : "его"] орган в свой зад", "скачет на малыше [P], погружа[ya] его в свою кишку", "прыгает на члене [P], удар[ya][ya]сь о [P.identifying_gender==FEMALE ? "её" : "его"] тело", "скачет на члене, доставл[ya][ya] удовольствие себе и [P]", "[H.identifying_gender==FEMALE ? "упёрлась" : "упёрс[ya]"] тазом в [P] и елозит, держа [P.identifying_gender==FEMALE ? "её" : "его"] член внутри себ[ya]", "двигает тазом по-кругу, сид[ya] задом на инструменте [P], ласка[ya] его нутром", "вприпрыжку наваливаетс[ya] на [P], ласка[ya] [P.identifying_gender==FEMALE ? "её" : "его"] член стенками пр[ya]мой кишки", "насаживаетс[ya] на пенис [P], дав[ya] на него своим тазом", "двигаетс[ya] вверх-вниз, сид[ya] задом на зверьке [P]")
+					message = pick("ГўГЈГ®Г­[ya]ГҐГІ ГЁГ­ГІГ°ГіГ¬ГҐГ­ГІ [P] Гў Г±ГўГ®Г© Г§Г Г¤ ГЇГ® Г±Г Г¬Г»ГҐ [ya]Г©Г¶Г ", "Г­ГҐГіГ¬Г®Г«ГЁГ¬Г® Г±ГЄГ Г·ГҐГІ Г­Г  Г·Г«ГҐГ­ГҐ [P], ГЇГ®ГЈГ°ГіГ¦Г [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г®Г°ГЈГ Г­ Гў Г±ГўГ®Г© Г§Г Г¤", "Г±ГЄГ Г·ГҐГІ Г­Г  Г¬Г Г«Г»ГёГҐ [P], ГЇГ®ГЈГ°ГіГ¦Г [ya] ГҐГЈГ® Гў Г±ГўГ®Гѕ ГЄГЁГёГЄГі", "ГЇГ°Г»ГЈГ ГҐГІ Г­Г  Г·Г«ГҐГ­ГҐ [P], ГіГ¤Г Г°[ya][ya]Г±Гј Г® [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] ГІГҐГ«Г®", "Г±ГЄГ Г·ГҐГІ Г­Г  Г·Г«ГҐГ­ГҐ, Г¤Г®Г±ГІГ ГўГ«[ya][ya] ГіГ¤Г®ГўГ®Г«ГјГ±ГІГўГЁГҐ Г±ГҐГЎГҐ ГЁ [P]", "[H.identifying_gender==FEMALE ? "ГіГЇВёГ°Г«Г Г±Гј" : "ГіГЇВёГ°Г±[ya]"] ГІГ Г§Г®Г¬ Гў [P] ГЁ ГҐГ«Г®Г§ГЁГІ, Г¤ГҐГ°Г¦Г  [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г·Г«ГҐГ­ ГўГ­ГіГІГ°ГЁ Г±ГҐГЎ[ya]", "Г¤ГўГЁГЈГ ГҐГІ ГІГ Г§Г®Г¬ ГЇГ®-ГЄГ°ГіГЈГі, Г±ГЁГ¤[ya] Г§Г Г¤Г®Г¬ Г­Г  ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГҐ [P], Г«Г Г±ГЄГ [ya] ГҐГЈГ® Г­ГіГІГ°Г®Г¬", "ГўГЇГ°ГЁГЇГ°Г»Г¦ГЄГі Г­Г ГўГ Г«ГЁГўГ ГҐГІГ±[ya] Г­Г  [P], Г«Г Г±ГЄГ [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г·Г«ГҐГ­ Г±ГІГҐГ­ГЄГ Г¬ГЁ ГЇГ°[ya]Г¬Г®Г© ГЄГЁГёГЄГЁ", "Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] Г­Г  ГЇГҐГ­ГЁГ± [P], Г¤Г Гў[ya] Г­Г  Г­ГҐГЈГ® Г±ГўГ®ГЁГ¬ ГІГ Г§Г®Г¬", "Г¤ГўГЁГЈГ ГҐГІГ±[ya] ГўГўГҐГ°Гµ-ГўГ­ГЁГ§, Г±ГЁГ¤[ya] Г§Г Г¤Г®Г¬ Г­Г  Г§ГўГҐГ°ГјГЄГҐ [P]")
 
 				if (H.lastfucked != P || H.lfhole != hole)
-					message = pick("медленно садитс[ya] задницей головку на гузнотёра [P], ввод[ya] её внутрь", "осторожно вводит головку органа [P] в свой задний проход", "направл[ya]ет головку члена [P] в свою попку, помога[ya] себе рукой", "осторожно вводит головку ствола [P] в свою пр[ya]мую кишку", "запускает головку зверька [P] в свою пр[ya]мую кишку", "запускает шахтёра [P] в свои угольные шахты")
+					message = pick("Г¬ГҐГ¤Г«ГҐГ­Г­Г® Г±Г Г¤ГЁГІГ±[ya] Г§Г Г¤Г­ГЁГ¶ГҐГ© ГЈГ®Г«Г®ГўГЄГі Г­Г  ГЈГіГ§Г­Г®ГІВёГ°Г  [P], ГўГўГ®Г¤[ya] ГҐВё ГўГ­ГіГІГ°Гј", "Г®Г±ГІГ®Г°Г®Г¦Г­Г® ГўГўГ®Г¤ГЁГІ ГЈГ®Г«Г®ГўГЄГі Г®Г°ГЈГ Г­Г  [P] Гў Г±ГўГ®Г© Г§Г Г¤Г­ГЁГ© ГЇГ°Г®ГµГ®Г¤", "Г­Г ГЇГ°Г ГўГ«[ya]ГҐГІ ГЈГ®Г«Г®ГўГЄГі Г·Г«ГҐГ­Г  [P] Гў Г±ГўГ®Гѕ ГЇГ®ГЇГЄГі, ГЇГ®Г¬Г®ГЈГ [ya] Г±ГҐГЎГҐ Г°ГіГЄГ®Г©", "Г®Г±ГІГ®Г°Г®Г¦Г­Г® ГўГўГ®Г¤ГЁГІ ГЈГ®Г«Г®ГўГЄГі Г±ГІГўГ®Г«Г  [P] Гў Г±ГўГ®Гѕ ГЇГ°[ya]Г¬ГіГѕ ГЄГЁГёГЄГі", "Г§Г ГЇГіГ±ГЄГ ГҐГІ ГЈГ®Г«Г®ГўГЄГі Г§ГўГҐГ°ГјГЄГ  [P] Гў Г±ГўГ®Гѕ ГЇГ°[ya]Г¬ГіГѕ ГЄГЁГёГЄГі", "Г§Г ГЇГіГ±ГЄГ ГҐГІ ГёГ ГµГІВёГ°Г  [P] Гў Г±ГўГ®ГЁ ГіГЈГ®Г«ГјГ­Г»ГҐ ГёГ ГµГІГ»")
 					H.lastfucked = P
 					H.lfhole = hole
 
@@ -1154,71 +1154,71 @@ MOUNT REWORKED - допилить попарно реакции на взаимодействия рас друг с другом, у
 
 	//P.Teshari + basics
 			if(P.species.get_bodytype() == SPECIES_TESHARI && H.species.get_bodytype() != SPECIES_TESHARI && H.species.get_bodytype() != SPECIES_PROMETHEAN)
-				message = pick("сношает себ[ya] в зад, насажива[ya]сь на огран [P]", "прыгает задом на инструменте [P], сжав анальное колечко", "чувственно сношает себ[ya] членом [P]")
+				message = pick("Г±Г­Г®ГёГ ГҐГІ Г±ГҐГЎ[ya] Гў Г§Г Г¤, Г­Г Г±Г Г¦ГЁГўГ [ya]Г±Гј Г­Г  Г®ГЈГ°Г Г­ [P]", "ГЇГ°Г»ГЈГ ГҐГІ Г§Г Г¤Г®Г¬ Г­Г  ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГҐ [P], Г±Г¦Г Гў Г Г­Г Г«ГјГ­Г®ГҐ ГЄГ®Г«ГҐГ·ГЄГ®", "Г·ГіГўГ±ГІГўГҐГ­Г­Г® Г±Г­Г®ГёГ ГҐГІ Г±ГҐГЎ[ya] Г·Г«ГҐГ­Г®Г¬ [P]")
 				if (prob(35))
-					message = pick("насаживаетс[ya] анальным отверстием на член [P]", "неумолимо скачет на члене [P], погружа[ya] [P.identifying_gender==FEMALE ? "её" : "его"] орган в свой зад", "скачет на малыше [P], погружа[ya] его в свой анус", "прыгает на члене [P], удар[ya][ya]сь о [P.identifying_gender==FEMALE ? "её" : "его"] тело задом", "скачет на члене, доставл[ya][ya] удовольствие себе и [P]", "[H.identifying_gender==FEMALE ? "упёрлась" : "упёрс[ya]"] тазом в [P] и елозит, держа [P.identifying_gender==FEMALE ? "её" : "его"] член внутри пр[ya]мой кишки", "чувственно двигает тазом по-кругу, сид[ya] задом на инструменте [P], ласка[ya] его нутром", "вприпрыжку наваливаетс[ya] на [P], ласка[ya] [P.identifying_gender==FEMALE ? "её" : "его"] член стенками пр[ya]мой кишки", "насаживаетс[ya] анальным колечком на ствол [P], ввод[ya] [P.identifying_gender==FEMALE ? "её" : "его"] орган в пр[ya]мую кишку до упора", "двигаетс[ya] вверх-вниз, сид[ya] на зверьке [P]")
+					message = pick("Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] Г Г­Г Г«ГјГ­Г»Г¬ Г®ГІГўГҐГ°Г±ГІГЁГҐГ¬ Г­Г  Г·Г«ГҐГ­ [P]", "Г­ГҐГіГ¬Г®Г«ГЁГ¬Г® Г±ГЄГ Г·ГҐГІ Г­Г  Г·Г«ГҐГ­ГҐ [P], ГЇГ®ГЈГ°ГіГ¦Г [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г®Г°ГЈГ Г­ Гў Г±ГўГ®Г© Г§Г Г¤", "Г±ГЄГ Г·ГҐГІ Г­Г  Г¬Г Г«Г»ГёГҐ [P], ГЇГ®ГЈГ°ГіГ¦Г [ya] ГҐГЈГ® Гў Г±ГўГ®Г© Г Г­ГіГ±", "ГЇГ°Г»ГЈГ ГҐГІ Г­Г  Г·Г«ГҐГ­ГҐ [P], ГіГ¤Г Г°[ya][ya]Г±Гј Г® [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] ГІГҐГ«Г® Г§Г Г¤Г®Г¬", "Г±ГЄГ Г·ГҐГІ Г­Г  Г·Г«ГҐГ­ГҐ, Г¤Г®Г±ГІГ ГўГ«[ya][ya] ГіГ¤Г®ГўГ®Г«ГјГ±ГІГўГЁГҐ Г±ГҐГЎГҐ ГЁ [P]", "[H.identifying_gender==FEMALE ? "ГіГЇВёГ°Г«Г Г±Гј" : "ГіГЇВёГ°Г±[ya]"] ГІГ Г§Г®Г¬ Гў [P] ГЁ ГҐГ«Г®Г§ГЁГІ, Г¤ГҐГ°Г¦Г  [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г·Г«ГҐГ­ ГўГ­ГіГІГ°ГЁ ГЇГ°[ya]Г¬Г®Г© ГЄГЁГёГЄГЁ", "Г·ГіГўГ±ГІГўГҐГ­Г­Г® Г¤ГўГЁГЈГ ГҐГІ ГІГ Г§Г®Г¬ ГЇГ®-ГЄГ°ГіГЈГі, Г±ГЁГ¤[ya] Г§Г Г¤Г®Г¬ Г­Г  ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГҐ [P], Г«Г Г±ГЄГ [ya] ГҐГЈГ® Г­ГіГІГ°Г®Г¬", "ГўГЇГ°ГЁГЇГ°Г»Г¦ГЄГі Г­Г ГўГ Г«ГЁГўГ ГҐГІГ±[ya] Г­Г  [P], Г«Г Г±ГЄГ [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г·Г«ГҐГ­ Г±ГІГҐГ­ГЄГ Г¬ГЁ ГЇГ°[ya]Г¬Г®Г© ГЄГЁГёГЄГЁ", "Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] Г Г­Г Г«ГјГ­Г»Г¬ ГЄГ®Г«ГҐГ·ГЄГ®Г¬ Г­Г  Г±ГІГўГ®Г« [P], ГўГўГ®Г¤[ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г®Г°ГЈГ Г­ Гў ГЇГ°[ya]Г¬ГіГѕ ГЄГЁГёГЄГі Г¤Г® ГіГЇГ®Г°Г ", "Г¤ГўГЁГЈГ ГҐГІГ±[ya] ГўГўГҐГ°Гµ-ГўГ­ГЁГ§, Г±ГЁГ¤[ya] Г­Г  Г§ГўГҐГ°ГјГЄГҐ [P]")
 
 				if (H.lastfucked != P || H.lfhole != hole)
-					message = pick("медленно садитс[ya] анусом на гузнотёра [P], ввод[ya] его внутрь", "осторожно вводит орган [P] в свой задний проход", "направл[ya]ет член [P] в свою попку, помога[ya] себе рукой", "осторожно вводит ствол [P] в свою пр[ya]мую кишку", "запускает зверька [P] в свою пр[ya]мую кишку", "запускает шахтёра [P] в свои угольные шахты")
+					message = pick("Г¬ГҐГ¤Г«ГҐГ­Г­Г® Г±Г Г¤ГЁГІГ±[ya] Г Г­ГіГ±Г®Г¬ Г­Г  ГЈГіГ§Г­Г®ГІВёГ°Г  [P], ГўГўГ®Г¤[ya] ГҐГЈГ® ГўГ­ГіГІГ°Гј", "Г®Г±ГІГ®Г°Г®Г¦Г­Г® ГўГўГ®Г¤ГЁГІ Г®Г°ГЈГ Г­ [P] Гў Г±ГўГ®Г© Г§Г Г¤Г­ГЁГ© ГЇГ°Г®ГµГ®Г¤", "Г­Г ГЇГ°Г ГўГ«[ya]ГҐГІ Г·Г«ГҐГ­ [P] Гў Г±ГўГ®Гѕ ГЇГ®ГЇГЄГі, ГЇГ®Г¬Г®ГЈГ [ya] Г±ГҐГЎГҐ Г°ГіГЄГ®Г©", "Г®Г±ГІГ®Г°Г®Г¦Г­Г® ГўГўГ®Г¤ГЁГІ Г±ГІГўГ®Г« [P] Гў Г±ГўГ®Гѕ ГЇГ°[ya]Г¬ГіГѕ ГЄГЁГёГЄГі", "Г§Г ГЇГіГ±ГЄГ ГҐГІ Г§ГўГҐГ°ГјГЄГ  [P] Гў Г±ГўГ®Гѕ ГЇГ°[ya]Г¬ГіГѕ ГЄГЁГёГЄГі", "Г§Г ГЇГіГ±ГЄГ ГҐГІ ГёГ ГµГІВёГ°Г  [P] Гў Г±ГўГ®ГЁ ГіГЈГ®Г«ГјГ­Г»ГҐ ГёГ ГµГІГ»")
 					H.lastfucked = P
 					H.lfhole = hole
 
 	//H.Teshari + humans or tesharis
 			if((H.species.get_bodytype() == SPECIES_TESHARI) && (P.species.get_bodytype() == SPECIES_TESHARI || P.species.get_bodytype() == SPECIES_HUMAN || P.species.get_bodytype() == SPECIES_HUMAN_VATBORN || P.species.get_bodytype() == SPECIES_RAPALA || P.species.get_bodytype() == SPECIES_VASILISSAN || P.species.get_bodytype() == SPECIES_PROTEAN || P.species.get_bodytype() == SPECIES_AKULA || P.species.get_bodytype() == SPECIES_SERGAL || P.species.get_bodytype() == SPECIES_VOX || P.species.get_bodytype() == SPECIES_NEVREAN))
-				message = pick("сношает себ[ya], насажива[ya]сь клоакой на огран [P]", "прыгает задом на инструменте [P], сжав клоаку")
+				message = pick("Г±Г­Г®ГёГ ГҐГІ Г±ГҐГЎ[ya], Г­Г Г±Г Г¦ГЁГўГ [ya]Г±Гј ГЄГ«Г®Г ГЄГ®Г© Г­Г  Г®ГЈГ°Г Г­ [P]", "ГЇГ°Г»ГЈГ ГҐГІ Г§Г Г¤Г®Г¬ Г­Г  ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГҐ [P], Г±Г¦Г Гў ГЄГ«Г®Г ГЄГі")
 				if (prob(35))
-					message = pick("насаживаетс[ya] отверстием клоаки на член [P]", "неумолимо скачет на члене [P], погружа[ya] [P.identifying_gender==FEMALE ? "её" : "его"] орган в свою клоаку", "прыгает на члене [P], удар[ya][ya]сь о [P.identifying_gender==FEMALE ? "её" : "его"] тело задом", "скачет на члене, доставл[ya][ya] удовольствие себе и [P]", "чувственно двигает тазом по-кругу, сид[ya] задом на инструменте [P], ласка[ya] его своим нутром", "[H.identifying_gender==FEMALE ? "упёрлась" : "упёрс[ya]"] тазом в [P] и елозит, держа [P.identifying_gender==FEMALE ? "её" : "его"] член внутри клоаки", "чувственно сношает себ[ya] членом [P]", "двигаетс[ya] вверх-вниз, сид[ya] на зверьке [P]", "вприпрыжку наваливаетс[ya] на [P], ласка[ya] [P.identifying_gender==FEMALE ? "её" : "его"] член стенками клоаки", "насаживаетс[ya] колечком клоаки на ствол [P], ввод[ya] [P.identifying_gender==FEMALE ? "её" : "его"] орган в кишку до упора")
+					message = pick("Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] Г®ГІГўГҐГ°Г±ГІГЁГҐГ¬ ГЄГ«Г®Г ГЄГЁ Г­Г  Г·Г«ГҐГ­ [P]", "Г­ГҐГіГ¬Г®Г«ГЁГ¬Г® Г±ГЄГ Г·ГҐГІ Г­Г  Г·Г«ГҐГ­ГҐ [P], ГЇГ®ГЈГ°ГіГ¦Г [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г®Г°ГЈГ Г­ Гў Г±ГўГ®Гѕ ГЄГ«Г®Г ГЄГі", "ГЇГ°Г»ГЈГ ГҐГІ Г­Г  Г·Г«ГҐГ­ГҐ [P], ГіГ¤Г Г°[ya][ya]Г±Гј Г® [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] ГІГҐГ«Г® Г§Г Г¤Г®Г¬", "Г±ГЄГ Г·ГҐГІ Г­Г  Г·Г«ГҐГ­ГҐ, Г¤Г®Г±ГІГ ГўГ«[ya][ya] ГіГ¤Г®ГўГ®Г«ГјГ±ГІГўГЁГҐ Г±ГҐГЎГҐ ГЁ [P]", "Г·ГіГўГ±ГІГўГҐГ­Г­Г® Г¤ГўГЁГЈГ ГҐГІ ГІГ Г§Г®Г¬ ГЇГ®-ГЄГ°ГіГЈГі, Г±ГЁГ¤[ya] Г§Г Г¤Г®Г¬ Г­Г  ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГҐ [P], Г«Г Г±ГЄГ [ya] ГҐГЈГ® Г±ГўГ®ГЁГ¬ Г­ГіГІГ°Г®Г¬", "[H.identifying_gender==FEMALE ? "ГіГЇВёГ°Г«Г Г±Гј" : "ГіГЇВёГ°Г±[ya]"] ГІГ Г§Г®Г¬ Гў [P] ГЁ ГҐГ«Г®Г§ГЁГІ, Г¤ГҐГ°Г¦Г  [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г·Г«ГҐГ­ ГўГ­ГіГІГ°ГЁ ГЄГ«Г®Г ГЄГЁ", "Г·ГіГўГ±ГІГўГҐГ­Г­Г® Г±Г­Г®ГёГ ГҐГІ Г±ГҐГЎ[ya] Г·Г«ГҐГ­Г®Г¬ [P]", "Г¤ГўГЁГЈГ ГҐГІГ±[ya] ГўГўГҐГ°Гµ-ГўГ­ГЁГ§, Г±ГЁГ¤[ya] Г­Г  Г§ГўГҐГ°ГјГЄГҐ [P]", "ГўГЇГ°ГЁГЇГ°Г»Г¦ГЄГі Г­Г ГўГ Г«ГЁГўГ ГҐГІГ±[ya] Г­Г  [P], Г«Г Г±ГЄГ [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г·Г«ГҐГ­ Г±ГІГҐГ­ГЄГ Г¬ГЁ ГЄГ«Г®Г ГЄГЁ", "Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] ГЄГ®Г«ГҐГ·ГЄГ®Г¬ ГЄГ«Г®Г ГЄГЁ Г­Г  Г±ГІГўГ®Г« [P], ГўГўГ®Г¤[ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г®Г°ГЈГ Г­ Гў ГЄГЁГёГЄГі Г¤Г® ГіГЇГ®Г°Г ")
 
 				if (H.lastfucked != P || H.lfhole != hole)
-					message = pick("медленно садитс[ya] клоакой на головку гузнотёра [P], ввод[ya] её внутрь", "осторожно вводит окончание органа [P] в свою клоаку", "направл[ya]ет член [P] в свою клоаку, помога[ya] себе рукой", "осторожно вводит кончик ствола [P] в свою клоаку", "запускает кончик зверька [P] в свою клоаку", "запускает шахтёра [P] в свои шахты")
+					message = pick("Г¬ГҐГ¤Г«ГҐГ­Г­Г® Г±Г Г¤ГЁГІГ±[ya] ГЄГ«Г®Г ГЄГ®Г© Г­Г  ГЈГ®Г«Г®ГўГЄГі ГЈГіГ§Г­Г®ГІВёГ°Г  [P], ГўГўГ®Г¤[ya] ГҐВё ГўГ­ГіГІГ°Гј", "Г®Г±ГІГ®Г°Г®Г¦Г­Г® ГўГўГ®Г¤ГЁГІ Г®ГЄГ®Г­Г·Г Г­ГЁГҐ Г®Г°ГЈГ Г­Г  [P] Гў Г±ГўГ®Гѕ ГЄГ«Г®Г ГЄГі", "Г­Г ГЇГ°Г ГўГ«[ya]ГҐГІ Г·Г«ГҐГ­ [P] Гў Г±ГўГ®Гѕ ГЄГ«Г®Г ГЄГі, ГЇГ®Г¬Г®ГЈГ [ya] Г±ГҐГЎГҐ Г°ГіГЄГ®Г©", "Г®Г±ГІГ®Г°Г®Г¦Г­Г® ГўГўГ®Г¤ГЁГІ ГЄГ®Г­Г·ГЁГЄ Г±ГІГўГ®Г«Г  [P] Гў Г±ГўГ®Гѕ ГЄГ«Г®Г ГЄГі", "Г§Г ГЇГіГ±ГЄГ ГҐГІ ГЄГ®Г­Г·ГЁГЄ Г§ГўГҐГ°ГјГЄГ  [P] Гў Г±ГўГ®Гѕ ГЄГ«Г®Г ГЄГі", "Г§Г ГЇГіГ±ГЄГ ГҐГІ ГёГ ГµГІВёГ°Г  [P] Гў Г±ГўГ®ГЁ ГёГ ГµГІГ»")
 					H.lastfucked = P
 					H.lfhole = hole
 
 	//H.Teshari + tajara
 			if(H.species.get_bodytype() == SPECIES_TESHARI && P.species.get_bodytype() == SPECIES_TAJ)
-				message = pick("сношает себ[ya] в клоаку, насажива[ya]сь на покрытый шипиками огран [P]", "прыгает задом на шипастом инструменте [P], сжав клоаку", "чувственно сношает себ[ya] членом [P]")
+				message = pick("Г±Г­Г®ГёГ ГҐГІ Г±ГҐГЎ[ya] Гў ГЄГ«Г®Г ГЄГі, Г­Г Г±Г Г¦ГЁГўГ [ya]Г±Гј Г­Г  ГЇГ®ГЄГ°Г»ГІГ»Г© ГёГЁГЇГЁГЄГ Г¬ГЁ Г®ГЈГ°Г Г­ [P]", "ГЇГ°Г»ГЈГ ГҐГІ Г§Г Г¤Г®Г¬ Г­Г  ГёГЁГЇГ Г±ГІГ®Г¬ ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГҐ [P], Г±Г¦Г Гў ГЄГ«Г®Г ГЄГі", "Г·ГіГўГ±ГІГўГҐГ­Г­Г® Г±Г­Г®ГёГ ГҐГІ Г±ГҐГЎ[ya] Г·Г«ГҐГ­Г®Г¬ [P]")
 				if (prob(35))
-					message = pick("насаживаетс[ya] отверстием клоаки на шипастый член [P]", "неумолимо скачет на члене [P], погружа[ya] [P.identifying_gender==FEMALE ? "её" : "его"] орган в свою клоаку", "прыгает на члене [P], удар[ya][ya]сь о [P.identifying_gender==FEMALE ? "её" : "его"] тело задом", "скачет на члене, доставл[ya][ya] удовольствие себе и [P]", "[H.identifying_gender==FEMALE ? "упёрлась" : "упёрс[ya]"] тазом в [P] и елозит, держа [P.identifying_gender==FEMALE ? "её" : "его"] член внутри клоаки", "чувственно двигает тазом по-кругу, сид[ya] на шипастом инструменте [P], ласка[ya] его своим нутром", "вприпрыжку наваливаетс[ya] на [P], ласка[ya] [P.identifying_gender==FEMALE ? "её" : "его"] шипастый член стенками клоаки", "насаживаетс[ya] колечком клоаки на ствол [P], ввод[ya] [P.identifying_gender==FEMALE ? "её" : "его"] орган в кишку до упора", "двигаетс[ya] вверх-вниз, сид[ya] на покрытом шипами зверьке [P]")
+					message = pick("Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] Г®ГІГўГҐГ°Г±ГІГЁГҐГ¬ ГЄГ«Г®Г ГЄГЁ Г­Г  ГёГЁГЇГ Г±ГІГ»Г© Г·Г«ГҐГ­ [P]", "Г­ГҐГіГ¬Г®Г«ГЁГ¬Г® Г±ГЄГ Г·ГҐГІ Г­Г  Г·Г«ГҐГ­ГҐ [P], ГЇГ®ГЈГ°ГіГ¦Г [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г®Г°ГЈГ Г­ Гў Г±ГўГ®Гѕ ГЄГ«Г®Г ГЄГі", "ГЇГ°Г»ГЈГ ГҐГІ Г­Г  Г·Г«ГҐГ­ГҐ [P], ГіГ¤Г Г°[ya][ya]Г±Гј Г® [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] ГІГҐГ«Г® Г§Г Г¤Г®Г¬", "Г±ГЄГ Г·ГҐГІ Г­Г  Г·Г«ГҐГ­ГҐ, Г¤Г®Г±ГІГ ГўГ«[ya][ya] ГіГ¤Г®ГўГ®Г«ГјГ±ГІГўГЁГҐ Г±ГҐГЎГҐ ГЁ [P]", "[H.identifying_gender==FEMALE ? "ГіГЇВёГ°Г«Г Г±Гј" : "ГіГЇВёГ°Г±[ya]"] ГІГ Г§Г®Г¬ Гў [P] ГЁ ГҐГ«Г®Г§ГЁГІ, Г¤ГҐГ°Г¦Г  [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г·Г«ГҐГ­ ГўГ­ГіГІГ°ГЁ ГЄГ«Г®Г ГЄГЁ", "Г·ГіГўГ±ГІГўГҐГ­Г­Г® Г¤ГўГЁГЈГ ГҐГІ ГІГ Г§Г®Г¬ ГЇГ®-ГЄГ°ГіГЈГі, Г±ГЁГ¤[ya] Г­Г  ГёГЁГЇГ Г±ГІГ®Г¬ ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГҐ [P], Г«Г Г±ГЄГ [ya] ГҐГЈГ® Г±ГўГ®ГЁГ¬ Г­ГіГІГ°Г®Г¬", "ГўГЇГ°ГЁГЇГ°Г»Г¦ГЄГі Г­Г ГўГ Г«ГЁГўГ ГҐГІГ±[ya] Г­Г  [P], Г«Г Г±ГЄГ [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] ГёГЁГЇГ Г±ГІГ»Г© Г·Г«ГҐГ­ Г±ГІГҐГ­ГЄГ Г¬ГЁ ГЄГ«Г®Г ГЄГЁ", "Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] ГЄГ®Г«ГҐГ·ГЄГ®Г¬ ГЄГ«Г®Г ГЄГЁ Г­Г  Г±ГІГўГ®Г« [P], ГўГўГ®Г¤[ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г®Г°ГЈГ Г­ Гў ГЄГЁГёГЄГі Г¤Г® ГіГЇГ®Г°Г ", "Г¤ГўГЁГЈГ ГҐГІГ±[ya] ГўГўГҐГ°Гµ-ГўГ­ГЁГ§, Г±ГЁГ¤[ya] Г­Г  ГЇГ®ГЄГ°Г»ГІГ®Г¬ ГёГЁГЇГ Г¬ГЁ Г§ГўГҐГ°ГјГЄГҐ [P]")
 
 				if (H.lastfucked != P || H.lfhole != hole)
-					message = pick("медленно садитс[ya] клоакой на головку покрытого шипами гузнотёра [P], ввод[ya] её внутрь", "осторожно вводит окончание шипастого органа [P] в свою клоаку", "направл[ya]ет шипастый член [P] в свою клоаку, помога[ya] себе рукой", "осторожно вводит кончик ствола [P] в свою клоаку", "запускает кончик шипастого зверька [P] в свою клоаку", "запускает шахтёра [P] в свои шахты")
+					message = pick("Г¬ГҐГ¤Г«ГҐГ­Г­Г® Г±Г Г¤ГЁГІГ±[ya] ГЄГ«Г®Г ГЄГ®Г© Г­Г  ГЈГ®Г«Г®ГўГЄГі ГЇГ®ГЄГ°Г»ГІГ®ГЈГ® ГёГЁГЇГ Г¬ГЁ ГЈГіГ§Г­Г®ГІВёГ°Г  [P], ГўГўГ®Г¤[ya] ГҐВё ГўГ­ГіГІГ°Гј", "Г®Г±ГІГ®Г°Г®Г¦Г­Г® ГўГўГ®Г¤ГЁГІ Г®ГЄГ®Г­Г·Г Г­ГЁГҐ ГёГЁГЇГ Г±ГІГ®ГЈГ® Г®Г°ГЈГ Г­Г  [P] Гў Г±ГўГ®Гѕ ГЄГ«Г®Г ГЄГі", "Г­Г ГЇГ°Г ГўГ«[ya]ГҐГІ ГёГЁГЇГ Г±ГІГ»Г© Г·Г«ГҐГ­ [P] Гў Г±ГўГ®Гѕ ГЄГ«Г®Г ГЄГі, ГЇГ®Г¬Г®ГЈГ [ya] Г±ГҐГЎГҐ Г°ГіГЄГ®Г©", "Г®Г±ГІГ®Г°Г®Г¦Г­Г® ГўГўГ®Г¤ГЁГІ ГЄГ®Г­Г·ГЁГЄ Г±ГІГўГ®Г«Г  [P] Гў Г±ГўГ®Гѕ ГЄГ«Г®Г ГЄГі", "Г§Г ГЇГіГ±ГЄГ ГҐГІ ГЄГ®Г­Г·ГЁГЄ ГёГЁГЇГ Г±ГІГ®ГЈГ® Г§ГўГҐГ°ГјГЄГ  [P] Гў Г±ГўГ®Гѕ ГЄГ«Г®Г ГЄГі", "Г§Г ГЇГіГ±ГЄГ ГҐГІ ГёГ ГµГІВёГ°Г  [P] Гў Г±ГўГ®ГЁ ГёГ ГµГІГ»")
 					H.lastfucked = P
 					H.lfhole = hole
 
-	//H.Teshari + unathi ------- сделать вариации и кнопки на 1 и 2 члена
+	//H.Teshari + unathi ------- Г±Г¤ГҐГ«Г ГІГј ГўГ Г°ГЁГ Г¶ГЁГЁ ГЁ ГЄГ­Г®ГЇГЄГЁ Г­Г  1 ГЁ 2 Г·Г«ГҐГ­Г 
 			if(H.species.get_bodytype() == SPECIES_TESHARI && P.species.get_bodytype() == SPECIES_UNATHI)
-				message = pick("сношает себ[ya] в клоаку, насажива[ya]сь на огран [P]", "прыгает задом на инструменте [P], сжав отверстие клоаки", "чувственно сношает себ[ya] членом [P]")
+				message = pick("Г±Г­Г®ГёГ ГҐГІ Г±ГҐГЎ[ya] Гў ГЄГ«Г®Г ГЄГі, Г­Г Г±Г Г¦ГЁГўГ [ya]Г±Гј Г­Г  Г®ГЈГ°Г Г­ [P]", "ГЇГ°Г»ГЈГ ГҐГІ Г§Г Г¤Г®Г¬ Г­Г  ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГҐ [P], Г±Г¦Г Гў Г®ГІГўГҐГ°Г±ГІГЁГҐ ГЄГ«Г®Г ГЄГЁ", "Г·ГіГўГ±ГІГўГҐГ­Г­Г® Г±Г­Г®ГёГ ГҐГІ Г±ГҐГЎ[ya] Г·Г«ГҐГ­Г®Г¬ [P]")
 				if (prob(35))
-					message = pick("поочерёдно насаживаетс[ya] клоакой на члены [P], ввод[ya] их в кишку","насаживаетс[ya] клоакой на один из членов [P], оставл[ya][ya] второй теретьс[ya] о лобок", "насаживаетс[ya] на один из членов [P] клоакой, оставл[ya][ya] второй теретьс[ya] о подхвостье", "неумолимо скачет на одном из отростков [P]", "скачет на одном из членов, доставл[ya][ya] удовольствие себе и [P]", "чувственно двигает тазом по-кругу, сид[ya] задом на инструменте [P], ласка[ya] его своим нутром", "вприпрыжку наваливаетс[ya] на [P], ласка[ya] [P.identifying_gender==FEMALE ? "её" : "его"] члены клоакой", "двигаетс[ya] вверх-вниз, сид[ya] на зверьке [P]")
+					message = pick("ГЇГ®Г®Г·ГҐГ°ВёГ¤Г­Г® Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] ГЄГ«Г®Г ГЄГ®Г© Г­Г  Г·Г«ГҐГ­Г» [P], ГўГўГ®Г¤[ya] ГЁГµ Гў ГЄГЁГёГЄГі","Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] ГЄГ«Г®Г ГЄГ®Г© Г­Г  Г®Г¤ГЁГ­ ГЁГ§ Г·Г«ГҐГ­Г®Гў [P], Г®Г±ГІГ ГўГ«[ya][ya] ГўГІГ®Г°Г®Г© ГІГҐГ°ГҐГІГјГ±[ya] Г® Г«Г®ГЎГ®ГЄ", "Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] Г­Г  Г®Г¤ГЁГ­ ГЁГ§ Г·Г«ГҐГ­Г®Гў [P] ГЄГ«Г®Г ГЄГ®Г©, Г®Г±ГІГ ГўГ«[ya][ya] ГўГІГ®Г°Г®Г© ГІГҐГ°ГҐГІГјГ±[ya] Г® ГЇГ®Г¤ГµГўГ®Г±ГІГјГҐ", "Г­ГҐГіГ¬Г®Г«ГЁГ¬Г® Г±ГЄГ Г·ГҐГІ Г­Г  Г®Г¤Г­Г®Г¬ ГЁГ§ Г®ГІГ°Г®Г±ГІГЄГ®Гў [P]", "Г±ГЄГ Г·ГҐГІ Г­Г  Г®Г¤Г­Г®Г¬ ГЁГ§ Г·Г«ГҐГ­Г®Гў, Г¤Г®Г±ГІГ ГўГ«[ya][ya] ГіГ¤Г®ГўГ®Г«ГјГ±ГІГўГЁГҐ Г±ГҐГЎГҐ ГЁ [P]", "Г·ГіГўГ±ГІГўГҐГ­Г­Г® Г¤ГўГЁГЈГ ГҐГІ ГІГ Г§Г®Г¬ ГЇГ®-ГЄГ°ГіГЈГі, Г±ГЁГ¤[ya] Г§Г Г¤Г®Г¬ Г­Г  ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГҐ [P], Г«Г Г±ГЄГ [ya] ГҐГЈГ® Г±ГўГ®ГЁГ¬ Г­ГіГІГ°Г®Г¬", "ГўГЇГ°ГЁГЇГ°Г»Г¦ГЄГі Г­Г ГўГ Г«ГЁГўГ ГҐГІГ±[ya] Г­Г  [P], Г«Г Г±ГЄГ [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г·Г«ГҐГ­Г» ГЄГ«Г®Г ГЄГ®Г©", "Г¤ГўГЁГЈГ ГҐГІГ±[ya] ГўГўГҐГ°Гµ-ГўГ­ГЁГ§, Г±ГЁГ¤[ya] Г­Г  Г§ГўГҐГ°ГјГЄГҐ [P]")
 				else if (prob(20))
-					message = pick("насаживаетс[ya] колечком клоаки на стволы [P], ввод[ya] [P.identifying_gender==FEMALE ? "её" : "его"] органы в кишку до упора", "радостно прыгает на обоих отростках [P], удар[ya][ya]сь о [P.identifying_gender==FEMALE ? "её" : "его"] тело задом", "[H.identifying_gender==FEMALE ? "упёрлась" : "упёрс[ya]"] тазом в [P] и елозит, держа [P.identifying_gender==FEMALE ? "её" : "его"] члены внутри клоаки", "насаживаетс[ya] клоакой на стволы [P], ввод[ya] [P.identifying_gender==FEMALE ? "её" : "его"] органы в себ[ya] до упора")
+					message = pick("Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] ГЄГ®Г«ГҐГ·ГЄГ®Г¬ ГЄГ«Г®Г ГЄГЁ Г­Г  Г±ГІГўГ®Г«Г» [P], ГўГўГ®Г¤[ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г®Г°ГЈГ Г­Г» Гў ГЄГЁГёГЄГі Г¤Г® ГіГЇГ®Г°Г ", "Г°Г Г¤Г®Г±ГІГ­Г® ГЇГ°Г»ГЈГ ГҐГІ Г­Г  Г®ГЎГ®ГЁГµ Г®ГІГ°Г®Г±ГІГЄГ Гµ [P], ГіГ¤Г Г°[ya][ya]Г±Гј Г® [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] ГІГҐГ«Г® Г§Г Г¤Г®Г¬", "[H.identifying_gender==FEMALE ? "ГіГЇВёГ°Г«Г Г±Гј" : "ГіГЇВёГ°Г±[ya]"] ГІГ Г§Г®Г¬ Гў [P] ГЁ ГҐГ«Г®Г§ГЁГІ, Г¤ГҐГ°Г¦Г  [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г·Г«ГҐГ­Г» ГўГ­ГіГІГ°ГЁ ГЄГ«Г®Г ГЄГЁ", "Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] ГЄГ«Г®Г ГЄГ®Г© Г­Г  Г±ГІГўГ®Г«Г» [P], ГўГўГ®Г¤[ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г®Г°ГЈГ Г­Г» Гў Г±ГҐГЎ[ya] Г¤Г® ГіГЇГ®Г°Г ")
 
 				if (H.lastfucked != P || H.lfhole != hole)
-					message = pick("медленно садитс[ya] клоакой на головку одного из гузнотёров [P], ввод[ya] её внутрь", "осторожно вводит окончание органа [P] в свою клоаку", "направл[ya]ет член [P] в свою клоаку, помога[ya] себе рукой", "осторожно вводит кончик ствола [P] в свою клоаку", "запускает кончик зверька [P] в свою клоаку", "запускает шахтёра [P] в свои шахты")
+					message = pick("Г¬ГҐГ¤Г«ГҐГ­Г­Г® Г±Г Г¤ГЁГІГ±[ya] ГЄГ«Г®Г ГЄГ®Г© Г­Г  ГЈГ®Г«Г®ГўГЄГі Г®Г¤Г­Г®ГЈГ® ГЁГ§ ГЈГіГ§Г­Г®ГІВёГ°Г®Гў [P], ГўГўГ®Г¤[ya] ГҐВё ГўГ­ГіГІГ°Гј", "Г®Г±ГІГ®Г°Г®Г¦Г­Г® ГўГўГ®Г¤ГЁГІ Г®ГЄГ®Г­Г·Г Г­ГЁГҐ Г®Г°ГЈГ Г­Г  [P] Гў Г±ГўГ®Гѕ ГЄГ«Г®Г ГЄГі", "Г­Г ГЇГ°Г ГўГ«[ya]ГҐГІ Г·Г«ГҐГ­ [P] Гў Г±ГўГ®Гѕ ГЄГ«Г®Г ГЄГі, ГЇГ®Г¬Г®ГЈГ [ya] Г±ГҐГЎГҐ Г°ГіГЄГ®Г©", "Г®Г±ГІГ®Г°Г®Г¦Г­Г® ГўГўГ®Г¤ГЁГІ ГЄГ®Г­Г·ГЁГЄ Г±ГІГўГ®Г«Г  [P] Гў Г±ГўГ®Гѕ ГЄГ«Г®Г ГЄГі", "Г§Г ГЇГіГ±ГЄГ ГҐГІ ГЄГ®Г­Г·ГЁГЄ Г§ГўГҐГ°ГјГЄГ  [P] Гў Г±ГўГ®Гѕ ГЄГ«Г®Г ГЄГі", "Г§Г ГЇГіГ±ГЄГ ГҐГІ ГёГ ГµГІВёГ°Г  [P] Гў Г±ГўГ®ГЁ ГёГ ГµГІГ»")
 					H.lastfucked = P
 					H.lfhole = hole
 
 	//H.Teshari + vulps
 			if((H.species.get_bodytype() == SPECIES_TESHARI) && (P.species.get_bodytype() == SPECIES_VULPKANIN || P.species.get_bodytype() == SPECIES_ZORREN_HIGH || P.species.get_bodytype() == SPECIES_ZORREN_FLAT))
-				message = pick("сношает себ[ya] в клоаку, насажива[ya]сь на узловатый огран [P]", "прыгает задом на узловатом инструменте [P], сжав отверстие клоаки", "чувственно сношает себ[ya] членом [P]")
+				message = pick("Г±Г­Г®ГёГ ГҐГІ Г±ГҐГЎ[ya] Гў ГЄГ«Г®Г ГЄГі, Г­Г Г±Г Г¦ГЁГўГ [ya]Г±Гј Г­Г  ГіГ§Г«Г®ГўГ ГІГ»Г© Г®ГЈГ°Г Г­ [P]", "ГЇГ°Г»ГЈГ ГҐГІ Г§Г Г¤Г®Г¬ Г­Г  ГіГ§Г«Г®ГўГ ГІГ®Г¬ ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГҐ [P], Г±Г¦Г Гў Г®ГІГўГҐГ°Г±ГІГЁГҐ ГЄГ«Г®Г ГЄГЁ", "Г·ГіГўГ±ГІГўГҐГ­Г­Г® Г±Г­Г®ГёГ ГҐГІ Г±ГҐГЎ[ya] Г·Г«ГҐГ­Г®Г¬ [P]")
 				if (prob(35))
-					message = pick("насаживаетс[ya] отверстием клоаки на узловатый член [P]", "прыгает на члене [P], надавлива[ya] на [P.identifying_gender==FEMALE ? "её" : "его"] узел клоакой", "скачет на члене, доставл[ya][ya] удовольствие себе и [P]", "вприпрыжку наваливаетс[ya] на [P], ласка[ya] [P.identifying_gender==FEMALE ? "её" : "его"] член анусом", "двигаетс[ya] вверх-вниз, сид[ya] на зверьке [P]")
+					message = pick("Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] Г®ГІГўГҐГ°Г±ГІГЁГҐГ¬ ГЄГ«Г®Г ГЄГЁ Г­Г  ГіГ§Г«Г®ГўГ ГІГ»Г© Г·Г«ГҐГ­ [P]", "ГЇГ°Г»ГЈГ ГҐГІ Г­Г  Г·Г«ГҐГ­ГҐ [P], Г­Г Г¤Г ГўГ«ГЁГўГ [ya] Г­Г  [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] ГіГ§ГҐГ« ГЄГ«Г®Г ГЄГ®Г©", "Г±ГЄГ Г·ГҐГІ Г­Г  Г·Г«ГҐГ­ГҐ, Г¤Г®Г±ГІГ ГўГ«[ya][ya] ГіГ¤Г®ГўГ®Г«ГјГ±ГІГўГЁГҐ Г±ГҐГЎГҐ ГЁ [P]", "ГўГЇГ°ГЁГЇГ°Г»Г¦ГЄГі Г­Г ГўГ Г«ГЁГўГ ГҐГІГ±[ya] Г­Г  [P], Г«Г Г±ГЄГ [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г·Г«ГҐГ­ Г Г­ГіГ±Г®Г¬", "Г¤ГўГЁГЈГ ГҐГІГ±[ya] ГўГўГҐГ°Гµ-ГўГ­ГЁГ§, Г±ГЁГ¤[ya] Г­Г  Г§ГўГҐГ°ГјГЄГҐ [P]")
 				else if (prob(20))
-					message = pick("[H.identifying_gender==FEMALE ? "упёрлась" : "упёрс[ya]"] тазом в [P] и елозит, держа [P.identifying_gender==FEMALE ? "её" : "его"] член внутри клоаки", "неумолимо скачет на члене [P], погружа[ya] [P.identifying_gender==FEMALE ? "её" : "его"] орган в свою клоаку до узла", "насаживаетс[ya] клоакой на ствол [P], ввод[ya] [P.identifying_gender==FEMALE ? "её" : "его"] орган в кишку до упора", "чувственно двигает тазом по-кругу, сид[ya] на узловатом инструменте [P], ласка[ya] его своим нутром")
+					message = pick("[H.identifying_gender==FEMALE ? "ГіГЇВёГ°Г«Г Г±Гј" : "ГіГЇВёГ°Г±[ya]"] ГІГ Г§Г®Г¬ Гў [P] ГЁ ГҐГ«Г®Г§ГЁГІ, Г¤ГҐГ°Г¦Г  [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г·Г«ГҐГ­ ГўГ­ГіГІГ°ГЁ ГЄГ«Г®Г ГЄГЁ", "Г­ГҐГіГ¬Г®Г«ГЁГ¬Г® Г±ГЄГ Г·ГҐГІ Г­Г  Г·Г«ГҐГ­ГҐ [P], ГЇГ®ГЈГ°ГіГ¦Г [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г®Г°ГЈГ Г­ Гў Г±ГўГ®Гѕ ГЄГ«Г®Г ГЄГі Г¤Г® ГіГ§Г«Г ", "Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] ГЄГ«Г®Г ГЄГ®Г© Г­Г  Г±ГІГўГ®Г« [P], ГўГўГ®Г¤[ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г®Г°ГЈГ Г­ Гў ГЄГЁГёГЄГі Г¤Г® ГіГЇГ®Г°Г ", "Г·ГіГўГ±ГІГўГҐГ­Г­Г® Г¤ГўГЁГЈГ ГҐГІ ГІГ Г§Г®Г¬ ГЇГ®-ГЄГ°ГіГЈГі, Г±ГЁГ¤[ya] Г­Г  ГіГ§Г«Г®ГўГ ГІГ®Г¬ ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГҐ [P], Г«Г Г±ГЄГ [ya] ГҐГЈГ® Г±ГўГ®ГЁГ¬ Г­ГіГІГ°Г®Г¬")
 
 				if (H.lastfucked != P || H.lfhole != hole)
-					message = pick("медленно садитс[ya] клоакой на кончик узловатого гузнотёра [P], ввод[ya] его внутрь", "осторожно вводит окончание узловатого органа [P] в свою клоаку", "направл[ya]ет член [P] в свою клоаку, помога[ya] себе рукой", "осторожно вводит кончик узловатого ствола [P] в свою клоаку", "запускает кончик узловатого зверька [P] в свою клоаку", "запускает шахтёра [P] в свои шахты")
+					message = pick("Г¬ГҐГ¤Г«ГҐГ­Г­Г® Г±Г Г¤ГЁГІГ±[ya] ГЄГ«Г®Г ГЄГ®Г© Г­Г  ГЄГ®Г­Г·ГЁГЄ ГіГ§Г«Г®ГўГ ГІГ®ГЈГ® ГЈГіГ§Г­Г®ГІВёГ°Г  [P], ГўГўГ®Г¤[ya] ГҐГЈГ® ГўГ­ГіГІГ°Гј", "Г®Г±ГІГ®Г°Г®Г¦Г­Г® ГўГўГ®Г¤ГЁГІ Г®ГЄГ®Г­Г·Г Г­ГЁГҐ ГіГ§Г«Г®ГўГ ГІГ®ГЈГ® Г®Г°ГЈГ Г­Г  [P] Гў Г±ГўГ®Гѕ ГЄГ«Г®Г ГЄГі", "Г­Г ГЇГ°Г ГўГ«[ya]ГҐГІ Г·Г«ГҐГ­ [P] Гў Г±ГўГ®Гѕ ГЄГ«Г®Г ГЄГі, ГЇГ®Г¬Г®ГЈГ [ya] Г±ГҐГЎГҐ Г°ГіГЄГ®Г©", "Г®Г±ГІГ®Г°Г®Г¦Г­Г® ГўГўГ®Г¤ГЁГІ ГЄГ®Г­Г·ГЁГЄ ГіГ§Г«Г®ГўГ ГІГ®ГЈГ® Г±ГІГўГ®Г«Г  [P] Гў Г±ГўГ®Гѕ ГЄГ«Г®Г ГЄГі", "Г§Г ГЇГіГ±ГЄГ ГҐГІ ГЄГ®Г­Г·ГЁГЄ ГіГ§Г«Г®ГўГ ГІГ®ГЈГ® Г§ГўГҐГ°ГјГЄГ  [P] Гў Г±ГўГ®Гѕ ГЄГ«Г®Г ГЄГі", "Г§Г ГЇГіГ±ГЄГ ГҐГІ ГёГ ГµГІВёГ°Г  [P] Гў Г±ГўГ®ГЁ ГёГ ГµГІГ»")
 					H.lastfucked = P
 					H.lfhole = hole
 
 	//H.Teshari + prometheans
 			if(H.species.get_bodytype() == SPECIES_TESHARI && P.species.get_bodytype() == SPECIES_PROMETHEAN)
-				message = pick("сношает себ[ya] в клоаку склизлым ограном [P]", "прыгает задом на склизлом инструменте [P], сжав клоаку", "скачет на склизлом малыше [P]", "двигаетс[ya] вверх-вниз, сид[ya] клоакой на слизи [P]", "чувственно сношаетс[ya] с [P]")
+				message = pick("Г±Г­Г®ГёГ ГҐГІ Г±ГҐГЎ[ya] Гў ГЄГ«Г®Г ГЄГі Г±ГЄГ«ГЁГ§Г«Г»Г¬ Г®ГЈГ°Г Г­Г®Г¬ [P]", "ГЇГ°Г»ГЈГ ГҐГІ Г§Г Г¤Г®Г¬ Г­Г  Г±ГЄГ«ГЁГ§Г«Г®Г¬ ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГҐ [P], Г±Г¦Г Гў ГЄГ«Г®Г ГЄГі", "Г±ГЄГ Г·ГҐГІ Г­Г  Г±ГЄГ«ГЁГ§Г«Г®Г¬ Г¬Г Г«Г»ГёГҐ [P]", "Г¤ГўГЁГЈГ ГҐГІГ±[ya] ГўГўГҐГ°Гµ-ГўГ­ГЁГ§, Г±ГЁГ¤[ya] ГЄГ«Г®Г ГЄГ®Г© Г­Г  Г±Г«ГЁГ§ГЁ [P]", "Г·ГіГўГ±ГІГўГҐГ­Г­Г® Г±Г­Г®ГёГ ГҐГІГ±[ya] Г± [P]")
 				if (prob(35))
-					message = pick("вгон[ya]ет скользкий интрумент [P] в свою кишку по самые [ya]йца", "насаживаетс[ya] колечском клоаки на склизлый отросток [P], ввод[ya] его в пр[ya]мую кишку до упора", "неумолимо скачет на [P], погружа[ya] [P.identifying_gender==FEMALE ? "её" : "его"] склизлый орган в свою клоаку", "прыгает на члене [P], удар[ya][ya]сь о [P.identifying_gender==FEMALE ? "её" : "его"] желейное тело", "скачет на желеобразном члене, доставл[ya][ya] удовольствие себе и [P]", "[H.identifying_gender==FEMALE ? "упёрлась" : "упёрс[ya]"] тазом в [P] и елозит, держа [P.identifying_gender==FEMALE ? "её" : "его"] склизлый член внутри себ[ya]", "двигает тазом по-кругу, сид[ya] задом на инструменте [P], ласка[ya] его нутром", "вприпрыжку наваливаетс[ya] на [P], ласка[ya] [P.identifying_gender==FEMALE ? "её" : "его"] член стенками кишечника", "насаживаетс[ya] на пенис [P], дав[ya] на него своим тазом")
+					message = pick("ГўГЈГ®Г­[ya]ГҐГІ Г±ГЄГ®Г«ГјГ§ГЄГЁГ© ГЁГ­ГІГ°ГіГ¬ГҐГ­ГІ [P] Гў Г±ГўГ®Гѕ ГЄГЁГёГЄГі ГЇГ® Г±Г Г¬Г»ГҐ [ya]Г©Г¶Г ", "Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] ГЄГ®Г«ГҐГ·Г±ГЄГ®Г¬ ГЄГ«Г®Г ГЄГЁ Г­Г  Г±ГЄГ«ГЁГ§Г«Г»Г© Г®ГІГ°Г®Г±ГІГ®ГЄ [P], ГўГўГ®Г¤[ya] ГҐГЈГ® Гў ГЇГ°[ya]Г¬ГіГѕ ГЄГЁГёГЄГі Г¤Г® ГіГЇГ®Г°Г ", "Г­ГҐГіГ¬Г®Г«ГЁГ¬Г® Г±ГЄГ Г·ГҐГІ Г­Г  [P], ГЇГ®ГЈГ°ГіГ¦Г [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г±ГЄГ«ГЁГ§Г«Г»Г© Г®Г°ГЈГ Г­ Гў Г±ГўГ®Гѕ ГЄГ«Г®Г ГЄГі", "ГЇГ°Г»ГЈГ ГҐГІ Г­Г  Г·Г«ГҐГ­ГҐ [P], ГіГ¤Г Г°[ya][ya]Г±Гј Г® [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г¦ГҐГ«ГҐГ©Г­Г®ГҐ ГІГҐГ«Г®", "Г±ГЄГ Г·ГҐГІ Г­Г  Г¦ГҐГ«ГҐГ®ГЎГ°Г Г§Г­Г®Г¬ Г·Г«ГҐГ­ГҐ, Г¤Г®Г±ГІГ ГўГ«[ya][ya] ГіГ¤Г®ГўГ®Г«ГјГ±ГІГўГЁГҐ Г±ГҐГЎГҐ ГЁ [P]", "[H.identifying_gender==FEMALE ? "ГіГЇВёГ°Г«Г Г±Гј" : "ГіГЇВёГ°Г±[ya]"] ГІГ Г§Г®Г¬ Гў [P] ГЁ ГҐГ«Г®Г§ГЁГІ, Г¤ГҐГ°Г¦Г  [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г±ГЄГ«ГЁГ§Г«Г»Г© Г·Г«ГҐГ­ ГўГ­ГіГІГ°ГЁ Г±ГҐГЎ[ya]", "Г¤ГўГЁГЈГ ГҐГІ ГІГ Г§Г®Г¬ ГЇГ®-ГЄГ°ГіГЈГі, Г±ГЁГ¤[ya] Г§Г Г¤Г®Г¬ Г­Г  ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГҐ [P], Г«Г Г±ГЄГ [ya] ГҐГЈГ® Г­ГіГІГ°Г®Г¬", "ГўГЇГ°ГЁГЇГ°Г»Г¦ГЄГі Г­Г ГўГ Г«ГЁГўГ ГҐГІГ±[ya] Г­Г  [P], Г«Г Г±ГЄГ [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г·Г«ГҐГ­ Г±ГІГҐГ­ГЄГ Г¬ГЁ ГЄГЁГёГҐГ·Г­ГЁГЄГ ", "Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] Г­Г  ГЇГҐГ­ГЁГ± [P], Г¤Г Гў[ya] Г­Г  Г­ГҐГЈГ® Г±ГўГ®ГЁГ¬ ГІГ Г§Г®Г¬")
 
 				if (H.lastfucked != P || H.lfhole != hole)
-					message = pick("медленно садитс[ya] на кончик желейного гузнотёра [P], ввод[ya] его внутрь", "осторожно вводит склизлый орган [P] в свою кишку", "направл[ya]ет склизлый отросток [P] в свою клоаку, помога[ya] себе рукой", "осторожно вводит ствол [P] в свою клоаку", "запускает желейного зверька [P] в свой кишечник", "запускает шахтёра [P] в свои угольные шахты")
+					message = pick("Г¬ГҐГ¤Г«ГҐГ­Г­Г® Г±Г Г¤ГЁГІГ±[ya] Г­Г  ГЄГ®Г­Г·ГЁГЄ Г¦ГҐГ«ГҐГ©Г­Г®ГЈГ® ГЈГіГ§Г­Г®ГІВёГ°Г  [P], ГўГўГ®Г¤[ya] ГҐГЈГ® ГўГ­ГіГІГ°Гј", "Г®Г±ГІГ®Г°Г®Г¦Г­Г® ГўГўГ®Г¤ГЁГІ Г±ГЄГ«ГЁГ§Г«Г»Г© Г®Г°ГЈГ Г­ [P] Гў Г±ГўГ®Гѕ ГЄГЁГёГЄГі", "Г­Г ГЇГ°Г ГўГ«[ya]ГҐГІ Г±ГЄГ«ГЁГ§Г«Г»Г© Г®ГІГ°Г®Г±ГІГ®ГЄ [P] Гў Г±ГўГ®Гѕ ГЄГ«Г®Г ГЄГі, ГЇГ®Г¬Г®ГЈГ [ya] Г±ГҐГЎГҐ Г°ГіГЄГ®Г©", "Г®Г±ГІГ®Г°Г®Г¦Г­Г® ГўГўГ®Г¤ГЁГІ Г±ГІГўГ®Г« [P] Гў Г±ГўГ®Гѕ ГЄГ«Г®Г ГЄГі", "Г§Г ГЇГіГ±ГЄГ ГҐГІ Г¦ГҐГ«ГҐГ©Г­Г®ГЈГ® Г§ГўГҐГ°ГјГЄГ  [P] Гў Г±ГўГ®Г© ГЄГЁГёГҐГ·Г­ГЁГЄ", "Г§Г ГЇГіГ±ГЄГ ГҐГІ ГёГ ГµГІВёГ°Г  [P] Гў Г±ГўГ®ГЁ ГіГЈГ®Г«ГјГ­Г»ГҐ ГёГ ГµГІГ»")
 					H.lastfucked = P
 					H.lfhole = hole
 
@@ -1227,108 +1227,108 @@ MOUNT REWORKED - допилить попарно реакции на взаимодействия рас друг с другом, у
 	//P.Prometheans + basics
 
 			if((P.species.get_bodytype() == SPECIES_PROMETHEAN) && (H.species.get_bodytype() != SPECIES_PROMETHEAN && H.species.get_bodytype() != SPECIES_TESHARI))
-				message = pick("сношает себ[ya] в зад склизлым ограном [P]", "неумолимо скачет на [P], погружа[ya] [P.identifying_gender==FEMALE ? "её" : "его"] склизлый орган в свой зад", "прыгает задом на склизлом инструменте [P], сжав анальное колечко", "чувственно сношает себ[ya] склизлым членом [P]")
+				message = pick("Г±Г­Г®ГёГ ГҐГІ Г±ГҐГЎ[ya] Гў Г§Г Г¤ Г±ГЄГ«ГЁГ§Г«Г»Г¬ Г®ГЈГ°Г Г­Г®Г¬ [P]", "Г­ГҐГіГ¬Г®Г«ГЁГ¬Г® Г±ГЄГ Г·ГҐГІ Г­Г  [P], ГЇГ®ГЈГ°ГіГ¦Г [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г±ГЄГ«ГЁГ§Г«Г»Г© Г®Г°ГЈГ Г­ Гў Г±ГўГ®Г© Г§Г Г¤", "ГЇГ°Г»ГЈГ ГҐГІ Г§Г Г¤Г®Г¬ Г­Г  Г±ГЄГ«ГЁГ§Г«Г®Г¬ ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГҐ [P], Г±Г¦Г Гў Г Г­Г Г«ГјГ­Г®ГҐ ГЄГ®Г«ГҐГ·ГЄГ®", "Г·ГіГўГ±ГІГўГҐГ­Г­Г® Г±Г­Г®ГёГ ГҐГІ Г±ГҐГЎ[ya] Г±ГЄГ«ГЁГ§Г«Г»Г¬ Г·Г«ГҐГ­Г®Г¬ [P]")
 				if (prob(35))
-					message = pick("вгон[ya]ет скользкий интрумент [P] в свой зад", "скачет на склизлом малыше [P], погружа[ya] его в свой зад", "прыгает на [P], удар[ya][ya]сь о [P.identifying_gender==FEMALE ? "её" : "его"] желейное тело", "насаживаетс[ya] анальным отверстием на склизлый отросток [P], ввод[ya] его в пр[ya]мую кишку до упора", "скачет на желеобразном члене, доставл[ya][ya] удовольствие себе и [P]", "[H.identifying_gender==FEMALE ? "упёрлась" : "упёрс[ya]"] тазом в [P] и елозит, держа [P.identifying_gender==FEMALE ? "её" : "его"] склизлый член внутри себ[ya]", "двигает тазом по-кругу, сид[ya] задом на инструменте [P], ласка[ya] его нутром", "вприпрыжку наваливаетс[ya] на [P], ласка[ya] [P.identifying_gender==FEMALE ? "её" : "его"] член пр[ya]мой кишкой", "насаживаетс[ya] на пенис [P], дав[ya] на него своим тазом", "двигаетс[ya] вверх-вниз, сид[ya] задом на слизи [P]")
+					message = pick("ГўГЈГ®Г­[ya]ГҐГІ Г±ГЄГ®Г«ГјГ§ГЄГЁГ© ГЁГ­ГІГ°ГіГ¬ГҐГ­ГІ [P] Гў Г±ГўГ®Г© Г§Г Г¤", "Г±ГЄГ Г·ГҐГІ Г­Г  Г±ГЄГ«ГЁГ§Г«Г®Г¬ Г¬Г Г«Г»ГёГҐ [P], ГЇГ®ГЈГ°ГіГ¦Г [ya] ГҐГЈГ® Гў Г±ГўГ®Г© Г§Г Г¤", "ГЇГ°Г»ГЈГ ГҐГІ Г­Г  [P], ГіГ¤Г Г°[ya][ya]Г±Гј Г® [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г¦ГҐГ«ГҐГ©Г­Г®ГҐ ГІГҐГ«Г®", "Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] Г Г­Г Г«ГјГ­Г»Г¬ Г®ГІГўГҐГ°Г±ГІГЁГҐГ¬ Г­Г  Г±ГЄГ«ГЁГ§Г«Г»Г© Г®ГІГ°Г®Г±ГІГ®ГЄ [P], ГўГўГ®Г¤[ya] ГҐГЈГ® Гў ГЇГ°[ya]Г¬ГіГѕ ГЄГЁГёГЄГі Г¤Г® ГіГЇГ®Г°Г ", "Г±ГЄГ Г·ГҐГІ Г­Г  Г¦ГҐГ«ГҐГ®ГЎГ°Г Г§Г­Г®Г¬ Г·Г«ГҐГ­ГҐ, Г¤Г®Г±ГІГ ГўГ«[ya][ya] ГіГ¤Г®ГўГ®Г«ГјГ±ГІГўГЁГҐ Г±ГҐГЎГҐ ГЁ [P]", "[H.identifying_gender==FEMALE ? "ГіГЇВёГ°Г«Г Г±Гј" : "ГіГЇВёГ°Г±[ya]"] ГІГ Г§Г®Г¬ Гў [P] ГЁ ГҐГ«Г®Г§ГЁГІ, Г¤ГҐГ°Г¦Г  [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г±ГЄГ«ГЁГ§Г«Г»Г© Г·Г«ГҐГ­ ГўГ­ГіГІГ°ГЁ Г±ГҐГЎ[ya]", "Г¤ГўГЁГЈГ ГҐГІ ГІГ Г§Г®Г¬ ГЇГ®-ГЄГ°ГіГЈГі, Г±ГЁГ¤[ya] Г§Г Г¤Г®Г¬ Г­Г  ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГҐ [P], Г«Г Г±ГЄГ [ya] ГҐГЈГ® Г­ГіГІГ°Г®Г¬", "ГўГЇГ°ГЁГЇГ°Г»Г¦ГЄГі Г­Г ГўГ Г«ГЁГўГ ГҐГІГ±[ya] Г­Г  [P], Г«Г Г±ГЄГ [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г·Г«ГҐГ­ ГЇГ°[ya]Г¬Г®Г© ГЄГЁГёГЄГ®Г©", "Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] Г­Г  ГЇГҐГ­ГЁГ± [P], Г¤Г Гў[ya] Г­Г  Г­ГҐГЈГ® Г±ГўГ®ГЁГ¬ ГІГ Г§Г®Г¬", "Г¤ГўГЁГЈГ ГҐГІГ±[ya] ГўГўГҐГ°Гµ-ГўГ­ГЁГ§, Г±ГЁГ¤[ya] Г§Г Г¤Г®Г¬ Г­Г  Г±Г«ГЁГ§ГЁ [P]")
 
 				if (H.lastfucked != P || H.lfhole != hole)
-					message = pick("медленно садитс[ya] задницей на кончик желейного гузнотёра [P], ввод[ya] его внутрь", "осторожно вводит орган [P] в свой задний проход", "направл[ya]ет склизлый отросток [P] в свою шахту, помога[ya] себе рукой", "осторожно вводит ствол [P] в свою пр[ya]мую кишку", "запускает желейного зверька [P] в свою пр[ya]мую кишку", "запускает шахтёра [P] в свои угольные шахты")
+					message = pick("Г¬ГҐГ¤Г«ГҐГ­Г­Г® Г±Г Г¤ГЁГІГ±[ya] Г§Г Г¤Г­ГЁГ¶ГҐГ© Г­Г  ГЄГ®Г­Г·ГЁГЄ Г¦ГҐГ«ГҐГ©Г­Г®ГЈГ® ГЈГіГ§Г­Г®ГІВёГ°Г  [P], ГўГўГ®Г¤[ya] ГҐГЈГ® ГўГ­ГіГІГ°Гј", "Г®Г±ГІГ®Г°Г®Г¦Г­Г® ГўГўГ®Г¤ГЁГІ Г®Г°ГЈГ Г­ [P] Гў Г±ГўГ®Г© Г§Г Г¤Г­ГЁГ© ГЇГ°Г®ГµГ®Г¤", "Г­Г ГЇГ°Г ГўГ«[ya]ГҐГІ Г±ГЄГ«ГЁГ§Г«Г»Г© Г®ГІГ°Г®Г±ГІГ®ГЄ [P] Гў Г±ГўГ®Гѕ ГёГ ГµГІГі, ГЇГ®Г¬Г®ГЈГ [ya] Г±ГҐГЎГҐ Г°ГіГЄГ®Г©", "Г®Г±ГІГ®Г°Г®Г¦Г­Г® ГўГўГ®Г¤ГЁГІ Г±ГІГўГ®Г« [P] Гў Г±ГўГ®Гѕ ГЇГ°[ya]Г¬ГіГѕ ГЄГЁГёГЄГі", "Г§Г ГЇГіГ±ГЄГ ГҐГІ Г¦ГҐГ«ГҐГ©Г­Г®ГЈГ® Г§ГўГҐГ°ГјГЄГ  [P] Гў Г±ГўГ®Гѕ ГЇГ°[ya]Г¬ГіГѕ ГЄГЁГёГЄГі", "Г§Г ГЇГіГ±ГЄГ ГҐГІ ГёГ ГµГІВёГ°Г  [P] Гў Г±ГўГ®ГЁ ГіГЈГ®Г«ГјГ­Г»ГҐ ГёГ ГµГІГ»")
 					H.lastfucked = P
 					H.lfhole = hole
 
 	//H.Prometheans + basics
 
 			if((H.species.get_bodytype() == SPECIES_PROMETHEAN) && (P.species.get_bodytype() == SPECIES_HUMAN || P.species.get_bodytype() == SPECIES_TESHARI || P.species.get_bodytype() == SPECIES_HUMAN_VATBORN || P.species.get_bodytype() == SPECIES_RAPALA || P.species.get_bodytype() == SPECIES_VASILISSAN || P.species.get_bodytype() == SPECIES_PROTEAN || P.species.get_bodytype() == SPECIES_AKULA || P.species.get_bodytype() == SPECIES_SERGAL || P.species.get_bodytype() == SPECIES_VOX || P.species.get_bodytype() == SPECIES_NEVREAN))
-				message = pick("сношаетс[ya], насажива[ya]сь склизлым телом на огран [P]", "прыгает склизлым задом на инструменте [P]", "чувственно сжимает нутром член [P]")
+				message = pick("Г±Г­Г®ГёГ ГҐГІГ±[ya], Г­Г Г±Г Г¦ГЁГўГ [ya]Г±Гј Г±ГЄГ«ГЁГ§Г«Г»Г¬ ГІГҐГ«Г®Г¬ Г­Г  Г®ГЈГ°Г Г­ [P]", "ГЇГ°Г»ГЈГ ГҐГІ Г±ГЄГ«ГЁГ§Г«Г»Г¬ Г§Г Г¤Г®Г¬ Г­Г  ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГҐ [P]", "Г·ГіГўГ±ГІГўГҐГ­Г­Г® Г±Г¦ГЁГ¬Г ГҐГІ Г­ГіГІГ°Г®Г¬ Г·Г«ГҐГ­ [P]")
 				if (prob(35))
-					message = pick("насаживаетс[ya]склизлым телом на член [P]", "неумолимо скользит на члене [P], погружа[ya] [P.identifying_gender==FEMALE ? "её" : "его"] орган в своё тело", "скачет на малыше [P], погружа[ya] его внутрь себ[ya]", "прыгает на члене [P], удар[ya][ya]сь о [P.identifying_gender==FEMALE ? "её" : "его"] тело задом", "скачет на члене, доставл[ya][ya] удовольствие себе и [P]", "[H.identifying_gender==FEMALE ? "упёрлась" : "упёрс[ya]"] тазом в [P] и елозит, держа [P.identifying_gender==FEMALE ? "её" : "его"] член внутри склизлого тела", "чувственно скользит тазом по-кругу, сид[ya] на инструменте [P], ласка[ya] его нутром", "вприпрыжку наваливаетс[ya] на [P], ласка[ya] [P.identifying_gender==FEMALE ? "её" : "его"] член слизью", "насаживаетс[ya] на ствол [P], ввод[ya] [P.identifying_gender==FEMALE ? "её" : "его"] орган в себ[ya] до упора", "двигаетс[ya] вверх-вниз, сид[ya] на зверьке [P]")
+					message = pick("Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya]Г±ГЄГ«ГЁГ§Г«Г»Г¬ ГІГҐГ«Г®Г¬ Г­Г  Г·Г«ГҐГ­ [P]", "Г­ГҐГіГ¬Г®Г«ГЁГ¬Г® Г±ГЄГ®Г«ГјГ§ГЁГІ Г­Г  Г·Г«ГҐГ­ГҐ [P], ГЇГ®ГЈГ°ГіГ¦Г [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г®Г°ГЈГ Г­ Гў Г±ГўГ®Вё ГІГҐГ«Г®", "Г±ГЄГ Г·ГҐГІ Г­Г  Г¬Г Г«Г»ГёГҐ [P], ГЇГ®ГЈГ°ГіГ¦Г [ya] ГҐГЈГ® ГўГ­ГіГІГ°Гј Г±ГҐГЎ[ya]", "ГЇГ°Г»ГЈГ ГҐГІ Г­Г  Г·Г«ГҐГ­ГҐ [P], ГіГ¤Г Г°[ya][ya]Г±Гј Г® [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] ГІГҐГ«Г® Г§Г Г¤Г®Г¬", "Г±ГЄГ Г·ГҐГІ Г­Г  Г·Г«ГҐГ­ГҐ, Г¤Г®Г±ГІГ ГўГ«[ya][ya] ГіГ¤Г®ГўГ®Г«ГјГ±ГІГўГЁГҐ Г±ГҐГЎГҐ ГЁ [P]", "[H.identifying_gender==FEMALE ? "ГіГЇВёГ°Г«Г Г±Гј" : "ГіГЇВёГ°Г±[ya]"] ГІГ Г§Г®Г¬ Гў [P] ГЁ ГҐГ«Г®Г§ГЁГІ, Г¤ГҐГ°Г¦Г  [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г·Г«ГҐГ­ ГўГ­ГіГІГ°ГЁ Г±ГЄГ«ГЁГ§Г«Г®ГЈГ® ГІГҐГ«Г ", "Г·ГіГўГ±ГІГўГҐГ­Г­Г® Г±ГЄГ®Г«ГјГ§ГЁГІ ГІГ Г§Г®Г¬ ГЇГ®-ГЄГ°ГіГЈГі, Г±ГЁГ¤[ya] Г­Г  ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГҐ [P], Г«Г Г±ГЄГ [ya] ГҐГЈГ® Г­ГіГІГ°Г®Г¬", "ГўГЇГ°ГЁГЇГ°Г»Г¦ГЄГі Г­Г ГўГ Г«ГЁГўГ ГҐГІГ±[ya] Г­Г  [P], Г«Г Г±ГЄГ [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г·Г«ГҐГ­ Г±Г«ГЁГ§ГјГѕ", "Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] Г­Г  Г±ГІГўГ®Г« [P], ГўГўГ®Г¤[ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г®Г°ГЈГ Г­ Гў Г±ГҐГЎ[ya] Г¤Г® ГіГЇГ®Г°Г ", "Г¤ГўГЁГЈГ ГҐГІГ±[ya] ГўГўГҐГ°Гµ-ГўГ­ГЁГ§, Г±ГЁГ¤[ya] Г­Г  Г§ГўГҐГ°ГјГЄГҐ [P]")
 				else if(prob(5))
-					message = pick("насаживаетс[ya] на член [P] до [ya]иц, слегка проника[ya] в уретру [P] своей слизью", "вбирает в себ[ya] зверька [P], слегка проникнув в головку слизью")
+					message = pick("Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] Г­Г  Г·Г«ГҐГ­ [P] Г¤Г® [ya]ГЁГ¶, Г±Г«ГҐГЈГЄГ  ГЇГ°Г®Г­ГЁГЄГ [ya] Гў ГіГ°ГҐГІГ°Гі [P] Г±ГўГ®ГҐГ© Г±Г«ГЁГ§ГјГѕ", "ГўГЎГЁГ°Г ГҐГІ Гў Г±ГҐГЎ[ya] Г§ГўГҐГ°ГјГЄГ  [P], Г±Г«ГҐГЈГЄГ  ГЇГ°Г®Г­ГЁГЄГ­ГіГў Гў ГЈГ®Г«Г®ГўГЄГі Г±Г«ГЁГ§ГјГѕ")
 				else if(prob(0.3))
-					message = pick("резко падает на член [P] - вгон[ya][ya] его в себ[ya] до основани[ya] - и глубоко проскальзывает слизью в уретру", "нежно сжав зверька [P], глубоко проскальзывает в него слизью")
+					message = pick("Г°ГҐГ§ГЄГ® ГЇГ Г¤Г ГҐГІ Г­Г  Г·Г«ГҐГ­ [P] - ГўГЈГ®Г­[ya][ya] ГҐГЈГ® Гў Г±ГҐГЎ[ya] Г¤Г® Г®Г±Г­Г®ГўГ Г­ГЁ[ya] - ГЁ ГЈГ«ГіГЎГ®ГЄГ® ГЇГ°Г®Г±ГЄГ Г«ГјГ§Г»ГўГ ГҐГІ Г±Г«ГЁГ§ГјГѕ Гў ГіГ°ГҐГІГ°Гі", "Г­ГҐГ¦Г­Г® Г±Г¦Г Гў Г§ГўГҐГ°ГјГЄГ  [P], ГЈГ«ГіГЎГ®ГЄГ® ГЇГ°Г®Г±ГЄГ Г«ГјГ§Г»ГўГ ГҐГІ Гў Г­ГҐГЈГ® Г±Г«ГЁГ§ГјГѕ")
 
 				if (H.lastfucked != P || H.lfhole != hole)
-					message = pick("медленно садитс[ya] желейным телом на гузнотёра [P], ввод[ya] его внутрь", "обволакивает орган [P] вбира[ya] его в себ[ya]", "направл[ya]ет член [P] рукой в своё склизлое тело, обволакива[ya]", "осторожно вводит ствол [P] в свою слизь", "запускает зверька [P] в своё склизлое тело")
+					message = pick("Г¬ГҐГ¤Г«ГҐГ­Г­Г® Г±Г Г¤ГЁГІГ±[ya] Г¦ГҐГ«ГҐГ©Г­Г»Г¬ ГІГҐГ«Г®Г¬ Г­Г  ГЈГіГ§Г­Г®ГІВёГ°Г  [P], ГўГўГ®Г¤[ya] ГҐГЈГ® ГўГ­ГіГІГ°Гј", "Г®ГЎГўГ®Г«Г ГЄГЁГўГ ГҐГІ Г®Г°ГЈГ Г­ [P] ГўГЎГЁГ°Г [ya] ГҐГЈГ® Гў Г±ГҐГЎ[ya]", "Г­Г ГЇГ°Г ГўГ«[ya]ГҐГІ Г·Г«ГҐГ­ [P] Г°ГіГЄГ®Г© Гў Г±ГўГ®Вё Г±ГЄГ«ГЁГ§Г«Г®ГҐ ГІГҐГ«Г®, Г®ГЎГўГ®Г«Г ГЄГЁГўГ [ya]", "Г®Г±ГІГ®Г°Г®Г¦Г­Г® ГўГўГ®Г¤ГЁГІ Г±ГІГўГ®Г« [P] Гў Г±ГўГ®Гѕ Г±Г«ГЁГ§Гј", "Г§Г ГЇГіГ±ГЄГ ГҐГІ Г§ГўГҐГ°ГјГЄГ  [P] Гў Г±ГўГ®Вё Г±ГЄГ«ГЁГ§Г«Г®ГҐ ГІГҐГ«Г®")
 					H.lastfucked = P
 					H.lfhole = hole
 
 
 	//H.Prometheans + taj
 			if(H.species.get_bodytype() == SPECIES_PROMETHEAN && P.species.get_bodytype() == SPECIES_TAJ)
-				message = pick("сношаетс[ya], насажива[ya]сь склизлым телом на шипастый огран [P]", "прыгает склизлым телом на покрытом шипами инструменте [P]", "чувственно сжимает нутром шипастый член [P]")
+				message = pick("Г±Г­Г®ГёГ ГҐГІГ±[ya], Г­Г Г±Г Г¦ГЁГўГ [ya]Г±Гј Г±ГЄГ«ГЁГ§Г«Г»Г¬ ГІГҐГ«Г®Г¬ Г­Г  ГёГЁГЇГ Г±ГІГ»Г© Г®ГЈГ°Г Г­ [P]", "ГЇГ°Г»ГЈГ ГҐГІ Г±ГЄГ«ГЁГ§Г«Г»Г¬ ГІГҐГ«Г®Г¬ Г­Г  ГЇГ®ГЄГ°Г»ГІГ®Г¬ ГёГЁГЇГ Г¬ГЁ ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГҐ [P]", "Г·ГіГўГ±ГІГўГҐГ­Г­Г® Г±Г¦ГЁГ¬Г ГҐГІ Г­ГіГІГ°Г®Г¬ ГёГЁГЇГ Г±ГІГ»Г© Г·Г«ГҐГ­ [P]")
 				if (prob(35))
-					message = pick("насаживаетс[ya]склизлым телом на шипастый ствол [P]", "неумолимо скользит на шипастом члене [P], погружа[ya] [P.identifying_gender==FEMALE ? "её" : "его"] орган в своё тело", "скачет на малыше [P], погружа[ya] его внутрь себ[ya]", "прыгает на покрытом шипами члене [P], удар[ya][ya]сь о [P.identifying_gender==FEMALE ? "её" : "его"] тело задом", "скачет на члене, доставл[ya][ya] удовольствие себе и [P]", "[H.identifying_gender==FEMALE ? "упёрлась" : "упёрс[ya]"] тазом в [P] и елозит, держа [P.identifying_gender==FEMALE ? "её" : "его"] шипастый член внутри склизлого тела", "чувственно скользит тазом по-кругу, сид[ya] на покрытом шипами инструменте [P], ласка[ya] его нутром", "вприпрыжку наваливаетс[ya] на [P], ласка[ya] [P.identifying_gender==FEMALE ? "её" : "его"] член слизью", "насаживаетс[ya] на покрытый шипами ствол [P], ввод[ya] [P.identifying_gender==FEMALE ? "её" : "его"] орган в себ[ya] до упора", "двигаетс[ya] вверх-вниз, сид[ya] на шипастом зверьке [P]")
+					message = pick("Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya]Г±ГЄГ«ГЁГ§Г«Г»Г¬ ГІГҐГ«Г®Г¬ Г­Г  ГёГЁГЇГ Г±ГІГ»Г© Г±ГІГўГ®Г« [P]", "Г­ГҐГіГ¬Г®Г«ГЁГ¬Г® Г±ГЄГ®Г«ГјГ§ГЁГІ Г­Г  ГёГЁГЇГ Г±ГІГ®Г¬ Г·Г«ГҐГ­ГҐ [P], ГЇГ®ГЈГ°ГіГ¦Г [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г®Г°ГЈГ Г­ Гў Г±ГўГ®Вё ГІГҐГ«Г®", "Г±ГЄГ Г·ГҐГІ Г­Г  Г¬Г Г«Г»ГёГҐ [P], ГЇГ®ГЈГ°ГіГ¦Г [ya] ГҐГЈГ® ГўГ­ГіГІГ°Гј Г±ГҐГЎ[ya]", "ГЇГ°Г»ГЈГ ГҐГІ Г­Г  ГЇГ®ГЄГ°Г»ГІГ®Г¬ ГёГЁГЇГ Г¬ГЁ Г·Г«ГҐГ­ГҐ [P], ГіГ¤Г Г°[ya][ya]Г±Гј Г® [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] ГІГҐГ«Г® Г§Г Г¤Г®Г¬", "Г±ГЄГ Г·ГҐГІ Г­Г  Г·Г«ГҐГ­ГҐ, Г¤Г®Г±ГІГ ГўГ«[ya][ya] ГіГ¤Г®ГўГ®Г«ГјГ±ГІГўГЁГҐ Г±ГҐГЎГҐ ГЁ [P]", "[H.identifying_gender==FEMALE ? "ГіГЇВёГ°Г«Г Г±Гј" : "ГіГЇВёГ°Г±[ya]"] ГІГ Г§Г®Г¬ Гў [P] ГЁ ГҐГ«Г®Г§ГЁГІ, Г¤ГҐГ°Г¦Г  [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] ГёГЁГЇГ Г±ГІГ»Г© Г·Г«ГҐГ­ ГўГ­ГіГІГ°ГЁ Г±ГЄГ«ГЁГ§Г«Г®ГЈГ® ГІГҐГ«Г ", "Г·ГіГўГ±ГІГўГҐГ­Г­Г® Г±ГЄГ®Г«ГјГ§ГЁГІ ГІГ Г§Г®Г¬ ГЇГ®-ГЄГ°ГіГЈГі, Г±ГЁГ¤[ya] Г­Г  ГЇГ®ГЄГ°Г»ГІГ®Г¬ ГёГЁГЇГ Г¬ГЁ ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГҐ [P], Г«Г Г±ГЄГ [ya] ГҐГЈГ® Г­ГіГІГ°Г®Г¬", "ГўГЇГ°ГЁГЇГ°Г»Г¦ГЄГі Г­Г ГўГ Г«ГЁГўГ ГҐГІГ±[ya] Г­Г  [P], Г«Г Г±ГЄГ [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г·Г«ГҐГ­ Г±Г«ГЁГ§ГјГѕ", "Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] Г­Г  ГЇГ®ГЄГ°Г»ГІГ»Г© ГёГЁГЇГ Г¬ГЁ Г±ГІГўГ®Г« [P], ГўГўГ®Г¤[ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г®Г°ГЈГ Г­ Гў Г±ГҐГЎ[ya] Г¤Г® ГіГЇГ®Г°Г ", "Г¤ГўГЁГЈГ ГҐГІГ±[ya] ГўГўГҐГ°Гµ-ГўГ­ГЁГ§, Г±ГЁГ¤[ya] Г­Г  ГёГЁГЇГ Г±ГІГ®Г¬ Г§ГўГҐГ°ГјГЄГҐ [P]")
 				else if(prob(5))
-					message = pick("насаживаетс[ya] на шипастый интрумент [P] по самые [ya]йца, слегка проника[ya] в уретру [P] своей слизью", "вбирает в себ[ya] шипастого зверька [P], слегка проникнув в головку слизью")
+					message = pick("Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] Г­Г  ГёГЁГЇГ Г±ГІГ»Г© ГЁГ­ГІГ°ГіГ¬ГҐГ­ГІ [P] ГЇГ® Г±Г Г¬Г»ГҐ [ya]Г©Г¶Г , Г±Г«ГҐГЈГЄГ  ГЇГ°Г®Г­ГЁГЄГ [ya] Гў ГіГ°ГҐГІГ°Гі [P] Г±ГўГ®ГҐГ© Г±Г«ГЁГ§ГјГѕ", "ГўГЎГЁГ°Г ГҐГІ Гў Г±ГҐГЎ[ya] ГёГЁГЇГ Г±ГІГ®ГЈГ® Г§ГўГҐГ°ГјГЄГ  [P], Г±Г«ГҐГЈГЄГ  ГЇГ°Г®Г­ГЁГЄГ­ГіГў Гў ГЈГ®Г«Г®ГўГЄГі Г±Г«ГЁГ§ГјГѕ")
 				else if(prob(0.3))
-					message = pick("резко падает на член [P] - вгон[ya][ya] его в себ[ya] до основани[ya] - и глубоко проскальзывает слизью в уретру", "нежно сжав шипастого зверька [P], глубоко проскальзывает в него слизью")
+					message = pick("Г°ГҐГ§ГЄГ® ГЇГ Г¤Г ГҐГІ Г­Г  Г·Г«ГҐГ­ [P] - ГўГЈГ®Г­[ya][ya] ГҐГЈГ® Гў Г±ГҐГЎ[ya] Г¤Г® Г®Г±Г­Г®ГўГ Г­ГЁ[ya] - ГЁ ГЈГ«ГіГЎГ®ГЄГ® ГЇГ°Г®Г±ГЄГ Г«ГјГ§Г»ГўГ ГҐГІ Г±Г«ГЁГ§ГјГѕ Гў ГіГ°ГҐГІГ°Гі", "Г­ГҐГ¦Г­Г® Г±Г¦Г Гў ГёГЁГЇГ Г±ГІГ®ГЈГ® Г§ГўГҐГ°ГјГЄГ  [P], ГЈГ«ГіГЎГ®ГЄГ® ГЇГ°Г®Г±ГЄГ Г«ГјГ§Г»ГўГ ГҐГІ Гў Г­ГҐГЈГ® Г±Г«ГЁГ§ГјГѕ")
 
 				if (H.lastfucked != P || H.lfhole != hole)
-					message = pick("медленно садитс[ya] желейным телом на шипастого гузнотёра [P], ввод[ya] его внутрь", "обволакивает покрытый шипами орган [P], вбира[ya] его в себ[ya]", "направл[ya]ет член [P] рукой в своё склизлое тело, обволакива[ya]", "осторожно вводит ствол [P] в свою слизь", "запускает зверька [P] в своё склизлое тело")
+					message = pick("Г¬ГҐГ¤Г«ГҐГ­Г­Г® Г±Г Г¤ГЁГІГ±[ya] Г¦ГҐГ«ГҐГ©Г­Г»Г¬ ГІГҐГ«Г®Г¬ Г­Г  ГёГЁГЇГ Г±ГІГ®ГЈГ® ГЈГіГ§Г­Г®ГІВёГ°Г  [P], ГўГўГ®Г¤[ya] ГҐГЈГ® ГўГ­ГіГІГ°Гј", "Г®ГЎГўГ®Г«Г ГЄГЁГўГ ГҐГІ ГЇГ®ГЄГ°Г»ГІГ»Г© ГёГЁГЇГ Г¬ГЁ Г®Г°ГЈГ Г­ [P], ГўГЎГЁГ°Г [ya] ГҐГЈГ® Гў Г±ГҐГЎ[ya]", "Г­Г ГЇГ°Г ГўГ«[ya]ГҐГІ Г·Г«ГҐГ­ [P] Г°ГіГЄГ®Г© Гў Г±ГўГ®Вё Г±ГЄГ«ГЁГ§Г«Г®ГҐ ГІГҐГ«Г®, Г®ГЎГўГ®Г«Г ГЄГЁГўГ [ya]", "Г®Г±ГІГ®Г°Г®Г¦Г­Г® ГўГўГ®Г¤ГЁГІ Г±ГІГўГ®Г« [P] Гў Г±ГўГ®Гѕ Г±Г«ГЁГ§Гј", "Г§Г ГЇГіГ±ГЄГ ГҐГІ Г§ГўГҐГ°ГјГЄГ  [P] Гў Г±ГўГ®Вё Г±ГЄГ«ГЁГ§Г«Г®ГҐ ГІГҐГ«Г®")
 					H.lastfucked = P
 					H.lfhole = hole
 
-	//H.Prometheans + unathi ------- сделать вариации и кнопки на 1 и 2 члена
+	//H.Prometheans + unathi ------- Г±Г¤ГҐГ«Г ГІГј ГўГ Г°ГЁГ Г¶ГЁГЁ ГЁ ГЄГ­Г®ГЇГЄГЁ Г­Г  1 ГЁ 2 Г·Г«ГҐГ­Г 
 
 			if(H.species.get_bodytype() == SPECIES_PROMETHEAN && P.species.get_bodytype() == SPECIES_UNATHI)
-				message = pick("сношаетс[ya], насажива[ya]сь склизлым телом на один из членов [P]", "прыгает склизлым телом на инструменте [P]", "чувственно сжимает нутром один член [P]", "скачет на двух членах [P] сразу")
+				message = pick("Г±Г­Г®ГёГ ГҐГІГ±[ya], Г­Г Г±Г Г¦ГЁГўГ [ya]Г±Гј Г±ГЄГ«ГЁГ§Г«Г»Г¬ ГІГҐГ«Г®Г¬ Г­Г  Г®Г¤ГЁГ­ ГЁГ§ Г·Г«ГҐГ­Г®Гў [P]", "ГЇГ°Г»ГЈГ ГҐГІ Г±ГЄГ«ГЁГ§Г«Г»Г¬ ГІГҐГ«Г®Г¬ Г­Г  ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГҐ [P]", "Г·ГіГўГ±ГІГўГҐГ­Г­Г® Г±Г¦ГЁГ¬Г ГҐГІ Г­ГіГІГ°Г®Г¬ Г®Г¤ГЁГ­ Г·Г«ГҐГ­ [P]", "Г±ГЄГ Г·ГҐГІ Г­Г  Г¤ГўГіГµ Г·Г«ГҐГ­Г Гµ [P] Г±Г°Г Г§Гі")
 				//1 dick
 				if (prob(35))
-					message = pick("неумолимо скользит на члене [P], погружа[ya] [P.identifying_gender==FEMALE ? "её" : "его"] орган в своё тело", "скачет на малыше [P], погружа[ya] его внутрь себ[ya]", "прыга[ya] и удар[ya][ya]сь о тело [P] скользит на его члене", "скачет на одном из отростков, доставл[ya][ya] удовольствие себе и [P]", "[H.identifying_gender==FEMALE ? "упёрлась" : "упёрс[ya]"] тазом в [P] и елозит, держа [P.identifying_gender==FEMALE ? "её" : "его"] орган внутри своего склизлого тела", "чувственно скользит тазом по-кругу, сид[ya] на одном из инструментов [P], ласка[ya] его нутром", "вприпрыжку наваливаетс[ya] на [P], ласка[ya] [P.identifying_gender==FEMALE ? "её" : "его"] член слизью", "насаживаетс[ya] на ствол [P], ввод[ya] [P.identifying_gender==FEMALE ? "её" : "его"] орган в себ[ya] до упора", "двигаетс[ya] вверх-вниз, сид[ya] на зверьке [P]")
+					message = pick("Г­ГҐГіГ¬Г®Г«ГЁГ¬Г® Г±ГЄГ®Г«ГјГ§ГЁГІ Г­Г  Г·Г«ГҐГ­ГҐ [P], ГЇГ®ГЈГ°ГіГ¦Г [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г®Г°ГЈГ Г­ Гў Г±ГўГ®Вё ГІГҐГ«Г®", "Г±ГЄГ Г·ГҐГІ Г­Г  Г¬Г Г«Г»ГёГҐ [P], ГЇГ®ГЈГ°ГіГ¦Г [ya] ГҐГЈГ® ГўГ­ГіГІГ°Гј Г±ГҐГЎ[ya]", "ГЇГ°Г»ГЈГ [ya] ГЁ ГіГ¤Г Г°[ya][ya]Г±Гј Г® ГІГҐГ«Г® [P] Г±ГЄГ®Г«ГјГ§ГЁГІ Г­Г  ГҐГЈГ® Г·Г«ГҐГ­ГҐ", "Г±ГЄГ Г·ГҐГІ Г­Г  Г®Г¤Г­Г®Г¬ ГЁГ§ Г®ГІГ°Г®Г±ГІГЄГ®Гў, Г¤Г®Г±ГІГ ГўГ«[ya][ya] ГіГ¤Г®ГўГ®Г«ГјГ±ГІГўГЁГҐ Г±ГҐГЎГҐ ГЁ [P]", "[H.identifying_gender==FEMALE ? "ГіГЇВёГ°Г«Г Г±Гј" : "ГіГЇВёГ°Г±[ya]"] ГІГ Г§Г®Г¬ Гў [P] ГЁ ГҐГ«Г®Г§ГЁГІ, Г¤ГҐГ°Г¦Г  [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г®Г°ГЈГ Г­ ГўГ­ГіГІГ°ГЁ Г±ГўГ®ГҐГЈГ® Г±ГЄГ«ГЁГ§Г«Г®ГЈГ® ГІГҐГ«Г ", "Г·ГіГўГ±ГІГўГҐГ­Г­Г® Г±ГЄГ®Г«ГјГ§ГЁГІ ГІГ Г§Г®Г¬ ГЇГ®-ГЄГ°ГіГЈГі, Г±ГЁГ¤[ya] Г­Г  Г®Г¤Г­Г®Г¬ ГЁГ§ ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГ®Гў [P], Г«Г Г±ГЄГ [ya] ГҐГЈГ® Г­ГіГІГ°Г®Г¬", "ГўГЇГ°ГЁГЇГ°Г»Г¦ГЄГі Г­Г ГўГ Г«ГЁГўГ ГҐГІГ±[ya] Г­Г  [P], Г«Г Г±ГЄГ [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г·Г«ГҐГ­ Г±Г«ГЁГ§ГјГѕ", "Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] Г­Г  Г±ГІГўГ®Г« [P], ГўГўГ®Г¤[ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г®Г°ГЈГ Г­ Гў Г±ГҐГЎ[ya] Г¤Г® ГіГЇГ®Г°Г ", "Г¤ГўГЁГЈГ ГҐГІГ±[ya] ГўГўГҐГ°Гµ-ГўГ­ГЁГ§, Г±ГЁГ¤[ya] Г­Г  Г§ГўГҐГ°ГјГЄГҐ [P]")
 				else if(prob(5))
-					message = pick("насаживаетс[ya] на один из членов [P], немного проникнув своей слизью в его уретру", "вбирает в себ[ya] одного зверька [P], слегка проникнув в головку слизью")
+					message = pick("Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] Г­Г  Г®Г¤ГЁГ­ ГЁГ§ Г·Г«ГҐГ­Г®Гў [P], Г­ГҐГ¬Г­Г®ГЈГ® ГЇГ°Г®Г­ГЁГЄГ­ГіГў Г±ГўГ®ГҐГ© Г±Г«ГЁГ§ГјГѕ Гў ГҐГЈГ® ГіГ°ГҐГІГ°Гі", "ГўГЎГЁГ°Г ГҐГІ Гў Г±ГҐГЎ[ya] Г®Г¤Г­Г®ГЈГ® Г§ГўГҐГ°ГјГЄГ  [P], Г±Г«ГҐГЈГЄГ  ГЇГ°Г®Г­ГЁГЄГ­ГіГў Гў ГЈГ®Г«Г®ГўГЄГі Г±Г«ГЁГ§ГјГѕ")
 				else if(prob(0.3))
-					message = pick("резко падает на один из членов [P] - вгон[ya][ya] его в себ[ya] до основани[ya] - и глубоко проскальзывает слизью в уретру", "нежно сжав зверька [P], глубоко проскальзывает в него слизью")
+					message = pick("Г°ГҐГ§ГЄГ® ГЇГ Г¤Г ГҐГІ Г­Г  Г®Г¤ГЁГ­ ГЁГ§ Г·Г«ГҐГ­Г®Гў [P] - ГўГЈГ®Г­[ya][ya] ГҐГЈГ® Гў Г±ГҐГЎ[ya] Г¤Г® Г®Г±Г­Г®ГўГ Г­ГЁ[ya] - ГЁ ГЈГ«ГіГЎГ®ГЄГ® ГЇГ°Г®Г±ГЄГ Г«ГјГ§Г»ГўГ ГҐГІ Г±Г«ГЁГ§ГјГѕ Гў ГіГ°ГҐГІГ°Гі", "Г­ГҐГ¦Г­Г® Г±Г¦Г Гў Г§ГўГҐГ°ГјГЄГ  [P], ГЈГ«ГіГЎГ®ГЄГ® ГЇГ°Г®Г±ГЄГ Г«ГјГ§Г»ГўГ ГҐГІ Гў Г­ГҐГЈГ® Г±Г«ГЁГ§ГјГѕ")
 				//2 dicks
 				else if (prob(20))
-					message = pick("насаживаетс[ya]склизлым телом на двуствольный член [P]", "неумолимо скользит на членах [P], погружа[ya] [P.identifying_gender==FEMALE ? "её" : "его"] органы в своё тело", "скачет на малышах [P], погружа[ya] их внутрь себ[ya]", "прыга[ya] и удар[ya][ya]сь о тело [P] скользит на его членах", "скачет на членах, доставл[ya][ya] удовольствие себе и [P]", "[H.identifying_gender==FEMALE ? "упёрлась" : "упёрс[ya]"] тазом в [P] и елозит, держа оба [P.identifying_gender==FEMALE ? "её" : "его"] органа внутри своего склизлого тела", "чувственно скользит тазом по-кругу, сид[ya] на инструментах [P], ласка[ya] их нутром", "вприпрыжку наваливаетс[ya] на [P], ласка[ya] [P.identifying_gender==FEMALE ? "её" : "его"] члены слизью", "насаживаетс[ya] на стволы [P], ввод[ya] [P.identifying_gender==FEMALE ? "её" : "его"] органы в себ[ya] до упора", "двигаетс[ya] вверх-вниз, сид[ya] на зверьках [P]")
+					message = pick("Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya]Г±ГЄГ«ГЁГ§Г«Г»Г¬ ГІГҐГ«Г®Г¬ Г­Г  Г¤ГўГіГ±ГІГўГ®Г«ГјГ­Г»Г© Г·Г«ГҐГ­ [P]", "Г­ГҐГіГ¬Г®Г«ГЁГ¬Г® Г±ГЄГ®Г«ГјГ§ГЁГІ Г­Г  Г·Г«ГҐГ­Г Гµ [P], ГЇГ®ГЈГ°ГіГ¦Г [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г®Г°ГЈГ Г­Г» Гў Г±ГўГ®Вё ГІГҐГ«Г®", "Г±ГЄГ Г·ГҐГІ Г­Г  Г¬Г Г«Г»ГёГ Гµ [P], ГЇГ®ГЈГ°ГіГ¦Г [ya] ГЁГµ ГўГ­ГіГІГ°Гј Г±ГҐГЎ[ya]", "ГЇГ°Г»ГЈГ [ya] ГЁ ГіГ¤Г Г°[ya][ya]Г±Гј Г® ГІГҐГ«Г® [P] Г±ГЄГ®Г«ГјГ§ГЁГІ Г­Г  ГҐГЈГ® Г·Г«ГҐГ­Г Гµ", "Г±ГЄГ Г·ГҐГІ Г­Г  Г·Г«ГҐГ­Г Гµ, Г¤Г®Г±ГІГ ГўГ«[ya][ya] ГіГ¤Г®ГўГ®Г«ГјГ±ГІГўГЁГҐ Г±ГҐГЎГҐ ГЁ [P]", "[H.identifying_gender==FEMALE ? "ГіГЇВёГ°Г«Г Г±Гј" : "ГіГЇВёГ°Г±[ya]"] ГІГ Г§Г®Г¬ Гў [P] ГЁ ГҐГ«Г®Г§ГЁГІ, Г¤ГҐГ°Г¦Г  Г®ГЎГ  [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г®Г°ГЈГ Г­Г  ГўГ­ГіГІГ°ГЁ Г±ГўГ®ГҐГЈГ® Г±ГЄГ«ГЁГ§Г«Г®ГЈГ® ГІГҐГ«Г ", "Г·ГіГўГ±ГІГўГҐГ­Г­Г® Г±ГЄГ®Г«ГјГ§ГЁГІ ГІГ Г§Г®Г¬ ГЇГ®-ГЄГ°ГіГЈГі, Г±ГЁГ¤[ya] Г­Г  ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГ Гµ [P], Г«Г Г±ГЄГ [ya] ГЁГµ Г­ГіГІГ°Г®Г¬", "ГўГЇГ°ГЁГЇГ°Г»Г¦ГЄГі Г­Г ГўГ Г«ГЁГўГ ГҐГІГ±[ya] Г­Г  [P], Г«Г Г±ГЄГ [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г·Г«ГҐГ­Г» Г±Г«ГЁГ§ГјГѕ", "Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] Г­Г  Г±ГІГўГ®Г«Г» [P], ГўГўГ®Г¤[ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г®Г°ГЈГ Г­Г» Гў Г±ГҐГЎ[ya] Г¤Г® ГіГЇГ®Г°Г ", "Г¤ГўГЁГЈГ ГҐГІГ±[ya] ГўГўГҐГ°Гµ-ГўГ­ГЁГ§, Г±ГЁГ¤[ya] Г­Г  Г§ГўГҐГ°ГјГЄГ Гµ [P]")
 				else if(prob(3))
-					message = pick("насаживаетс[ya] на оба интрумента [P] до конца, чуть-чуть проникнув слизью в уретру", "вбирает в себ[ya] обоих зверьков [P], слегка проника[ya] в головки слизью")
+					message = pick("Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] Г­Г  Г®ГЎГ  ГЁГ­ГІГ°ГіГ¬ГҐГ­ГІГ  [P] Г¤Г® ГЄГ®Г­Г¶Г , Г·ГіГІГј-Г·ГіГІГј ГЇГ°Г®Г­ГЁГЄГ­ГіГў Г±Г«ГЁГ§ГјГѕ Гў ГіГ°ГҐГІГ°Гі", "ГўГЎГЁГ°Г ГҐГІ Гў Г±ГҐГЎ[ya] Г®ГЎГ®ГЁГµ Г§ГўГҐГ°ГјГЄГ®Гў [P], Г±Г«ГҐГЈГЄГ  ГЇГ°Г®Г­ГЁГЄГ [ya] Гў ГЈГ®Г«Г®ГўГЄГЁ Г±Г«ГЁГ§ГјГѕ")
 				else if(prob(0.3))
-					message = pick("резко падает на оба интрумента [P] - вгон[ya][ya] их в себ[ya] до основани[ya] - и глубоко проскальзывает слизью в уретру", "нежно сжав зверьков [P], глубоко проскальзывает в них слизью")
+					message = pick("Г°ГҐГ§ГЄГ® ГЇГ Г¤Г ГҐГІ Г­Г  Г®ГЎГ  ГЁГ­ГІГ°ГіГ¬ГҐГ­ГІГ  [P] - ГўГЈГ®Г­[ya][ya] ГЁГµ Гў Г±ГҐГЎ[ya] Г¤Г® Г®Г±Г­Г®ГўГ Г­ГЁ[ya] - ГЁ ГЈГ«ГіГЎГ®ГЄГ® ГЇГ°Г®Г±ГЄГ Г«ГјГ§Г»ГўГ ГҐГІ Г±Г«ГЁГ§ГјГѕ Гў ГіГ°ГҐГІГ°Гі", "Г­ГҐГ¦Г­Г® Г±Г¦Г Гў Г§ГўГҐГ°ГјГЄГ®Гў [P], ГЈГ«ГіГЎГ®ГЄГ® ГЇГ°Г®Г±ГЄГ Г«ГјГ§Г»ГўГ ГҐГІ Гў Г­ГЁГµ Г±Г«ГЁГ§ГјГѕ")
 
 				if (H.lastfucked != P || H.lfhole != hole)
-					message = pick("медленно садитс[ya] желейным телом на гузнотёра [P], ввод[ya] его внутрь", "обволакивает органы [P], вбира[ya] их в себ[ya]", "направл[ya]ет члены [P] рукой в своё склизлое тело, обволакива[ya]", "осторожно вводит ствол [P] в свою слизь", "запускает зверьков [P] в своё склизлое тело")
+					message = pick("Г¬ГҐГ¤Г«ГҐГ­Г­Г® Г±Г Г¤ГЁГІГ±[ya] Г¦ГҐГ«ГҐГ©Г­Г»Г¬ ГІГҐГ«Г®Г¬ Г­Г  ГЈГіГ§Г­Г®ГІВёГ°Г  [P], ГўГўГ®Г¤[ya] ГҐГЈГ® ГўГ­ГіГІГ°Гј", "Г®ГЎГўГ®Г«Г ГЄГЁГўГ ГҐГІ Г®Г°ГЈГ Г­Г» [P], ГўГЎГЁГ°Г [ya] ГЁГµ Гў Г±ГҐГЎ[ya]", "Г­Г ГЇГ°Г ГўГ«[ya]ГҐГІ Г·Г«ГҐГ­Г» [P] Г°ГіГЄГ®Г© Гў Г±ГўГ®Вё Г±ГЄГ«ГЁГ§Г«Г®ГҐ ГІГҐГ«Г®, Г®ГЎГўГ®Г«Г ГЄГЁГўГ [ya]", "Г®Г±ГІГ®Г°Г®Г¦Г­Г® ГўГўГ®Г¤ГЁГІ Г±ГІГўГ®Г« [P] Гў Г±ГўГ®Гѕ Г±Г«ГЁГ§Гј", "Г§Г ГЇГіГ±ГЄГ ГҐГІ Г§ГўГҐГ°ГјГЄГ®Гў [P] Гў Г±ГўГ®Вё Г±ГЄГ«ГЁГ§Г«Г®ГҐ ГІГҐГ«Г®")
 					H.lastfucked = P
 					H.lfhole = hole
 
 	//H.Prometheans + vulps
 
 			if((H.species.get_bodytype() == SPECIES_PROMETHEAN) && (P.species.get_bodytype() == SPECIES_VULPKANIN || P.species.get_bodytype() == SPECIES_ZORREN_FLAT || P.species.get_bodytype() == SPECIES_ZORREN_HIGH))
-				message = pick("сношаетс[ya], насажива[ya]сь склизлым телом на узловатый огран [P]", "прыгает склизлым телом на узловатом инструменте [P]", "чувственно сжимает нутром узел члена [P]")
+				message = pick("Г±Г­Г®ГёГ ГҐГІГ±[ya], Г­Г Г±Г Г¦ГЁГўГ [ya]Г±Гј Г±ГЄГ«ГЁГ§Г«Г»Г¬ ГІГҐГ«Г®Г¬ Г­Г  ГіГ§Г«Г®ГўГ ГІГ»Г© Г®ГЈГ°Г Г­ [P]", "ГЇГ°Г»ГЈГ ГҐГІ Г±ГЄГ«ГЁГ§Г«Г»Г¬ ГІГҐГ«Г®Г¬ Г­Г  ГіГ§Г«Г®ГўГ ГІГ®Г¬ ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГҐ [P]", "Г·ГіГўГ±ГІГўГҐГ­Г­Г® Г±Г¦ГЁГ¬Г ГҐГІ Г­ГіГІГ°Г®Г¬ ГіГ§ГҐГ« Г·Г«ГҐГ­Г  [P]")
 				if (prob(35))
-					message = pick("насаживаетс[ya]склизлым телом на узловатый ствол [P]", "неумолимо скользит на узловатом члене [P], погружа[ya] [P.identifying_gender==FEMALE ? "её" : "его"] орган в своё тело", "скачет на малыше [P], погружа[ya] его внутрь себ[ya]", "прыгает на узловатом члене [P], удар[ya][ya]сь о [P.identifying_gender==FEMALE ? "её" : "его"] тело задом", "скачет на члене, доставл[ya][ya] удовольствие себе и [P]", "[H.identifying_gender==FEMALE ? "упёрлась" : "упёрс[ya]"] тазом в [P] и елозит, держа [P.identifying_gender==FEMALE ? "её" : "его"] при[ya]тно отт[ya]гива[ya] член за узел", "чувственно скользит тазом по-кругу, сид[ya] на инструменте [P], ласка[ya] его узел нутром", "вприпрыжку наваливаетс[ya] на [P], ласка[ya] [P.identifying_gender==FEMALE ? "её" : "его"] член слизью", "насаживаетс[ya] на ствол [P], ввод[ya] [P.identifying_gender==FEMALE ? "её" : "его"] орган в себ[ya] до упора", "двигаетс[ya] вверх-вниз, сид[ya] на узловатом зверьке [P]")
+					message = pick("Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya]Г±ГЄГ«ГЁГ§Г«Г»Г¬ ГІГҐГ«Г®Г¬ Г­Г  ГіГ§Г«Г®ГўГ ГІГ»Г© Г±ГІГўГ®Г« [P]", "Г­ГҐГіГ¬Г®Г«ГЁГ¬Г® Г±ГЄГ®Г«ГјГ§ГЁГІ Г­Г  ГіГ§Г«Г®ГўГ ГІГ®Г¬ Г·Г«ГҐГ­ГҐ [P], ГЇГ®ГЈГ°ГіГ¦Г [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г®Г°ГЈГ Г­ Гў Г±ГўГ®Вё ГІГҐГ«Г®", "Г±ГЄГ Г·ГҐГІ Г­Г  Г¬Г Г«Г»ГёГҐ [P], ГЇГ®ГЈГ°ГіГ¦Г [ya] ГҐГЈГ® ГўГ­ГіГІГ°Гј Г±ГҐГЎ[ya]", "ГЇГ°Г»ГЈГ ГҐГІ Г­Г  ГіГ§Г«Г®ГўГ ГІГ®Г¬ Г·Г«ГҐГ­ГҐ [P], ГіГ¤Г Г°[ya][ya]Г±Гј Г® [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] ГІГҐГ«Г® Г§Г Г¤Г®Г¬", "Г±ГЄГ Г·ГҐГІ Г­Г  Г·Г«ГҐГ­ГҐ, Г¤Г®Г±ГІГ ГўГ«[ya][ya] ГіГ¤Г®ГўГ®Г«ГјГ±ГІГўГЁГҐ Г±ГҐГЎГҐ ГЁ [P]", "[H.identifying_gender==FEMALE ? "ГіГЇВёГ°Г«Г Г±Гј" : "ГіГЇВёГ°Г±[ya]"] ГІГ Г§Г®Г¬ Гў [P] ГЁ ГҐГ«Г®Г§ГЁГІ, Г¤ГҐГ°Г¦Г  [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] ГЇГ°ГЁ[ya]ГІГ­Г® Г®ГІГІ[ya]ГЈГЁГўГ [ya] Г·Г«ГҐГ­ Г§Г  ГіГ§ГҐГ«", "Г·ГіГўГ±ГІГўГҐГ­Г­Г® Г±ГЄГ®Г«ГјГ§ГЁГІ ГІГ Г§Г®Г¬ ГЇГ®-ГЄГ°ГіГЈГі, Г±ГЁГ¤[ya] Г­Г  ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГҐ [P], Г«Г Г±ГЄГ [ya] ГҐГЈГ® ГіГ§ГҐГ« Г­ГіГІГ°Г®Г¬", "ГўГЇГ°ГЁГЇГ°Г»Г¦ГЄГі Г­Г ГўГ Г«ГЁГўГ ГҐГІГ±[ya] Г­Г  [P], Г«Г Г±ГЄГ [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г·Г«ГҐГ­ Г±Г«ГЁГ§ГјГѕ", "Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] Г­Г  Г±ГІГўГ®Г« [P], ГўГўГ®Г¤[ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г®Г°ГЈГ Г­ Гў Г±ГҐГЎ[ya] Г¤Г® ГіГЇГ®Г°Г ", "Г¤ГўГЁГЈГ ГҐГІГ±[ya] ГўГўГҐГ°Гµ-ГўГ­ГЁГ§, Г±ГЁГ¤[ya] Г­Г  ГіГ§Г«Г®ГўГ ГІГ®Г¬ Г§ГўГҐГ°ГјГЄГҐ [P]")
 				else if(prob(5))
-					message = pick("насаживаетс[ya] на узловатый интрумент [P] по самые [ya]йца, слегка проникнув в уретру [P] своей слизью", "вбирает в себ[ya] зверька [P], слегка проника[ya] в головку слизью")
+					message = pick("Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] Г­Г  ГіГ§Г«Г®ГўГ ГІГ»Г© ГЁГ­ГІГ°ГіГ¬ГҐГ­ГІ [P] ГЇГ® Г±Г Г¬Г»ГҐ [ya]Г©Г¶Г , Г±Г«ГҐГЈГЄГ  ГЇГ°Г®Г­ГЁГЄГ­ГіГў Гў ГіГ°ГҐГІГ°Гі [P] Г±ГўГ®ГҐГ© Г±Г«ГЁГ§ГјГѕ", "ГўГЎГЁГ°Г ГҐГІ Гў Г±ГҐГЎ[ya] Г§ГўГҐГ°ГјГЄГ  [P], Г±Г«ГҐГЈГЄГ  ГЇГ°Г®Г­ГЁГЄГ [ya] Гў ГЈГ®Г«Г®ГўГЄГі Г±Г«ГЁГ§ГјГѕ")
 				else if(prob(0.3))
-					message = pick("резко падает на один из членов [P] - вгон[ya][ya] его в себ[ya] до основани[ya] - и глубоко проскальзывает слизью в уретру", "нежно сжав узел зверька [P], глубоко проскальзывает в него слизью")
+					message = pick("Г°ГҐГ§ГЄГ® ГЇГ Г¤Г ГҐГІ Г­Г  Г®Г¤ГЁГ­ ГЁГ§ Г·Г«ГҐГ­Г®Гў [P] - ГўГЈГ®Г­[ya][ya] ГҐГЈГ® Гў Г±ГҐГЎ[ya] Г¤Г® Г®Г±Г­Г®ГўГ Г­ГЁ[ya] - ГЁ ГЈГ«ГіГЎГ®ГЄГ® ГЇГ°Г®Г±ГЄГ Г«ГјГ§Г»ГўГ ГҐГІ Г±Г«ГЁГ§ГјГѕ Гў ГіГ°ГҐГІГ°Гі", "Г­ГҐГ¦Г­Г® Г±Г¦Г Гў ГіГ§ГҐГ« Г§ГўГҐГ°ГјГЄГ  [P], ГЈГ«ГіГЎГ®ГЄГ® ГЇГ°Г®Г±ГЄГ Г«ГјГ§Г»ГўГ ГҐГІ Гў Г­ГҐГЈГ® Г±Г«ГЁГ§ГјГѕ")
 
 				if (H.lastfucked != P || H.lfhole != hole)
-					message = pick("садитс[ya] желейным телом на узловатого гузнотёра [P], ввод[ya] его внутрь", "обволакивает узловатый орган [P], вбира[ya] его в себ[ya]", "направл[ya]ет член [P] рукой в своё склизлое тело, обволакива[ya]", "осторожно вводит ствол [P] в свою слизь", "запускает зверька [P] в своё склизлое тело")
+					message = pick("Г±Г Г¤ГЁГІГ±[ya] Г¦ГҐГ«ГҐГ©Г­Г»Г¬ ГІГҐГ«Г®Г¬ Г­Г  ГіГ§Г«Г®ГўГ ГІГ®ГЈГ® ГЈГіГ§Г­Г®ГІВёГ°Г  [P], ГўГўГ®Г¤[ya] ГҐГЈГ® ГўГ­ГіГІГ°Гј", "Г®ГЎГўГ®Г«Г ГЄГЁГўГ ГҐГІ ГіГ§Г«Г®ГўГ ГІГ»Г© Г®Г°ГЈГ Г­ [P], ГўГЎГЁГ°Г [ya] ГҐГЈГ® Гў Г±ГҐГЎ[ya]", "Г­Г ГЇГ°Г ГўГ«[ya]ГҐГІ Г·Г«ГҐГ­ [P] Г°ГіГЄГ®Г© Гў Г±ГўГ®Вё Г±ГЄГ«ГЁГ§Г«Г®ГҐ ГІГҐГ«Г®, Г®ГЎГўГ®Г«Г ГЄГЁГўГ [ya]", "Г®Г±ГІГ®Г°Г®Г¦Г­Г® ГўГўГ®Г¤ГЁГІ Г±ГІГўГ®Г« [P] Гў Г±ГўГ®Гѕ Г±Г«ГЁГ§Гј", "Г§Г ГЇГіГ±ГЄГ ГҐГІ Г§ГўГҐГ°ГјГЄГ  [P] Гў Г±ГўГ®Вё Г±ГЄГ«ГЁГ§Г«Г®ГҐ ГІГҐГ«Г®")
 					H.lastfucked = P
 					H.lfhole = hole
 
 	//H.Prometheans + prometheans
 			if(H.species.get_bodytype() == SPECIES_PROMETHEAN && P.species.get_bodytype() == SPECIES_PROMETHEAN)
-				message = pick("чувственно сплетаетс[ya] слизью с [P]", "неумолимо скачет на [P], погружа[ya] [P.identifying_gender==FEMALE ? "её" : "его"] склизлый орган в свой склизлый зад", "прыгает на склизлом инструменте [P], хлюпа[ya]")
+				message = pick("Г·ГіГўГ±ГІГўГҐГ­Г­Г® Г±ГЇГ«ГҐГІГ ГҐГІГ±[ya] Г±Г«ГЁГ§ГјГѕ Г± [P]", "Г­ГҐГіГ¬Г®Г«ГЁГ¬Г® Г±ГЄГ Г·ГҐГІ Г­Г  [P], ГЇГ®ГЈГ°ГіГ¦Г [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г±ГЄГ«ГЁГ§Г«Г»Г© Г®Г°ГЈГ Г­ Гў Г±ГўГ®Г© Г±ГЄГ«ГЁГ§Г«Г»Г© Г§Г Г¤", "ГЇГ°Г»ГЈГ ГҐГІ Г­Г  Г±ГЄГ«ГЁГ§Г«Г®Г¬ ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГҐ [P], ГµГ«ГѕГЇГ [ya]")
 				if (prob(35))
-					message = pick("вгон[ya]ет скользкий интрумент [P] в свой зад по самые [ya]йца", "скачет на склизлом малыше [P], погружа[ya] его в свой зад", "прыгает на [P], удар[ya][ya]сь о [P.identifying_gender==FEMALE ? "её" : "его"] желейное тело", "скачет на желеобразном члене, доставл[ya][ya] удовольствие себе и [P]", "[H.identifying_gender==FEMALE ? "упёрлась" : "упёрс[ya]"] тазом в [P] и елозит, держа [P.identifying_gender==FEMALE ? "её" : "его"] склизлый член внутри себ[ya]", "двигает тазом по-кругу, сид[ya] задом на инструменте [P], ласка[ya] его нутром", "вприпрыжку наваливаетс[ya] на [P]", "насаживаетс[ya] на пенис [P], дав[ya] на него своим тазом", "двигаетс[ya] вверх-вниз, сид[ya] задом на слизи [P]")
+					message = pick("ГўГЈГ®Г­[ya]ГҐГІ Г±ГЄГ®Г«ГјГ§ГЄГЁГ© ГЁГ­ГІГ°ГіГ¬ГҐГ­ГІ [P] Гў Г±ГўГ®Г© Г§Г Г¤ ГЇГ® Г±Г Г¬Г»ГҐ [ya]Г©Г¶Г ", "Г±ГЄГ Г·ГҐГІ Г­Г  Г±ГЄГ«ГЁГ§Г«Г®Г¬ Г¬Г Г«Г»ГёГҐ [P], ГЇГ®ГЈГ°ГіГ¦Г [ya] ГҐГЈГ® Гў Г±ГўГ®Г© Г§Г Г¤", "ГЇГ°Г»ГЈГ ГҐГІ Г­Г  [P], ГіГ¤Г Г°[ya][ya]Г±Гј Г® [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г¦ГҐГ«ГҐГ©Г­Г®ГҐ ГІГҐГ«Г®", "Г±ГЄГ Г·ГҐГІ Г­Г  Г¦ГҐГ«ГҐГ®ГЎГ°Г Г§Г­Г®Г¬ Г·Г«ГҐГ­ГҐ, Г¤Г®Г±ГІГ ГўГ«[ya][ya] ГіГ¤Г®ГўГ®Г«ГјГ±ГІГўГЁГҐ Г±ГҐГЎГҐ ГЁ [P]", "[H.identifying_gender==FEMALE ? "ГіГЇВёГ°Г«Г Г±Гј" : "ГіГЇВёГ°Г±[ya]"] ГІГ Г§Г®Г¬ Гў [P] ГЁ ГҐГ«Г®Г§ГЁГІ, Г¤ГҐГ°Г¦Г  [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г±ГЄГ«ГЁГ§Г«Г»Г© Г·Г«ГҐГ­ ГўГ­ГіГІГ°ГЁ Г±ГҐГЎ[ya]", "Г¤ГўГЁГЈГ ГҐГІ ГІГ Г§Г®Г¬ ГЇГ®-ГЄГ°ГіГЈГі, Г±ГЁГ¤[ya] Г§Г Г¤Г®Г¬ Г­Г  ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГҐ [P], Г«Г Г±ГЄГ [ya] ГҐГЈГ® Г­ГіГІГ°Г®Г¬", "ГўГЇГ°ГЁГЇГ°Г»Г¦ГЄГі Г­Г ГўГ Г«ГЁГўГ ГҐГІГ±[ya] Г­Г  [P]", "Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] Г­Г  ГЇГҐГ­ГЁГ± [P], Г¤Г Гў[ya] Г­Г  Г­ГҐГЈГ® Г±ГўГ®ГЁГ¬ ГІГ Г§Г®Г¬", "Г¤ГўГЁГЈГ ГҐГІГ±[ya] ГўГўГҐГ°Гµ-ГўГ­ГЁГ§, Г±ГЁГ¤[ya] Г§Г Г¤Г®Г¬ Г­Г  Г±Г«ГЁГ§ГЁ [P]")
 
 				if (H.lastfucked != P || H.lfhole != hole)
-					message = pick("медленно садитс[ya] своей желейной задницей на желейного гузнотёра [P], вбира[ya] его внутрь", "осторожно вбирает орган [P] в себ[ya]", "направл[ya]ет склизлый отросток [P] в свою желейную шахту, помога[ya] себе рукой", "осторожно вводит ствол [P] в своё склизлое тело", "запускает желейного зверька [P] в своё склизлое тело")
+					message = pick("Г¬ГҐГ¤Г«ГҐГ­Г­Г® Г±Г Г¤ГЁГІГ±[ya] Г±ГўГ®ГҐГ© Г¦ГҐГ«ГҐГ©Г­Г®Г© Г§Г Г¤Г­ГЁГ¶ГҐГ© Г­Г  Г¦ГҐГ«ГҐГ©Г­Г®ГЈГ® ГЈГіГ§Г­Г®ГІВёГ°Г  [P], ГўГЎГЁГ°Г [ya] ГҐГЈГ® ГўГ­ГіГІГ°Гј", "Г®Г±ГІГ®Г°Г®Г¦Г­Г® ГўГЎГЁГ°Г ГҐГІ Г®Г°ГЈГ Г­ [P] Гў Г±ГҐГЎ[ya]", "Г­Г ГЇГ°Г ГўГ«[ya]ГҐГІ Г±ГЄГ«ГЁГ§Г«Г»Г© Г®ГІГ°Г®Г±ГІГ®ГЄ [P] Гў Г±ГўГ®Гѕ Г¦ГҐГ«ГҐГ©Г­ГіГѕ ГёГ ГµГІГі, ГЇГ®Г¬Г®ГЈГ [ya] Г±ГҐГЎГҐ Г°ГіГЄГ®Г©", "Г®Г±ГІГ®Г°Г®Г¦Г­Г® ГўГўГ®Г¤ГЁГІ Г±ГІГўГ®Г« [P] Гў Г±ГўГ®Вё Г±ГЄГ«ГЁГ§Г«Г®ГҐ ГІГҐГ«Г®", "Г§Г ГЇГіГ±ГЄГ ГҐГІ Г¦ГҐГ«ГҐГ©Г­Г®ГЈГ® Г§ГўГҐГ°ГјГЄГ  [P] Гў Г±ГўГ®Вё Г±ГЄГ«ГЁГ§Г«Г®ГҐ ГІГҐГ«Г®")
 					H.lastfucked = P
 					H.lfhole = hole
 
 /*
 			if(P.species.get_bodytype() != SPECIES_PROMETHEAN && H.species.get_bodytype() == SPECIES_PROMETHEAN && H.species.get_bodytype() != SPECIES_TESHARI)
-				message = pick("сношает себ[ya] в зад склизлым ограном [P]", "неумолимо скачет на [P], погружа[ya] [P.identifying_gender==FEMALE ? "её" : "его"] склизлый орган в свой зад", "прыгает задом на склизлом инструменте [P], сжав анальное колечко", "чувственно сношает себ[ya] склизлым членом [P]")
+				message = pick("Г±Г­Г®ГёГ ГҐГІ Г±ГҐГЎ[ya] Гў Г§Г Г¤ Г±ГЄГ«ГЁГ§Г«Г»Г¬ Г®ГЈГ°Г Г­Г®Г¬ [P]", "Г­ГҐГіГ¬Г®Г«ГЁГ¬Г® Г±ГЄГ Г·ГҐГІ Г­Г  [P], ГЇГ®ГЈГ°ГіГ¦Г [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г±ГЄГ«ГЁГ§Г«Г»Г© Г®Г°ГЈГ Г­ Гў Г±ГўГ®Г© Г§Г Г¤", "ГЇГ°Г»ГЈГ ГҐГІ Г§Г Г¤Г®Г¬ Г­Г  Г±ГЄГ«ГЁГ§Г«Г®Г¬ ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГҐ [P], Г±Г¦Г Гў Г Г­Г Г«ГјГ­Г®ГҐ ГЄГ®Г«ГҐГ·ГЄГ®", "Г·ГіГўГ±ГІГўГҐГ­Г­Г® Г±Г­Г®ГёГ ГҐГІ Г±ГҐГЎ[ya] Г±ГЄГ«ГЁГ§Г«Г»Г¬ Г·Г«ГҐГ­Г®Г¬ [P]")
 				if (prob(35))
-					message = pick("вгон[ya]ет скользкий интрумент [P] в свой зад по самые [ya]йца", "скачет на склизлом малыше [P], погружа[ya] его в свой зад", "прыгает на [P], удар[ya][ya]сь о [P.identifying_gender==FEMALE ? "её" : "его"] желейное тело", "насаживаетс[ya] анальным отверстием на склизлый отросток [P], ввод[ya] его в пр[ya]мую кишку до упора", "скачет на желеобразном члене, доставл[ya][ya] удовольствие себе и [P]", "[H.identifying_gender==FEMALE ? "упёрлась" : "упёрс[ya]"] тазом в [P] и елозит, держа [P.identifying_gender==FEMALE ? "её" : "его"] склизлый член внутри себ[ya]", "двигает тазом по-кругу, сид[ya] задом на инструменте [P], ласка[ya] его нутром", "вприпрыжку наваливаетс[ya] на [P], ласка[ya] [P.identifying_gender==FEMALE ? "её" : "его"] член пр[ya]мой кишкой", "насаживаетс[ya] на пенис [P], дав[ya] на него своим тазом", "двигаетс[ya] вверх-вниз, сид[ya] задом на слизи [P]")
+					message = pick("ГўГЈГ®Г­[ya]ГҐГІ Г±ГЄГ®Г«ГјГ§ГЄГЁГ© ГЁГ­ГІГ°ГіГ¬ГҐГ­ГІ [P] Гў Г±ГўГ®Г© Г§Г Г¤ ГЇГ® Г±Г Г¬Г»ГҐ [ya]Г©Г¶Г ", "Г±ГЄГ Г·ГҐГІ Г­Г  Г±ГЄГ«ГЁГ§Г«Г®Г¬ Г¬Г Г«Г»ГёГҐ [P], ГЇГ®ГЈГ°ГіГ¦Г [ya] ГҐГЈГ® Гў Г±ГўГ®Г© Г§Г Г¤", "ГЇГ°Г»ГЈГ ГҐГІ Г­Г  [P], ГіГ¤Г Г°[ya][ya]Г±Гј Г® [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г¦ГҐГ«ГҐГ©Г­Г®ГҐ ГІГҐГ«Г®", "Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] Г Г­Г Г«ГјГ­Г»Г¬ Г®ГІГўГҐГ°Г±ГІГЁГҐГ¬ Г­Г  Г±ГЄГ«ГЁГ§Г«Г»Г© Г®ГІГ°Г®Г±ГІГ®ГЄ [P], ГўГўГ®Г¤[ya] ГҐГЈГ® Гў ГЇГ°[ya]Г¬ГіГѕ ГЄГЁГёГЄГі Г¤Г® ГіГЇГ®Г°Г ", "Г±ГЄГ Г·ГҐГІ Г­Г  Г¦ГҐГ«ГҐГ®ГЎГ°Г Г§Г­Г®Г¬ Г·Г«ГҐГ­ГҐ, Г¤Г®Г±ГІГ ГўГ«[ya][ya] ГіГ¤Г®ГўГ®Г«ГјГ±ГІГўГЁГҐ Г±ГҐГЎГҐ ГЁ [P]", "[H.identifying_gender==FEMALE ? "ГіГЇВёГ°Г«Г Г±Гј" : "ГіГЇВёГ°Г±[ya]"] ГІГ Г§Г®Г¬ Гў [P] ГЁ ГҐГ«Г®Г§ГЁГІ, Г¤ГҐГ°Г¦Г  [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г±ГЄГ«ГЁГ§Г«Г»Г© Г·Г«ГҐГ­ ГўГ­ГіГІГ°ГЁ Г±ГҐГЎ[ya]", "Г¤ГўГЁГЈГ ГҐГІ ГІГ Г§Г®Г¬ ГЇГ®-ГЄГ°ГіГЈГі, Г±ГЁГ¤[ya] Г§Г Г¤Г®Г¬ Г­Г  ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГҐ [P], Г«Г Г±ГЄГ [ya] ГҐГЈГ® Г­ГіГІГ°Г®Г¬", "ГўГЇГ°ГЁГЇГ°Г»Г¦ГЄГі Г­Г ГўГ Г«ГЁГўГ ГҐГІГ±[ya] Г­Г  [P], Г«Г Г±ГЄГ [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г·Г«ГҐГ­ ГЇГ°[ya]Г¬Г®Г© ГЄГЁГёГЄГ®Г©", "Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] Г­Г  ГЇГҐГ­ГЁГ± [P], Г¤Г Гў[ya] Г­Г  Г­ГҐГЈГ® Г±ГўГ®ГЁГ¬ ГІГ Г§Г®Г¬", "Г¤ГўГЁГЈГ ГҐГІГ±[ya] ГўГўГҐГ°Гµ-ГўГ­ГЁГ§, Г±ГЁГ¤[ya] Г§Г Г¤Г®Г¬ Г­Г  Г±Г«ГЁГ§ГЁ [P]")
 				else if (prob(5))
-					message = pick("насаживаетс[ya] на интрумент [P] по самые [ya]йца, слеггка проника[ya] в уретру [P]", "насаживаетс[ya] на интрумент [P] по самые [ya]йца, глубоко проника[ya] в уретру [P]")
+					message = pick("Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] Г­Г  ГЁГ­ГІГ°ГіГ¬ГҐГ­ГІ [P] ГЇГ® Г±Г Г¬Г»ГҐ [ya]Г©Г¶Г , Г±Г«ГҐГЈГЈГЄГ  ГЇГ°Г®Г­ГЁГЄГ [ya] Гў ГіГ°ГҐГІГ°Гі [P]", "Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] Г­Г  ГЁГ­ГІГ°ГіГ¬ГҐГ­ГІ [P] ГЇГ® Г±Г Г¬Г»ГҐ [ya]Г©Г¶Г , ГЈГ«ГіГЎГ®ГЄГ® ГЇГ°Г®Г­ГЁГЄГ [ya] Гў ГіГ°ГҐГІГ°Гі [P]")
 
 				if (H.lastfucked != P || H.lfhole != hole)
-					message = pick("медленно садитс[ya] задницей на кончик желейного гузнотёра [P], ввод[ya] его внутрь", "осторожно вводит орган [P] в свой задний проход", "направл[ya]ет склизлый отросток [P] в свою шахту, помога[ya] себе рукой", "осторожно вводит ствол [P] в свою пр[ya]мую кишку", "запускает желейного зверька [P] в свою пр[ya]мую кишку", "запускает шахтёра [P] в свои угольные шахты")
+					message = pick("Г¬ГҐГ¤Г«ГҐГ­Г­Г® Г±Г Г¤ГЁГІГ±[ya] Г§Г Г¤Г­ГЁГ¶ГҐГ© Г­Г  ГЄГ®Г­Г·ГЁГЄ Г¦ГҐГ«ГҐГ©Г­Г®ГЈГ® ГЈГіГ§Г­Г®ГІВёГ°Г  [P], ГўГўГ®Г¤[ya] ГҐГЈГ® ГўГ­ГіГІГ°Гј", "Г®Г±ГІГ®Г°Г®Г¦Г­Г® ГўГўГ®Г¤ГЁГІ Г®Г°ГЈГ Г­ [P] Гў Г±ГўГ®Г© Г§Г Г¤Г­ГЁГ© ГЇГ°Г®ГµГ®Г¤", "Г­Г ГЇГ°Г ГўГ«[ya]ГҐГІ Г±ГЄГ«ГЁГ§Г«Г»Г© Г®ГІГ°Г®Г±ГІГ®ГЄ [P] Гў Г±ГўГ®Гѕ ГёГ ГµГІГі, ГЇГ®Г¬Г®ГЈГ [ya] Г±ГҐГЎГҐ Г°ГіГЄГ®Г©", "Г®Г±ГІГ®Г°Г®Г¦Г­Г® ГўГўГ®Г¤ГЁГІ Г±ГІГўГ®Г« [P] Гў Г±ГўГ®Гѕ ГЇГ°[ya]Г¬ГіГѕ ГЄГЁГёГЄГі", "Г§Г ГЇГіГ±ГЄГ ГҐГІ Г¦ГҐГ«ГҐГ©Г­Г®ГЈГ® Г§ГўГҐГ°ГјГЄГ  [P] Гў Г±ГўГ®Гѕ ГЇГ°[ya]Г¬ГіГѕ ГЄГЁГёГЄГі", "Г§Г ГЇГіГ±ГЄГ ГҐГІ ГёГ ГµГІВёГ°Г  [P] Гў Г±ГўГ®ГЁ ГіГЈГ®Г«ГјГ­Г»ГҐ ГёГ ГµГІГ»")
 					H.lastfucked = P
 					H.lfhole = hole
 */
@@ -1353,11 +1353,11 @@ MOUNT REWORKED - допилить попарно реакции на взаимодействия рас друг с другом, у
 			if (H.lust >= H.resistenza)
 				H.cum(H, P)
 				if(H.species.get_bodytype() != SPECIES_PROMETHEAN || H.species.get_bodytype() != SPECIES_TESHARI)
-					message = pick("Вы чувствуете, как сфинктер [H] начинает резко сокращатьс[ya] вокруг вашего инструмента.", "Вы чувствуете, как сфинктер [H] крепко сжимают ваш напр[ya]жённый член, пульсиру[ya].", "Вы чувствуете, как кишечник [H] м[ya]гко сжимаетс[ya] вокруг вашего члена.", "Вы чувствуете, как напрн[ya]гс[ya] сфинктер [H], удержива[ya] ваш член внутри пр[ya]мой кишки.", "Вы чувствуете, как мышцы сфинктера [H] сильно сжимаютс[ya] несколько раз, приближа[ya] вас к оргазму.")
+					message = pick("Г‚Г» Г·ГіГўГ±ГІГўГіГҐГІГҐ, ГЄГ ГЄ Г±ГґГЁГ­ГЄГІГҐГ° [H] Г­Г Г·ГЁГ­Г ГҐГІ Г°ГҐГ§ГЄГ® Г±Г®ГЄГ°Г Г№Г ГІГјГ±[ya] ГўГ®ГЄГ°ГіГЈ ГўГ ГёГҐГЈГ® ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГ .", "Г‚Г» Г·ГіГўГ±ГІГўГіГҐГІГҐ, ГЄГ ГЄ Г±ГґГЁГ­ГЄГІГҐГ° [H] ГЄГ°ГҐГЇГЄГ® Г±Г¦ГЁГ¬Г ГѕГІ ГўГ Гё Г­Г ГЇГ°[ya]Г¦ВёГ­Г­Г»Г© Г·Г«ГҐГ­, ГЇГіГ«ГјГ±ГЁГ°Гі[ya].", "Г‚Г» Г·ГіГўГ±ГІГўГіГҐГІГҐ, ГЄГ ГЄ ГЄГЁГёГҐГ·Г­ГЁГЄ [H] Г¬[ya]ГЈГЄГ® Г±Г¦ГЁГ¬Г ГҐГІГ±[ya] ГўГ®ГЄГ°ГіГЈ ГўГ ГёГҐГЈГ® Г·Г«ГҐГ­Г .", "Г‚Г» Г·ГіГўГ±ГІГўГіГҐГІГҐ, ГЄГ ГЄ Г­Г ГЇГ°Г­[ya]ГЈГ±[ya] Г±ГґГЁГ­ГЄГІГҐГ° [H], ГіГ¤ГҐГ°Г¦ГЁГўГ [ya] ГўГ Гё Г·Г«ГҐГ­ ГўГ­ГіГІГ°ГЁ ГЇГ°[ya]Г¬Г®Г© ГЄГЁГёГЄГЁ.", "Г‚Г» Г·ГіГўГ±ГІГўГіГҐГІГҐ, ГЄГ ГЄ Г¬Г»ГёГ¶Г» Г±ГґГЁГ­ГЄГІГҐГ°Г  [H] Г±ГЁГ«ГјГ­Г® Г±Г¦ГЁГ¬Г ГѕГІГ±[ya] Г­ГҐГ±ГЄГ®Г«ГјГЄГ® Г°Г Г§, ГЇГ°ГЁГЎГ«ГЁГ¦Г [ya] ГўГ Г± ГЄ Г®Г°ГЈГ Г§Г¬Гі.")
 				else if(H.species.get_bodytype() == SPECIES_PROMETHEAN)
-					message = pick("Вы чувствуете, как нутро [H] начинает резко сокращатьс[ya] вокруг вашего инструмента.", "Вы чувствуете, как слизь [H] крепко сжимают ваш напр[ya]жённый член, пульсиру[ya].", "Вы чувствуете, как внутренности [H] м[ya]гко сжимаютс[ya] вокруг вашего члена.", "Вы чувствуете, как напрн[ya]гс[ya] нутро [H], удержива[ya] ваш член внутри себ[ya].", "Вы чувствуете, как нутро [H] сильно сжимаетс[ya] несколько раз, приближа[ya] вас к оргазму.")
+					message = pick("Г‚Г» Г·ГіГўГ±ГІГўГіГҐГІГҐ, ГЄГ ГЄ Г­ГіГІГ°Г® [H] Г­Г Г·ГЁГ­Г ГҐГІ Г°ГҐГ§ГЄГ® Г±Г®ГЄГ°Г Г№Г ГІГјГ±[ya] ГўГ®ГЄГ°ГіГЈ ГўГ ГёГҐГЈГ® ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГ .", "Г‚Г» Г·ГіГўГ±ГІГўГіГҐГІГҐ, ГЄГ ГЄ Г±Г«ГЁГ§Гј [H] ГЄГ°ГҐГЇГЄГ® Г±Г¦ГЁГ¬Г ГѕГІ ГўГ Гё Г­Г ГЇГ°[ya]Г¦ВёГ­Г­Г»Г© Г·Г«ГҐГ­, ГЇГіГ«ГјГ±ГЁГ°Гі[ya].", "Г‚Г» Г·ГіГўГ±ГІГўГіГҐГІГҐ, ГЄГ ГЄ ГўГ­ГіГІГ°ГҐГ­Г­Г®Г±ГІГЁ [H] Г¬[ya]ГЈГЄГ® Г±Г¦ГЁГ¬Г ГѕГІГ±[ya] ГўГ®ГЄГ°ГіГЈ ГўГ ГёГҐГЈГ® Г·Г«ГҐГ­Г .", "Г‚Г» Г·ГіГўГ±ГІГўГіГҐГІГҐ, ГЄГ ГЄ Г­Г ГЇГ°Г­[ya]ГЈГ±[ya] Г­ГіГІГ°Г® [H], ГіГ¤ГҐГ°Г¦ГЁГўГ [ya] ГўГ Гё Г·Г«ГҐГ­ ГўГ­ГіГІГ°ГЁ Г±ГҐГЎ[ya].", "Г‚Г» Г·ГіГўГ±ГІГўГіГҐГІГҐ, ГЄГ ГЄ Г­ГіГІГ°Г® [H] Г±ГЁГ«ГјГ­Г® Г±Г¦ГЁГ¬Г ГҐГІГ±[ya] Г­ГҐГ±ГЄГ®Г«ГјГЄГ® Г°Г Г§, ГЇГ°ГЁГЎГ«ГЁГ¦Г [ya] ГўГ Г± ГЄ Г®Г°ГЈГ Г§Г¬Гі.")
 				else if(H.species.get_bodytype() == SPECIES_TESHARI)
-					message = pick("Вы чувствуете, как клоака [H] начинает резко сокращатьс[ya] вокруг вашего инструмента.", "Вы чувствуете, как клоака [H] крепко сжимают ваш напр[ya]жённый член, пульсиру[ya].", "Вы чувствуете, как кишечник [H] м[ya]гко сжимаетс[ya] вокруг вашего члена.", "Вы чувствуете, как напрн[ya]гс[ya] клоака [H], удержива[ya] ваш член внутри кишки.", "Вы чувствуете, как мышцы клоаки [H] сильно сжимаютс[ya] несколько раз, приближа[ya] вас к оргазму.")
+					message = pick("Г‚Г» Г·ГіГўГ±ГІГўГіГҐГІГҐ, ГЄГ ГЄ ГЄГ«Г®Г ГЄГ  [H] Г­Г Г·ГЁГ­Г ГҐГІ Г°ГҐГ§ГЄГ® Г±Г®ГЄГ°Г Г№Г ГІГјГ±[ya] ГўГ®ГЄГ°ГіГЈ ГўГ ГёГҐГЈГ® ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГ .", "Г‚Г» Г·ГіГўГ±ГІГўГіГҐГІГҐ, ГЄГ ГЄ ГЄГ«Г®Г ГЄГ  [H] ГЄГ°ГҐГЇГЄГ® Г±Г¦ГЁГ¬Г ГѕГІ ГўГ Гё Г­Г ГЇГ°[ya]Г¦ВёГ­Г­Г»Г© Г·Г«ГҐГ­, ГЇГіГ«ГјГ±ГЁГ°Гі[ya].", "Г‚Г» Г·ГіГўГ±ГІГўГіГҐГІГҐ, ГЄГ ГЄ ГЄГЁГёГҐГ·Г­ГЁГЄ [H] Г¬[ya]ГЈГЄГ® Г±Г¦ГЁГ¬Г ГҐГІГ±[ya] ГўГ®ГЄГ°ГіГЈ ГўГ ГёГҐГЈГ® Г·Г«ГҐГ­Г .", "Г‚Г» Г·ГіГўГ±ГІГўГіГҐГІГҐ, ГЄГ ГЄ Г­Г ГЇГ°Г­[ya]ГЈГ±[ya] ГЄГ«Г®Г ГЄГ  [H], ГіГ¤ГҐГ°Г¦ГЁГўГ [ya] ГўГ Гё Г·Г«ГҐГ­ ГўГ­ГіГІГ°ГЁ ГЄГЁГёГЄГЁ.", "Г‚Г» Г·ГіГўГ±ГІГўГіГҐГІГҐ, ГЄГ ГЄ Г¬Г»ГёГ¶Г» ГЄГ«Г®Г ГЄГЁ [H] Г±ГЁГ«ГјГ­Г® Г±Г¦ГЁГ¬Г ГѕГІГ±[ya] Г­ГҐГ±ГЄГ®Г«ГјГЄГ® Г°Г Г§, ГЇГ°ГЁГЎГ«ГЁГ¦Г [ya] ГўГ Г± ГЄ Г®Г°ГЈГ Г§Г¬Гі.")
 				to_chat(P, message)
 				P.lust += 15
 			else
@@ -1377,12 +1377,12 @@ MOUNT REWORKED - допилить попарно реакции на взаимодействия рас друг с другом, у
 
 		if("assfuck")
 
-			message = pick("скачет на члене [P], погружа[ya] [P.identifying_gender==FEMALE ? "её" : "его"] орган в свой зад", "прыгает задом на инструменте [P], сжав анус", "насаживаетс[ya] на член [P] анальным кольцом, ввод[ya] [P.identifying_gender==FEMALE ? "её" : "его"] орган в пр[ya]мую кишку")
+			message = pick("Г±ГЄГ Г·ГҐГІ Г­Г  Г·Г«ГҐГ­ГҐ [P], ГЇГ®ГЈГ°ГіГ¦Г [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г®Г°ГЈГ Г­ Гў Г±ГўГ®Г© Г§Г Г¤", "ГЇГ°Г»ГЈГ ГҐГІ Г§Г Г¤Г®Г¬ Г­Г  ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГҐ [P], Г±Г¦Г Гў Г Г­ГіГ±", "Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] Г­Г  Г·Г«ГҐГ­ [P] Г Г­Г Г«ГјГ­Г»Г¬ ГЄГ®Г«ГјГ¶Г®Г¬, ГўГўГ®Г¤[ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г®Г°ГЈГ Г­ Гў ГЇГ°[ya]Г¬ГіГѕ ГЄГЁГёГЄГі")
 			if (prob(35))
-				message = pick("насаживаетс[ya] на интрумент [P] задницей по самые [ya]йц", "скачет на малыше [P], погружа[ya] его в свой зад", "прыгает на [P], удар[ya][ya]сь о [P.identifying_gender==FEMALE ? "её" : "его"] тело", "подпрыгивает, доставл[ya][ya] удовольствие себе и [P]", "[P.identifying_gender==FEMALE ? "упёрлась" : "упёрс[ya]"] тазом в [P] и елозит, держа [P.identifying_gender==FEMALE ? "её" : "его"] член внутри себ[ya]", "двигает тазом по-кругу, сид[ya] задом на инструменте [P], ласка[ya] его ", "вприпрыжку наваливаетс[ya] на [P], ласка[ya] [P.identifying_gender==FEMALE ? "её" : "его"] член пр[ya]мой кишкой", "насаживаетс[ya] на крючок [P], дав[ya] на него своим тазом", "двигаетс[ya] вверх-вниз, сид[ya] задом на зверьке [P]")
+				message = pick("Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] Г­Г  ГЁГ­ГІГ°ГіГ¬ГҐГ­ГІ [P] Г§Г Г¤Г­ГЁГ¶ГҐГ© ГЇГ® Г±Г Г¬Г»ГҐ [ya]Г©Г¶", "Г±ГЄГ Г·ГҐГІ Г­Г  Г¬Г Г«Г»ГёГҐ [P], ГЇГ®ГЈГ°ГіГ¦Г [ya] ГҐГЈГ® Гў Г±ГўГ®Г© Г§Г Г¤", "ГЇГ°Г»ГЈГ ГҐГІ Г­Г  [P], ГіГ¤Г Г°[ya][ya]Г±Гј Г® [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] ГІГҐГ«Г®", "ГЇГ®Г¤ГЇГ°Г»ГЈГЁГўГ ГҐГІ, Г¤Г®Г±ГІГ ГўГ«[ya][ya] ГіГ¤Г®ГўГ®Г«ГјГ±ГІГўГЁГҐ Г±ГҐГЎГҐ ГЁ [P]", "[P.identifying_gender==FEMALE ? "ГіГЇВёГ°Г«Г Г±Гј" : "ГіГЇВёГ°Г±[ya]"] ГІГ Г§Г®Г¬ Гў [P] ГЁ ГҐГ«Г®Г§ГЁГІ, Г¤ГҐГ°Г¦Г  [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г·Г«ГҐГ­ ГўГ­ГіГІГ°ГЁ Г±ГҐГЎ[ya]", "Г¤ГўГЁГЈГ ГҐГІ ГІГ Г§Г®Г¬ ГЇГ®-ГЄГ°ГіГЈГі, Г±ГЁГ¤[ya] Г§Г Г¤Г®Г¬ Г­Г  ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГҐ [P], Г«Г Г±ГЄГ [ya] ГҐГЈГ® ", "ГўГЇГ°ГЁГЇГ°Г»Г¦ГЄГі Г­Г ГўГ Г«ГЁГўГ ГҐГІГ±[ya] Г­Г  [P], Г«Г Г±ГЄГ [ya] [P.identifying_gender==FEMALE ? "ГҐВё" : "ГҐГЈГ®"] Г·Г«ГҐГ­ ГЇГ°[ya]Г¬Г®Г© ГЄГЁГёГЄГ®Г©", "Г­Г Г±Г Г¦ГЁГўГ ГҐГІГ±[ya] Г­Г  ГЄГ°ГѕГ·Г®ГЄ [P], Г¤Г Гў[ya] Г­Г  Г­ГҐГЈГ® Г±ГўГ®ГЁГ¬ ГІГ Г§Г®Г¬", "Г¤ГўГЁГЈГ ГҐГІГ±[ya] ГўГўГҐГ°Гµ-ГўГ­ГЁГ§, Г±ГЁГ¤[ya] Г§Г Г¤Г®Г¬ Г­Г  Г§ГўГҐГ°ГјГЄГҐ [P]")
 
 			if (H.lastfucked != P || H.lfhole != hole)
-				message = pick("медленно садитс[ya] задницей на интрумент [P], ввод[ya] его внутрь", "осторожно вводит орган [P] в задний свой проход", "направл[ya]ет член [P] в свою шахту, помога[ya] себе рукой", "осторожно вводит ствол [P] в свою пр[ya]мую кишку", "запускает зверька [P] в свою пр[ya]мую кишку", "запускает шахтёра [P] в свои угольные шахты")
+				message = pick("Г¬ГҐГ¤Г«ГҐГ­Г­Г® Г±Г Г¤ГЁГІГ±[ya] Г§Г Г¤Г­ГЁГ¶ГҐГ© Г­Г  ГЁГ­ГІГ°ГіГ¬ГҐГ­ГІ [P], ГўГўГ®Г¤[ya] ГҐГЈГ® ГўГ­ГіГІГ°Гј", "Г®Г±ГІГ®Г°Г®Г¦Г­Г® ГўГўГ®Г¤ГЁГІ Г®Г°ГЈГ Г­ [P] Гў Г§Г Г¤Г­ГЁГ© Г±ГўГ®Г© ГЇГ°Г®ГµГ®Г¤", "Г­Г ГЇГ°Г ГўГ«[ya]ГҐГІ Г·Г«ГҐГ­ [P] Гў Г±ГўГ®Гѕ ГёГ ГµГІГі, ГЇГ®Г¬Г®ГЈГ [ya] Г±ГҐГЎГҐ Г°ГіГЄГ®Г©", "Г®Г±ГІГ®Г°Г®Г¦Г­Г® ГўГўГ®Г¤ГЁГІ Г±ГІГўГ®Г« [P] Гў Г±ГўГ®Гѕ ГЇГ°[ya]Г¬ГіГѕ ГЄГЁГёГЄГі", "Г§Г ГЇГіГ±ГЄГ ГҐГІ Г§ГўГҐГ°ГјГЄГ  [P] Гў Г±ГўГ®Гѕ ГЇГ°[ya]Г¬ГіГѕ ГЄГЁГёГЄГі", "Г§Г ГЇГіГ±ГЄГ ГҐГІ ГёГ ГµГІВёГ°Г  [P] Гў Г±ГўГ®ГЁ ГіГЈГ®Г«ГјГ­Г»ГҐ ГёГ ГµГІГ»")
 				H.lastfucked = P
 				H.lfhole = hole
 
@@ -1401,7 +1401,7 @@ MOUNT REWORKED - допилить попарно реакции на взаимодействия рас друг с другом, у
 			H.arousal += 20
 			if (H.lust >= H.resistenza)
 				H.cum(H, P)
-				message = pick("Вы чувствуете, как анальное кольцо [H] начинает резко сокращатьс[ya] вокруг вашего инструмента.", "Вы чувствуете, как сфинктер [H] крепко сжимают ваш напр[ya]жённый член, пульсиру[ya].", "Вы чувствуете, как анус [H] резко сжимаетс[ya] вокруг вашего члена.", "Вы чувствуете, как напрн[ya]гс[ya] сфинктер [H], удержива[ya] ваш член внутри пр[ya]мой кишки.", "Вы чувствуете, как мышцы сфинктера [H] сильно сжимаютс[ya] несколько раз, приближа[ya] вас к оргазму.")
+				message = pick("Г‚Г» Г·ГіГўГ±ГІГўГіГҐГІГҐ, ГЄГ ГЄ Г Г­Г Г«ГјГ­Г®ГҐ ГЄГ®Г«ГјГ¶Г® [H] Г­Г Г·ГЁГ­Г ГҐГІ Г°ГҐГ§ГЄГ® Г±Г®ГЄГ°Г Г№Г ГІГјГ±[ya] ГўГ®ГЄГ°ГіГЈ ГўГ ГёГҐГЈГ® ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІГ .", "Г‚Г» Г·ГіГўГ±ГІГўГіГҐГІГҐ, ГЄГ ГЄ Г±ГґГЁГ­ГЄГІГҐГ° [H] ГЄГ°ГҐГЇГЄГ® Г±Г¦ГЁГ¬Г ГѕГІ ГўГ Гё Г­Г ГЇГ°[ya]Г¦ВёГ­Г­Г»Г© Г·Г«ГҐГ­, ГЇГіГ«ГјГ±ГЁГ°Гі[ya].", "Г‚Г» Г·ГіГўГ±ГІГўГіГҐГІГҐ, ГЄГ ГЄ Г Г­ГіГ± [H] Г°ГҐГ§ГЄГ® Г±Г¦ГЁГ¬Г ГҐГІГ±[ya] ГўГ®ГЄГ°ГіГЈ ГўГ ГёГҐГЈГ® Г·Г«ГҐГ­Г .", "Г‚Г» Г·ГіГўГ±ГІГўГіГҐГІГҐ, ГЄГ ГЄ Г­Г ГЇГ°Г­[ya]ГЈГ±[ya] Г±ГґГЁГ­ГЄГІГҐГ° [H], ГіГ¤ГҐГ°Г¦ГЁГўГ [ya] ГўГ Гё Г·Г«ГҐГ­ ГўГ­ГіГІГ°ГЁ ГЇГ°[ya]Г¬Г®Г© ГЄГЁГёГЄГЁ.", "Г‚Г» Г·ГіГўГ±ГІГўГіГҐГІГҐ, ГЄГ ГЄ Г¬Г»ГёГ¶Г» Г±ГґГЁГ­ГЄГІГҐГ°Г  [H] Г±ГЁГ«ГјГ­Г® Г±Г¦ГЁГ¬Г ГѕГІГ±[ya] Г­ГҐГ±ГЄГ®Г«ГјГЄГ® Г°Г Г§, ГЇГ°ГЁГЎГ«ГЁГ¦Г [ya] ГўГ Г± ГЄ Г®Г°ГЈГ Г§Г¬Гі.")
 				to_chat(P, message)
 				P.lust += 15
 			else
@@ -1424,16 +1424,16 @@ MOUNT REWORKED - допилить попарно реакции на взаимодействия рас друг с другом, у
 			if (P != H)
 				switch(P.gender)
 					if("male")
-						message = pick("поглаживает пах [P] через одежду.", "поглаживает пах [P] через одежду, заставл[ya][ya] его твердеть.", "гладит инструмент [P] через одежду.", "стимулирует член [P] рукой через одежду.")
+						message = pick("ГЇГ®ГЈГ«Г Г¦ГЁГўГ ГҐГІ ГЇГ Гµ [P] Г·ГҐГ°ГҐГ§ Г®Г¤ГҐГ¦Г¤Гі.", "ГЇГ®ГЈГ«Г Г¦ГЁГўГ ГҐГІ ГЇГ Гµ [P] Г·ГҐГ°ГҐГ§ Г®Г¤ГҐГ¦Г¤Гі, Г§Г Г±ГІГ ГўГ«[ya][ya] ГҐГЈГ® ГІГўГҐГ°Г¤ГҐГІГј.", "ГЈГ«Г Г¤ГЁГІ ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІ [P] Г·ГҐГ°ГҐГ§ Г®Г¤ГҐГ¦Г¤Гі.", "Г±ГІГЁГ¬ГіГ«ГЁГ°ГіГҐГІ Г·Г«ГҐГ­ [P] Г°ГіГЄГ®Г© Г·ГҐГ°ГҐГ§ Г®Г¤ГҐГ¦Г¤Гі.")
 					if("female")
-						message = pick("поглаживает промежность [P] через одежду.", "гладит промежность [P] через одежду, провод[ya] между ног пальцами.", "гладит киску [P] через одежду.", "ласкает [P] между ног через одежду.")
+						message = pick("ГЇГ®ГЈГ«Г Г¦ГЁГўГ ГҐГІ ГЇГ°Г®Г¬ГҐГ¦Г­Г®Г±ГІГј [P] Г·ГҐГ°ГҐГ§ Г®Г¤ГҐГ¦Г¤Гі.", "ГЈГ«Г Г¤ГЁГІ ГЇГ°Г®Г¬ГҐГ¦Г­Г®Г±ГІГј [P] Г·ГҐГ°ГҐГ§ Г®Г¤ГҐГ¦Г¤Гі, ГЇГ°Г®ГўГ®Г¤[ya] Г¬ГҐГ¦Г¤Гі Г­Г®ГЈ ГЇГ Г«ГјГ¶Г Г¬ГЁ.", "ГЈГ«Г Г¤ГЁГІ ГЄГЁГ±ГЄГі [P] Г·ГҐГ°ГҐГ§ Г®Г¤ГҐГ¦Г¤Гі.", "Г«Г Г±ГЄГ ГҐГІ [P] Г¬ГҐГ¦Г¤Гі Г­Г®ГЈ Г·ГҐГ°ГҐГ§ Г®Г¤ГҐГ¦Г¤Гі.")
 				H.arousal += 10
 			else
 				switch(H.gender)
 					if("male")
-						message = pick("поглаживает свой пах через одежду.", "поглаживает свой пах через одежду, заставл[ya][ya] его твердеть.", "гладит свой инструмент через одежду.", "стимулирует свой член рукой через одежду.")
+						message = pick("ГЇГ®ГЈГ«Г Г¦ГЁГўГ ГҐГІ Г±ГўГ®Г© ГЇГ Гµ Г·ГҐГ°ГҐГ§ Г®Г¤ГҐГ¦Г¤Гі.", "ГЇГ®ГЈГ«Г Г¦ГЁГўГ ГҐГІ Г±ГўГ®Г© ГЇГ Гµ Г·ГҐГ°ГҐГ§ Г®Г¤ГҐГ¦Г¤Гі, Г§Г Г±ГІГ ГўГ«[ya][ya] ГҐГЈГ® ГІГўГҐГ°Г¤ГҐГІГј.", "ГЈГ«Г Г¤ГЁГІ Г±ГўГ®Г© ГЁГ­Г±ГІГ°ГіГ¬ГҐГ­ГІ Г·ГҐГ°ГҐГ§ Г®Г¤ГҐГ¦Г¤Гі.", "Г±ГІГЁГ¬ГіГ«ГЁГ°ГіГҐГІ Г±ГўГ®Г© Г·Г«ГҐГ­ Г°ГіГЄГ®Г© Г·ГҐГ°ГҐГ§ Г®Г¤ГҐГ¦Г¤Гі.")
 					if("female")
-						message = pick("поглаживает свою промежность через одежду.", "гладит свою промежность через одежду, провод[ya] между ног пальцами.", "гладит свою киску через одежду.", "ласкает себ[ya] между ног через одежду.")
+						message = pick("ГЇГ®ГЈГ«Г Г¦ГЁГўГ ГҐГІ Г±ГўГ®Гѕ ГЇГ°Г®Г¬ГҐГ¦Г­Г®Г±ГІГј Г·ГҐГ°ГҐГ§ Г®Г¤ГҐГ¦Г¤Гі.", "ГЈГ«Г Г¤ГЁГІ Г±ГўГ®Гѕ ГЇГ°Г®Г¬ГҐГ¦Г­Г®Г±ГІГј Г·ГҐГ°ГҐГ§ Г®Г¤ГҐГ¦Г¤Гі, ГЇГ°Г®ГўГ®Г¤[ya] Г¬ГҐГ¦Г¤Гі Г­Г®ГЈ ГЇГ Г«ГјГ¶Г Г¬ГЁ.", "ГЈГ«Г Г¤ГЁГІ Г±ГўГ®Гѕ ГЄГЁГ±ГЄГі Г·ГҐГ°ГҐГ§ Г®Г¤ГҐГ¦Г¤Гі.", "Г«Г Г±ГЄГ ГҐГІ Г±ГҐГЎ[ya] Г¬ГҐГ¦Г¤Гі Г­Г®ГЈ Г·ГҐГ°ГҐГ§ Г®Г¤ГҐГ¦Г¤Гі.")
 
 			if (H.lastfucked != P || H.lfhole != hole)
 				H.lastfucked = P
@@ -1461,7 +1461,7 @@ mob/living/carbon/human/proc/moan()
 	if(!is_muzzled())
 		if(H.species.get_bodytype() == SPECIES_HUMAN || H.species.get_bodytype() == SPECIES_SKRELL || H.species.get_bodytype() == SPECIES_HUMAN_VATBORN || H.species.get_bodytype() == SPECIES_RAPALA || H.species.get_bodytype() == SPECIES_VASILISSAN || H.species.get_bodytype() == SPECIES_AKULA || H.species.get_bodytype() == SPECIES_PROMETHEAN || H.species.get_bodytype() == SPECIES_TAJ || H.species.get_bodytype() == SPECIES_VULPKANIN || H.species.get_bodytype() == SPECIES_SERGAL || H.species.get_bodytype() == SPECIES_ZORREN_HIGH || H.species.get_bodytype() == SPECIES_ZORREN_FLAT)
 			if(prob(H.lust / H.resistenza * 65))
-				var/message = pick("постанывает", "стонет от удовольстви[ya]", "закатывает глаза", "закусывает губу", "довольно облизываетс[ya]")
+				var/message = pick("ГЇГ®Г±ГІГ Г­Г»ГўГ ГҐГІ", "Г±ГІГ®Г­ГҐГІ Г®ГІ ГіГ¤Г®ГўГ®Г«ГјГ±ГІГўГЁ[ya]", "Г§Г ГЄГ ГІГ»ГўГ ГҐГІ ГЈГ«Г Г§Г ", "Г§Г ГЄГіГ±Г»ГўГ ГҐГІ ГЈГіГЎГі", "Г¤Г®ГўГ®Г«ГјГ­Г® Г®ГЎГ«ГЁГ§Г»ГўГ ГҐГІГ±[ya]")
 				H.visible_message("<B>[H]</B> [message].")
 				var/g = H.gender == FEMALE ? "f" : "m"
 				var/moan = rand(1, 7)
@@ -1478,27 +1478,27 @@ mob/living/carbon/human/proc/moan()
 /*
 			if("Tajara")
 				if (prob(H.lust / src.resistenza * 70))
-					var/message = pick("мурлычет", "мурлычет от удовольстви[ya]", "закатывает глаза", "довольно облизываетс[ya]")
+					var/message = pick("Г¬ГіГ°Г«Г»Г·ГҐГІ", "Г¬ГіГ°Г«Г»Г·ГҐГІ Г®ГІ ГіГ¤Г®ГўГ®Г«ГјГ±ГІГўГЁ[ya]", "Г§Г ГЄГ ГІГ»ГўГ ГҐГІ ГЈГ«Г Г§Г ", "Г¤Г®ГўГ®Г«ГјГ­Г® Г®ГЎГ«ГЁГ§Г»ГўГ ГҐГІГ±[ya]")
 					H.visible_message("<B>[H]</B> [message].")
 					playsound(loc, "honk/sound/interactions/purr[rand(1, 3)].ogg", 70, 1, frequency = get_age_pitch())
 
 			if("Vulpkanin", "Sergal", "Flatland Zorren", "Highlander Zorren")
 				if (prob(H.lust / src.resistenza * 70))
-					var/message = pick("поскуливает", "поскуливает от удовольстви[ya]", "закатывает глаза", "довольно облизываетс[ya]")
+					var/message = pick("ГЇГ®Г±ГЄГіГ«ГЁГўГ ГҐГІ", "ГЇГ®Г±ГЄГіГ«ГЁГўГ ГҐГІ Г®ГІ ГіГ¤Г®ГўГ®Г«ГјГ±ГІГўГЁ[ya]", "Г§Г ГЄГ ГІГ»ГўГ ГҐГІ ГЈГ«Г Г§Г ", "Г¤Г®ГўГ®Г«ГјГ­Г® Г®ГЎГ«ГЁГ§Г»ГўГ ГҐГІГ±[ya]")
 					H.visible_message("<B>[H]</B> [message].")
 */
 		if(H.species.get_bodytype() == SPECIES_UNATHI)
 			if (prob(H.lust / H.resistenza * 65))
-				var/message = pick("довольно шипит", "извиваетс[ya] от удовольстви[ya]")
+				var/message = pick("Г¤Г®ГўГ®Г«ГјГ­Г® ГёГЁГЇГЁГІ", "ГЁГ§ГўГЁГўГ ГҐГІГ±[ya] Г®ГІ ГіГ¤Г®ГўГ®Г«ГјГ±ГІГўГЁ[ya]")
 				H.visible_message("<B>[H]</B> [message].")
 
 		if(H.species.get_bodytype() == SPECIES_TESHARI || H.species.get_bodytype() == SPECIES_VOX || H.species.get_bodytype() == SPECIES_NEVREAN)
 			if (prob(H.lust / H.resistenza * 65))
-				var/message = pick("довольно пищит", "извиваетс[ya] от удовольстви[ya]")
+				var/message = pick("Г¤Г®ГўГ®Г«ГјГ­Г® ГЇГЁГ№ГЁГІ", "ГЁГ§ГўГЁГўГ ГҐГІГ±[ya] Г®ГІ ГіГ¤Г®ГўГ®Г«ГјГ±ГІГўГЁ[ya]")
 				H.visible_message("<B>[H]</B> [message].")
 
 	else if (prob(H.lust / H.resistenza * 65))
-		var/message = pick("тихо стонет", "постанывает в тишине", "закатывает глаза от удовольстви[ya]")
+		var/message = pick("ГІГЁГµГ® Г±ГІГ®Г­ГҐГІ", "ГЇГ®Г±ГІГ Г­Г»ГўГ ГҐГІ Гў ГІГЁГёГЁГ­ГҐ", "Г§Г ГЄГ ГІГ»ГўГ ГҐГІ ГЈГ«Г Г§Г  Г®ГІ ГіГ¤Г®ГўГ®Г«ГјГ±ГІГўГЁ[ya]")
 		H.visible_message("<B>[H]</B> [message].")
 
 mob/living/carbon/human/proc/handle_lust()
@@ -1621,7 +1621,7 @@ mob/living/carbon/human/proc/dmoan()
 	if(!is_muzzled())
 		if(M.species.get_bodytype() == SPECIES_HUMAN || M.species.get_bodytype() == SPECIES_SKRELL || M.species.get_bodytype() == SPECIES_HUMAN_VATBORN || M.species.get_bodytype() == SPECIES_RAPALA || M.species.get_bodytype() == SPECIES_VASILISSAN || M.species.get_bodytype() == SPECIES_AKULA || M.species.get_bodytype() == SPECIES_PROMETHEAN || M.species.get_bodytype() == SPECIES_TAJ || M.species.get_bodytype() == SPECIES_VULPKANIN || M.species.get_bodytype() == SPECIES_SERGAL || M.species.get_bodytype() == SPECIES_ZORREN_HIGH || M.species.get_bodytype() == SPECIES_ZORREN_FLAT)
 			if (prob(M.arousal / M.resistenza * 65))
-				var/message = pick("постанывает", "стонет от удовольстви[ya]", "закатывает глаза", "довольно облизываетс[ya]")
+				var/message = pick("ГЇГ®Г±ГІГ Г­Г»ГўГ ГҐГІ", "Г±ГІГ®Г­ГҐГІ Г®ГІ ГіГ¤Г®ГўГ®Г«ГјГ±ГІГўГЁ[ya]", "Г§Г ГЄГ ГІГ»ГўГ ГҐГІ ГЈГ«Г Г§Г ", "Г¤Г®ГўГ®Г«ГјГ­Г® Г®ГЎГ«ГЁГ§Г»ГўГ ГҐГІГ±[ya]")
 				M.visible_message("<B>[M]</B> [message].")
 				var/g = M.gender == FEMALE ? "f" : "m"
 				var/moan = rand(1, 7)
@@ -1638,27 +1638,27 @@ mob/living/carbon/human/proc/dmoan()
 /*
 			if("Tajara")
 				if (prob(H.lust / src.resistenza * 70))
-					var/message = pick("мурлычет", "мурлычет от удовольстви[ya]", "закатывает глаза", "довольно облизываетс[ya]")
+					var/message = pick("Г¬ГіГ°Г«Г»Г·ГҐГІ", "Г¬ГіГ°Г«Г»Г·ГҐГІ Г®ГІ ГіГ¤Г®ГўГ®Г«ГјГ±ГІГўГЁ[ya]", "Г§Г ГЄГ ГІГ»ГўГ ГҐГІ ГЈГ«Г Г§Г ", "Г¤Г®ГўГ®Г«ГјГ­Г® Г®ГЎГ«ГЁГ§Г»ГўГ ГҐГІГ±[ya]")
 					H.visible_message("<B>[H]</B> [message].")
 					playsound(loc, "honk/sound/interactions/purr[rand(1, 3)].ogg", 70, 1, frequency = get_age_pitch())
 
 			if("Vulpkanin", "Sergal", "Flatland Zorren", "Highlander Zorren")
 				if (prob(H.lust / src.resistenza * 70))
-					var/message = pick("поскуливает", "поскуливает от удовольстви[ya]", "закатывает глаза", "довольно облизываетс[ya]")
+					var/message = pick("ГЇГ®Г±ГЄГіГ«ГЁГўГ ГҐГІ", "ГЇГ®Г±ГЄГіГ«ГЁГўГ ГҐГІ Г®ГІ ГіГ¤Г®ГўГ®Г«ГјГ±ГІГўГЁ[ya]", "Г§Г ГЄГ ГІГ»ГўГ ГҐГІ ГЈГ«Г Г§Г ", "Г¤Г®ГўГ®Г«ГјГ­Г® Г®ГЎГ«ГЁГ§Г»ГўГ ГҐГІГ±[ya]")
 					H.visible_message("<B>[H]</B> [message].")
 */
 		if(M.species.get_bodytype() == SPECIES_UNATHI)
 			if (prob(M.arousal / M.resistenza * 65))
-				var/message = pick("довольно шипит", "извиваетс[ya] от удовольстви[ya]")
+				var/message = pick("Г¤Г®ГўГ®Г«ГјГ­Г® ГёГЁГЇГЁГІ", "ГЁГ§ГўГЁГўГ ГҐГІГ±[ya] Г®ГІ ГіГ¤Г®ГўГ®Г«ГјГ±ГІГўГЁ[ya]")
 				M.visible_message("<B>[M]</B> [message].")
 
 		if(M.species.get_bodytype() == SPECIES_TESHARI || M.species.get_bodytype() == SPECIES_VOX || M.species.get_bodytype() == SPECIES_NEVREAN)
 			if (prob(M.arousal / M.resistenza * 65))
-				var/message = pick("довольно пищит", "извиваетс[ya] от удовольстви[ya]")
+				var/message = pick("Г¤Г®ГўГ®Г«ГјГ­Г® ГЇГЁГ№ГЁГІ", "ГЁГ§ГўГЁГўГ ГҐГІГ±[ya] Г®ГІ ГіГ¤Г®ГўГ®Г«ГјГ±ГІГўГЁ[ya]")
 				M.visible_message("<B>[M]</B> [message].")
 
 	else if (prob(M.arousal / M.resistenza * 65))
-		var/message = pick("тихо стонет", "постанывает в тишине", "закатывает глаза от удовольстви[ya]")
+		var/message = pick("ГІГЁГµГ® Г±ГІГ®Г­ГҐГІ", "ГЇГ®Г±ГІГ Г­Г»ГўГ ГҐГІ Гў ГІГЁГёГЁГ­ГҐ", "Г§Г ГЄГ ГІГ»ГўГ ГҐГІ ГЈГ«Г Г§Г  Г®ГІ ГіГ¤Г®ГўГ®Г«ГјГ±ГІГўГЁ[ya]")
 		M.visible_message("<B>[M]</B> [message].")
 
 /obj/item/weapon/dildo/attack(mob/living/carbon/human/M, mob/living/carbon/human/user)
@@ -1672,9 +1672,9 @@ mob/living/carbon/human/proc/dmoan()
 	if(istype(M, /mob/living/carbon/human) && user.zone_sel.selecting == "groin" && M.is_nude())
 		if (hole == "vagina" && hasvagina && M.erpcooldown == 0)
 			if (user == M)
-				message = pick("удовлетвор[ya]ет себ[ya] с помощью дилдо", "погружает дилдо в свою киску", "заталкивает дилдо в свою вагину по самые [ya]йца", "погружает дилдо в своё лоно", "трахает себ[ya] во влагалище при помощи дилдо")
+				message = pick("ГіГ¤Г®ГўГ«ГҐГІГўГ®Г°[ya]ГҐГІ Г±ГҐГЎ[ya] Г± ГЇГ®Г¬Г®Г№ГјГѕ Г¤ГЁГ«Г¤Г®", "ГЇГ®ГЈГ°ГіГ¦Г ГҐГІ Г¤ГЁГ«Г¤Г® Гў Г±ГўГ®Гѕ ГЄГЁГ±ГЄГі", "Г§Г ГІГ Г«ГЄГЁГўГ ГҐГІ Г¤ГЁГ«Г¤Г® Гў Г±ГўГ®Гѕ ГўГ ГЈГЁГ­Гі ГЇГ® Г±Г Г¬Г»ГҐ [ya]Г©Г¶Г ", "ГЇГ®ГЈГ°ГіГ¦Г ГҐГІ Г¤ГЁГ«Г¤Г® Гў Г±ГўГ®Вё Г«Г®Г­Г®", "ГІГ°Г ГµГ ГҐГІ Г±ГҐГЎ[ya] ГўГ® ГўГ«Г ГЈГ Г«ГЁГ№ГҐ ГЇГ°ГЁ ГЇГ®Г¬Г®Г№ГЁ Г¤ГЁГ«Г¤Г®")
 			else
-				message = pick("удовлетвор[ya]ет [M] с помощью дилдо", "погружает дилдо в киску [M]", "заталкивает дилдо в вагину [M] по самые [ya]йца", "погружает дилдо в лоно [M]", "трахает [M] во взагалище при помощи дилдо")
+				message = pick("ГіГ¤Г®ГўГ«ГҐГІГўГ®Г°[ya]ГҐГІ [M] Г± ГЇГ®Г¬Г®Г№ГјГѕ Г¤ГЁГ«Г¤Г®", "ГЇГ®ГЈГ°ГіГ¦Г ГҐГІ Г¤ГЁГ«Г¤Г® Гў ГЄГЁГ±ГЄГі [M]", "Г§Г ГІГ Г«ГЄГЁГўГ ГҐГІ Г¤ГЁГ«Г¤Г® Гў ГўГ ГЈГЁГ­Гі [M] ГЇГ® Г±Г Г¬Г»ГҐ [ya]Г©Г¶Г ", "ГЇГ®ГЈГ°ГіГ¦Г ГҐГІ Г¤ГЁГ«Г¤Г® Гў Г«Г®Г­Г® [M]", "ГІГ°Г ГµГ ГҐГІ [M] ГўГ® ГўГ§Г ГЈГ Г«ГЁГ№ГҐ ГЇГ°ГЁ ГЇГ®Г¬Г®Г№ГЁ Г¤ГЁГ«Г¤Г®")
 
 			if (prob(5) && M.stat != DEAD && M.stat != UNCONSCIOUS)
 				user.visible_message("<font color=purple><B>[user] [message].</B></font>")
@@ -1697,9 +1697,9 @@ mob/living/carbon/human/proc/dmoan()
 	if(istype(M, /mob/living/carbon/human) && user.zone_sel.selecting == "groin" && M.is_nude())
 		if (hole == "anus" && hasanus && M.erpcooldown == 0)
 			if (user == M)
-				message = pick("удовлетвор[ya]ет себ[ya] анально с помощью дилдо", "трахает себ[ya] в зад при помощи дилдо", "заталкивает дилдо себе в анус по самые [ya]йца", "чистит свой дымоход, использу[ya] дилдо", "месит глину в своей шахте при помощи дилдо")
+				message = pick("ГіГ¤Г®ГўГ«ГҐГІГўГ®Г°[ya]ГҐГІ Г±ГҐГЎ[ya] Г Г­Г Г«ГјГ­Г® Г± ГЇГ®Г¬Г®Г№ГјГѕ Г¤ГЁГ«Г¤Г®", "ГІГ°Г ГµГ ГҐГІ Г±ГҐГЎ[ya] Гў Г§Г Г¤ ГЇГ°ГЁ ГЇГ®Г¬Г®Г№ГЁ Г¤ГЁГ«Г¤Г®", "Г§Г ГІГ Г«ГЄГЁГўГ ГҐГІ Г¤ГЁГ«Г¤Г® Г±ГҐГЎГҐ Гў Г Г­ГіГ± ГЇГ® Г±Г Г¬Г»ГҐ [ya]Г©Г¶Г ", "Г·ГЁГ±ГІГЁГІ Г±ГўГ®Г© Г¤Г»Г¬Г®ГµГ®Г¤, ГЁГ±ГЇГ®Г«ГјГ§Гі[ya] Г¤ГЁГ«Г¤Г®", "Г¬ГҐГ±ГЁГІ ГЈГ«ГЁГ­Гі Гў Г±ГўГ®ГҐГ© ГёГ ГµГІГҐ ГЇГ°ГЁ ГЇГ®Г¬Г®Г№ГЁ Г¤ГЁГ«Г¤Г®")
 			else
-				message = pick("удовлетвор[ya]ет [M] анально с помощью дилдо", "трахает [M] в зад при помощи дилдо", "заталкивает дилдо [M] в анус по самые [ya]йца", "чистит дымоход [M], использу[ya] дилдо", "месит глину в шахте [M] при помощи дилдо")
+				message = pick("ГіГ¤Г®ГўГ«ГҐГІГўГ®Г°[ya]ГҐГІ [M] Г Г­Г Г«ГјГ­Г® Г± ГЇГ®Г¬Г®Г№ГјГѕ Г¤ГЁГ«Г¤Г®", "ГІГ°Г ГµГ ГҐГІ [M] Гў Г§Г Г¤ ГЇГ°ГЁ ГЇГ®Г¬Г®Г№ГЁ Г¤ГЁГ«Г¤Г®", "Г§Г ГІГ Г«ГЄГЁГўГ ГҐГІ Г¤ГЁГ«Г¤Г® [M] Гў Г Г­ГіГ± ГЇГ® Г±Г Г¬Г»ГҐ [ya]Г©Г¶Г ", "Г·ГЁГ±ГІГЁГІ Г¤Г»Г¬Г®ГµГ®Г¤ [M], ГЁГ±ГЇГ®Г«ГјГ§Гі[ya] Г¤ГЁГ«Г¤Г®", "Г¬ГҐГ±ГЁГІ ГЈГ«ГЁГ­Гі Гў ГёГ ГµГІГҐ [M] ГЇГ°ГЁ ГЇГ®Г¬Г®Г№ГЁ Г¤ГЁГ«Г¤Г®")
 
 			if (prob(5) && M.stat != DEAD && M.stat != UNCONSCIOUS)
 				user.visible_message("<font color=purple><B>[user] [message].</B></font>")
@@ -1722,9 +1722,9 @@ mob/living/carbon/human/proc/dmoan()
 	if(istype(M, /mob/living/carbon/human) && user.zone_sel.selecting == "mouth" && mouthfree)
 		if (hole == "mouth")
 			if (user == M)
-				message = pick("разрабатывает свою гортань при помощи дилдо", "заталкивает дилдо себе в глотку", "разрабатывает свою глотку, использу[ya] дилдо", "трахает себ[ya] в горло, использу[ya] дилдо", "заталкивает дилдо себе в глотку по самые [ya]йца", "сосёт дилдо как леденец")
+				message = pick("Г°Г Г§Г°Г ГЎГ ГІГ»ГўГ ГҐГІ Г±ГўГ®Гѕ ГЈГ®Г°ГІГ Г­Гј ГЇГ°ГЁ ГЇГ®Г¬Г®Г№ГЁ Г¤ГЁГ«Г¤Г®", "Г§Г ГІГ Г«ГЄГЁГўГ ГҐГІ Г¤ГЁГ«Г¤Г® Г±ГҐГЎГҐ Гў ГЈГ«Г®ГІГЄГі", "Г°Г Г§Г°Г ГЎГ ГІГ»ГўГ ГҐГІ Г±ГўГ®Гѕ ГЈГ«Г®ГІГЄГі, ГЁГ±ГЇГ®Г«ГјГ§Гі[ya] Г¤ГЁГ«Г¤Г®", "ГІГ°Г ГµГ ГҐГІ Г±ГҐГЎ[ya] Гў ГЈГ®Г°Г«Г®, ГЁГ±ГЇГ®Г«ГјГ§Гі[ya] Г¤ГЁГ«Г¤Г®", "Г§Г ГІГ Г«ГЄГЁГўГ ГҐГІ Г¤ГЁГ«Г¤Г® Г±ГҐГЎГҐ Гў ГЈГ«Г®ГІГЄГі ГЇГ® Г±Г Г¬Г»ГҐ [ya]Г©Г¶Г ", "Г±Г®Г±ВёГІ Г¤ГЁГ«Г¤Г® ГЄГ ГЄ Г«ГҐГ¤ГҐГ­ГҐГ¶")
 			else
-				message = pick("разрабатывает гортань [M] при помощи дилдо", "заталкивает дилдо [M] в глотку", "разрабатывает глотку [M], использу[ya] дилдо", "трахает [M] в горло при помощи дилдо", "заталкивает дилдо в глотку [M] по самые [ya]йца")
+				message = pick("Г°Г Г§Г°Г ГЎГ ГІГ»ГўГ ГҐГІ ГЈГ®Г°ГІГ Г­Гј [M] ГЇГ°ГЁ ГЇГ®Г¬Г®Г№ГЁ Г¤ГЁГ«Г¤Г®", "Г§Г ГІГ Г«ГЄГЁГўГ ГҐГІ Г¤ГЁГ«Г¤Г® [M] Гў ГЈГ«Г®ГІГЄГі", "Г°Г Г§Г°Г ГЎГ ГІГ»ГўГ ГҐГІ ГЈГ«Г®ГІГЄГі [M], ГЁГ±ГЇГ®Г«ГјГ§Гі[ya] Г¤ГЁГ«Г¤Г®", "ГІГ°Г ГµГ ГҐГІ [M] Гў ГЈГ®Г°Г«Г® ГЇГ°ГЁ ГЇГ®Г¬Г®Г№ГЁ Г¤ГЁГ«Г¤Г®", "Г§Г ГІГ Г«ГЄГЁГўГ ГҐГІ Г¤ГЁГ«Г¤Г® Гў ГЈГ«Г®ГІГЄГі [M] ГЇГ® Г±Г Г¬Г»ГҐ [ya]Г©Г¶Г ")
 
 			if (prob(5) && M.stat != DEAD && M.stat != UNCONSCIOUS)
 				user.visible_message("<font color=purple><B>[user] [message].</B></font>")
@@ -1741,9 +1741,9 @@ mob/living/carbon/human/proc/dmoan()
 			playsound(loc, "honk/sound/interactions/oral[rand(1, 2)].ogg", 70, 1, -1)
 			if (prob(pleasure))
 				M.oxyloss += 5
-				M.visible_message("<B>[M]</B> [pick("давитс[ya] <B>дилдо</B>", "задыхаетс[ya]", "корчитс[ya] в рвотном позыве")].")
+				M.visible_message("<B>[M]</B> [pick("Г¤Г ГўГЁГІГ±[ya] <B>Г¤ГЁГ«Г¤Г®</B>", "Г§Г Г¤Г»ГµГ ГҐГІГ±[ya]", "ГЄГ®Г°Г·ГЁГІГ±[ya] Гў Г°ГўГ®ГІГ­Г®Г¬ ГЇГ®Г§Г»ГўГҐ")].")
 				if (istype(M.loc, /obj/structure/closet))
-					M.visible_message("<B>[M]</B> [pick("давитс[ya] <B>дилдо</B>", "задыхаетс[ya]", "корчитс[ya] в рвотном позыве")].")
+					M.visible_message("<B>[M]</B> [pick("Г¤Г ГўГЁГІГ±[ya] <B>Г¤ГЁГ«Г¤Г®</B>", "Г§Г Г¤Г»ГµГ ГҐГІГ±[ya]", "ГЄГ®Г°Г·ГЁГІГ±[ya] Гў Г°ГўГ®ГІГ­Г®Г¬ ГЇГ®Г§Г»ГўГҐ")].")
 
 /*********************************************
 *****Switch between rot, pez-da and zhopa*****
