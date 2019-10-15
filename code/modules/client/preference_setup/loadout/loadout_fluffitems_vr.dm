@@ -81,3 +81,41 @@
 	display_name = "hip holster"
 	ckeywhitelist = list("low3")
 	character_name = list("Sonny Baker")
+
+//Ashton_Fox
+/datum/gear/fluff/ash_uniform
+	path = /obj/item/clothing/under/rank/medical/paramedic
+	display_name = "paramedic uniform"
+	ckeywhitelist = list("ashtonfox")
+	character_name = list("Hadi Amari")
+
+//Renard Queenston//
+/datum/gear/fluff/ren_guitar
+	path = /obj/item/device/instrument/musical/guitar
+	display_name = "september guitar"
+	ckeywhitelist = list("renardqueenston")
+	character_name = list("Arseny Degtyarev")
+
+/datum/gear/fluff/ren_squatcap
+	path = /obj/item/clothing/head/squatter
+	display_name = "squatter cap"
+	ckeywhitelist = list("renardqueenston")
+	character_name = list("Nadia Moskvina")
+
+/datum/gear/fluff/ren_squatteroutfit
+	path = /obj/item/clothing/under/squatter
+	display_name = "squatter outfit"
+	ckeywhitelist = list("renardqueenston")
+	character_name = list("Nadia Moskvina")
+
+/datum/gear/fluff/ren_squatshoes
+	path = /obj/item/clothing/shoes/hitops/squatter
+	display_name = "squatter shoes"
+	ckeywhitelist = list("renardqueenston")
+	character_name = list("Nadia Moskvina")
+
+/datum/gear/fluff/ren_semki
+	path = /obj/item/weapon/reagent_containers/food/renfood/semki_pack
+	display_name = "semki"
+	ckeywhitelist = list("renardqueenston")
+	character_name = list("Nadia Moskvina")
