@@ -3,6 +3,7 @@
 ***********Edits by AshtonFox & RenardQueenston************
 *******Contains a lot ammount of ERP and MEHANOYEBLYA******
 ***********************************************************/
+// При написании кода ОЧЕНЬ ВАЖНО чтобы кодировка была Windows 1251 и формат конца строк был LF.
 
 /mob/living/carbon/human/MouseDrop_T(mob/M as mob, mob/user as mob)
 	if(M == src || src == usr || M != usr)		return
@@ -273,6 +274,7 @@
 Запилитть dickrub, чтобы каждый настоящий мужчина мог посоревноваться с другим настоящим мужчиной в своём мужыцком фехтовании.
 Запилить унатхам возможность трахаться сексом в эти, как их.. Хуйные отверстия "slit".
 */
+
 /mob/living/carbon/human/proc/cum(mob/living/carbon/human/H as mob, mob/living/carbon/human/P as mob, var/hole = "floor")
 	var/ya = "&#255;"
 	var/message = ""
