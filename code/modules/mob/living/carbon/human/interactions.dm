@@ -1158,7 +1158,7 @@ MOUNT REWORKED - допилить попарно реакции на взаимодействия рас друг с другом, у
 					H.lfhole = hole
 
 	//H.Teshari + tajara
-			if(H.species.get_bodytype() == SPECIES_TESHARI && (P.species.get_bodytype() == SPECIES_TAJ || P.species.get_bodytype() == SPECIES_XENOCHIMERA))
+			if((H.species.get_bodytype() == SPECIES_TESHARI) && (P.species.get_bodytype() == SPECIES_TAJ || P.species.get_bodytype() == SPECIES_XENOCHIMERA))
 				message = pick("сношает себ[ya] в клоаку, насажива[ya]сь на покрытый шипиками огран [P]", "прыгает задом на шипастом инструменте [P], сжав клоаку", "чувственно сношает себ[ya] членом [P]")
 				if (prob(35))
 					message = pick("насаживаетс[ya] отверстием клоаки на шипастый член [P]", "неумолимо скачет на члене [P], погружа[ya] [P.identifying_gender==FEMALE ? "её" : "его"] орган в свою клоаку", "прыгает на члене [P], удар[ya][ya]сь о [P.identifying_gender==FEMALE ? "её" : "его"] тело задом", "скачет на члене, доставл[ya][ya] удовольствие себе и [P]", "[H.identifying_gender==FEMALE ? "упёрлась" : "упёрс[ya]"] тазом в [P] и елозит, держа [P.identifying_gender==FEMALE ? "её" : "его"] член внутри клоаки", "чувственно двигает тазом по-кругу, сид[ya] на шипастом инструменте [P], ласка[ya] его своим нутром", "вприпрыжку наваливаетс[ya] на [P], ласка[ya] [P.identifying_gender==FEMALE ? "её" : "его"] шипастый член стенками клоаки", "насаживаетс[ya] колечком клоаки на ствол [P], ввод[ya] [P.identifying_gender==FEMALE ? "её" : "его"] орган в кишку до упора", "двигаетс[ya] вверх-вниз, сид[ya] на покрытом шипами зверьке [P]")
