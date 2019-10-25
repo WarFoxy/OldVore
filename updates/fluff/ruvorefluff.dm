@@ -101,7 +101,7 @@
 
 /obj/item/clothing/accessory/badge/mib
 	name = "MIB badge"
-	desc = "бейдж содержащий в себе данные о нос€щем и эмблему Ћ¬„."
+	desc = "бейдж содержащий в себе данные о носящем и эмблему Ћ¬„."
 	icon = 'updates/fluff/ruvorefluff.dmi'
 	icon_state = "mibbadge"
 
@@ -116,7 +116,7 @@
 	desc = "Used for brainwashing."
 	icon = 'updates/fluff/ruvorefluff.dmi'
 	icon_state = "neuralcleaner"
-	item_state = "flashtool"
+	item_state = "neuralcleanerhand"
 	throwforce = 5
 	w_class = ITEMSIZE_SMALL
 	throw_speed = 4
@@ -130,7 +130,7 @@
 	var/halloss_per_flash = 30
 	var/break_mod = 3 // The percent to break increased by every use on the flash.
 
-	var/can_break = TRUE // Can the flash break?
+	var/can_break = FALSE // Can the flash break?
 	var/can_repair = FALSE // Can you repair the flash?
 	var/repairing = FALSE // Are we repairing right now?
 
@@ -141,7 +141,7 @@
 	var/base_icon = "neuralcleaner"
 
 	var/obj/item/weapon/cell/power_supply //What type of power cell this uses
-	var/charge_cost = 30 //How much energy is needed to flash.
+	var/charge_cost = 5 //How much energy is needed to flash.
 	var/use_external_power = FALSE // Do we use charge from an external source?
 
 	var/cell_type = /obj/item/weapon/cell/device
@@ -278,7 +278,7 @@
 	if(!check_capacitor(user))
 		return
 
-	playsound(src.loc, 'sound/weapons/flash.ogg', 100, 1)
+	playsound(src.loc, 'updates/fluff/sound/flash.ogg', 100, 1)
 	var/flashfail = 0
 
 	//VOREStation Add - NIF
@@ -339,14 +339,14 @@
 		flick("flash2", src)
 		if(!issilicon(M))
 
-			user.visible_message("<span class='disarm'>[user] brainwashes [M] with the neuralcleaner!</span>")
+			user.visible_message("<span class='disarm'>[user] brainwashes [M] with the Neuralyzer!</span>")
 		else
 
-			user.visible_message("<span class='notice'>[user] overloads [M]'s sensors with the flash!</span>")
+			user.visible_message("<span class='notice'>[user] overloads [M]'s sensors with the Neuralyzer!</span>")
 			M.Weaken(rand(5,10))
 	else
 
-		user.visible_message("<span class='notice'>[user] fails to brainwash [M] with the neuralcleaner!</span>")
+		user.visible_message("<span class='notice'>[user] fails to brainwash [M] with the Neuralyzer!</span>")
 
 	return
 
@@ -367,7 +367,7 @@
 	if(!check_capacitor(user))
 		return
 
-	playsound(src.loc, 'sound/weapons/flash.ogg', 100, 1)
+	playsound(src.loc, 'updates/fluff/sound/flash.ogg', 100, 1)
 	flick("flash2", src)
 	if(user && isrobot(user))
 		spawn(0)
@@ -402,5 +402,6 @@
 			//C.Weaken(10)
 			C.flash_eyes()
 			for(var/mob/M in viewers(C, null))
-				M.show_message("<span class='disarm'>[C] и ¬џ, забыли о последних событи€х, кто эти парни в чЄрном?</span>")
+				M.show_message("<span class='disarm'>[C] и ¬џ, забыли о последних событиях, кто эти парни в чЄрном?</span>")
 	..()
+

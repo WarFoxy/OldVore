@@ -650,6 +650,7 @@
 		var/hasvagina = (H.gender == FEMALE && H.species.genitals && H.species.name != "Stok")
 		var/hasvagina_p = (P.gender == FEMALE && P.species.genitals && P.species.name != "Stok")
 		var/hasanus_p = P.species.anus
+		var/hasanus = H.species.anus
 		var/isnude = H.is_nude()
 		var/isnude_p = P.is_nude()
 		var/ya = "&#255;"
@@ -983,194 +984,153 @@
 
 
 		else if (href_list["interaction"] == "vaglick")
-			if (H.interactcooldown <= 2)
-				if(((Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc)) && isnude_p && mouthfree && hasvagina_p && P.species.name != "Teshari")
-					H.fuck(H, P, "vaglick")
-					H.interactcooldown += 1
-				else
-					to_chat(H, "<span class='warning'>Вы слишком далеко или что-то мешает вам это сделать.</span>")
+			if(((Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc)) && isnude_p && mouthfree && hasvagina_p && P.species.name != "Teshari")
+				H.fuck(H, P, "vaglick")
 			else
-				to_chat(H, "<span class='warning'>Вы делаете это слишком часто.</span>")
+				to_chat(H, "<span class='warning'>Вы слишком далеко или что-то мешает вам это сделать.</span>")
 
 		else if (href_list["interaction"] == "facesitting")
-			if (H.interactcooldown <= 2)
-				if (H.loc == P.loc && isnude && mouthfree_p && hasvagina && H.species.name != "Teshari")
-					if (H.erpcooldown == 0)
-						H.fuck(H, P, "facesitting")
-						H.interactcooldown += 1
-					else
-						to_chat(H, "<span class='warning'>Вы всё ещё устали с прошлого раза. Нужно подождать [DisplayTimeText(H.erpcooldown * 20, TRUE)], перед тем как продолжить!</span>")
+			if (H.loc == P.loc && isnude && mouthfree_p && hasvagina && H.species.name != "Teshari")
+				if (H.erpcooldown == 0)
+					H.fuck(H, P, "facesitting")
 				else
-					to_chat(H, "<span class='warning'>Вы слишком далеко или что-то мешает вам это сделать.</span>")
+					to_chat(H, "<span class='warning'>Вы всё ещё устали с прошлого раза. Нужно подождать [DisplayTimeText(H.erpcooldown * 20, TRUE)], перед тем как продолжить!</span>")
 			else
-				to_chat(H, "<span class='warning'>Вы делаете это слишком часто.</span>")
+				to_chat(H, "<span class='warning'>Вы слишком далеко или что-то мешает вам это сделать.</span>")
 
 		else if (href_list["interaction"] == "forcelick")
-			if (H.interactcooldown <= 2)
-				if (((Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc)) && isnude && mouthfree_p && hasvagina && H.species.name != "Teshari")
-					if (H.erpcooldown == 0)
-						H.fuck(H, P, "forcelick")
-						H.interactcooldown += 1
-					else
-						to_chat(H, "<span class='warning'>Вы всё ещё устали с прошлого раза. Нужно подождать [DisplayTimeText(H.erpcooldown * 20, TRUE)], перед тем как продолжить!</span>")
+			if (((Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc)) && isnude && mouthfree_p && hasvagina && H.species.name != "Teshari")
+				if (H.erpcooldown == 0)
+					H.fuck(H, P, "forcelick")
 				else
-					to_chat(H, "<span class='warning'>Вы слишком далеко или что-то мешает вам это сделать.</span>")
+					to_chat(H, "<span class='warning'>Вы всё ещё устали с прошлого раза. Нужно подождать [DisplayTimeText(H.erpcooldown * 20, TRUE)], перед тем как продолжить!</span>")
 			else
-				to_chat(H, "<span class='warning'>Вы делаете это слишком часто.</span>")
+				to_chat(H, "<span class='warning'>Вы слишком далеко или что-то мешает вам это сделать.</span>")
 
 		else if (href_list["interaction"] == "asslick")
-			if (H.interactcooldown <= 2)
-				if(((Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc)) && isnude_p && mouthfree && hasanus_p && P.species.name != "Diona")
-					usr.visible_message("<font color=purple>[H] вылизывает анус [P].</font>")
-					H.interactcooldown += 1
-				else
-					to_chat(H, "<span class='warning'>Вы слишком далеко или что-то мешает вам это сделать.</span>")
+			if(((Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc)) && isnude_p && mouthfree && hasanus_p && P.species.name != "Diona")
+				//H.fuck(H, P, "asslick")
+				usr.visible_message("<font color=purple>[H] вылизывает анус [P].</font>")
 			else
-				to_chat(H, "<span class='warning'>Вы делаете это слишком часто.</span>")
+				to_chat(H, "<span class='warning'>Вы слишком далеко или что-то мешает вам это сделать.</span>")
 
 		else if (href_list["interaction"] == "fingering")
-			if (H.interactcooldown <= 2)
-				if(((Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc)) && isnude_p && hashands && hasvagina_p && P.species.name != "Teshari")
-					if (P == H && H.erpcooldown != 0)
-						to_chat(H, "<span class='warning'>Вы всё ещё устали с прошлого раза. Нужно подождать [DisplayTimeText(H.erpcooldown * 20, TRUE)], перед тем как продолжить!</span>")
-					else
-						H.fuck(H, P, "fingering")
-						H.interactcooldown += 1
+			if(((Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc)) && isnude_p && hashands && hasvagina_p && P.species.name != "Teshari")
+				if (P == H && H.erpcooldown != 0)
+					to_chat(H, "<span class='warning'>Вы всё ещё устали с прошлого раза. Нужно подождать [DisplayTimeText(H.erpcooldown * 20, TRUE)], перед тем как продолжить!</span>")
 				else
-					to_chat(H, "<span class='warning'>Вы слишком далеко или что-то мешает вам это сделать.</span>")
+					H.fuck(H, P, "fingering")
 			else
-				to_chat(H, "<span class='warning'>Вы делаете это слишком часто.</span>")
+				to_chat(H, "<span class='warning'>Вы слишком далеко или что-то мешает вам это сделать.</span>")
 
 		else if (href_list["interaction"] == "jerk")
-			if (H.interactcooldown <= 2)
-				if(((Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc)) && isnude_p && hashands && haspenis_p)
-					if (P.erpcooldown == 0)
-						H.fuck(H, P, "jerk")
-						H.interactcooldown += 1
-					else
-						if (P == H)
-							to_chat(H, "<span class='warning'>Вы всё ещё устали с прошлого раза. Нужно подождать [DisplayTimeText(H.erpcooldown * 20, TRUE)], перед тем как продолжить!</span>")
-						else
-							to_chat(H, "<span class='warning'>[P.identifying_gender==FEMALE ? "Она" : "Он"] всё ещё [P.identifying_gender==FEMALE ? "устала" : "устал"] с прошлого раза. Нужно подождать [DisplayTimeText(P.erpcooldown * 20, TRUE)], перед тем как продолжить!</span>")
+			if(((Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc)) && isnude_p && hashands && haspenis_p)
+				if (P.erpcooldown == 0)
+					H.fuck(H, P, "jerk")
 				else
-					to_chat(H, "<span class='warning'>Вы слишком далеко или что-то мешает вам это сделать.</span>")
+					if (P == H)
+						to_chat(H, "<span class='warning'>Вы всё ещё устали с прошлого раза. Нужно подождать [DisplayTimeText(H.erpcooldown * 20, TRUE)], перед тем как продолжить!</span>")
+					else
+						to_chat(H, "<span class='warning'>[P.identifying_gender==FEMALE ? "Она" : "Он"] всё ещё [P.identifying_gender==FEMALE ? "устала" : "устал"] с прошлого раза. Нужно подождать [DisplayTimeText(P.erpcooldown * 20, TRUE)], перед тем как продолжить!</span>")
 			else
-				to_chat(H, "<span class='warning'>Вы делаете это слишком часто.</span>")
+				to_chat(H, "<span class='warning'>Вы слишком далеко или что-то мешает вам это сделать.</span>")
 
 		else if (href_list["interaction"] == "blowjob")
-			if (H.interactcooldown <= 2)
-				if(((Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc)) && isnude_p && mouthfree && haspenis_p)
-					if (P.erpcooldown == 0)
-						H.fuck(H, P, "blowjob")
-						H.interactcooldown += 1
-					else
-						to_chat(H, "<span class='warning'>[P.identifying_gender==FEMALE ? "Она" : "Он"] всё ещё [P.identifying_gender==FEMALE ? "устала" : "устал"] с прошлого раза. Нужно подождать [DisplayTimeText(P.erpcooldown * 20, TRUE)], перед тем как продолжить!</span>")
+			if(((Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc)) && isnude_p && mouthfree && haspenis_p)
+				if (P.erpcooldown == 0)
+					H.fuck(H, P, "blowjob")
 				else
-					to_chat(H, "<span class='warning'>Вы слишком далеко или что-то мешает вам это сделать.</span>")
+					to_chat(H, "<span class='warning'>[P.identifying_gender==FEMALE ? "Она" : "Он"] всё ещё [P.identifying_gender==FEMALE ? "устала" : "устал"] с прошлого раза. Нужно подождать [DisplayTimeText(P.erpcooldown * 20, TRUE)], перед тем как продолжить!</span>")
 			else
-				to_chat(H, "<span class='warning'>Вы делаете это слишком часто.</span>")
+				to_chat(H, "<span class='warning'>Вы слишком далеко или что-то мешает вам это сделать.</span>")
 
 		else if (href_list["interaction"] == "anal")
-			if (H.interactcooldown <= 2)
-				if (((Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc)) && isnude_p && isnude && haspenis && hasanus_p && P.species.name != "Diona")
-					if (H.erpcooldown == 0)
-						if (H.potenzia > 0)
-							H.fuck(H, P, "anal")
-							H.interactcooldown += 1
-					else
-						to_chat(H, "<span class='warning'>Вы всё ещё устали с прошлого раза. Нужно подождать [DisplayTimeText(H.erpcooldown * 20, TRUE)], перед тем как продолжить!</span>")
+			if (((Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc)) && isnude_p && isnude && haspenis && hasanus_p && P.species.name != "Diona")
+				if (H.erpcooldown == 0)
+					if (H.potenzia > 0)
+						H.fuck(H, P, "anal")
 				else
-					to_chat(H, "<span class='warning'>Вы слишком далеко или что-то мешает вам это сделать.</span>")
+					to_chat(H, "<span class='warning'>Вы всё ещё устали с прошлого раза. Нужно подождать [DisplayTimeText(H.erpcooldown * 20, TRUE)], перед тем как продолжить!</span>")
 			else
-				to_chat(H, "<span class='warning'>Вы делаете это слишком часто.</span>")
+				to_chat(H, "<span class='warning'>Вы слишком далеко или что-то мешает вам это сделать.</span>")
 
 		else if (href_list["interaction"] == "vaginal")
-			if (H.interactcooldown <= 2)
-				if (((Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc)) && isnude_p && isnude && haspenis && hasvagina_p && P.species.name != "Teshari")
-					if (H.erpcooldown == 0)
-						if (H.potenzia > 0)
-							H.fuck(H, P, "vaginal")
-							H.interactcooldown += 1
-					else
-						to_chat(H, "<span class='warning'>Вы всё ещё устали с прошлого раза. Нужно подождать [DisplayTimeText(H.erpcooldown * 20, TRUE)], перед тем как продолжить!</span>")
+			if (((Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc)) && isnude_p && isnude && haspenis && hasvagina_p && P.species.name != "Teshari")
+				if (H.erpcooldown == 0)
+					if (H.potenzia > 0)
+						H.fuck(H, P, "vaginal")
 				else
-					to_chat(H, "<span class='warning'>Вы слишком далеко или что-то мешает вам это сделать.</span>")
+					to_chat(H, "<span class='warning'>Вы всё ещё устали с прошлого раза. Нужно подождать [DisplayTimeText(H.erpcooldown * 20, TRUE)], перед тем как продолжить!</span>")
 			else
-				to_chat(H, "<span class='warning'>Вы делаете это слишком часто.</span>")
+				to_chat(H, "<span class='warning'>Вы слишком далеко или что-то мешает вам это сделать.</span>")
 
 		else if (href_list["interaction"] == "oral")
-			if (H.interactcooldown <= 2)
-				if (((Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc)) && isnude && mouthfree_p && haspenis && P.species.name != "Diona")
-					if (H.erpcooldown == 0)
-						if (H.potenzia > 0)
-							H.fuck(H, P, "oral")
-							H.interactcooldown += 1
-					else
-						to_chat(H, "<span class='warning'>Вы всё ещё устали с прошлого раза. Нужно подождать [DisplayTimeText(H.erpcooldown * 20, TRUE)], перед тем как продолжить!</span>")
+			if (((Adjacent(P) && !istype(P.loc, /obj/structure/closet)) || (H.loc == P.loc)) && isnude && mouthfree_p && haspenis && P.species.name != "Diona")
+				if (H.erpcooldown == 0)
+					if (H.potenzia > 0)
+						H.fuck(H, P, "oral")
 				else
-					to_chat(H, "<span class='warning'>Вы слишком далеко или что-то мешает вам это сделать.</span>")
+					to_chat(H, "<span class='warning'>Вы всё ещё устали с прошлого раза. Нужно подождать [DisplayTimeText(H.erpcooldown * 20, TRUE)], перед тем как продолжить!</span>")
 			else
-				to_chat(H, "<span class='warning'>Вы делаете это слишком часто.</span>")
+				to_chat(H, "<span class='warning'>Вы слишком далеко или что-то мешает вам это сделать.</span>")
 
 		else if (href_list["interaction"] == "mount")
-			if (H.interactcooldown <= 2)
-				if (H.loc == P.loc && isnude && isnude_p && haspenis_p && hasvagina && H.species.name != "Teshari")
-					if (H.erpcooldown == 0)
-						if (P.erpcooldown == 0)
-							if (P.potenzia > 0)
-								H.fuck(H, P, "mount")
-								H.interactcooldown += 1
-						else
-							to_chat(H, "<span class='warning'>[P.identifying_gender==FEMALE ? "Она" : "Он"] всё ещё [P.identifying_gender==FEMALE ? "устала" : "устал"] с прошлого раза. Нужно подождать [DisplayTimeText(P.erpcooldown * 20, TRUE)], перед тем как продолжить!</span>")
-					else
-						to_chat(H, "<span class='warning'>Вы всё ещё устали с прошлого раза. Нужно подождать [DisplayTimeText(H.erpcooldown * 20, TRUE)], перед тем как продолжить!</span>")
-				else
-					to_chat(H, "<span class='warning'>Вы слишком далеко или что-то мешает вам это сделать.</span>")
-			else
-				to_chat(H, "<span class='warning'>Вы делаете это слишком часто.</span>")
-
-		else if (href_list["interaction"] == "rub")
-			if (H.interactcooldown <= 2)
-				if (H.loc == P.loc && isnude && isnude_p && haspenis_p && hasvagina && H.species.name != "Teshari")
-					if (H.erpcooldown == 0)
-						if (P.erpcooldown == 0)
-							if (P.potenzia > 0)
-								H.fuck(H, P, "rub")
-								H.interactcooldown += 1
-						else
-							to_chat(H, "<span class='warning'>[P.identifying_gender==FEMALE ? "Она" : "Он"] всё ещё [P.identifying_gender==FEMALE ? "устала" : "устал"] с прошлого раза. Нужно подождать [DisplayTimeText(P.erpcooldown * 20, TRUE)], перед тем как продолжить!</span>")
-					else
-						to_chat(H, "<span class='warning'>Вы всё ещё устали с прошлого раза. Нужно подождать [DisplayTimeText(H.erpcooldown * 20, TRUE)], перед тем как продолжить!</span>")
-				else
-					to_chat(H, "<span class='warning'>Вы слишком далеко или что-то мешает вам это сделать.</span>")
-			else
-				to_chat(H, "<span class='warning'>Вы делаете это слишком часто.</span>")
-
-		else if (href_list["interaction"] == "tribadism")
-			if (H.interactcooldown <= 2)
-				if (H.loc == P.loc && isnude && isnude_p && hasvagina_p && hasvagina && H.species.name != "Teshari")
-					if (H.erpcooldown == 0)
-						H.fuck(H, P, "tribadism")
-						H.interactcooldown += 1
-					else
-						to_chat(H, "<span class='warning'>Вы всё ещё устали с прошлого раза. Нужно подождать [DisplayTimeText(H.erpcooldown * 20, TRUE)], перед тем как продолжить!</span>")
-				else
-					to_chat(H, "<span class='warning'>Вы слишком далеко или что-то мешает вам это сделать.</span>")
-			else
-				to_chat(H, "<span class='warning'>Вы делаете это слишком часто.</span>")
-
-		else if (href_list["interaction"] == "petting")
-			if (H.interactcooldown <= 2)
-				if (Adjacent(P) && !isnude_p && (hasvagina_p || haspenis_p) && hashands && H.species.name != "Teshari")
+			if (H.loc == P.loc && isnude && isnude_p && haspenis_p && hasvagina && H.species.name != "Teshari")
+				if (H.erpcooldown == 0)
 					if (P.erpcooldown == 0)
-						H.fuck(H, P, "petting")
-						H.interactcooldown += 1
+						if (P.potenzia > 0)
+							H.fuck(H, P, "mount")
 					else
 						to_chat(H, "<span class='warning'>[P.identifying_gender==FEMALE ? "Она" : "Он"] всё ещё [P.identifying_gender==FEMALE ? "устала" : "устал"] с прошлого раза. Нужно подождать [DisplayTimeText(P.erpcooldown * 20, TRUE)], перед тем как продолжить!</span>")
 				else
-					to_chat(H, "<span class='warning'>Вы слишком далеко или что-то мешает вам это сделать.</span>")
+					to_chat(H, "<span class='warning'>Вы всё ещё устали с прошлого раза. Нужно подождать [DisplayTimeText(H.erpcooldown * 20, TRUE)], перед тем как продолжить!</span>")
 			else
-				to_chat(H, "<span class='warning'>Вы делаете это слишком часто.</span>")
+				to_chat(H, "<span class='warning'>Вы слишком далеко или что-то мешает вам это сделать.</span>")
+
+		else if (href_list["interaction"] == "rub")
+			if (H.loc == P.loc && isnude && isnude_p && haspenis_p && hasvagina && H.species.name != "Teshari")
+				if (H.erpcooldown == 0)
+					if (P.erpcooldown == 0)
+						if (P.potenzia > 0)
+							H.fuck(H, P, "rub")
+							H.interactcooldown += 1
+					else
+						to_chat(H, "<span class='warning'>[P.identifying_gender==FEMALE ? "Она" : "Он"] всё ещё [P.identifying_gender==FEMALE ? "устала" : "устал"] с прошлого раза. Нужно подождать [DisplayTimeText(P.erpcooldown * 20, TRUE)], перед тем как продолжить!</span>")
+				else
+					to_chat(H, "<span class='warning'>Вы всё ещё устали с прошлого раза. Нужно подождать [DisplayTimeText(H.erpcooldown * 20, TRUE)], перед тем как продолжить!</span>")
+			else
+				to_chat(H, "<span class='warning'>Вы слишком далеко или что-то мешает вам это сделать.</span>")
+
+		else if (href_list["interaction"] == "tribadism")
+			if (H.loc == P.loc && isnude && isnude_p && hasvagina_p && hasvagina && H.species.name != "Teshari")
+				if (H.erpcooldown == 0)
+					H.fuck(H, P, "tribadism")
+				else
+					to_chat(H, "<span class='warning'>Вы всё ещё устали с прошлого раза. Нужно подождать [DisplayTimeText(H.erpcooldown * 20, TRUE)], перед тем как продолжить!</span>")
+			else
+				to_chat(H, "<span class='warning'>Вы слишком далеко или что-то мешает вам это сделать.</span>")
+
+		else if (href_list["interaction"] == "petting")
+			if (Adjacent(P) && !isnude_p && (hasvagina_p || haspenis_p) && hashands && H.species.name != "Teshari")
+				if (P.erpcooldown == 0)
+					H.fuck(H, P, "petting")
+				else
+					to_chat(H, "<span class='warning'>[P.identifying_gender==FEMALE ? "Она" : "Он"] всё ещё [P.identifying_gender==FEMALE ? "устала" : "устал"] с прошлого раза. Нужно подождать [DisplayTimeText(P.erpcooldown * 20, TRUE)], перед тем как продолжить!</span>")
+			else
+				to_chat(H, "<span class='warning'>Вы слишком далеко или что-то мешает вам это сделать.</span>")
+
+		else if (href_list["interaction"] == "assfuck")
+			if (H.loc == P.loc && isnude && isnude_p && haspenis_p && hasanus)
+				if (H.erpcooldown == 0)
+					if (P.erpcooldown == 0)
+						if (P.potenzia > 0)
+							H.fuck(H, P, "assfuck")
+					else
+						to_chat(H, "<span class='warning'>[P.identifying_gender==FEMALE ? "Она" : "Он"] всё ещё [P.identifying_gender==FEMALE ? "устала" : "устал"] с прошлого раза. Нужно подождать [DisplayTimeText(P.erpcooldown * 20, TRUE)], перед тем как продолжить!</span>")
+				else
+					to_chat(H, "<span class='warning'>Вы всё ещё устали с прошлого раза. Нужно подождать [DisplayTimeText(H.erpcooldown * 20, TRUE)], перед тем как продолжить!</span>")
+			else
+				to_chat(H, "<span class='warning'>Вы слишком далеко или что-то мешает вам это сделать.</span>")
 
 	if (href_list["lookitem"])
 		var/obj/item/I = locate(href_list["lookitem"])

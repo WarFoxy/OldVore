@@ -18,33 +18,24 @@
 	},
 /turf/unsimulated/floor/shuttle_ceiling,
 /turf/simulated/shuttle/plating/airless/carry,
-/area/shuttle/specops/centcom{
-	base_turf = /turf/unsimulated/floor/shuttle_ceiling
-	})
+/area/shuttle/specialops/centcom)
 "af" = (
 /turf/simulated/shuttle/wall/dark{
 	join_group = "shuttle_ert"
 	},
-/area/shuttle/specops/centcom{
-	base_turf = /turf/unsimulated/floor/shuttle_ceiling
-	})
+/area/shuttle/specialops/centcom)
 "ag" = (
-/turf/unsimulated/floor/shuttle_ceiling,
-/area/centcom/specops)
-"ah" = (
-/turf/unsimulated/wall,
-/area/centcom/specops)
-"ai" = (
 /obj/structure/shuttle/engine/propulsion{
 	icon_state = "propulsion";
 	dir = 8
 	},
 /turf/unsimulated/floor/shuttle_ceiling,
 /turf/simulated/shuttle/plating/airless/carry,
-/area/shuttle/specops/centcom{
-	base_turf = /turf/unsimulated/floor/shuttle_ceiling
-	})
-"aj" = (
+/area/shuttle/specialops/centcom)
+"ah" = (
+/turf/unsimulated/wall,
+/area/centcom/specops)
+"ai" = (
 /obj/structure/shuttle/engine/heater{
 	icon_state = "heater";
 	dir = 8
@@ -53,31 +44,41 @@
 	dir = 4
 	},
 /turf/simulated/shuttle/plating/airless,
-/area/shuttle/specops/centcom{
-	base_turf = /turf/unsimulated/floor/shuttle_ceiling
-	})
+/area/shuttle/specialops/centcom)
+"aj" = (
+/obj/structure/flight_right{
+	dir = 8
+	},
+/turf/simulated/shuttle/floor{
+	icon_state = "floor_red"
+	},
+/area/shuttle/specialops/centcom)
 "ak" = (
+/obj/structure/closet/crate/freezer/rations,
+/obj/random/mre,
+/obj/random/mre,
+/obj/random/mre,
+/obj/random/mre,
+/obj/random/mre,
+/obj/random/mre,
+/obj/random/mre,
+/obj/random/mre,
 /obj/machinery/computer/security/telescreen{
 	desc = "";
 	name = "Spec. Ops. Monitor";
 	network = list("NETWORK_ERT");
 	pixel_y = 30
 	},
-/obj/machinery/computer/shuttle_control/specops,
 /turf/simulated/shuttle/floor{
 	icon_state = "floor_red"
 	},
-/area/shuttle/specops/centcom{
-	base_turf = /turf/unsimulated/floor/shuttle_ceiling
-	})
+/area/shuttle/specialops/centcom)
 "al" = (
 /obj/structure/bed/chair,
 /turf/simulated/shuttle/floor{
 	icon_state = "floor_red"
 	},
-/area/shuttle/specops/centcom{
-	base_turf = /turf/unsimulated/floor/shuttle_ceiling
-	})
+/area/shuttle/specialops/centcom)
 "am" = (
 /obj/machinery/recharger/wallcharger{
 	pixel_x = 4;
@@ -87,9 +88,7 @@
 /turf/simulated/shuttle/floor{
 	icon_state = "floor_red"
 	},
-/area/shuttle/specops/centcom{
-	base_turf = /turf/unsimulated/floor/shuttle_ceiling
-	})
+/area/shuttle/specialops/centcom)
 "an" = (
 /obj/machinery/recharger/wallcharger{
 	pixel_x = 4;
@@ -108,17 +107,13 @@
 /turf/simulated/shuttle/floor{
 	icon_state = "floor_red"
 	},
-/area/shuttle/specops/centcom{
-	base_turf = /turf/unsimulated/floor/shuttle_ceiling
-	})
+/area/shuttle/specialops/centcom)
 "ao" = (
 /turf/simulated/shuttle/wall/dark{
 	hard_corner = 1;
 	join_group = "shuttle_ert"
 	},
-/area/shuttle/specops/centcom{
-	base_turf = /turf/unsimulated/floor/shuttle_ceiling
-	})
+/area/shuttle/specialops/centcom)
 "ap" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -321,30 +316,37 @@
 	},
 /area/centcom/specops)
 "aB" = (
-/obj/structure/bed/chair{
-	dir = 4
-	},
 /obj/machinery/light{
 	icon_state = "tube1";
+	dir = 8
+	},
+/obj/machinery/computer/shuttle_control/web/specialops{
+	dir = 8;
+	icon = 'icons/obj/computer.dmi';
+	my_doors = list("specops_shuttle_fore_hatch" = "Docking Hatch");
+	my_sensors = list("shuttlesens_specops_int" = "Shuttle Interior")
+	},
+/turf/simulated/shuttle/floor{
+	icon_state = "floor_red"
+	},
+/area/shuttle/specialops/centcom)
+"aC" = (
+/obj/structure/bed/chair{
 	dir = 8
 	},
 /turf/simulated/shuttle/floor{
 	icon_state = "floor_red"
 	},
-/area/shuttle/specops/centcom{
-	base_turf = /turf/unsimulated/floor/shuttle_ceiling
-	})
-"aC" = (
+/area/shuttle/specialops/centcom)
+"aD" = (
 /turf/simulated/shuttle/floor{
 	icon_state = "floor_red"
 	},
-/area/shuttle/specops/centcom{
-	base_turf = /turf/unsimulated/floor/shuttle_ceiling
-	})
-"aD" = (
+/area/shuttle/specialops/centcom)
+"aE" = (
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
 	frequency = 1380;
-	id_tag = "specops_shuttle_fore";
+	id_tag = "specops_shuttle_hatch";
 	name = "forward docking hatch controller";
 	pixel_x = 0;
 	pixel_y = -25;
@@ -353,10 +355,8 @@
 /turf/simulated/shuttle/floor{
 	icon_state = "floor_red"
 	},
-/area/shuttle/specops/centcom{
-	base_turf = /turf/unsimulated/floor/shuttle_ceiling
-	})
-"aE" = (
+/area/shuttle/specialops/centcom)
+"aF" = (
 /obj/machinery/door/airlock/glass_external{
 	frequency = 1380;
 	icon_state = "door_locked";
@@ -365,33 +365,7 @@
 	name = "Forward Docking Hatch"
 	},
 /turf/simulated/shuttle/plating,
-/area/shuttle/specops/centcom{
-	base_turf = /turf/unsimulated/floor/shuttle_ceiling
-	})
-"aF" = (
-/obj/structure/table/rack,
-/obj/item/ammo_casing/rocket,
-/obj/item/ammo_casing/rocket,
-/obj/item/ammo_casing/rocket,
-/obj/item/ammo_casing/rocket,
-/obj/item/ammo_casing/rocket,
-/obj/item/ammo_casing/rocket,
-/obj/item/weapon/gun/launcher/rocket,
-/obj/item/weapon/gun/launcher/rocket,
-/obj/item/weapon/gun/projectile/automatic/l6_saw,
-/obj/item/weapon/gun/projectile/automatic/l6_saw,
-/obj/item/ammo_magazine/m545saw,
-/obj/item/ammo_magazine/m545saw,
-/obj/item/ammo_magazine/m545saw,
-/obj/item/ammo_magazine/m545saw,
-/obj/item/ammo_magazine/m545saw,
-/obj/item/ammo_magazine/m545saw,
-/obj/item/ammo_magazine/m545saw/ap,
-/obj/item/ammo_magazine/m545saw/ap,
-/turf/unsimulated/floor{
-	icon_state = "dark"
-	},
-/area/centcom/specops)
+/area/shuttle/specialops/centcom)
 "aG" = (
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -399,13 +373,13 @@
 /area/centcom/specops)
 "aH" = (
 /obj/structure/closet/crate/medical,
-/obj/item/stack/nanopaste,
+/obj/item/stack/nanopaste/advanced,
 /obj/item/weapon/tank/anesthetic,
 /obj/item/clothing/mask/breath/medical,
 /obj/item/clothing/mask/surgical,
 /obj/item/clothing/mask/surgical,
-/obj/item/stack/nanopaste,
-/obj/item/stack/nanopaste,
+/obj/item/stack/nanopaste/advanced,
+/obj/item/stack/nanopaste/advanced,
 /obj/item/weapon/storage/firstaid/surgery,
 /turf/unsimulated/floor{
 	icon_state = "vault";
@@ -439,33 +413,20 @@
 	},
 /area/centcom/specops)
 "aK" = (
-/obj/structure/table/reinforced,
-/obj/item/weapon/storage/firstaid/clotting,
-/obj/item/weapon/storage/firstaid/combat,
-/obj/item/weapon/storage/firstaid/combat,
-/obj/item/weapon/storage/pill_bottle/iron,
-/obj/item/weapon/storage/pill_bottle/iron,
+/obj/structure/table/rack,
 /obj/item/weapon/storage/pill_bottle/nutriment,
 /obj/item/weapon/storage/pill_bottle/nutriment,
+/obj/item/weapon/storage/pill_bottle/iron,
+/obj/item/weapon/storage/pill_bottle/iron,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 5
 	},
 /area/centcom/specops)
 "aL" = (
-/obj/structure/table/reinforced,
-/obj/item/weapon/storage/box/autoinjectors,
-/obj/item/weapon/storage/box/beakers,
-/obj/item/weapon/storage/box/gloves,
-/obj/item/weapon/storage/box/pillbottles,
-/obj/item/bodybag/cryobag,
-/obj/item/bodybag/cryobag,
-/obj/item/bodybag/cryobag,
-/obj/item/bodybag/cryobag,
-/obj/item/bodybag/cryobag,
-/obj/item/bodybag/cryobag,
-/obj/item/weapon/reagent_containers/glass/beaker/large,
-/obj/item/weapon/reagent_containers/glass/beaker/large,
+/obj/structure/table/rack,
+/obj/item/device/defib_kit/compact/combat/loaded,
+/obj/item/device/defib_kit/compact/combat/loaded,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 5
@@ -499,22 +460,17 @@
 	},
 /area/centcom/specops)
 "aP" = (
-/obj/structure/table/reinforced,
-/obj/item/weapon/reagent_containers/blood/OMinus,
-/obj/item/weapon/reagent_containers/blood/OMinus,
-/obj/item/weapon/reagent_containers/blood/OMinus,
-/obj/item/weapon/reagent_containers/blood/OMinus,
-/obj/item/weapon/reagent_containers/blood/OMinus,
-/obj/item/weapon/reagent_containers/blood/OMinus,
-/obj/item/device/defib_kit/compact/combat/loaded,
-/obj/item/device/defib_kit/compact/combat/loaded,
+/obj/structure/table/rack,
+/obj/item/weapon/gun/energy/gun/martin,
+/obj/item/weapon/gun/energy/gun/martin,
+/obj/item/device/flash,
+/obj/item/device/flash,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 5
 	},
 /area/centcom/specops)
 "aQ" = (
-/obj/machinery/computer/communications,
 /obj/item/device/radio/intercom{
 	broadcasting = 0;
 	dir = 1;
@@ -523,37 +479,30 @@
 	name = "Spec Ops Intercom";
 	pixel_y = -28
 	},
+/obj/structure/flight_left{
+	dir = 8
+	},
 /turf/simulated/shuttle/floor{
 	icon_state = "floor_red"
 	},
-/area/shuttle/specops/centcom{
-	base_turf = /turf/unsimulated/floor/shuttle_ceiling
-	})
+/area/shuttle/specialops/centcom)
 "aR" = (
+/obj/machinery/computer/communications{
+	dir = 1
+	},
+/turf/simulated/shuttle/floor{
+	icon_state = "floor_red"
+	},
+/area/shuttle/specialops/centcom)
+"aS" = (
 /obj/machinery/computer/prisoner{
+	dir = 1;
 	name = "Implant Management"
 	},
 /turf/simulated/shuttle/floor{
 	icon_state = "floor_red"
 	},
-/area/shuttle/specops/centcom{
-	base_turf = /turf/unsimulated/floor/shuttle_ceiling
-	})
-"aS" = (
-/obj/machinery/embedded_controller/radio/simple_docking_controller{
-	frequency = 1380;
-	id_tag = "specops_shuttle_port";
-	name = "port docking hatch controller";
-	pixel_x = 0;
-	pixel_y = -25;
-	tag_door = "specops_shuttle_port_hatch"
-	},
-/turf/simulated/shuttle/floor{
-	icon_state = "floor_red"
-	},
-/area/shuttle/specops/centcom{
-	base_turf = /turf/unsimulated/floor/shuttle_ceiling
-	})
+/area/shuttle/specialops/centcom)
 "aT" = (
 /obj/structure/bed/chair{
 	dir = 1
@@ -561,9 +510,7 @@
 /turf/simulated/shuttle/floor{
 	icon_state = "floor_red"
 	},
-/area/shuttle/specops/centcom{
-	base_turf = /turf/unsimulated/floor/shuttle_ceiling
-	})
+/area/shuttle/specialops/centcom)
 "aU" = (
 /obj/structure/bed/chair{
 	dir = 1
@@ -574,26 +521,17 @@
 /turf/simulated/shuttle/floor{
 	icon_state = "floor_red"
 	},
-/area/shuttle/specops/centcom{
-	base_turf = /turf/unsimulated/floor/shuttle_ceiling
-	})
+/area/shuttle/specialops/centcom)
 "aV" = (
-/obj/structure/table/rack,
-/obj/item/weapon/gun/energy/pulse_rifle,
-/obj/item/weapon/gun/energy/pulse_rifle,
-/obj/item/weapon/gun/energy/pulse_rifle,
-/obj/item/weapon/gun/energy/pulse_rifle,
-/obj/item/weapon/gun/energy/pulse_rifle,
-/obj/item/weapon/gun/energy/pulse_rifle,
-/obj/item/weapon/storage/secure/briefcase/nsfw_pack,
-/turf/unsimulated/floor{
-	icon_state = "dark"
+/obj/structure/shuttle/engine/propulsion{
+	icon_state = "burst_r";
+	dir = 8
 	},
-/area/centcom/specops)
+/turf/unsimulated/floor/shuttle_ceiling,
+/turf/simulated/shuttle/plating/airless/carry,
+/area/shuttle/specialops/centcom)
 "aW" = (
 /obj/structure/table/rack,
-/obj/item/device/flash,
-/obj/item/device/flash,
 /obj/item/clothing/accessory/storage/black_vest,
 /obj/item/clothing/accessory/storage/black_vest,
 /obj/item/clothing/accessory/storage/black_vest,
@@ -606,8 +544,6 @@
 /obj/item/clothing/accessory/storage/black_drop_pouches,
 /obj/item/clothing/accessory/storage/black_drop_pouches,
 /obj/item/clothing/accessory/storage/black_drop_pouches,
-/obj/item/weapon/gun/energy/gun/martin,
-/obj/item/weapon/gun/energy/gun/martin,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 5
@@ -748,85 +684,14 @@
 	},
 /area/centcom/specops)
 "bh" = (
-/obj/structure/shuttle/engine/propulsion{
-	icon_state = "burst_r";
-	dir = 8
+/obj/machinery/shuttle_sensor{
+	dir = 1;
+	id_tag = "shuttlesens_specops_int"
 	},
-/turf/unsimulated/floor/shuttle_ceiling,
-/turf/simulated/shuttle/plating/airless/carry,
-/area/shuttle/specops/centcom{
-	base_turf = /turf/unsimulated/floor/shuttle_ceiling
-	})
-"bi" = (
-/obj/machinery/door/airlock/glass_external{
-	frequency = 1380;
-	icon_state = "door_locked";
-	id_tag = "specops_shuttle_port_hatch";
-	locked = 1;
-	name = "Port Docking Hatch"
+/turf/simulated/shuttle/wall/dark{
+	join_group = "shuttle_ert"
 	},
-/turf/unsimulated/floor{
-	icon_state = "dark"
-	},
-/area/shuttle/specops/centcom{
-	base_turf = /turf/unsimulated/floor/shuttle_ceiling
-	})
-"bj" = (
-/obj/structure/table/rack,
-/obj/item/clothing/gloves/swat,
-/obj/item/clothing/gloves/swat,
-/obj/item/clothing/gloves/swat,
-/obj/item/clothing/gloves/swat,
-/obj/item/clothing/gloves/swat,
-/obj/item/clothing/shoes/boots/swat,
-/obj/item/clothing/shoes/boots/swat,
-/obj/item/clothing/shoes/boots/swat,
-/obj/item/clothing/shoes/boots/swat,
-/obj/item/clothing/shoes/boots/swat,
-/obj/item/clothing/shoes/boots/swat,
-/obj/item/clothing/suit/armor/swat,
-/obj/item/clothing/suit/armor/swat,
-/obj/item/clothing/suit/armor/swat,
-/obj/item/clothing/suit/armor/swat,
-/obj/item/clothing/suit/armor/swat,
-/obj/item/clothing/suit/armor/swat,
-/obj/item/clothing/mask/gas/commando{
-	name = "Commando Mask"
-	},
-/obj/item/clothing/mask/gas/commando{
-	name = "Commando Mask"
-	},
-/obj/item/clothing/mask/gas/commando{
-	name = "Commando Mask"
-	},
-/obj/item/clothing/mask/gas/commando{
-	name = "Commando Mask"
-	},
-/obj/item/clothing/mask/gas/commando{
-	name = "Commando Mask"
-	},
-/obj/item/clothing/head/helmet/space/deathsquad{
-	name = "swat helmet"
-	},
-/obj/item/clothing/head/helmet/space/deathsquad{
-	name = "swat helmet"
-	},
-/obj/item/clothing/head/helmet/space/deathsquad{
-	name = "swat helmet"
-	},
-/obj/item/clothing/head/helmet/space/deathsquad{
-	name = "swat helmet"
-	},
-/obj/item/clothing/head/helmet/space/deathsquad{
-	name = "swat helmet"
-	},
-/obj/item/clothing/head/helmet/space/deathsquad{
-	name = "swat helmet"
-	},
-/turf/unsimulated/floor{
-	icon_state = "dark"
-	},
-/area/centcom/specops)
+/area/shuttle/specialops/centcom)
 "bk" = (
 /obj/machinery/iv_drip,
 /turf/unsimulated/floor{
@@ -1020,17 +885,6 @@
 	icon_state = "dark"
 	},
 /area/centcom/specops)
-"by" = (
-/obj/machinery/door/airlock/glass_external{
-	frequency = 1380;
-	icon_state = "door_locked";
-	id_tag = "specops_centcom_dock_door";
-	locked = 1
-	},
-/turf/unsimulated/floor{
-	icon_state = "dark"
-	},
-/area/centcom/specops)
 "bz" = (
 /obj/structure/table/rack,
 /obj/item/weapon/rig/ert/assetprotection,
@@ -1038,6 +892,11 @@
 /obj/item/weapon/rig/ert/assetprotection,
 /obj/item/weapon/rig/ert/assetprotection,
 /obj/item/weapon/rig/ert/assetprotection,
+/obj/item/clothing/glasses/thermal,
+/obj/item/clothing/glasses/thermal,
+/obj/item/clothing/glasses/thermal,
+/obj/item/clothing/glasses/thermal,
+/obj/item/clothing/glasses/thermal,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -1070,10 +929,6 @@
 	pixel_y = 2
 	},
 /obj/item/weapon/storage/box/bodybags,
-/obj/item/weapon/extinguisher/mini,
-/obj/item/weapon/extinguisher/mini,
-/obj/item/weapon/extinguisher/mini,
-/obj/item/weapon/extinguisher/mini,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 5
@@ -1182,6 +1037,7 @@
 /area/centcom/specops)
 "bL" = (
 /obj/structure/closet/wardrobe/ert,
+/obj/item/modular_computer/laptop/preset/custom_loadout/elite,
 /turf/unsimulated/floor/steel{
 	icon = 'icons/turf/floors_vr.dmi';
 	icon_state = "wood"
@@ -1194,28 +1050,14 @@
 	icon_state = "wood"
 	},
 /area/centcom/specops)
-"bN" = (
-/obj/machinery/embedded_controller/radio/simple_docking_controller{
-	frequency = 1380;
-	id_tag = "specops_centcom_dock";
-	name = "docking port controller";
-	pixel_x = 0;
-	pixel_y = 25;
-	req_one_access = list(103);
-	tag_door = "specops_centcom_dock_door"
-	},
-/turf/unsimulated/floor{
-	icon_state = "vault";
-	dir = 5
-	},
-/area/centcom/specops)
 "bO" = (
 /obj/structure/sign/nanotrasen,
 /turf/unsimulated/wall,
 /area/centcom/specops)
 "bP" = (
 /obj/machinery/door/blast/regular{
-	name = "When Everything else fails."
+	name = "When Everything else fails.";
+	dir = 4
 	},
 /turf/unsimulated/floor{
 	icon_state = "dark"
@@ -1276,16 +1118,7 @@
 /area/centcom/specops)
 "bW" = (
 /obj/structure/table/reinforced,
-/obj/item/ammo_casing/nsfw_batt/combat/stun,
-/obj/item/ammo_casing/nsfw_batt/combat/stun,
-/obj/item/ammo_casing/nsfw_batt/combat/stun,
-/obj/item/ammo_casing/nsfw_batt/medical/brute2,
-/obj/item/ammo_casing/nsfw_batt/medical/burn2,
-/obj/item/ammo_casing/nsfw_batt/medical/stabilize2,
-/obj/item/ammo_casing/nsfw_batt/combat/net,
-/obj/item/ammo_casing/nsfw_batt/combat/net,
-/obj/item/ammo_magazine/nsfw_mag,
-/obj/item/weapon/gun/projectile/nsfw,
+/obj/item/weapon/storage/secure/briefcase/nsfw_pack_hybrid,
 /turf/unsimulated/floor/steel{
 	icon = 'icons/turf/floors_vr.dmi';
 	icon_state = "wood"
@@ -1366,6 +1199,8 @@
 "cf" = (
 /obj/structure/table/reinforced,
 /obj/item/device/pda/ert,
+/obj/item/device/perfect_tele,
+/obj/item/weapon/hand_tele,
 /turf/unsimulated/floor/steel{
 	icon = 'icons/turf/floors_vr.dmi';
 	icon_state = "wood"
@@ -1474,7 +1309,6 @@
 "co" = (
 /obj/structure/table/reinforced,
 /obj/item/weapon/gun/energy/gun/nuclear,
-/obj/item/weapon/hand_tele,
 /turf/unsimulated/floor/steel{
 	icon = 'icons/turf/floors_vr.dmi';
 	icon_state = "wood"
@@ -1536,6 +1370,10 @@
 	pixel_x = 1;
 	pixel_y = 9
 	},
+/obj/item/clothing/glasses/graviton,
+/obj/item/clothing/glasses/graviton,
+/obj/item/clothing/glasses/graviton,
+/obj/item/clothing/glasses/graviton,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -1662,14 +1500,7 @@
 /area/centcom/specops)
 "cy" = (
 /obj/structure/table/steel_reinforced,
-/obj/item/weapon/storage/box/survival/comp,
-/obj/item/weapon/storage/box/survival/comp,
-/obj/item/weapon/storage/box/survival/comp,
-/obj/item/weapon/storage/box/survival/comp,
-/obj/item/weapon/storage/box/survival/comp,
-/obj/item/weapon/storage/box/survival/comp,
-/obj/item/weapon/storage/box/survival/comp,
-/obj/item/weapon/storage/box/survival/comp,
+/obj/item/stack/material/phoron,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -1703,6 +1534,7 @@
 /obj/item/clothing/mask/gas,
 /obj/item/clothing/mask/gas,
 /obj/effect/floor_decal/industrial/outline/blue,
+/obj/item/weapon/storage/box/traumainjectors,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -1726,7 +1558,7 @@
 	},
 /area/centcom/specops)
 "cG" = (
-/obj/machinery/pipedispenser/disposal/orderable,
+/obj/machinery/vending/engineering,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -1762,24 +1594,6 @@
 /obj/item/weapon/grenade/chem_grenade/metalfoam,
 /obj/item/weapon/grenade/chem_grenade/metalfoam,
 /obj/item/weapon/grenade/chem_grenade/metalfoam,
-/turf/unsimulated/floor{
-	icon_state = "dark"
-	},
-/area/centcom/specops)
-"cJ" = (
-/obj/machinery/shieldgen,
-/turf/unsimulated/floor{
-	icon_state = "dark"
-	},
-/area/centcom/specops)
-"cK" = (
-/obj/machinery/portable_atmospherics/powered/scrubber,
-/turf/unsimulated/floor{
-	icon_state = "dark"
-	},
-/area/centcom/specops)
-"cL" = (
-/obj/machinery/shieldwallgen,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -1832,55 +1646,6 @@
 /area/centcom/main_hall)
 "cQ" = (
 /obj/machinery/vending/tool,
-/turf/unsimulated/floor{
-	icon_state = "dark"
-	},
-/area/centcom/specops)
-"cR" = (
-/obj/structure/table/rack,
-/obj/item/clothing/suit/armor/vest/ert/engineer,
-/obj/item/clothing/suit/armor/vest/ert/engineer,
-/obj/item/clothing/suit/armor/vest/ert/engineer,
-/obj/item/clothing/suit/armor/vest/ert/engineer,
-/obj/item/clothing/head/helmet/ert/engineer,
-/obj/item/clothing/head/helmet/ert/engineer,
-/obj/item/clothing/head/helmet/ert/engineer,
-/obj/item/clothing/head/helmet/ert/engineer,
-/obj/item/weapon/storage/backpack/ert/engineer,
-/obj/item/weapon/storage/backpack/ert/engineer,
-/obj/item/weapon/storage/backpack/ert/engineer,
-/obj/item/weapon/storage/backpack/ert/engineer,
-/turf/unsimulated/floor{
-	icon_state = "dark"
-	},
-/area/centcom/specops)
-"cS" = (
-/obj/structure/table/rack,
-/obj/item/weapon/rig/ert/engineer,
-/obj/item/weapon/rig/ert/engineer,
-/obj/item/weapon/rig/ert/engineer,
-/turf/unsimulated/floor{
-	icon_state = "dark"
-	},
-/area/centcom/specops)
-"cT" = (
-/obj/structure/table/rack,
-/obj/item/device/flash,
-/obj/item/device/flash,
-/obj/item/clothing/accessory/storage/brown_vest,
-/obj/item/clothing/accessory/storage/brown_vest,
-/obj/item/clothing/accessory/storage/brown_vest,
-/obj/item/clothing/accessory/storage/brown_vest,
-/obj/item/clothing/accessory/storage/brown_vest,
-/obj/item/clothing/accessory/storage/brown_vest,
-/obj/item/clothing/accessory/storage/brown_drop_pouches,
-/obj/item/clothing/accessory/storage/brown_drop_pouches,
-/obj/item/clothing/accessory/storage/brown_drop_pouches,
-/obj/item/clothing/accessory/storage/brown_drop_pouches,
-/obj/item/clothing/accessory/storage/brown_drop_pouches,
-/obj/item/clothing/accessory/storage/brown_drop_pouches,
-/obj/item/weapon/gun/energy/gun/martin,
-/obj/item/weapon/gun/energy/gun/martin,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -2118,9 +1883,20 @@
 /turf/unsimulated/floor/steel,
 /area/centcom/specops)
 "ds" = (
-/obj/structure/bed/roller,
+/obj/structure/table/rack,
+/obj/item/clothing/suit/armor/vest/ert/engineer,
+/obj/item/clothing/suit/armor/vest/ert/engineer,
+/obj/item/clothing/suit/armor/vest/ert/engineer,
+/obj/item/clothing/suit/armor/vest/ert/engineer,
+/obj/item/clothing/head/helmet/ert/engineer,
+/obj/item/clothing/head/helmet/ert/engineer,
+/obj/item/clothing/head/helmet/ert/engineer,
+/obj/item/clothing/head/helmet/ert/engineer,
+/obj/item/weapon/storage/backpack/ert/engineer,
+/obj/item/weapon/storage/backpack/ert/engineer,
+/obj/item/weapon/storage/backpack/ert/engineer,
+/obj/item/weapon/storage/backpack/ert/engineer,
 /turf/unsimulated/floor{
-	dir = 2;
 	icon_state = "dark"
 	},
 /area/centcom/control)
@@ -2148,13 +1924,6 @@
 /obj/structure/bed{
 	desc = "This is a bed..It says something close to the bottom 'I fuck the cat here too'."
 	},
-/turf/unsimulated/floor{
-	dir = 2;
-	icon_state = "dark"
-	},
-/area/centcom/control)
-"dx" = (
-/obj/item/weapon/storage/firstaid/combat,
 /turf/unsimulated/floor{
 	dir = 2;
 	icon_state = "dark"
@@ -3598,22 +3367,6 @@
 	name = "plating"
 	},
 /area/centcom/control)
-"gh" = (
-/obj/effect/floor_decal/corner_steel_grid,
-/turf/simulated/floor/outdoors/grass/sif/virgo3b,
-/area/centcom/evac)
-"gi" = (
-/obj/effect/floor_decal/corner_steel_grid{
-	dir = 10
-	},
-/turf/simulated/floor/outdoors/grass/sif/virgo3b,
-/area/centcom/evac)
-"gj" = (
-/obj/effect/floor_decal/corner_steel_grid{
-	dir = 8
-	},
-/turf/simulated/floor/outdoors/grass/sif/virgo3b,
-/area/centcom/evac)
 "gk" = (
 /obj/structure/table/rack,
 /obj/item/clothing/under/color/red,
@@ -3723,12 +3476,6 @@
 	},
 /turf/unsimulated/floor/steel,
 /area/centcom/control)
-"gw" = (
-/obj/effect/floor_decal/corner_steel_grid{
-	dir = 6
-	},
-/turf/simulated/floor/outdoors/grass/sif/virgo3b,
-/area/centcom/evac)
 "gx" = (
 /obj/effect/floor_decal/industrial/warning/dust/corner,
 /obj/structure/railing{
@@ -3738,14 +3485,14 @@
 	dir = 8
 	},
 /obj/machinery/light/flamp/noshade,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/unsimulated/floor/steel,
 /area/centcom/evac)
 "gy" = (
 /obj/effect/floor_decal/industrial/warning/dust,
 /obj/structure/railing{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/unsimulated/floor/steel,
 /area/centcom/evac)
 "gz" = (
 /obj/effect/floor_decal/rust,
@@ -3753,7 +3500,7 @@
 /obj/structure/railing{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/unsimulated/floor/steel,
 /area/centcom/evac)
 "gA" = (
 /obj/effect/floor_decal/industrial/warning/dust/corner{
@@ -3762,20 +3509,14 @@
 /obj/structure/railing{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/unsimulated/floor/steel,
 /area/centcom/evac)
 "gB" = (
 /obj/structure/railing{
 	dir = 1
 	},
 /obj/machinery/light/flamp/noshade,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
-/area/centcom/evac)
-"gC" = (
-/obj/effect/floor_decal/corner_steel_grid{
-	dir = 9
-	},
-/turf/simulated/floor/outdoors/grass/sif/virgo3b,
+/turf/unsimulated/floor/steel,
 /area/centcom/evac)
 "gD" = (
 /obj/machinery/recharger{
@@ -3944,16 +3685,16 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/unsimulated/floor/steel,
 /area/centcom/evac)
 "gY" = (
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/unsimulated/floor/steel,
 /area/shuttle/large_escape_pod2/centcom{
 	base_turf = /turf/simulated/floor/tiled/steel_dirty/virgo3b
 	})
 "gZ" = (
 /obj/effect/floor_decal/rust,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/unsimulated/floor/steel,
 /area/shuttle/large_escape_pod2/centcom{
 	base_turf = /turf/simulated/floor/tiled/steel_dirty/virgo3b
 	})
@@ -3961,13 +3702,13 @@
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 10
 	},
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/unsimulated/floor/steel,
 /area/centcom/evac)
 "hb" = (
 /obj/effect/floor_decal/industrial/warning/dust/corner{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/unsimulated/floor/steel,
 /area/centcom/evac)
 "hc" = (
 /obj/effect/landmark{
@@ -4122,7 +3863,7 @@
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/unsimulated/floor/steel,
 /area/centcom/evac)
 "hv" = (
 /obj/machinery/camera/network/thunder{
@@ -4310,14 +4051,8 @@
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/unsimulated/floor/steel,
 /area/centcom/evac)
-"hP" = (
-/obj/machinery/light/spot{
-	dir = 4
-	},
-/turf/simulated/floor/outdoors/grass/sif/virgo3b,
-/area/space)
 "hQ" = (
 /obj/machinery/door/airlock/centcom{
 	name = "General Access";
@@ -4382,11 +4117,11 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/unsimulated/floor/steel,
 /area/centcom/evac)
 "hZ" = (
 /obj/effect/floor_decal/corner_steel_grid/diagonal,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/unsimulated/floor/steel,
 /area/shuttle/large_escape_pod2/centcom{
 	base_turf = /turf/simulated/floor/tiled/steel_dirty/virgo3b
 	})
@@ -4710,14 +4445,14 @@
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 9
 	},
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/unsimulated/floor/steel,
 /area/centcom/evac)
 "iA" = (
 /obj/effect/floor_decal/industrial/warning/dust/corner{
 	dir = 1
 	},
 /obj/machinery/light/flamp/noshade,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/unsimulated/floor/steel,
 /area/centcom/evac)
 "iB" = (
 /obj/machinery/door/blast/regular{
@@ -4756,94 +4491,97 @@
 	dir = 8
 	},
 /obj/machinery/light/flamp/noshade,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/unsimulated/floor/steel,
 /area/centcom/evac)
 "iF" = (
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/unsimulated/floor/steel,
 /area/centcom/evac)
 "iG" = (
 /obj/effect/floor_decal/derelict/d9,
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/unsimulated/floor/steel,
 /area/centcom/evac)
 "iH" = (
 /obj/effect/floor_decal/derelict/d10,
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/unsimulated/floor/steel,
 /area/centcom/evac)
 "iI" = (
 /obj/effect/floor_decal/derelict/d11,
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/unsimulated/floor/steel,
 /area/centcom/evac)
 "iJ" = (
 /obj/effect/floor_decal/derelict/d12,
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/unsimulated/floor/steel,
 /area/centcom/evac)
 "iK" = (
 /obj/effect/floor_decal/derelict/d13,
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/unsimulated/floor/steel,
 /area/centcom/evac)
 "iL" = (
 /obj/effect/floor_decal/derelict/d14,
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/unsimulated/floor/steel,
 /area/centcom/evac)
 "iM" = (
 /obj/effect/floor_decal/derelict/d15,
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/unsimulated/floor/steel,
 /area/centcom/evac)
 "iN" = (
 /obj/effect/floor_decal/derelict/d16,
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/unsimulated/floor/steel,
 /area/centcom/evac)
 "iO" = (
 /obj/effect/floor_decal/rust,
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/unsimulated/floor/steel,
 /area/centcom/evac)
 "iP" = (
 /obj/effect/floor_decal/industrial/warning/dust/corner{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/unsimulated/floor/steel,
 /area/centcom/evac)
 "iQ" = (
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/obj/machinery/light/spot{
+	dir = 4
+	},
+/turf/unsimulated/floor/steel,
 /area/centcom/evac)
 "iR" = (
 /obj/effect/floor_decal/rust,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/unsimulated/floor/steel,
 /area/centcom/evac)
 "iS" = (
 /obj/effect/floor_decal/rust,
 /obj/effect/floor_decal/corner_steel_grid/diagonal,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/unsimulated/floor/steel,
 /area/centcom/evac)
 "iT" = (
 /obj/structure/table/rack,
@@ -5078,80 +4816,80 @@
 	dir = 8
 	},
 /obj/machinery/light/flamp/noshade,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/unsimulated/floor/steel,
 /area/centcom/evac)
 "jl" = (
 /obj/effect/floor_decal/rust/steel_decals_rusted2,
 /obj/effect/floor_decal/industrial/warning/dust,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/unsimulated/floor/steel,
 /area/centcom/evac)
 "jm" = (
 /obj/effect/floor_decal/derelict/d1,
 /obj/effect/floor_decal/industrial/warning/dust,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/unsimulated/floor/steel,
 /area/centcom/evac)
 "jn" = (
 /obj/effect/floor_decal/derelict/d2,
 /obj/effect/floor_decal/industrial/warning/dust,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/unsimulated/floor/steel,
 /area/centcom/evac)
 "jo" = (
 /obj/effect/floor_decal/derelict/d3,
 /obj/effect/floor_decal/industrial/warning/dust,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/unsimulated/floor/steel,
 /area/centcom/evac)
 "jp" = (
 /obj/effect/floor_decal/derelict/d4,
 /obj/effect/floor_decal/industrial/warning/dust,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/unsimulated/floor/steel,
 /area/centcom/evac)
 "jq" = (
 /obj/effect/floor_decal/derelict/d5,
 /obj/effect/floor_decal/industrial/warning/dust,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/unsimulated/floor/steel,
 /area/centcom/evac)
 "jr" = (
 /obj/effect/floor_decal/derelict/d6,
 /obj/effect/floor_decal/industrial/warning/dust,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/unsimulated/floor/steel,
 /area/centcom/evac)
 "js" = (
 /obj/effect/floor_decal/derelict/d7,
 /obj/effect/floor_decal/industrial/warning/dust,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/unsimulated/floor/steel,
 /area/centcom/evac)
 "jt" = (
 /obj/effect/floor_decal/derelict/d8,
 /obj/effect/floor_decal/industrial/warning/dust,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/unsimulated/floor/steel,
 /area/centcom/evac)
 "ju" = (
 /obj/effect/floor_decal/industrial/warning/dust,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/unsimulated/floor/steel,
 /area/centcom/evac)
 "jv" = (
 /obj/effect/floor_decal/rust/part_rusted3,
 /obj/effect/floor_decal/steeldecal/steel_decals6{
 	dir = 9
 	},
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/unsimulated/floor/steel,
 /area/shuttle/large_escape_pod1/centcom{
 	base_turf = /turf/simulated/floor/tiled/steel_dirty/virgo3b
 	})
 "jw" = (
 /obj/effect/floor_decal/rust/part_rusted3,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/unsimulated/floor/steel,
 /area/shuttle/large_escape_pod1/centcom{
 	base_turf = /turf/simulated/floor/tiled/steel_dirty/virgo3b
 	})
 "jx" = (
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/unsimulated/floor/steel,
 /area/shuttle/large_escape_pod1/centcom{
 	base_turf = /turf/simulated/floor/tiled/steel_dirty/virgo3b
 	})
 "jy" = (
 /obj/effect/floor_decal/rust,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/unsimulated/floor/steel,
 /area/shuttle/large_escape_pod1/centcom{
 	base_turf = /turf/simulated/floor/tiled/steel_dirty/virgo3b
 	})
@@ -5160,7 +4898,7 @@
 	dir = 8
 	},
 /obj/machinery/light/flamp/noshade,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/unsimulated/floor/steel,
 /area/centcom/evac)
 "jA" = (
 /obj/structure/table/rack,
@@ -5298,7 +5036,7 @@
 /area/centcom/security)
 "jJ" = (
 /obj/effect/floor_decal/rust/mono_rusted3,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/unsimulated/floor/steel,
 /area/shuttle/large_escape_pod1/centcom{
 	base_turf = /turf/simulated/floor/tiled/steel_dirty/virgo3b
 	})
@@ -5316,7 +5054,7 @@
 /area/centcom/security)
 "jM" = (
 /obj/effect/floor_decal/corner_steel_grid/diagonal,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/unsimulated/floor/steel,
 /area/shuttle/large_escape_pod1/centcom{
 	base_turf = /turf/simulated/floor/tiled/steel_dirty/virgo3b
 	})
@@ -5325,7 +5063,7 @@
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/unsimulated/floor/steel,
 /area/centcom/evac)
 "jO" = (
 /obj/machinery/computer/arcade,
@@ -5956,7 +5694,7 @@
 /area/centcom/security)
 "kP" = (
 /obj/effect/floor_decal/corner_steel_grid/diagonal,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/unsimulated/floor/steel,
 /area/centcom/evac)
 "kQ" = (
 /obj/machinery/door/airlock/glass_medical{
@@ -6158,14 +5896,14 @@
 	dir = 8
 	},
 /obj/machinery/light/flamp/noshade,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/unsimulated/floor/steel,
 /area/centcom/evac)
 "lj" = (
 /obj/effect/floor_decal/industrial/warning/dust{
 	dir = 1
 	},
 /obj/structure/railing,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/unsimulated/floor/steel,
 /area/centcom/evac)
 "lk" = (
 /obj/effect/floor_decal/industrial/warning/dust{
@@ -6175,7 +5913,7 @@
 	dir = 9
 	},
 /obj/structure/railing,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/unsimulated/floor/steel,
 /area/centcom/evac)
 "ll" = (
 /obj/effect/floor_decal/rust,
@@ -6183,19 +5921,19 @@
 	dir = 1
 	},
 /obj/structure/railing,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/unsimulated/floor/steel,
 /area/centcom/evac)
 "lm" = (
 /obj/effect/floor_decal/industrial/warning/dust/corner{
 	dir = 1
 	},
 /obj/structure/railing,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/unsimulated/floor/steel,
 /area/centcom/evac)
 "ln" = (
 /obj/structure/railing,
 /obj/machinery/light/flamp/noshade,
-/turf/simulated/floor/tiled/steel_dirty/virgo3b,
+/turf/unsimulated/floor/steel,
 /area/centcom/evac)
 "lo" = (
 /obj/item/weapon/stool/padded,
@@ -6455,24 +6193,6 @@
 	},
 /turf/unsimulated/floor/steel,
 /area/centcom/security)
-"lE" = (
-/obj/effect/floor_decal/corner_steel_grid{
-	dir = 4
-	},
-/turf/simulated/floor/outdoors/grass/sif/virgo3b,
-/area/centcom/evac)
-"lF" = (
-/obj/effect/floor_decal/corner_steel_grid{
-	dir = 5
-	},
-/turf/simulated/floor/outdoors/grass/sif/virgo3b,
-/area/centcom/evac)
-"lG" = (
-/obj/effect/floor_decal/corner_steel_grid{
-	dir = 1
-	},
-/turf/simulated/floor/outdoors/grass/sif/virgo3b,
-/area/centcom/evac)
 "lH" = (
 /obj/machinery/vending/snack,
 /obj/effect/floor_decal/borderfloorwhite{
@@ -7688,7 +7408,7 @@
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 1
 	},
-/obj/item/stack/nanopaste,
+/obj/item/stack/nanopaste/advanced,
 /turf/unsimulated/floor/steel{
 	icon_state = "white"
 	},
@@ -16825,6 +16545,27 @@
 	icon_state = "white"
 	},
 /area/centcom/medical)
+"DR" = (
+/obj/effect/floor_decal/corner_steel_grid{
+	dir = 10
+	},
+/turf/simulated/floor/outdoors/grass/sif/virgo3b,
+/area/space)
+"Ea" = (
+/obj/structure/table/reinforced,
+/obj/item/weapon/storage/firstaid/clotting,
+/obj/item/weapon/storage/firstaid/bonemed,
+/turf/unsimulated/floor{
+	icon_state = "vault";
+	dir = 5
+	},
+/area/centcom/specops)
+"Ei" = (
+/obj/effect/floor_decal/corner_steel_grid{
+	dir = 5
+	},
+/turf/simulated/floor/outdoors/grass/sif/virgo3b,
+/area/space)
 "Ez" = (
 /obj/structure/table/reinforced,
 /obj/item/weapon/cell/hyper,
@@ -16843,6 +16584,113 @@
 	icon_state = "dark"
 	},
 /area/centcom/specops)
+"EI" = (
+/obj/structure/table/rack,
+/obj/item/weapon/gun/launcher/rocket,
+/obj/item/weapon/gun/launcher/rocket,
+/obj/item/ammo_casing/rocket,
+/obj/item/ammo_casing/rocket,
+/obj/item/ammo_casing/rocket,
+/obj/item/ammo_casing/rocket,
+/obj/item/ammo_casing/rocket,
+/obj/item/ammo_casing/rocket,
+/obj/item/ammo_casing/rocket,
+/obj/item/ammo_casing/rocket,
+/turf/unsimulated/floor{
+	icon_state = "dark"
+	},
+/area/centcom/specops)
+"Fj" = (
+/obj/machinery/power/emitter,
+/turf/unsimulated/floor{
+	icon_state = "dark"
+	},
+/area/centcom/control)
+"Fo" = (
+/obj/structure/table/reinforced,
+/obj/item/weapon/storage/box/survival/comp{
+	starts_with = list(/obj/item/weapon/tool/prybar/red,/obj/item/clothing/glasses/goggles,/obj/item/weapon/reagent_containers/hypospray/autoinjector,/obj/item/stack/medical/bruise_pack,/obj/item/device/flashlight/glowstick,/obj/item/weapon/reagent_containers/food/snacks/candy/proteinbar,/obj/item/clothing/mask/breath,/obj/item/weapon/tank/emergency/oxygen/engi)
+	},
+/obj/item/weapon/storage/box/survival/comp{
+	starts_with = list(/obj/item/weapon/tool/prybar/red,/obj/item/clothing/glasses/goggles,/obj/item/weapon/reagent_containers/hypospray/autoinjector,/obj/item/stack/medical/bruise_pack,/obj/item/device/flashlight/glowstick,/obj/item/weapon/reagent_containers/food/snacks/candy/proteinbar,/obj/item/clothing/mask/breath,/obj/item/weapon/tank/emergency/oxygen/engi)
+	},
+/obj/item/weapon/storage/box/survival/comp{
+	starts_with = list(/obj/item/weapon/tool/prybar/red,/obj/item/clothing/glasses/goggles,/obj/item/weapon/reagent_containers/hypospray/autoinjector,/obj/item/stack/medical/bruise_pack,/obj/item/device/flashlight/glowstick,/obj/item/weapon/reagent_containers/food/snacks/candy/proteinbar,/obj/item/clothing/mask/breath,/obj/item/weapon/tank/emergency/oxygen/engi)
+	},
+/obj/item/weapon/storage/box/survival/comp{
+	starts_with = list(/obj/item/weapon/tool/prybar/red,/obj/item/clothing/glasses/goggles,/obj/item/weapon/reagent_containers/hypospray/autoinjector,/obj/item/stack/medical/bruise_pack,/obj/item/device/flashlight/glowstick,/obj/item/weapon/reagent_containers/food/snacks/candy/proteinbar,/obj/item/clothing/mask/breath,/obj/item/weapon/tank/emergency/oxygen/engi)
+	},
+/obj/item/weapon/storage/box/survival/comp{
+	starts_with = list(/obj/item/weapon/tool/prybar/red,/obj/item/clothing/glasses/goggles,/obj/item/weapon/reagent_containers/hypospray/autoinjector,/obj/item/stack/medical/bruise_pack,/obj/item/device/flashlight/glowstick,/obj/item/weapon/reagent_containers/food/snacks/candy/proteinbar,/obj/item/clothing/mask/breath,/obj/item/weapon/tank/emergency/oxygen/engi)
+	},
+/obj/item/weapon/storage/box/survival/comp{
+	starts_with = list(/obj/item/weapon/tool/prybar/red,/obj/item/clothing/glasses/goggles,/obj/item/weapon/reagent_containers/hypospray/autoinjector,/obj/item/stack/medical/bruise_pack,/obj/item/device/flashlight/glowstick,/obj/item/weapon/reagent_containers/food/snacks/candy/proteinbar,/obj/item/clothing/mask/breath,/obj/item/weapon/tank/emergency/oxygen/engi)
+	},
+/turf/unsimulated/floor{
+	icon_state = "dark"
+	},
+/area/centcom/specops)
+"FL" = (
+/obj/structure/table/rack,
+/obj/item/clothing/accessory/storage/brown_vest,
+/obj/item/clothing/accessory/storage/brown_vest,
+/obj/item/clothing/accessory/storage/brown_vest,
+/obj/item/clothing/accessory/storage/brown_vest,
+/obj/item/clothing/accessory/storage/brown_vest,
+/obj/item/clothing/accessory/storage/brown_vest,
+/obj/item/clothing/accessory/storage/brown_drop_pouches,
+/obj/item/clothing/accessory/storage/brown_drop_pouches,
+/obj/item/clothing/accessory/storage/brown_drop_pouches,
+/obj/item/clothing/accessory/storage/brown_drop_pouches,
+/obj/item/clothing/accessory/storage/brown_drop_pouches,
+/obj/item/clothing/accessory/storage/brown_drop_pouches,
+/turf/unsimulated/floor{
+	icon_state = "dark"
+	},
+/area/centcom/control)
+"Gm" = (
+/obj/structure/table/rack,
+/obj/item/weapon/rig/ert/engineer,
+/obj/item/weapon/rig/ert/engineer,
+/obj/item/weapon/rig/ert/engineer,
+/turf/unsimulated/floor{
+	icon_state = "dark"
+	},
+/area/centcom/control)
+"GG" = (
+/obj/structure/table/rack,
+/obj/item/weapon/gun/launcher/grenade,
+/obj/item/weapon/gun/launcher/grenade,
+/turf/unsimulated/floor{
+	icon_state = "dark"
+	},
+/area/centcom/specops)
+"GL" = (
+/obj/machinery/pipedispenser/disposal/orderable,
+/turf/unsimulated/floor{
+	icon_state = "dark"
+	},
+/area/centcom/control)
+"Hf" = (
+/obj/structure/table/rack,
+/obj/item/weapon/gun/energy/xray,
+/obj/item/weapon/gun/energy/xray,
+/turf/unsimulated/floor{
+	icon_state = "dark"
+	},
+/area/centcom/specops)
+"Hn" = (
+/obj/structure/reagent_dispensers/watertank,
+/turf/unsimulated/floor{
+	icon_state = "dark"
+	},
+/area/centcom/control)
+"Hs" = (
+/obj/effect/floor_decal/corner_steel_grid{
+	dir = 4
+	},
+/turf/simulated/floor/outdoors/grass/sif/virgo3b,
+/area/space)
 "Hv" = (
 /obj/machinery/telecomms/relay/preset/centcom/tether/station_mid,
 /turf/unsimulated/floor{
@@ -16855,6 +16703,61 @@
 	icon_state = "steel"
 	},
 /area/centcom/command)
+"HU" = (
+/obj/structure/table/rack,
+/obj/item/weapon/gun/energy/lasercannon,
+/obj/item/weapon/gun/energy/lasercannon,
+/turf/unsimulated/floor{
+	icon_state = "dark"
+	},
+/area/centcom/specops)
+"HY" = (
+/obj/structure/table/rack,
+/obj/item/clothing/suit/armor/swat,
+/obj/item/clothing/suit/armor/swat,
+/obj/item/clothing/suit/armor/swat,
+/obj/item/clothing/suit/armor/swat,
+/obj/item/clothing/suit/armor/swat,
+/obj/item/clothing/mask/gas/commando{
+	name = "Commando Mask"
+	},
+/obj/item/clothing/mask/gas/commando{
+	name = "Commando Mask"
+	},
+/obj/item/clothing/mask/gas/commando{
+	name = "Commando Mask"
+	},
+/obj/item/clothing/mask/gas/commando{
+	name = "Commando Mask"
+	},
+/obj/item/clothing/mask/gas/commando{
+	name = "Commando Mask"
+	},
+/obj/item/clothing/head/helmet/space/deathsquad{
+	name = "swat helmet"
+	},
+/obj/item/clothing/head/helmet/space/deathsquad{
+	name = "swat helmet"
+	},
+/obj/item/clothing/head/helmet/space/deathsquad{
+	name = "swat helmet"
+	},
+/obj/item/clothing/head/helmet/space/deathsquad{
+	name = "swat helmet"
+	},
+/obj/item/clothing/head/helmet/space/deathsquad{
+	name = "swat helmet"
+	},
+/turf/unsimulated/floor{
+	icon_state = "dark"
+	},
+/area/centcom/specops)
+"IH" = (
+/obj/machinery/shield_capacitor,
+/turf/unsimulated/floor{
+	icon_state = "dark"
+	},
+/area/centcom/control)
 "JB" = (
 /obj/machinery/telecomms/relay/preset/centcom/tether/station_low,
 /turf/unsimulated/floor{
@@ -16867,26 +16770,145 @@
 	icon_state = "dark"
 	},
 /area/centcom/specops)
-"JF" = (
-/obj/structure/reagent_dispensers/fueltank,
-/turf/unsimulated/floor{
-	icon_state = "dark"
-	},
-/area/centcom/specops)
 "JW" = (
 /obj/machinery/telecomms/relay/preset/centcom/tether/base_low,
 /turf/unsimulated/floor{
 	icon_state = "steel"
 	},
 /area/centcom/command)
+"Ka" = (
+/obj/machinery/vending/nifsoft_shop{
+	categories = 111;
+	emagged = 1;
+	name = "Hacked NIFSoft Shop";
+	prices = list()
+	},
+/turf/unsimulated/floor{
+	icon_state = "vault";
+	dir = 5
+	},
+/area/centcom/specops)
+"Kw" = (
+/obj/structure/table/reinforced,
+/obj/item/weapon/storage/firstaid/combat{
+	pixel_x = 2;
+	pixel_y = 2
+	},
+/obj/item/weapon/storage/firstaid/combat,
+/turf/unsimulated/floor{
+	icon_state = "vault";
+	dir = 5
+	},
+/area/centcom/specops)
 "Lb" = (
 /obj/machinery/telecomms/relay/preset/centcom/tether/base_high,
 /turf/unsimulated/floor{
 	icon_state = "steel"
 	},
 /area/centcom/command)
-"Nt" = (
-/obj/structure/reagent_dispensers/watertank,
+"Le" = (
+/obj/structure/table/rack,
+/obj/item/weapon/gun/energy/gun/burst,
+/obj/item/weapon/gun/energy/gun/burst,
+/turf/unsimulated/floor{
+	icon_state = "dark"
+	},
+/area/centcom/specops)
+"Lg" = (
+/obj/effect/floor_decal/corner_steel_grid{
+	dir = 9
+	},
+/turf/simulated/floor/outdoors/grass/sif/virgo3b,
+/area/space)
+"Lh" = (
+/obj/effect/floor_decal/corner_steel_grid/diagonal{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner_steel_grid/diagonal,
+/turf/unsimulated/floor/steel,
+/area/centcom/evac)
+"LD" = (
+/obj/machinery/portable_atmospherics/powered/scrubber,
+/turf/unsimulated/floor{
+	icon_state = "dark"
+	},
+/area/centcom/control)
+"LS" = (
+/obj/machinery/shieldgen,
+/turf/unsimulated/floor{
+	icon_state = "dark"
+	},
+/area/centcom/control)
+"Me" = (
+/obj/item/weapon/storage/firstaid/regular,
+/turf/unsimulated/floor{
+	dir = 2;
+	icon_state = "dark"
+	},
+/area/centcom/control)
+"Mt" = (
+/obj/structure/table/rack,
+/obj/item/weapon/extinguisher/mini,
+/obj/item/weapon/extinguisher/mini,
+/obj/item/weapon/extinguisher/mini,
+/obj/item/weapon/extinguisher/mini,
+/turf/unsimulated/floor{
+	icon_state = "vault";
+	dir = 5
+	},
+/area/centcom/specops)
+"Mw" = (
+/obj/machinery/shield_gen/external,
+/turf/unsimulated/floor{
+	icon_state = "dark"
+	},
+/area/centcom/specops)
+"Nx" = (
+/obj/structure/table/rack,
+/obj/item/weapon/plastique,
+/obj/item/weapon/plastique,
+/obj/item/weapon/plastique,
+/obj/item/weapon/plastique,
+/obj/item/weapon/plastique,
+/obj/item/weapon/plastique,
+/obj/item/weapon/plastique,
+/obj/item/weapon/plastique,
+/turf/unsimulated/floor{
+	icon_state = "dark"
+	},
+/area/centcom/specops)
+"NI" = (
+/obj/effect/floor_decal/corner_steel_grid/diagonal{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner_steel_grid/diagonal,
+/turf/simulated/floor/outdoors/grass/sif/virgo3b,
+/area/space)
+"Oc" = (
+/obj/structure/table/reinforced,
+/obj/item/weapon/reagent_containers/blood/OMinus,
+/obj/item/weapon/reagent_containers/blood/OMinus,
+/obj/item/weapon/reagent_containers/blood/OMinus,
+/obj/item/weapon/reagent_containers/blood/OMinus,
+/obj/item/weapon/reagent_containers/blood/OMinus,
+/obj/item/weapon/reagent_containers/blood/OMinus,
+/turf/unsimulated/floor{
+	icon_state = "vault";
+	dir = 5
+	},
+/area/centcom/specops)
+"Og" = (
+/obj/structure/table/rack,
+/obj/item/weapon/gun/projectile/automatic/l6_saw,
+/obj/item/weapon/gun/projectile/automatic/l6_saw,
+/obj/item/ammo_magazine/m545saw,
+/obj/item/ammo_magazine/m545saw,
+/obj/item/ammo_magazine/m545saw,
+/obj/item/ammo_magazine/m545saw,
+/obj/item/ammo_magazine/m545saw,
+/obj/item/ammo_magazine/m545saw,
+/obj/item/ammo_magazine/m545saw/ap,
+/obj/item/ammo_magazine/m545saw/ap,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -16897,10 +16919,23 @@
 	icon_state = "dark"
 	},
 /area/centcom/specops)
+"PP" = (
+/turf/unsimulated/floor{
+	icon_state = "dark"
+	},
+/area/centcom/control)
 "QB" = (
 /obj/machinery/washing_machine,
 /turf/unsimulated/floor/steel,
 /area/centcom/evac)
+"QQ" = (
+/obj/structure/table/rack,
+/obj/item/weapon/storage/secure/briefcase/nsfw_pack_hybrid_combat,
+/obj/item/weapon/storage/secure/briefcase/nsfw_pack_hybrid_combat,
+/turf/unsimulated/floor{
+	icon_state = "dark"
+	},
+/area/centcom/specops)
 "Rc" = (
 /obj/structure/table/glass,
 /obj/item/device/defib_kit/compact/loaded,
@@ -16910,7 +16945,6 @@
 /area/centcom/medical)
 "Re" = (
 /obj/structure/table/reinforced,
-/obj/item/device/perfect_tele,
 /obj/item/device/binoculars,
 /obj/item/device/survivalcapsule,
 /obj/item/device/survivalcapsule,
@@ -16924,12 +16958,92 @@
 	icon_state = "steel"
 	},
 /area/centcom/command)
+"RD" = (
+/obj/machinery/shield_capacitor,
+/turf/unsimulated/floor{
+	icon_state = "dark"
+	},
+/area/centcom/specops)
+"RE" = (
+/obj/structure/table/rack,
+/obj/item/weapon/gun/energy/pulse_rifle,
+/obj/item/weapon/gun/energy/pulse_rifle,
+/obj/item/weapon/gun/energy/pulse_rifle,
+/obj/item/weapon/gun/energy/pulse_rifle,
+/obj/item/weapon/gun/energy/pulse_rifle,
+/turf/unsimulated/floor{
+	icon_state = "dark"
+	},
+/area/centcom/specops)
+"RJ" = (
+/obj/structure/table/rack,
+/obj/item/weapon/gun/projectile/automatic/z8,
+/obj/item/weapon/gun/projectile/automatic/z8,
+/obj/item/ammo_magazine/m762,
+/obj/item/ammo_magazine/m762,
+/obj/item/ammo_magazine/m762,
+/obj/item/ammo_magazine/m762,
+/obj/item/ammo_magazine/m762,
+/obj/item/ammo_magazine/m762,
+/obj/item/ammo_magazine/m762/ap,
+/obj/item/ammo_magazine/m762/ap,
+/obj/item/ammo_magazine/m762/ap,
+/obj/item/ammo_magazine/m762/ap,
+/turf/unsimulated/floor{
+	icon_state = "dark"
+	},
+/area/centcom/specops)
+"RN" = (
+/obj/effect/floor_decal/corner_steel_grid,
+/turf/simulated/floor/outdoors/grass/sif/virgo3b,
+/area/space)
+"RY" = (
+/obj/structure/reagent_dispensers/fueltank,
+/turf/unsimulated/floor{
+	icon_state = "dark"
+	},
+/area/centcom/control)
 "Sp" = (
 /obj/machinery/telecomms/relay/preset/centcom/tether/station_high,
 /turf/unsimulated/floor{
 	icon_state = "steel"
 	},
 /area/centcom/command)
+"SP" = (
+/obj/structure/table/rack,
+/obj/item/bodybag/cryobag,
+/obj/item/bodybag/cryobag,
+/obj/item/bodybag/cryobag,
+/obj/item/bodybag/cryobag,
+/obj/item/bodybag/cryobag,
+/obj/item/bodybag/cryobag,
+/turf/unsimulated/floor{
+	icon_state = "vault";
+	dir = 5
+	},
+/area/centcom/specops)
+"Tx" = (
+/obj/machinery/autolathe{
+	desc = "Your typical Autolathe. It appears to have much more options than your regular one, however...";
+	hacked = 1;
+	name = "Unlocked Autolathe"
+	},
+/turf/unsimulated/floor{
+	icon_state = "dark"
+	},
+/area/centcom/specops)
+"TW" = (
+/obj/machinery/shield_gen,
+/turf/unsimulated/floor{
+	icon_state = "dark"
+	},
+/area/centcom/specops)
+"Uh" = (
+/obj/effect/floor_decal/corner_steel_grid{
+	dir = 8
+	},
+/turf/simulated/floor/outdoors/grass/sif/virgo3b,
+/area/space)
 "UC" = (
 /obj/structure/table/steel_reinforced,
 /obj/item/stack/cable_coil,
@@ -16940,6 +17054,48 @@
 /obj/item/stack/cable_coil,
 /turf/unsimulated/floor{
 	icon_state = "dark"
+	},
+/area/centcom/specops)
+"UO" = (
+/obj/structure/table/rack,
+/obj/item/weapon/gun/energy/gun/martin,
+/obj/item/weapon/gun/energy/gun/martin,
+/obj/item/device/flash,
+/obj/item/device/flash,
+/turf/unsimulated/floor{
+	icon_state = "dark"
+	},
+/area/centcom/control)
+"Vf" = (
+/obj/structure/table/rack,
+/obj/item/weapon/storage/box/frags,
+/obj/item/weapon/storage/box/frags,
+/obj/item/weapon/storage/box/teargas,
+/obj/item/weapon/storage/box/teargas,
+/obj/item/weapon/storage/box/empslite,
+/obj/item/weapon/storage/box/empslite,
+/turf/unsimulated/floor{
+	icon_state = "dark"
+	},
+/area/centcom/specops)
+"VU" = (
+/obj/structure/table/reinforced,
+/obj/item/weapon/reagent_containers/glass/beaker/large,
+/obj/item/weapon/reagent_containers/glass/beaker/large,
+/turf/unsimulated/floor{
+	icon_state = "vault";
+	dir = 5
+	},
+/area/centcom/specops)
+"WL" = (
+/obj/structure/table/rack,
+/obj/item/weapon/storage/box/pillbottles,
+/obj/item/weapon/storage/box/gloves,
+/obj/item/weapon/storage/box/beakers,
+/obj/item/weapon/storage/box/autoinjectors,
+/turf/unsimulated/floor{
+	icon_state = "vault";
+	dir = 5
 	},
 /area/centcom/specops)
 "Xa" = (
@@ -16960,17 +17116,43 @@
 /obj/item/weapon/smes_coil,
 /obj/item/device/t_scanner/advanced,
 /obj/item/device/t_scanner/advanced,
-/obj/item/stack/material/phoron,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
 /area/centcom/specops)
+"YE" = (
+/obj/machinery/shieldwallgen,
+/turf/unsimulated/floor{
+	icon_state = "dark"
+	},
+/area/centcom/control)
 "YM" = (
 /obj/machinery/telecomms/relay/preset/centcom/tether/sci_outpost,
 /turf/unsimulated/floor{
 	icon_state = "steel"
 	},
 /area/centcom/command)
+"YS" = (
+/obj/machinery/vending/assist,
+/turf/unsimulated/floor{
+	icon_state = "dark"
+	},
+/area/centcom/specops)
+"Zw" = (
+/obj/structure/table/rack,
+/obj/item/weapon/gun/projectile/heavysniper,
+/obj/item/weapon/storage/box/sniperammo,
+/obj/item/weapon/storage/box/sniperammo,
+/turf/unsimulated/floor{
+	icon_state = "dark"
+	},
+/area/centcom/specops)
+"ZC" = (
+/obj/effect/floor_decal/corner_steel_grid{
+	dir = 6
+	},
+/turf/simulated/floor/outdoors/grass/sif/virgo3b,
+/area/space)
 
 (1,1,1) = {"
 aa
@@ -19869,24 +20051,24 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+RN
+ZC
+ZC
+ZC
+ZC
+ZC
+ZC
+ZC
+ZC
+ZC
+ZC
+ZC
+ZC
+ZC
+ZC
+ZC
+ZC
+Hs
 ab
 ab
 ab
@@ -20011,24 +20193,24 @@ ab
 ab
 ab
 ab
-ab
-gh
-gw
-gw
-gw
-gw
-gw
-gw
-gw
-gw
-gw
-gw
-gw
-gw
-gw
-gw
-lE
-ab
+DR
+mQ
+mQ
+mQ
+mQ
+mQ
+mQ
+mQ
+mQ
+mQ
+mQ
+mQ
+mQ
+mQ
+mQ
+mQ
+mQ
+Ei
 ab
 ab
 ab
@@ -20153,8 +20335,8 @@ ab
 ab
 ab
 ab
-ab
-gi
+DR
+mQ
 gx
 gX
 gX
@@ -20169,8 +20351,8 @@ gX
 gX
 gX
 li
-lF
-ab
+mQ
+Ei
 ab
 ab
 ab
@@ -20295,8 +20477,8 @@ ab
 ab
 ab
 ab
-ab
-gi
+DR
+mQ
 gy
 gY
 gY
@@ -20311,8 +20493,8 @@ jx
 jx
 jx
 lj
-lF
-ab
+mQ
+Ei
 ab
 ab
 ab
@@ -20437,8 +20619,8 @@ ab
 ab
 ab
 ab
-ab
-gi
+DR
+mQ
 gy
 gY
 gY
@@ -20453,8 +20635,8 @@ jy
 jy
 jx
 lj
-lF
-ab
+mQ
+Ei
 ab
 ab
 ab
@@ -20579,8 +20761,8 @@ ab
 ab
 ab
 ab
-ab
-gi
+DR
+mQ
 gy
 gY
 gY
@@ -20595,8 +20777,8 @@ jx
 jx
 jx
 lj
-lF
-ab
+mQ
+Ei
 ab
 ab
 ab
@@ -20721,8 +20903,8 @@ ab
 ab
 ab
 ab
-ab
-gi
+DR
+mQ
 gy
 gY
 gY
@@ -20737,8 +20919,8 @@ jx
 jx
 jM
 lj
-lF
-ab
+mQ
+Ei
 ab
 ab
 ab
@@ -20863,8 +21045,8 @@ ab
 ab
 ab
 ab
-ab
-gi
+DR
+mQ
 gz
 gZ
 gY
@@ -20879,8 +21061,8 @@ jx
 jx
 jx
 lk
-lF
-ab
+mQ
+Ei
 ab
 ab
 ab
@@ -21005,8 +21187,8 @@ ab
 ab
 ab
 ab
-ab
-gi
+DR
+mQ
 gy
 gY
 gY
@@ -21021,8 +21203,8 @@ jx
 jx
 jx
 lj
-lF
-ab
+mQ
+Ei
 ab
 ab
 ab
@@ -21147,8 +21329,8 @@ ab
 ab
 ab
 ab
-ab
-gi
+DR
+mQ
 gy
 gY
 gY
@@ -21163,8 +21345,8 @@ jx
 jx
 jx
 lj
-lF
-ab
+mQ
+Ei
 ab
 ab
 ab
@@ -21289,8 +21471,8 @@ ab
 ab
 ab
 ab
-ab
-gi
+DR
+mQ
 gy
 gY
 gY
@@ -21305,8 +21487,8 @@ jM
 jx
 jy
 ll
-lF
-ab
+mQ
+Ei
 ab
 ab
 ab
@@ -21431,8 +21613,8 @@ ab
 ab
 ab
 ab
-ab
-gi
+DR
+mQ
 gy
 gY
 gZ
@@ -21447,8 +21629,8 @@ jx
 jx
 jx
 lj
-lF
-ab
+mQ
+Ei
 ab
 ab
 ab
@@ -21573,8 +21755,8 @@ ab
 ab
 ab
 ab
-ab
-gi
+DR
+mQ
 gy
 gY
 gY
@@ -21589,8 +21771,8 @@ jx
 jx
 jx
 lj
-lF
-ab
+mQ
+Ei
 ab
 ab
 ab
@@ -21715,8 +21897,8 @@ ab
 ab
 ab
 ab
-ab
-gi
+DR
+mQ
 gy
 gY
 gY
@@ -21731,8 +21913,8 @@ jx
 jx
 jM
 lj
-lF
-ab
+mQ
+Ei
 ab
 ab
 ab
@@ -21857,8 +22039,8 @@ ab
 ab
 ab
 ab
-ab
-gi
+DR
+mQ
 gA
 ha
 gY
@@ -21873,8 +22055,8 @@ jx
 jx
 iz
 lm
-lF
-ab
+mQ
+Ei
 ab
 ab
 ab
@@ -21999,24 +22181,24 @@ ab
 ab
 ab
 ab
-ab
-gi
+DR
+mQ
 gB
 hb
 hu
 hO
 hu
 iA
-iQ
-iQ
+nm
+nm
 jz
 hu
 jN
 hu
 iP
 ln
-lF
-ab
+mQ
+Ei
 ab
 ab
 ab
@@ -22141,24 +22323,24 @@ ab
 ab
 ab
 ab
-ab
-gj
-gC
-gC
-gC
-gC
-gC
-gC
-iQ
-iQ
-gC
-gC
-gC
-gC
-gC
-gC
-lG
-ab
+DR
+mQ
+mQ
+mQ
+mQ
+mQ
+mQ
+mQ
+nm
+nm
+mQ
+mQ
+mQ
+mQ
+mQ
+mQ
+mQ
+Ei
 ab
 ab
 ab
@@ -22283,25 +22465,25 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-iQ
-iQ
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+Uh
+Lg
+Lg
+Lg
+mQ
+nm
+nm
+nO
+nm
+nm
+mQ
+NI
+mQ
+mQ
+mQ
+mQ
+mQ
+mQ
+mQ
 mQ
 mQ
 mQ
@@ -22429,21 +22611,21 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-iQ
-iQ
-ab
-ab
-ab
-iQ
-iQ
+mR
+Lh
+Lh
+mR
+nm
+nm
+mQ
+mQ
+mQ
+nm
+nm
 iR
-iQ
-iQ
-iQ
+nm
+nm
+nm
 mQ
 nk
 nm
@@ -22571,21 +22753,21 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
+mR
+Lh
+Lh
+mR
 iR
-iQ
-iQ
-iQ
+nm
+nm
+nm
 iR
-iQ
-iQ
-iQ
-iQ
-iQ
-iQ
+nm
+nm
+nm
+nm
+nm
+nm
 mR
 nl
 nl
@@ -22713,21 +22895,21 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
+mQ
+nm
+nm
+nO
 iS
 iQ
-iQ
-iQ
-iQ
-iQ
+nm
+nm
+nm
+nm
 kP
-iQ
-iQ
-iQ
-iQ
+nm
+nm
+nm
+nm
 mR
 nl
 nl
@@ -22855,21 +23037,21 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+mQ
+nn
+nn
+mQ
+mQ
+mQ
+mQ
+mQ
+mQ
+nm
+nm
 iQ
-iQ
-iQ
-iQ
+nm
 iR
-iQ
+nm
 mQ
 nm
 nm
@@ -22997,21 +23179,21 @@ ab
 ab
 ab
 ab
-ab
-hP
-ab
-ab
-ab
-ab
-ab
-ab
-hP
+mQ
+no
+no
+mQ
 ab
 ab
 ab
 ab
-ab
-ab
+mQ
+mQ
+mQ
+mQ
+mQ
+mQ
+mQ
 mQ
 nn
 nn
@@ -23139,10 +23321,10 @@ ac
 ac
 ac
 ac
-ac
-ac
-ac
-ac
+mQ
+mQ
+mQ
+mQ
 ac
 ac
 ac
@@ -28363,14 +28545,14 @@ ac
 ac
 ac
 ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
+ah
+ah
+ah
+ah
+ah
+ah
+ah
+ah
 ac
 ac
 ac
@@ -28505,14 +28687,14 @@ ac
 ac
 ac
 ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
+ah
+HU
+bP
+aG
+aG
+bP
+Le
+ah
 ac
 ac
 ac
@@ -28647,14 +28829,14 @@ ac
 ac
 ac
 ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
+ah
+Hf
+bP
+aG
+aG
+bP
+Nx
+ah
 ac
 ac
 ac
@@ -28789,14 +28971,14 @@ ac
 ac
 ac
 ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
+ah
+ah
+ah
+aG
+aG
+ah
+ah
+ah
 ac
 ac
 ac
@@ -28931,14 +29113,14 @@ ac
 ac
 ac
 ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
+ah
+Zw
+bP
+aG
+aG
+bP
+GG
+ah
 ac
 ac
 ac
@@ -29073,14 +29255,14 @@ ac
 ac
 ac
 ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
+ah
+RJ
+bP
+aG
+aG
+bP
+Vf
+ah
 ac
 ac
 ac
@@ -29215,14 +29397,14 @@ ac
 ac
 ac
 ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
+ah
+ah
+ah
+aG
+aG
+ah
+ah
+ah
 ac
 ac
 ac
@@ -29357,14 +29539,14 @@ ac
 ac
 ac
 ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
+ah
+Og
+bP
+aG
+aG
+bP
+QQ
+ah
 ac
 ac
 ac
@@ -29499,14 +29681,14 @@ ac
 ac
 ac
 ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
+ah
+EI
+bP
+aG
+aG
+bP
+RE
+ah
 ac
 ac
 ac
@@ -29641,11 +29823,11 @@ ac
 ac
 ac
 ac
-ac
-ac
 ah
 ah
 ah
+aG
+aG
 ah
 ah
 ah
@@ -29783,14 +29965,14 @@ ac
 ac
 ac
 ac
-ac
-ac
 ah
-aF
-aV
-bj
 bz
-bO
+bP
+aG
+aG
+aG
+aG
+bP
 aX
 aX
 aX
@@ -29925,9 +30107,9 @@ ac
 ac
 ac
 ac
-ac
-ac
 ah
+HY
+bP
 aG
 aG
 aG
@@ -30067,14 +30249,14 @@ ac
 ac
 ac
 ac
-ac
-ac
 ah
 ah
 ah
 ah
 ah
 ah
+ah
+bO
 aX
 aX
 aX
@@ -30209,10 +30391,10 @@ ac
 ac
 ac
 ac
-ac
-ac
 ah
 aH
+aX
+bB
 aW
 bk
 bA
@@ -30222,7 +30404,7 @@ aX
 ce
 ah
 cp
-cw
+YS
 cG
 cQ
 dm
@@ -30351,10 +30533,10 @@ ac
 ac
 ac
 ac
-ac
-ac
 ah
 aI
+aX
+aX
 aX
 aX
 aX
@@ -30366,9 +30548,9 @@ cg
 aG
 aG
 aG
-cR
-dm
-ds
+aG
+UO
+PP
 ds
 dm
 ew
@@ -30493,25 +30675,25 @@ ac
 ac
 ac
 ac
-ac
-ac
 ah
 aJ
 aX
-bl
-bB
+Mt
+aX
+aO
+Kw
 bQ
 aX
 aX
 aX
 cg
-Nt
-JF
+cH
+cU
 aG
-cS
-dm
-dt
-dt
+aG
+PP
+PP
+Gm
 dm
 dm
 dm
@@ -30635,9 +30817,9 @@ ac
 ac
 ac
 ac
-ac
-ac
 ah
+Ea
+aX
 aK
 aX
 bm
@@ -30647,13 +30829,13 @@ aX
 aX
 aX
 cg
+cI
+cV
 aG
 aG
-aG
-cT
-dm
-dt
-dt
+PP
+PP
+FL
 dm
 ev
 eR
@@ -30777,9 +30959,9 @@ ac
 ac
 ac
 ac
-ac
-ac
 ah
+VU
+aX
 aL
 aX
 bn
@@ -30791,11 +30973,11 @@ aX
 cg
 UC
 cx
-cH
-cU
-dm
-dt
-dt
+aG
+cw
+GL
+Hn
+RY
 dm
 ew
 eS
@@ -30919,10 +31101,10 @@ ac
 ac
 ac
 ac
-ac
-ac
 ah
 aM
+aX
+SP
 aX
 bo
 bE
@@ -30933,11 +31115,11 @@ aX
 cg
 XA
 cy
-cI
-cV
-dm
-du
-dt
+aG
+RD
+IH
+LS
+LS
 dm
 dm
 dm
@@ -31061,10 +31243,10 @@ ac
 ac
 ac
 ac
-ac
-ac
 ah
 aN
+aX
+WL
 aX
 bp
 bF
@@ -31073,14 +31255,14 @@ aX
 aX
 aX
 cg
-OD
-cz
-cJ
-cJ
+aG
+aG
+aG
+aG
+Fj
+LD
+LD
 dm
-dv
-dt
-ej
 ev
 eR
 fg
@@ -31203,10 +31385,10 @@ ac
 ac
 ac
 ac
-ac
-ac
 ah
-aO
+bl
+aX
+aX
 aX
 aX
 aX
@@ -31215,13 +31397,13 @@ aX
 aX
 aX
 cg
+TW
+Mw
 Xa
-cA
-cK
-cK
-dm
-dw
-dt
+cz
+Fj
+YE
+YE
 dm
 ex
 eS
@@ -31345,9 +31527,9 @@ ac
 ac
 ac
 ac
-ac
-ac
 ah
+Oc
+aX
 aP
 aY
 bq
@@ -31358,15 +31540,15 @@ aX
 ce
 ah
 JC
+OD
 cA
-cL
-cL
-dm
-dx
-dt
+cA
 dm
 dm
 dm
+dm
+dm
+ej
 dm
 dm
 em
@@ -31487,7 +31669,6 @@ ac
 ac
 ac
 ac
-ac
 ah
 ah
 ah
@@ -31495,7 +31676,8 @@ ah
 ah
 ah
 ah
-aX
+ah
+Ka
 aX
 aX
 ah
@@ -31506,7 +31688,7 @@ ah
 dm
 dy
 dt
-dt
+Me
 dt
 dt
 fi
@@ -31647,9 +31829,9 @@ cM
 cW
 dm
 dy
-dt
-dt
-dt
+dv
+dw
+du
 eT
 fi
 dm
@@ -31926,7 +32108,7 @@ aX
 aX
 ch
 aG
-aG
+Fo
 aG
 cY
 dm
@@ -32476,12 +32658,12 @@ ac
 ac
 ac
 ac
-ac
-ac
-ac
-ac
-ac
-ac
+ah
+ah
+ah
+ah
+ah
+ah
 ah
 aw
 aG
@@ -32618,12 +32800,12 @@ ac
 ac
 ac
 ac
-ac
-ac
-ac
-ac
-ac
-ac
+ah
+ae
+ag
+ag
+ag
+aV
 ah
 av
 aG
@@ -32760,12 +32942,12 @@ ac
 ac
 ac
 ac
-ac
-ac
-ac
-ac
-ac
-ac
+ah
+af
+ai
+ai
+ai
+af
 ah
 ax
 aG
@@ -32902,12 +33084,12 @@ ac
 ac
 ac
 ac
-ac
-ac
-ac
-ac
-ac
-ac
+ah
+af
+aj
+aB
+aQ
+af
 ah
 ay
 aG
@@ -32920,7 +33102,7 @@ aX
 aX
 ch
 aG
-aG
+Tx
 aG
 df
 dm
@@ -33044,12 +33226,12 @@ ac
 ac
 ac
 ac
-ac
-ac
-ac
-ac
-ac
-ac
+ah
+af
+ak
+aC
+aR
+af
 ah
 az
 aG
@@ -33186,12 +33368,12 @@ ac
 ac
 ac
 ac
-ac
-ac
-ac
-ac
-ac
-ac
+ah
+af
+al
+aD
+aS
+af
 ah
 aA
 aG
@@ -33328,12 +33510,12 @@ ac
 ac
 ac
 ac
-ac
-ac
-ac
-ac
-ad
-ad
+ah
+af
+al
+aD
+aD
+af
 ah
 ah
 ah
@@ -33470,16 +33652,16 @@ ac
 ac
 ac
 ac
+ah
+af
+al
+aD
+aT
+af
+ah
 ac
 ac
 ac
-ac
-ad
-ad
-ah
-ah
-ah
-ah
 ah
 bK
 bS
@@ -33612,16 +33794,16 @@ ac
 ac
 ac
 ac
+ah
+af
+al
+aD
+aT
+af
+ah
 ac
 ac
 ac
-ac
-ad
-ae
-ai
-ai
-ai
-bh
 ah
 bL
 bT
@@ -33754,16 +33936,16 @@ ac
 ac
 ac
 ac
-ac
-ac
-ac
-ac
-ad
+ah
 af
-aj
-aj
-aj
+am
+aD
+aT
 af
+ah
+ac
+ac
+ac
 ah
 bL
 bT
@@ -33896,16 +34078,16 @@ ac
 ac
 ac
 ac
-ac
-ac
-ac
-ac
-ad
+ah
 af
-ak
-aB
-aQ
-af
+an
+aD
+aU
+bh
+ah
+ac
+ac
+ac
 ah
 bL
 bT
@@ -34038,16 +34220,16 @@ ac
 ac
 ac
 ac
-ac
-ac
-ac
-ac
-ad
+ah
 af
-al
-aC
-aR
+ao
+aE
+ao
 af
+ah
+ac
+ac
+ac
 ah
 bM
 bS
@@ -34180,16 +34362,16 @@ ac
 ac
 ac
 ac
-ac
-ac
-ac
-ac
-ad
+ah
+ah
 af
-al
-aC
-aS
+aF
 af
+ah
+ah
+ah
+ah
+ah
 ah
 ah
 ah
@@ -34322,17 +34504,17 @@ ac
 ac
 ac
 ac
-ac
-ac
-ac
-ac
-ad
-af
-al
-aC
-aC
-bi
-by
+ah
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+aX
 aX
 aX
 aX
@@ -34464,17 +34646,17 @@ ac
 ac
 ac
 ac
-ac
-ac
-ac
-ac
-ad
-af
-al
-aC
-aC
-bi
-by
+ah
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+aX
 aX
 aX
 aX
@@ -34606,18 +34788,18 @@ ac
 ac
 ac
 ac
-ac
-ac
-ac
-ac
-ad
-af
-al
-aC
-aT
-af
 ah
-bN
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+aX
+aX
 aX
 aX
 aX
@@ -34748,16 +34930,16 @@ ac
 ac
 ac
 ac
-ac
-ac
-ac
-ac
-ad
-af
-am
-aC
-aT
-af
+ah
+ah
+ah
+ah
+ah
+ah
+ah
+ah
+ah
+ah
 ah
 ah
 ah
@@ -34894,13 +35076,13 @@ ac
 ac
 ac
 ac
-ad
-af
-an
-aC
-aU
-af
-ah
+ac
+ac
+ac
+ac
+ac
+ac
+ac
 ah
 bU
 bS
@@ -35036,13 +35218,13 @@ ac
 ac
 ac
 ac
-ad
-af
-ao
-aD
-ao
-af
-ah
+ac
+ac
+ac
+ac
+ac
+ac
+ac
 ah
 bV
 bS
@@ -35178,13 +35360,13 @@ ac
 ac
 ac
 ac
-ad
-ag
-af
-aE
-af
-ag
-ah
+ac
+ac
+ac
+ac
+ac
+ac
+ac
 ah
 bW
 cb
@@ -35320,13 +35502,13 @@ ac
 ac
 ac
 ac
-ad
-ad
-ad
-ad
-ad
-ad
-ad
+ac
+ac
+ac
+ac
+ac
+ac
+ac
 ad
 ad
 ad
