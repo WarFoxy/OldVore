@@ -30,10 +30,9 @@
 	blood_volume =	0
 	min_age =		18
 	max_age =		200
-	brute_mod =		1
-	burn_mod =		1.4
+	brute_mod =		0.5
+	burn_mod =		1.5
 	oxy_mod =		0
-	item_slowdown_mod = 1.33
 
 	cold_level_1 = 280 //Default 260 - Lower is better
 	cold_level_2 = 220 //Default 200
@@ -56,7 +55,7 @@
 
 	body_temperature =      290
 
-	siemens_coefficient =   1.5 //Very bad zappy times
+	siemens_coefficient =   3 //Ok return this
 	rarity_value =          5
 
 	has_organ = list(
