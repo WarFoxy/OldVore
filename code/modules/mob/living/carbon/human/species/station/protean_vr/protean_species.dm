@@ -30,10 +30,9 @@
 	blood_volume =	0
 	min_age =		18
 	max_age =		200
-	brute_mod =		1
-	burn_mod =		1.4
+	brute_mod =		0.5
+	burn_mod =		1.5
 	oxy_mod =		0
-	item_slowdown_mod = 1.33
 
 	cold_level_1 = 280 //Default 260 - Lower is better
 	cold_level_2 = 220 //Default 200
@@ -56,7 +55,7 @@
 
 	body_temperature =      290
 
-	siemens_coefficient =   1.5 //Very bad zappy times
+	siemens_coefficient =   3 //Ok return this
 	rarity_value =          5
 
 	has_organ = list(
@@ -96,7 +95,8 @@
 		/mob/living/carbon/human/proc/shapeshifter_select_gender,
 		/mob/living/carbon/human/proc/shapeshifter_select_wings,
 		/mob/living/carbon/human/proc/shapeshifter_select_tail,
-		/mob/living/carbon/human/proc/shapeshifter_select_ears
+		/mob/living/carbon/human/proc/shapeshifter_select_ears,
+		/mob/living/proc/eat_trash
 		)
 
 	var/global/list/abilities = list()
@@ -296,7 +296,6 @@
 	material_name = MAT_STEEL
 
 /datum/modifier/protean/steel/tick()
-	..()
 	holder.adjustBruteLoss(-10,include_robo = TRUE) //Looks high, but these ARE modified by species resistances, so this is really 20% of this
 	holder.adjustFireLoss(-1,include_robo = TRUE) //And this is really double this
 	var/mob/living/carbon/human/H = holder
